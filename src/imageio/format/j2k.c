@@ -94,7 +94,11 @@ typedef struct dt_imageio_j2k_t
   char style[128];
   int bpp;
   int format;
+<<<<<<< HEAD
   dt_imageio_j2k_preset_t preset;
+=======
+  enum {DT_J2K_PRESET_OFF, DT_J2K_PRESET_CINEMA2K_24, DT_J2K_PRESET_CINEMA2K_48, DT_J2K_PRESET_CINEMA4K_24} preset;
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
   int quality;
 }
 dt_imageio_j2k_t;

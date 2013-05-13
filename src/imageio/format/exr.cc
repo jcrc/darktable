@@ -112,12 +112,22 @@ extern "C"
     }
 
   void*
+<<<<<<< HEAD
     get_params(dt_imageio_module_format_t *self)
     {
       dt_imageio_exr_t *d = (dt_imageio_exr_t *)malloc(sizeof(dt_imageio_exr_t));
       memset(d,0,sizeof(dt_imageio_exr_t));
       return d;
     }
+=======
+  get_params(dt_imageio_module_format_t *self, int *size)
+  {
+    *size = sizeof(dt_imageio_module_data_t);
+    dt_imageio_exr_t *d = (dt_imageio_exr_t *)malloc(sizeof(dt_imageio_exr_t));
+    memset(d,0,sizeof(dt_imageio_exr_t));
+    return d;
+  }
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
   void
     free_params(dt_imageio_module_format_t *self, dt_imageio_module_data_t *params)

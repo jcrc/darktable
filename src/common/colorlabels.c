@@ -123,6 +123,7 @@ void dt_colorlabels_toggle_label (const int imgid, const int color)
   sqlite3_finalize(stmt);
 
   dt_collection_hint_message(darktable.collection);
+<<<<<<< HEAD
 }
 
 int dt_colorlabels_check_label (const int imgid, const int color)
@@ -142,6 +143,8 @@ int dt_colorlabels_check_label (const int imgid, const int color)
     sqlite3_finalize(stmt);
     return 0;
   }
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 }
 
 gboolean dt_colorlabels_key_accel_callback(GtkAccelGroup *accel_group,

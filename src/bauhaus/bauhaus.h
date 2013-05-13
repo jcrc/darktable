@@ -237,7 +237,10 @@ int  dt_bauhaus_combobox_get(GtkWidget *w);
 const GList* dt_bauhaus_combobox_get_labels(GtkWidget *w);
 void dt_bauhaus_combobox_clear(GtkWidget *w);
 void dt_bauhaus_combobox_set_default(GtkWidget *widget, int def);
+<<<<<<< HEAD
 void dt_bauhaus_combobox_add_populate_fct(GtkWidget *widget, void (*fct) (struct dt_iop_module_t **module));
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 // key accel parsing:
 // execute a line of input

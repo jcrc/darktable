@@ -312,6 +312,10 @@ static inline void _blend_Lab_rescale(const float *i, float *o)
 static void _blend_make_mask(dt_iop_colorspace_type_t cst, const unsigned int blendif, const float *blendif_parameters, const unsigned int mask_mode, const unsigned int mask_combine,
                              const float gopacity, const float *a, const float *b, float *mask, int stride)
 {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
   for(int i=0, j=0; j<stride; i++, j+=4)
   {
     float form = mask[i];

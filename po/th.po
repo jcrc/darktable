@@ -6,16 +6,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2013-05-07 10:04+0200\n"
 "PO-Revision-Date: 2011-02-14 23:06+0700\n"
 "Last-Translator: Phondanai Khanti <phondanai@gmail.com>\n"
+=======
+"POT-Creation-Date: 2013-05-13 07:38-0400\n"
+"PO-Revision-Date: 2013-05-12 22:05-0500\n"
+"Last-Translator: Anocha Yimsiriwattana <tawtao@gmail.com>\n"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 "Language-Team: American English <>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: ../build/src/preferences_gen.h:877
 msgid "gui options"
@@ -30,6 +36,7 @@ msgstr "ขนาดของพาเนลด้านข้างเป็น
 #: ../build/src/preferences_gen.h:1148 ../build/src/preferences_gen.h:1191
 #: ../build/src/preferences_gen.h:1215 ../build/src/preferences_gen.h:1289
 #: ../build/src/preferences_gen.h:1376 ../build/src/preferences_gen.h:1400
+<<<<<<< HEAD
 #: ../build/src/preferences_gen.h:1425 ../src/lua/preferences.c:368
 #, fuzzy, c-format
 msgid "double click to reset to `%d'"
@@ -37,13 +44,38 @@ msgstr "ดับเบิ้ลคลิกเพื่อกลับสู่
 
 #: ../build/src/preferences_gen.h:897 ../build/src/preferences_gen.h:1355
 #, fuzzy
+=======
+#: ../build/src/preferences_gen.h:1425
+#, c-format
+msgid "double click to reset to `%d'"
+msgstr "ดับเบิ้ลคลิกเพื่อกลับสู่ `%d'"
+
+#: ../build/src/preferences_gen.h:897 ../build/src/preferences_gen.h:1355
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "(needs a restart)"
 msgstr "(ต้องเริ่มโปรแกรมใหม่)"
 
 #: ../build/src/preferences_gen.h:904
 msgid "don't use embedded preview jpeg but half-size raw"
-msgstr ""
+msgstr "ไม่ใช้งานแสดงตัวอย่างเอ็มเบ็ดเด็ด jpeg แต่ใช้ภาพขนาดครึ่งหนึ่งของ raw"
 
+#: ../build/src/preferences_gen.h:913 ../build/src/preferences_gen.h:932
+#: ../build/src/preferences_gen.h:951 ../build/src/preferences_gen.h:970
+#: ../build/src/preferences_gen.h:989 ../build/src/preferences_gen.h:1032
+#: ../build/src/preferences_gen.h:1051 ../build/src/preferences_gen.h:1069
+#: ../build/src/preferences_gen.h:1087 ../build/src/preferences_gen.h:1105
+#: ../build/src/preferences_gen.h:1123 ../build/src/preferences_gen.h:1167
+#: ../build/src/preferences_gen.h:1247 ../build/src/preferences_gen.h:1266
+#: ../build/src/preferences_gen.h:1308 ../build/src/preferences_gen.h:1444
+#: ../build/src/preferences_gen.h:1463 ../build/src/preferences_gen.h:1486
+#: ../build/src/preferences_gen.h:1505 ../build/src/preferences_gen.h:1524
+#: ../build/src/preferences_gen.h:1556 ../build/src/preferences_gen.h:1591
+#: ../build/src/preferences_gen.h:1623
+#, c-format
+msgid "double click to reset to `%s'"
+msgstr "ดับเบิ้ลคลิกเพื่อกลับสู่ `%s'"
+
+<<<<<<< HEAD
 #: ../build/src/preferences_gen.h:913 ../build/src/preferences_gen.h:932
 #: ../build/src/preferences_gen.h:951 ../build/src/preferences_gen.h:970
 #: ../build/src/preferences_gen.h:989 ../build/src/preferences_gen.h:1032
@@ -61,6 +93,8 @@ msgstr ""
 msgid "double click to reset to `%s'"
 msgstr "ดับเบิ้ลคลิกเพื่อกลับสู่ `%s'"
 
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../build/src/preferences_gen.h:916
 msgid ""
 "check this option to not use the embedded jpeg from the raw file but process "
@@ -68,41 +102,56 @@ msgid ""
 msgstr ""
 
 #: ../build/src/preferences_gen.h:923
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "ask before removing images from database"
-msgstr "ถามก่อนเอารูปออก"
+msgstr "ถามก่อนเอารูปออกจากฐานข้อมูล"
 
 #: ../build/src/preferences_gen.h:935
 msgid "always ask the user before any image is removed from db."
 msgstr "ถามผู้ใช้ก่อนเสมอ เมื่อรูปจะถูกเอาออกจากฐานข้อมูล"
 
 #: ../build/src/preferences_gen.h:942
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "ask before erasing images from disk"
-msgstr "ถามก่อนเอารูปออก"
+msgstr "ถามก่อนเอารูปออกจากฮาร์ดดิสก์ไดรฟ์"
 
 #: ../build/src/preferences_gen.h:954
 msgid "always ask the user before any image file is deleted."
 msgstr "ถามผู้ใช้ก่อนเสมอ เมื่อรูปจะถูกลบ"
 
 #: ../build/src/preferences_gen.h:961
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "ask before moving images from film roll folder"
-msgstr "ถามก่อนเอารูปออก"
+msgstr "ถามก่อนเอารูปออกโฟลเดอร์ฟิล์มม้วน"
 
 #: ../build/src/preferences_gen.h:973
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "always ask the user before any image file is moved."
-msgstr "ถามผู้ใช้ก่อนเสมอ เมื่อรูปจะถูกลบ"
+msgstr "ถามผู้ใช้ก่อนเสมอ เมื่อรูปจะถูกย้าย"
 
 #: ../build/src/preferences_gen.h:980
 msgid "ask before copying images to new film roll folder"
 msgstr ""
 
 #: ../build/src/preferences_gen.h:992
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "always ask the user before any image file is copied."
-msgstr "ถามผู้ใช้ก่อนเสมอ เมื่อรูปจะถูกลบ"
+msgstr "ถามผู้ใช้ก่อนเสมอ เมื่อรูปจะถูกคัดลอก"
 
 #: ../build/src/preferences_gen.h:999
 msgid "number of folder levels to show in lists"
@@ -115,9 +164,12 @@ msgid ""
 msgstr "จำนวนระดับของโฟลเดอร์ที่แสดงในชื่อม้วนฟิล์ม, เริ่มจากขวา"
 
 #: ../build/src/preferences_gen.h:1023
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "ignore jpeg images when importing film rolls"
-msgstr "กำหนดเรตติ้งเมื่อนำเข้าม้วนฟิล์ม"
+msgstr "ไม่นำภาพ jpeg เข้าม้วนฟิล์ม"
 
 #: ../build/src/preferences_gen.h:1035
 msgid ""
@@ -126,9 +178,12 @@ msgid ""
 msgstr ""
 
 #: ../build/src/preferences_gen.h:1042
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "recursive directory traversal when importing filmrolls"
-msgstr "กำหนดเรตติ้งเมื่อนำเข้าม้วนฟิล์ม"
+msgstr "รวมรูปจากไดเร็คทอรีย์ย่อย เมื่อนำเข้าม้วนฟิล์ม"
 
 #: ../build/src/preferences_gen.h:1060
 msgid "creator to be applied when importing"
@@ -151,19 +206,28 @@ msgid "initial import rating"
 msgstr ""
 
 #: ../build/src/preferences_gen.h:1151
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "initial star rating for all images when importing a filmroll"
-msgstr "กำหนดเรตติ้งเมื่อนำเข้าม้วนฟิล์ม"
+msgstr "กำหนดเรตติ้งเริ่มต้นเมื่อนำเข้าม้วนฟิล์ม"
 
 #: ../build/src/preferences_gen.h:1158
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "enable filmstrip"
-msgstr "เปิดใช้ filmstip ในโหมด darkroom"
+msgstr "เปิดใช้ filmstip"
 
 #: ../build/src/preferences_gen.h:1170
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "enable the filmstrip in darkroom and tethering modes."
-msgstr "เปิดใช้ filmstip ในโหมด darkroom"
+msgstr "เปิดใช้ filmstip ในโหมด darkroom และ โหมด tethering"
 
 #: ../build/src/preferences_gen.h:1177
 msgid "maximum width of image drawing area"
@@ -230,9 +294,15 @@ msgid "memory in megabytes to use for mipmap cache"
 msgstr ""
 
 #: ../build/src/preferences_gen.h:1352
+<<<<<<< HEAD
 #, fuzzy, c-format
 msgid "double click to reset to `%<PRId64>'"
 msgstr "ดับเบิ้ลคลิกเพื่อกลับสู่ `%s'"
+=======
+#, c-format
+msgid "double click to reset to `%<PRId64>'"
+msgstr "ดับเบิ้ลคลิกเพื่อปรับค่ากลับสู่ `%<PRId64>'"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../build/src/preferences_gen.h:1362
 msgid "number of background threads"
@@ -290,6 +360,7 @@ msgstr ""
 
 #: ../build/src/preferences_gen.h:1470
 msgid "not available on this system"
+<<<<<<< HEAD
 msgstr ""
 
 #: ../build/src/preferences_gen.h:1477
@@ -300,6 +371,18 @@ msgstr ""
 msgid "this is significantly slower as the default."
 msgstr ""
 
+=======
+msgstr ""
+
+#: ../build/src/preferences_gen.h:1477
+msgid "always try to use littlecms2"
+msgstr ""
+
+#: ../build/src/preferences_gen.h:1489
+msgid "this is significantly slower as the default."
+msgstr ""
+
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../build/src/preferences_gen.h:1496
 msgid "do high quality resampling during export"
 msgstr ""
@@ -312,9 +395,14 @@ msgid ""
 msgstr ""
 
 #: ../build/src/preferences_gen.h:1515
+<<<<<<< HEAD
 #, fuzzy
 msgid "dithering for darkroom mode"
 msgstr "สลับไปโหมด darkroom"
+=======
+msgid "dithering for darkroom mode"
+msgstr "ใข้ dithering ในโหมด darkroom"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../build/src/preferences_gen.h:1527
 msgid ""
@@ -324,9 +412,12 @@ msgid ""
 msgstr ""
 
 #: ../build/src/preferences_gen.h:1534
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "demosaicing for zoomed out darkroom mode"
-msgstr "สลับไปโหมด darkroom"
+msgstr "ใข้ demosaicing ในการขยายภาพ ในโหมด darkroom"
 
 #: ../build/src/preferences_gen.h:1559
 msgid ""
@@ -374,45 +465,77 @@ msgstr ""
 msgid "empty history stack"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/cli/main.c:208
+=======
+#: ../src/cli/main.c:209
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "cannot find disk storage module. please check your installation, something "
 "seems to be broken."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/cli/main.c:215
 msgid "failed to get parameters from storage module, aborting export ..."
 msgstr ""
 
 #: ../src/cli/main.c:226
+=======
+#: ../src/cli/main.c:216
+msgid "failed to get parameters from storage module, aborting export ..."
+msgstr ""
+
+#: ../src/cli/main.c:227
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "unknown extension '.%s'"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/cli/main.c:234
 msgid "failed to get parameters from format module, aborting export ..."
 msgstr ""
 
 #: ../src/common/collection.c:454 ../src/develop/lightroom.c:974
+=======
+#: ../src/cli/main.c:235
+msgid "failed to get parameters from format module, aborting export ..."
+msgstr ""
+
+#: ../src/common/collection.c:454 ../src/develop/lightroom.c:964
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/bilateral.cc:349 ../src/iop/channelmixer.c:440
 #: ../src/iop/channelmixer.c:452 ../src/iop/temperature.c:733
 #: ../src/libs/collect.c:1139 ../src/libs/collect.c:1141
 msgid "red"
 msgstr "แดง"
 
+<<<<<<< HEAD
 #: ../src/common/collection.c:455 ../src/develop/lightroom.c:976
+=======
+#: ../src/common/collection.c:455 ../src/develop/lightroom.c:966
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/collect.c:1145 ../src/libs/collect.c:1147
 msgid "yellow"
 msgstr "เหลือง"
 
+<<<<<<< HEAD
 #: ../src/common/collection.c:456 ../src/develop/lightroom.c:978
+=======
+#: ../src/common/collection.c:456 ../src/develop/lightroom.c:968
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/bilateral.cc:350 ../src/iop/channelmixer.c:441
 #: ../src/iop/channelmixer.c:459 ../src/iop/temperature.c:734
 #: ../src/libs/collect.c:1151 ../src/libs/collect.c:1153
 msgid "green"
 msgstr "เขียว"
 
+<<<<<<< HEAD
 #: ../src/common/collection.c:457 ../src/develop/lightroom.c:980
+=======
+#: ../src/common/collection.c:457 ../src/develop/lightroom.c:970
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/bilateral.cc:351 ../src/iop/channelmixer.c:442
 #: ../src/iop/channelmixer.c:466 ../src/iop/temperature.c:735
 #: ../src/libs/collect.c:1157 ../src/libs/collect.c:1159
@@ -431,6 +554,7 @@ msgid "altered"
 msgstr ""
 
 #: ../src/common/collection.c:660
+<<<<<<< HEAD
 #, fuzzy, c-format
 msgid "%d image of %d in current collection is selected"
 msgid_plural "%d images of %d in current collection are selected"
@@ -438,46 +562,79 @@ msgstr[0] "เลือกรูปภาพทั้งหมดในชุด
 msgstr[1] "เลือกรูปภาพทั้งหมดในชุดปัจจุบัน (ctrl-a)"
 
 #: ../src/common/darktable.c:287
+=======
+#, c-format
+msgid "%d image of %d in current collection is selected"
+msgid_plural "%d images of %d in current collection are selected"
+msgstr[0] "เลือก %d รูปจาก %d รูปของชุดนี้"
+msgstr[1] "เลือก %d รูปจาก %d รูปของชุดนี้"
+
+#: ../src/common/darktable.c:286
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "found strange path `%s'"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/common/darktable.c:305
+=======
+#: ../src/common/darktable.c:304
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "error loading directory `%s'"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/common/darktable.c:325
+=======
+#: ../src/common/darktable.c:324
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "file `%s' has unknown format!"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/common/darktable.c:339 ../src/libs/import.c:711
+=======
+#: ../src/common/darktable.c:338 ../src/libs/import.c:715
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "error loading file `%s'"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/common/darktable.c:481
+=======
+#: ../src/common/darktable.c:478
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "ERROR : invalid temporary directory : %s\n"
 msgstr ""
 
 #: ../src/common/film.c:361
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "no supported images were found to be imported"
-msgstr "ไม่เจออุปกรณ์ที่รองรับ"
+msgstr "ไม่พบภาพที่จะนำเข้าได้"
 
 #: ../src/common/film.c:373
+<<<<<<< HEAD
 #, fuzzy, c-format
+=======
+#, c-format
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "importing %d image"
 msgid_plural "importing %d images"
-msgstr[0] "ส่งออก %d รูปภาพ.."
-msgstr[1] "ส่งออก %d รูปภาพ.."
+msgstr[0] "นำเข้า %d รูป"
+msgstr[1] "นำเข้า %d รูป"
 
 #: ../src/common/history.c:139
 msgid "you need to copy history from an image before you paste it onto another"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/common/history.c:263 ../src/common/history.c:264
 #: ../src/common/history.c:280 ../src/common/styles.c:559
 #: ../src/common/styles.c:561 ../src/develop/blend_gui.c:1439
@@ -490,6 +647,18 @@ msgstr "เปิด"
 #: ../src/common/styles.c:561 ../src/develop/blend_gui.c:1277
 #: ../src/develop/blend_gui.c:1436 ../src/develop/develop.c:1113
 #: ../src/imageio/format/j2k.c:618 ../src/iop/demosaic.c:1329
+=======
+#: ../src/common/history.c:238 ../src/common/history.c:239
+#: ../src/common/history.c:255 ../src/common/styles.c:546
+#: ../src/develop/develop.c:1109 ../src/libs/live_view.c:406
+msgid "on"
+msgstr "เปิด"
+
+#: ../src/common/history.c:238 ../src/common/history.c:239
+#: ../src/common/history.c:255 ../src/common/styles.c:546
+#: ../src/develop/blend_gui.c:1028 ../src/develop/develop.c:1109
+#: ../src/imageio/format/j2k.c:601 ../src/iop/demosaic.c:1329
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/vignette.c:1120 ../src/libs/history.c:155
 #: ../src/libs/live_view.c:405
 msgid "off"
@@ -513,11 +682,19 @@ msgstr ""
 #. If a style is to be applied during export, add the iop params into the history
 #. set export style to "none" by default
 #: ../src/common/imageio.c:563 ../src/common/variables.c:220
+<<<<<<< HEAD
 #: ../src/control/control.c:120 ../src/iop/clipping.c:1459
 #: ../src/iop/clipping.c:1699 ../src/iop/clipping.c:1717
 #: ../src/iop/clipping.c:1760 ../src/iop/clipping.c:1777
 #: ../src/iop/lens.c:1705 ../src/libs/export.c:167 ../src/libs/export.c:170
 #: ../src/libs/export.c:630 ../src/libs/live_view.c:324
+=======
+#: ../src/control/control.c:120 ../src/iop/clipping.c:1462
+#: ../src/iop/clipping.c:1702 ../src/iop/clipping.c:1720
+#: ../src/iop/clipping.c:1763 ../src/iop/clipping.c:1780
+#: ../src/iop/lens.c:1732 ../src/libs/export.c:159 ../src/libs/export.c:162
+#: ../src/libs/export.c:595 ../src/libs/live_view.c:324
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/live_view.c:336 ../src/libs/live_view.c:354
 #, c-format
 msgid "none"
@@ -534,6 +711,7 @@ msgid "generic poissonian"
 msgstr ""
 
 #: ../src/common/ratings.c:45
+<<<<<<< HEAD
 #, fuzzy, c-format
 msgid "rejecting %d image"
 msgid_plural "rejecting %d images"
@@ -542,42 +720,73 @@ msgstr[1] "ส่งออก %d รูปภาพ.."
 
 #: ../src/common/ratings.c:47
 #, fuzzy, c-format
+=======
+#, c-format
+msgid "rejecting %d image"
+msgid_plural "rejecting %d images"
+msgstr[0] "ปฏิเสธ %d รูป"
+msgstr[1] "ปฏิเสธ %d รูป"
+
+#: ../src/common/ratings.c:47
+#, c-format
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "applying rating %d to %d image"
 msgid_plural "applying rating %d to %d images"
-msgstr[0] "ส่งออก %d รูปภาพ.."
-msgstr[1] "ส่งออก %d รูปภาพ.."
+msgstr[0] "ใช้การจัดอันดับ %d กับ %d รูป"
+msgstr[1] "ใช้การจัดอันดับ %d กับ %d รูป"
 
 #: ../src/common/ratings.c:71
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "no images selected to apply rating"
-msgstr "ไม่มีรูปที่ถูกเลือก!"
+msgstr "ไม่มีรูปที่ถูกเลือกสำหรับการจัดอันดับ"
 
 #: ../src/common/styles.c:110
 #, c-format
 msgid "style with name '%s' already exists"
 msgstr "สไตล์ที่ชื่อ '%s' มีอยู่แล้ว"
 
+<<<<<<< HEAD
 #: ../src/common/styles.c:307 ../src/gui/styles_dialog.c:145
+=======
+#: ../src/common/styles.c:307 ../src/common/styles.c:368
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "style named '%s' successfully created"
 msgstr "สไตล์ชื่อ '%s' ถูกสร้างสำเร็จแล้ว"
 
 #. fail :(
+<<<<<<< HEAD
 #: ../src/common/styles.c:389 ../src/common/styles.c:408
 #: ../src/views/darkroom.c:459
 msgid "no image selected!"
 msgstr "ไม่มีรูปที่ถูกเลือก!"
 
 #: ../src/common/styles.c:646
+=======
+#: ../src/common/styles.c:388 ../src/common/styles.c:407
+#: ../src/views/darkroom.c:446
+msgid "no image selected!"
+msgstr "ไม่มีรูปที่ถูกเลือก!"
+
+#: ../src/common/styles.c:630
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "failed to overwrite style file for %s"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/common/styles.c:652
+=======
+#: ../src/common/styles.c:636
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "style file for %s exists"
 msgstr "สไตล์สำหรับ %s มีอยู่แล้ว"
 
+<<<<<<< HEAD
 #: ../src/common/styles.c:891
 #, fuzzy, c-format
 msgid "style %s was successfully imported"
@@ -588,6 +797,23 @@ msgid "working.."
 msgstr "กำลังทำงาน.."
 
 #: ../src/control/control.c:1455
+=======
+#: ../src/common/styles.c:683
+#, c-format
+msgid "style %s was successfully saved"
+msgstr "สไตล์ %s ถูกบันทึกสำเร็จแล้ว"
+
+#: ../src/common/styles.c:876
+#, c-format
+msgid "style %s was successfully imported"
+msgstr "สไตล์ %s ถูกนำเข้าสำเร็จแล้ว"
+
+#: ../src/control/control.c:1355 ../src/control/control.c:1358
+msgid "working.."
+msgstr "กำลังทำงาน.."
+
+#: ../src/control/control.c:1439
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "switch to %s mode"
 msgstr "สลับไปโหมด %s"
@@ -639,97 +865,164 @@ msgstr[1] "%d"
 msgid "failed to create filmroll for camera import, import aborted."
 msgstr "การนำเข้ารูปภาพจากกล้องเป็นม้วนฟิล์มล้มเหลว, การนำเข้าถูกยกเลิก"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:120
+=======
+#: ../src/control/jobs/control_jobs.c:127
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "merging %d image"
 msgid_plural "merging %d images"
 msgstr[0] ""
 msgstr[1] ""
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:141
 msgid "exposure bracketing only works on raw images"
 msgstr ""
 
 #: ../src/control/jobs/control_jobs.c:150
+=======
+#: ../src/control/jobs/control_jobs.c:148
+msgid "exposure bracketing only works on raw images"
+msgstr ""
+
+#: ../src/control/jobs/control_jobs.c:157
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "failed to get raw buffer from image `%s'"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:169
 msgid "images have to be of same size!"
 msgstr "รูปภาพต้องมีขนาดเท่ากัน!"
 
 #: ../src/control/jobs/control_jobs.c:244
+=======
+#: ../src/control/jobs/control_jobs.c:176
+msgid "images have to be of same size!"
+msgstr "รูปภาพต้องมีขนาดเท่ากัน!"
+
+#: ../src/control/jobs/control_jobs.c:251
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "wrote merged hdr `%s'"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:270
+=======
+#: ../src/control/jobs/control_jobs.c:277
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "duplicating %d image"
 msgid_plural "duplicating %d images"
 msgstr[0] ""
 msgstr[1] ""
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:295
+=======
+#: ../src/control/jobs/control_jobs.c:302
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "flipping %d image"
 msgid_plural "flipping %d images"
 msgstr[0] ""
 msgstr[1] ""
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:318
+=======
+#: ../src/control/jobs/control_jobs.c:325
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "removing %d image"
 msgid_plural "removing %d images"
 msgstr[0] ""
 msgstr[1] ""
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:369
+=======
+#: ../src/control/jobs/control_jobs.c:376
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "deleting %d image"
 msgid_plural "deleting %d images"
 msgstr[0] ""
 msgstr[1] ""
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:454
 msgid "failed to parse gpx file"
 msgstr ""
 
 #: ../src/control/jobs/control_jobs.c:521
+=======
+#: ../src/control/jobs/control_jobs.c:461
+msgid "failed to parse gpx file"
+msgstr ""
+
+#: ../src/control/jobs/control_jobs.c:528
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "applied matched gpx location onto %d image(s)"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:672
 #, fuzzy, c-format
+=======
+#: ../src/control/jobs/control_jobs.c:679
+#, c-format
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "do you really want to remove %d selected image from the collection?"
 msgid_plural ""
 "do you really want to remove %d selected images from the collection?"
-msgstr[0] "คุณต้องการจะเอารูปที่เลือกทั้งหมดออกจากชุด?"
-msgstr[1] "คุณต้องการจะเอารูปที่เลือกทั้งหมดออกจากชุด?"
+msgstr[0] "คุณต้องการจะเอา %d รูปที่เลือกออกจากชุดหรือไม่?"
+msgstr[1] "คุณต้องการจะเอา %d รูปที่เลือกออกจากชุดหรือไม่?"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:675
 msgid "remove images?"
 msgstr "เอารูปภาพออก?"
 
 #: ../src/control/jobs/control_jobs.c:701
 #, fuzzy, c-format
+=======
+#: ../src/control/jobs/control_jobs.c:682
+msgid "remove images?"
+msgstr "เอารูปภาพออก?"
+
+#: ../src/control/jobs/control_jobs.c:708
+#, c-format
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "do you really want to physically delete %d selected image from disk?"
 msgid_plural ""
 "do you really want to physically delete %d selected images from disk?"
-msgstr[0] "คุณต้องการจะลบรูปที่เลือกทั้งหมดออกจากดิสก์?"
-msgstr[1] "คุณต้องการจะลบรูปที่เลือกทั้งหมดออกจากดิสก์?"
+msgstr[0] "คุณต้องจะลบ %d รูปจากดิสก์หรือไม่?"
+msgstr[1] "คุณต้องจะลบ %d รูปจากดิสก์หรือไม่?"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:704
 msgid "delete images?"
 msgstr "ลบรูปภาพ"
 
 #: ../src/control/jobs/control_jobs.c:737
 #, fuzzy
-msgid "failed to create film roll for destination directory, aborting move.."
-msgstr "การนำเข้ารูปภาพจากกล้องเป็นม้วนฟิล์มล้มเหลว, การนำเข้าถูกยกเลิก"
+=======
+#: ../src/control/jobs/control_jobs.c:711
+msgid "delete images?"
+msgstr "ลบรูปภาพ"
 
+#: ../src/control/jobs/control_jobs.c:744
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
+msgid "failed to create film roll for destination directory, aborting move.."
+msgstr "การสร้างม้วนฟิล์มล้มเหลว, การย้ายถูกยกเลิก"
+
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:769
 #: ../src/control/jobs/control_jobs.c:826 ../src/imageio/storage/disk.c:68
 #: ../src/imageio/storage/disk.c:121 ../src/imageio/storage/gallery.c:79
@@ -740,36 +1033,86 @@ msgstr ""
 
 #: ../src/control/jobs/control_jobs.c:792
 #, fuzzy, c-format
+=======
+#: ../src/control/jobs/control_jobs.c:776
+#: ../src/control/jobs/control_jobs.c:833 ../src/imageio/storage/disk.c:67
+#: ../src/imageio/storage/disk.c:120 ../src/imageio/storage/gallery.c:78
+#: ../src/imageio/storage/gallery.c:161 ../src/imageio/storage/latex.c:78
+#: ../src/imageio/storage/latex.c:161 ../src/libs/styles.c:240
+msgid "select directory"
+msgstr ""
+
+#: ../src/control/jobs/control_jobs.c:799
+#, c-format
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "do you really want to physically move the %d selected image to %s?\n"
 "(all unselected duplicates will be moved along)"
 msgid_plural ""
 "do you really want to physically move %d selected images to %s?\n"
 "(all unselected duplicates will be moved along)"
-msgstr[0] "คุณต้องการจะลบรูปที่เลือกทั้งหมดออกจากดิสก์?"
-msgstr[1] "คุณต้องการจะลบรูปที่เลือกทั้งหมดออกจากดิสก์?"
+msgstr[0] ""
+"คุณต้องจะคัดย้าย %d รูปไปที่ %s หรือไม่?\n"
+"(รูปที่ไม่ถูกเลือกจะถูกย้ายไปด้วย)"
+msgstr[1] ""
+"คุณต้องจะคัดย้าย %d รูปไปที่ %s หรือไม่?\n"
+"(รูปที่ไม่ถูกเลือกจะถูกย้ายไปด้วย)"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:796
 #, fuzzy
+=======
+#: ../src/control/jobs/control_jobs.c:803
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "move image?"
 msgid_plural "move images?"
-msgstr[0] "เอารูปภาพออก?"
-msgstr[1] "เอารูปภาพออก?"
+msgstr[0] "ต้องการจะย้ายรูปหรือไม่?"
+msgstr[1] "ต้องการจะย้ายรูปหรือไม่?"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:849
 #, fuzzy, c-format
+=======
+#: ../src/control/jobs/control_jobs.c:856
+#, c-format
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "do you really want to physically copy the %d selected image to %s?"
 msgid_plural "do you really want to physically copy %d selected images to %s?"
-msgstr[0] "คุณต้องการจะลบรูปที่เลือกทั้งหมดออกจากดิสก์?"
-msgstr[1] "คุณต้องการจะลบรูปที่เลือกทั้งหมดออกจากดิสก์?"
+msgstr[0] "คุณต้องจะคัดลอก %d รูปไปที่ %s หรือไม่?"
+msgstr[1] "คุณต้องจะคัดลอก %d รูปไปที่ %s หรือไม่?"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:852
 #, fuzzy
+=======
+#: ../src/control/jobs/control_jobs.c:859
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "copy image?"
 msgid_plural "copy images?"
-msgstr[0] "รูปภาพกำพร้า"
-msgstr[1] "รูปภาพกำพร้า"
+msgstr[0] "คัดลอกรูป?"
+msgstr[1] "คัดลอกรูป?"
 
+#: ../src/control/jobs/control_jobs.c:898
+#, c-format
+msgid "moving %d image"
+msgstr "กำลังย้าย %d รูปภาพ"
+
+#: ../src/control/jobs/control_jobs.c:898
+#, c-format
+msgid "moving %d images"
+msgstr "กำลังย้าย %d รูปภาพ"
+
+#: ../src/control/jobs/control_jobs.c:904
+#, c-format
+msgid "copying %d image"
+msgstr "กำลังคัดลอก %d รูปภาพ"
+
+#: ../src/control/jobs/control_jobs.c:904
+#, c-format
+msgid "copying %d images"
+msgstr "กำลังคัดลอก %d รูปภาพ"
+
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:891
 #, fuzzy, c-format
 msgid "moving %d image"
@@ -791,42 +1134,67 @@ msgid "copying %d images"
 msgstr "ส่งออก %d รูปภาพ.."
 
 #: ../src/control/jobs/control_jobs.c:928
+=======
+#: ../src/control/jobs/control_jobs.c:936
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "failed to get parameters from storage module `%s', aborting export.."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:932
+=======
+#: ../src/control/jobs/control_jobs.c:940
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "exporting %d image.."
 msgid_plural "exporting %d images.."
 msgstr[0] "ส่งออก %d รูปภาพ.."
 msgstr[1] "ส่งออก %d รูปภาพ.."
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:934
+=======
+#: ../src/control/jobs/control_jobs.c:942
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "exporting %d image to %s"
 msgid_plural "exporting %d images to %s"
 msgstr[0] "ส่งออก %d รูปภาพ ไปที่ %s"
 msgstr[1] "ส่งออก %d รูปภาพ ไปที่ %s"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:997
 #: ../src/control/jobs/control_jobs.c:998 ../src/views/darkroom.c:470
+=======
+#: ../src/control/jobs/control_jobs.c:1005
+#: ../src/control/jobs/control_jobs.c:1006 ../src/views/darkroom.c:457
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "image `%s' is currently unavailable"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:1076
+=======
+#: ../src/control/jobs/control_jobs.c:1087
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "adding time offset to %d image"
 msgid_plural "adding time offset to %d images"
 msgstr[0] ""
 msgstr[1] ""
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:1096
+=======
+#: ../src/control/jobs/control_jobs.c:1107
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "added time offset to %d image(s)"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:785
 msgid "sliders for L channel"
 msgstr ""
@@ -904,6 +1272,85 @@ msgid "sliders for value channel (of HSL)"
 msgstr ""
 
 #: ../src/develop/blend_gui.c:791
+=======
+#: ../src/develop/blend_gui.c:707
+msgid "sliders for L channel"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:707
+msgid "sliders for a channel"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:707
+msgid "sliders for b channel"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:707
+msgid "sliders for chroma channel (of LCh)"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:707
+msgid "sliders for hue channel (of LCh)"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:708
+msgid " g "
+msgstr ""
+
+#: ../src/develop/blend_gui.c:708
+msgid " R "
+msgstr ""
+
+#: ../src/develop/blend_gui.c:708
+msgid " G "
+msgstr ""
+
+#: ../src/develop/blend_gui.c:708
+msgid " B "
+msgstr ""
+
+#: ../src/develop/blend_gui.c:708
+msgid " H "
+msgstr ""
+
+#: ../src/develop/blend_gui.c:708
+msgid " S "
+msgstr ""
+
+#: ../src/develop/blend_gui.c:708
+msgid " L "
+msgstr ""
+
+#: ../src/develop/blend_gui.c:709
+msgid "sliders for gray value"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:709
+msgid "sliders for red channel"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:709
+msgid "sliders for green channel"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:709
+msgid "sliders for blue channel"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:710
+msgid "sliders for hue channel (of HSL)"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:710
+msgid "sliders for chroma channel (of HSL)"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:710
+msgid "sliders for value channel (of HSL)"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:713
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "adjustment based on input received by this module:\n"
 "* range defined by upper markers: blend fully\n"
@@ -911,7 +1358,11 @@ msgid ""
 "* range between adjacent upper/lower markers: blend gradually"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:793
+=======
+#: ../src/develop/blend_gui.c:715
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "adjustment based on unblended output of this module:\n"
 "* range defined by upper markers: blend fully\n"
@@ -919,6 +1370,7 @@ msgid ""
 "* range between adjacent upper/lower markers: blend gradually"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:912 ../src/iop/colorzones.c:1029
 #: ../src/iop/tonecurve.c:513
 msgid "pick gui color from image"
@@ -1012,9 +1464,78 @@ msgstr ""
 
 #: ../src/develop/blend_gui.c:1315 ../src/libs/live_view.c:386
 #, fuzzy
-msgid "lighten"
-msgstr "ความสูง"
+=======
+#: ../src/develop/blend_gui.c:821
+msgid "blend"
+msgstr ""
 
+#: ../src/develop/blend_gui.c:822
+msgid "uniformly"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:823
+msgid "only, if.."
+msgstr ""
+
+#: ../src/develop/blend_gui.c:843 ../src/iop/colorzones.c:984
+#: ../src/iop/tonecurve.c:513
+msgid "pick gui color from image"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:846
+msgid "display mask"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:849
+msgid "reset blend mask settings"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:852
+msgid "temporarily switch off blend mask. only for module in focus."
+msgstr ""
+
+#: ../src/develop/blend_gui.c:864 ../src/develop/blend_gui.c:867
+msgid "toggle polarity. best seen by enabling 'display mask'"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:876
+msgid "output"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:887
+msgid "input"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:899
+msgid "mask blur"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:902
+msgid "enable conditional blending"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:903 ../src/develop/blend_gui.c:904
+msgid "double click to reset"
+msgstr "ดับเบิ้ลคลิก เพื่อกลับค่าเดิม"
+
+#: ../src/develop/blend_gui.c:907
+msgid "radius for gaussian blur of blend mask"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1030 ../src/libs/live_view.c:377
+msgid "normal"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1032
+msgid "inverse"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1034 ../src/libs/live_view.c:386
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
+msgid "lighten"
+msgstr "เบาลง"
+
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1318 ../src/libs/live_view.c:385
 msgid "darken"
 msgstr ""
@@ -1029,9 +1550,25 @@ msgstr ""
 
 #: ../src/develop/blend_gui.c:1327
 #, fuzzy
-msgid "addition"
-msgstr "รายละเอียด"
+=======
+#: ../src/develop/blend_gui.c:1036 ../src/libs/live_view.c:385
+msgid "darken"
+msgstr ""
 
+#: ../src/develop/blend_gui.c:1038 ../src/libs/live_view.c:382
+msgid "multiply"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1040
+msgid "average"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1042
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
+msgid "addition"
+msgstr "รายละเอียดเพิ่มเติม"
+
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1330
 msgid "subtract"
 msgstr ""
@@ -1042,23 +1579,47 @@ msgstr ""
 
 #: ../src/develop/blend_gui.c:1336 ../src/libs/live_view.c:383
 #, fuzzy
-msgid "screen"
-msgstr "เขียว"
+=======
+#: ../src/develop/blend_gui.c:1044
+msgid "subtract"
+msgstr ""
 
+#: ../src/develop/blend_gui.c:1046 ../src/libs/live_view.c:391
+msgid "difference"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1048 ../src/libs/live_view.c:383
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
+msgid "screen"
+msgstr "หน้าจอ"
+
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1339 ../src/libs/live_view.c:353
+=======
+#: ../src/develop/blend_gui.c:1050 ../src/libs/live_view.c:353
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/live_view.c:384
 msgid "overlay"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1342
 msgid "softlight"
 msgstr ""
 
 #: ../src/develop/blend_gui.c:1345
 #, fuzzy
-msgid "hardlight"
-msgstr "ความสูง"
+=======
+#: ../src/develop/blend_gui.c:1052
+msgid "softlight"
+msgstr ""
 
+#: ../src/develop/blend_gui.c:1054
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
+msgid "hardlight"
+msgstr "แสงแรง"
+
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1348
 msgid "vividlight"
 msgstr ""
@@ -1078,18 +1639,46 @@ msgid "lightness"
 msgstr ""
 
 #: ../src/develop/blend_gui.c:1360 ../src/iop/atrous.c:1419
+=======
+#: ../src/develop/blend_gui.c:1056
+msgid "vividlight"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1058
+msgid "linearlight"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1060
+msgid "pinlight"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1062 ../src/iop/channelmixer.c:439
+#: ../src/iop/colorize.c:441 ../src/iop/colorzones.c:973
+#: ../src/iop/colorzones.c:1004
+msgid "lightness"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1064 ../src/iop/atrous.c:1419
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/equalizer.c:343 ../src/iop/nlmeans.c:718
 msgid "chroma"
 msgstr ""
 
 #. dt_bauhaus_slider_set_format(g->gslider1, "");
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1363 ../src/iop/channelmixer.c:437
 #: ../src/iop/colorize.c:417 ../src/iop/colorzones.c:1020
 #: ../src/iop/colorzones.c:1054 ../src/iop/graduatednd.c:1049
+=======
+#: ../src/develop/blend_gui.c:1066 ../src/iop/channelmixer.c:437
+#: ../src/iop/colorize.c:417 ../src/iop/colorzones.c:975
+#: ../src/iop/colorzones.c:1002 ../src/iop/graduatednd.c:1049
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/splittoning.c:542
 msgid "hue"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1366
 msgid "color"
 msgstr "สี"
@@ -1177,15 +1766,51 @@ msgid "temporarily switch off blend mask. only for module in focus"
 msgstr ""
 
 #: ../src/develop/develop.c:953
+=======
+#: ../src/develop/blend_gui.c:1068
+msgid "color"
+msgstr "สี"
+
+#: ../src/develop/blend_gui.c:1070
+msgid "coloradjustment"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1072
+msgid "unbounded"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1084
+msgid "blend mode"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1086 ../src/iop/watermark.c:1015
+msgid "opacity"
+msgstr "ความทึบ"
+
+#: ../src/develop/blend_gui.c:1096
+msgid "set the opacity of the blending"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1097
+msgid "choose blending mode"
+msgstr ""
+
+#: ../src/develop/develop.c:932
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%s: module `%s' version mismatch: %d != %d"
 msgstr "%s: รุ่นของโมดูล `%s' ไม่ตรง: %d != %d"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:297 ../src/develop/imageop.c:305
+=======
+#: ../src/develop/imageop.c:295 ../src/develop/imageop.c:303
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "error creating gui, see stderr"
 msgstr ""
 
 #. should never happen
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:380
 msgid "error creating gui, DT_SIMPLE_GUI_NONE could not be found"
 msgstr ""
@@ -1211,50 +1836,108 @@ msgid "delete"
 msgstr "ลบ"
 
 #: ../src/develop/imageop.c:1174 ../src/develop/imageop.c:2020
+=======
+#: ../src/develop/imageop.c:378
+msgid "error creating gui, DT_SIMPLE_GUI_NONE could not be found"
+msgstr ""
+
+#: ../src/develop/imageop.c:1134
+msgid "new instance"
+msgstr ""
+
+#: ../src/develop/imageop.c:1139
+msgid "move up"
+msgstr "เลื่อนขึ้น"
+
+#: ../src/develop/imageop.c:1145
+msgid "move down"
+msgstr "เลื่อนลง"
+
+#. delete
+#: ../src/develop/imageop.c:1151 ../src/libs/image.c:143
+#: ../src/libs/styles.c:395 ../src/libs/tagging.c:487
+msgid "delete"
+msgstr "ลบ"
+
+#: ../src/develop/imageop.c:1173 ../src/develop/imageop.c:2010
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%s is switched on"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1174 ../src/develop/imageop.c:2020
+=======
+#: ../src/develop/imageop.c:1173 ../src/develop/imageop.c:2010
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%s is switched off"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1404 ../src/gui/accelerators.c:637
 #: ../src/gui/accelerators.c:717 ../src/gui/accelerators.c:861
 #: ../src/gui/accelerators.c:886 ../src/gui/presets.c:197
 #: ../src/gui/presets.c:299 ../src/gui/presets.c:604
 #: ../src/iop/temperature.c:745 ../src/libs/import.c:487 ../src/libs/lib.c:291
+=======
+#: ../src/develop/imageop.c:1403 ../src/gui/accelerators.c:637
+#: ../src/gui/accelerators.c:717 ../src/gui/accelerators.c:861
+#: ../src/gui/accelerators.c:886 ../src/gui/presets.c:196
+#: ../src/gui/presets.c:298 ../src/gui/presets.c:603
+#: ../src/iop/temperature.c:745 ../src/libs/import.c:491 ../src/libs/lib.c:291
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:320 ../src/libs/lib.c:971
 msgid "preset"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1445
+=======
+#: ../src/develop/imageop.c:1444
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "fusion"
 msgstr ""
 
 #. Adding the optional show accelerator to the table (blank)
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1450
+=======
+#: ../src/develop/imageop.c:1449
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "show module"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1451
+=======
+#: ../src/develop/imageop.c:1450
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "enable module"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1454 ../src/libs/lib.c:545
+=======
+#: ../src/develop/imageop.c:1453 ../src/libs/lib.c:545
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "reset module parameters"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1456 ../src/libs/lib.c:550
+=======
+#: ../src/develop/imageop.c:1455 ../src/libs/lib.c:550
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "show preset menu"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1990
 msgid "multiple instances actions"
 msgstr ""
@@ -1264,10 +1947,22 @@ msgid "reset parameters"
 msgstr ""
 
 #: ../src/develop/imageop.c:2008 ../src/gui/preferences.c:403
+=======
+#: ../src/develop/imageop.c:1980
+msgid "multiple instances actions"
+msgstr ""
+
+#: ../src/develop/imageop.c:1989 ../src/libs/lib.c:830
+msgid "reset parameters"
+msgstr ""
+
+#: ../src/develop/imageop.c:1998 ../src/gui/preferences.c:398
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:843
 msgid "presets"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/lightroom.c:407
 msgid "cannot find lightroom xmp!"
 msgstr ""
@@ -1275,10 +1970,20 @@ msgstr ""
 #: ../src/develop/lightroom.c:432 ../src/develop/lightroom.c:454
 #: ../src/develop/lightroom.c:474 ../src/develop/lightroom.c:484
 #: ../src/develop/lightroom.c:505
+=======
+#: ../src/develop/lightroom.c:400
+msgid "cannot find lightroom xmp!"
+msgstr ""
+
+#: ../src/develop/lightroom.c:425 ../src/develop/lightroom.c:447
+#: ../src/develop/lightroom.c:467 ../src/develop/lightroom.c:477
+#: ../src/develop/lightroom.c:498
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "`%s' not a lightroom xmp!"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/lightroom.c:1405 ../src/libs/import.c:511
 msgid "tags"
 msgstr ""
@@ -1303,6 +2008,31 @@ msgid "%s has been imported"
 msgid_plural "%s have been imported"
 msgstr[0] "สไตล์ %s ถูกนำเข้าสำเร็จแล้ว"
 msgstr[1] "สไตล์ %s ถูกนำเข้าสำเร็จแล้ว"
+=======
+#: ../src/develop/lightroom.c:1324 ../src/libs/import.c:515
+msgid "tags"
+msgstr ""
+
+#: ../src/develop/lightroom.c:1333 ../src/libs/tools/filter.c:128
+msgid "rating"
+msgstr ""
+
+#: ../src/develop/lightroom.c:1342 ../src/libs/geotagging.c:45
+msgid "geotagging"
+msgstr ""
+
+#: ../src/develop/lightroom.c:1351 ../src/libs/collect.h:37
+#: ../src/libs/tools/filter.c:130
+msgid "color label"
+msgstr "ป้ายสี"
+
+#: ../src/develop/lightroom.c:1361
+#, c-format
+msgid "%s has been imported"
+msgid_plural "%s have been imported"
+msgstr[0] "%s ถูกนำเข้าสำเร็จแล้ว"
+msgstr[1] "%s ถูกนำเข้าสำเร็จแล้ว"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/develop/tiling.c:805 ../src/develop/tiling.c:1101
 #, c-format
@@ -1328,10 +2058,9 @@ msgstr ""
 #: ../src/gui/accelerators.c:70 ../src/gui/accelerators.c:93
 #: ../src/gui/accelerators.c:111 ../src/gui/accelerators.c:116
 #: ../src/gui/accelerators.c:121 ../src/gui/accelerators.c:126
-#, fuzzy
 msgctxt "accel"
 msgid "image operations"
-msgstr "ข้อมูลรูปภาพ"
+msgstr "ตัวดำเนินงานของภาพ"
 
 #: ../src/gui/accelerators.c:54 ../src/gui/accelerators.c:102
 msgctxt "accel"
@@ -1355,7 +2084,6 @@ msgstr ""
 
 #: ../src/gui/accelerators.c:71 ../src/gui/accelerators.c:129
 #: ../src/libs/styles.c:71
-#, fuzzy
 msgctxt "accel"
 msgid "edit"
 msgstr "แก้ไข"
@@ -1381,7 +2109,6 @@ msgid "cancel"
 msgstr "ยกเลิก"
 
 #: ../src/gui/camera_import_dialog.c:267
-#, fuzzy
 msgctxt "camera import"
 msgid "import"
 msgstr "นำเข้า"
@@ -1414,11 +2141,11 @@ msgid "general"
 msgstr "ทั่วไป"
 
 #. ignoring of jpegs. hack while we don't handle raw+jpeg in the same directories.
-#: ../src/gui/camera_import_dialog.c:327 ../src/libs/import.c:398
+#: ../src/gui/camera_import_dialog.c:327 ../src/libs/import.c:402
 msgid "ignore jpeg files"
 msgstr "ไม่สนใจแฟ้ม jpeg"
 
-#: ../src/gui/camera_import_dialog.c:328 ../src/libs/import.c:399
+#: ../src/gui/camera_import_dialog.c:328 ../src/libs/import.c:403
 msgid ""
 "do not load files with an extension of .jpg or .jpeg. this can be useful "
 "when there are raw+jpeg in a directory."
@@ -1552,10 +2279,13 @@ msgstr ""
 
 #. register keys for view switching
 #: ../src/gui/gtk.c:871
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "capture view"
-msgstr "รูรับแสง"
+msgstr "จับภาพ"
 
 #: ../src/gui/gtk.c:872
 msgctxt "accel"
@@ -1628,87 +2358,100 @@ msgctxt "accel"
 msgid "switch view"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/gui/gtkentry.c:193 ../src/imageio/storage/gallery.c:127
+=======
+#: ../src/gui/gtkentry.c:193 ../src/imageio/storage/gallery.c:126
+#: ../src/imageio/storage/latex.c:126
+msgid "$(ROLL_NAME) - roll of the input image"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:194 ../src/imageio/storage/gallery.c:127
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/imageio/storage/latex.c:127
 msgid "$(ROLL_NAME) - roll of the input image"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:194 ../src/imageio/storage/gallery.c:128
+#: ../src/gui/gtkentry.c:195 ../src/imageio/storage/gallery.c:128
 #: ../src/imageio/storage/latex.c:128
 msgid "$(FILE_FOLDER) - folder containing the input image"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:195 ../src/imageio/storage/gallery.c:129
+#: ../src/gui/gtkentry.c:196 ../src/imageio/storage/gallery.c:129
 #: ../src/imageio/storage/latex.c:129
 msgid "$(FILE_NAME) - basename of the input image"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:196 ../src/imageio/storage/gallery.c:130
+#: ../src/gui/gtkentry.c:197 ../src/imageio/storage/gallery.c:130
 #: ../src/imageio/storage/latex.c:130
 msgid "$(FILE_EXTENSION) - extension of the input image"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:197 ../src/imageio/storage/gallery.c:131
+#: ../src/gui/gtkentry.c:198 ../src/imageio/storage/gallery.c:131
 #: ../src/imageio/storage/latex.c:131
 msgid "$(SEQUENCE) - sequence number"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:198 ../src/imageio/storage/gallery.c:132
+#: ../src/gui/gtkentry.c:199 ../src/imageio/storage/gallery.c:132
 #: ../src/imageio/storage/latex.c:132
 msgid "$(YEAR) - year"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:199 ../src/imageio/storage/gallery.c:133
+#: ../src/gui/gtkentry.c:200 ../src/imageio/storage/gallery.c:133
 #: ../src/imageio/storage/latex.c:133
 msgid "$(MONTH) - month"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:200 ../src/imageio/storage/gallery.c:134
+#: ../src/gui/gtkentry.c:201 ../src/imageio/storage/gallery.c:134
 #: ../src/imageio/storage/latex.c:134
 msgid "$(DAY) - day"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:201 ../src/imageio/storage/gallery.c:135
+#: ../src/gui/gtkentry.c:202 ../src/imageio/storage/gallery.c:135
 #: ../src/imageio/storage/latex.c:135
 msgid "$(HOUR) - hour"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:202 ../src/imageio/storage/gallery.c:136
+#: ../src/gui/gtkentry.c:203 ../src/imageio/storage/gallery.c:136
 #: ../src/imageio/storage/latex.c:136
 msgid "$(MINUTE) - minute"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:203 ../src/imageio/storage/gallery.c:137
+#: ../src/gui/gtkentry.c:204 ../src/imageio/storage/gallery.c:137
 #: ../src/imageio/storage/latex.c:137
 msgid "$(SECOND) - second"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:204 ../src/imageio/storage/gallery.c:138
+#: ../src/gui/gtkentry.c:205 ../src/imageio/storage/gallery.c:138
 #: ../src/imageio/storage/latex.c:138
 msgid "$(EXIF_YEAR) - exif year"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:205 ../src/imageio/storage/gallery.c:139
+#: ../src/gui/gtkentry.c:206 ../src/imageio/storage/gallery.c:139
 #: ../src/imageio/storage/latex.c:139
 msgid "$(EXIF_MONTH) - exif month"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:206 ../src/imageio/storage/gallery.c:140
+#: ../src/gui/gtkentry.c:207 ../src/imageio/storage/gallery.c:140
 #: ../src/imageio/storage/latex.c:140
 msgid "$(EXIF_DAY) - exif day"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:207 ../src/imageio/storage/gallery.c:141
+#: ../src/gui/gtkentry.c:208 ../src/imageio/storage/gallery.c:141
 #: ../src/imageio/storage/latex.c:141
 msgid "$(EXIF_HOUR) - exif hour"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:208 ../src/imageio/storage/gallery.c:142
+#: ../src/gui/gtkentry.c:209 ../src/imageio/storage/gallery.c:142
 #: ../src/imageio/storage/latex.c:142
 msgid "$(EXIF_MINUTE) - exif minute"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:209 ../src/imageio/storage/gallery.c:143
+#: ../src/gui/gtkentry.c:210
+msgid "$(EXIF_ISO) - iso value"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:211 ../src/imageio/storage/gallery.c:143
 #: ../src/imageio/storage/latex.c:143
 msgid "$(EXIF_SECOND) - exif second"
 msgstr ""
@@ -1717,22 +2460,38 @@ msgstr ""
 msgid "$(EXIF_ISO) - iso value"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/gui/gtkentry.c:211 ../src/imageio/storage/gallery.c:144
+=======
+#: ../src/gui/gtkentry.c:212 ../src/imageio/storage/gallery.c:144
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/imageio/storage/latex.c:144
 msgid "$(STARS) - star rating"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/gui/gtkentry.c:212 ../src/imageio/storage/gallery.c:145
+=======
+#: ../src/gui/gtkentry.c:213 ../src/imageio/storage/gallery.c:145
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/imageio/storage/latex.c:145
 msgid "$(LABELS) - colorlabels"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/gui/gtkentry.c:213 ../src/imageio/storage/gallery.c:146
+=======
+#: ../src/gui/gtkentry.c:214 ../src/imageio/storage/gallery.c:146
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/imageio/storage/latex.c:146
 msgid "$(PICTURES_FOLDER) - pictures folder"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/gui/gtkentry.c:214 ../src/imageio/storage/gallery.c:147
+=======
+#: ../src/gui/gtkentry.c:215 ../src/imageio/storage/gallery.c:147
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/imageio/storage/latex.c:147
 msgid "$(HOME) - home folder"
 msgstr ""
@@ -1742,6 +2501,7 @@ msgstr ""
 msgid "$(DESKTOP) - desktop folder"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:222
 msgid "darktable preferences"
 msgstr "ปรับแต่ง darktable"
@@ -1756,10 +2516,26 @@ msgstr ""
 
 #: ../src/gui/preferences.c:430
 #, fuzzy
+=======
+#: ../src/gui/preferences.c:220
+msgid "darktable preferences"
+msgstr "ปรับแต่ง darktable"
+
+#: ../src/gui/preferences.c:222
+msgid "close"
+msgstr "ปิด"
+
+#: ../src/gui/preferences.c:411
+msgid "module"
+msgstr ""
+
+#: ../src/gui/preferences.c:425
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "name"
-msgstr "ชื่อแฟ้ม"
+msgstr "ชื่อ"
 
 #. exif
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:437 ../src/gui/preferences.c:1353
 #: ../src/gui/presets.c:420 ../src/libs/metadata_view.c:82
 msgid "model"
@@ -1772,44 +2548,83 @@ msgstr ""
 
 #: ../src/gui/preferences.c:451 ../src/gui/preferences.c:1369
 #: ../src/gui/presets.c:434 ../src/libs/collect.h:43
+=======
+#: ../src/gui/preferences.c:432 ../src/gui/preferences.c:1348
+#: ../src/gui/presets.c:419 ../src/libs/metadata_view.c:82
+msgid "model"
+msgstr "รุ่น"
+
+#: ../src/gui/preferences.c:439 ../src/gui/preferences.c:1356
+#: ../src/gui/presets.c:426 ../src/libs/metadata_view.c:83
+msgid "maker"
+msgstr ""
+
+#: ../src/gui/preferences.c:446 ../src/gui/preferences.c:1364
+#: ../src/gui/presets.c:433 ../src/libs/collect.h:43
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/metadata_view.c:84
 msgid "lens"
 msgstr "เลนส์"
 
 #. iso
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:458 ../src/gui/preferences.c:1376
 #: ../src/gui/presets.c:441 ../src/libs/camera.c:597 ../src/libs/collect.h:44
+=======
+#: ../src/gui/preferences.c:453 ../src/gui/preferences.c:1371
+#: ../src/gui/presets.c:440 ../src/libs/camera.c:597 ../src/libs/collect.h:44
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/metadata_view.c:89
 msgid "iso"
 msgstr ""
 
 #. exposure
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:465 ../src/gui/preferences.c:1389
 #: ../src/gui/presets.c:454 ../src/iop/exposure.c:42 ../src/iop/exposure.c:406
+=======
+#: ../src/gui/preferences.c:460 ../src/gui/preferences.c:1384
+#: ../src/gui/presets.c:453 ../src/iop/exposure.c:42 ../src/iop/exposure.c:406
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/relight.c:384 ../src/libs/metadata_view.c:86
 msgid "exposure"
 msgstr ""
 
 #. aperture
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:472 ../src/gui/preferences.c:1404
 #: ../src/gui/presets.c:469 ../src/libs/camera.c:549 ../src/libs/camera.c:558
+=======
+#: ../src/gui/preferences.c:467 ../src/gui/preferences.c:1399
+#: ../src/gui/presets.c:468 ../src/libs/camera.c:549 ../src/libs/camera.c:558
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/collect.h:45 ../src/libs/metadata_view.c:85
 msgid "aperture"
 msgstr "รูรับแสง"
 
 #. focal length
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:479 ../src/gui/preferences.c:1419
 #: ../src/gui/presets.c:484 ../src/libs/camera.c:568
+=======
+#: ../src/gui/preferences.c:474 ../src/gui/preferences.c:1414
+#: ../src/gui/presets.c:483 ../src/libs/camera.c:568
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/metadata_view.c:87
 msgid "focal length"
 msgstr "ระยะโฟกัส"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:486 ../src/iop/borders.c:1064
+=======
+#: ../src/gui/preferences.c:481 ../src/iop/borders.c:1066
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/exposure.c:411 ../src/iop/levels.c:286
 #: ../src/iop/tonecurve.c:554
 msgid "auto"
 msgstr "อัตโนมัติ"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:536
 msgid "shortcuts"
 msgstr ""
@@ -1819,24 +2634,44 @@ msgid "shortcut"
 msgstr ""
 
 #: ../src/gui/preferences.c:558
+=======
+#: ../src/gui/preferences.c:531
+msgid "shortcuts"
+msgstr ""
+
+#: ../src/gui/preferences.c:546
+msgid "shortcut"
+msgstr ""
+
+#: ../src/gui/preferences.c:553
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "binding"
 msgstr ""
 
 #. Adding the restore defaults button
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:597
 #, fuzzy
+=======
+#: ../src/gui/preferences.c:592
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "default"
-msgstr "(ปริยาย)"
+msgstr "ค่าเริ่มต้น"
 
 #. Adding the import/export buttons
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:606
 #, fuzzy
+=======
+#: ../src/gui/preferences.c:601
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "preferences"
 msgid "import"
 msgstr "นำเข้า"
 
 #. Export button
 #. export button
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:613 ../src/libs/export.c:656
 #: ../src/libs/styles.c:410
 msgid "export"
@@ -1860,30 +2695,70 @@ msgstr "ลบแท็ก?"
 
 #: ../src/gui/preferences.c:1113
 #, fuzzy
-msgid "select file to export"
-msgstr "เลือกม้วนฟิล์ม"
+=======
+#: ../src/gui/preferences.c:608 ../src/libs/export.c:621
+#: ../src/libs/styles.c:409
+msgid "export"
+msgstr "ส่งออก"
 
+#: ../src/gui/preferences.c:908
+msgid "press key combination to remap..."
+msgstr ""
+
+#: ../src/gui/preferences.c:1071 ../src/gui/presets.c:191
+#: ../src/libs/lib.c:315
+#, c-format
+msgid "do you really want to delete the preset `%s'?"
+msgstr "คุณต้องการจะลบค่าที่ตั้งไว้ '%s'?"
+
+#: ../src/gui/preferences.c:1072 ../src/gui/presets.c:192
+#: ../src/libs/lib.c:316
+msgid "delete preset?"
+msgstr "ลบค่าที่ตั้งไว้"
+
+#: ../src/gui/preferences.c:1108
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
+msgid "select file to export"
+msgstr "เลือกรูปภาพที่จะส่งออก"
+
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1144
 #, fuzzy
+=======
+#: ../src/gui/preferences.c:1139
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "select file to import"
-msgstr "เลือกหนึ่งหรือหลาายรูปภาพที่จะนำเขา"
+msgstr "เลือกรูปภาพที่จะนำเขา"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1194
+=======
+#: ../src/gui/preferences.c:1189
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "Are you sure you want to restore the default keybindings?  This will erase "
 "any modifications you have made."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1302 ../src/gui/presets.c:368
+=======
+#: ../src/gui/preferences.c:1297 ../src/gui/presets.c:367
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "edit `%s' for module `%s'"
 msgstr "แก้ไข `%s' สำหรับโมดูล `%s'"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1331 ../src/gui/presets.c:399
+=======
+#: ../src/gui/preferences.c:1326 ../src/gui/presets.c:398
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:234
 msgid "description or further information"
 msgstr "รายละเอียด หรือ ข้อมูลเพิ่มเติม"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1333 ../src/gui/presets.c:401
 msgid "auto apply this preset to matching images"
 msgstr ""
@@ -1893,26 +2768,50 @@ msgid "only show this preset for matching images"
 msgstr ""
 
 #: ../src/gui/preferences.c:1336 ../src/gui/presets.c:404
+=======
+#: ../src/gui/preferences.c:1328 ../src/gui/presets.c:400
+msgid "auto apply this preset to matching images"
+msgstr ""
+
+#: ../src/gui/preferences.c:1330 ../src/gui/presets.c:402
+msgid "only show this preset for matching images"
+msgstr ""
+
+#: ../src/gui/preferences.c:1331 ../src/gui/presets.c:403
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "be very careful with this option. this might be the last time you see your "
 "preset."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1352 ../src/gui/presets.c:419
+=======
+#: ../src/gui/preferences.c:1347 ../src/gui/presets.c:418
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, no-c-format
 msgid "string to match model (use % as wildcard)"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1360 ../src/gui/presets.c:426
+=======
+#: ../src/gui/preferences.c:1355 ../src/gui/presets.c:425
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, no-c-format
 msgid "string to match maker (use % as wildcard)"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1368 ../src/gui/presets.c:433
+=======
+#: ../src/gui/preferences.c:1363 ../src/gui/presets.c:432
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, no-c-format
 msgid "string to match lens (use % as wildcard)"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1380 ../src/gui/presets.c:445
 msgid "minimum iso value"
 msgstr ""
@@ -1946,18 +2845,59 @@ msgid "maximum focal length"
 msgstr "ระยะโฟกัสสูงสุด"
 
 #: ../src/gui/presets.c:147 ../src/gui/presets.c:789 ../src/gui/presets.c:802
+=======
+#: ../src/gui/preferences.c:1375 ../src/gui/presets.c:444
+msgid "minimum iso value"
+msgstr ""
+
+#: ../src/gui/preferences.c:1379 ../src/gui/presets.c:448
+msgid "maximum iso value"
+msgstr ""
+
+#: ../src/gui/preferences.c:1389 ../src/gui/presets.c:458
+msgid "minimum exposure time"
+msgstr ""
+
+#: ../src/gui/preferences.c:1390 ../src/gui/presets.c:459
+msgid "maximum exposure time"
+msgstr ""
+
+#: ../src/gui/preferences.c:1404 ../src/gui/presets.c:473
+msgid "minimum aperture value"
+msgstr "ค่ารูรับแสงต่ำสุด"
+
+#: ../src/gui/preferences.c:1405 ../src/gui/presets.c:474
+msgid "maximum aperture value"
+msgstr "ค่ารูรับแสงสูงสุด"
+
+#: ../src/gui/preferences.c:1421 ../src/gui/presets.c:490
+msgid "minimum focal length"
+msgstr "ระยะโฟกัสต่ำสุด"
+
+#: ../src/gui/preferences.c:1422 ../src/gui/presets.c:491
+msgid "maximum focal length"
+msgstr "ระยะโฟกัสสูงสุด"
+
+#: ../src/gui/presets.c:146 ../src/gui/presets.c:788 ../src/gui/presets.c:801
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:73
 msgid "(default)"
 msgstr "(ปริยาย)"
 
 #. then show edit dialog
+<<<<<<< HEAD
 #: ../src/gui/presets.c:223 ../src/gui/presets.c:597 ../src/gui/presets.c:604
 #: ../src/gui/presets.c:606 ../src/gui/presets.c:608 ../src/libs/lib.c:275
+=======
+#: ../src/gui/presets.c:222 ../src/gui/presets.c:596 ../src/gui/presets.c:603
+#: ../src/gui/presets.c:605 ../src/gui/presets.c:607 ../src/libs/lib.c:275
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:283 ../src/libs/lib.c:291 ../src/libs/lib.c:293
 #: ../src/libs/lib.c:295
 msgid "new preset"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/gui/presets.c:231
 msgid "please give preset a name"
 msgstr ""
@@ -1967,17 +2907,33 @@ msgid "unnamed preset"
 msgstr ""
 
 #: ../src/gui/presets.c:256 ../src/libs/lib.c:138
+=======
+#: ../src/gui/presets.c:230
+msgid "please give preset a name"
+msgstr ""
+
+#: ../src/gui/presets.c:232
+msgid "unnamed preset"
+msgstr ""
+
+#: ../src/gui/presets.c:255 ../src/libs/lib.c:138
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid ""
 "preset `%s' already exists.\n"
 "do you want to overwrite?"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/gui/presets.c:259 ../src/libs/lib.c:141
 #, fuzzy
+=======
+#: ../src/gui/presets.c:258 ../src/libs/lib.c:141
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "overwrite preset?"
-msgstr "เขียนทับ"
+msgstr "เขียนทับค่าที่ตั้งไว้"
 
+<<<<<<< HEAD
 #: ../src/gui/presets.c:395 ../src/libs/lib.c:230
 msgid "name of the preset"
 msgstr ""
@@ -2010,15 +2966,47 @@ msgid "style %s was successfully saved"
 msgstr "สไตล์ %s ถูกบันทึกสำเร็จแล้ว"
 
 #: ../src/gui/styles_dialog.c:293
+=======
+#: ../src/gui/presets.c:394 ../src/libs/lib.c:230
+msgid "name of the preset"
+msgstr ""
+
+#: ../src/gui/presets.c:811
+msgid "disabled: wrong module version"
+msgstr ""
+
+#: ../src/gui/presets.c:831 ../src/libs/lib.c:446
+msgid "edit this preset.."
+msgstr ""
+
+#: ../src/gui/presets.c:835 ../src/libs/lib.c:450
+msgid "delete this preset"
+msgstr ""
+
+#: ../src/gui/presets.c:841 ../src/libs/lib.c:457
+msgid "store new preset.."
+msgstr ""
+
+#: ../src/gui/presets.c:848 ../src/libs/lib.c:464
+msgid "update preset"
+msgstr "ปรับปรุงค่าที่ตั้งไว้"
+
+#: ../src/gui/styles_dialog.c:284
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "edit style"
 msgstr "แก้ไขสไตล์"
 
+<<<<<<< HEAD
 #: ../src/gui/styles_dialog.c:297
 #, fuzzy
+=======
+#: ../src/gui/styles_dialog.c:288
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "duplicate style"
-msgstr "แก้ไขสไตล์"
+msgstr "คัดลอกสไตล์"
 
+<<<<<<< HEAD
 #: ../src/gui/styles_dialog.c:298
 msgid "creates a duplicate of the style before applying changes"
 msgstr ""
@@ -2036,44 +3024,89 @@ msgid "enter a description for the new style, this description is searchable"
 msgstr "ป้อนรายละเอียดสำหรับสไตล์ใหม่enter, รายละเอียดนี้สามารถค้นหาได้"
 
 #: ../src/gui/styles_dialog.c:359 ../src/gui/styles_dialog.c:372
+=======
+#: ../src/gui/styles_dialog.c:289
+msgid "creates a duplicate of the style before applying changes"
+msgstr ""
+
+#: ../src/gui/styles_dialog.c:293
+msgid "create new style"
+msgstr "สร้างสไตล์ใหม่"
+
+#: ../src/gui/styles_dialog.c:314
+msgid "enter a name for the new style"
+msgstr "ป้อนชื่อสำหรับสไตล์ใหม่"
+
+#: ../src/gui/styles_dialog.c:317
+msgid "enter a description for the new style, this description is searchable"
+msgstr "ป้อนรายละเอียดสำหรับสไตล์ใหม่enter, รายละเอียดนี้สามารถค้นหาได้"
+
+#: ../src/gui/styles_dialog.c:350 ../src/gui/styles_dialog.c:363
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/gui/hist_dialog.c:181
 msgid "include"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/gui/styles_dialog.c:389
 #, fuzzy
 msgid "update"
 msgstr "วันที่/เวลา"
 
 #: ../src/gui/styles_dialog.c:401 ../src/gui/styles_dialog.c:408
+=======
+#: ../src/gui/styles_dialog.c:380
+msgid "update"
+msgstr "ปรับปรุง"
+
+#: ../src/gui/styles_dialog.c:392 ../src/gui/styles_dialog.c:399
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/gui/hist_dialog.c:192
 msgid "item"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/gui/styles_dialog.c:507
+=======
+#: ../src/gui/styles_dialog.c:498
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "can't create style out of unaltered image"
 msgstr ""
 
 #: ../src/gui/hist_dialog.c:150
+<<<<<<< HEAD
 #, fuzzy
 msgid "select parts"
 msgstr "เลือกทั้งหมด"
+=======
+msgid "select parts"
+msgstr "เลือกบางส่วน"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/gui/hist_dialog.c:228
 msgid "can't copy history out of unaltered image"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/imageio/format/copy.c:150 ../src/libs/copy_history.c:256
+=======
+#: ../src/imageio/format/copy.c:144 ../src/libs/copy_history.c:256
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/image.c:158
 msgid "copy"
 msgstr "คัดลอก"
 
+<<<<<<< HEAD
 #: ../src/imageio/format/copy.c:161
+=======
+#: ../src/imageio/format/copy.c:155
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "do a 1:1 copy of the selected files.\n"
 "the global options below do not apply!"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/imageio/format/exr.cc:160
 msgid "openexr"
 msgstr "openexr"
@@ -2091,10 +3124,30 @@ msgid "j2k"
 msgstr ""
 
 #: ../src/imageio/format/j2k.c:604 ../src/imageio/format/jpeg.c:542
+=======
+#: ../src/imageio/format/exr.cc:152
+msgid "openexr"
+msgstr "openexr"
+
+#: ../src/imageio/format/j2k.c:540
+msgid "jpeg 2000"
+msgstr ""
+
+#: ../src/imageio/format/j2k.c:575
+msgid "jp2"
+msgstr ""
+
+#: ../src/imageio/format/j2k.c:580
+msgid "j2k"
+msgstr ""
+
+#: ../src/imageio/format/j2k.c:587 ../src/imageio/format/jpeg.c:669
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/camera.c:617
 msgid "quality"
 msgstr "คุณภาพ"
 
+<<<<<<< HEAD
 #: ../src/imageio/format/j2k.c:613
 #, fuzzy
 msgid "dcp mode"
@@ -2137,6 +3190,49 @@ msgid "16-bit ppm"
 msgstr "16-บิต ppm"
 
 #: ../src/imageio/format/tiff.c:242
+=======
+#: ../src/imageio/format/j2k.c:596
+msgid "dcp mode"
+msgstr "โหมด dcp"
+
+#: ../src/imageio/format/j2k.c:602
+msgid "cinema2k, 24fps"
+msgstr ""
+
+#: ../src/imageio/format/j2k.c:603
+msgid "cinema2k, 48fps"
+msgstr ""
+
+#: ../src/imageio/format/j2k.c:604
+msgid "cinema4k, 24fps"
+msgstr ""
+
+#: ../src/imageio/format/jpeg.c:649
+msgid "8-bit jpg"
+msgstr "8-บิต jpg"
+
+#: ../src/imageio/format/pfm.c:97
+msgid "float pfm"
+msgstr ""
+
+#: ../src/imageio/format/png.c:384
+msgid "8/16-bit png"
+msgstr "8/16-บิต png"
+
+#: ../src/imageio/format/png.c:405 ../src/imageio/format/tiff.c:256
+msgid "8-bit"
+msgstr "8-บิต"
+
+#: ../src/imageio/format/png.c:410 ../src/imageio/format/tiff.c:261
+msgid "16-bit"
+msgstr "16-บิต"
+
+#: ../src/imageio/format/ppm.c:103
+msgid "16-bit ppm"
+msgstr "16-บิต ppm"
+
+#: ../src/imageio/format/tiff.c:235
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "8/16-bit tiff"
 msgstr "8/16-บิต tiff"
 
@@ -2151,27 +3247,48 @@ msgid ""
 "recognized variables:"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/disk.c:200 ../src/imageio/storage/gallery.c:252
 #: ../src/imageio/storage/latex.c:249
+=======
+#: ../src/imageio/storage/disk.c:199 ../src/imageio/storage/gallery.c:251
+#: ../src/imageio/storage/latex.c:248
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "could not create directory `%s'!"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/disk.c:207
+=======
+#: ../src/imageio/storage/disk.c:206
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "could not write to directory `%s'!"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/disk.c:240 ../src/imageio/storage/email.c:107
 #: ../src/imageio/storage/facebook.c:1191 ../src/imageio/storage/flickr.c:670
 #: ../src/imageio/storage/gallery.c:327 ../src/imageio/storage/gallery.c:346
 #: ../src/imageio/storage/picasa.c:1484
+=======
+#: ../src/imageio/storage/disk.c:239 ../src/imageio/storage/email.c:106
+#: ../src/imageio/storage/facebook.c:1190 ../src/imageio/storage/flickr.c:669
+#: ../src/imageio/storage/gallery.c:326 ../src/imageio/storage/gallery.c:345
+#: ../src/imageio/storage/picasa.c:1483
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "could not export to file `%s'!"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/disk.c:256 ../src/imageio/storage/email.c:115
 #: ../src/imageio/storage/gallery.c:356 ../src/imageio/storage/latex.c:339
+=======
+#: ../src/imageio/storage/disk.c:255 ../src/imageio/storage/email.c:114
+#: ../src/imageio/storage/gallery.c:355 ../src/imageio/storage/latex.c:338
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%d/%d exported to `%s%s'"
 msgstr "%d/%d ถูกส่งออกไปยัง `%s%s'"
@@ -2180,29 +3297,46 @@ msgstr "%d/%d ถูกส่งออกไปยัง `%s%s'"
 msgid "send as email"
 msgstr "ส่งเป็นอีเมล"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/email.c:166
 #, fuzzy
+=======
+#: ../src/imageio/storage/email.c:156
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "images exported from darktable"
-msgstr "นำเข้าจากกล้อง"
+msgstr "รูปภาพได้ถูกส่งออกแลัว"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:242
+=======
+#: ../src/imageio/storage/facebook.c:241
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "[facebook] unexpeted url format\n"
 msgstr ""
 
 #. //////////// build & show the validation dialog
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:603
+=======
+#: ../src/imageio/storage/facebook.c:602
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "step 1: a new window or tab of your browser should have been loaded. you "
 "have to login into your facebook account there and authorize darktable to "
 "upload photos before continuing."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:606 ../src/imageio/storage/picasa.c:837
+=======
+#: ../src/imageio/storage/facebook.c:605 ../src/imageio/storage/picasa.c:836
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "step 2: paste your browser url and click the ok button once you are done."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:614
 msgid "Facebook authentication"
 msgstr ""
@@ -2238,10 +3372,48 @@ msgstr "สร้างอัลบั้มใหม่"
 
 #: ../src/imageio/storage/facebook.c:925 ../src/imageio/storage/picasa.c:1107
 #: ../src/imageio/storage/picasa.c:1267
+=======
+#: ../src/imageio/storage/facebook.c:613
+msgid "Facebook authentication"
+msgstr ""
+
+#: ../src/imageio/storage/facebook.c:619 ../src/imageio/storage/picasa.c:850
+msgid "url:"
+msgstr ""
+
+#: ../src/imageio/storage/facebook.c:639 ../src/imageio/storage/picasa.c:870
+msgid "please enter the validation url"
+msgstr ""
+
+#: ../src/imageio/storage/facebook.c:650 ../src/imageio/storage/picasa.c:882
+msgid "the given url is not valid, it should look like: "
+msgstr ""
+
+#: ../src/imageio/storage/facebook.c:756 ../src/imageio/storage/picasa.c:1013
+msgid "new account"
+msgstr ""
+
+#: ../src/imageio/storage/facebook.c:763 ../src/imageio/storage/picasa.c:1020
+msgid "other account"
+msgstr ""
+
+#: ../src/imageio/storage/facebook.c:794 ../src/imageio/storage/picasa.c:1050
+msgid "unable to retreive the album list"
+msgstr ""
+
+#: ../src/imageio/storage/facebook.c:802 ../src/imageio/storage/flickr.c:387
+#: ../src/imageio/storage/flickr.c:415 ../src/imageio/storage/picasa.c:1058
+msgid "create new album"
+msgstr "สร้างอัลบั้มใหม่"
+
+#: ../src/imageio/storage/facebook.c:924 ../src/imageio/storage/picasa.c:1106
+#: ../src/imageio/storage/picasa.c:1266
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "logout"
 msgstr ""
 
 #. Set default permission to private
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:929 ../src/imageio/storage/facebook.c:942
 #: ../src/imageio/storage/facebook.c:969
 #: ../src/imageio/storage/facebook.c:1072 ../src/imageio/storage/flickr.c:526
@@ -2251,18 +3423,36 @@ msgid "login"
 msgstr ""
 
 #: ../src/imageio/storage/facebook.c:1006
+=======
+#: ../src/imageio/storage/facebook.c:928 ../src/imageio/storage/facebook.c:941
+#: ../src/imageio/storage/facebook.c:968
+#: ../src/imageio/storage/facebook.c:1071 ../src/imageio/storage/flickr.c:525
+#: ../src/imageio/storage/picasa.c:1112 ../src/imageio/storage/picasa.c:1270
+#: ../src/imageio/storage/picasa.c:1283 ../src/imageio/storage/picasa.c:1362
+msgid "login"
+msgstr ""
+
+#: ../src/imageio/storage/facebook.c:1005
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "facebook webalbum"
 msgstr ""
 
 #. create labels
 #. xmp
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:1019 ../src/imageio/storage/flickr.c:480
 #: ../src/imageio/storage/gallery.c:168 ../src/imageio/storage/latex.c:168
 #: ../src/imageio/storage/picasa.c:1312 ../src/libs/collect.h:38
+=======
+#: ../src/imageio/storage/facebook.c:1018 ../src/imageio/storage/flickr.c:479
+#: ../src/imageio/storage/gallery.c:167 ../src/imageio/storage/latex.c:167
+#: ../src/imageio/storage/picasa.c:1311 ../src/libs/collect.h:38
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/metadata.c:303 ../src/libs/metadata_view.c:95
 msgid "title"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:1020 ../src/imageio/storage/flickr.c:481
 #: ../src/imageio/storage/picasa.c:1313
 msgid "summary"
@@ -2294,31 +3484,81 @@ msgstr ""
 
 #: ../src/imageio/storage/facebook.c:1207 ../src/imageio/storage/picasa.c:1500
 #, fuzzy
-msgid "unable to create album"
-msgstr "สร้างอัลบั้มใหม่"
+=======
+#: ../src/imageio/storage/facebook.c:1019 ../src/imageio/storage/flickr.c:480
+#: ../src/imageio/storage/picasa.c:1312
+msgid "summary"
+msgstr ""
 
+#: ../src/imageio/storage/facebook.c:1020 ../src/imageio/storage/picasa.c:1313
+msgid "privacy"
+msgstr ""
+
+#: ../src/imageio/storage/facebook.c:1060
+msgid "Only Me"
+msgstr ""
+
+#: ../src/imageio/storage/facebook.c:1062
+msgid "Friends"
+msgstr ""
+
+#: ../src/imageio/storage/facebook.c:1064
+msgid "Public"
+msgstr ""
+
+#: ../src/imageio/storage/facebook.c:1066
+msgid "Friends of Friends"
+msgstr ""
+
+#: ../src/imageio/storage/facebook.c:1199 ../src/imageio/storage/picasa.c:1492
+msgid "unable to create album, no title provided"
+msgstr ""
+
+#: ../src/imageio/storage/facebook.c:1206 ../src/imageio/storage/picasa.c:1499
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
+msgid "unable to create album"
+msgstr "สร้างอัลบั้มใหม่ไม่ได้"
+
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:1217 ../src/imageio/storage/picasa.c:1510
+=======
+#: ../src/imageio/storage/facebook.c:1216 ../src/imageio/storage/picasa.c:1509
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "unable to export photo to webalbum"
 msgstr ""
 
 #. this makes sense only if the export was successful
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:1234
 #, fuzzy, c-format
+=======
+#: ../src/imageio/storage/facebook.c:1233
+#, c-format
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "%d/%d exported to facebook webalbum"
-msgstr "%d/%d ถูกส่งออกไปยัง `%s%s'"
+msgstr "%d/%d ถูกส่งออกไปยัง facebook แลัว "
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:116
+=======
+#: ../src/imageio/storage/flickr.c:115
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "flickr authentication: %s"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:191
+=======
+#: ../src/imageio/storage/flickr.c:190
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "step 1: a new window or tab of your browser should have been loaded. you "
 "have to login into your flickr account there and authorize darktable to "
 "upload photos before continuing."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:192
 msgid "step 2: click the ok button once you are done."
 msgstr ""
@@ -2337,10 +3577,31 @@ msgid "not authenticated"
 msgstr ""
 
 #: ../src/imageio/storage/flickr.c:368 ../src/imageio/storage/flickr.c:845
+=======
+#: ../src/imageio/storage/flickr.c:191
+msgid "step 2: click the ok button once you are done."
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:198
+msgid "flickr authentication"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:307
+msgid "flickr webalbum"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:331 ../src/imageio/storage/flickr.c:371
+#: ../src/imageio/storage/flickr.c:840 ../src/imageio/storage/flickr.c:846
+msgid "not authenticated"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:367 ../src/imageio/storage/flickr.c:836
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "authenticated"
 msgstr ""
 
 #. Add standard action
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:387
 msgid "without album"
 msgstr ""
@@ -2398,23 +3659,98 @@ msgid "friends + family"
 msgstr ""
 
 #: ../src/imageio/storage/flickr.c:542
+=======
+#: ../src/imageio/storage/flickr.c:386
+msgid "without album"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:472
+msgid "flickr user"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:473
+msgid "photosets"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:474
+msgid "visible to"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:477
+msgid "click login button to start"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:514
+msgid "my new photoset"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:515
+msgid "exported from darktable"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:523
+msgid "refresh album list"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:526
+msgid "Flickr login"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:533
+msgid "export tags"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:537
+msgid "you"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:538
+msgid "friends"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:539
+msgid "family"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:540
+msgid "friends + family"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:541
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "everyone"
 msgstr ""
 
 #. this makes sense only if the export was successful
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:744
+=======
+#: ../src/imageio/storage/flickr.c:743
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%d/%d exported to flickr webalbum"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/gallery.c:71
 msgid "website gallery"
 msgstr ""
 
 #: ../src/imageio/storage/gallery.c:174
 #, fuzzy
+=======
+#: ../src/imageio/storage/flickr.c:848
+msgid "Flickr account not authenticated"
+msgstr ""
+
+#: ../src/imageio/storage/gallery.c:70
+msgid "website gallery"
+msgstr ""
+
+#: ../src/imageio/storage/gallery.c:173
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "enter the title of the website"
-msgstr "ป้อนชื่อสำหรับสไตล์ใหม่"
+msgstr "ป้อนชื่อของเว็บไซต์"
 
 #: ../src/imageio/storage/latex.c:71
 msgid "latex book template"
@@ -2426,13 +3762,18 @@ msgid "enter the title of the book"
 msgstr ""
 
 #. //////////// build & show the validation dialog
+<<<<<<< HEAD
 #: ../src/imageio/storage/picasa.c:834
+=======
+#: ../src/imageio/storage/picasa.c:833
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "step 1: a new window or tab of your browser should have been loaded. you "
 "have to login into your picasa account there and authorize darktable to "
 "upload photos before continuing."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/picasa.c:845
 msgid "picasa authentication"
 msgstr ""
@@ -2452,6 +3793,26 @@ msgstr "อัลบั้มสาธารณะ"
 
 #. this makes sense only if the export was successful
 #: ../src/imageio/storage/picasa.c:1527
+=======
+#: ../src/imageio/storage/picasa.c:844
+msgid "picasa authentication"
+msgstr ""
+
+#: ../src/imageio/storage/picasa.c:1298
+msgid "picasa webalbum"
+msgstr ""
+
+#: ../src/imageio/storage/picasa.c:1355
+msgid "private"
+msgstr ""
+
+#: ../src/imageio/storage/picasa.c:1357
+msgid "public"
+msgstr "สาธารณะ"
+
+#. this makes sense only if the export was successful
+#: ../src/imageio/storage/picasa.c:1526
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%d/%d exported to picasa webalbum"
 msgstr ""
@@ -2564,12 +3925,20 @@ msgstr ""
 msgid "sharpness of edges at each feature size"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/atrous.c:1457 ../src/iop/colorzones.c:1045
 #: ../src/iop/soften.c:601
 msgid "mix"
 msgstr ""
 
 #: ../src/iop/atrous.c:1458 ../src/iop/colorzones.c:1047
+=======
+#: ../src/iop/atrous.c:1457 ../src/iop/soften.c:601
+msgid "mix"
+msgstr ""
+
+#: ../src/iop/atrous.c:1458
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "make effect stronger or weaker"
 msgstr ""
 
@@ -2675,28 +4044,40 @@ msgstr ""
 
 #: ../src/iop/bilateral.cc:88 ../src/iop/lowpass.c:102 ../src/iop/shadhi.c:148
 #: ../src/iop/sharpen.c:104
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "radius"
 msgstr "รัศมี"
 
 #: ../src/iop/bilateral.cc:89 ../src/iop/channelmixer.c:134
 #: ../src/iop/temperature.c:98
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "red"
 msgstr "แดง"
 
 #: ../src/iop/bilateral.cc:90 ../src/iop/channelmixer.c:135
 #: ../src/iop/temperature.c:99
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "green"
 msgstr "เขียว"
 
 #: ../src/iop/bilateral.cc:91 ../src/iop/channelmixer.c:136
 #: ../src/iop/temperature.c:100
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "blue"
 msgstr "น้ำเงิน"
@@ -2723,22 +4104,27 @@ msgid "radius"
 msgstr "รัศมี"
 
 #: ../src/iop/bloom.c:80 ../src/iop/soften.c:102
-#, fuzzy
 msgctxt "accel"
 msgid "size"
 msgstr "ขนาด"
 
 #: ../src/iop/bloom.c:81 ../src/iop/hotpixels.c:84 ../src/iop/sharpen.c:106
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "threshold"
-msgstr "เธรด"
+msgstr "เกณฑ์ภาพ"
 
 #: ../src/iop/bloom.c:82 ../src/iop/grain.c:325 ../src/iop/hotpixels.c:85
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "strength"
-msgstr "ระยะโฟกัส"
+msgstr "ความแรงของภาพ"
 
 #: ../src/iop/bloom.c:336 ../src/iop/soften.c:576 ../src/libs/camera.c:627
 msgid "size"
@@ -2790,6 +4176,7 @@ msgctxt "accel"
 msgid "pick frame line color from image"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:546
 msgid "15:10 postcard white"
 msgstr ""
@@ -2800,15 +4187,31 @@ msgstr ""
 
 #: ../src/iop/borders.c:794
 #, fuzzy
-msgid "select border color"
-msgstr "เลือกโทนสี"
+=======
+#: ../src/iop/borders.c:548
+msgid "15:10 postcard white"
+msgstr ""
 
+#: ../src/iop/borders.c:551
+msgid "15:10 postcard black"
+msgstr ""
+
+#: ../src/iop/borders.c:796
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
+msgid "select border color"
+msgstr "เลือกสีขอบ"
+
+<<<<<<< HEAD
 #: ../src/iop/borders.c:831
 #, fuzzy
+=======
+#: ../src/iop/borders.c:833
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "select frame line color"
-msgstr "เลือกโทนสี"
+msgstr "เลือกสีเฟรม"
 
 #. add import singel image buttons
+<<<<<<< HEAD
 #: ../src/iop/borders.c:981 ../src/iop/clipping.c:1737
 #: ../src/iop/watermark.c:1057 ../src/libs/import.c:814
 msgid "image"
@@ -2816,9 +4219,18 @@ msgstr "รูปภาพ"
 
 #: ../src/iop/borders.c:982
 #, fuzzy
-msgid "3:1"
-msgstr "3:2"
+=======
+#: ../src/iop/borders.c:983 ../src/iop/clipping.c:1740
+#: ../src/libs/import.c:818
+msgid "image"
+msgstr "รูปภาพ"
 
+#: ../src/iop/borders.c:984
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
+msgid "3:1"
+msgstr "3:1"
+
+<<<<<<< HEAD
 #: ../src/iop/borders.c:983
 msgid "95:33"
 msgstr ""
@@ -2897,9 +4309,89 @@ msgstr ""
 
 #: ../src/iop/borders.c:1063 ../src/iop/flip.c:81
 #, fuzzy
-msgid "orientation"
-msgstr "ตัวเลือกหลัก"
+=======
+#: ../src/iop/borders.c:985
+msgid "95:33"
+msgstr ""
 
+#: ../src/iop/borders.c:986
+msgid "2:1"
+msgstr ""
+
+#: ../src/iop/borders.c:987 ../src/iop/clipping.c:1749
+msgid "16:9"
+msgstr "16:9"
+
+#: ../src/iop/borders.c:988 ../src/iop/clipping.c:1741
+msgid "golden cut"
+msgstr ""
+
+#: ../src/iop/borders.c:989 ../src/iop/clipping.c:1743
+msgid "3:2"
+msgstr "3:2"
+
+#: ../src/iop/borders.c:990
+msgid "A4"
+msgstr ""
+
+#: ../src/iop/borders.c:991 ../src/iop/clipping.c:1748
+msgid "DIN"
+msgstr ""
+
+#: ../src/iop/borders.c:992 ../src/iop/clipping.c:1745
+msgid "4:3"
+msgstr "4:3"
+
+#: ../src/iop/borders.c:993 ../src/iop/clipping.c:1747
+msgid "square"
+msgstr "จัตุรัส"
+
+#: ../src/iop/borders.c:994
+msgid "constant border"
+msgstr ""
+
+#: ../src/iop/borders.c:1016 ../src/iop/borders.c:1021
+msgid "center"
+msgstr ""
+
+#: ../src/iop/borders.c:1017 ../src/iop/borders.c:1022
+msgid "1/3"
+msgstr ""
+
+#: ../src/iop/borders.c:1018 ../src/iop/borders.c:1023
+msgid "3/8"
+msgstr ""
+
+#: ../src/iop/borders.c:1019 ../src/iop/borders.c:1024
+msgid "5/8"
+msgstr ""
+
+#: ../src/iop/borders.c:1020 ../src/iop/borders.c:1025
+msgid "2/3"
+msgstr ""
+
+#: ../src/iop/borders.c:1050
+msgid "border size"
+msgstr ""
+
+#: ../src/iop/borders.c:1053
+msgid "size of the border in percent of the full image"
+msgstr ""
+
+#: ../src/iop/borders.c:1058 ../src/iop/clipping.c:1738
+msgid "aspect"
+msgstr ""
+
+#: ../src/iop/borders.c:1062
+msgid "select the aspect ratio or right click and type your own (w:h)"
+msgstr ""
+
+#: ../src/iop/borders.c:1065 ../src/iop/flip.c:81
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
+msgid "orientation"
+msgstr "การวางภาพ"
+
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1065
 #, fuzzy
 msgid "portrait"
@@ -2918,21 +4410,49 @@ msgid "horizontal position"
 msgstr ""
 
 #: ../src/iop/borders.c:1076
+=======
+#: ../src/iop/borders.c:1067
+msgid "portrait"
+msgstr "แนวตั้ง"
+
+#: ../src/iop/borders.c:1068
+msgid "landscape"
+msgstr ""
+
+#: ../src/iop/borders.c:1069
+msgid "aspect ratio orientation of the image with border"
+msgstr ""
+
+#: ../src/iop/borders.c:1075
+msgid "horizontal position"
+msgstr ""
+
+#: ../src/iop/borders.c:1078
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "select the horizontal position ratio relative to top or right click and type "
 "your own (y:h)"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1079
 msgid "vertical position"
 msgstr ""
 
 #: ../src/iop/borders.c:1082
+=======
+#: ../src/iop/borders.c:1081
+msgid "vertical position"
+msgstr ""
+
+#: ../src/iop/borders.c:1084
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "select the vertical position ratio relative to left or right click and type "
 "your own (x:w)"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1086
 msgid "frame line size"
 msgstr ""
@@ -2959,10 +4479,41 @@ msgstr ""
 
 #: ../src/iop/borders.c:1117
 #, fuzzy
-msgid "frame line color"
-msgstr "เลือกโทนสี"
+=======
+#: ../src/iop/borders.c:1088
+msgid "frame line size"
+msgstr ""
 
+#: ../src/iop/borders.c:1091
+msgid "size of the frame line in percent of min border width"
+msgstr ""
+
+#: ../src/iop/borders.c:1095
+msgid "frame line offset"
+msgstr ""
+
+#: ../src/iop/borders.c:1098
+msgid "offset of the frame line beginning on picture side"
+msgstr ""
+
+#: ../src/iop/borders.c:1104
+msgid "border color"
+msgstr ""
+
+#: ../src/iop/borders.c:1107
+msgid "pick border color from image"
+msgstr ""
+
+#: ../src/iop/borders.c:1119
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
+msgid "frame line color"
+msgstr "สีเฟรม"
+
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1120
+=======
+#: ../src/iop/borders.c:1122
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "pick frame line color from image"
 msgstr ""
 
@@ -2986,14 +4537,19 @@ msgid "channel mixer"
 msgstr ""
 
 #: ../src/iop/channelmixer.c:436
-#, fuzzy
 msgid "destination"
-msgstr "รายละเอียด"
+msgstr "ปลายทาง"
 
 #. dt_bauhaus_slider_set_format(g->gslider2, "");
+<<<<<<< HEAD
 #: ../src/iop/channelmixer.c:438 ../src/iop/colorcorrection.c:282
 #: ../src/iop/colorize.c:431 ../src/iop/colorzones.c:1019
 #: ../src/iop/colorzones.c:1055 ../src/iop/graduatednd.c:1064
+=======
+#: ../src/iop/channelmixer.c:438 ../src/iop/colorcorrection.c:289
+#: ../src/iop/colorize.c:431 ../src/iop/colorzones.c:974
+#: ../src/iop/colorzones.c:1003 ../src/iop/graduatednd.c:1064
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/lowpass.c:523 ../src/iop/soften.c:584
 #: ../src/iop/splittoning.c:554 ../src/iop/vignette.c:1129
 msgid "saturation"
@@ -3067,6 +4623,7 @@ msgstr ""
 msgid "crop and rotate"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1360
 msgid "invalid ratio format. it should be \"number:number\""
 msgstr ""
@@ -3100,10 +4657,45 @@ msgid "flip"
 msgstr ""
 
 #: ../src/iop/clipping.c:1702 ../src/iop/clipping.c:1780
+=======
+#: ../src/iop/clipping.c:1363
+msgid "invalid ratio format. it should be \"number:number\""
+msgstr ""
+
+#: ../src/iop/clipping.c:1463 ../src/iop/clipping.c:1704
+#: ../src/iop/clipping.c:1721
+msgid "vertical"
+msgstr ""
+
+#: ../src/iop/clipping.c:1464 ../src/iop/clipping.c:1703
+#: ../src/iop/clipping.c:1722
+msgid "horizontal"
+msgstr ""
+
+#: ../src/iop/clipping.c:1465 ../src/iop/clipping.c:1723
+msgid "full"
+msgstr ""
+
+#: ../src/iop/clipping.c:1466
+msgid "old system"
+msgstr ""
+
+#: ../src/iop/clipping.c:1467
+msgid "correction applied"
+msgstr "ได้ทำการแก้ไขแลัว"
+
+#: ../src/iop/clipping.c:1701 ../src/iop/clipping.c:1779
+#: ../src/libs/live_view.c:335
+msgid "flip"
+msgstr ""
+
+#: ../src/iop/clipping.c:1705 ../src/iop/clipping.c:1783
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/live_view.c:339
 msgid "both"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1704
 msgid "mirror image horizontally and/or vertically"
 msgstr ""
@@ -3227,21 +4819,156 @@ msgid "golden spiral"
 msgstr ""
 
 #: ../src/iop/clipping.c:1790 ../src/iop/lens.c:1711
+=======
+#: ../src/iop/clipping.c:1707
+msgid "mirror image horizontally and/or vertically"
+msgstr ""
+
+#: ../src/iop/clipping.c:1712
+msgid "angle"
+msgstr "มุม"
+
+#: ../src/iop/clipping.c:1715
+msgid "right-click and drag a line on the image to drag a straight line"
+msgstr ""
+
+#: ../src/iop/clipping.c:1719
+msgid "keystone"
+msgstr ""
+
+#: ../src/iop/clipping.c:1724
+msgid "set perspective correction for your image"
+msgstr ""
+
+#: ../src/iop/clipping.c:1729
+msgid "automatic cropping"
+msgstr "คร็อปภาพโดยอัตโนมัติ"
+
+#: ../src/iop/clipping.c:1730
+msgid "no"
+msgstr ""
+
+#: ../src/iop/clipping.c:1731
+msgid "yes"
+msgstr "ใช่"
+
+#: ../src/iop/clipping.c:1732
+msgid "automatically crop to avoid black edges"
+msgstr ""
+
+#: ../src/iop/clipping.c:1739
+msgid "free"
+msgstr "อิสระ"
+
+#: ../src/iop/clipping.c:1742
+msgid "1:2"
+msgstr "1:2"
+
+#: ../src/iop/clipping.c:1744
+msgid "7:5"
+msgstr ""
+
+#: ../src/iop/clipping.c:1746
+msgid "5:4"
+msgstr ""
+
+#: ../src/iop/clipping.c:1750
+msgid "16:10"
+msgstr ""
+
+#: ../src/iop/clipping.c:1751
+msgid "10:8 in print"
+msgstr ""
+
+#: ../src/iop/clipping.c:1756
+msgid "set the aspect ratio (w:h)"
+msgstr ""
+
+#: ../src/iop/clipping.c:1762 ../src/libs/live_view.c:323
+msgid "guides"
+msgstr ""
+
+#: ../src/iop/clipping.c:1764 ../src/libs/live_view.c:325
+msgid "grid"
+msgstr ""
+
+#: ../src/iop/clipping.c:1765 ../src/libs/live_view.c:326
+msgid "rules of thirds"
+msgstr ""
+
+#: ../src/iop/clipping.c:1766 ../src/libs/live_view.c:327
+msgid "diagonal method"
+msgstr ""
+
+#: ../src/iop/clipping.c:1767 ../src/libs/live_view.c:328
+msgid "harmonious triangles"
+msgstr ""
+
+#: ../src/iop/clipping.c:1768 ../src/libs/live_view.c:329
+msgid "golden mean"
+msgstr ""
+
+#: ../src/iop/clipping.c:1774 ../src/libs/live_view.c:330
+msgid "display guide lines to help compose your photograph"
+msgstr ""
+
+#: ../src/iop/clipping.c:1781 ../src/libs/live_view.c:337
+msgid "horizontally"
+msgstr ""
+
+#: ../src/iop/clipping.c:1782 ../src/libs/live_view.c:338
+msgid "vertically"
+msgstr ""
+
+#: ../src/iop/clipping.c:1784 ../src/libs/live_view.c:340
+msgid "flip guides"
+msgstr ""
+
+#: ../src/iop/clipping.c:1789 ../src/libs/live_view.c:344
+msgid "extra"
+msgstr ""
+
+#: ../src/iop/clipping.c:1790 ../src/libs/live_view.c:345
+msgid "golden sections"
+msgstr ""
+
+#: ../src/iop/clipping.c:1791 ../src/libs/live_view.c:346
+msgid "golden spiral sections"
+msgstr ""
+
+#: ../src/iop/clipping.c:1792 ../src/libs/live_view.c:347
+msgid "golden spiral"
+msgstr ""
+
+#: ../src/iop/clipping.c:1793 ../src/iop/lens.c:1738
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/live_view.c:348 ../src/libs/tools/filter.c:101
 msgid "all"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1791 ../src/libs/live_view.c:349
 msgid "show some extra guides"
 msgstr ""
 
 #: ../src/iop/clipping.c:2792
+=======
+#: ../src/iop/clipping.c:1794 ../src/libs/live_view.c:349
+msgid "show some extra guides"
+msgstr ""
+
+#: ../src/iop/clipping.c:2795
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "commit"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:2794
 #, fuzzy
+=======
+#: ../src/iop/clipping.c:2797
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "angle"
 msgstr "มุม"
@@ -3257,10 +4984,9 @@ msgid "green vs magenta"
 msgstr ""
 
 #: ../src/iop/colorcontrast.c:108
-#, fuzzy
 msgctxt "accel"
 msgid "blue vs yellow"
-msgstr "เหลือง"
+msgstr "สีฟ้า vs สีเหลือง"
 
 #: ../src/iop/colorcontrast.c:332
 msgid "green vs magenta"
@@ -3271,9 +4997,8 @@ msgid "steepness of the a* curve in Lab"
 msgstr ""
 
 #: ../src/iop/colorcontrast.c:342
-#, fuzzy
 msgid "blue vs yellow"
-msgstr "เหลือง"
+msgstr "สีฟ้า vs สีเหลือง"
 
 #: ../src/iop/colorcontrast.c:345
 msgid "steepness of the b* curve in Lab"
@@ -3284,26 +5009,34 @@ msgid "color correction"
 msgstr ""
 
 #: ../src/iop/colorcorrection.c:95
-msgid "warming filter"
+msgid "warm tone"
 msgstr ""
 
 #: ../src/iop/colorcorrection.c:102
+msgid "warming filter"
+msgstr ""
+
+#: ../src/iop/colorcorrection.c:109
 msgid "cooling filter"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/colorcorrection.c:107 ../src/iop/lowpass.c:104
+=======
+#: ../src/iop/colorcorrection.c:114 ../src/iop/lowpass.c:104
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/soften.c:103 ../src/iop/vignette.c:161
 msgctxt "accel"
 msgid "saturation"
 msgstr ""
 
-#: ../src/iop/colorcorrection.c:263
+#: ../src/iop/colorcorrection.c:270
 msgid ""
 "drag the line for split toning. bright means highlights, dark means shadows. "
 "use mouse wheel to change saturation."
 msgstr ""
 
-#: ../src/iop/colorcorrection.c:281
+#: ../src/iop/colorcorrection.c:288
 msgid "set the global saturation"
 msgstr ""
 
@@ -3340,9 +5073,12 @@ msgid "alternate color matrix"
 msgstr ""
 
 #: ../src/iop/colorin.c:752 ../src/iop/colorin.c:784
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "sRGB (e.g. jpg)"
-msgstr "srgb (เช่น jpg)"
+msgstr "sRGB (เช่น jpg)"
 
 #: ../src/iop/colorin.c:754 ../src/iop/colorin.c:786 ../src/iop/colorout.c:921
 #: ../src/iop/colorout.c:922 ../src/iop/colorout.c:923
@@ -3351,7 +5087,11 @@ msgstr ""
 
 #: ../src/iop/colorin.c:756 ../src/iop/colorin.c:788 ../src/iop/colorout.c:909
 #: ../src/iop/colorout.c:910 ../src/iop/colorout.c:911
+<<<<<<< HEAD
 #: ../src/libs/export.c:556
+=======
+#: ../src/libs/export.c:521
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "linear RGB"
 msgstr ""
 
@@ -3369,7 +5109,11 @@ msgid "Lab"
 msgstr "แล็บ"
 
 #: ../src/iop/colorin.c:896 ../src/iop/denoiseprofile.c:1712
+<<<<<<< HEAD
 #: ../src/libs/export.c:597
+=======
+#: ../src/libs/export.c:562
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "profile"
 msgstr ""
 
@@ -3379,9 +5123,8 @@ msgid "icc profiles in %s/color/in or %s/color/in"
 msgstr ""
 
 #: ../src/iop/colorize.c:73
-#, fuzzy
 msgid "colorize"
-msgstr "สี"
+msgstr "ใช้สี"
 
 #: ../src/iop/colorize.c:89
 msgctxt "accel"
@@ -3394,14 +5137,20 @@ msgid "source mix"
 msgstr ""
 
 #: ../src/iop/colorize.c:279 ../src/iop/splittoning.c:402
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "select tone color"
 msgstr "เลือกโทนสี"
 
 #: ../src/iop/colorize.c:424 ../src/iop/splittoning.c:549
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "select the hue tone"
-msgstr "ไม่เลือก"
+msgstr "เลือกโทนสี (hue)"
 
 #: ../src/iop/colorize.c:434
 msgid "select the saturation shadow tone"
@@ -3509,23 +5258,39 @@ msgid "output intent"
 msgstr ""
 
 #: ../src/iop/colorout.c:869 ../src/iop/colorout.c:876
+<<<<<<< HEAD
 #: ../src/libs/export.c:525
+=======
+#: ../src/libs/export.c:490
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "perceptual"
 msgstr ""
 
 #: ../src/iop/colorout.c:870 ../src/iop/colorout.c:877
+<<<<<<< HEAD
 #: ../src/libs/export.c:526
+=======
+#: ../src/libs/export.c:491
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "relative colorimetric"
 msgstr ""
 
 #: ../src/iop/colorout.c:871 ../src/iop/colorout.c:878
+<<<<<<< HEAD
 #: ../src/libs/export.c:527
+=======
+#: ../src/libs/export.c:492
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "rendering intent"
 msgid "saturation"
 msgstr ""
 
 #: ../src/iop/colorout.c:872 ../src/iop/colorout.c:879
+<<<<<<< HEAD
 #: ../src/libs/export.c:528
+=======
+#: ../src/libs/export.c:493
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "absolute colorimetric"
 msgstr ""
 
@@ -3546,12 +5311,20 @@ msgid "display profile"
 msgstr ""
 
 #. the system display profile is only suitable for display purposes
+<<<<<<< HEAD
 #: ../src/iop/colorout.c:905 ../src/libs/export.c:609
+=======
+#: ../src/iop/colorout.c:905 ../src/libs/export.c:574
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "system display profile"
 msgstr ""
 
 #: ../src/iop/colorout.c:915 ../src/iop/colorout.c:916
+<<<<<<< HEAD
 #: ../src/iop/colorout.c:917 ../src/libs/export.c:537
+=======
+#: ../src/iop/colorout.c:917 ../src/libs/export.c:502
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "sRGB (web-safe)"
 msgstr ""
 
@@ -3594,7 +5367,10 @@ msgid "acquire"
 msgstr ""
 
 #: ../src/iop/colortransfer.c:123 ../src/libs/metadata.c:275
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "apply"
 msgstr "เริ่มใช้"
@@ -3626,6 +5402,7 @@ msgstr "เริ่มใช้"
 msgid "apply previously analyzed image look to this image"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/colorzones.c:120
 msgid "color zones"
 msgstr ""
@@ -3750,6 +5527,38 @@ msgstr ""
 
 #: ../src/iop/denoiseprofile.c:129
 msgid "denoise (profiled)"
+=======
+#: ../src/iop/colorzones.c:111
+msgid "color zones"
+msgstr ""
+
+#: ../src/iop/colorzones.c:403
+msgid "red black white"
+msgstr ""
+
+#: ../src/iop/colorzones.c:421
+msgid "black white and skin tones"
+msgstr ""
+
+#: ../src/iop/colorzones.c:439
+msgid "polarizing filter"
+msgstr ""
+
+#: ../src/iop/colorzones.c:467
+msgid "natural skin tones"
+msgstr ""
+
+#: ../src/iop/colorzones.c:495
+msgid "black & white film"
+msgstr ""
+
+#: ../src/iop/colorzones.c:1000
+msgid "select by"
+msgstr ""
+
+#: ../src/iop/colorzones.c:1001
+msgid "choose selection criterion, will be the abscissa in the graph"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgstr ""
 
 #: ../src/iop/denoiseprofile.c:1461 ../src/iop/denoiseprofile.c:1469
@@ -3762,10 +5571,189 @@ msgstr ""
 msgid "interpolated from iso %d and %d"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/denoiseprofile.c:1713 ../src/iop/lens.c:1866
 #, fuzzy
 msgid "mode"
 msgstr "รุ่น"
+
+#: ../src/iop/denoiseprofile.c:1714 ../src/iop/nlmeans.c:712
+msgid "patch size"
+msgstr ""
+
+#: ../src/iop/denoiseprofile.c:1717
+msgid "non-local means"
+msgstr ""
+
+#: ../src/iop/denoiseprofile.c:1718
+msgid "wavelets"
+msgstr ""
+
+#: ../src/iop/denoiseprofile.c:1719
+msgid "profile used for variance stabilization"
+msgstr ""
+
+#: ../src/iop/denoiseprofile.c:1720
+=======
+#: ../src/iop/demosaic.c:1315
+msgid "ppg (fast)"
+msgstr ""
+
+#: ../src/iop/demosaic.c:1316
+msgid "amaze (slow)"
+msgstr ""
+
+#: ../src/iop/demosaic.c:1317 ../src/iop/dither.c:567
+#: ../src/iop/highlights.c:378
+msgid "method"
+msgstr "วิธีการ"
+
+#: ../src/iop/demosaic.c:1319
+msgid "demosaicing raw data method"
+msgstr ""
+
+#: ../src/iop/demosaic.c:1322
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
+msgid ""
+"method used in the denoising core. non-local means works best for "
+"`lightness' blending, wavelets work best for `color' blending"
+msgstr ""
+
+<<<<<<< HEAD
+#: ../src/iop/denoiseprofile.c:1721
+msgid "radius of the patches to match. increase for more sharpness"
+msgstr ""
+
+#: ../src/iop/denoiseprofile.c:1722
+msgid "finetune denoising strength"
+msgstr ""
+
+#: ../src/iop/dither.c:98 ../src/iop/vignette.c:1134
+msgid "dithering"
+msgstr ""
+
+#. add the preset.
+#: ../src/iop/dither.c:124
+msgid "dither"
+msgstr ""
+
+#: ../src/iop/dither.c:561
+msgid "random"
+msgstr ""
+
+#: ../src/iop/dither.c:562
+msgid "floyd-steinberg 1-bit b&w"
+msgstr ""
+
+#: ../src/iop/dither.c:563
+msgid "floyd-steinberg 4-bit gray"
+msgstr ""
+
+#: ../src/iop/dither.c:564
+msgid "floyd-steinberg 8-bit rgb"
+msgstr ""
+
+#: ../src/iop/dither.c:565
+msgid "floyd-steinberg 16-bit rgb"
+msgstr ""
+
+#: ../src/iop/dither.c:566
+msgid "floyd-steinberg auto"
+msgstr ""
+
+#: ../src/iop/dither.c:571
+msgid "radius for blurring step"
+msgstr ""
+
+#: ../src/iop/dither.c:583
+msgid "the gradient range where to apply random dither"
+msgstr ""
+
+#: ../src/iop/dither.c:584
+msgid "gradient range"
+msgstr ""
+
+#: ../src/iop/dither.c:591
+msgid "damping level of random dither"
+msgstr ""
+
+#: ../src/iop/dither.c:592
+msgid "damping"
+=======
+#: ../src/iop/demosaic.c:1323
+msgid "edge threshold"
+msgstr ""
+
+#: ../src/iop/demosaic.c:1327
+msgid "color smoothing"
+msgstr ""
+
+#: ../src/iop/demosaic.c:1330
+msgid "one time"
+msgstr ""
+
+#: ../src/iop/demosaic.c:1331
+msgid "two times"
+msgstr ""
+
+#: ../src/iop/demosaic.c:1332
+msgid "three times"
+msgstr "สามครั้ง"
+
+#: ../src/iop/demosaic.c:1333
+msgid "four times"
+msgstr ""
+
+#: ../src/iop/demosaic.c:1334
+msgid "five times"
+msgstr ""
+
+#: ../src/iop/demosaic.c:1335
+msgid "how many color smoothing median steps after demosaicing"
+msgstr ""
+
+#: ../src/iop/demosaic.c:1339
+msgid "match greens"
+msgstr ""
+
+#: ../src/iop/demosaic.c:1340
+msgid "disabled"
+msgstr ""
+
+#: ../src/iop/demosaic.c:1341
+msgid "local average"
+msgstr ""
+
+#: ../src/iop/demosaic.c:1342
+msgid "full average"
+msgstr ""
+
+#: ../src/iop/demosaic.c:1343
+msgid "full and local average"
+msgstr ""
+
+#: ../src/iop/demosaic.c:1344
+msgid "green channels matching method"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
+msgstr ""
+
+#: ../src/iop/denoiseprofile.c:129
+msgid "denoise (profiled)"
+msgstr ""
+
+#: ../src/iop/denoiseprofile.c:1461 ../src/iop/denoiseprofile.c:1469
+#, c-format
+msgid "found match for iso %d"
+msgstr ""
+
+#: ../src/iop/denoiseprofile.c:1478
+#, c-format
+msgid "interpolated from iso %d and %d"
+msgstr ""
+
+#: ../src/iop/denoiseprofile.c:1713 ../src/iop/lens.c:1893
+msgid "mode"
+msgstr "โหมด"
 
 #: ../src/iop/denoiseprofile.c:1714 ../src/iop/nlmeans.c:712
 msgid "patch size"
@@ -3871,16 +5859,14 @@ msgid ""
 msgstr ""
 
 #: ../src/iop/exposure.c:59
-#, fuzzy
 msgctxt "accel"
 msgid "black"
 msgstr "สีดำ"
 
 #: ../src/iop/exposure.c:60 ../src/iop/relight.c:110
-#, fuzzy
 msgctxt "accel"
 msgid "exposure"
-msgstr "ส่งออก"
+msgstr "การเปิดรับแสง"
 
 #: ../src/iop/exposure.c:61
 msgctxt "accel"
@@ -3928,26 +5914,38 @@ msgid "rotate"
 msgstr ""
 
 #: ../src/iop/flip.c:436 ../src/libs/live_view.c:287
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "rotate 90 degrees ccw"
-msgstr "หมุนภาพที่เลือก 90 องศา ทวนเข็มนาฬิกา"
+msgstr "หมุนภาพทวนเข็มนาฬิกา 90 องศา "
 
 #: ../src/iop/flip.c:442 ../src/libs/live_view.c:288
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "rotate 90 degrees cw"
-msgstr "หมุนภาพที่เลือก 90 องศา ตามเข็มนาฬิกา"
+msgstr "หมุนภาพตามเข็มนาฬิกา 90 องศา "
 
 #: ../src/iop/flip.c:454 ../src/libs/live_view.c:162
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "rotate 90 degrees ccw"
-msgstr "หมุนภาพที่เลือก 90 องศา ทวนเข็มนาฬิกา"
+msgstr "หมุนภาพทวนเข็มนาฬิกา 90 องศา "
 
 #: ../src/iop/flip.c:456 ../src/libs/live_view.c:163
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "rotate 90 degrees cw"
-msgstr "หมุนภาพที่เลือก 90 องศา ตามเข็มนาฬิกา"
+msgstr "หมุนภาพตามเข็มนาฬิกา 90 องศา "
 
 #: ../src/iop/gamma.c:38
 msgctxt "modulename"
@@ -3959,9 +5957,12 @@ msgid "global tonemap"
 msgstr ""
 
 #: ../src/iop/globaltonemap.c:620
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "operator"
-msgstr "ผู้สร้าง"
+msgstr "ตัวดำเนินการ"
 
 #: ../src/iop/globaltonemap.c:626
 msgid "the global tonemap operator"
@@ -4107,25 +6108,25 @@ msgstr ""
 msgid "highlight reconstruction"
 msgstr ""
 
-#: ../src/iop/highlights.c:382
+#: ../src/iop/highlights.c:379
 msgid "clip highlights"
 msgstr ""
 
-#: ../src/iop/highlights.c:383
+#: ../src/iop/highlights.c:380
 msgid "reconstruct in LCh"
 msgstr ""
 
-#: ../src/iop/highlights.c:384
+#: ../src/iop/highlights.c:381
 msgid "highlight reconstruction method"
 msgstr ""
 
-#: ../src/iop/highlights.c:387
+#: ../src/iop/highlights.c:384
 msgid ""
 "manually adjust the clipping threshold against magenta highlights (you "
 "shouldn't ever need to touch this)"
 msgstr ""
 
-#: ../src/iop/highlights.c:389
+#: ../src/iop/highlights.c:386
 msgid "clipping threshold"
 msgstr ""
 
@@ -4191,9 +6192,12 @@ msgid "pick color of film material from image"
 msgstr ""
 
 #: ../src/iop/invert.c:154
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "select color of film material"
-msgstr "เลือกม้วนฟิล์ม"
+msgstr "เลือกสีของฟิล์ม"
 
 #: ../src/iop/invert.c:309
 msgid "color of film material"
@@ -4207,7 +6211,11 @@ msgstr ""
 msgid "lens correction"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:71 ../src/iop/vignette.c:158 ../src/iop/watermark.c:164
+=======
+#: ../src/iop/lens.c:71 ../src/iop/vignette.c:158 ../src/iop/watermark.c:163
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "scale"
 msgstr ""
@@ -4228,10 +6236,9 @@ msgid "find camera"
 msgstr ""
 
 #: ../src/iop/lens.c:76
-#, fuzzy
 msgctxt "accel"
 msgid "find lens"
-msgstr "เลนส์"
+msgstr "หาเลนส์"
 
 #: ../src/iop/lens.c:77
 msgctxt "accel"
@@ -4244,18 +6251,20 @@ msgid "camera model"
 msgstr ""
 
 #: ../src/iop/lens.c:79
-#, fuzzy
 msgctxt "accel"
 msgid "lens model"
-msgstr "รุ่น"
+msgstr "รุ่นของเลนส์"
 
 #: ../src/iop/lens.c:80
-#, fuzzy
 msgctxt "accel"
 msgid "select corrections"
-msgstr "ไม่เลือก"
+msgstr "เลือกการแก้ใข"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1050
+=======
+#: ../src/iop/lens.c:1077
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid ""
 "maker:\t\t%s\n"
@@ -4264,6 +6273,7 @@ msgid ""
 "crop factor:\t%.1f"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1281
 msgid "camera/lens not found - please select manually"
 msgstr ""
@@ -4273,6 +6283,17 @@ msgid "try to locate your camera/lens in the above two menus"
 msgstr ""
 
 #: ../src/iop/lens.c:1328
+=======
+#: ../src/iop/lens.c:1308
+msgid "camera/lens not found - please select manually"
+msgstr ""
+
+#: ../src/iop/lens.c:1310
+msgid "try to locate your camera/lens in the above two menus"
+msgstr ""
+
+#: ../src/iop/lens.c:1355
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid ""
 "maker:\t\t%s\n"
@@ -4284,6 +6305,7 @@ msgid ""
 "mounts:\t\t%s"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1374
 msgid "mm"
 msgstr "มม"
@@ -4342,14 +6364,78 @@ msgstr ""
 
 #: ../src/iop/lens.c:1820
 #, fuzzy
-msgid "corrections"
-msgstr "ตัวเลือกหลัก"
+=======
+#: ../src/iop/lens.c:1401
+msgid "mm"
+msgstr "มม"
 
+#: ../src/iop/lens.c:1402
+msgid "focal length (mm)"
+msgstr "ระยะโฟกัส (มม)"
+
+#: ../src/iop/lens.c:1429
+msgid "f/"
+msgstr "f/"
+
+#: ../src/iop/lens.c:1430
+msgid "f-number (aperture)"
+msgstr ""
+
+#: ../src/iop/lens.c:1445
+msgid "d"
+msgstr "d"
+
+#: ../src/iop/lens.c:1446
+msgid "distance to subject"
+msgstr ""
+
+#: ../src/iop/lens.c:1744
+msgid "distortion & TCA"
+msgstr ""
+
+#: ../src/iop/lens.c:1750
+msgid "distortion & vignetting"
+msgstr ""
+
+#: ../src/iop/lens.c:1756
+msgid "TCA & vignetting"
+msgstr ""
+
+#: ../src/iop/lens.c:1762
+msgid "only distortion"
+msgstr ""
+
+#: ../src/iop/lens.c:1768
+msgid "only TCA"
+msgstr ""
+
+#: ../src/iop/lens.c:1774
+msgid "only vignetting"
+msgstr ""
+
+#: ../src/iop/lens.c:1797
+msgid "find camera"
+msgstr ""
+
+#: ../src/iop/lens.c:1814
+msgid "find lens"
+msgstr ""
+
+#: ../src/iop/lens.c:1847
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
+msgid "corrections"
+msgstr "การแก้ใข"
+
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1822
 #, fuzzy
+=======
+#: ../src/iop/lens.c:1849
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "which corrections to apply"
-msgstr "กลุ่มความถูกต้อง"
+msgstr "การแก้ใขที่จะใช้"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1837
 msgid "geometry"
 msgstr ""
@@ -4409,9 +6495,70 @@ msgstr "ความถูกต้อง"
 
 #: ../src/iop/lens.c:1870
 #, fuzzy
-msgid "distort"
-msgstr "ประวัติ"
+=======
+#: ../src/iop/lens.c:1864
+msgid "geometry"
+msgstr ""
 
+#: ../src/iop/lens.c:1866
+msgid "target geometry"
+msgstr ""
+
+#: ../src/iop/lens.c:1867
+msgid "rectilinear"
+msgstr ""
+
+#: ../src/iop/lens.c:1868
+msgid "fish-eye"
+msgstr ""
+
+#: ../src/iop/lens.c:1869
+msgid "panoramic"
+msgstr ""
+
+#: ../src/iop/lens.c:1870
+msgid "equirectangular"
+msgstr ""
+
+#: ../src/iop/lens.c:1872
+msgid "orthographic"
+msgstr ""
+
+#: ../src/iop/lens.c:1873
+msgid "stereographic"
+msgstr ""
+
+#: ../src/iop/lens.c:1874
+msgid "equisolid angle"
+msgstr ""
+
+#: ../src/iop/lens.c:1875
+msgid "thoby fish-eye"
+msgstr ""
+
+#: ../src/iop/lens.c:1883
+msgid "auto scale"
+msgstr ""
+
+#: ../src/iop/lens.c:1884 ../src/iop/vignette.c:1126
+#: ../src/iop/watermark.c:1018
+msgid "scale"
+msgstr ""
+
+#: ../src/iop/lens.c:1895
+msgid "correct distortions or apply them"
+msgstr ""
+
+#: ../src/iop/lens.c:1896
+msgid "correct"
+msgstr "ความถูกต้อง"
+
+#: ../src/iop/lens.c:1897
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
+msgid "distort"
+msgstr "บิดเบือน"
+
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1877
 msgid "transversal chromatic aberration red"
 msgstr ""
@@ -4426,15 +6573,38 @@ msgstr ""
 
 #: ../src/iop/lens.c:1884
 #, fuzzy
-msgid "tca blue"
-msgstr "น้ำเงิน"
+=======
+#: ../src/iop/lens.c:1904
+msgid "transversal chromatic aberration red"
+msgstr ""
 
+#: ../src/iop/lens.c:1905
+msgid "tca red"
+msgstr ""
+
+#: ../src/iop/lens.c:1910
+msgid "transversal chromatic aberration blue"
+msgstr ""
+
+#: ../src/iop/lens.c:1911
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
+msgid "tca blue"
+msgstr "น้ำเงิน tca"
+
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1891
 #, fuzzy
+=======
+#: ../src/iop/lens.c:1918
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "corrections done: "
-msgstr "กลุ่มความถูกต้อง"
+msgstr "ทำได้การแก้ไขแลัว"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1892
+=======
+#: ../src/iop/lens.c:1919
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "which corrections have actually been done"
 msgstr ""
 
@@ -4505,18 +6675,16 @@ msgid "night street dark"
 msgstr ""
 
 #: ../src/iop/lowlight.c:468
-#, fuzzy
 msgid "night"
-msgstr "ความสูง"
+msgstr "กลางคืน"
 
 #: ../src/iop/lowlight.c:616 ../src/iop/lowlight.c:620
 msgid "dark"
 msgstr ""
 
 #: ../src/iop/lowlight.c:623 ../src/iop/lowlight.c:627
-#, fuzzy
 msgid "bright"
-msgstr "ความสูง"
+msgstr "ความสว่าง"
 
 #: ../src/iop/lowlight.c:630 ../src/iop/lowlight.c:632
 msgid "day vision"
@@ -4693,7 +6861,6 @@ msgid "fill light"
 msgstr ""
 
 #: ../src/iop/relight.c:111
-#, fuzzy
 msgctxt "accel"
 msgid "width"
 msgstr "ความกว้าง"
@@ -4724,16 +6891,14 @@ msgid "shadows and highlights"
 msgstr ""
 
 #: ../src/iop/shadhi.c:146
-#, fuzzy
 msgctxt "accel"
 msgid "shadows"
 msgstr "เงา"
 
 #: ../src/iop/shadhi.c:147
-#, fuzzy
 msgctxt "accel"
 msgid "highlights"
-msgstr "ความสูง"
+msgstr "เน้น"
 
 #: ../src/iop/shadhi.c:149 ../src/iop/splittoning.c:107
 msgctxt "accel"
@@ -4768,9 +6933,12 @@ msgid "highlights color adjustment"
 msgstr ""
 
 #: ../src/iop/shadhi.c:671
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "correct shadows"
-msgstr "ความถูกต้อง"
+msgstr "แก้ความถูกต้องของเงา"
 
 #: ../src/iop/shadhi.c:672
 msgid "correct highlights"
@@ -4871,10 +7039,13 @@ msgid "pick secondary color"
 msgstr ""
 
 #: ../src/iop/splittoning.c:106
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "balance"
-msgstr "สมดุลสีขาว"
+msgstr "สมดุลของสี"
 
 #. shadows: #ED7212
 #. highlights: #ECA413
@@ -4909,9 +7080,14 @@ msgid "chocolate brown"
 msgstr ""
 
 #: ../src/iop/splittoning.c:557
+<<<<<<< HEAD
 #, fuzzy
 msgid "select the saturation tone"
 msgstr "ไม่เลือก"
+=======
+msgid "select the saturation tone"
+msgstr "เลือกความอิ่มตัวของสี"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/iop/splittoning.c:593
 msgid "balance"
@@ -4927,6 +7103,7 @@ msgid ""
 "preserve midtones"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/spots.c:54
 msgid "spot removal"
 msgstr ""
@@ -4935,6 +7112,27 @@ msgstr ""
 msgid "number of strokes:"
 msgstr ""
 
+=======
+#: ../src/iop/spots.c:82
+msgid "spot removal"
+msgstr ""
+
+#: ../src/iop/spots.c:468
+msgid ""
+"click on a spot and drag on canvas to heal.\n"
+"use the mouse wheel to adjust size.\n"
+"right click to remove a stroke."
+msgstr ""
+
+#: ../src/iop/spots.c:472
+msgid "number of strokes:"
+msgstr ""
+
+#: ../src/iop/spots.c:706
+msgid "spot removal only supports up to 32 spots"
+msgstr ""
+
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/temperature.c:78
 msgctxt "modulename"
 msgid "white balance"
@@ -4946,10 +7144,16 @@ msgid "tint"
 msgstr ""
 
 #: ../src/iop/temperature.c:97
+<<<<<<< HEAD
 #, fuzzy
 msgctxt "accel"
 msgid "temperature"
 msgstr "รูรับแสง"
+=======
+msgctxt "accel"
+msgid "temperature"
+msgstr "อุณหภูมิภาพ"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/iop/temperature.c:385
 msgid "camera white balance"
@@ -4968,9 +7172,14 @@ msgid "tint"
 msgstr ""
 
 #: ../src/iop/temperature.c:732
+<<<<<<< HEAD
 #, fuzzy
 msgid "temperature"
 msgstr "รูรับแสง"
+=======
+msgid "temperature"
+msgstr "อุณหภูมิภาพ"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/iop/temperature.c:747
 msgid "choose white balance preset from camera"
@@ -5030,7 +7239,10 @@ msgid "tonecurve for b channel"
 msgstr ""
 
 #: ../src/iop/tonecurve.c:532
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "double click to reset curve"
 msgstr "ดับเบิ้ลคลิก เพื่อกลับค่าเดิม"
 
@@ -5105,10 +7317,13 @@ msgid "vignetting"
 msgstr ""
 
 #: ../src/iop/vignette.c:159
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "fall-off strength"
-msgstr "ระยะโฟกัส"
+msgstr "ความเข้มของ fall-off"
 
 #: ../src/iop/vignette.c:162
 msgctxt "accel"
@@ -5140,11 +7355,15 @@ msgid "automatic ratio"
 msgstr ""
 
 #: ../src/iop/vignette.c:1117
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "automatic"
 msgstr "อัตโนมัติ"
 
 #: ../src/iop/vignette.c:1121
+<<<<<<< HEAD
 #, fuzzy
 msgid "8-bit output"
 msgstr "8-บิต jpg"
@@ -5153,6 +7372,14 @@ msgstr "8-บิต jpg"
 #, fuzzy
 msgid "16-bit output"
 msgstr "16-บิต ppm"
+=======
+msgid "8-bit output"
+msgstr "เอาท์พุต 8-บิต"
+
+#: ../src/iop/vignette.c:1122
+msgid "16-bit output"
+msgstr "เอาท์พุต 16-บิต"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/iop/vignette.c:1127
 msgid "fall-off strength"
@@ -5218,31 +7445,52 @@ msgstr ""
 msgid "add some level of random noise to prevent banding"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/watermark.c:141
 msgid "watermark"
 msgstr "ลายน้ำ"
 
 #: ../src/iop/watermark.c:162
+=======
+#: ../src/iop/watermark.c:140
+msgid "watermark"
+msgstr "ลายน้ำ"
+
+#: ../src/iop/watermark.c:161
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "refresh"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/watermark.c:163
 #, fuzzy
+=======
+#: ../src/iop/watermark.c:162
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "opacity"
-msgstr "ความทึบ"
+msgstr "ความทึบแสง"
 
+<<<<<<< HEAD
 #: ../src/iop/watermark.c:165
+=======
+#: ../src/iop/watermark.c:164
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "x offset"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/watermark.c:166
+=======
+#: ../src/iop/watermark.c:165
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "y offset"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/watermark.c:1034
 msgid "marker"
 msgstr ""
@@ -5273,15 +7521,38 @@ msgid "x offset"
 msgstr ""
 
 #: ../src/iop/watermark.c:1085
+=======
+#: ../src/iop/watermark.c:1000
+msgid "marker"
+msgstr ""
+
+#: ../src/iop/watermark.c:1001
+msgid "alignment"
+msgstr "การจัดวาง"
+
+#: ../src/iop/watermark.c:1039
+msgid "x offset"
+msgstr ""
+
+#: ../src/iop/watermark.c:1042
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "y offset"
 msgstr ""
 
 #. Let's add some tooltips and hook up some signals...
+<<<<<<< HEAD
 #: ../src/iop/watermark.c:1091
 msgid "the opacity of the watermark"
 msgstr ""
 
 #: ../src/iop/watermark.c:1092
+=======
+#: ../src/iop/watermark.c:1048
+msgid "the opacity of the watermark"
+msgstr ""
+
+#: ../src/iop/watermark.c:1049
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "the scale of the watermark"
 msgstr ""
 
@@ -5424,10 +7695,9 @@ msgid "camera settings"
 msgstr ""
 
 #: ../src/libs/camera.c:107
-#, fuzzy
 msgctxt "accel"
 msgid "capture image(s)"
-msgstr "รูปภาพที่รองรับ"
+msgstr "ถ่ายภาพ"
 
 #: ../src/libs/camera.c:145
 msgid "toggle view property in center view"
@@ -5561,7 +7831,11 @@ msgid "filename"
 msgstr "ชื่อแฟ้ม"
 
 #. create
+<<<<<<< HEAD
 #: ../src/libs/capture.c:146 ../src/libs/styles.c:383
+=======
+#: ../src/libs/capture.c:146 ../src/libs/styles.c:382
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "create"
 msgstr ""
 
@@ -5577,7 +7851,10 @@ msgid "collect images"
 msgstr ""
 
 #: ../src/libs/collect.c:417
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "search filmroll"
 msgstr "เลือกม้วนฟิล์ม"
 
@@ -5587,7 +7864,10 @@ msgid "Problem selecting new path for the filmroll in %s"
 msgstr ""
 
 #: ../src/libs/collect.c:544
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "search filmroll..."
 msgstr "เลือกม้วนฟิล์ม"
 
@@ -5596,7 +7876,10 @@ msgid "sync..."
 msgstr ""
 
 #: ../src/libs/collect.c:556
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "remove..."
 msgstr "เอาออก"
 
@@ -5651,7 +7934,6 @@ msgid "film roll"
 msgstr "ม้วนฟิล์ม"
 
 #: ../src/libs/collect.h:31
-#, fuzzy
 msgid "folders"
 msgstr "โฟลเดอร์"
 
@@ -5664,14 +7946,18 @@ msgid "tag"
 msgstr ""
 
 #: ../src/libs/collect.h:34
-#, fuzzy
 msgid "date"
-msgstr "วันที่/เวลา"
+msgstr "วัน"
 
 #: ../src/libs/collect.h:35 ../src/libs/tools/filter.c:127
+<<<<<<< HEAD
 #, fuzzy
 msgid "time"
 msgstr "วันที่/เวลา"
+=======
+msgid "time"
+msgstr "เวลา"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/libs/collect.h:36 ../src/libs/history.c:55
 msgid "history"
@@ -5681,25 +7967,36 @@ msgstr "ประวัติ"
 msgid "description"
 msgstr "รายละเอียด"
 
+<<<<<<< HEAD
 #: ../src/libs/collect.h:40 ../src/libs/import.c:493
+=======
+#: ../src/libs/collect.h:40 ../src/libs/import.c:497
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/metadata.c:329 ../src/libs/metadata_view.c:96
 msgid "creator"
 msgstr "ผู้สร้าง"
 
+<<<<<<< HEAD
 #: ../src/libs/collect.h:41 ../src/libs/import.c:499
+=======
+#: ../src/libs/collect.h:41 ../src/libs/import.c:503
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/metadata.c:342
 msgid "publisher"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/libs/collect.h:42 ../src/libs/import.c:505
+=======
+#: ../src/libs/collect.h:42 ../src/libs/import.c:509
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/metadata.c:355
 msgid "rights"
 msgstr ""
 
 #: ../src/libs/colorpicker.c:36
-#, fuzzy
 msgid "color picker"
-msgstr "กลุ่มสี"
+msgstr "ตัวเลือกสี"
 
 #: ../src/libs/colorpicker.c:61
 msgctxt "accel"
@@ -5759,7 +8056,11 @@ msgid "xmp sidecar files"
 msgstr ""
 
 #: ../src/libs/copy_history.c:88 ../src/libs/geotagging.c:446
+<<<<<<< HEAD
 #: ../src/libs/import.c:680 ../src/libs/styles.c:281
+=======
+#: ../src/libs/import.c:684 ../src/libs/styles.c:280
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "all files"
 msgstr "แฟ้มทั้งหมด"
 
@@ -5775,9 +8076,14 @@ msgid ""
 msgstr ""
 
 #: ../src/libs/copy_history.c:261
+<<<<<<< HEAD
 #, fuzzy
 msgid "copy all"
 msgstr "คัดลอก"
+=======
+msgid "copy all"
+msgstr "คัดลอกทั้งหมด"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/libs/copy_history.c:263
 msgid ""
@@ -5806,9 +8112,14 @@ msgid ""
 msgstr ""
 
 #: ../src/libs/copy_history.c:280
+<<<<<<< HEAD
 #, fuzzy
 msgid "paste all"
 msgstr "เลือกทั้งหมด"
+=======
+msgid "paste all"
+msgstr "วางทั้งหมด"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/libs/copy_history.c:281
 msgid ""
@@ -5847,6 +8158,7 @@ msgid "write history stack and tags to xmp sidecar files"
 msgstr ""
 
 #: ../src/libs/copy_history.c:340
+<<<<<<< HEAD
 #, fuzzy
 msgctxt "accel"
 msgid "copy all"
@@ -5854,6 +8166,13 @@ msgstr "คัดลอก"
 
 #: ../src/libs/copy_history.c:341
 #, fuzzy
+=======
+msgctxt "accel"
+msgid "copy all"
+msgstr "คัดลอกทั้งหมด"
+
+#: ../src/libs/copy_history.c:341
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "copy"
 msgstr "คัดลอก"
@@ -5864,10 +8183,16 @@ msgid "discard"
 msgstr ""
 
 #: ../src/libs/copy_history.c:343
+<<<<<<< HEAD
 #, fuzzy
 msgctxt "accel"
 msgid "paste all"
 msgstr "เลือกทั้งหมด"
+=======
+msgctxt "accel"
+msgid "paste all"
+msgstr "วางทั้งหมด"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/libs/copy_history.c:344
 msgctxt "accel"
@@ -5884,6 +8209,7 @@ msgctxt "accel"
 msgid "write sidecar files"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/libs/export.c:72
 msgid "export selected"
 msgstr ""
@@ -5901,12 +8227,35 @@ msgid "global options"
 msgstr ""
 
 #: ../src/libs/export.c:497
+=======
+#: ../src/libs/export.c:70
+msgid "export selected"
+msgstr ""
+
+#: ../src/libs/export.c:423
+msgid "target storage"
+msgstr ""
+
+#: ../src/libs/export.c:443
+msgid "file format"
+msgstr ""
+
+#: ../src/libs/export.c:458
+msgid "global options"
+msgstr ""
+
+#: ../src/libs/export.c:462
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "maximum output width\n"
 "set to 0 for no scaling"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/libs/export.c:499
+=======
+#: ../src/libs/export.c:464
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "maximum output height\n"
 "set to 0 for no scaling"
@@ -5920,6 +8269,7 @@ msgstr ""
 #. g_signal_connect (G_OBJECT (d->height), "focus-in-event",  G_CALLBACK(focus_in),  NULL);
 #. g_signal_connect (G_OBJECT (d->height), "focus-out-event", G_CALLBACK(focus_out), NULL);
 #.
+<<<<<<< HEAD
 #: ../src/libs/export.c:511
 msgid "max size"
 msgstr ""
@@ -5929,10 +8279,22 @@ msgid "x"
 msgstr "x"
 
 #: ../src/libs/export.c:520
+=======
+#: ../src/libs/export.c:476
+msgid "max size"
+msgstr ""
+
+#: ../src/libs/export.c:481
+msgid "x"
+msgstr "x"
+
+#: ../src/libs/export.c:485
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "intent"
 msgstr ""
 
 #. gtk_table_attach(GTK_TABLE(self->widget), GTK_WIDGET(d->profile), 1, 2, 9, 10, GTK_EXPAND|GTK_FILL, 0, 0, 0);
+<<<<<<< HEAD
 #: ../src/libs/export.c:524 ../src/libs/export.c:604
 msgid "image settings"
 msgstr ""
@@ -5942,11 +8304,23 @@ msgid "Adobe RGB"
 msgstr ""
 
 #: ../src/libs/export.c:617
+=======
+#: ../src/libs/export.c:489 ../src/libs/export.c:569
+msgid "image settings"
+msgstr ""
+
+#: ../src/libs/export.c:509
+msgid "Adobe RGB"
+msgstr ""
+
+#: ../src/libs/export.c:582
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "output icc profiles in %s/color/out or %s/color/out"
 msgstr ""
 
 #. Add style combo
+<<<<<<< HEAD
 #: ../src/libs/export.c:623
 #, fuzzy
 msgid "style"
@@ -5957,13 +8331,29 @@ msgid "temporary style to append while exporting"
 msgstr ""
 
 #: ../src/libs/export.c:658
+=======
+#: ../src/libs/export.c:588
+msgid "style"
+msgstr "สไตล์"
+
+#: ../src/libs/export.c:605
+msgid "temporary style to append while exporting"
+msgstr ""
+
+#: ../src/libs/export.c:623
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "export with current settings (ctrl-e)"
 msgstr "ส่งออกโดยใช้การตั้งค่าปัจจุบัน (ctrl-e)"
 
 #. enable shortcut to export with current export settings:
+<<<<<<< HEAD
 #: ../src/libs/export.c:863 ../src/libs/styles.c:69
 #: ../src/views/darkroom.c:1674
 #, fuzzy
+=======
+#: ../src/libs/export.c:827 ../src/libs/styles.c:69
+#: ../src/views/darkroom.c:1617
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "export"
 msgstr "ส่งออก"
@@ -5973,9 +8363,12 @@ msgstr "ส่งออก"
 #. while(*n != '\n') n++; n++;
 #. return n;
 #: ../src/libs/file_manager.c:43 ../src/libs/tools/lighttable.c:98
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "file manager"
-msgstr "ชื่อแฟ้ม"
+msgstr "ผู้จัดการไฟล์"
 
 #: ../src/libs/file_manager.c:95
 msgid ""
@@ -5995,9 +8388,8 @@ msgid ""
 msgstr ""
 
 #: ../src/libs/geotagging.c:427
-#, fuzzy
 msgid "open gpx file"
-msgstr "ไม่สนใจแฟ้ม jpeg"
+msgstr "เปิดแฟ้ม gpx"
 
 #: ../src/libs/geotagging.c:441
 msgid "GPS Data Exchange Format"
@@ -6028,9 +8420,12 @@ msgid "calculate the time offset from an image"
 msgstr ""
 
 #: ../src/libs/geotagging.c:598
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "apply time offset to selected images"
-msgstr "ลบฉลากออกจากรูปที่เลือกทั้งหมด"
+msgstr "ใช้ช่วงเวลาชดเชยกับภาพที่เลือก"
 
 #. gpx
 #: ../src/libs/geotagging.c:606
@@ -6038,9 +8433,12 @@ msgid "apply gpx track file"
 msgstr ""
 
 #: ../src/libs/geotagging.c:607
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "parses a gpx file and updates location of selected images"
-msgstr "ลบฉลากออกจากรูปที่เลือกทั้งหมด"
+msgstr "วาง gpx ไฟล์ และปรับปรุงที่ตั้งของรูปที่เลือก"
 
 #: ../src/libs/histogram.c:55
 msgid "histogram"
@@ -6118,9 +8516,12 @@ msgid "create a style from the current history stack"
 msgstr ""
 
 #: ../src/libs/history.c:184 ../src/libs/snapshots.c:382
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "original"
-msgstr "0 - ต้นฉบับ"
+msgstr "ต้นฉบับ"
 
 #: ../src/libs/image.c:49
 msgid "selected image[s]"
@@ -6139,14 +8540,20 @@ msgid "physically delete from disk"
 msgstr "ลบออกจากดิสก์"
 
 #: ../src/libs/image.c:152
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "move"
-msgstr "เอาออก"
+msgstr "ย้าย"
 
 #: ../src/libs/image.c:154
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "move to other folder"
-msgstr "เอาออกจากชุด"
+msgstr "ย้ายไปยังโฟลเดอร์อื่น"
 
 #: ../src/libs/image.c:160
 msgid "copy to other folder"
@@ -6185,9 +8592,12 @@ msgid "reset rotation to exif data"
 msgstr ""
 
 #: ../src/libs/image.c:206
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "group"
-msgstr "กลุ่มพื้นฐาน"
+msgstr "กลุ่ม"
 
 #: ../src/libs/image.c:208
 msgid "add selected images to expanded group or create a new one"
@@ -6198,39 +8608,57 @@ msgid "ungroup"
 msgstr ""
 
 #: ../src/libs/image.c:214
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "remove selected images from the group"
-msgstr "หมุนภาพที่เลือก 90 องศา ตามเข็มนาฬิกา"
+msgstr "เอาออกจากกลุ่ม"
 
 #: ../src/libs/image.c:230
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "remove from collection"
 msgstr "เอาออกจากชุด"
 
 #: ../src/libs/image.c:232
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "delete from disk"
 msgstr "ลบออกจากดิสก์"
 
 #: ../src/libs/image.c:234
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "rotate selected images 90 degrees cw"
-msgstr "หมุนภาพที่เลือก 90 องศา ตามเข็มนาฬิกา"
+msgstr "หมุนภาพตามเข็มนาฬิกาไป 90 องศา "
 
 #: ../src/libs/image.c:237
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "rotate selected images 90 degrees ccw"
-msgstr "หมุนภาพที่เลือก 90 องศา ทวนเข็มนาฬิกา"
+msgstr "หมุนภาพทวนเข็มนาฬิกาไป 90 องศา "
 
 #: ../src/libs/image.c:239
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "create hdr"
-msgstr "ผู้สร้าง"
+msgstr "สร้าง hdr"
 
 #: ../src/libs/image.c:240
 msgctxt "accel"
@@ -6238,130 +8666,142 @@ msgid "duplicate"
 msgstr ""
 
 #: ../src/libs/image.c:241
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "reset rotation"
-msgstr "ตัวเลือกหลัก"
+msgstr "ตั้งค่าการหมุนใหม่"
 
 #. Grouping keys
 #: ../src/libs/image.c:243
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "group"
-msgstr "กลุ่มพื้นฐาน"
+msgstr "กลุ่ม"
 
 #: ../src/libs/image.c:244
 msgctxt "accel"
 msgid "ungroup"
 msgstr ""
 
-#: ../src/libs/import.c:84
+#: ../src/libs/import.c:85
 msgid "import"
 msgstr "นำเข้า"
 
-#: ../src/libs/import.c:105
+#: ../src/libs/import.c:106
 msgctxt "accel"
 msgid "scan for devices"
 msgstr ""
 
-#: ../src/libs/import.c:106
-#, fuzzy
+#: ../src/libs/import.c:107
 msgctxt "accel"
 msgid "import from camera"
 msgstr "นำเข้าจากกล้อง"
 
-#: ../src/libs/import.c:107
+#: ../src/libs/import.c:108
 msgctxt "accel"
 msgid "tethered shoot"
 msgstr ""
 
-#: ../src/libs/import.c:108
-#, fuzzy
+#: ../src/libs/import.c:109
 msgctxt "accel"
 msgid "import image"
 msgstr "นำเข้ารูปภาพ"
 
+#: ../src/libs/import.c:110
+msgctxt "accel"
+msgid "import folder"
+msgstr "นำเข้าจากโฟลเดอร์"
+
 #. add the rescan button
-#: ../src/libs/import.c:187
+#: ../src/libs/import.c:191
 msgid "scan for devices"
 msgstr ""
 
-#: ../src/libs/import.c:190
+#: ../src/libs/import.c:194
 msgid "scan for newly attached devices"
 msgstr ""
 
-#: ../src/libs/import.c:217
+#: ../src/libs/import.c:221
 #, c-format
 msgid "device \"%s\" connected on port \"%s\"."
 msgstr "อุปกรณ์ \"%s\" เชื่อมต่อบนพอร์ต \"%s\"."
 
-#: ../src/libs/import.c:226
+#: ../src/libs/import.c:230
 msgid "import from camera"
 msgstr "นำเข้าจากกล้อง"
 
-#: ../src/libs/import.c:231
+#: ../src/libs/import.c:235
 msgid "tethered shoot"
 msgstr ""
 
 #. No supported devices is detected lets notice user..
-#: ../src/libs/import.c:253
+#: ../src/libs/import.c:257
 msgid "no supported devices found"
 msgstr "ไม่เจออุปกรณ์ที่รองรับ"
 
 #. add extra lines to 'extra'. don't forget to destroy the widgets later.
-#: ../src/libs/import.c:372
-#, fuzzy
+#: ../src/libs/import.c:376
 msgid "import options"
-msgstr "ตัวเลือกหลัก"
+msgstr "ตัวเลือกการนำเข้า"
 
 #. recursive opening.
-#: ../src/libs/import.c:392
+#: ../src/libs/import.c:396
 msgid "import directories recursively"
 msgstr ""
 
-#: ../src/libs/import.c:393
+#: ../src/libs/import.c:397
 msgid ""
 "recursively import subdirectories. each directory goes into a new film roll."
 msgstr ""
 
-#: ../src/libs/import.c:407
+#: ../src/libs/import.c:411
 msgid "apply metadata on import"
 msgstr ""
 
-#: ../src/libs/import.c:408
+#: ../src/libs/import.c:412
 msgid "apply some metadata to all newly imported images."
 msgstr ""
 
-#: ../src/libs/import.c:435
+#: ../src/libs/import.c:439
 msgid "comma separated list of tags"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/libs/import.c:650
+=======
+#: ../src/libs/import.c:654
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "import image"
 msgstr "นำเข้ารูปภาพ"
 
-#: ../src/libs/import.c:675
+#: ../src/libs/import.c:679
 msgid "supported images"
 msgstr "รูปภาพที่รองรับ"
 
-#: ../src/libs/import.c:725
+#: ../src/libs/import.c:729
 msgid "file has unknown format!"
 msgstr ""
 
-#: ../src/libs/import.c:743
+#: ../src/libs/import.c:747
 msgid "import film"
 msgstr "นำเข้าฟิล์ม"
 
-#: ../src/libs/import.c:817
+#: ../src/libs/import.c:821
 msgid "select one or more images to import"
 msgstr "เลือกหนึ่งหรือหลาายรูปภาพที่จะนำเขา"
 
 #. adding the import folder button
-#: ../src/libs/import.c:826
+#: ../src/libs/import.c:830
 msgid "folder"
 msgstr "โฟลเดอร์"
 
-#: ../src/libs/import.c:830
+#: ../src/libs/import.c:834
 msgid "select a folder to import as film roll"
 msgstr "เลือกโฟลเดอร์ที่จะนำเข้ามาเป็นม้วนฟิล์ม"
 
@@ -6437,23 +8877,20 @@ msgid "move focus point out (big steps)"
 msgstr ""
 
 #: ../src/libs/live_view.c:355
-#, fuzzy
 msgid "selected image"
-msgstr "ลบรูปภาพ"
+msgstr "รูปที่เลือก"
 
 #: ../src/libs/live_view.c:356 ../src/libs/tools/filter.c:129
-#, fuzzy
 msgid "id"
-msgstr "d"
+msgstr ""
 
 #: ../src/libs/live_view.c:357
 msgid "overlay another image over the live view"
 msgstr ""
 
 #: ../src/libs/live_view.c:362 ../src/libs/metadata_view.c:77
-#, fuzzy
 msgid "image id"
-msgstr "รูปภาพ"
+msgstr "id ของรูป"
 
 #: ../src/libs/live_view.c:366
 msgid "enter image id of the overlay manually"
@@ -6464,9 +8901,8 @@ msgid "overlay mode"
 msgstr ""
 
 #: ../src/libs/live_view.c:378
-#, fuzzy
 msgid "xor"
-msgstr "ส่งออก"
+msgstr ""
 
 #: ../src/libs/live_view.c:379
 msgid "add"
@@ -6477,19 +8913,16 @@ msgid "saturate"
 msgstr ""
 
 #: ../src/libs/live_view.c:387
-#, fuzzy
 msgid "color dodge"
-msgstr "กลุ่มสี"
+msgstr ""
 
 #: ../src/libs/live_view.c:388
-#, fuzzy
 msgid "color burn"
-msgstr "กลุ่มสี"
+msgstr ""
 
 #: ../src/libs/live_view.c:389
-#, fuzzy
 msgid "hard light"
-msgstr "ความสูง"
+msgstr "แสงที่แรง"
 
 #: ../src/libs/live_view.c:390
 msgid "soft light"
@@ -6508,9 +8941,8 @@ msgid "hsl saturation"
 msgstr ""
 
 #: ../src/libs/live_view.c:395
-#, fuzzy
 msgid "hsl color"
-msgstr "สี"
+msgstr "สี hsl"
 
 #: ../src/libs/live_view.c:396
 msgid "hsl luminosity"
@@ -6533,14 +8965,12 @@ msgid "find location"
 msgstr ""
 
 #: ../src/libs/map_settings.c:37
-#, fuzzy
 msgid "map settings"
-msgstr "ตั้งค่า"
+msgstr "ตั้งค่าแผนที่"
 
 #: ../src/libs/map_settings.c:92
-#, fuzzy
 msgid "show osd"
-msgstr "แสดง %s"
+msgstr "แสดง osd"
 
 #: ../src/libs/map_settings.c:93
 msgid "toggle the visibility of the map overlays"
@@ -6638,7 +9068,6 @@ msgstr ""
 
 #. internal
 #: ../src/libs/metadata_view.c:76
-#, fuzzy
 msgid "filmroll"
 msgstr "ม้วนฟิล์ม"
 
@@ -6651,18 +9080,16 @@ msgid "focus distance"
 msgstr ""
 
 #: ../src/libs/metadata_view.c:90
-#, fuzzy
 msgid "datetime"
-msgstr "วันที่/เวลา"
+msgstr "วัน/เวลา"
 
 #: ../src/libs/metadata_view.c:92
 msgid "height"
 msgstr "ความสูง"
 
 #: ../src/libs/metadata_view.c:97
-#, fuzzy
 msgid "copyright"
-msgstr "คัดลอก"
+msgstr "สงวนลิขสิทธิ์"
 
 #. geotagging
 #: ../src/libs/metadata_view.c:100
@@ -6678,9 +9105,8 @@ msgid "image information"
 msgstr "ข้อมูลรูปภาพ"
 
 #: ../src/libs/modulegroups.c:69
-#, fuzzy
 msgid "modulegroups"
-msgstr "กลุ่มสี"
+msgstr "กลุ่มโมดูล"
 
 #: ../src/libs/modulegroups.c:108
 msgid "show modules explicit specified by user"
@@ -6703,9 +9129,8 @@ msgid "color group"
 msgstr "กลุ่มสี"
 
 #: ../src/libs/modulegroups.c:133
-#, fuzzy
 msgid "tone group"
-msgstr "กลุ่มความถูกต้อง"
+msgstr "กลุ่มสีเอิร์ธโทน"
 
 #: ../src/libs/modulegroups.c:138
 msgid "effect group"
@@ -6715,6 +9140,7 @@ msgstr "กลุ่มเอฟเฟ็กต์"
 msgid "more modules"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/libs/navigation.c:56
 msgid "navigation"
 msgstr ""
@@ -6734,6 +9160,10 @@ msgstr ""
 
 #: ../src/libs/navigation.c:430
 msgid "200%"
+=======
+#: ../src/libs/navigation.c:55
+msgid "navigation"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgstr ""
 
 #: ../src/libs/recentcollect.c:50
@@ -6835,17 +9265,20 @@ msgid "styles"
 msgstr "สไตล์"
 
 #: ../src/libs/styles.c:68 ../src/libs/tagging.c:82
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "delete"
 msgstr "ลบ"
 
 #: ../src/libs/styles.c:70
-#, fuzzy
 msgctxt "accel"
 msgid "import"
 msgstr "นำเข้า"
 
+<<<<<<< HEAD
 #: ../src/libs/styles.c:263
 msgid "select style"
 msgstr "เลือกสไตล์"
@@ -6855,11 +9288,23 @@ msgid "darktable style files"
 msgstr ""
 
 #: ../src/libs/styles.c:352
+=======
+#: ../src/libs/styles.c:262
+msgid "select style"
+msgstr "เลือกสไตล์"
+
+#: ../src/libs/styles.c:275
+msgid "darktable style files"
+msgstr ""
+
+#: ../src/libs/styles.c:351
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "available styles,\n"
 "doubleclick to apply"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/libs/styles.c:358
 msgid "enter style name"
 msgstr ""
@@ -6887,21 +9332,61 @@ msgid "edit the selected style in list above"
 msgstr ""
 
 #: ../src/libs/styles.c:399
+=======
+#: ../src/libs/styles.c:357
+msgid "enter style name"
+msgstr ""
+
+#: ../src/libs/styles.c:370
+msgid "create duplicate"
+msgstr ""
+
+#: ../src/libs/styles.c:374
+msgid "creates a duplicate of the image before applying style"
+msgstr ""
+
+#: ../src/libs/styles.c:384
+msgid "create styles from history stack of selected images"
+msgstr "สร้างสไตล์จากชุดประวัติศาสตร์ของภาพที่เลือก"
+
+#. edit
+#: ../src/libs/styles.c:388
+msgid "edit"
+msgstr "แก้ไข"
+
+#: ../src/libs/styles.c:391
+msgid "edit the selected style in list above"
+msgstr ""
+
+#: ../src/libs/styles.c:398
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "deletes the selected style in list above"
 msgstr ""
 
 #. import button
+<<<<<<< HEAD
 #: ../src/libs/styles.c:403
 #, fuzzy
+=======
+#: ../src/libs/styles.c:402
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "styles"
 msgid "import"
 msgstr "นำเข้า"
 
+<<<<<<< HEAD
 #: ../src/libs/styles.c:405
 msgid "import style from a style file"
 msgstr ""
 
 #: ../src/libs/styles.c:412
+=======
+#: ../src/libs/styles.c:404
+msgid "import style from a style file"
+msgstr ""
+
+#: ../src/libs/styles.c:411
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "export the selected style into a style file"
 msgstr ""
 
@@ -6920,7 +9405,10 @@ msgid "detach"
 msgstr ""
 
 #: ../src/libs/tagging.c:81
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "new"
 msgstr "ใหม่"
@@ -6992,9 +9480,8 @@ msgid "delete selected tag"
 msgstr ""
 
 #: ../src/libs/tools/colorlabels.c:38
-#, fuzzy
 msgid "colorlabels"
-msgstr "สี"
+msgstr "สีป้าย"
 
 #. setup list of tooltips
 #: ../src/libs/tools/colorlabels.c:69
@@ -7042,9 +9529,8 @@ msgid "clear all labels of selected images"
 msgstr "ลบฉลากออกจากรูปที่เลือกทั้งหมด"
 
 #: ../src/libs/tools/darktable.c:47
-#, fuzzy
 msgid "darktable"
-msgstr "เกี่ยวกับ darktable"
+msgstr ""
 
 #: ../src/libs/tools/darktable.c:170
 msgid "organize and develop images from digital cameras"
@@ -7072,7 +9558,7 @@ msgstr "* ผู้ร่วมสมทบงาน *"
 
 #: ../src/libs/tools/darktable.c:236
 msgid "translator-credits"
-msgstr "พรดนัย ขันติ"
+msgstr "ผู้แปล"
 
 #: ../src/libs/tools/filmstrip.c:135
 msgid "filmstrip"
@@ -7118,12 +9604,16 @@ msgstr ""
 
 #. setup history key accelerators
 #: ../src/libs/tools/filmstrip.c:171
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "copy history"
-msgstr "ประวัติ"
+msgstr "สำเนาประวัติ"
 
 #: ../src/libs/tools/filmstrip.c:173
+<<<<<<< HEAD
 #, fuzzy
 msgctxt "accel"
 msgid "copy history parts"
@@ -7131,11 +9621,19 @@ msgstr "ประวัติ"
 
 #: ../src/libs/tools/filmstrip.c:175
 #, fuzzy
+=======
+msgctxt "accel"
+msgid "copy history parts"
+msgstr "สำเนาส่วนของประวัติ"
+
+#: ../src/libs/tools/filmstrip.c:175
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "paste history"
-msgstr "ประวัติ"
+msgstr "วางประวัติ"
 
 #: ../src/libs/tools/filmstrip.c:177
+<<<<<<< HEAD
 #, fuzzy
 msgctxt "accel"
 msgid "paste history parts"
@@ -7143,9 +9641,21 @@ msgstr "ประวัติ"
 
 #: ../src/libs/tools/filmstrip.c:179
 #, fuzzy
+=======
+msgctxt "accel"
+msgid "paste history parts"
+msgstr "วางส่วนของประวัติ"
+
+#: ../src/libs/tools/filmstrip.c:179
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "discard history"
-msgstr "ประวัติ"
+msgstr "ลบประวัติ"
+
+#: ../src/libs/tools/filmstrip.c:182
+msgctxt "accel"
+msgid "duplicate image"
+msgstr "คัดลอกภาพ"
 
 #: ../src/libs/tools/filmstrip.c:182
 #, fuzzy
@@ -7156,34 +9666,76 @@ msgstr "แก้ไขสไตล์"
 #. setup color label accelerators
 #. Color keys
 #: ../src/libs/tools/filmstrip.c:187 ../src/views/lighttable.c:1610
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "color red"
-msgstr "สี"
+msgstr "สีแดง"
 
 #: ../src/libs/tools/filmstrip.c:188 ../src/views/lighttable.c:1611
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "color yellow"
-msgstr "เหลือง"
+msgstr "สีเหลือง"
 
 #: ../src/libs/tools/filmstrip.c:189 ../src/views/lighttable.c:1612
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "color green"
-msgstr "กลุ่มสี"
+msgstr "สีเขียว"
 
 #: ../src/libs/tools/filmstrip.c:190 ../src/views/lighttable.c:1613
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "color blue"
-msgstr "กลุ่มสี"
+msgstr "สีฟ้า"
 
 #: ../src/libs/tools/filmstrip.c:191 ../src/views/lighttable.c:1614
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "color purple"
-msgstr "กลุ่มสี"
+msgstr "สีม่วง"
+
+#. setup selection accelerators
+#. selection accels
+#: ../src/libs/tools/filmstrip.c:194 ../src/libs/tools/lighttable.c:147
+msgctxt "accel"
+msgid "select all"
+msgstr "เลือกทั้งหมด"
+
+#: ../src/libs/tools/filmstrip.c:195 ../src/libs/tools/lighttable.c:149
+msgctxt "accel"
+msgid "select none"
+msgstr "ไม่เลือกทั้งหมด"
+
+#: ../src/libs/tools/filmstrip.c:196 ../src/libs/tools/lighttable.c:151
+msgctxt "accel"
+msgid "invert selection"
+msgstr ""
+
+#: ../src/libs/tools/filmstrip.c:197 ../src/libs/tools/lighttable.c:153
+msgctxt "accel"
+msgid "select film roll"
+msgstr "เลือกม้วนฟิล์ม"
+
+#: ../src/libs/tools/filmstrip.c:198 ../src/libs/tools/lighttable.c:154
+msgctxt "accel"
+msgid "select untouched"
+msgstr "เลือกรูปที่ยังไม่ได้แต่ง"
 
 #. setup selection accelerators
 #. selection accels
@@ -7239,32 +9791,41 @@ msgstr ""
 
 #. sort by label
 #: ../src/libs/tools/filter.c:120
-#, fuzzy
 msgid "sort by"
-msgstr "เรียงลำดับรูปภาพตาม"
+msgstr "เรียงลำดับตาม"
 
 #: ../src/libs/tools/global_toolbox.c:43
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "preferences"
-msgstr "ปรับแต่ง darktable"
+msgstr "ตั้งค่าตัวเลือก"
 
 #: ../src/libs/tools/global_toolbox.c:79
 #: ../src/libs/tools/global_toolbox.c:113
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "expand grouped images"
-msgstr "รูปภาพกำพร้า"
+msgstr "เปิดกลุ่มรูปภาพ"
 
 #: ../src/libs/tools/global_toolbox.c:81
 #: ../src/libs/tools/global_toolbox.c:115
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "collapse grouped images"
-msgstr "รูปภาพที่รองรับ"
+msgstr "ปิดกลุ่มรูปภาพ"
 
 #: ../src/libs/tools/global_toolbox.c:91
 msgid "show global preferences"
 msgstr ""
 
 #: ../src/libs/tools/global_toolbox.c:123
+<<<<<<< HEAD
 #, fuzzy
 msgctxt "accel"
 msgid "grouping"
@@ -7275,6 +9836,16 @@ msgstr "กลุ่มพื้นฐาน"
 msgctxt "accel"
 msgid "preferences"
 msgstr "ปรับแต่ง darktable"
+=======
+msgctxt "accel"
+msgid "grouping"
+msgstr "กลุ่ม"
+
+#: ../src/libs/tools/global_toolbox.c:124
+msgctxt "accel"
+msgid "preferences"
+msgstr "ตั้งค่าตัวเลือก"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/libs/tools/hinter.c:42
 msgid "hinter"
@@ -7314,9 +9885,12 @@ msgid "module toolbox"
 msgstr ""
 
 #: ../src/libs/tools/ratings.c:50
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "ratings"
-msgstr "ตั้งค่า"
+msgstr "จัดอันดับ"
 
 #: ../src/libs/tools/viewswitcher.c:46
 msgid "viewswitcher"
@@ -7346,11 +9920,16 @@ msgstr ""
 
 #. Setup key accelerators in capture view...
 #. Film strip shortcuts
+<<<<<<< HEAD
 #: ../src/views/capture.c:564 ../src/views/darkroom.c:1662
+=======
+#: ../src/views/capture.c:564 ../src/views/darkroom.c:1605
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "toggle film strip"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:83
 msgid "darkroom"
 msgstr ""
@@ -7360,14 +9939,30 @@ msgid "no userdefined presets for favorite modules were found"
 msgstr ""
 
 #: ../src/views/darkroom.c:876
+=======
+#: ../src/views/darkroom.c:81
+msgid "darkroom"
+msgstr ""
+
+#: ../src/views/darkroom.c:840
+msgid "no userdefined presets for favorite modules were found"
+msgstr ""
+
+#: ../src/views/darkroom.c:845
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "applied style `%s' on current image"
 msgstr "ใช้สไตล์ `%s' กับรูปปัจจุบัน"
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:934
+=======
+#: ../src/views/darkroom.c:903
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "no styles have been created yet"
-msgstr "ยังไม่มีสไตล์ที่ถูกสร้าง"
+msgstr "ยังไม่มีสไตล์"
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1082
 msgid "quick access to presets of your favorites"
 msgstr ""
@@ -7377,11 +9972,23 @@ msgid "quick access for applying any of your styles"
 msgstr ""
 
 #: ../src/views/darkroom.c:1102
+=======
+#: ../src/views/darkroom.c:1042
+msgid "quick access to presets of your favorites"
+msgstr ""
+
+#: ../src/views/darkroom.c:1054
+msgid "quick access for applying any of your styles"
+msgstr ""
+
+#: ../src/views/darkroom.c:1062
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "toggle over/under exposed indication\n"
 "right click for options"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1147
 msgid "color scheme"
 msgstr ""
@@ -7416,39 +10023,95 @@ msgid "upper threshold"
 msgstr ""
 
 #: ../src/views/darkroom.c:1173
+=======
+#: ../src/views/darkroom.c:1107
+msgid "color scheme"
+msgstr ""
+
+#: ../src/views/darkroom.c:1108
+msgid "black & white"
+msgstr ""
+
+#: ../src/views/darkroom.c:1109
+msgid "red & blue"
+msgstr ""
+
+#: ../src/views/darkroom.c:1110
+msgid "purple & green"
+msgstr "ม่วง และ เขียว"
+
+#: ../src/views/darkroom.c:1112
+msgid "select colors to indicate over/under exposure"
+msgstr ""
+
+#: ../src/views/darkroom.c:1122
+msgid "lower threshold"
+msgstr ""
+
+#: ../src/views/darkroom.c:1123
+msgid "threshold of what shall be considered underexposed"
+msgstr ""
+
+#: ../src/views/darkroom.c:1132
+msgid "upper threshold"
+msgstr ""
+
+#: ../src/views/darkroom.c:1133
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "threshold of what shall be considered overexposed"
 msgstr ""
 
 #. Zoom shortcuts
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1666
+=======
+#: ../src/views/darkroom.c:1609
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "zoom close-up"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1668
+=======
+#: ../src/views/darkroom.c:1611
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "zoom fill"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1670
+=======
+#: ../src/views/darkroom.c:1613
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "zoom fit"
 msgstr ""
 
 #. Shortcut to skip images
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1678
 #, fuzzy
+=======
+#: ../src/views/darkroom.c:1621
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "image forward"
-msgstr "ข้อมูลรูปภาพ"
+msgstr "ไปภาพต่อไป"
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1680
 #, fuzzy
+=======
+#: ../src/views/darkroom.c:1623
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "image back"
-msgstr "รูปภาพ"
+msgstr "ไปภาพก่อนหน้า"
 
 #. toggle overexposure indication
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1684
 #, fuzzy
 msgctxt "accel"
@@ -7457,8 +10120,16 @@ msgstr "ส่งออก"
 
 #: ../src/views/lighttable.c:407
 #, fuzzy
+=======
+#: ../src/views/darkroom.c:1627
+msgctxt "accel"
+msgid "overexposed"
+msgstr "ภาพสว่างมากเกิน"
+
+#: ../src/views/lighttable.c:407
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "there are no images in this collection"
-msgstr "เลือกรูปภาพทั้งหมดในชุดปัจจุบัน (ctrl-a)"
+msgstr "ไม่มี ภาพในชุดนี้"
 
 #: ../src/views/lighttable.c:409
 msgid "if you have not imported any images yet"
@@ -7548,6 +10219,7 @@ msgctxt "accel"
 msgid "redo"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/blend.c:1767 ../src/develop/blend.c:1967
 msgid "could not allocate buffer for blending"
 msgstr ""
@@ -7612,6 +10284,47 @@ msgstr "ผู้สร้าง"
 #, fuzzy
 msgid "lua options"
 msgstr "ตัวเลือกส่วนติดต่อผู้ใช้"
+=======
+#~ msgid "color mapping"
+#~ msgstr "การจับคู่สี"
+
+#~ msgid "analyze this image as a source image"
+#~ msgstr "วิเคราะห์รูปภาพนี้โดยใช้เป็นแหล่งที่มา"
+
+#~ msgid "analyze this image as a target image"
+#~ msgstr "วิเคราะห์รูปภาพนี้โดยใช้เป็นเป้าหมาย"
+
+#~ msgid "color dominance"
+#~ msgstr "กลุ่มสีเด่น"
+
+#~ msgid "histogram equalization"
+#~ msgstr "ปรับอีควอไลเซอร์ฮิสโตแกรม"
+
+#~ msgctxt "size"
+#~ msgid "image"
+#~ msgstr "รูปภาพ"
+
+#~ msgid "smaller border"
+#~ msgstr "ขอบเล็กลง"
+
+#~ msgid "fit to screen"
+#~ msgstr "จัดให้พอดีกับหน้าจอ"
+
+#~ msgid "mask manager"
+#~ msgstr "ส่วนจัดการหน้ากาก"
+
+#~ msgid "delete this shape"
+#~ msgstr "ลบรูปร่างนี้"
+
+#~ msgid "remove from group"
+#~ msgstr "เอาออกจากกลุ่ม"
+
+#~ msgid "created shapes"
+#~ msgstr "รูปร่างถูกสร้างขึ้น"
+
+#~ msgid "lua options"
+#~ msgstr "ตัวเลือก lua"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #~ msgid " (needs a restart) "
 #~ msgstr "(ต้องเริ่มโปรแกรมใหม่)"

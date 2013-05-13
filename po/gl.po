@@ -2,7 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DarkTable 0.5\n"
 "Report-Msgid-Bugs-To: \n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2013-05-07 10:04+0200\n"
+=======
+"POT-Creation-Date: 2013-05-07 18:50+0200\n"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 "PO-Revision-Date: 2010-08-27 14:56+0100\n"
 "Last-Translator: Roberto Quintero <roberto.quintero.lopez@gmail.com>\n"
 "Language-Team: \n"
@@ -28,7 +32,11 @@ msgstr "ancho da imaxe exportada"
 #: ../build/src/preferences_gen.h:1148 ../build/src/preferences_gen.h:1191
 #: ../build/src/preferences_gen.h:1215 ../build/src/preferences_gen.h:1289
 #: ../build/src/preferences_gen.h:1376 ../build/src/preferences_gen.h:1400
+<<<<<<< HEAD
 #: ../build/src/preferences_gen.h:1425 ../src/lua/preferences.c:368
+=======
+#: ../build/src/preferences_gen.h:1425
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "double click to reset to `%d'"
 msgstr "doble click para seleccionar"
@@ -53,8 +61,12 @@ msgstr "non usar previo do jpeg incrustado, sempre usar raw de medio tamaño"
 #: ../build/src/preferences_gen.h:1463 ../build/src/preferences_gen.h:1486
 #: ../build/src/preferences_gen.h:1505 ../build/src/preferences_gen.h:1524
 #: ../build/src/preferences_gen.h:1556 ../build/src/preferences_gen.h:1591
+<<<<<<< HEAD
 #: ../build/src/preferences_gen.h:1623 ../src/lua/preferences.c:351
 #: ../src/lua/preferences.c:359
+=======
+#: ../build/src/preferences_gen.h:1623
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "double click to reset to `%s'"
 msgstr "doble click para seleccionar"
@@ -385,50 +397,82 @@ msgstr "error cargando arquivo '%s'"
 msgid "empty history stack"
 msgstr "histórico de accions"
 
+<<<<<<< HEAD
 #: ../src/cli/main.c:208
+=======
+#: ../src/cli/main.c:209
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "cannot find disk storage module. please check your installation, something "
 "seems to be broken."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/cli/main.c:215
+=======
+#: ../src/cli/main.c:216
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "failed to get parameters from storage module, aborting export ..."
 msgstr ""
 "erro ao obter parámetros do módulo de almacenamento, abortando exportado..."
 
+<<<<<<< HEAD
 #: ../src/cli/main.c:226
+=======
+#: ../src/cli/main.c:227
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "unknown extension '.%s'"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/cli/main.c:234
+=======
+#: ../src/cli/main.c:235
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "failed to get parameters from format module, aborting export ..."
 msgstr ""
 "erro ao obter parámetros do módulo de formateado, abortando exportado..."
 
+<<<<<<< HEAD
 #: ../src/common/collection.c:454 ../src/develop/lightroom.c:974
+=======
+#: ../src/common/collection.c:454 ../src/develop/lightroom.c:964
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/bilateral.cc:349 ../src/iop/channelmixer.c:440
 #: ../src/iop/channelmixer.c:452 ../src/iop/temperature.c:733
 #: ../src/libs/collect.c:1139 ../src/libs/collect.c:1141
 msgid "red"
 msgstr "vermello"
 
+<<<<<<< HEAD
 #: ../src/common/collection.c:455 ../src/develop/lightroom.c:976
+=======
+#: ../src/common/collection.c:455 ../src/develop/lightroom.c:966
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/collect.c:1145 ../src/libs/collect.c:1147
 #, fuzzy
 msgid "yellow"
 msgstr "amarelo"
 
+<<<<<<< HEAD
 #: ../src/common/collection.c:456 ../src/develop/lightroom.c:978
+=======
+#: ../src/common/collection.c:456 ../src/develop/lightroom.c:968
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/bilateral.cc:350 ../src/iop/channelmixer.c:441
 #: ../src/iop/channelmixer.c:459 ../src/iop/temperature.c:734
 #: ../src/libs/collect.c:1151 ../src/libs/collect.c:1153
 msgid "green"
 msgstr "verde"
 
+<<<<<<< HEAD
 #: ../src/common/collection.c:457 ../src/develop/lightroom.c:980
+=======
+#: ../src/common/collection.c:457 ../src/develop/lightroom.c:970
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/bilateral.cc:351 ../src/iop/channelmixer.c:442
 #: ../src/iop/channelmixer.c:466 ../src/iop/temperature.c:735
 #: ../src/libs/collect.c:1157 ../src/libs/collect.c:1159
@@ -453,27 +497,47 @@ msgid_plural "%d images of %d in current collection are selected"
 msgstr[0] "seleccionar todas as imaxes na colección actual (ctrl-a)"
 msgstr[1] "seleccionar todas as imaxes na colección actual (ctrl-a)"
 
+<<<<<<< HEAD
 #: ../src/common/darktable.c:287
+=======
+#: ../src/common/darktable.c:286
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "found strange path `%s'"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/common/darktable.c:305
+=======
+#: ../src/common/darktable.c:304
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "error loading directory `%s'"
 msgstr "error cargando arquivo '%s'"
 
+<<<<<<< HEAD
 #: ../src/common/darktable.c:325
+=======
+#: ../src/common/darktable.c:324
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "file `%s' has unknown format!"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/common/darktable.c:339 ../src/libs/import.c:711
+=======
+#: ../src/common/darktable.c:338 ../src/libs/import.c:711
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "error loading file `%s'"
 msgstr "error cargando arquivo '%s'"
 
+<<<<<<< HEAD
 #: ../src/common/darktable.c:481
+=======
+#: ../src/common/darktable.c:478
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "ERROR : invalid temporary directory : %s\n"
 msgstr ""
@@ -494,6 +558,7 @@ msgstr[1] "exportando %d imaxes.."
 msgid "you need to copy history from an image before you paste it onto another"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/common/history.c:263 ../src/common/history.c:264
 #: ../src/common/history.c:280 ../src/common/styles.c:559
 #: ../src/common/styles.c:561 ../src/develop/blend_gui.c:1439
@@ -506,6 +571,18 @@ msgstr "prendido"
 #: ../src/common/styles.c:561 ../src/develop/blend_gui.c:1277
 #: ../src/develop/blend_gui.c:1436 ../src/develop/develop.c:1113
 #: ../src/imageio/format/j2k.c:618 ../src/iop/demosaic.c:1329
+=======
+#: ../src/common/history.c:238 ../src/common/history.c:239
+#: ../src/common/history.c:255 ../src/common/styles.c:546
+#: ../src/develop/develop.c:1109 ../src/libs/live_view.c:406
+msgid "on"
+msgstr "prendido"
+
+#: ../src/common/history.c:238 ../src/common/history.c:239
+#: ../src/common/history.c:255 ../src/common/styles.c:546
+#: ../src/develop/blend_gui.c:1028 ../src/develop/develop.c:1109
+#: ../src/imageio/format/j2k.c:601 ../src/iop/demosaic.c:1329
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/vignette.c:1120 ../src/libs/history.c:155
 #: ../src/libs/live_view.c:405
 msgid "off"
@@ -530,11 +607,19 @@ msgstr ""
 #. If a style is to be applied during export, add the iop params into the history
 #. set export style to "none" by default
 #: ../src/common/imageio.c:563 ../src/common/variables.c:220
+<<<<<<< HEAD
 #: ../src/control/control.c:120 ../src/iop/clipping.c:1459
 #: ../src/iop/clipping.c:1699 ../src/iop/clipping.c:1717
 #: ../src/iop/clipping.c:1760 ../src/iop/clipping.c:1777
 #: ../src/iop/lens.c:1705 ../src/libs/export.c:167 ../src/libs/export.c:170
 #: ../src/libs/export.c:630 ../src/libs/live_view.c:324
+=======
+#: ../src/control/control.c:120 ../src/iop/clipping.c:1462
+#: ../src/iop/clipping.c:1702 ../src/iop/clipping.c:1720
+#: ../src/iop/clipping.c:1763 ../src/iop/clipping.c:1780
+#: ../src/iop/lens.c:1707 ../src/libs/export.c:159 ../src/libs/export.c:162
+#: ../src/libs/export.c:595 ../src/libs/live_view.c:324
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/live_view.c:336 ../src/libs/live_view.c:354
 #, c-format
 msgid "none"
@@ -574,37 +659,71 @@ msgstr "no hai imaxe escollida!"
 msgid "style with name '%s' already exists"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/common/styles.c:307 ../src/gui/styles_dialog.c:145
+=======
+#: ../src/common/styles.c:307 ../src/common/styles.c:368
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "style named '%s' successfully created"
 msgstr ""
 
 #. fail :(
+<<<<<<< HEAD
 #: ../src/common/styles.c:389 ../src/common/styles.c:408
 #: ../src/views/darkroom.c:459
 msgid "no image selected!"
 msgstr "no hai imaxe escollida!"
 
 #: ../src/common/styles.c:646
+=======
+#: ../src/common/styles.c:388 ../src/common/styles.c:407
+#: ../src/views/darkroom.c:446
+msgid "no image selected!"
+msgstr "no hai imaxe escollida!"
+
+#: ../src/common/styles.c:630
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "failed to overwrite style file for %s"
 msgstr "non se puedo crear ruta de sesión %s."
 
+<<<<<<< HEAD
 #: ../src/common/styles.c:652
+=======
+#: ../src/common/styles.c:636
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "style file for %s exists"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/common/styles.c:891
+=======
+#: ../src/common/styles.c:683
+#, c-format
+msgid "style %s was successfully saved"
+msgstr ""
+
+#: ../src/common/styles.c:876
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "style %s was successfully imported"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/control/control.c:1371 ../src/control/control.c:1374
 msgid "working.."
 msgstr "traballando .."
 
 #: ../src/control/control.c:1455
+=======
+#: ../src/control/control.c:1355 ../src/control/control.c:1358
+msgid "working.."
+msgstr "traballando .."
+
+#: ../src/control/control.c:1439
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "switch to %s mode"
 msgstr "trocar a %s modo"
@@ -658,69 +777,117 @@ msgstr[1] "importando %d imaxes dende cámara"
 msgid "failed to create filmroll for camera import, import aborted."
 msgstr "erro ao crear sesión dende importado de cámara, abortada importación."
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:120
+=======
+#: ../src/control/jobs/control_jobs.c:127
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "merging %d image"
 msgid_plural "merging %d images"
 msgstr[0] "eliminando %d imaxe"
 msgstr[1] "eliminando %d imaxes"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:141
 msgid "exposure bracketing only works on raw images"
 msgstr ""
 
 #: ../src/control/jobs/control_jobs.c:150
+=======
+#: ../src/control/jobs/control_jobs.c:148
+msgid "exposure bracketing only works on raw images"
+msgstr ""
+
+#: ../src/control/jobs/control_jobs.c:157
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "failed to get raw buffer from image `%s'"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:169
 msgid "images have to be of same size!"
 msgstr ""
 
 #: ../src/control/jobs/control_jobs.c:244
+=======
+#: ../src/control/jobs/control_jobs.c:176
+msgid "images have to be of same size!"
+msgstr ""
+
+#: ../src/control/jobs/control_jobs.c:251
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "wrote merged hdr `%s'"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:270
+=======
+#: ../src/control/jobs/control_jobs.c:277
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "duplicating %d image"
 msgid_plural "duplicating %d images"
 msgstr[0] "duplicando %d imaxe"
 msgstr[1] "duplicando %d imaxes"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:295
+=======
+#: ../src/control/jobs/control_jobs.c:302
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "flipping %d image"
 msgid_plural "flipping %d images"
 msgstr[0] "borrando %d imaxe"
 msgstr[1] "borrando %d imaxes"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:318
+=======
+#: ../src/control/jobs/control_jobs.c:325
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "removing %d image"
 msgid_plural "removing %d images"
 msgstr[0] "eliminando %d imaxe"
 msgstr[1] "eliminando %d imaxes"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:369
+=======
+#: ../src/control/jobs/control_jobs.c:376
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "deleting %d image"
 msgid_plural "deleting %d images"
 msgstr[0] "borrando %d imaxe"
 msgstr[1] "borrando %d imaxes"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:454
 msgid "failed to parse gpx file"
 msgstr ""
 
 #: ../src/control/jobs/control_jobs.c:521
+=======
+#: ../src/control/jobs/control_jobs.c:461
+msgid "failed to parse gpx file"
+msgstr ""
+
+#: ../src/control/jobs/control_jobs.c:528
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "applied matched gpx location onto %d image(s)"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:672
+=======
+#: ../src/control/jobs/control_jobs.c:679
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "do you really want to remove %d selected image from the collection?"
 msgid_plural ""
@@ -728,11 +895,19 @@ msgid_plural ""
 msgstr[0] "desexa eliminar todas as imaxes escollidas da colección?"
 msgstr[1] "desexa eliminar todas as imaxes escollidas da colección?"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:675
 msgid "remove images?"
 msgstr "eliminar las imaxes?"
 
 #: ../src/control/jobs/control_jobs.c:701
+=======
+#: ../src/control/jobs/control_jobs.c:682
+msgid "remove images?"
+msgstr "eliminar las imaxes?"
+
+#: ../src/control/jobs/control_jobs.c:708
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "do you really want to physically delete %d selected image from disk?"
 msgid_plural ""
@@ -740,15 +915,24 @@ msgid_plural ""
 msgstr[0] "desexa borrar fisicamente todas as imaxes escollidas do disco?"
 msgstr[1] "desexa borrar fisicamente todas as imaxes escollidas do disco?"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:704
 msgid "delete images?"
 msgstr "borrar as imaxes?"
 
 #: ../src/control/jobs/control_jobs.c:737
+=======
+#: ../src/control/jobs/control_jobs.c:711
+msgid "delete images?"
+msgstr "borrar as imaxes?"
+
+#: ../src/control/jobs/control_jobs.c:744
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "failed to create film roll for destination directory, aborting move.."
 msgstr "erro ao crear sesión dende importado de cámara, abortada importación."
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:769
 #: ../src/control/jobs/control_jobs.c:826 ../src/imageio/storage/disk.c:68
 #: ../src/imageio/storage/disk.c:121 ../src/imageio/storage/gallery.c:79
@@ -758,6 +942,17 @@ msgid "select directory"
 msgstr "seleccionar directorio"
 
 #: ../src/control/jobs/control_jobs.c:792
+=======
+#: ../src/control/jobs/control_jobs.c:776
+#: ../src/control/jobs/control_jobs.c:833 ../src/imageio/storage/disk.c:67
+#: ../src/imageio/storage/disk.c:120 ../src/imageio/storage/gallery.c:78
+#: ../src/imageio/storage/gallery.c:161 ../src/imageio/storage/latex.c:78
+#: ../src/imageio/storage/latex.c:161 ../src/libs/styles.c:240
+msgid "select directory"
+msgstr "seleccionar directorio"
+
+#: ../src/control/jobs/control_jobs.c:799
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid ""
 "do you really want to physically move the %d selected image to %s?\n"
@@ -768,100 +963,166 @@ msgid_plural ""
 msgstr[0] "desexa borrar fisicamente todas as imaxes escollidas do disco?"
 msgstr[1] "desexa borrar fisicamente todas as imaxes escollidas do disco?"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:796
+=======
+#: ../src/control/jobs/control_jobs.c:803
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "move image?"
 msgid_plural "move images?"
 msgstr[0] "eliminar las imaxes?"
 msgstr[1] "eliminar las imaxes?"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:849
+=======
+#: ../src/control/jobs/control_jobs.c:856
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "do you really want to physically copy the %d selected image to %s?"
 msgid_plural "do you really want to physically copy %d selected images to %s?"
 msgstr[0] "desexa borrar fisicamente todas as imaxes escollidas do disco?"
 msgstr[1] "desexa borrar fisicamente todas as imaxes escollidas do disco?"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:852
+=======
+#: ../src/control/jobs/control_jobs.c:859
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "copy image?"
 msgid_plural "copy images?"
 msgstr[0] "eliminar las imaxes?"
 msgstr[1] "eliminar las imaxes?"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:891
+=======
+#: ../src/control/jobs/control_jobs.c:898
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "moving %d image"
 msgstr "eliminando %d imaxe"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:891
+=======
+#: ../src/control/jobs/control_jobs.c:898
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "moving %d images"
 msgstr "eliminando %d imaxe"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:897
+=======
+#: ../src/control/jobs/control_jobs.c:904
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "copying %d image"
 msgstr "capturando %d imaxe"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:897
+=======
+#: ../src/control/jobs/control_jobs.c:904
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "copying %d images"
 msgstr "capturando %d imaxe"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:928
+=======
+#: ../src/control/jobs/control_jobs.c:936
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "failed to get parameters from storage module `%s', aborting export.."
 msgstr ""
 "erro ao obter parámetros do módulo de almacenamento, abortando exportado..."
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:932
+=======
+#: ../src/control/jobs/control_jobs.c:940
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "exporting %d image.."
 msgid_plural "exporting %d images.."
 msgstr[0] "exportando %d imaxe.."
 msgstr[1] "exportando %d imaxes.."
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:934
+=======
+#: ../src/control/jobs/control_jobs.c:942
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "exporting %d image to %s"
 msgid_plural "exporting %d images to %s"
 msgstr[0] "exportando %d imaxe a %s"
 msgstr[1] "exportando %d imaxes a %s"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:997
 #: ../src/control/jobs/control_jobs.c:998 ../src/views/darkroom.c:470
+=======
+#: ../src/control/jobs/control_jobs.c:1005
+#: ../src/control/jobs/control_jobs.c:1006 ../src/views/darkroom.c:457
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "image `%s' is currently unavailable"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:1076
+=======
+#: ../src/control/jobs/control_jobs.c:1087
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "adding time offset to %d image"
 msgid_plural "adding time offset to %d images"
 msgstr[0] ""
 msgstr[1] ""
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:1096
+=======
+#: ../src/control/jobs/control_jobs.c:1107
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "added time offset to %d image(s)"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:785
+=======
+#: ../src/develop/blend_gui.c:707
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "sliders for L channel"
 msgstr "canles de orixe"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:785
+=======
+#: ../src/develop/blend_gui.c:707
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "sliders for a channel"
 msgstr "canles de orixe"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:785
+=======
+#: ../src/develop/blend_gui.c:707
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "sliders for b channel"
 msgstr "canles de orixe"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:785
 msgid "sliders for chroma channel (of LCh)"
 msgstr ""
@@ -903,20 +1164,72 @@ msgid "sliders for gray value"
 msgstr ""
 
 #: ../src/develop/blend_gui.c:787
+=======
+#: ../src/develop/blend_gui.c:707
+msgid "sliders for chroma channel (of LCh)"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:707
+msgid "sliders for hue channel (of LCh)"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:708
+msgid " g "
+msgstr ""
+
+#: ../src/develop/blend_gui.c:708
+msgid " R "
+msgstr ""
+
+#: ../src/develop/blend_gui.c:708
+msgid " G "
+msgstr ""
+
+#: ../src/develop/blend_gui.c:708
+msgid " B "
+msgstr ""
+
+#: ../src/develop/blend_gui.c:708
+msgid " H "
+msgstr ""
+
+#: ../src/develop/blend_gui.c:708
+msgid " S "
+msgstr ""
+
+#: ../src/develop/blend_gui.c:708
+msgid " L "
+msgstr ""
+
+#: ../src/develop/blend_gui.c:709
+msgid "sliders for gray value"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:709
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "sliders for red channel"
 msgstr "canles de orixe"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:787
+=======
+#: ../src/develop/blend_gui.c:709
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "sliders for green channel"
 msgstr "canles de orixe"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:787
+=======
+#: ../src/develop/blend_gui.c:709
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "sliders for blue channel"
 msgstr "canles de orixe"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:788
 msgid "sliders for hue channel (of HSL)"
 msgstr ""
@@ -930,6 +1243,21 @@ msgid "sliders for value channel (of HSL)"
 msgstr ""
 
 #: ../src/develop/blend_gui.c:791
+=======
+#: ../src/develop/blend_gui.c:710
+msgid "sliders for hue channel (of HSL)"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:710
+msgid "sliders for chroma channel (of HSL)"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:710
+msgid "sliders for value channel (of HSL)"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:713
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "adjustment based on input received by this module:\n"
 "* range defined by upper markers: blend fully\n"
@@ -937,7 +1265,11 @@ msgid ""
 "* range between adjacent upper/lower markers: blend gradually"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:793
+=======
+#: ../src/develop/blend_gui.c:715
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "adjustment based on unblended output of this module:\n"
 "* range defined by upper markers: blend fully\n"
@@ -945,11 +1277,30 @@ msgid ""
 "* range between adjacent upper/lower markers: blend gradually"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:912 ../src/iop/colorzones.c:1029
+=======
+#: ../src/develop/blend_gui.c:821
+#, fuzzy
+msgid "blend"
+msgstr "mistura L"
+
+#: ../src/develop/blend_gui.c:822
+#, fuzzy
+msgid "uniformly"
+msgstr "uniformidade"
+
+#: ../src/develop/blend_gui.c:823
+msgid "only, if.."
+msgstr ""
+
+#: ../src/develop/blend_gui.c:843 ../src/iop/colorzones.c:984
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/tonecurve.c:513
 msgid "pick gui color from image"
 msgstr "seleccionar cor en el gráfico"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:915
 msgid "reset blend mask settings"
 msgstr ""
@@ -963,10 +1314,31 @@ msgid "toggle polarity. best seen by enabling 'display mask'"
 msgstr ""
 
 #: ../src/develop/blend_gui.c:941
+=======
+#: ../src/develop/blend_gui.c:846
+#, fuzzy
+msgid "display mask"
+msgstr "intento de pantalla"
+
+#: ../src/develop/blend_gui.c:849
+msgid "reset blend mask settings"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:852
+msgid "temporarily switch off blend mask. only for module in focus."
+msgstr ""
+
+#: ../src/develop/blend_gui.c:864 ../src/develop/blend_gui.c:867
+msgid "toggle polarity. best seen by enabling 'display mask'"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:876
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "output"
 msgstr "intento de saida"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:952
 msgid "input"
 msgstr ""
@@ -996,10 +1368,26 @@ msgstr ""
 
 #: ../src/develop/blend_gui.c:1087 ../src/iop/spots.c:534
 #: ../src/libs/masks.c:777 ../src/libs/masks.c:800 ../src/libs/masks.c:1344
+=======
+#: ../src/develop/blend_gui.c:887
+msgid "input"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:899
+msgid "mask blur"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:902
+msgid "enable conditional blending"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:903 ../src/develop/blend_gui.c:904
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "add curve shape"
 msgstr "eliminar las imaxes?"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1275
 #, fuzzy
 msgid "blend"
@@ -1030,10 +1418,22 @@ msgid ""
 msgstr ""
 
 #: ../src/develop/blend_gui.c:1307
+=======
+#: ../src/develop/blend_gui.c:907
+msgid "radius for gaussian blur of blend mask"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1030 ../src/libs/live_view.c:377
+msgid "normal"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1032
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "blend mode"
 msgstr "mistura L"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1309 ../src/libs/live_view.c:377
 msgid "normal"
 msgstr ""
@@ -1043,10 +1443,14 @@ msgid "normal bounded"
 msgstr ""
 
 #: ../src/develop/blend_gui.c:1315 ../src/libs/live_view.c:386
+=======
+#: ../src/develop/blend_gui.c:1034 ../src/libs/live_view.c:386
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "lighten"
 msgstr "luz"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1318 ../src/libs/live_view.c:385
 msgid "darken"
 msgstr ""
@@ -1060,10 +1464,26 @@ msgid "average"
 msgstr ""
 
 #: ../src/develop/blend_gui.c:1327
+=======
+#: ../src/develop/blend_gui.c:1036 ../src/libs/live_view.c:385
+msgid "darken"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1038 ../src/libs/live_view.c:382
+msgid "multiply"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1040
+msgid "average"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1042
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "addition"
 msgstr "navegación"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1330
 msgid "subtract"
 msgstr ""
@@ -1073,40 +1493,76 @@ msgid "difference"
 msgstr ""
 
 #: ../src/develop/blend_gui.c:1336 ../src/libs/live_view.c:383
+=======
+#: ../src/develop/blend_gui.c:1044
+msgid "subtract"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1046 ../src/libs/live_view.c:391
+msgid "difference"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1048 ../src/libs/live_view.c:383
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "screen"
 msgstr "verde"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1339 ../src/libs/live_view.c:353
+=======
+#: ../src/develop/blend_gui.c:1050 ../src/libs/live_view.c:353
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/live_view.c:384
 msgid "overlay"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1342
+=======
+#: ../src/develop/blend_gui.c:1052
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "softlight"
 msgstr "dereita"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1345
+=======
+#: ../src/develop/blend_gui.c:1054
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "hardlight"
 msgstr "dereita"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1348
+=======
+#: ../src/develop/blend_gui.c:1056
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "vividlight"
 msgstr "altas luces"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1351
+=======
+#: ../src/develop/blend_gui.c:1058
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "linearlight"
 msgstr "lineal"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1354
+=======
+#: ../src/develop/blend_gui.c:1060
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "pinlight"
 msgstr "altas luces"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1357 ../src/iop/channelmixer.c:439
 #: ../src/iop/colorize.c:441 ../src/iop/colorzones.c:1018
 #: ../src/iop/colorzones.c:1056
@@ -1114,23 +1570,43 @@ msgid "lightness"
 msgstr "luz"
 
 #: ../src/develop/blend_gui.c:1360 ../src/iop/atrous.c:1419
+=======
+#: ../src/develop/blend_gui.c:1062 ../src/iop/channelmixer.c:439
+#: ../src/iop/colorize.c:441 ../src/iop/colorzones.c:973
+#: ../src/iop/colorzones.c:1004
+msgid "lightness"
+msgstr "luz"
+
+#: ../src/develop/blend_gui.c:1064 ../src/iop/atrous.c:1419
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/equalizer.c:343 ../src/iop/nlmeans.c:718
 msgid "chroma"
 msgstr "chroma"
 
 #. dt_bauhaus_slider_set_format(g->gslider1, "");
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1363 ../src/iop/channelmixer.c:437
 #: ../src/iop/colorize.c:417 ../src/iop/colorzones.c:1020
 #: ../src/iop/colorzones.c:1054 ../src/iop/graduatednd.c:1049
+=======
+#: ../src/develop/blend_gui.c:1066 ../src/iop/channelmixer.c:437
+#: ../src/iop/colorize.c:417 ../src/iop/colorzones.c:975
+#: ../src/iop/colorzones.c:1002 ../src/iop/graduatednd.c:1049
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/splittoning.c:542
 msgid "hue"
 msgstr "tono"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1366
+=======
+#: ../src/develop/blend_gui.c:1068
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "color"
 msgstr "zonas de cor"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1369
 msgid "coloradjustment"
 msgstr ""
@@ -1217,91 +1693,180 @@ msgid "temporarily switch off blend mask. only for module in focus"
 msgstr ""
 
 #: ../src/develop/develop.c:953
+=======
+#: ../src/develop/blend_gui.c:1070
+msgid "coloradjustment"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1072
+msgid "unbounded"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1084
+#, fuzzy
+msgid "blend mode"
+msgstr "mistura L"
+
+#: ../src/develop/blend_gui.c:1086 ../src/iop/watermark.c:1015
+msgid "opacity"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1096
+msgid "set the opacity of the blending"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1097
+msgid "choose blending mode"
+msgstr ""
+
+#: ../src/develop/develop.c:932
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%s: module `%s' version mismatch: %d != %d"
 msgstr "%s: modulo '%s' versión non coincidente: %d != %d"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:297 ../src/develop/imageop.c:305
+=======
+#: ../src/develop/imageop.c:295 ../src/develop/imageop.c:303
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "error creating gui, see stderr"
 msgstr ""
 
 #. should never happen
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:380
 msgid "error creating gui, DT_SIMPLE_GUI_NONE could not be found"
 msgstr ""
 
 #: ../src/develop/imageop.c:1135
+=======
+#: ../src/develop/imageop.c:378
+msgid "error creating gui, DT_SIMPLE_GUI_NONE could not be found"
+msgstr ""
+
+#: ../src/develop/imageop.c:1134
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "new instance"
 msgstr "modo foco"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1140 ../src/libs/masks.c:913
+=======
+#: ../src/develop/imageop.c:1139
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "move up"
 msgstr "eliminar"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1146 ../src/libs/masks.c:916
+=======
+#: ../src/develop/imageop.c:1145
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "move down"
 msgstr "navegación"
 
 #. delete
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1152 ../src/libs/image.c:143
 #: ../src/libs/styles.c:396 ../src/libs/tagging.c:487
 msgid "delete"
 msgstr "borrar"
 
 #: ../src/develop/imageop.c:1174 ../src/develop/imageop.c:2020
+=======
+#: ../src/develop/imageop.c:1151 ../src/libs/image.c:143
+#: ../src/libs/styles.c:395 ../src/libs/tagging.c:487
+msgid "delete"
+msgstr "borrar"
+
+#: ../src/develop/imageop.c:1173 ../src/develop/imageop.c:2010
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%s is switched on"
 msgstr "%s esta activado"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1174 ../src/develop/imageop.c:2020
+=======
+#: ../src/develop/imageop.c:1173 ../src/develop/imageop.c:2010
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%s is switched off"
 msgstr "%s esta desactivado"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1404 ../src/gui/accelerators.c:637
 #: ../src/gui/accelerators.c:717 ../src/gui/accelerators.c:861
 #: ../src/gui/accelerators.c:886 ../src/gui/presets.c:197
 #: ../src/gui/presets.c:299 ../src/gui/presets.c:604
+=======
+#: ../src/develop/imageop.c:1403 ../src/gui/accelerators.c:637
+#: ../src/gui/accelerators.c:717 ../src/gui/accelerators.c:861
+#: ../src/gui/accelerators.c:886 ../src/gui/presets.c:196
+#: ../src/gui/presets.c:298 ../src/gui/presets.c:603
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/temperature.c:745 ../src/libs/import.c:487 ../src/libs/lib.c:291
 #: ../src/libs/lib.c:320 ../src/libs/lib.c:971
 #, fuzzy
 msgid "preset"
 msgstr "preestablecido"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1445
+=======
+#: ../src/develop/imageop.c:1444
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgctxt "accel"
 msgid "fusion"
 msgstr "sesión"
 
 #. Adding the optional show accelerator to the table (blank)
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1450
+=======
+#: ../src/develop/imageop.c:1449
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgctxt "accel"
 msgid "show module"
 msgstr "antes do módulo"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1451
+=======
+#: ../src/develop/imageop.c:1450
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgctxt "accel"
 msgid "enable module"
 msgstr "antes do módulo"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1454 ../src/libs/lib.c:545
+=======
+#: ../src/develop/imageop.c:1453 ../src/libs/lib.c:545
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgctxt "accel"
 msgid "reset module parameters"
 msgstr "reiniciar os parámetros"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1456 ../src/libs/lib.c:550
+=======
+#: ../src/develop/imageop.c:1455 ../src/libs/lib.c:550
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgctxt "accel"
 msgid "show preset menu"
 msgstr "novo preestablecido"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1990
 msgid "multiple instances actions"
 msgstr ""
@@ -1311,10 +1876,22 @@ msgid "reset parameters"
 msgstr "reiniciar os parámetros"
 
 #: ../src/develop/imageop.c:2008 ../src/gui/preferences.c:403
+=======
+#: ../src/develop/imageop.c:1980
+msgid "multiple instances actions"
+msgstr ""
+
+#: ../src/develop/imageop.c:1989 ../src/libs/lib.c:830
+msgid "reset parameters"
+msgstr "reiniciar os parámetros"
+
+#: ../src/develop/imageop.c:1998 ../src/gui/preferences.c:398
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:843
 msgid "presets"
 msgstr "preestablecido"
 
+<<<<<<< HEAD
 #: ../src/develop/lightroom.c:407
 msgid "cannot find lightroom xmp!"
 msgstr ""
@@ -1322,31 +1899,60 @@ msgstr ""
 #: ../src/develop/lightroom.c:432 ../src/develop/lightroom.c:454
 #: ../src/develop/lightroom.c:474 ../src/develop/lightroom.c:484
 #: ../src/develop/lightroom.c:505
+=======
+#: ../src/develop/lightroom.c:400
+msgid "cannot find lightroom xmp!"
+msgstr ""
+
+#: ../src/develop/lightroom.c:425 ../src/develop/lightroom.c:447
+#: ../src/develop/lightroom.c:467 ../src/develop/lightroom.c:477
+#: ../src/develop/lightroom.c:498
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "`%s' not a lightroom xmp!"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/lightroom.c:1405 ../src/libs/import.c:511
 msgid "tags"
 msgstr ""
 
 #: ../src/develop/lightroom.c:1414 ../src/libs/tools/filter.c:128
+=======
+#: ../src/develop/lightroom.c:1324 ../src/libs/import.c:511
+msgid "tags"
+msgstr ""
+
+#: ../src/develop/lightroom.c:1333 ../src/libs/tools/filter.c:128
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "rating"
 msgstr "saturación"
 
+<<<<<<< HEAD
 #: ../src/develop/lightroom.c:1423 ../src/libs/geotagging.c:45
+=======
+#: ../src/develop/lightroom.c:1342 ../src/libs/geotagging.c:45
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "geotagging"
 msgstr "etiquetado"
 
+<<<<<<< HEAD
 #: ../src/develop/lightroom.c:1432 ../src/libs/collect.h:37
+=======
+#: ../src/develop/lightroom.c:1351 ../src/libs/collect.h:37
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/tools/filter.c:130
 #, fuzzy
 msgid "color label"
 msgstr "marcas de cor"
 
+<<<<<<< HEAD
 #: ../src/develop/lightroom.c:1442
+=======
+#: ../src/develop/lightroom.c:1361
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%s has been imported"
 msgid_plural "%s have been imported"
@@ -1716,96 +2322,113 @@ msgctxt "accel"
 msgid "switch view"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/gui/gtkentry.c:193 ../src/imageio/storage/gallery.c:127
+=======
+#: ../src/gui/gtkentry.c:193 ../src/imageio/storage/gallery.c:126
+#: ../src/imageio/storage/latex.c:126
+msgid "$(ROLL_NAME) - roll of the input image"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:194 ../src/imageio/storage/gallery.c:127
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/imageio/storage/latex.c:127
 msgid "$(ROLL_NAME) - roll of the input image"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:194 ../src/imageio/storage/gallery.c:128
+#: ../src/gui/gtkentry.c:195 ../src/imageio/storage/gallery.c:128
 #: ../src/imageio/storage/latex.c:128
 msgid "$(FILE_FOLDER) - folder containing the input image"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:195 ../src/imageio/storage/gallery.c:129
+#: ../src/gui/gtkentry.c:196 ../src/imageio/storage/gallery.c:129
 #: ../src/imageio/storage/latex.c:129
 msgid "$(FILE_NAME) - basename of the input image"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:196 ../src/imageio/storage/gallery.c:130
+#: ../src/gui/gtkentry.c:197 ../src/imageio/storage/gallery.c:130
 #: ../src/imageio/storage/latex.c:130
 msgid "$(FILE_EXTENSION) - extension of the input image"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:197 ../src/imageio/storage/gallery.c:131
+#: ../src/gui/gtkentry.c:198 ../src/imageio/storage/gallery.c:131
 #: ../src/imageio/storage/latex.c:131
 msgid "$(SEQUENCE) - sequence number"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:198 ../src/imageio/storage/gallery.c:132
+#: ../src/gui/gtkentry.c:199 ../src/imageio/storage/gallery.c:132
 #: ../src/imageio/storage/latex.c:132
 msgid "$(YEAR) - year"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:199 ../src/imageio/storage/gallery.c:133
+#: ../src/gui/gtkentry.c:200 ../src/imageio/storage/gallery.c:133
 #: ../src/imageio/storage/latex.c:133
 msgid "$(MONTH) - month"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:200 ../src/imageio/storage/gallery.c:134
+#: ../src/gui/gtkentry.c:201 ../src/imageio/storage/gallery.c:134
 #: ../src/imageio/storage/latex.c:134
 msgid "$(DAY) - day"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:201 ../src/imageio/storage/gallery.c:135
+#: ../src/gui/gtkentry.c:202 ../src/imageio/storage/gallery.c:135
 #: ../src/imageio/storage/latex.c:135
 msgid "$(HOUR) - hour"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:202 ../src/imageio/storage/gallery.c:136
+#: ../src/gui/gtkentry.c:203 ../src/imageio/storage/gallery.c:136
 #: ../src/imageio/storage/latex.c:136
 msgid "$(MINUTE) - minute"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:203 ../src/imageio/storage/gallery.c:137
+#: ../src/gui/gtkentry.c:204 ../src/imageio/storage/gallery.c:137
 #: ../src/imageio/storage/latex.c:137
 msgid "$(SECOND) - second"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:204 ../src/imageio/storage/gallery.c:138
+#: ../src/gui/gtkentry.c:205 ../src/imageio/storage/gallery.c:138
 #: ../src/imageio/storage/latex.c:138
 msgid "$(EXIF_YEAR) - exif year"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:205 ../src/imageio/storage/gallery.c:139
+#: ../src/gui/gtkentry.c:206 ../src/imageio/storage/gallery.c:139
 #: ../src/imageio/storage/latex.c:139
 msgid "$(EXIF_MONTH) - exif month"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:206 ../src/imageio/storage/gallery.c:140
+#: ../src/gui/gtkentry.c:207 ../src/imageio/storage/gallery.c:140
 #: ../src/imageio/storage/latex.c:140
 msgid "$(EXIF_DAY) - exif day"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:207 ../src/imageio/storage/gallery.c:141
+#: ../src/gui/gtkentry.c:208 ../src/imageio/storage/gallery.c:141
 #: ../src/imageio/storage/latex.c:141
 msgid "$(EXIF_HOUR) - exif hour"
 msgstr ""
 
-#: ../src/gui/gtkentry.c:208 ../src/imageio/storage/gallery.c:142
+#: ../src/gui/gtkentry.c:209 ../src/imageio/storage/gallery.c:142
 #: ../src/imageio/storage/latex.c:142
 msgid "$(EXIF_MINUTE) - exif minute"
-msgstr ""
-
-#: ../src/gui/gtkentry.c:209 ../src/imageio/storage/gallery.c:143
-#: ../src/imageio/storage/latex.c:143
-msgid "$(EXIF_SECOND) - exif second"
 msgstr ""
 
 #: ../src/gui/gtkentry.c:210
 msgid "$(EXIF_ISO) - iso value"
 msgstr ""
 
+#: ../src/gui/gtkentry.c:211 ../src/imageio/storage/gallery.c:143
+#: ../src/imageio/storage/latex.c:143
+msgid "$(EXIF_SECOND) - exif second"
+msgstr ""
+
+<<<<<<< HEAD
+#: ../src/gui/gtkentry.c:210
+msgid "$(EXIF_ISO) - iso value"
+msgstr ""
+
 #: ../src/gui/gtkentry.c:211 ../src/imageio/storage/gallery.c:144
+=======
+#: ../src/gui/gtkentry.c:212 ../src/imageio/storage/gallery.c:144
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/imageio/storage/latex.c:144
 msgid "$(STARS) - star rating"
 msgstr ""
@@ -1816,6 +2439,7 @@ msgstr ""
 msgid "$(LABELS) - colorlabels"
 msgstr "marcas de cor"
 
+<<<<<<< HEAD
 #: ../src/gui/gtkentry.c:213 ../src/imageio/storage/gallery.c:146
 #: ../src/imageio/storage/latex.c:146
 msgid "$(PICTURES_FOLDER) - pictures folder"
@@ -1840,16 +2464,47 @@ msgid "close"
 msgstr ""
 
 #: ../src/gui/preferences.c:416
+=======
+#: ../src/gui/gtkentry.c:213 ../src/imageio/storage/gallery.c:145
+#: ../src/imageio/storage/latex.c:145
+msgid "$(PICTURES_FOLDER) - pictures folder"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:214 ../src/imageio/storage/gallery.c:146
+#: ../src/imageio/storage/latex.c:146
+msgid "$(HOME) - home folder"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:215 ../src/imageio/storage/gallery.c:147
+#: ../src/imageio/storage/latex.c:147
+msgid "$(DESKTOP) - desktop folder"
+msgstr ""
+
+#: ../src/gui/preferences.c:220
+msgid "darktable preferences"
+msgstr ""
+
+#: ../src/gui/preferences.c:222
+msgid "close"
+msgstr ""
+
+#: ../src/gui/preferences.c:411
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "module"
 msgstr "antes do módulo"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:430
+=======
+#: ../src/gui/preferences.c:425
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "name"
 msgstr "nome de arquivo"
 
 #. exif
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:437 ../src/gui/preferences.c:1353
 #: ../src/gui/presets.c:420 ../src/libs/metadata_view.c:82
 msgid "model"
@@ -1862,44 +2517,83 @@ msgstr "fabricante"
 
 #: ../src/gui/preferences.c:451 ../src/gui/preferences.c:1369
 #: ../src/gui/presets.c:434 ../src/libs/collect.h:43
+=======
+#: ../src/gui/preferences.c:432 ../src/gui/preferences.c:1348
+#: ../src/gui/presets.c:419 ../src/libs/metadata_view.c:82
+msgid "model"
+msgstr "modelo"
+
+#: ../src/gui/preferences.c:439 ../src/gui/preferences.c:1356
+#: ../src/gui/presets.c:426 ../src/libs/metadata_view.c:83
+msgid "maker"
+msgstr "fabricante"
+
+#: ../src/gui/preferences.c:446 ../src/gui/preferences.c:1364
+#: ../src/gui/presets.c:433 ../src/libs/collect.h:43
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/metadata_view.c:84
 msgid "lens"
 msgstr "lentes"
 
 #. iso
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:458 ../src/gui/preferences.c:1376
 #: ../src/gui/presets.c:441 ../src/libs/camera.c:597 ../src/libs/collect.h:44
+=======
+#: ../src/gui/preferences.c:453 ../src/gui/preferences.c:1371
+#: ../src/gui/presets.c:440 ../src/libs/camera.c:597 ../src/libs/collect.h:44
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/metadata_view.c:89
 msgid "iso"
 msgstr "iso"
 
 #. exposure
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:465 ../src/gui/preferences.c:1389
 #: ../src/gui/presets.c:454 ../src/iop/exposure.c:42 ../src/iop/exposure.c:406
+=======
+#: ../src/gui/preferences.c:460 ../src/gui/preferences.c:1384
+#: ../src/gui/presets.c:453 ../src/iop/exposure.c:42 ../src/iop/exposure.c:406
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/relight.c:384 ../src/libs/metadata_view.c:86
 msgid "exposure"
 msgstr "exposición"
 
 #. aperture
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:472 ../src/gui/preferences.c:1404
 #: ../src/gui/presets.c:469 ../src/libs/camera.c:549 ../src/libs/camera.c:558
+=======
+#: ../src/gui/preferences.c:467 ../src/gui/preferences.c:1399
+#: ../src/gui/presets.c:468 ../src/libs/camera.c:549 ../src/libs/camera.c:558
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/collect.h:45 ../src/libs/metadata_view.c:85
 msgid "aperture"
 msgstr "apertura"
 
 #. focal length
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:479 ../src/gui/preferences.c:1419
 #: ../src/gui/presets.c:484 ../src/libs/camera.c:568
+=======
+#: ../src/gui/preferences.c:474 ../src/gui/preferences.c:1414
+#: ../src/gui/presets.c:483 ../src/libs/camera.c:568
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/metadata_view.c:87
 msgid "focal length"
 msgstr "lonxitude focal"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:486 ../src/iop/borders.c:1064
+=======
+#: ../src/gui/preferences.c:481 ../src/iop/borders.c:1066
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/exposure.c:411 ../src/iop/levels.c:286
 #: ../src/iop/tonecurve.c:554
 msgid "auto"
 msgstr "auto"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:536
 msgid "shortcuts"
 msgstr ""
@@ -1909,17 +2603,36 @@ msgid "shortcut"
 msgstr ""
 
 #: ../src/gui/preferences.c:558
+=======
+#: ../src/gui/preferences.c:531
+msgid "shortcuts"
+msgstr ""
+
+#: ../src/gui/preferences.c:546
+msgid "shortcut"
+msgstr ""
+
+#: ../src/gui/preferences.c:553
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "binding"
 msgstr ""
 
 #. Adding the restore defaults button
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:597
+=======
+#: ../src/gui/preferences.c:592
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "default"
 msgstr "(por defecto)"
 
 #. Adding the import/export buttons
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:606
+=======
+#: ../src/gui/preferences.c:601
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgctxt "preferences"
 msgid "import"
@@ -1927,6 +2640,7 @@ msgstr "importar"
 
 #. Export button
 #. export button
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:613 ../src/libs/export.c:656
 #: ../src/libs/styles.c:410
 msgid "export"
@@ -1937,6 +2651,18 @@ msgid "press key combination to remap..."
 msgstr ""
 
 #: ../src/gui/preferences.c:1076 ../src/gui/presets.c:192
+=======
+#: ../src/gui/preferences.c:608 ../src/libs/export.c:621
+#: ../src/libs/styles.c:409
+msgid "export"
+msgstr "exportar"
+
+#: ../src/gui/preferences.c:908
+msgid "press key combination to remap..."
+msgstr ""
+
+#: ../src/gui/preferences.c:1071 ../src/gui/presets.c:191
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:315
 #, fuzzy, c-format
 msgid "do you really want to delete the preset `%s'?"
@@ -1944,38 +2670,63 @@ msgstr ""
 "desexa borrar a etiqueta `%s'?\n"
 "%d imaxes teñen asignada esta etiqueta!"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1077 ../src/gui/presets.c:193
+=======
+#: ../src/gui/preferences.c:1072 ../src/gui/presets.c:192
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:316
 #, fuzzy
 msgid "delete preset?"
 msgstr "borrar este preestablecido"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1113
+=======
+#: ../src/gui/preferences.c:1108
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "select file to export"
 msgstr "seleccionar sesión"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1144
+=======
+#: ../src/gui/preferences.c:1139
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "select file to import"
 msgstr "seleccionar sesión"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1194
+=======
+#: ../src/gui/preferences.c:1189
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "Are you sure you want to restore the default keybindings?  This will erase "
 "any modifications you have made."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1302 ../src/gui/presets.c:368
+=======
+#: ../src/gui/preferences.c:1297 ../src/gui/presets.c:367
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "edit `%s' for module `%s'"
 msgstr "editar `%s' para modulo `%s'"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1331 ../src/gui/presets.c:399
+=======
+#: ../src/gui/preferences.c:1326 ../src/gui/presets.c:398
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:234
 msgid "description or further information"
 msgstr "descripción ou información adicional"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1333 ../src/gui/presets.c:401
 msgid "auto apply this preset to matching images"
 msgstr "auto aplicar este preestablecido para equiparar imaxes"
@@ -1985,6 +2736,17 @@ msgid "only show this preset for matching images"
 msgstr "amosar só este preestablecido para equiparar imaxes"
 
 #: ../src/gui/preferences.c:1336 ../src/gui/presets.c:404
+=======
+#: ../src/gui/preferences.c:1328 ../src/gui/presets.c:400
+msgid "auto apply this preset to matching images"
+msgstr "auto aplicar este preestablecido para equiparar imaxes"
+
+#: ../src/gui/preferences.c:1330 ../src/gui/presets.c:402
+msgid "only show this preset for matching images"
+msgstr "amosar só este preestablecido para equiparar imaxes"
+
+#: ../src/gui/preferences.c:1331 ../src/gui/presets.c:403
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "be very careful with this option. this might be the last time you see your "
 "preset."
@@ -1992,21 +2754,34 @@ msgstr ""
 "coidado con esta opción. puede ser a última vez que vexa o seu "
 "preestablecido."
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1352 ../src/gui/presets.c:419
+=======
+#: ../src/gui/preferences.c:1347 ../src/gui/presets.c:418
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, no-c-format
 msgid "string to match model (use % as wildcard)"
 msgstr "cadena para coincidencia de modelo (use % as wildcard)"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1360 ../src/gui/presets.c:426
+=======
+#: ../src/gui/preferences.c:1355 ../src/gui/presets.c:425
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, no-c-format
 msgid "string to match maker (use % as wildcard)"
 msgstr "cadena para coincidencia de fabricante (use % as wildcard)"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1368 ../src/gui/presets.c:433
+=======
+#: ../src/gui/preferences.c:1363 ../src/gui/presets.c:432
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, no-c-format
 msgid "string to match lens (use % as wildcard)"
 msgstr "cadena para coincidencia de lente (use % as wildcard)"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1380 ../src/gui/presets.c:445
 msgid "minimum iso value"
 msgstr "valor iso mínimo"
@@ -2040,39 +2815,96 @@ msgid "maximum focal length"
 msgstr "máxima lonxitude focal"
 
 #: ../src/gui/presets.c:147 ../src/gui/presets.c:789 ../src/gui/presets.c:802
+=======
+#: ../src/gui/preferences.c:1375 ../src/gui/presets.c:444
+msgid "minimum iso value"
+msgstr "valor iso mínimo"
+
+#: ../src/gui/preferences.c:1379 ../src/gui/presets.c:448
+msgid "maximum iso value"
+msgstr "máximo valor iso"
+
+#: ../src/gui/preferences.c:1389 ../src/gui/presets.c:458
+msgid "minimum exposure time"
+msgstr "tempo mínimo de exposición"
+
+#: ../src/gui/preferences.c:1390 ../src/gui/presets.c:459
+msgid "maximum exposure time"
+msgstr "máximo tempo de exposición"
+
+#: ../src/gui/preferences.c:1404 ../src/gui/presets.c:473
+msgid "minimum aperture value"
+msgstr "valor de apertura mínimo"
+
+#: ../src/gui/preferences.c:1405 ../src/gui/presets.c:474
+msgid "maximum aperture value"
+msgstr "valor de apertura máximo"
+
+#: ../src/gui/preferences.c:1421 ../src/gui/presets.c:490
+msgid "minimum focal length"
+msgstr "mínima lonxitude focal"
+
+#: ../src/gui/preferences.c:1422 ../src/gui/presets.c:491
+msgid "maximum focal length"
+msgstr "máxima lonxitude focal"
+
+#: ../src/gui/presets.c:146 ../src/gui/presets.c:788 ../src/gui/presets.c:801
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:73
 msgid "(default)"
 msgstr "(por defecto)"
 
 #. then show edit dialog
+<<<<<<< HEAD
 #: ../src/gui/presets.c:223 ../src/gui/presets.c:597 ../src/gui/presets.c:604
 #: ../src/gui/presets.c:606 ../src/gui/presets.c:608 ../src/libs/lib.c:275
+=======
+#: ../src/gui/presets.c:222 ../src/gui/presets.c:596 ../src/gui/presets.c:603
+#: ../src/gui/presets.c:605 ../src/gui/presets.c:607 ../src/libs/lib.c:275
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:283 ../src/libs/lib.c:291 ../src/libs/lib.c:293
 #: ../src/libs/lib.c:295
 msgid "new preset"
 msgstr "novo preestablecido"
 
+<<<<<<< HEAD
 #: ../src/gui/presets.c:231
 msgid "please give preset a name"
 msgstr ""
 
 #: ../src/gui/presets.c:233
+=======
+#: ../src/gui/presets.c:230
+msgid "please give preset a name"
+msgstr ""
+
+#: ../src/gui/presets.c:232
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "unnamed preset"
 msgstr "novo preestablecido"
 
+<<<<<<< HEAD
 #: ../src/gui/presets.c:256 ../src/libs/lib.c:138
+=======
+#: ../src/gui/presets.c:255 ../src/libs/lib.c:138
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid ""
 "preset `%s' already exists.\n"
 "do you want to overwrite?"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/gui/presets.c:259 ../src/libs/lib.c:141
+=======
+#: ../src/gui/presets.c:258 ../src/libs/lib.c:141
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "overwrite preset?"
 msgstr "sobreescribir"
 
+<<<<<<< HEAD
 #: ../src/gui/presets.c:395 ../src/libs/lib.c:230
 msgid "name of the preset"
 msgstr "nome de preestablecido"
@@ -2105,24 +2937,65 @@ msgid "style %s was successfully saved"
 msgstr ""
 
 #: ../src/gui/styles_dialog.c:293
+=======
+#: ../src/gui/presets.c:394 ../src/libs/lib.c:230
+msgid "name of the preset"
+msgstr "nome de preestablecido"
+
+#: ../src/gui/presets.c:811
+msgid "disabled: wrong module version"
+msgstr ""
+
+#: ../src/gui/presets.c:831 ../src/libs/lib.c:446
+msgid "edit this preset.."
+msgstr "editar este preestablecido.."
+
+#: ../src/gui/presets.c:835 ../src/libs/lib.c:450
+msgid "delete this preset"
+msgstr "borrar este preestablecido"
+
+#: ../src/gui/presets.c:841 ../src/libs/lib.c:457
+msgid "store new preset.."
+msgstr "almacenar novo preestablecido.."
+
+#: ../src/gui/presets.c:848 ../src/libs/lib.c:464
+#, fuzzy
+msgid "update preset"
+msgstr "borrar este preestablecido"
+
+#: ../src/gui/styles_dialog.c:284
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "edit style"
 msgstr "editar `%s'"
 
+<<<<<<< HEAD
 #: ../src/gui/styles_dialog.c:297
+=======
+#: ../src/gui/styles_dialog.c:288
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "duplicate style"
 msgstr "duplicar"
 
+<<<<<<< HEAD
 #: ../src/gui/styles_dialog.c:298
 msgid "creates a duplicate of the style before applying changes"
 msgstr ""
 
 #: ../src/gui/styles_dialog.c:302
+=======
+#: ../src/gui/styles_dialog.c:289
+msgid "creates a duplicate of the style before applying changes"
+msgstr ""
+
+#: ../src/gui/styles_dialog.c:293
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "create new style"
 msgstr "crear album novo"
 
+<<<<<<< HEAD
 #: ../src/gui/styles_dialog.c:323
 msgid "enter a name for the new style"
 msgstr ""
@@ -2132,21 +3005,44 @@ msgid "enter a description for the new style, this description is searchable"
 msgstr ""
 
 #: ../src/gui/styles_dialog.c:359 ../src/gui/styles_dialog.c:372
+=======
+#: ../src/gui/styles_dialog.c:314
+msgid "enter a name for the new style"
+msgstr ""
+
+#: ../src/gui/styles_dialog.c:317
+msgid "enter a description for the new style, this description is searchable"
+msgstr ""
+
+#: ../src/gui/styles_dialog.c:350 ../src/gui/styles_dialog.c:363
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/gui/hist_dialog.c:181
 msgid "include"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/gui/styles_dialog.c:389
+=======
+#: ../src/gui/styles_dialog.c:380
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "update"
 msgstr "data"
 
+<<<<<<< HEAD
 #: ../src/gui/styles_dialog.c:401 ../src/gui/styles_dialog.c:408
+=======
+#: ../src/gui/styles_dialog.c:392 ../src/gui/styles_dialog.c:399
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/gui/hist_dialog.c:192
 msgid "item"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/gui/styles_dialog.c:507
+=======
+#: ../src/gui/styles_dialog.c:498
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "can't create style out of unaltered image"
 msgstr ""
 
@@ -2162,17 +3058,26 @@ msgstr ""
 "descartar histórico de accións de\n"
 "todas as imaxes escollidas"
 
+<<<<<<< HEAD
 #: ../src/imageio/format/copy.c:150 ../src/libs/copy_history.c:256
+=======
+#: ../src/imageio/format/copy.c:144 ../src/libs/copy_history.c:256
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/image.c:158
 msgid "copy"
 msgstr "copiar"
 
+<<<<<<< HEAD
 #: ../src/imageio/format/copy.c:161
+=======
+#: ../src/imageio/format/copy.c:155
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "do a 1:1 copy of the selected files.\n"
 "the global options below do not apply!"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/imageio/format/exr.cc:160
 msgid "openexr"
 msgstr "openexr"
@@ -2190,15 +3095,39 @@ msgid "j2k"
 msgstr ""
 
 #: ../src/imageio/format/j2k.c:604 ../src/imageio/format/jpeg.c:542
+=======
+#: ../src/imageio/format/exr.cc:152
+msgid "openexr"
+msgstr "openexr"
+
+#: ../src/imageio/format/j2k.c:540
+msgid "jpeg 2000"
+msgstr ""
+
+#: ../src/imageio/format/j2k.c:575
+msgid "jp2"
+msgstr ""
+
+#: ../src/imageio/format/j2k.c:580
+msgid "j2k"
+msgstr ""
+
+#: ../src/imageio/format/j2k.c:587 ../src/imageio/format/jpeg.c:669
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/camera.c:617
 msgid "quality"
 msgstr "calidade"
 
+<<<<<<< HEAD
 #: ../src/imageio/format/j2k.c:613
+=======
+#: ../src/imageio/format/j2k.c:596
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "dcp mode"
 msgstr "mistura L"
 
+<<<<<<< HEAD
 #: ../src/imageio/format/j2k.c:619
 msgid "cinema2k, 24fps"
 msgstr ""
@@ -2212,19 +3141,43 @@ msgid "cinema4k, 24fps"
 msgstr ""
 
 #: ../src/imageio/format/jpeg.c:522
+=======
+#: ../src/imageio/format/j2k.c:602
+msgid "cinema2k, 24fps"
+msgstr ""
+
+#: ../src/imageio/format/j2k.c:603
+msgid "cinema2k, 48fps"
+msgstr ""
+
+#: ../src/imageio/format/j2k.c:604
+msgid "cinema4k, 24fps"
+msgstr ""
+
+#: ../src/imageio/format/jpeg.c:649
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "8-bit jpg"
 msgstr "8-bit jpeg"
 
+<<<<<<< HEAD
 #: ../src/imageio/format/pfm.c:104
 msgid "float pfm"
 msgstr "pfm flotante"
 
 #: ../src/imageio/format/png.c:393
+=======
+#: ../src/imageio/format/pfm.c:97
+msgid "float pfm"
+msgstr "pfm flotante"
+
+#: ../src/imageio/format/png.c:384
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "8/16-bit png"
 msgstr "8-bit png"
 
+<<<<<<< HEAD
 #: ../src/imageio/format/png.c:414 ../src/imageio/format/tiff.c:263
 msgid "8-bit"
 msgstr "8-bit"
@@ -2238,6 +3191,21 @@ msgid "16-bit ppm"
 msgstr "16-bit ppm"
 
 #: ../src/imageio/format/tiff.c:242
+=======
+#: ../src/imageio/format/png.c:405 ../src/imageio/format/tiff.c:256
+msgid "8-bit"
+msgstr "8-bit"
+
+#: ../src/imageio/format/png.c:410 ../src/imageio/format/tiff.c:261
+msgid "16-bit"
+msgstr "16-bit"
+
+#: ../src/imageio/format/ppm.c:103
+msgid "16-bit ppm"
+msgstr "16-bit ppm"
+
+#: ../src/imageio/format/tiff.c:235
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "8/16-bit tiff"
 msgstr "8/16-bit tiff"
 
@@ -2252,27 +3220,48 @@ msgid ""
 "recognized variables:"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/disk.c:200 ../src/imageio/storage/gallery.c:252
 #: ../src/imageio/storage/latex.c:249
+=======
+#: ../src/imageio/storage/disk.c:199 ../src/imageio/storage/gallery.c:251
+#: ../src/imageio/storage/latex.c:248
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "could not create directory `%s'!"
 msgstr "non se pode crear directorio %s!"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/disk.c:207
+=======
+#: ../src/imageio/storage/disk.c:206
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "could not write to directory `%s'!"
 msgstr "non se pode crear directorio %s!"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/disk.c:240 ../src/imageio/storage/email.c:107
 #: ../src/imageio/storage/facebook.c:1191 ../src/imageio/storage/flickr.c:670
 #: ../src/imageio/storage/gallery.c:327 ../src/imageio/storage/gallery.c:346
 #: ../src/imageio/storage/picasa.c:1484
+=======
+#: ../src/imageio/storage/disk.c:239 ../src/imageio/storage/email.c:106
+#: ../src/imageio/storage/facebook.c:1190 ../src/imageio/storage/flickr.c:669
+#: ../src/imageio/storage/gallery.c:326 ../src/imageio/storage/gallery.c:345
+#: ../src/imageio/storage/picasa.c:1483
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "could not export to file `%s'!"
 msgstr "non se pode crear directorio %s!"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/disk.c:256 ../src/imageio/storage/email.c:115
 #: ../src/imageio/storage/gallery.c:356 ../src/imageio/storage/latex.c:339
+=======
+#: ../src/imageio/storage/disk.c:255 ../src/imageio/storage/email.c:114
+#: ../src/imageio/storage/gallery.c:355 ../src/imageio/storage/latex.c:338
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%d/%d exported to `%s%s'"
 msgstr "%d/%d exportado a `%s%s'"
@@ -2286,29 +3275,46 @@ msgstr "enviar como correo electrónico"
 msgid "images exported from darktable"
 msgstr "exportado dende darktable"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:242
+=======
+#: ../src/imageio/storage/facebook.c:241
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "[facebook] unexpeted url format\n"
 msgstr ""
 
 #. //////////// build & show the validation dialog
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:603
+=======
+#: ../src/imageio/storage/facebook.c:602
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "step 1: a new window or tab of your browser should have been loaded. you "
 "have to login into your facebook account there and authorize darktable to "
 "upload photos before continuing."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:606 ../src/imageio/storage/picasa.c:837
+=======
+#: ../src/imageio/storage/facebook.c:605 ../src/imageio/storage/picasa.c:836
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "step 2: paste your browser url and click the ok button once you are done."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:614
+=======
+#: ../src/imageio/storage/facebook.c:613
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "Facebook authentication"
 msgstr "erro de autenticación"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:620 ../src/imageio/storage/picasa.c:851
 msgid "url:"
 msgstr ""
@@ -2322,20 +3328,44 @@ msgid "the given url is not valid, it should look like: "
 msgstr ""
 
 #: ../src/imageio/storage/facebook.c:757 ../src/imageio/storage/picasa.c:1014
+=======
+#: ../src/imageio/storage/facebook.c:619 ../src/imageio/storage/picasa.c:850
+msgid "url:"
+msgstr ""
+
+#: ../src/imageio/storage/facebook.c:639 ../src/imageio/storage/picasa.c:870
+msgid "please enter the validation url"
+msgstr ""
+
+#: ../src/imageio/storage/facebook.c:650 ../src/imageio/storage/picasa.c:882
+msgid "the given url is not valid, it should look like: "
+msgstr ""
+
+#: ../src/imageio/storage/facebook.c:756 ../src/imageio/storage/picasa.c:1013
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "new account"
 msgstr "contar"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:764 ../src/imageio/storage/picasa.c:1021
+=======
+#: ../src/imageio/storage/facebook.c:763 ../src/imageio/storage/picasa.c:1020
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "other account"
 msgstr "a cantidade de viveza"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:795 ../src/imageio/storage/picasa.c:1051
+=======
+#: ../src/imageio/storage/facebook.c:794 ../src/imageio/storage/picasa.c:1050
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "unable to retreive the album list"
 msgstr "refrescar lista de album"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:803 ../src/imageio/storage/flickr.c:388
 #: ../src/imageio/storage/flickr.c:416 ../src/imageio/storage/picasa.c:1059
 msgid "create new album"
@@ -2343,10 +3373,20 @@ msgstr "crear album novo"
 
 #: ../src/imageio/storage/facebook.c:925 ../src/imageio/storage/picasa.c:1107
 #: ../src/imageio/storage/picasa.c:1267
+=======
+#: ../src/imageio/storage/facebook.c:802 ../src/imageio/storage/flickr.c:387
+#: ../src/imageio/storage/flickr.c:415 ../src/imageio/storage/picasa.c:1058
+msgid "create new album"
+msgstr "crear album novo"
+
+#: ../src/imageio/storage/facebook.c:924 ../src/imageio/storage/picasa.c:1106
+#: ../src/imageio/storage/picasa.c:1266
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "logout"
 msgstr ""
 
 #. Set default permission to private
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:929 ../src/imageio/storage/facebook.c:942
 #: ../src/imageio/storage/facebook.c:969
 #: ../src/imageio/storage/facebook.c:1072 ../src/imageio/storage/flickr.c:526
@@ -2356,19 +3396,37 @@ msgid "login"
 msgstr ""
 
 #: ../src/imageio/storage/facebook.c:1006
+=======
+#: ../src/imageio/storage/facebook.c:928 ../src/imageio/storage/facebook.c:941
+#: ../src/imageio/storage/facebook.c:968
+#: ../src/imageio/storage/facebook.c:1071 ../src/imageio/storage/flickr.c:525
+#: ../src/imageio/storage/picasa.c:1112 ../src/imageio/storage/picasa.c:1270
+#: ../src/imageio/storage/picasa.c:1283 ../src/imageio/storage/picasa.c:1362
+msgid "login"
+msgstr ""
+
+#: ../src/imageio/storage/facebook.c:1005
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "facebook webalbum"
 msgstr "albumweb picasa"
 
 #. create labels
 #. xmp
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:1019 ../src/imageio/storage/flickr.c:480
 #: ../src/imageio/storage/gallery.c:168 ../src/imageio/storage/latex.c:168
 #: ../src/imageio/storage/picasa.c:1312 ../src/libs/collect.h:38
+=======
+#: ../src/imageio/storage/facebook.c:1018 ../src/imageio/storage/flickr.c:479
+#: ../src/imageio/storage/gallery.c:167 ../src/imageio/storage/latex.c:167
+#: ../src/imageio/storage/picasa.c:1311 ../src/libs/collect.h:38
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/metadata.c:303 ../src/libs/metadata_view.c:95
 msgid "title"
 msgstr "título"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:1020 ../src/imageio/storage/flickr.c:481
 #: ../src/imageio/storage/picasa.c:1313
 msgid "summary"
@@ -2391,66 +3449,136 @@ msgid "Public"
 msgstr ""
 
 #: ../src/imageio/storage/facebook.c:1067
+=======
+#: ../src/imageio/storage/facebook.c:1019 ../src/imageio/storage/flickr.c:480
+#: ../src/imageio/storage/picasa.c:1312
+msgid "summary"
+msgstr "sumario"
+
+#: ../src/imageio/storage/facebook.c:1020 ../src/imageio/storage/picasa.c:1313
+msgid "privacy"
+msgstr ""
+
+#: ../src/imageio/storage/facebook.c:1060
+msgid "Only Me"
+msgstr ""
+
+#: ../src/imageio/storage/facebook.c:1062
+msgid "Friends"
+msgstr ""
+
+#: ../src/imageio/storage/facebook.c:1064
+msgid "Public"
+msgstr ""
+
+#: ../src/imageio/storage/facebook.c:1066
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "Friends of Friends"
 msgstr "regla dos tercios"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:1200 ../src/imageio/storage/picasa.c:1493
 msgid "unable to create album, no title provided"
 msgstr ""
 
 #: ../src/imageio/storage/facebook.c:1207 ../src/imageio/storage/picasa.c:1500
+=======
+#: ../src/imageio/storage/facebook.c:1199 ../src/imageio/storage/picasa.c:1492
+msgid "unable to create album, no title provided"
+msgstr ""
+
+#: ../src/imageio/storage/facebook.c:1206 ../src/imageio/storage/picasa.c:1499
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "unable to create album"
 msgstr "crear album novo"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:1217 ../src/imageio/storage/picasa.c:1510
+=======
+#: ../src/imageio/storage/facebook.c:1216 ../src/imageio/storage/picasa.c:1509
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "unable to export photo to webalbum"
 msgstr ""
 
 #. this makes sense only if the export was successful
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:1234
+=======
+#: ../src/imageio/storage/facebook.c:1233
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "%d/%d exported to facebook webalbum"
 msgstr "%d/%d exportado a album picasa"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:116
+=======
+#: ../src/imageio/storage/flickr.c:115
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "flickr authentication: %s"
 msgstr "erro de autenticación"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:191
+=======
+#: ../src/imageio/storage/flickr.c:190
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "step 1: a new window or tab of your browser should have been loaded. you "
 "have to login into your flickr account there and authorize darktable to "
 "upload photos before continuing."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:192
 msgid "step 2: click the ok button once you are done."
 msgstr ""
 
 #: ../src/imageio/storage/flickr.c:199
+=======
+#: ../src/imageio/storage/flickr.c:191
+msgid "step 2: click the ok button once you are done."
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:198
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "flickr authentication"
 msgstr "erro de autenticación"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:308
+=======
+#: ../src/imageio/storage/flickr.c:307
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "flickr webalbum"
 msgstr "albumweb picasa"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:332 ../src/imageio/storage/flickr.c:372
 #: ../src/imageio/storage/flickr.c:849 ../src/imageio/storage/flickr.c:855
+=======
+#: ../src/imageio/storage/flickr.c:331 ../src/imageio/storage/flickr.c:371
+#: ../src/imageio/storage/flickr.c:840 ../src/imageio/storage/flickr.c:846
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "not authenticated"
 msgstr "autenticado"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:368 ../src/imageio/storage/flickr.c:845
+=======
+#: ../src/imageio/storage/flickr.c:367 ../src/imageio/storage/flickr.c:836
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "authenticated"
 msgstr "autenticado"
 
 #. Add standard action
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:387
 msgid "without album"
 msgstr ""
@@ -2460,10 +3588,22 @@ msgid "flickr user"
 msgstr ""
 
 #: ../src/imageio/storage/flickr.c:474
+=======
+#: ../src/imageio/storage/flickr.c:386
+msgid "without album"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:472
+msgid "flickr user"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:473
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "photosets"
 msgstr "preestablecido"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:475
 msgid "visible to"
 msgstr ""
@@ -2473,10 +3613,22 @@ msgid "click login button to start"
 msgstr ""
 
 #: ../src/imageio/storage/flickr.c:515
+=======
+#: ../src/imageio/storage/flickr.c:474
+msgid "visible to"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:477
+msgid "click login button to start"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:514
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "my new photoset"
 msgstr "novo preestablecido"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:516
 msgid "exported from darktable"
 msgstr "exportado dende darktable"
@@ -2510,17 +3662,64 @@ msgid "friends + family"
 msgstr ""
 
 #: ../src/imageio/storage/flickr.c:542
+=======
+#: ../src/imageio/storage/flickr.c:515
+msgid "exported from darktable"
+msgstr "exportado dende darktable"
+
+#: ../src/imageio/storage/flickr.c:523
+msgid "refresh album list"
+msgstr "refrescar lista de album"
+
+#: ../src/imageio/storage/flickr.c:526
+msgid "Flickr login"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:533
+msgid "export tags"
+msgstr "exportar etiquetas"
+
+#: ../src/imageio/storage/flickr.c:537
+msgid "you"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:538
+msgid "friends"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:539
+msgid "family"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:540
+msgid "friends + family"
+msgstr ""
+
+#: ../src/imageio/storage/flickr.c:541
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "everyone"
 msgstr "reverso"
 
 #. this makes sense only if the export was successful
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:744
+=======
+#: ../src/imageio/storage/flickr.c:743
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "%d/%d exported to flickr webalbum"
 msgstr "%d/%d exportado a album picasa"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/gallery.c:71
+=======
+#: ../src/imageio/storage/flickr.c:848
+msgid "Flickr account not authenticated"
+msgstr ""
+
+#: ../src/imageio/storage/gallery.c:70
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "website gallery"
 msgstr ""
 
@@ -2539,18 +3738,27 @@ msgid "enter the title of the book"
 msgstr ""
 
 #. //////////// build & show the validation dialog
+<<<<<<< HEAD
 #: ../src/imageio/storage/picasa.c:834
+=======
+#: ../src/imageio/storage/picasa.c:833
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "step 1: a new window or tab of your browser should have been loaded. you "
 "have to login into your picasa account there and authorize darktable to "
 "upload photos before continuing."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/picasa.c:845
+=======
+#: ../src/imageio/storage/picasa.c:844
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "picasa authentication"
 msgstr "erro de autenticación"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/picasa.c:1299
 msgid "picasa webalbum"
 msgstr "albumweb picasa"
@@ -2560,12 +3768,27 @@ msgid "private"
 msgstr ""
 
 #: ../src/imageio/storage/picasa.c:1358
+=======
+#: ../src/imageio/storage/picasa.c:1298
+msgid "picasa webalbum"
+msgstr "albumweb picasa"
+
+#: ../src/imageio/storage/picasa.c:1355
+msgid "private"
+msgstr ""
+
+#: ../src/imageio/storage/picasa.c:1357
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "public"
 msgstr "album público"
 
 #. this makes sense only if the export was successful
+<<<<<<< HEAD
 #: ../src/imageio/storage/picasa.c:1527
+=======
+#: ../src/imageio/storage/picasa.c:1526
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%d/%d exported to picasa webalbum"
 msgstr "%d/%d exportado a album picasa"
@@ -2689,12 +3912,20 @@ msgstr "enfoque"
 msgid "sharpness of edges at each feature size"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/atrous.c:1457 ../src/iop/colorzones.c:1045
 #: ../src/iop/soften.c:601
 msgid "mix"
 msgstr ""
 
 #: ../src/iop/atrous.c:1458 ../src/iop/colorzones.c:1047
+=======
+#: ../src/iop/atrous.c:1457 ../src/iop/soften.c:601
+msgid "mix"
+msgstr ""
+
+#: ../src/iop/atrous.c:1458
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "make effect stronger or weaker"
 msgstr ""
 
@@ -2929,6 +4160,7 @@ msgctxt "accel"
 msgid "pick frame line color from image"
 msgstr "seleccionar cor en el gráfico"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:546
 msgid "15:10 postcard white"
 msgstr ""
@@ -2938,26 +4170,51 @@ msgid "15:10 postcard black"
 msgstr ""
 
 #: ../src/iop/borders.c:794
+=======
+#: ../src/iop/borders.c:548
+msgid "15:10 postcard white"
+msgstr ""
+
+#: ../src/iop/borders.c:551
+msgid "15:10 postcard black"
+msgstr ""
+
+#: ../src/iop/borders.c:796
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "select border color"
 msgstr "seleccionar tono de cor"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:831
+=======
+#: ../src/iop/borders.c:833
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "select frame line color"
 msgstr "seleccionar tono de cor"
 
 #. add import singel image buttons
+<<<<<<< HEAD
 #: ../src/iop/borders.c:981 ../src/iop/clipping.c:1737
 #: ../src/iop/watermark.c:1057 ../src/libs/import.c:814
 msgid "image"
 msgstr "imaxe"
 
 #: ../src/iop/borders.c:982
+=======
+#: ../src/iop/borders.c:983 ../src/iop/clipping.c:1740
+#: ../src/libs/import.c:814
+msgid "image"
+msgstr "imaxe"
+
+#: ../src/iop/borders.c:984
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "3:1"
 msgstr "3:2"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:983
 msgid "95:33"
 msgstr ""
@@ -3019,10 +4276,74 @@ msgid "2/3"
 msgstr ""
 
 #: ../src/iop/borders.c:1048
+=======
+#: ../src/iop/borders.c:985
+msgid "95:33"
+msgstr ""
+
+#: ../src/iop/borders.c:986
+msgid "2:1"
+msgstr ""
+
+#: ../src/iop/borders.c:987 ../src/iop/clipping.c:1749
+msgid "16:9"
+msgstr ""
+
+#: ../src/iop/borders.c:988 ../src/iop/clipping.c:1741
+msgid "golden cut"
+msgstr "corte dourado"
+
+#: ../src/iop/borders.c:989 ../src/iop/clipping.c:1743
+msgid "3:2"
+msgstr "3:2"
+
+#: ../src/iop/borders.c:990
+msgid "A4"
+msgstr ""
+
+#: ../src/iop/borders.c:991 ../src/iop/clipping.c:1748
+msgid "DIN"
+msgstr ""
+
+#: ../src/iop/borders.c:992 ../src/iop/clipping.c:1745
+msgid "4:3"
+msgstr "4:3"
+
+#: ../src/iop/borders.c:993 ../src/iop/clipping.c:1747
+msgid "square"
+msgstr "cuadrado"
+
+#: ../src/iop/borders.c:994
+msgid "constant border"
+msgstr ""
+
+#: ../src/iop/borders.c:1016 ../src/iop/borders.c:1021
+msgid "center"
+msgstr ""
+
+#: ../src/iop/borders.c:1017 ../src/iop/borders.c:1022
+msgid "1/3"
+msgstr ""
+
+#: ../src/iop/borders.c:1018 ../src/iop/borders.c:1023
+msgid "3/8"
+msgstr ""
+
+#: ../src/iop/borders.c:1019 ../src/iop/borders.c:1024
+msgid "5/8"
+msgstr ""
+
+#: ../src/iop/borders.c:1020 ../src/iop/borders.c:1025
+msgid "2/3"
+msgstr ""
+
+#: ../src/iop/borders.c:1050
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "border size"
 msgstr "tamaño de filtro"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1051
 msgid "size of the border in percent of the full image"
 msgstr ""
@@ -3036,15 +4357,35 @@ msgid "select the aspect ratio or right click and type your own (w:h)"
 msgstr ""
 
 #: ../src/iop/borders.c:1063 ../src/iop/flip.c:81
+=======
+#: ../src/iop/borders.c:1053
+msgid "size of the border in percent of the full image"
+msgstr ""
+
+#: ../src/iop/borders.c:1058 ../src/iop/clipping.c:1738
+msgid "aspect"
+msgstr "aspecto"
+
+#: ../src/iop/borders.c:1062
+msgid "select the aspect ratio or right click and type your own (w:h)"
+msgstr ""
+
+#: ../src/iop/borders.c:1065 ../src/iop/flip.c:81
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "orientation"
 msgstr "saturación"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1065
+=======
+#: ../src/iop/borders.c:1067
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "portrait"
 msgstr "exportar"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1066
 msgid "landscape"
 msgstr ""
@@ -3054,32 +4395,60 @@ msgid "aspect ratio orientation of the image with border"
 msgstr ""
 
 #: ../src/iop/borders.c:1073
+=======
+#: ../src/iop/borders.c:1068
+msgid "landscape"
+msgstr ""
+
+#: ../src/iop/borders.c:1069
+msgid "aspect ratio orientation of the image with border"
+msgstr ""
+
+#: ../src/iop/borders.c:1075
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "horizontal position"
 msgstr "simetría horizontal"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1076
+=======
+#: ../src/iop/borders.c:1078
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "select the horizontal position ratio relative to top or right click and type "
 "your own (y:h)"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1079
+=======
+#: ../src/iop/borders.c:1081
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "vertical position"
 msgstr "simetría vertical"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1082
+=======
+#: ../src/iop/borders.c:1084
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "select the vertical position ratio relative to left or right click and type "
 "your own (x:w)"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1086
+=======
+#: ../src/iop/borders.c:1088
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "frame line size"
 msgstr "tamaño de filtro"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1089
 msgid "size of the frame line in percent of min border width"
 msgstr ""
@@ -3093,21 +4462,48 @@ msgid "offset of the frame line beginning on picture side"
 msgstr ""
 
 #: ../src/iop/borders.c:1102
+=======
+#: ../src/iop/borders.c:1091
+msgid "size of the frame line in percent of min border width"
+msgstr ""
+
+#: ../src/iop/borders.c:1095
+msgid "frame line offset"
+msgstr ""
+
+#: ../src/iop/borders.c:1098
+msgid "offset of the frame line beginning on picture side"
+msgstr ""
+
+#: ../src/iop/borders.c:1104
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "border color"
 msgstr "4 colores RGB"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1105
+=======
+#: ../src/iop/borders.c:1107
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "pick border color from image"
 msgstr "seleccionar cor en el gráfico"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1117
+=======
+#: ../src/iop/borders.c:1119
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "frame line color"
 msgstr "seleccionar tono de cor"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1120
+=======
+#: ../src/iop/borders.c:1122
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "pick frame line color from image"
 msgstr "seleccionar cor en el gráfico"
@@ -3138,8 +4534,13 @@ msgstr "saturación"
 
 #. dt_bauhaus_slider_set_format(g->gslider2, "");
 #: ../src/iop/channelmixer.c:438 ../src/iop/colorcorrection.c:282
+<<<<<<< HEAD
 #: ../src/iop/colorize.c:431 ../src/iop/colorzones.c:1019
 #: ../src/iop/colorzones.c:1055 ../src/iop/graduatednd.c:1064
+=======
+#: ../src/iop/colorize.c:431 ../src/iop/colorzones.c:974
+#: ../src/iop/colorzones.c:1003 ../src/iop/graduatednd.c:1064
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/lowpass.c:523 ../src/iop/soften.c:584
 #: ../src/iop/splittoning.c:554 ../src/iop/vignette.c:1129
 msgid "saturation"
@@ -3215,22 +4616,37 @@ msgstr "forza do efecto"
 msgid "crop and rotate"
 msgstr "recortar e rotar"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1360
 msgid "invalid ratio format. it should be \"number:number\""
 msgstr ""
 
 #: ../src/iop/clipping.c:1460 ../src/iop/clipping.c:1701
 #: ../src/iop/clipping.c:1718
+=======
+#: ../src/iop/clipping.c:1363
+msgid "invalid ratio format. it should be \"number:number\""
+msgstr ""
+
+#: ../src/iop/clipping.c:1463 ../src/iop/clipping.c:1704
+#: ../src/iop/clipping.c:1721
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "vertical"
 msgstr "simetría vertical"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1461 ../src/iop/clipping.c:1700
 #: ../src/iop/clipping.c:1719
+=======
+#: ../src/iop/clipping.c:1464 ../src/iop/clipping.c:1703
+#: ../src/iop/clipping.c:1722
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "horizontal"
 msgstr "simetría horizontal"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1462 ../src/iop/clipping.c:1720
 msgid "full"
 msgstr ""
@@ -3240,25 +4656,49 @@ msgid "old system"
 msgstr ""
 
 #: ../src/iop/clipping.c:1464
+=======
+#: ../src/iop/clipping.c:1465 ../src/iop/clipping.c:1723
+msgid "full"
+msgstr ""
+
+#: ../src/iop/clipping.c:1466
+msgid "old system"
+msgstr ""
+
+#: ../src/iop/clipping.c:1467
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "correction applied"
 msgstr "corrección de cor"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1698 ../src/iop/clipping.c:1776
+=======
+#: ../src/iop/clipping.c:1701 ../src/iop/clipping.c:1779
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/live_view.c:335
 msgid "flip"
 msgstr "xiro"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1702 ../src/iop/clipping.c:1780
+=======
+#: ../src/iop/clipping.c:1705 ../src/iop/clipping.c:1783
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/live_view.c:339
 msgid "both"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1704
+=======
+#: ../src/iop/clipping.c:1707
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "mirror image horizontally and/or vertically"
 msgstr "xirar imaxe horizontalmente"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1709
 msgid "angle"
 msgstr "ángulo"
@@ -3268,19 +4708,39 @@ msgid "right-click and drag a line on the image to drag a straight line"
 msgstr "click dereito e arrastrar rato na imaxe para crear unha linea recta"
 
 #: ../src/iop/clipping.c:1716
+=======
+#: ../src/iop/clipping.c:1712
+msgid "angle"
+msgstr "ángulo"
+
+#: ../src/iop/clipping.c:1715
+msgid "right-click and drag a line on the image to drag a straight line"
+msgstr "click dereito e arrastrar rato na imaxe para crear unha linea recta"
+
+#: ../src/iop/clipping.c:1719
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "keystone"
 msgstr "curva tono"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1721
 msgid "set perspective correction for your image"
 msgstr ""
 
 #: ../src/iop/clipping.c:1726
+=======
+#: ../src/iop/clipping.c:1724
+msgid "set perspective correction for your image"
+msgstr ""
+
+#: ../src/iop/clipping.c:1729
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "automatic cropping"
 msgstr "auto"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1727
 #, fuzzy
 msgid "no"
@@ -3319,12 +4779,53 @@ msgid "10:8 in print"
 msgstr ""
 
 #: ../src/iop/clipping.c:1753
+=======
+#: ../src/iop/clipping.c:1730
+#, fuzzy
+msgid "no"
+msgstr "ningunha"
+
+#: ../src/iop/clipping.c:1731
+msgid "yes"
+msgstr ""
+
+#: ../src/iop/clipping.c:1732
+msgid "automatically crop to avoid black edges"
+msgstr ""
+
+#: ../src/iop/clipping.c:1739
+msgid "free"
+msgstr "libre"
+
+#: ../src/iop/clipping.c:1742
+msgid "1:2"
+msgstr "1:2"
+
+#: ../src/iop/clipping.c:1744
+msgid "7:5"
+msgstr ""
+
+#: ../src/iop/clipping.c:1746
+msgid "5:4"
+msgstr ""
+
+#: ../src/iop/clipping.c:1750
+msgid "16:10"
+msgstr ""
+
+#: ../src/iop/clipping.c:1751
+msgid "10:8 in print"
+msgstr ""
+
+#: ../src/iop/clipping.c:1756
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "set the aspect ratio (w:h)"
 msgstr ""
 "fixar o aspecto de ratio (an/al)\n"
 "presionar ctrl-x para intertrocar as caras"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1759 ../src/libs/live_view.c:323
 msgid "guides"
 msgstr "guias"
@@ -3350,27 +4851,67 @@ msgid "golden mean"
 msgstr "proporción áurea"
 
 #: ../src/iop/clipping.c:1771 ../src/libs/live_view.c:330
+=======
+#: ../src/iop/clipping.c:1762 ../src/libs/live_view.c:323
+msgid "guides"
+msgstr "guias"
+
+#: ../src/iop/clipping.c:1764 ../src/libs/live_view.c:325
+msgid "grid"
+msgstr "reixa"
+
+#: ../src/iop/clipping.c:1765 ../src/libs/live_view.c:326
+msgid "rules of thirds"
+msgstr "regla dos tercios"
+
+#: ../src/iop/clipping.c:1766 ../src/libs/live_view.c:327
+msgid "diagonal method"
+msgstr "método diagonal"
+
+#: ../src/iop/clipping.c:1767 ../src/libs/live_view.c:328
+msgid "harmonious triangles"
+msgstr "triángulos armónicos"
+
+#: ../src/iop/clipping.c:1768 ../src/libs/live_view.c:329
+msgid "golden mean"
+msgstr "proporción áurea"
+
+#: ../src/iop/clipping.c:1774 ../src/libs/live_view.c:330
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "display guide lines to help compose your photograph"
 msgstr ""
 "con esta opción, pode amosar liñas guía para axudar a compor a sua "
 "fotografía."
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1778 ../src/libs/live_view.c:337
+=======
+#: ../src/iop/clipping.c:1781 ../src/libs/live_view.c:337
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "horizontally"
 msgstr "simetría horizontal"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1779 ../src/libs/live_view.c:338
+=======
+#: ../src/iop/clipping.c:1782 ../src/libs/live_view.c:338
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "vertically"
 msgstr "simetría vertical"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1781 ../src/libs/live_view.c:340
+=======
+#: ../src/iop/clipping.c:1784 ../src/libs/live_view.c:340
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "flip guides"
 msgstr "guias"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1786 ../src/libs/live_view.c:344
 msgid "extra"
 msgstr ""
@@ -3380,29 +4921,60 @@ msgid "golden sections"
 msgstr "secciones áureas"
 
 #: ../src/iop/clipping.c:1788 ../src/libs/live_view.c:346
+=======
+#: ../src/iop/clipping.c:1789 ../src/libs/live_view.c:344
+msgid "extra"
+msgstr ""
+
+#: ../src/iop/clipping.c:1790 ../src/libs/live_view.c:345
+msgid "golden sections"
+msgstr "secciones áureas"
+
+#: ../src/iop/clipping.c:1791 ../src/libs/live_view.c:346
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "golden spiral sections"
 msgstr "seccións espirais"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1789 ../src/libs/live_view.c:347
 msgid "golden spiral"
 msgstr "espiral áurea"
 
 #: ../src/iop/clipping.c:1790 ../src/iop/lens.c:1711
+=======
+#: ../src/iop/clipping.c:1792 ../src/libs/live_view.c:347
+msgid "golden spiral"
+msgstr "espiral áurea"
+
+#: ../src/iop/clipping.c:1793 ../src/iop/lens.c:1713
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/live_view.c:348 ../src/libs/tools/filter.c:101
 msgid "all"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1791 ../src/libs/live_view.c:349
 msgid "show some extra guides"
 msgstr ""
 
 #: ../src/iop/clipping.c:2792
+=======
+#: ../src/iop/clipping.c:1794 ../src/libs/live_view.c:349
+msgid "show some extra guides"
+msgstr ""
+
+#: ../src/iop/clipping.c:2795
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "commit"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:2794
+=======
+#: ../src/iop/clipping.c:2797
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgctxt "accel"
 msgid "angle"
@@ -3520,7 +5092,11 @@ msgstr ""
 
 #: ../src/iop/colorin.c:756 ../src/iop/colorin.c:788 ../src/iop/colorout.c:909
 #: ../src/iop/colorout.c:910 ../src/iop/colorout.c:911
+<<<<<<< HEAD
 #: ../src/libs/export.c:556
+=======
+#: ../src/libs/export.c:521
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "linear RGB"
 msgstr "lineal"
@@ -3541,7 +5117,11 @@ msgid "Lab"
 msgstr "lab"
 
 #: ../src/iop/colorin.c:896 ../src/iop/denoiseprofile.c:1712
+<<<<<<< HEAD
 #: ../src/libs/export.c:597
+=======
+#: ../src/libs/export.c:562
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "profile"
 msgstr "perfil"
 
@@ -3687,23 +5267,39 @@ msgid "output intent"
 msgstr "intento de saida"
 
 #: ../src/iop/colorout.c:869 ../src/iop/colorout.c:876
+<<<<<<< HEAD
 #: ../src/libs/export.c:525
+=======
+#: ../src/libs/export.c:490
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "perceptual"
 msgstr "perceptual"
 
 #: ../src/iop/colorout.c:870 ../src/iop/colorout.c:877
+<<<<<<< HEAD
 #: ../src/libs/export.c:526
+=======
+#: ../src/libs/export.c:491
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "relative colorimetric"
 msgstr "relativo colorimétrico"
 
 #: ../src/iop/colorout.c:871 ../src/iop/colorout.c:878
+<<<<<<< HEAD
 #: ../src/libs/export.c:527
+=======
+#: ../src/libs/export.c:492
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "rendering intent"
 msgid "saturation"
 msgstr "saturación"
 
 #: ../src/iop/colorout.c:872 ../src/iop/colorout.c:879
+<<<<<<< HEAD
 #: ../src/libs/export.c:528
+=======
+#: ../src/libs/export.c:493
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "absolute colorimetric"
 msgstr "absoluto colorimétrico"
 
@@ -3725,12 +5321,20 @@ msgid "display profile"
 msgstr "perfil de pantalla"
 
 #. the system display profile is only suitable for display purposes
+<<<<<<< HEAD
 #: ../src/iop/colorout.c:905 ../src/libs/export.c:609
+=======
+#: ../src/iop/colorout.c:905 ../src/libs/export.c:574
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "system display profile"
 msgstr "perfil de pantalla de s.o"
 
 #: ../src/iop/colorout.c:915 ../src/iop/colorout.c:916
+<<<<<<< HEAD
 #: ../src/iop/colorout.c:917 ../src/libs/export.c:537
+=======
+#: ../src/iop/colorout.c:917 ../src/libs/export.c:502
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "sRGB (web-safe)"
 msgstr "srgb"
@@ -3807,6 +5411,7 @@ msgstr "aplicar"
 msgid "apply previously analyzed image look to this image"
 msgstr "aplicar aspecto de imaxe previamente analizada a esta imaxe"
 
+<<<<<<< HEAD
 #: ../src/iop/colorzones.c:120
 msgid "color zones"
 msgstr "zonas de cor"
@@ -3828,16 +5433,47 @@ msgid "natural skin tones"
 msgstr "tonos de pel naturales"
 
 #: ../src/iop/colorzones.c:529
+=======
+#: ../src/iop/colorzones.c:111
+msgid "color zones"
+msgstr "zonas de cor"
+
+#: ../src/iop/colorzones.c:403
+msgid "red black white"
+msgstr "vermello negro branco"
+
+#: ../src/iop/colorzones.c:421
+msgid "black white and skin tones"
+msgstr "branco e negro, e tonos de pel"
+
+#: ../src/iop/colorzones.c:439
+msgid "polarizing filter"
+msgstr "filtro polarizador"
+
+#: ../src/iop/colorzones.c:467
+msgid "natural skin tones"
+msgstr "tonos de pel naturales"
+
+#: ../src/iop/colorzones.c:495
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "black & white film"
 msgstr "branco e negro"
 
+<<<<<<< HEAD
 #: ../src/iop/colorzones.c:1052
+=======
+#: ../src/iop/colorzones.c:1000
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "select by"
 msgstr "seleccionar"
 
+<<<<<<< HEAD
 #: ../src/iop/colorzones.c:1053
+=======
+#: ../src/iop/colorzones.c:1001
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "choose selection criterion, will be the abscissa in the graph"
 msgstr ""
 
@@ -3952,7 +5588,11 @@ msgstr ""
 msgid "interpolated from iso %d and %d"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/denoiseprofile.c:1713 ../src/iop/lens.c:1866
+=======
+#: ../src/iop/denoiseprofile.c:1713 ../src/iop/lens.c:1868
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "mode"
 msgstr "modelo"
@@ -4422,7 +6062,11 @@ msgstr "seleccionar cor en el gráfico"
 msgid "lens correction"
 msgstr "corrección de cor"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:71 ../src/iop/vignette.c:158 ../src/iop/watermark.c:164
+=======
+#: ../src/iop/lens.c:71 ../src/iop/vignette.c:158 ../src/iop/watermark.c:163
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgctxt "accel"
 msgid "scale"
@@ -4476,7 +6120,11 @@ msgctxt "accel"
 msgid "select corrections"
 msgstr "corrección de cor"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1050
+=======
+#: ../src/iop/lens.c:1052
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid ""
 "maker:\t\t%s\n"
@@ -4489,6 +6137,7 @@ msgstr ""
 "montura:\t\t%s\n"
 "factor de recorte:\t%.1f"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1281
 msgid "camera/lens not found - please select manually"
 msgstr ""
@@ -4498,6 +6147,17 @@ msgid "try to locate your camera/lens in the above two menus"
 msgstr ""
 
 #: ../src/iop/lens.c:1328
+=======
+#: ../src/iop/lens.c:1283
+msgid "camera/lens not found - please select manually"
+msgstr ""
+
+#: ../src/iop/lens.c:1285
+msgid "try to locate your camera/lens in the above two menus"
+msgstr ""
+
+#: ../src/iop/lens.c:1330
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid ""
 "maker:\t\t%s\n"
@@ -4516,6 +6176,7 @@ msgstr ""
 "tipo:\t\t%s\n"
 "montura:\t\t%s"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1374
 msgid "mm"
 msgstr "mm"
@@ -4541,54 +6202,118 @@ msgid "distance to subject"
 msgstr "distancia ao suxeito"
 
 #: ../src/iop/lens.c:1717
+=======
+#: ../src/iop/lens.c:1376
+msgid "mm"
+msgstr "mm"
+
+#: ../src/iop/lens.c:1377
+msgid "focal length (mm)"
+msgstr "lonxitude focal (mm)"
+
+#: ../src/iop/lens.c:1404
+msgid "f/"
+msgstr "f/"
+
+#: ../src/iop/lens.c:1405
+msgid "f-number (aperture)"
+msgstr "número-f (apertura)"
+
+#: ../src/iop/lens.c:1420
+msgid "d"
+msgstr "d"
+
+#: ../src/iop/lens.c:1421
+msgid "distance to subject"
+msgstr "distancia ao suxeito"
+
+#: ../src/iop/lens.c:1719
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "distortion & TCA"
 msgstr "distorsión de lentes"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1723
+=======
+#: ../src/iop/lens.c:1725
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "distortion & vignetting"
 msgstr "viñeteado"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1729
+=======
+#: ../src/iop/lens.c:1731
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "TCA & vignetting"
 msgstr "viñeteado"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1735
+=======
+#: ../src/iop/lens.c:1737
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "only distortion"
 msgstr "distorsión de lentes"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1741
 msgid "only TCA"
 msgstr ""
 
 #: ../src/iop/lens.c:1747
+=======
+#: ../src/iop/lens.c:1743
+msgid "only TCA"
+msgstr ""
+
+#: ../src/iop/lens.c:1749
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "only vignetting"
 msgstr "viñeteado"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1770
+=======
+#: ../src/iop/lens.c:1772
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "find camera"
 msgstr "cámara"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1787
+=======
+#: ../src/iop/lens.c:1789
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "find lens"
 msgstr "lentes"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1820
+=======
+#: ../src/iop/lens.c:1822
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "corrections"
 msgstr "opcions globais"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1822
+=======
+#: ../src/iop/lens.c:1824
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "which corrections to apply"
 msgstr "corrección de cor"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1837
 msgid "geometry"
 msgstr "xeometría"
@@ -4626,15 +6351,59 @@ msgid "equisolid angle"
 msgstr ""
 
 #: ../src/iop/lens.c:1848
+=======
+#: ../src/iop/lens.c:1839
+msgid "geometry"
+msgstr "xeometría"
+
+#: ../src/iop/lens.c:1841
+msgid "target geometry"
+msgstr "xeometría destino"
+
+#: ../src/iop/lens.c:1842
+msgid "rectilinear"
+msgstr "rectilineal"
+
+#: ../src/iop/lens.c:1843
+msgid "fish-eye"
+msgstr "ollo de peixe"
+
+#: ../src/iop/lens.c:1844
+msgid "panoramic"
+msgstr "panorámico"
+
+#: ../src/iop/lens.c:1845
+msgid "equirectangular"
+msgstr "equirectangular"
+
+#: ../src/iop/lens.c:1847
+msgid "orthographic"
+msgstr ""
+
+#: ../src/iop/lens.c:1848
+msgid "stereographic"
+msgstr ""
+
+#: ../src/iop/lens.c:1849
+msgid "equisolid angle"
+msgstr ""
+
+#: ../src/iop/lens.c:1850
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "thoby fish-eye"
 msgstr "ollo de peixe"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1856
+=======
+#: ../src/iop/lens.c:1858
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "auto scale"
 msgstr "escala"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1857 ../src/iop/vignette.c:1126
 #: ../src/iop/watermark.c:1052
 msgid "scale"
@@ -4645,39 +6414,79 @@ msgid "correct distortions or apply them"
 msgstr ""
 
 #: ../src/iop/lens.c:1869
+=======
+#: ../src/iop/lens.c:1859 ../src/iop/vignette.c:1126
+#: ../src/iop/watermark.c:1018
+msgid "scale"
+msgstr "escala"
+
+#: ../src/iop/lens.c:1870
+msgid "correct distortions or apply them"
+msgstr ""
+
+#: ../src/iop/lens.c:1871
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "correct"
 msgstr "autocorrección ca"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1870
+=======
+#: ../src/iop/lens.c:1872
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "distort"
 msgstr "histórico"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1877
 msgid "transversal chromatic aberration red"
 msgstr ""
 
 #: ../src/iop/lens.c:1878
+=======
+#: ../src/iop/lens.c:1879
+msgid "transversal chromatic aberration red"
+msgstr ""
+
+#: ../src/iop/lens.c:1880
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "tca red"
 msgstr "tca r"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1883
 msgid "transversal chromatic aberration blue"
 msgstr ""
 
 #: ../src/iop/lens.c:1884
+=======
+#: ../src/iop/lens.c:1885
+msgid "transversal chromatic aberration blue"
+msgstr ""
+
+#: ../src/iop/lens.c:1886
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "tca blue"
 msgstr "tca b"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1891
+=======
+#: ../src/iop/lens.c:1893
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "corrections done: "
 msgstr "corrección de cor"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1892
+=======
+#: ../src/iop/lens.c:1894
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "which corrections have actually been done"
 msgstr ""
 
@@ -5226,15 +7035,37 @@ msgstr ""
 "comprimir el efecto en altas luces/sombras y\n"
 "preservar medios tonos"
 
+<<<<<<< HEAD
 #: ../src/iop/spots.c:54
 msgid "spot removal"
 msgstr ""
 
 #: ../src/iop/spots.c:528
+=======
+#: ../src/iop/spots.c:82
+msgid "spot removal"
+msgstr ""
+
+#: ../src/iop/spots.c:468
+msgid ""
+"click on a spot and drag on canvas to heal.\n"
+"use the mouse wheel to adjust size.\n"
+"right click to remove a stroke."
+msgstr ""
+
+#: ../src/iop/spots.c:472
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "number of strokes:"
 msgstr "nome de preestablecido"
 
+<<<<<<< HEAD
+=======
+#: ../src/iop/spots.c:706
+msgid "spot removal only supports up to 32 spots"
+msgstr ""
+
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/temperature.c:78
 msgctxt "modulename"
 msgid "white balance"
@@ -5541,30 +7372,51 @@ msgstr ""
 msgid "add some level of random noise to prevent banding"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/watermark.c:141
 msgid "watermark"
 msgstr ""
 
 #: ../src/iop/watermark.c:162
+=======
+#: ../src/iop/watermark.c:140
+msgid "watermark"
+msgstr ""
+
+#: ../src/iop/watermark.c:161
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "refresh"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/watermark.c:163
+=======
+#: ../src/iop/watermark.c:162
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "opacity"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/watermark.c:165
+=======
+#: ../src/iop/watermark.c:164
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "x offset"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/watermark.c:166
+=======
+#: ../src/iop/watermark.c:165
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "y offset"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/watermark.c:1034
 msgid "marker"
 msgstr ""
@@ -5597,15 +7449,38 @@ msgid "x offset"
 msgstr ""
 
 #: ../src/iop/watermark.c:1085
+=======
+#: ../src/iop/watermark.c:1000
+msgid "marker"
+msgstr ""
+
+#: ../src/iop/watermark.c:1001
+msgid "alignment"
+msgstr ""
+
+#: ../src/iop/watermark.c:1039
+msgid "x offset"
+msgstr ""
+
+#: ../src/iop/watermark.c:1042
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "y offset"
 msgstr ""
 
 #. Let's add some tooltips and hook up some signals...
+<<<<<<< HEAD
 #: ../src/iop/watermark.c:1091
 msgid "the opacity of the watermark"
 msgstr ""
 
 #: ../src/iop/watermark.c:1092
+=======
+#: ../src/iop/watermark.c:1048
+msgid "the opacity of the watermark"
+msgstr ""
+
+#: ../src/iop/watermark.c:1049
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "the scale of the watermark"
 msgstr "la escala de ruido"
@@ -5894,7 +7769,11 @@ msgid "filename"
 msgstr "nome de arquivo"
 
 #. create
+<<<<<<< HEAD
 #: ../src/libs/capture.c:146 ../src/libs/styles.c:383
+=======
+#: ../src/libs/capture.c:146 ../src/libs/styles.c:382
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "create"
 msgstr "crear"
 
@@ -6100,7 +7979,11 @@ msgid "xmp sidecar files"
 msgstr "arquivos asociados dt"
 
 #: ../src/libs/copy_history.c:88 ../src/libs/geotagging.c:446
+<<<<<<< HEAD
 #: ../src/libs/import.c:680 ../src/libs/styles.c:281
+=======
+#: ../src/libs/import.c:680 ../src/libs/styles.c:280
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "all files"
 msgstr "todos os arquivos"
 
@@ -6249,6 +8132,7 @@ msgctxt "accel"
 msgid "write sidecar files"
 msgstr "arquivos asociados dt"
 
+<<<<<<< HEAD
 #: ../src/libs/export.c:72
 msgid "export selected"
 msgstr "exportar escollidas"
@@ -6266,6 +8150,25 @@ msgid "global options"
 msgstr "opcions globais"
 
 #: ../src/libs/export.c:497
+=======
+#: ../src/libs/export.c:70
+msgid "export selected"
+msgstr "exportar escollidas"
+
+#: ../src/libs/export.c:423
+msgid "target storage"
+msgstr "guardar en"
+
+#: ../src/libs/export.c:443
+msgid "file format"
+msgstr "formato de arquivo"
+
+#: ../src/libs/export.c:458
+msgid "global options"
+msgstr "opcions globais"
+
+#: ../src/libs/export.c:462
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "maximum output width\n"
 "set to 0 for no scaling"
@@ -6273,7 +8176,11 @@ msgstr ""
 "máximo ancho de saida\n"
 "0 para non escalar "
 
+<<<<<<< HEAD
 #: ../src/libs/export.c:499
+=======
+#: ../src/libs/export.c:464
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "maximum output height\n"
 "set to 0 for no scaling"
@@ -6289,6 +8196,7 @@ msgstr ""
 #. g_signal_connect (G_OBJECT (d->height), "focus-in-event",  G_CALLBACK(focus_in),  NULL);
 #. g_signal_connect (G_OBJECT (d->height), "focus-out-event", G_CALLBACK(focus_out), NULL);
 #.
+<<<<<<< HEAD
 #: ../src/libs/export.c:511
 msgid "max size"
 msgstr "tamaño máx"
@@ -6298,10 +8206,22 @@ msgid "x"
 msgstr "x"
 
 #: ../src/libs/export.c:520
+=======
+#: ../src/libs/export.c:476
+msgid "max size"
+msgstr "tamaño máx"
+
+#: ../src/libs/export.c:481
+msgid "x"
+msgstr "x"
+
+#: ../src/libs/export.c:485
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "intent"
 msgstr "tento"
 
 #. gtk_table_attach(GTK_TABLE(self->widget), GTK_WIDGET(d->profile), 1, 2, 9, 10, GTK_EXPAND|GTK_FILL, 0, 0, 0);
+<<<<<<< HEAD
 #: ../src/libs/export.c:524 ../src/libs/export.c:604
 msgid "image settings"
 msgstr "configuración da imaxe"
@@ -6311,27 +8231,55 @@ msgid "Adobe RGB"
 msgstr ""
 
 #: ../src/libs/export.c:617
+=======
+#: ../src/libs/export.c:489 ../src/libs/export.c:569
+msgid "image settings"
+msgstr "configuración da imaxe"
+
+#: ../src/libs/export.c:509
+msgid "Adobe RGB"
+msgstr ""
+
+#: ../src/libs/export.c:582
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "output icc profiles in %s/color/out or %s/color/out"
 msgstr "perfís de saida icc en %s/cor/saida"
 
 #. Add style combo
+<<<<<<< HEAD
 #: ../src/libs/export.c:623
+=======
+#: ../src/libs/export.c:588
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "style"
 msgstr "editar `%s'"
 
+<<<<<<< HEAD
 #: ../src/libs/export.c:640
 msgid "temporary style to append while exporting"
 msgstr ""
 
 #: ../src/libs/export.c:658
+=======
+#: ../src/libs/export.c:605
+msgid "temporary style to append while exporting"
+msgstr ""
+
+#: ../src/libs/export.c:623
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "export with current settings (ctrl-e)"
 msgstr "exportar ca configuración actual (ctrl-e)"
 
 #. enable shortcut to export with current export settings:
+<<<<<<< HEAD
 #: ../src/libs/export.c:863 ../src/libs/styles.c:69
 #: ../src/views/darkroom.c:1674
+=======
+#: ../src/libs/export.c:827 ../src/libs/styles.c:69
+#: ../src/views/darkroom.c:1617
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgctxt "accel"
 msgid "export"
@@ -7121,6 +9069,7 @@ msgstr ""
 msgid "more modules"
 msgstr "antes do módulo"
 
+<<<<<<< HEAD
 #: ../src/libs/navigation.c:56
 msgid "navigation"
 msgstr "navegación"
@@ -7141,6 +9090,11 @@ msgstr ""
 #: ../src/libs/navigation.c:430
 msgid "200%"
 msgstr ""
+=======
+#: ../src/libs/navigation.c:55
+msgid "navigation"
+msgstr "navegación"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/libs/recentcollect.c:50
 #, fuzzy
@@ -7260,17 +9214,29 @@ msgctxt "accel"
 msgid "import"
 msgstr "importar"
 
+<<<<<<< HEAD
 #: ../src/libs/styles.c:263
+=======
+#: ../src/libs/styles.c:262
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "select style"
 msgstr "seleccionar todo"
 
+<<<<<<< HEAD
 #: ../src/libs/styles.c:276
+=======
+#: ../src/libs/styles.c:275
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "darktable style files"
 msgstr "arquivo da base de datos"
 
+<<<<<<< HEAD
 #: ../src/libs/styles.c:352
+=======
+#: ../src/libs/styles.c:351
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid ""
 "available styles,\n"
@@ -7279,21 +9245,37 @@ msgstr ""
 "etiquetas relacionadas, \n"
 "doble click para engadir"
 
+<<<<<<< HEAD
 #: ../src/libs/styles.c:358
+=======
+#: ../src/libs/styles.c:357
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "enter style name"
 msgstr "introducir nome de etiqueta"
 
+<<<<<<< HEAD
 #: ../src/libs/styles.c:371
+=======
+#: ../src/libs/styles.c:370
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "create duplicate"
 msgstr "duplicar"
 
+<<<<<<< HEAD
 #: ../src/libs/styles.c:375
 msgid "creates a duplicate of the image before applying style"
 msgstr ""
 
 #: ../src/libs/styles.c:385
+=======
+#: ../src/libs/styles.c:374
+msgid "creates a duplicate of the image before applying style"
+msgstr ""
+
+#: ../src/libs/styles.c:384
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "create styles from history stack of selected images"
 msgstr ""
@@ -7301,33 +9283,57 @@ msgstr ""
 "todas as imaxes escollidas"
 
 #. edit
+<<<<<<< HEAD
 #: ../src/libs/styles.c:389
+=======
+#: ../src/libs/styles.c:388
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "edit"
 msgstr "editar `%s'"
 
+<<<<<<< HEAD
 #: ../src/libs/styles.c:392
+=======
+#: ../src/libs/styles.c:391
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "edit the selected style in list above"
 msgstr "borrar etiqueta escollida"
 
+<<<<<<< HEAD
 #: ../src/libs/styles.c:399
+=======
+#: ../src/libs/styles.c:398
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "deletes the selected style in list above"
 msgstr "borrar etiqueta escollida"
 
 #. import button
+<<<<<<< HEAD
 #: ../src/libs/styles.c:403
+=======
+#: ../src/libs/styles.c:402
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgctxt "styles"
 msgid "import"
 msgstr "importar"
 
+<<<<<<< HEAD
 #: ../src/libs/styles.c:405
 msgid "import style from a style file"
 msgstr ""
 
 #: ../src/libs/styles.c:412
+=======
+#: ../src/libs/styles.c:404
+msgid "import style from a style file"
+msgstr ""
+
+#: ../src/libs/styles.c:411
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "export the selected style into a style file"
 msgstr "borrar etiqueta escollida"
@@ -7798,12 +9804,17 @@ msgstr ""
 
 #. Setup key accelerators in capture view...
 #. Film strip shortcuts
+<<<<<<< HEAD
 #: ../src/views/capture.c:564 ../src/views/darkroom.c:1662
+=======
+#: ../src/views/capture.c:564 ../src/views/darkroom.c:1605
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgctxt "accel"
 msgid "toggle film strip"
 msgstr "tira de imaxes"
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:83
 msgid "darkroom"
 msgstr "cuarto escuro"
@@ -7813,10 +9824,22 @@ msgid "no userdefined presets for favorite modules were found"
 msgstr ""
 
 #: ../src/views/darkroom.c:876
+=======
+#: ../src/views/darkroom.c:81
+msgid "darkroom"
+msgstr "cuarto escuro"
+
+#: ../src/views/darkroom.c:840
+msgid "no userdefined presets for favorite modules were found"
+msgstr ""
+
+#: ../src/views/darkroom.c:845
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "applied style `%s' on current image"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:934
 msgid "no styles have been created yet"
 msgstr ""
@@ -7830,21 +9853,45 @@ msgid "quick access for applying any of your styles"
 msgstr ""
 
 #: ../src/views/darkroom.c:1102
+=======
+#: ../src/views/darkroom.c:903
+msgid "no styles have been created yet"
+msgstr ""
+
+#: ../src/views/darkroom.c:1042
+msgid "quick access to presets of your favorites"
+msgstr ""
+
+#: ../src/views/darkroom.c:1054
+msgid "quick access for applying any of your styles"
+msgstr ""
+
+#: ../src/views/darkroom.c:1062
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "toggle over/under exposed indication\n"
 "right click for options"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1147
+=======
+#: ../src/views/darkroom.c:1107
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "color scheme"
 msgstr "transferencia de cor"
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1148
+=======
+#: ../src/views/darkroom.c:1108
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "black & white"
 msgstr "branco e negro"
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1149
 msgid "red & blue"
 msgstr ""
@@ -7858,54 +9905,105 @@ msgid "select colors to indicate over/under exposure"
 msgstr ""
 
 #: ../src/views/darkroom.c:1162
+=======
+#: ../src/views/darkroom.c:1109
+msgid "red & blue"
+msgstr ""
+
+#: ../src/views/darkroom.c:1110
+msgid "purple & green"
+msgstr ""
+
+#: ../src/views/darkroom.c:1112
+msgid "select colors to indicate over/under exposure"
+msgstr ""
+
+#: ../src/views/darkroom.c:1122
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "lower threshold"
 msgstr "albor"
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1163
 msgid "threshold of what shall be considered underexposed"
 msgstr ""
 
 #: ../src/views/darkroom.c:1172
+=======
+#: ../src/views/darkroom.c:1123
+msgid "threshold of what shall be considered underexposed"
+msgstr ""
+
+#: ../src/views/darkroom.c:1132
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "upper threshold"
 msgstr "albor"
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1173
+=======
+#: ../src/views/darkroom.c:1133
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "threshold of what shall be considered overexposed"
 msgstr ""
 
 #. Zoom shortcuts
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1666
+=======
+#: ../src/views/darkroom.c:1609
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "zoom close-up"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1668
+=======
+#: ../src/views/darkroom.c:1611
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "zoom fill"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1670
+=======
+#: ../src/views/darkroom.c:1613
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "zoom fit"
 msgstr ""
 
 #. Shortcut to skip images
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1678
+=======
+#: ../src/views/darkroom.c:1621
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgctxt "accel"
 msgid "image forward"
 msgstr "imaxes ordenadas por"
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1680
+=======
+#: ../src/views/darkroom.c:1623
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgctxt "accel"
 msgid "image back"
 msgstr "imaxe"
 
 #. toggle overexposure indication
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1684
+=======
+#: ../src/views/darkroom.c:1627
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgctxt "accel"
 msgid "overexposed"
@@ -8010,6 +10108,7 @@ msgctxt "accel"
 msgid "redo"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/blend.c:1767 ../src/develop/blend.c:1967
 msgid "could not allocate buffer for blending"
 msgstr ""
@@ -8077,16 +10176,21 @@ msgstr "crear"
 msgid "lua options"
 msgstr "opcions globais"
 
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 #~ msgid "re-indexing %d image"
 #~ msgid_plural "re-indexing %d images"
 #~ msgstr[0] "eliminando %d imaxe"
 #~ msgstr[1] "eliminando %d imaxes"
 
+<<<<<<< HEAD
 #, fuzzy
 #~ msgid "inverse"
 #~ msgstr "invertir"
 
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #~ msgid "use preset as default"
 #~ msgstr "usar preestablecido por defecto"
 
@@ -8177,6 +10281,13 @@ msgstr "opcions globais"
 #~ msgstr "imaxe única"
 
 #, fuzzy
+<<<<<<< HEAD
+=======
+#~ msgid "histogram weight"
+#~ msgstr "histograma"
+
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #~ msgid "match images with selected image and views the result"
 #~ msgstr "coincidencia en imaxes escollidas"
 

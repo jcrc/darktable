@@ -11,9 +11,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: git-bd1547418\n"
 "Report-Msgid-Bugs-To: \n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2013-05-07 10:04+0200\n"
 "PO-Revision-Date: 2013-04-01 23:03+0800\n"
 "Last-Translator: \n"
+=======
+"POT-Creation-Date: 2013-05-07 18:50+0200\n"
+"PO-Revision-Date: 2012-03-08 22:59+1100\n"
+"Last-Translator: jiero <lililjlj@gmail.com>\n"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 "Language-Team: 汉语 <i18n-zh@googlegroups.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -34,7 +40,11 @@ msgstr "边栏宽度(像素)"
 #: ../build/src/preferences_gen.h:1148 ../build/src/preferences_gen.h:1191
 #: ../build/src/preferences_gen.h:1215 ../build/src/preferences_gen.h:1289
 #: ../build/src/preferences_gen.h:1376 ../build/src/preferences_gen.h:1400
+<<<<<<< HEAD
 #: ../build/src/preferences_gen.h:1425 ../src/lua/preferences.c:368
+=======
+#: ../build/src/preferences_gen.h:1425
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "double click to reset to `%d'"
 msgstr "双击以重置到 `%s'"
@@ -59,8 +69,12 @@ msgstr "预览文件使用一半尺寸的raw，忽略内嵌的jpeg"
 #: ../build/src/preferences_gen.h:1463 ../build/src/preferences_gen.h:1486
 #: ../build/src/preferences_gen.h:1505 ../build/src/preferences_gen.h:1524
 #: ../build/src/preferences_gen.h:1556 ../build/src/preferences_gen.h:1591
+<<<<<<< HEAD
 #: ../build/src/preferences_gen.h:1623 ../src/lua/preferences.c:351
 #: ../src/lua/preferences.c:359
+=======
+#: ../build/src/preferences_gen.h:1623
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "double click to reset to `%s'"
 msgstr "双击以重置到 `%s'"
@@ -90,18 +104,34 @@ msgid "always ask the user before any image file is deleted."
 msgstr "在磁盘中删除任何图像前询问用户"
 
 #: ../build/src/preferences_gen.h:961
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "ask before moving images from film roll folder"
 msgstr "从胶卷文件夹中移除图像前询问"
 
 #: ../build/src/preferences_gen.h:973
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "always ask the user before any image file is moved."
 msgstr "移动任何图像前询问用户"
 
 #: ../build/src/preferences_gen.h:980
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "ask before copying images to new film roll folder"
 msgstr "复制图像到新的胶卷文件夹前询问"
 
 #: ../build/src/preferences_gen.h:992
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "always ask the user before any image file is copied."
 msgstr "复制任何图像前询问用户"
 
@@ -116,6 +146,10 @@ msgid ""
 msgstr "指定胶卷名称中要显示的文件夹层数，从右边开始"
 
 #: ../build/src/preferences_gen.h:1023
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "ignore jpeg images when importing film rolls"
 msgstr "导入胶卷时忽略jpeg图像"
 
@@ -207,6 +241,10 @@ msgid "ask before deleting a tag"
 msgstr "删除标签前询问"
 
 #: ../build/src/preferences_gen.h:1275
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "maximum number of images drawn on map"
 msgstr "在地图上绘制图像的最大数量"
 
@@ -297,10 +335,18 @@ msgid ""
 msgstr "这些冗余文件以后可重新导入进其他数据库，并保留您对图像的更改。"
 
 #: ../build/src/preferences_gen.h:1454
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "activate opencl support"
 msgstr "启用opencl支持"
 
 #: ../build/src/preferences_gen.h:1466
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "if found, use opencl runtime on your system for improved processing speed. "
 "can be switched on and off at any time."
@@ -312,6 +358,13 @@ msgstr ""
 msgid "not available on this system"
 msgstr ""
 
+<<<<<<< HEAD
+=======
+#: ../build/src/preferences_gen.h:1470
+msgid "not available on this system"
+msgstr ""
+
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../build/src/preferences_gen.h:1477
 #, fuzzy
 msgid "always try to use littlecms2"
@@ -336,6 +389,21 @@ msgstr ""
 "慢。"
 
 #: ../build/src/preferences_gen.h:1515
+<<<<<<< HEAD
+=======
+#, fuzzy
+msgid "dithering for darkroom mode"
+msgstr "RAW数据去马赛克方法"
+
+#: ../build/src/preferences_gen.h:1527
+msgid ""
+"center view will be dithered if this option is on and module dithering is "
+"activated (default for new images). switch this to off if you can accept "
+"display banding and prefer to have a slightly faster processing speed."
+msgstr ""
+
+#: ../build/src/preferences_gen.h:1534
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "dithering for darkroom mode"
 msgstr "为放大的暗房模式去马赛克"
@@ -375,8 +443,14 @@ msgid "password storage backend to use"
 msgstr "保存密码所用后端服务"
 
 #: ../build/src/preferences_gen.h:1626
+<<<<<<< HEAD
 msgid "the storage backend for password storage: none, kwallet, gnome keyring"
 msgstr "用于保存密码的后端服务：没有， kwallet，gnome keyring"
+=======
+#, fuzzy
+msgid "the storage backend for password storage: none, kwallet, gnome keyring"
+msgstr "用于保存密码的后端服务：0 - 没有， 2 - kwallet，3 - gnome keyring"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/cli/main.c:97
 msgid "TODO: sorry, due to api restrictions we currently cannot set the bpp to"
@@ -391,53 +465,95 @@ msgid "output file already exists, it will get renamed"
 msgstr "输出文件已经存在,它将会被重命名"
 
 #: ../src/cli/main.c:164
+<<<<<<< HEAD
 #, c-format
+=======
+#, fuzzy, c-format
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "error: can't open file %s"
 msgstr "错误：无法打开文件 `%s'"
 
 #: ../src/cli/main.c:188
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "empty history stack"
 msgstr "清空历史记录栈"
 
+<<<<<<< HEAD
 #: ../src/cli/main.c:208
+=======
+#: ../src/cli/main.c:209
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "cannot find disk storage module. please check your installation, something "
 "seems to be broken."
 msgstr "无法找到硬盘存储模块。请检查您的安装，有些部分似乎被损坏。"
 
+<<<<<<< HEAD
 #: ../src/cli/main.c:215
+=======
+#: ../src/cli/main.c:216
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "failed to get parameters from storage module, aborting export ..."
 msgstr "从存储模块获取参数失败，导出中断..."
 
+<<<<<<< HEAD
 #: ../src/cli/main.c:226
+=======
+#: ../src/cli/main.c:227
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "unknown extension '.%s'"
 msgstr "未知扩展 '.%s'"
 
+<<<<<<< HEAD
 #: ../src/cli/main.c:234
+=======
+#: ../src/cli/main.c:235
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "failed to get parameters from format module, aborting export ..."
 msgstr "从格式模块获取参数失败，导出中断..."
 
+<<<<<<< HEAD
 #: ../src/common/collection.c:454 ../src/develop/lightroom.c:974
+=======
+#: ../src/common/collection.c:454 ../src/develop/lightroom.c:964
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/bilateral.cc:349 ../src/iop/channelmixer.c:440
 #: ../src/iop/channelmixer.c:452 ../src/iop/temperature.c:733
 #: ../src/libs/collect.c:1139 ../src/libs/collect.c:1141
 msgid "red"
 msgstr "红"
 
+<<<<<<< HEAD
 #: ../src/common/collection.c:455 ../src/develop/lightroom.c:976
+=======
+#: ../src/common/collection.c:455 ../src/develop/lightroom.c:966
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/collect.c:1145 ../src/libs/collect.c:1147
 msgid "yellow"
 msgstr "黄"
 
+<<<<<<< HEAD
 #: ../src/common/collection.c:456 ../src/develop/lightroom.c:978
+=======
+#: ../src/common/collection.c:456 ../src/develop/lightroom.c:968
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/bilateral.cc:350 ../src/iop/channelmixer.c:441
 #: ../src/iop/channelmixer.c:459 ../src/iop/temperature.c:734
 #: ../src/libs/collect.c:1151 ../src/libs/collect.c:1153
 msgid "green"
 msgstr "绿"
 
+<<<<<<< HEAD
 #: ../src/common/collection.c:457 ../src/develop/lightroom.c:980
+=======
+#: ../src/common/collection.c:457 ../src/develop/lightroom.c:970
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/bilateral.cc:351 ../src/iop/channelmixer.c:442
 #: ../src/iop/channelmixer.c:466 ../src/iop/temperature.c:735
 #: ../src/libs/collect.c:1157 ../src/libs/collect.c:1159
@@ -461,32 +577,56 @@ msgid "%d image of %d in current collection is selected"
 msgid_plural "%d images of %d in current collection are selected"
 msgstr[0] "已选 %d 张图像，当前集合共 %d 张图像。"
 
+<<<<<<< HEAD
 #: ../src/common/darktable.c:287
+=======
+#: ../src/common/darktable.c:286
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "found strange path `%s'"
 msgstr "发现奇怪的路径 `%s'"
 
+<<<<<<< HEAD
 #: ../src/common/darktable.c:305
+=======
+#: ../src/common/darktable.c:304
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "error loading directory `%s'"
 msgstr "载入目录 `%s' 失败"
 
+<<<<<<< HEAD
 #: ../src/common/darktable.c:325
+=======
+#: ../src/common/darktable.c:324
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "file `%s' has unknown format!"
 msgstr "文件 `%s' 使用了未知格式！"
 
+<<<<<<< HEAD
 #: ../src/common/darktable.c:339 ../src/libs/import.c:711
+=======
+#: ../src/common/darktable.c:338 ../src/libs/import.c:711
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "error loading file `%s'"
 msgstr "载入文件 `%s' 错误"
 
+<<<<<<< HEAD
 #: ../src/common/darktable.c:481
+=======
+#: ../src/common/darktable.c:478
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "ERROR : invalid temporary directory : %s\n"
 msgstr "错误:无效的临时目录： %s\n"
 
 #: ../src/common/film.c:361
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "no supported images were found to be imported"
 msgstr "没有发现可以导入的图像文件"
 
@@ -500,6 +640,7 @@ msgstr[0] "导入 %d 张图像"
 msgid "you need to copy history from an image before you paste it onto another"
 msgstr "你需要复制一张图片的历史，然后才能用在另一张上"
 
+<<<<<<< HEAD
 #: ../src/common/history.c:263 ../src/common/history.c:264
 #: ../src/common/history.c:280 ../src/common/styles.c:559
 #: ../src/common/styles.c:561 ../src/develop/blend_gui.c:1439
@@ -512,6 +653,18 @@ msgstr "开"
 #: ../src/common/styles.c:561 ../src/develop/blend_gui.c:1277
 #: ../src/develop/blend_gui.c:1436 ../src/develop/develop.c:1113
 #: ../src/imageio/format/j2k.c:618 ../src/iop/demosaic.c:1329
+=======
+#: ../src/common/history.c:238 ../src/common/history.c:239
+#: ../src/common/history.c:255 ../src/common/styles.c:546
+#: ../src/develop/develop.c:1109 ../src/libs/live_view.c:406
+msgid "on"
+msgstr "开"
+
+#: ../src/common/history.c:238 ../src/common/history.c:239
+#: ../src/common/history.c:255 ../src/common/styles.c:546
+#: ../src/develop/blend_gui.c:1028 ../src/develop/develop.c:1109
+#: ../src/imageio/format/j2k.c:601 ../src/iop/demosaic.c:1329
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/vignette.c:1120 ../src/libs/history.c:155
 #: ../src/libs/live_view.c:405
 msgid "off"
@@ -535,11 +688,19 @@ msgstr "图像 `%s' 无法获取！"
 #. If a style is to be applied during export, add the iop params into the history
 #. set export style to "none" by default
 #: ../src/common/imageio.c:563 ../src/common/variables.c:220
+<<<<<<< HEAD
 #: ../src/control/control.c:120 ../src/iop/clipping.c:1459
 #: ../src/iop/clipping.c:1699 ../src/iop/clipping.c:1717
 #: ../src/iop/clipping.c:1760 ../src/iop/clipping.c:1777
 #: ../src/iop/lens.c:1705 ../src/libs/export.c:167 ../src/libs/export.c:170
 #: ../src/libs/export.c:630 ../src/libs/live_view.c:324
+=======
+#: ../src/control/control.c:120 ../src/iop/clipping.c:1462
+#: ../src/iop/clipping.c:1702 ../src/iop/clipping.c:1720
+#: ../src/iop/clipping.c:1763 ../src/iop/clipping.c:1780
+#: ../src/iop/lens.c:1707 ../src/libs/export.c:159 ../src/libs/export.c:162
+#: ../src/libs/export.c:595 ../src/libs/live_view.c:324
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/live_view.c:336 ../src/libs/live_view.c:354
 #, c-format
 msgid "none"
@@ -576,12 +737,17 @@ msgstr "没有选中任何图片应用评级"
 msgid "style with name '%s' already exists"
 msgstr "名为 '%s' 的样式已经存在"
 
+<<<<<<< HEAD
 #: ../src/common/styles.c:307 ../src/gui/styles_dialog.c:145
+=======
+#: ../src/common/styles.c:307 ../src/common/styles.c:368
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "style named '%s' successfully created"
 msgstr "样式 '%s' 创建成功"
 
 #. fail :(
+<<<<<<< HEAD
 #: ../src/common/styles.c:389 ../src/common/styles.c:408
 #: ../src/views/darkroom.c:459
 msgid "no image selected!"
@@ -589,24 +755,54 @@ msgstr "没有选中图片"
 
 #: ../src/common/styles.c:646
 #, c-format
+=======
+#: ../src/common/styles.c:388 ../src/common/styles.c:407
+#: ../src/views/darkroom.c:446
+msgid "no image selected!"
+msgstr "没有选中图片"
+
+#: ../src/common/styles.c:630
+#, fuzzy, c-format
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "failed to overwrite style file for %s"
 msgstr "覆盖 %s 的样式文件失败"
 
+<<<<<<< HEAD
 #: ../src/common/styles.c:652
+=======
+#: ../src/common/styles.c:636
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "style file for %s exists"
 msgstr " %s 的样式文件已存在"
 
+<<<<<<< HEAD
 #: ../src/common/styles.c:891
+=======
+#: ../src/common/styles.c:683
+#, fuzzy, c-format
+msgid "style %s was successfully saved"
+msgstr "样式 %s 保存成功"
+
+#: ../src/common/styles.c:876
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "style %s was successfully imported"
 msgstr "样式 %s 导入成功"
 
+<<<<<<< HEAD
 #: ../src/control/control.c:1371 ../src/control/control.c:1374
 msgid "working.."
 msgstr "工作中.."
 
 #: ../src/control/control.c:1455
+=======
+#: ../src/control/control.c:1355 ../src/control/control.c:1358
+msgid "working.."
+msgstr "工作中.."
+
+#: ../src/control/control.c:1439
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "switch to %s mode"
 msgstr "切换到 %s 模式"
@@ -656,89 +852,156 @@ msgstr[0] "从相机导入 %d 张图像"
 msgid "failed to create filmroll for camera import, import aborted."
 msgstr "为相机导入创建胶卷失败，导入中断。"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:120
+=======
+#: ../src/control/jobs/control_jobs.c:127
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "merging %d image"
 msgid_plural "merging %d images"
 msgstr[0] "合并 %d 张图像"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:141
 msgid "exposure bracketing only works on raw images"
 msgstr "包围曝光只能用于RAW图像"
 
 #: ../src/control/jobs/control_jobs.c:150
+=======
+#: ../src/control/jobs/control_jobs.c:148
+msgid "exposure bracketing only works on raw images"
+msgstr "包围曝光只能用于RAW图像"
+
+#: ../src/control/jobs/control_jobs.c:157
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "failed to get raw buffer from image `%s'"
 msgstr "无法从图像 `%s'获取RAW缓冲区"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:169
 msgid "images have to be of same size!"
 msgstr "图像尺寸必须相同！"
 
 #: ../src/control/jobs/control_jobs.c:244
+=======
+#: ../src/control/jobs/control_jobs.c:176
+msgid "images have to be of same size!"
+msgstr "图像尺寸必须相同！"
+
+#: ../src/control/jobs/control_jobs.c:251
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "wrote merged hdr `%s'"
 msgstr "写入为融合而成的 hdr `%s'"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:270
+=======
+#: ../src/control/jobs/control_jobs.c:277
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "duplicating %d image"
 msgid_plural "duplicating %d images"
 msgstr[0] "复制 %d 张图像"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:295
+=======
+#: ../src/control/jobs/control_jobs.c:302
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "flipping %d image"
 msgid_plural "flipping %d images"
 msgstr[0] "翻转 %d 张图像"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:318
+=======
+#: ../src/control/jobs/control_jobs.c:325
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "removing %d image"
 msgid_plural "removing %d images"
 msgstr[0] "移除 %d 张图像"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:369
+=======
+#: ../src/control/jobs/control_jobs.c:376
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "deleting %d image"
 msgid_plural "deleting %d images"
 msgstr[0] "删除 %d 张图像"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:454
+=======
+#: ../src/control/jobs/control_jobs.c:461
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "failed to parse gpx file"
 msgstr "无法解析gpx文件"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:521
 #, c-format
 msgid "applied matched gpx location onto %d image(s)"
 msgstr "应用匹配的gpx位置到 %d 张图像"
 
 #: ../src/control/jobs/control_jobs.c:672
+=======
+#: ../src/control/jobs/control_jobs.c:528
+#, fuzzy, c-format
+msgid "applied matched gpx location onto %d image(s)"
+msgstr "应用评级 %d 到 %d 张图像"
+
+#: ../src/control/jobs/control_jobs.c:679
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "do you really want to remove %d selected image from the collection?"
 msgid_plural ""
 "do you really want to remove %d selected images from the collection?"
 msgstr[0] "你确定要从当前集合中移除 %d 张已选图像吗？"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:675
 msgid "remove images?"
 msgstr "移除图像？"
 
 #: ../src/control/jobs/control_jobs.c:701
+=======
+#: ../src/control/jobs/control_jobs.c:682
+msgid "remove images?"
+msgstr "移除图像？"
+
+#: ../src/control/jobs/control_jobs.c:708
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "do you really want to physically delete %d selected image from disk?"
 msgid_plural ""
 "do you really want to physically delete %d selected images from disk?"
 msgstr[0] "你确定要从磁盘物理删除 %d 张已选图像吗？"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:704
 msgid "delete images?"
 msgstr "删除图像？"
 
 #: ../src/control/jobs/control_jobs.c:737
+=======
+#: ../src/control/jobs/control_jobs.c:711
+msgid "delete images?"
+msgstr "删除图像？"
+
+#: ../src/control/jobs/control_jobs.c:744
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "failed to create film roll for destination directory, aborting move.."
 msgstr "目标目录创建胶卷失败，移动中断。"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:769
 #: ../src/control/jobs/control_jobs.c:826 ../src/imageio/storage/disk.c:68
 #: ../src/imageio/storage/disk.c:121 ../src/imageio/storage/gallery.c:79
@@ -749,21 +1012,41 @@ msgstr "选择目录"
 
 #: ../src/control/jobs/control_jobs.c:792
 #, c-format
+=======
+#: ../src/control/jobs/control_jobs.c:776
+#: ../src/control/jobs/control_jobs.c:833 ../src/imageio/storage/disk.c:67
+#: ../src/imageio/storage/disk.c:120 ../src/imageio/storage/gallery.c:78
+#: ../src/imageio/storage/gallery.c:161 ../src/imageio/storage/latex.c:78
+#: ../src/imageio/storage/latex.c:161 ../src/libs/styles.c:240
+msgid "select directory"
+msgstr "选择目录"
+
+#: ../src/control/jobs/control_jobs.c:799
+#, fuzzy, c-format
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "do you really want to physically move the %d selected image to %s?\n"
 "(all unselected duplicates will be moved along)"
 msgid_plural ""
 "do you really want to physically move %d selected images to %s?\n"
 "(all unselected duplicates will be moved along)"
+<<<<<<< HEAD
 msgstr[0] ""
 "你确定要从硬盘物理移动 %d 张已选图像至 %s 吗？\n"
 "（所有未选择的重复图像将单独移动）"
 
 #: ../src/control/jobs/control_jobs.c:796
+=======
+msgstr[0] "你确定要从磁盘物理删除 %d 张已选图像吗？"
+
+#: ../src/control/jobs/control_jobs.c:803
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "move image?"
 msgid_plural "move images?"
 msgstr[0] "移动图像？"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:849
 #, c-format
 msgid "do you really want to physically copy the %d selected image to %s?"
@@ -771,6 +1054,16 @@ msgid_plural "do you really want to physically copy %d selected images to %s?"
 msgstr[0] "你确定要物理的复制 %d 张已选图像至 %s 吗？"
 
 #: ../src/control/jobs/control_jobs.c:852
+=======
+#: ../src/control/jobs/control_jobs.c:856
+#, fuzzy, c-format
+msgid "do you really want to physically copy the %d selected image to %s?"
+msgid_plural "do you really want to physically copy %d selected images to %s?"
+msgstr[0] "你确定要从磁盘物理删除 %d 张已选图像吗？"
+
+#: ../src/control/jobs/control_jobs.c:859
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "copy image?"
 msgid_plural "copy images?"
 msgstr[0] "复制图像？"
@@ -795,29 +1088,67 @@ msgstr "捕获 %d 张图像"
 msgid "copying %d images"
 msgstr "捕获 %d 张图像"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:928
+=======
+#: ../src/control/jobs/control_jobs.c:898
+#, fuzzy, c-format
+msgid "moving %d image"
+msgstr "移除 %d 张图像"
+
+#: ../src/control/jobs/control_jobs.c:898
+#, fuzzy, c-format
+msgid "moving %d images"
+msgstr "移除 %d 张图像"
+
+#: ../src/control/jobs/control_jobs.c:904
+#, fuzzy, c-format
+msgid "copying %d image"
+msgstr "捕获 %d 张图像"
+
+#: ../src/control/jobs/control_jobs.c:904
+#, fuzzy, c-format
+msgid "copying %d images"
+msgstr "捕获 %d 张图像"
+
+#: ../src/control/jobs/control_jobs.c:936
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "failed to get parameters from storage module `%s', aborting export.."
 msgstr "从存储模块获取参数失败，导出中断.."
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:932
+=======
+#: ../src/control/jobs/control_jobs.c:940
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "exporting %d image.."
 msgid_plural "exporting %d images.."
 msgstr[0] "导出 %d 张图像.."
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:934
+=======
+#: ../src/control/jobs/control_jobs.c:942
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "exporting %d image to %s"
 msgid_plural "exporting %d images to %s"
 msgstr[0] "导出 %d 张图像到 %s"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:997
 #: ../src/control/jobs/control_jobs.c:998 ../src/views/darkroom.c:470
+=======
+#: ../src/control/jobs/control_jobs.c:1005
+#: ../src/control/jobs/control_jobs.c:1006 ../src/views/darkroom.c:457
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "image `%s' is currently unavailable"
 msgstr "图像 `%s' 当前不可获取"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:1076
 #, c-format
 msgid "adding time offset to %d image"
@@ -825,87 +1156,183 @@ msgid_plural "adding time offset to %d images"
 msgstr[0] "向 %d 张图像添加时间偏移"
 
 #: ../src/control/jobs/control_jobs.c:1096
+=======
+#: ../src/control/jobs/control_jobs.c:1087
+#, fuzzy, c-format
+msgid "adding time offset to %d image"
+msgid_plural "adding time offset to %d images"
+msgstr[0] "应用评级 %d 到 %d 张图像"
+
+#: ../src/control/jobs/control_jobs.c:1107
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "added time offset to %d image(s)"
 msgstr "向 %d 张图像添加时间偏移"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:785
+=======
+#: ../src/develop/blend_gui.c:707
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "sliders for L channel"
 msgstr "L通道滑块"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:785
+=======
+#: ../src/develop/blend_gui.c:707
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "sliders for a channel"
 msgstr "a通道滑块"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:785
+=======
+#: ../src/develop/blend_gui.c:707
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "sliders for b channel"
 msgstr "b通道滑块"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:785
+=======
+#: ../src/develop/blend_gui.c:707
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "sliders for chroma channel (of LCh)"
 msgstr "色度通道滑块（LCh）"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:785
+=======
+#: ../src/develop/blend_gui.c:707
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "sliders for hue channel (of LCh)"
 msgstr "色调通道滑块（LCh）"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:786
+=======
+#: ../src/develop/blend_gui.c:708
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid " g "
 msgstr "g"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:786
+=======
+#: ../src/develop/blend_gui.c:708
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid " R "
 msgstr "R"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:786
+=======
+#: ../src/develop/blend_gui.c:708
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid " G "
 msgstr "G"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:786
+=======
+#: ../src/develop/blend_gui.c:708
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid " B "
 msgstr "B"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:786
+=======
+#: ../src/develop/blend_gui.c:708
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid " H "
 msgstr "H"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:786
+=======
+#: ../src/develop/blend_gui.c:708
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid " S "
 msgstr "S"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:786
+=======
+#: ../src/develop/blend_gui.c:708
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid " L "
 msgstr "L "
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:787
+=======
+#: ../src/develop/blend_gui.c:709
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "sliders for gray value"
 msgstr "灰度值滑块"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:787
+=======
+#: ../src/develop/blend_gui.c:709
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "sliders for red channel"
 msgstr "红色通道滑块"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:787
+=======
+#: ../src/develop/blend_gui.c:709
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "sliders for green channel"
 msgstr "绿色通道滑块"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:787
+=======
+#: ../src/develop/blend_gui.c:709
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "sliders for blue channel"
 msgstr "蓝色通道滑块"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:788
+=======
+#: ../src/develop/blend_gui.c:710
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "sliders for hue channel (of HSL)"
 msgstr "色调通道滑块（HSL）"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:788
+=======
+#: ../src/develop/blend_gui.c:710
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "sliders for chroma channel (of HSL)"
 msgstr "色度通道滑块（HSL）"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:788
+=======
+#: ../src/develop/blend_gui.c:710
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "sliders for value channel (of HSL)"
 msgstr "值通道滑块（HSL）"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:791
+=======
+#: ../src/develop/blend_gui.c:713
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "adjustment based on input received by this module:\n"
 "* range defined by upper markers: blend fully\n"
@@ -917,7 +1344,11 @@ msgstr ""
 "*由下标定义的范围：完全不混合\n"
 "*相邻的上/下标之间的范围：逐渐混合"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:793
+=======
+#: ../src/develop/blend_gui.c:715
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "adjustment based on unblended output of this module:\n"
 "* range defined by upper markers: blend fully\n"
@@ -929,28 +1360,70 @@ msgstr ""
 "*由下标定义的范围：完全不混合\n"
 "*相邻的上/下标之间的范围：逐渐混合"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:912 ../src/iop/colorzones.c:1029
+=======
+#: ../src/develop/blend_gui.c:821
+msgid "blend"
+msgstr "混合"
+
+#: ../src/develop/blend_gui.c:822
+msgid "uniformly"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:823
+msgid "only, if.."
+msgstr ""
+
+#: ../src/develop/blend_gui.c:843 ../src/iop/colorzones.c:984
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/tonecurve.c:513
 msgid "pick gui color from image"
 msgstr "从图片选取GUI颜色"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:915
+=======
+#: ../src/develop/blend_gui.c:846
+#, fuzzy
+msgid "display mask"
+msgstr "显示目的"
+
+#: ../src/develop/blend_gui.c:849
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "reset blend mask settings"
 msgstr "重置混合蒙板设置"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:918
 msgid "invert all channel's polarities"
 msgstr ""
 
 #: ../src/develop/blend_gui.c:929 ../src/develop/blend_gui.c:932
+=======
+#: ../src/develop/blend_gui.c:852
+msgid "temporarily switch off blend mask. only for module in focus."
+msgstr ""
+
+#: ../src/develop/blend_gui.c:864 ../src/develop/blend_gui.c:867
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "toggle polarity. best seen by enabling 'display mask'"
 msgstr "极性切换。启用“显示蒙板”显示最好效果"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:941
+=======
+#: ../src/develop/blend_gui.c:876
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "output"
 msgstr "输出"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:952
+=======
+#: ../src/develop/blend_gui.c:887
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "input"
 msgstr "输入"
 
@@ -963,6 +1436,7 @@ msgstr "双击以重置"
 msgid "no mask used"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1064
 msgid "masks"
 msgstr ""
@@ -978,6 +1452,18 @@ msgstr ""
 
 #: ../src/develop/blend_gui.c:1087 ../src/iop/spots.c:534
 #: ../src/libs/masks.c:777 ../src/libs/masks.c:800 ../src/libs/masks.c:1344
+=======
+#: ../src/develop/blend_gui.c:899
+msgid "mask blur"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:902
+#, fuzzy
+msgid "enable conditional blending"
+msgstr "启用混合"
+
+#: ../src/develop/blend_gui.c:903 ../src/develop/blend_gui.c:904
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "add curve shape"
 msgstr "添加样本"
@@ -990,7 +1476,11 @@ msgstr "混合"
 msgid "uniformly"
 msgstr "均匀"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1285
+=======
+#: ../src/develop/blend_gui.c:907
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "drawn mask"
 msgstr "显示蒙板"
@@ -1003,6 +1493,7 @@ msgstr ""
 msgid "drawn & parametric mask"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1302
 msgid ""
 "activate blending: uniformly, with drawn mask, with parametric mask, or "
@@ -1018,10 +1509,18 @@ msgid "normal"
 msgstr "正常"
 
 #: ../src/develop/blend_gui.c:1312
+=======
+#: ../src/develop/blend_gui.c:1030 ../src/libs/live_view.c:377
+msgid "normal"
+msgstr "正常"
+
+#: ../src/develop/blend_gui.c:1032
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "normal bounded"
 msgstr "无界的"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1315 ../src/libs/live_view.c:386
 msgid "lighten"
 msgstr "变亮(lighten)"
@@ -1055,10 +1554,46 @@ msgid "screen"
 msgstr "荧幕(screen)"
 
 #: ../src/develop/blend_gui.c:1339 ../src/libs/live_view.c:353
+=======
+#: ../src/develop/blend_gui.c:1034 ../src/libs/live_view.c:386
+msgid "lighten"
+msgstr "变亮(lighten)"
+
+#: ../src/develop/blend_gui.c:1036 ../src/libs/live_view.c:385
+msgid "darken"
+msgstr "加暗(darken)"
+
+#: ../src/develop/blend_gui.c:1038 ../src/libs/live_view.c:382
+msgid "multiply"
+msgstr "正片叠底(multiply)"
+
+#: ../src/develop/blend_gui.c:1040
+msgid "average"
+msgstr "平均(average)"
+
+#: ../src/develop/blend_gui.c:1042
+msgid "addition"
+msgstr "增加(addition)"
+
+#: ../src/develop/blend_gui.c:1044
+msgid "subtract"
+msgstr "减去(subtract)"
+
+#: ../src/develop/blend_gui.c:1046 ../src/libs/live_view.c:391
+msgid "difference"
+msgstr "差异(difference)"
+
+#: ../src/develop/blend_gui.c:1048 ../src/libs/live_view.c:383
+msgid "screen"
+msgstr "荧幕(screen)"
+
+#: ../src/develop/blend_gui.c:1050 ../src/libs/live_view.c:353
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/live_view.c:384
 msgid "overlay"
 msgstr "覆盖(overlay)"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1342
 msgid "softlight"
 msgstr "柔光(softlight)"
@@ -1086,23 +1621,66 @@ msgid "lightness"
 msgstr "明度"
 
 #: ../src/develop/blend_gui.c:1360 ../src/iop/atrous.c:1419
+=======
+#: ../src/develop/blend_gui.c:1052
+msgid "softlight"
+msgstr "柔光(softlight)"
+
+#: ../src/develop/blend_gui.c:1054
+msgid "hardlight"
+msgstr "实光(hardlight)"
+
+#: ../src/develop/blend_gui.c:1056
+msgid "vividlight"
+msgstr "强烈光源(vividlight)"
+
+#: ../src/develop/blend_gui.c:1058
+msgid "linearlight"
+msgstr "线性光源(linearlight)"
+
+#: ../src/develop/blend_gui.c:1060
+msgid "pinlight"
+msgstr "小光源(pinlight)"
+
+#: ../src/develop/blend_gui.c:1062 ../src/iop/channelmixer.c:439
+#: ../src/iop/colorize.c:441 ../src/iop/colorzones.c:973
+#: ../src/iop/colorzones.c:1004
+msgid "lightness"
+msgstr "明度"
+
+#: ../src/develop/blend_gui.c:1064 ../src/iop/atrous.c:1419
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/equalizer.c:343 ../src/iop/nlmeans.c:718
 msgid "chroma"
 msgstr "色度(chroma)"
 
 #. dt_bauhaus_slider_set_format(g->gslider1, "");
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1363 ../src/iop/channelmixer.c:437
 #: ../src/iop/colorize.c:417 ../src/iop/colorzones.c:1020
 #: ../src/iop/colorzones.c:1054 ../src/iop/graduatednd.c:1049
+=======
+#: ../src/develop/blend_gui.c:1066 ../src/iop/channelmixer.c:437
+#: ../src/iop/colorize.c:417 ../src/iop/colorzones.c:975
+#: ../src/iop/colorzones.c:1002 ../src/iop/graduatednd.c:1049
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/splittoning.c:542
 msgid "hue"
 msgstr "色调(hue)"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1366
 msgid "color"
 msgstr "颜色"
 
 #: ../src/develop/blend_gui.c:1369
+=======
+#: ../src/develop/blend_gui.c:1068
+msgid "color"
+msgstr "颜色"
+
+#: ../src/develop/blend_gui.c:1070
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "coloradjustment"
 msgstr "色彩调整"
 
@@ -1119,6 +1697,7 @@ msgstr "差异(difference)"
 msgid "inverse (deprecated)"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1393
 msgid "normal (deprecated)"
 msgstr ""
@@ -1204,6 +1783,90 @@ msgid "error creating gui, DT_SIMPLE_GUI_NONE could not be found"
 msgstr "创建gui出错，DT_SIMPLE_GUI_NONE 无法找到"
 
 #: ../src/develop/imageop.c:1135
+=======
+#: ../src/develop/blend_gui.c:1072
+msgid "unbounded"
+msgstr ""
+
+#: ../src/develop/blend_gui.c:1084
+#, fuzzy
+msgid "blend mode"
+msgstr "镜头型号"
+
+#: ../src/develop/blend_gui.c:1086 ../src/iop/watermark.c:1015
+msgid "opacity"
+msgstr "不透明性"
+
+#: ../src/develop/blend_gui.c:1096
+msgid "set the opacity of the blending"
+msgstr "设置混合模式的不透明度"
+
+#: ../src/develop/blend_gui.c:1097
+msgid "choose blending mode"
+msgstr "选择混合模式"
+
+#: ../src/develop/develop.c:932
+#, c-format
+msgid "%s: module `%s' version mismatch: %d != %d"
+msgstr "%s：模块 `%s' 版本不匹配： %d != %d"
+
+#: ../src/develop/imageop.c:295 ../src/develop/imageop.c:303
+msgid "error creating gui, see stderr"
+msgstr ""
+
+#. should never happen
+#: ../src/develop/imageop.c:378
+msgid "error creating gui, DT_SIMPLE_GUI_NONE could not be found"
+msgstr ""
+
+#: ../src/develop/imageop.c:1134
+#, fuzzy
+msgid "new instance"
+msgstr "焦距"
+
+#: ../src/develop/imageop.c:1139
+#, fuzzy
+msgid "move up"
+msgstr "移除"
+
+#: ../src/develop/imageop.c:1145
+#, fuzzy
+msgid "move down"
+msgstr "向下移动"
+
+#. delete
+#: ../src/develop/imageop.c:1151 ../src/libs/image.c:143
+#: ../src/libs/styles.c:395 ../src/libs/tagging.c:487
+msgid "delete"
+msgstr "删除"
+
+#: ../src/develop/imageop.c:1173 ../src/develop/imageop.c:2010
+#, c-format
+msgid "%s is switched on"
+msgstr "%s 已开"
+
+#: ../src/develop/imageop.c:1173 ../src/develop/imageop.c:2010
+#, c-format
+msgid "%s is switched off"
+msgstr "%s 已关"
+
+#: ../src/develop/imageop.c:1403 ../src/gui/accelerators.c:637
+#: ../src/gui/accelerators.c:717 ../src/gui/accelerators.c:861
+#: ../src/gui/accelerators.c:886 ../src/gui/presets.c:196
+#: ../src/gui/presets.c:298 ../src/gui/presets.c:603
+#: ../src/iop/temperature.c:745 ../src/libs/import.c:487 ../src/libs/lib.c:291
+#: ../src/libs/lib.c:320 ../src/libs/lib.c:971
+msgid "preset"
+msgstr "预置"
+
+#: ../src/develop/imageop.c:1444
+msgctxt "accel"
+msgid "fusion"
+msgstr "融合(fusion)"
+
+#. Adding the optional show accelerator to the table (blank)
+#: ../src/develop/imageop.c:1449
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "new instance"
 msgstr "焦距"
@@ -1254,21 +1917,36 @@ msgctxt "accel"
 msgid "show module"
 msgstr "显示模块"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1451
+=======
+#: ../src/develop/imageop.c:1450
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "enable module"
 msgstr "启用模块"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1454 ../src/libs/lib.c:545
+=======
+#: ../src/develop/imageop.c:1453 ../src/libs/lib.c:545
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "reset module parameters"
 msgstr "重置模块参数"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1456 ../src/libs/lib.c:550
+=======
+#: ../src/develop/imageop.c:1455 ../src/libs/lib.c:550
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "show preset menu"
 msgstr "显示预置菜单"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1990
 msgid "multiple instances actions"
 msgstr ""
@@ -1278,10 +1956,22 @@ msgid "reset parameters"
 msgstr "重置参数"
 
 #: ../src/develop/imageop.c:2008 ../src/gui/preferences.c:403
+=======
+#: ../src/develop/imageop.c:1980
+msgid "multiple instances actions"
+msgstr ""
+
+#: ../src/develop/imageop.c:1989 ../src/libs/lib.c:830
+msgid "reset parameters"
+msgstr "重置参数"
+
+#: ../src/develop/imageop.c:1998 ../src/gui/preferences.c:398
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:843
 msgid "presets"
 msgstr "预置"
 
+<<<<<<< HEAD
 #: ../src/develop/lightroom.c:407
 msgid "cannot find lightroom xmp!"
 msgstr ""
@@ -1289,10 +1979,20 @@ msgstr ""
 #: ../src/develop/lightroom.c:432 ../src/develop/lightroom.c:454
 #: ../src/develop/lightroom.c:474 ../src/develop/lightroom.c:484
 #: ../src/develop/lightroom.c:505
+=======
+#: ../src/develop/lightroom.c:400
+msgid "cannot find lightroom xmp!"
+msgstr ""
+
+#: ../src/develop/lightroom.c:425 ../src/develop/lightroom.c:447
+#: ../src/develop/lightroom.c:467 ../src/develop/lightroom.c:477
+#: ../src/develop/lightroom.c:498
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "`%s' not a lightroom xmp!"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/lightroom.c:1405 ../src/libs/import.c:511
 msgid "tags"
 msgstr "标签"
@@ -1306,11 +2006,31 @@ msgid "geotagging"
 msgstr "地理标签"
 
 #: ../src/develop/lightroom.c:1432 ../src/libs/collect.h:37
+=======
+#: ../src/develop/lightroom.c:1324 ../src/libs/import.c:511
+msgid "tags"
+msgstr ""
+
+#: ../src/develop/lightroom.c:1333 ../src/libs/tools/filter.c:128
+msgid "rating"
+msgstr "评级"
+
+#: ../src/develop/lightroom.c:1342 ../src/libs/geotagging.c:45
+#, fuzzy
+msgid "geotagging"
+msgstr "+标签"
+
+#: ../src/develop/lightroom.c:1351 ../src/libs/collect.h:37
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/tools/filter.c:130
 msgid "color label"
 msgstr "色彩标识"
 
+<<<<<<< HEAD
 #: ../src/develop/lightroom.c:1442
+=======
+#: ../src/develop/lightroom.c:1361
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "%s has been imported"
 msgid_plural "%s have been imported"
@@ -1588,6 +2308,10 @@ msgid "darkroom view"
 msgstr "暗房视图"
 
 #: ../src/gui/gtk.c:874
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "map view"
 msgstr "地图视图"
@@ -1648,92 +2372,110 @@ msgctxt "accel"
 msgid "switch view"
 msgstr "转换视图"
 
+<<<<<<< HEAD
 #: ../src/gui/gtkentry.c:193 ../src/imageio/storage/gallery.c:127
+=======
+#: ../src/gui/gtkentry.c:193 ../src/imageio/storage/gallery.c:126
+#: ../src/imageio/storage/latex.c:126
+msgid "$(ROLL_NAME) - roll of the input image"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:194 ../src/imageio/storage/gallery.c:127
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/imageio/storage/latex.c:127
 msgid "$(ROLL_NAME) - roll of the input image"
 msgstr "$(ROLL_NAME) - 输入图像的卷"
 
-#: ../src/gui/gtkentry.c:194 ../src/imageio/storage/gallery.c:128
+#: ../src/gui/gtkentry.c:195 ../src/imageio/storage/gallery.c:128
 #: ../src/imageio/storage/latex.c:128
 msgid "$(FILE_FOLDER) - folder containing the input image"
 msgstr "$(FILE_FOLDER) - 包含输入图像的文件夹"
 
-#: ../src/gui/gtkentry.c:195 ../src/imageio/storage/gallery.c:129
+#: ../src/gui/gtkentry.c:196 ../src/imageio/storage/gallery.c:129
 #: ../src/imageio/storage/latex.c:129
 msgid "$(FILE_NAME) - basename of the input image"
 msgstr "$(FILE_NAME) - 输入图像的主档名"
 
-#: ../src/gui/gtkentry.c:196 ../src/imageio/storage/gallery.c:130
+#: ../src/gui/gtkentry.c:197 ../src/imageio/storage/gallery.c:130
 #: ../src/imageio/storage/latex.c:130
 msgid "$(FILE_EXTENSION) - extension of the input image"
 msgstr "$(FILE_EXTENSION) - 输入图像的扩展"
 
-#: ../src/gui/gtkentry.c:197 ../src/imageio/storage/gallery.c:131
+#: ../src/gui/gtkentry.c:198 ../src/imageio/storage/gallery.c:131
 #: ../src/imageio/storage/latex.c:131
 msgid "$(SEQUENCE) - sequence number"
 msgstr "$(SEQUENCE) - 序列号"
 
-#: ../src/gui/gtkentry.c:198 ../src/imageio/storage/gallery.c:132
+#: ../src/gui/gtkentry.c:199 ../src/imageio/storage/gallery.c:132
 #: ../src/imageio/storage/latex.c:132
 msgid "$(YEAR) - year"
 msgstr "$(YEAR) - 年"
 
-#: ../src/gui/gtkentry.c:199 ../src/imageio/storage/gallery.c:133
+#: ../src/gui/gtkentry.c:200 ../src/imageio/storage/gallery.c:133
 #: ../src/imageio/storage/latex.c:133
 msgid "$(MONTH) - month"
 msgstr "$(MONTH) - 月"
 
-#: ../src/gui/gtkentry.c:200 ../src/imageio/storage/gallery.c:134
+#: ../src/gui/gtkentry.c:201 ../src/imageio/storage/gallery.c:134
 #: ../src/imageio/storage/latex.c:134
 msgid "$(DAY) - day"
 msgstr "$(DAY) - 日"
 
-#: ../src/gui/gtkentry.c:201 ../src/imageio/storage/gallery.c:135
+#: ../src/gui/gtkentry.c:202 ../src/imageio/storage/gallery.c:135
 #: ../src/imageio/storage/latex.c:135
 msgid "$(HOUR) - hour"
 msgstr "$(HOUR) - 时"
 
-#: ../src/gui/gtkentry.c:202 ../src/imageio/storage/gallery.c:136
+#: ../src/gui/gtkentry.c:203 ../src/imageio/storage/gallery.c:136
 #: ../src/imageio/storage/latex.c:136
 msgid "$(MINUTE) - minute"
 msgstr "$(MINUTE) - 分"
 
-#: ../src/gui/gtkentry.c:203 ../src/imageio/storage/gallery.c:137
+#: ../src/gui/gtkentry.c:204 ../src/imageio/storage/gallery.c:137
 #: ../src/imageio/storage/latex.c:137
 msgid "$(SECOND) - second"
 msgstr "$(SECOND) - 秒"
 
-#: ../src/gui/gtkentry.c:204 ../src/imageio/storage/gallery.c:138
+#: ../src/gui/gtkentry.c:205 ../src/imageio/storage/gallery.c:138
 #: ../src/imageio/storage/latex.c:138
 msgid "$(EXIF_YEAR) - exif year"
 msgstr "$(EXIF_YEAR) - exif年"
 
-#: ../src/gui/gtkentry.c:205 ../src/imageio/storage/gallery.c:139
+#: ../src/gui/gtkentry.c:206 ../src/imageio/storage/gallery.c:139
 #: ../src/imageio/storage/latex.c:139
 msgid "$(EXIF_MONTH) - exif month"
 msgstr "$(EXIF_MONTH) - exif月"
 
-#: ../src/gui/gtkentry.c:206 ../src/imageio/storage/gallery.c:140
+#: ../src/gui/gtkentry.c:207 ../src/imageio/storage/gallery.c:140
 #: ../src/imageio/storage/latex.c:140
 msgid "$(EXIF_DAY) - exif day"
 msgstr "$(EXIF_DAY) - exif日"
 
-#: ../src/gui/gtkentry.c:207 ../src/imageio/storage/gallery.c:141
+#: ../src/gui/gtkentry.c:208 ../src/imageio/storage/gallery.c:141
 #: ../src/imageio/storage/latex.c:141
 msgid "$(EXIF_HOUR) - exif hour"
 msgstr "$(EXIF_HOUR) - exif时"
 
-#: ../src/gui/gtkentry.c:208 ../src/imageio/storage/gallery.c:142
+#: ../src/gui/gtkentry.c:209 ../src/imageio/storage/gallery.c:142
 #: ../src/imageio/storage/latex.c:142
 msgid "$(EXIF_MINUTE) - exif minute"
 msgstr "$(EXIF_MINUTE) - exif分"
 
-#: ../src/gui/gtkentry.c:209 ../src/imageio/storage/gallery.c:143
+#: ../src/gui/gtkentry.c:210
+msgid "$(EXIF_ISO) - iso value"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:211 ../src/imageio/storage/gallery.c:143
 #: ../src/imageio/storage/latex.c:143
 msgid "$(EXIF_SECOND) - exif second"
 msgstr "$(EXIF_SECOND) - exif秒"
 
+<<<<<<< HEAD
 #: ../src/gui/gtkentry.c:210
+=======
+#: ../src/gui/gtkentry.c:212 ../src/imageio/storage/gallery.c:144
+#: ../src/imageio/storage/latex.c:144
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "$(EXIF_ISO) - iso value"
 msgstr "$(EXIF_HOUR) - exif时"
@@ -1743,17 +2485,29 @@ msgstr "$(EXIF_HOUR) - exif时"
 msgid "$(STARS) - star rating"
 msgstr "$(STARS) - 星级评定"
 
+<<<<<<< HEAD
 #: ../src/gui/gtkentry.c:212 ../src/imageio/storage/gallery.c:145
+=======
+#: ../src/gui/gtkentry.c:213 ../src/imageio/storage/gallery.c:145
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/imageio/storage/latex.c:145
 msgid "$(LABELS) - colorlabels"
 msgstr "$(LABELS) - 色彩标识"
 
+<<<<<<< HEAD
 #: ../src/gui/gtkentry.c:213 ../src/imageio/storage/gallery.c:146
+=======
+#: ../src/gui/gtkentry.c:214 ../src/imageio/storage/gallery.c:146
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/imageio/storage/latex.c:146
 msgid "$(PICTURES_FOLDER) - pictures folder"
 msgstr "$(PICTURES_FOLDER) - 照片文件夹"
 
+<<<<<<< HEAD
 #: ../src/gui/gtkentry.c:214 ../src/imageio/storage/gallery.c:147
+=======
+#: ../src/gui/gtkentry.c:215 ../src/imageio/storage/gallery.c:147
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/imageio/storage/latex.c:147
 msgid "$(HOME) - home folder"
 msgstr "$(HOME) - 主文件夹"
@@ -1763,6 +2517,7 @@ msgstr "$(HOME) - 主文件夹"
 msgid "$(DESKTOP) - desktop folder"
 msgstr "$(DESKTOP) - 桌面文件夹"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:222
 msgid "darktable preferences"
 msgstr "darktable首选项"
@@ -1776,10 +2531,26 @@ msgid "module"
 msgstr "模块"
 
 #: ../src/gui/preferences.c:430
+=======
+#: ../src/gui/preferences.c:220
+msgid "darktable preferences"
+msgstr "darktable首选项"
+
+#: ../src/gui/preferences.c:222
+msgid "close"
+msgstr "关闭"
+
+#: ../src/gui/preferences.c:411
+msgid "module"
+msgstr "模块"
+
+#: ../src/gui/preferences.c:425
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "name"
 msgstr "名称"
 
 #. exif
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:437 ../src/gui/preferences.c:1353
 #: ../src/gui/presets.c:420 ../src/libs/metadata_view.c:82
 msgid "model"
@@ -1792,44 +2563,83 @@ msgstr "作者"
 
 #: ../src/gui/preferences.c:451 ../src/gui/preferences.c:1369
 #: ../src/gui/presets.c:434 ../src/libs/collect.h:43
+=======
+#: ../src/gui/preferences.c:432 ../src/gui/preferences.c:1348
+#: ../src/gui/presets.c:419 ../src/libs/metadata_view.c:82
+msgid "model"
+msgstr "型号"
+
+#: ../src/gui/preferences.c:439 ../src/gui/preferences.c:1356
+#: ../src/gui/presets.c:426 ../src/libs/metadata_view.c:83
+msgid "maker"
+msgstr "作者"
+
+#: ../src/gui/preferences.c:446 ../src/gui/preferences.c:1364
+#: ../src/gui/presets.c:433 ../src/libs/collect.h:43
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/metadata_view.c:84
 msgid "lens"
 msgstr "镜头"
 
 #. iso
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:458 ../src/gui/preferences.c:1376
 #: ../src/gui/presets.c:441 ../src/libs/camera.c:597 ../src/libs/collect.h:44
+=======
+#: ../src/gui/preferences.c:453 ../src/gui/preferences.c:1371
+#: ../src/gui/presets.c:440 ../src/libs/camera.c:597 ../src/libs/collect.h:44
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/metadata_view.c:89
 msgid "iso"
 msgstr "ISO感光度"
 
 #. exposure
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:465 ../src/gui/preferences.c:1389
 #: ../src/gui/presets.c:454 ../src/iop/exposure.c:42 ../src/iop/exposure.c:406
+=======
+#: ../src/gui/preferences.c:460 ../src/gui/preferences.c:1384
+#: ../src/gui/presets.c:453 ../src/iop/exposure.c:42 ../src/iop/exposure.c:406
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/relight.c:384 ../src/libs/metadata_view.c:86
 msgid "exposure"
 msgstr "曝光"
 
 #. aperture
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:472 ../src/gui/preferences.c:1404
 #: ../src/gui/presets.c:469 ../src/libs/camera.c:549 ../src/libs/camera.c:558
+=======
+#: ../src/gui/preferences.c:467 ../src/gui/preferences.c:1399
+#: ../src/gui/presets.c:468 ../src/libs/camera.c:549 ../src/libs/camera.c:558
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/collect.h:45 ../src/libs/metadata_view.c:85
 msgid "aperture"
 msgstr "光圈"
 
 #. focal length
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:479 ../src/gui/preferences.c:1419
 #: ../src/gui/presets.c:484 ../src/libs/camera.c:568
+=======
+#: ../src/gui/preferences.c:474 ../src/gui/preferences.c:1414
+#: ../src/gui/presets.c:483 ../src/libs/camera.c:568
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/metadata_view.c:87
 msgid "focal length"
 msgstr "镜头焦距"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:486 ../src/iop/borders.c:1064
+=======
+#: ../src/gui/preferences.c:481 ../src/iop/borders.c:1066
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/exposure.c:411 ../src/iop/levels.c:286
 #: ../src/iop/tonecurve.c:554
 msgid "auto"
 msgstr "自动"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:536
 msgid "shortcuts"
 msgstr "快捷键"
@@ -1839,22 +2649,42 @@ msgid "shortcut"
 msgstr "快捷键"
 
 #: ../src/gui/preferences.c:558
+=======
+#: ../src/gui/preferences.c:531
+msgid "shortcuts"
+msgstr "快捷键"
+
+#: ../src/gui/preferences.c:546
+msgid "shortcut"
+msgstr "快捷键"
+
+#: ../src/gui/preferences.c:553
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "binding"
 msgstr "绑定"
 
 #. Adding the restore defaults button
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:597
+=======
+#: ../src/gui/preferences.c:592
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "default"
 msgstr "默认"
 
 #. Adding the import/export buttons
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:606
+=======
+#: ../src/gui/preferences.c:601
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "preferences"
 msgid "import"
 msgstr "导入"
 
 #. Export button
 #. export button
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:613 ../src/libs/export.c:656
 #: ../src/libs/styles.c:410
 msgid "export"
@@ -1865,16 +2695,33 @@ msgid "press key combination to remap..."
 msgstr "按下按键组合以重映射..."
 
 #: ../src/gui/preferences.c:1076 ../src/gui/presets.c:192
+=======
+#: ../src/gui/preferences.c:608 ../src/libs/export.c:621
+#: ../src/libs/styles.c:409
+msgid "export"
+msgstr "导出"
+
+#: ../src/gui/preferences.c:908
+msgid "press key combination to remap..."
+msgstr "按下按键组合以重映射..."
+
+#: ../src/gui/preferences.c:1071 ../src/gui/presets.c:191
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:315
 #, c-format
 msgid "do you really want to delete the preset `%s'?"
 msgstr "确定要删除预置 `%s'？"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1077 ../src/gui/presets.c:193
+=======
+#: ../src/gui/preferences.c:1072 ../src/gui/presets.c:192
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:316
 msgid "delete preset?"
 msgstr "删除预置？"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1113
 msgid "select file to export"
 msgstr "选择导出文件"
@@ -1884,21 +2731,41 @@ msgid "select file to import"
 msgstr "选择导入文件"
 
 #: ../src/gui/preferences.c:1194
+=======
+#: ../src/gui/preferences.c:1108
+msgid "select file to export"
+msgstr "选择导出文件"
+
+#: ../src/gui/preferences.c:1139
+msgid "select file to import"
+msgstr "选择导入文件"
+
+#: ../src/gui/preferences.c:1189
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "Are you sure you want to restore the default keybindings?  This will erase "
 "any modifications you have made."
 msgstr "你确定要恢复默认键盘绑定？这将会抹掉你所做的任何修改。"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1302 ../src/gui/presets.c:368
+=======
+#: ../src/gui/preferences.c:1297 ../src/gui/presets.c:367
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "edit `%s' for module `%s'"
 msgstr "编辑 `%s' ——> 模块 `%s'"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1331 ../src/gui/presets.c:399
+=======
+#: ../src/gui/preferences.c:1326 ../src/gui/presets.c:398
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:234
 msgid "description or further information"
 msgstr "描述或进一步的信息"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1333 ../src/gui/presets.c:401
 msgid "auto apply this preset to matching images"
 msgstr "自动应用此预设到匹配的图像"
@@ -1908,26 +2775,50 @@ msgid "only show this preset for matching images"
 msgstr "只对匹配的图像显示此预设"
 
 #: ../src/gui/preferences.c:1336 ../src/gui/presets.c:404
+=======
+#: ../src/gui/preferences.c:1328 ../src/gui/presets.c:400
+msgid "auto apply this preset to matching images"
+msgstr "自动应用此预设到匹配的图像"
+
+#: ../src/gui/preferences.c:1330 ../src/gui/presets.c:402
+msgid "only show this preset for matching images"
+msgstr "只对匹配的图像显示此预设"
+
+#: ../src/gui/preferences.c:1331 ../src/gui/presets.c:403
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "be very careful with this option. this might be the last time you see your "
 "preset."
 msgstr "小心勾选此项。这有可能是你最后一次看到你的预设。"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1352 ../src/gui/presets.c:419
+=======
+#: ../src/gui/preferences.c:1347 ../src/gui/presets.c:418
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, no-c-format
 msgid "string to match model (use % as wildcard)"
 msgstr "匹配模型字符串（使用 % 作为通配符）"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1360 ../src/gui/presets.c:426
+=======
+#: ../src/gui/preferences.c:1355 ../src/gui/presets.c:425
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, no-c-format
 msgid "string to match maker (use % as wildcard)"
 msgstr "匹配作者的字符串（使用 % 作为通配符）"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1368 ../src/gui/presets.c:433
+=======
+#: ../src/gui/preferences.c:1363 ../src/gui/presets.c:432
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, no-c-format
 msgid "string to match lens (use % as wildcard)"
 msgstr "匹配镜头的字符串（使用 % 作为通配符）"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1380 ../src/gui/presets.c:445
 msgid "minimum iso value"
 msgstr "最小ISO值"
@@ -1961,38 +2852,96 @@ msgid "maximum focal length"
 msgstr "最大焦距"
 
 #: ../src/gui/presets.c:147 ../src/gui/presets.c:789 ../src/gui/presets.c:802
+=======
+#: ../src/gui/preferences.c:1375 ../src/gui/presets.c:444
+msgid "minimum iso value"
+msgstr "最小ISO值"
+
+#: ../src/gui/preferences.c:1379 ../src/gui/presets.c:448
+msgid "maximum iso value"
+msgstr "最大ISO值"
+
+#: ../src/gui/preferences.c:1389 ../src/gui/presets.c:458
+msgid "minimum exposure time"
+msgstr "最小曝光时间"
+
+#: ../src/gui/preferences.c:1390 ../src/gui/presets.c:459
+msgid "maximum exposure time"
+msgstr "最大曝光时间"
+
+#: ../src/gui/preferences.c:1404 ../src/gui/presets.c:473
+msgid "minimum aperture value"
+msgstr "最小光圈值"
+
+#: ../src/gui/preferences.c:1405 ../src/gui/presets.c:474
+msgid "maximum aperture value"
+msgstr "最大光圈值"
+
+#: ../src/gui/preferences.c:1421 ../src/gui/presets.c:490
+msgid "minimum focal length"
+msgstr "最小焦距"
+
+#: ../src/gui/preferences.c:1422 ../src/gui/presets.c:491
+msgid "maximum focal length"
+msgstr "最大焦距"
+
+#: ../src/gui/presets.c:146 ../src/gui/presets.c:788 ../src/gui/presets.c:801
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:73
 msgid "(default)"
 msgstr "（默认）"
 
 #. then show edit dialog
+<<<<<<< HEAD
 #: ../src/gui/presets.c:223 ../src/gui/presets.c:597 ../src/gui/presets.c:604
 #: ../src/gui/presets.c:606 ../src/gui/presets.c:608 ../src/libs/lib.c:275
+=======
+#: ../src/gui/presets.c:222 ../src/gui/presets.c:596 ../src/gui/presets.c:603
+#: ../src/gui/presets.c:605 ../src/gui/presets.c:607 ../src/libs/lib.c:275
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:283 ../src/libs/lib.c:291 ../src/libs/lib.c:293
 #: ../src/libs/lib.c:295
 msgid "new preset"
 msgstr "新预设"
 
+<<<<<<< HEAD
 #: ../src/gui/presets.c:231
 msgid "please give preset a name"
 msgstr ""
 
 #: ../src/gui/presets.c:233
+=======
+#: ../src/gui/presets.c:230
+msgid "please give preset a name"
+msgstr ""
+
+#: ../src/gui/presets.c:232
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "unnamed preset"
 msgstr "新预设"
 
+<<<<<<< HEAD
 #: ../src/gui/presets.c:256 ../src/libs/lib.c:138
+=======
+#: ../src/gui/presets.c:255 ../src/libs/lib.c:138
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid ""
 "preset `%s' already exists.\n"
 "do you want to overwrite?"
 msgstr "预设 `%s' 已存在。您想覆盖它吗？"
 
+<<<<<<< HEAD
 #: ../src/gui/presets.c:259 ../src/libs/lib.c:141
+=======
+#: ../src/gui/presets.c:258 ../src/libs/lib.c:141
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "overwrite preset?"
 msgstr "覆盖预设？"
 
+<<<<<<< HEAD
 #: ../src/gui/presets.c:395 ../src/libs/lib.c:230
 msgid "name of the preset"
 msgstr "预置名称"
@@ -2025,18 +2974,57 @@ msgid "style %s was successfully saved"
 msgstr "样式 %s 保存成功"
 
 #: ../src/gui/styles_dialog.c:293
+=======
+#: ../src/gui/presets.c:394 ../src/libs/lib.c:230
+msgid "name of the preset"
+msgstr "预置名称"
+
+#: ../src/gui/presets.c:811
+msgid "disabled: wrong module version"
+msgstr ""
+
+#: ../src/gui/presets.c:831 ../src/libs/lib.c:446
+msgid "edit this preset.."
+msgstr "编辑此预置.."
+
+#: ../src/gui/presets.c:835 ../src/libs/lib.c:450
+msgid "delete this preset"
+msgstr "删除此预置"
+
+#: ../src/gui/presets.c:841 ../src/libs/lib.c:457
+msgid "store new preset.."
+msgstr "存为新的预设.."
+
+#: ../src/gui/presets.c:848 ../src/libs/lib.c:464
+#, fuzzy
+msgid "update preset"
+msgstr "删除预置？"
+
+#: ../src/gui/styles_dialog.c:284
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "edit style"
 msgstr "编辑样式"
 
+<<<<<<< HEAD
 #: ../src/gui/styles_dialog.c:297
+=======
+#: ../src/gui/styles_dialog.c:288
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "duplicate style"
 msgstr "重复样式"
 
+<<<<<<< HEAD
 #: ../src/gui/styles_dialog.c:298
+=======
+#: ../src/gui/styles_dialog.c:289
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "creates a duplicate of the style before applying changes"
 msgstr "应用改变前创建一个此样式的复制品"
 
+<<<<<<< HEAD
 #: ../src/gui/styles_dialog.c:302
 msgid "create new style"
 msgstr "创建新样式"
@@ -2050,21 +3038,48 @@ msgid "enter a description for the new style, this description is searchable"
 msgstr "输入新样式的描述，该描述可被搜索到"
 
 #: ../src/gui/styles_dialog.c:359 ../src/gui/styles_dialog.c:372
+=======
+#: ../src/gui/styles_dialog.c:293
+msgid "create new style"
+msgstr "创建新样式"
+
+#: ../src/gui/styles_dialog.c:314
+msgid "enter a name for the new style"
+msgstr "输入新样式的名称"
+
+#: ../src/gui/styles_dialog.c:317
+msgid "enter a description for the new style, this description is searchable"
+msgstr "输入新样式的描述，该描述可被搜索到"
+
+#: ../src/gui/styles_dialog.c:350 ../src/gui/styles_dialog.c:363
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/gui/hist_dialog.c:181
 msgid "include"
 msgstr "包含"
 
+<<<<<<< HEAD
 #: ../src/gui/styles_dialog.c:389
+=======
+#: ../src/gui/styles_dialog.c:380
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "update"
 msgstr "日期"
 
+<<<<<<< HEAD
 #: ../src/gui/styles_dialog.c:401 ../src/gui/styles_dialog.c:408
+=======
+#: ../src/gui/styles_dialog.c:392 ../src/gui/styles_dialog.c:399
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/gui/hist_dialog.c:192
 msgid "item"
 msgstr "项"
 
+<<<<<<< HEAD
 #: ../src/gui/styles_dialog.c:507
+=======
+#: ../src/gui/styles_dialog.c:498
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "can't create style out of unaltered image"
 msgstr "不能从未改变的图像创建样式"
 
@@ -2078,12 +3093,20 @@ msgstr "选择全部"
 msgid "can't copy history out of unaltered image"
 msgstr "不能从未改变的图像创建样式"
 
+<<<<<<< HEAD
 #: ../src/imageio/format/copy.c:150 ../src/libs/copy_history.c:256
+=======
+#: ../src/imageio/format/copy.c:144 ../src/libs/copy_history.c:256
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/image.c:158
 msgid "copy"
 msgstr "复制"
 
+<<<<<<< HEAD
 #: ../src/imageio/format/copy.c:161
+=======
+#: ../src/imageio/format/copy.c:155
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "do a 1:1 copy of the selected files.\n"
 "the global options below do not apply!"
@@ -2091,6 +3114,7 @@ msgstr ""
 "1:1的复制选定的图像。\n"
 "以下全局选项是不适用的！"
 
+<<<<<<< HEAD
 #: ../src/imageio/format/exr.cc:160
 msgid "openexr"
 msgstr "OpenEXR"
@@ -2108,10 +3132,30 @@ msgid "j2k"
 msgstr ""
 
 #: ../src/imageio/format/j2k.c:604 ../src/imageio/format/jpeg.c:542
+=======
+#: ../src/imageio/format/exr.cc:152
+msgid "openexr"
+msgstr "OpenEXR"
+
+#: ../src/imageio/format/j2k.c:540
+msgid "jpeg 2000"
+msgstr ""
+
+#: ../src/imageio/format/j2k.c:575
+msgid "jp2"
+msgstr ""
+
+#: ../src/imageio/format/j2k.c:580
+msgid "j2k"
+msgstr ""
+
+#: ../src/imageio/format/j2k.c:587 ../src/imageio/format/jpeg.c:669
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/camera.c:617
 msgid "quality"
 msgstr "quality品质"
 
+<<<<<<< HEAD
 #: ../src/imageio/format/j2k.c:613
 #, fuzzy
 msgid "dcp mode"
@@ -2154,6 +3198,50 @@ msgid "16-bit ppm"
 msgstr "16-bit ppm"
 
 #: ../src/imageio/format/tiff.c:242
+=======
+#: ../src/imageio/format/j2k.c:596
+#, fuzzy
+msgid "dcp mode"
+msgstr "镜头型号"
+
+#: ../src/imageio/format/j2k.c:602
+msgid "cinema2k, 24fps"
+msgstr ""
+
+#: ../src/imageio/format/j2k.c:603
+msgid "cinema2k, 48fps"
+msgstr ""
+
+#: ../src/imageio/format/j2k.c:604
+msgid "cinema4k, 24fps"
+msgstr ""
+
+#: ../src/imageio/format/jpeg.c:649
+msgid "8-bit jpg"
+msgstr "8-bit jpg"
+
+#: ../src/imageio/format/pfm.c:97
+msgid "float pfm"
+msgstr "float pfm"
+
+#: ../src/imageio/format/png.c:384
+msgid "8/16-bit png"
+msgstr "8/16-bit png"
+
+#: ../src/imageio/format/png.c:405 ../src/imageio/format/tiff.c:256
+msgid "8-bit"
+msgstr "8-bit"
+
+#: ../src/imageio/format/png.c:410 ../src/imageio/format/tiff.c:261
+msgid "16-bit"
+msgstr "16-bit"
+
+#: ../src/imageio/format/ppm.c:103
+msgid "16-bit ppm"
+msgstr "16-bit ppm"
+
+#: ../src/imageio/format/tiff.c:235
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "8/16-bit tiff"
 msgstr "8/16-bit tiff"
 
@@ -2170,27 +3258,50 @@ msgstr ""
 "输入导出图像的路径\n"
 "可识别的参数："
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/disk.c:200 ../src/imageio/storage/gallery.c:252
 #: ../src/imageio/storage/latex.c:249
+=======
+#: ../src/imageio/storage/disk.c:199 ../src/imageio/storage/gallery.c:251
+#: ../src/imageio/storage/latex.c:248
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "could not create directory `%s'!"
 msgstr "无法创建目录 `%s'！"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/disk.c:207
 #, c-format
+=======
+#: ../src/imageio/storage/disk.c:206
+#, fuzzy, c-format
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "could not write to directory `%s'!"
 msgstr "无法写入目录 `%s'！"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/disk.c:240 ../src/imageio/storage/email.c:107
 #: ../src/imageio/storage/facebook.c:1191 ../src/imageio/storage/flickr.c:670
 #: ../src/imageio/storage/gallery.c:327 ../src/imageio/storage/gallery.c:346
 #: ../src/imageio/storage/picasa.c:1484
 #, c-format
+=======
+#: ../src/imageio/storage/disk.c:239 ../src/imageio/storage/email.c:106
+#: ../src/imageio/storage/facebook.c:1190 ../src/imageio/storage/flickr.c:669
+#: ../src/imageio/storage/gallery.c:326 ../src/imageio/storage/gallery.c:345
+#: ../src/imageio/storage/picasa.c:1483
+#, fuzzy, c-format
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "could not export to file `%s'!"
 msgstr "无法导出至文件 `%s'！"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/disk.c:256 ../src/imageio/storage/email.c:115
 #: ../src/imageio/storage/gallery.c:356 ../src/imageio/storage/latex.c:339
+=======
+#: ../src/imageio/storage/disk.c:255 ../src/imageio/storage/email.c:114
+#: ../src/imageio/storage/gallery.c:355 ../src/imageio/storage/latex.c:338
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%d/%d exported to `%s%s'"
 msgstr "%d/%d 已导出到 `%s%s'"
@@ -2203,13 +3314,21 @@ msgstr "作为邮件发送"
 msgid "images exported from darktable"
 msgstr "从darktable导出的图像"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:242
+=======
+#: ../src/imageio/storage/facebook.c:241
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "[facebook] unexpeted url format\n"
 msgstr "[facebook]不希望得到的url格式\n"
 
 #. //////////// build & show the validation dialog
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:603
+=======
+#: ../src/imageio/storage/facebook.c:602
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid ""
 "step 1: a new window or tab of your browser should have been loaded. you "
@@ -2219,39 +3338,76 @@ msgstr ""
 "步骤1：一个新的浏览器窗口或标签页将被加载。在继续下一步前，你必须在登入你的"
 "facebook账户并且授权darktable可以上传图片。"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:606 ../src/imageio/storage/picasa.c:837
+=======
+#: ../src/imageio/storage/facebook.c:605 ../src/imageio/storage/picasa.c:836
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "step 2: paste your browser url and click the ok button once you are done."
 msgstr "步骤2：当你完成操作后，粘贴浏览器url并点击OK按钮"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:614
+=======
+#: ../src/imageio/storage/facebook.c:613
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "Facebook authentication"
 msgstr "Facebook 授权"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:620 ../src/imageio/storage/picasa.c:851
+=======
+#: ../src/imageio/storage/facebook.c:619 ../src/imageio/storage/picasa.c:850
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "url:"
 msgstr "url:"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:640 ../src/imageio/storage/picasa.c:871
+=======
+#: ../src/imageio/storage/facebook.c:639 ../src/imageio/storage/picasa.c:870
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "please enter the validation url"
 msgstr "请输入有效的url地址"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:651 ../src/imageio/storage/picasa.c:883
+=======
+#: ../src/imageio/storage/facebook.c:650 ../src/imageio/storage/picasa.c:882
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "the given url is not valid, it should look like: "
 msgstr "给定的url是无效的,它应该类似于："
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:757 ../src/imageio/storage/picasa.c:1014
+=======
+#: ../src/imageio/storage/facebook.c:756 ../src/imageio/storage/picasa.c:1013
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "new account"
 msgstr "新账户"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:764 ../src/imageio/storage/picasa.c:1021
+=======
+#: ../src/imageio/storage/facebook.c:763 ../src/imageio/storage/picasa.c:1020
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "other account"
 msgstr "其它账户"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:795 ../src/imageio/storage/picasa.c:1051
+=======
+#: ../src/imageio/storage/facebook.c:794 ../src/imageio/storage/picasa.c:1050
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "unable to retreive the album list"
 msgstr "无法检索相册列表"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:803 ../src/imageio/storage/flickr.c:388
 #: ../src/imageio/storage/flickr.c:416 ../src/imageio/storage/picasa.c:1059
 msgid "create new album"
@@ -2259,10 +3415,20 @@ msgstr "创建新相册"
 
 #: ../src/imageio/storage/facebook.c:925 ../src/imageio/storage/picasa.c:1107
 #: ../src/imageio/storage/picasa.c:1267
+=======
+#: ../src/imageio/storage/facebook.c:802 ../src/imageio/storage/flickr.c:387
+#: ../src/imageio/storage/flickr.c:415 ../src/imageio/storage/picasa.c:1058
+msgid "create new album"
+msgstr "创建新相册"
+
+#: ../src/imageio/storage/facebook.c:924 ../src/imageio/storage/picasa.c:1106
+#: ../src/imageio/storage/picasa.c:1266
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "logout"
 msgstr "登出"
 
 #. Set default permission to private
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:929 ../src/imageio/storage/facebook.c:942
 #: ../src/imageio/storage/facebook.c:969
 #: ../src/imageio/storage/facebook.c:1072 ../src/imageio/storage/flickr.c:526
@@ -2272,67 +3438,138 @@ msgid "login"
 msgstr "登入"
 
 #: ../src/imageio/storage/facebook.c:1006
+=======
+#: ../src/imageio/storage/facebook.c:928 ../src/imageio/storage/facebook.c:941
+#: ../src/imageio/storage/facebook.c:968
+#: ../src/imageio/storage/facebook.c:1071 ../src/imageio/storage/flickr.c:525
+#: ../src/imageio/storage/picasa.c:1112 ../src/imageio/storage/picasa.c:1270
+#: ../src/imageio/storage/picasa.c:1283 ../src/imageio/storage/picasa.c:1362
+msgid "login"
+msgstr "登入"
+
+#: ../src/imageio/storage/facebook.c:1005
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "facebook webalbum"
 msgstr "facebook 在线相册"
 
 #. create labels
 #. xmp
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:1019 ../src/imageio/storage/flickr.c:480
 #: ../src/imageio/storage/gallery.c:168 ../src/imageio/storage/latex.c:168
 #: ../src/imageio/storage/picasa.c:1312 ../src/libs/collect.h:38
+=======
+#: ../src/imageio/storage/facebook.c:1018 ../src/imageio/storage/flickr.c:479
+#: ../src/imageio/storage/gallery.c:167 ../src/imageio/storage/latex.c:167
+#: ../src/imageio/storage/picasa.c:1311 ../src/libs/collect.h:38
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/metadata.c:303 ../src/libs/metadata_view.c:95
 msgid "title"
 msgstr "标题"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:1020 ../src/imageio/storage/flickr.c:481
 #: ../src/imageio/storage/picasa.c:1313
 msgid "summary"
 msgstr "摘要"
 
 #: ../src/imageio/storage/facebook.c:1021 ../src/imageio/storage/picasa.c:1314
+=======
+#: ../src/imageio/storage/facebook.c:1019 ../src/imageio/storage/flickr.c:480
+#: ../src/imageio/storage/picasa.c:1312
+msgid "summary"
+msgstr "摘要"
+
+#: ../src/imageio/storage/facebook.c:1020 ../src/imageio/storage/picasa.c:1313
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "privacy"
 msgstr "隐私"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:1061
+=======
+#: ../src/imageio/storage/facebook.c:1060
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "Only Me"
 msgstr "只是我"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:1063
 msgid "Friends"
 msgstr "朋友"
 
 #: ../src/imageio/storage/facebook.c:1065
+=======
+#: ../src/imageio/storage/facebook.c:1062
+#, fuzzy
+msgid "Friends"
+msgstr "朋友"
+
+#: ../src/imageio/storage/facebook.c:1064
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "Public"
 msgstr "公开"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:1067
+=======
+#: ../src/imageio/storage/facebook.c:1066
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "Friends of Friends"
 msgstr "朋友之友"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:1200 ../src/imageio/storage/picasa.c:1493
+=======
+#: ../src/imageio/storage/facebook.c:1199 ../src/imageio/storage/picasa.c:1492
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "unable to create album, no title provided"
 msgstr "没有提供标题，无法创建相册"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:1207 ../src/imageio/storage/picasa.c:1500
+=======
+#: ../src/imageio/storage/facebook.c:1206 ../src/imageio/storage/picasa.c:1499
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "unable to create album"
 msgstr "无法创建新相册"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:1217 ../src/imageio/storage/picasa.c:1510
+=======
+#: ../src/imageio/storage/facebook.c:1216 ../src/imageio/storage/picasa.c:1509
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "unable to export photo to webalbum"
 msgstr "无法将图片导出至在线相册"
 
 #. this makes sense only if the export was successful
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:1234
 #, c-format
+=======
+#: ../src/imageio/storage/facebook.c:1233
+#, fuzzy, c-format
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "%d/%d exported to facebook webalbum"
 msgstr "%d/%d 已被导出至facebook在线相册"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:116
+=======
+#: ../src/imageio/storage/flickr.c:115
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "flickr authentication: %s"
 msgstr "flickr 授权： %s"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:191
+=======
+#: ../src/imageio/storage/flickr.c:190
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "step 1: a new window or tab of your browser should have been loaded. you "
 "have to login into your flickr account there and authorize darktable to "
@@ -2341,6 +3578,7 @@ msgstr ""
 "步骤1：一个新的浏览器窗口或标签页将被加载。在继续下一步前，你必须在登入你的"
 "flickr账户并且授权darktable可以上传图片。"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:192
 msgid "step 2: click the ok button once you are done."
 msgstr "步骤2：当你完成操作后，点击OK按钮"
@@ -2359,10 +3597,31 @@ msgid "not authenticated"
 msgstr "未授权"
 
 #: ../src/imageio/storage/flickr.c:368 ../src/imageio/storage/flickr.c:845
+=======
+#: ../src/imageio/storage/flickr.c:191
+msgid "step 2: click the ok button once you are done."
+msgstr "步骤2：当你完成操作后，点击OK按钮"
+
+#: ../src/imageio/storage/flickr.c:198
+msgid "flickr authentication"
+msgstr "flickr 授权"
+
+#: ../src/imageio/storage/flickr.c:307
+msgid "flickr webalbum"
+msgstr "flickr 在线相册"
+
+#: ../src/imageio/storage/flickr.c:331 ../src/imageio/storage/flickr.c:371
+#: ../src/imageio/storage/flickr.c:840 ../src/imageio/storage/flickr.c:846
+msgid "not authenticated"
+msgstr "未授权"
+
+#: ../src/imageio/storage/flickr.c:367 ../src/imageio/storage/flickr.c:836
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "authenticated"
 msgstr "已授权"
 
 #. Add standard action
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:387
 msgid "without album"
 msgstr "没有相册"
@@ -2420,16 +3679,87 @@ msgid "friends + family"
 msgstr "朋友 + 家庭"
 
 #: ../src/imageio/storage/flickr.c:542
+=======
+#: ../src/imageio/storage/flickr.c:386
+msgid "without album"
+msgstr "没有相册"
+
+#: ../src/imageio/storage/flickr.c:472
+msgid "flickr user"
+msgstr "flickr用户"
+
+#: ../src/imageio/storage/flickr.c:473
+msgid "photosets"
+msgstr "照片集"
+
+#: ../src/imageio/storage/flickr.c:474
+msgid "visible to"
+msgstr "可见性"
+
+#: ../src/imageio/storage/flickr.c:477
+msgid "click login button to start"
+msgstr "要开始，点击”登录“按钮"
+
+#: ../src/imageio/storage/flickr.c:514
+msgid "my new photoset"
+msgstr "我的新照片集"
+
+#: ../src/imageio/storage/flickr.c:515
+msgid "exported from darktable"
+msgstr "从darktable导出"
+
+#: ../src/imageio/storage/flickr.c:523
+msgid "refresh album list"
+msgstr "刷新相册列表"
+
+#: ../src/imageio/storage/flickr.c:526
+msgid "Flickr login"
+msgstr "登入Flickr"
+
+#: ../src/imageio/storage/flickr.c:533
+msgid "export tags"
+msgstr "导出标签"
+
+#: ../src/imageio/storage/flickr.c:537
+msgid "you"
+msgstr "你"
+
+#: ../src/imageio/storage/flickr.c:538
+msgid "friends"
+msgstr "朋友"
+
+#: ../src/imageio/storage/flickr.c:539
+msgid "family"
+msgstr "家庭"
+
+#: ../src/imageio/storage/flickr.c:540
+msgid "friends + family"
+msgstr "朋友 + 家庭"
+
+#: ../src/imageio/storage/flickr.c:541
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "everyone"
 msgstr "所有人"
 
 #. this makes sense only if the export was successful
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:744
+=======
+#: ../src/imageio/storage/flickr.c:743
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%d/%d exported to flickr webalbum"
 msgstr "%d/%d 已被导出至flickr在线相册"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/gallery.c:71
+=======
+#: ../src/imageio/storage/flickr.c:848
+msgid "Flickr account not authenticated"
+msgstr "Flickr 平台没有认证"
+
+#: ../src/imageio/storage/gallery.c:70
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "website gallery"
 msgstr "网站展示"
 
@@ -2444,10 +3774,17 @@ msgstr "latex book 模板"
 #. TODO: support title, author, subject, keywords (collect tags?)
 #: ../src/imageio/storage/latex.c:175
 msgid "enter the title of the book"
+<<<<<<< HEAD
 msgstr "输入书籍标题"
 
 #. //////////// build & show the validation dialog
 #: ../src/imageio/storage/picasa.c:834
+=======
+msgstr "输入网站标题"
+
+#. //////////// build & show the validation dialog
+#: ../src/imageio/storage/picasa.c:833
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid ""
 "step 1: a new window or tab of your browser should have been loaded. you "
@@ -2457,11 +3794,16 @@ msgstr ""
 "步骤1：一个新的浏览器窗口或标签页将被加载。在继续下一步前，你必须在登入你的"
 "flickr账户并且授权darktable可以上传图片。"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/picasa.c:845
+=======
+#: ../src/imageio/storage/picasa.c:844
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "picasa authentication"
 msgstr "flickr 授权"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/picasa.c:1299
 msgid "picasa webalbum"
 msgstr "picasa 网络相册"
@@ -2478,6 +3820,23 @@ msgstr "公开"
 
 #. this makes sense only if the export was successful
 #: ../src/imageio/storage/picasa.c:1527
+=======
+#: ../src/imageio/storage/picasa.c:1298
+msgid "picasa webalbum"
+msgstr "picasa 网络相册"
+
+#: ../src/imageio/storage/picasa.c:1355
+msgid "private"
+msgstr ""
+
+#: ../src/imageio/storage/picasa.c:1357
+#, fuzzy
+msgid "public"
+msgstr "公共相册"
+
+#. this makes sense only if the export was successful
+#: ../src/imageio/storage/picasa.c:1526
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%d/%d exported to picasa webalbum"
 msgstr "%d/%d 导出到 picasa 网络相册"
@@ -2517,6 +3876,10 @@ msgid "chroma denoise"
 msgstr "彩色(chroma)降噪"
 
 #: ../src/iop/atrous.c:857
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "denoise (subtle)"
 msgstr "降噪(弱)"
 
@@ -2590,12 +3953,20 @@ msgstr "锐度"
 msgid "sharpness of edges at each feature size"
 msgstr "边缘的锐度每个特性的尺寸"
 
+<<<<<<< HEAD
 #: ../src/iop/atrous.c:1457 ../src/iop/colorzones.c:1045
 #: ../src/iop/soften.c:601
 msgid "mix"
 msgstr "混合"
 
 #: ../src/iop/atrous.c:1458 ../src/iop/colorzones.c:1047
+=======
+#: ../src/iop/atrous.c:1457 ../src/iop/soften.c:601
+msgid "mix"
+msgstr "混合"
+
+#: ../src/iop/atrous.c:1458
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "make effect stronger or weaker"
 msgstr "使得效果增强或削弱"
 
@@ -2692,6 +4063,10 @@ msgid "contrast"
 msgstr "对比"
 
 #: ../src/iop/bilat.c:276 ../src/iop/globaltonemap.c:651
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "detail"
 msgstr "细节"
 
@@ -2795,6 +4170,10 @@ msgid "border size"
 msgstr "边框的大小"
 
 #: ../src/iop/borders.c:189
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "pick border color from image"
 msgstr "从图像中选择边框颜色"
@@ -2805,10 +4184,15 @@ msgid "frame line size"
 msgstr "分帧线尺寸"
 
 #: ../src/iop/borders.c:192
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "pick frame line color from image"
 msgstr "从图像中选择分帧线颜色"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:546
 msgid "15:10 postcard white"
 msgstr "15:10 明信片 白色"
@@ -2818,14 +4202,32 @@ msgid "15:10 postcard black"
 msgstr "15:10 明信片 黑色"
 
 #: ../src/iop/borders.c:794
+=======
+#: ../src/iop/borders.c:548
+msgid "15:10 postcard white"
+msgstr "15:10 明信片 白色"
+
+#: ../src/iop/borders.c:551
+msgid "15:10 postcard black"
+msgstr "15:10 明信片 黑色"
+
+#: ../src/iop/borders.c:796
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "select border color"
 msgstr "选择边框颜色"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:831
+=======
+#: ../src/iop/borders.c:833
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "select frame line color"
 msgstr "选择分帧线颜色"
 
 #. add import singel image buttons
+<<<<<<< HEAD
 #: ../src/iop/borders.c:981 ../src/iop/clipping.c:1737
 #: ../src/iop/watermark.c:1057 ../src/libs/import.c:814
 msgid "image"
@@ -2836,13 +4238,31 @@ msgid "3:1"
 msgstr "3:2"
 
 #: ../src/iop/borders.c:983
+=======
+#: ../src/iop/borders.c:983 ../src/iop/clipping.c:1740
+#: ../src/libs/import.c:814
+msgid "image"
+msgstr "相片"
+
+#: ../src/iop/borders.c:984
+#, fuzzy
+msgid "3:1"
+msgstr "3:2"
+
+#: ../src/iop/borders.c:985
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "95:33"
 msgstr "95:33"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:984
+=======
+#: ../src/iop/borders.c:986
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "2:1"
 msgstr "2:1"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:985 ../src/iop/clipping.c:1746
 msgid "16:9"
 msgstr "16:9"
@@ -2856,9 +4276,25 @@ msgid "3:2"
 msgstr "3:2"
 
 #: ../src/iop/borders.c:988
+=======
+#: ../src/iop/borders.c:987 ../src/iop/clipping.c:1749
+msgid "16:9"
+msgstr "16:9"
+
+#: ../src/iop/borders.c:988 ../src/iop/clipping.c:1741
+msgid "golden cut"
+msgstr "黄金分割"
+
+#: ../src/iop/borders.c:989 ../src/iop/clipping.c:1743
+msgid "3:2"
+msgstr "3:2"
+
+#: ../src/iop/borders.c:990
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "A4"
 msgstr "A4"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:989 ../src/iop/clipping.c:1745
 msgid "DIN"
 msgstr "DIN"
@@ -2876,25 +4312,62 @@ msgid "constant border"
 msgstr "定长边框"
 
 #: ../src/iop/borders.c:1014 ../src/iop/borders.c:1019
+=======
+#: ../src/iop/borders.c:991 ../src/iop/clipping.c:1748
+msgid "DIN"
+msgstr "DIN"
+
+#: ../src/iop/borders.c:992 ../src/iop/clipping.c:1745
+msgid "4:3"
+msgstr "4:3"
+
+#: ../src/iop/borders.c:993 ../src/iop/clipping.c:1747
+msgid "square"
+msgstr "正方形"
+
+#: ../src/iop/borders.c:994
+msgid "constant border"
+msgstr "定长边框"
+
+#: ../src/iop/borders.c:1016 ../src/iop/borders.c:1021
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "center"
 msgstr "中心"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1015 ../src/iop/borders.c:1020
+=======
+#: ../src/iop/borders.c:1017 ../src/iop/borders.c:1022
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "1/3"
 msgstr "1/3"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1016 ../src/iop/borders.c:1021
+=======
+#: ../src/iop/borders.c:1018 ../src/iop/borders.c:1023
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "3/8"
 msgstr "3/8"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1017 ../src/iop/borders.c:1022
+=======
+#: ../src/iop/borders.c:1019 ../src/iop/borders.c:1024
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "5/8"
 msgstr "5/8"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1018 ../src/iop/borders.c:1023
+=======
+#: ../src/iop/borders.c:1020 ../src/iop/borders.c:1025
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "2/3"
 msgstr "2/3"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1048
 msgid "border size"
 msgstr "边框尺寸"
@@ -2908,9 +4381,25 @@ msgid "aspect"
 msgstr "宽高比"
 
 #: ../src/iop/borders.c:1060
+=======
+#: ../src/iop/borders.c:1050
+msgid "border size"
+msgstr "边框尺寸"
+
+#: ../src/iop/borders.c:1053
+msgid "size of the border in percent of the full image"
+msgstr "边框的尺寸(以全图尺寸百分比表示)"
+
+#: ../src/iop/borders.c:1058 ../src/iop/clipping.c:1738
+msgid "aspect"
+msgstr "宽高比"
+
+#: ../src/iop/borders.c:1062
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "select the aspect ratio or right click and type your own (w:h)"
 msgstr "选择纵横比或右键单击并自定义（w:h）"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1063 ../src/iop/flip.c:81
 msgid "orientation"
 msgstr "方向"
@@ -2921,46 +4410,102 @@ msgid "portrait"
 msgstr "肖像"
 
 #: ../src/iop/borders.c:1066
+=======
+#: ../src/iop/borders.c:1065 ../src/iop/flip.c:81
+msgid "orientation"
+msgstr "方向"
+
+#: ../src/iop/borders.c:1067
+#, fuzzy
+msgid "portrait"
+msgstr "导出"
+
+#: ../src/iop/borders.c:1068
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "landscape"
 msgstr "景色"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1067
+=======
+#: ../src/iop/borders.c:1069
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "aspect ratio orientation of the image with border"
 msgstr "包含边框的图像的纵横比取向"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1073
+=======
+#: ../src/iop/borders.c:1075
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "horizontal position"
 msgstr "水平位置"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1076
+=======
+#: ../src/iop/borders.c:1078
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "select the horizontal position ratio relative to top or right click and type "
 "your own (y:h)"
 msgstr "选择相对于顶部的水平位置比或右键单击并自定义（y:h）"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1079
+=======
+#: ../src/iop/borders.c:1081
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "vertical position"
 msgstr "垂直位置"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1082
+=======
+#: ../src/iop/borders.c:1084
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "select the vertical position ratio relative to left or right click and type "
 "your own (x:w)"
 msgstr "选择相对于顶部的垂直位置比或右键单击并自定义（x:w）"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1086
+=======
+#: ../src/iop/borders.c:1088
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "frame line size"
 msgstr "分帧线尺寸"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1089
+=======
+#: ../src/iop/borders.c:1091
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "size of the frame line in percent of min border width"
 msgstr "分帧线的尺寸(以全图尺寸百分比表示)"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1093
 msgid "frame line offset"
 msgstr "分帧线偏移"
 
 #: ../src/iop/borders.c:1096
+=======
+#: ../src/iop/borders.c:1095
+msgid "frame line offset"
+msgstr ""
+
+#: ../src/iop/borders.c:1098
+#, fuzzy
+msgid "offset of the frame line beginning on picture side"
+msgstr "边框的尺寸(以全图尺寸百分比表示)"
+
+#: ../src/iop/borders.c:1104
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "offset of the frame line beginning on picture side"
 msgstr "分帧线偏移（从图片一侧开始计算）"
@@ -2969,15 +4514,30 @@ msgstr "分帧线偏移（从图片一侧开始计算）"
 msgid "border color"
 msgstr "边框颜色"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1105
+=======
+#: ../src/iop/borders.c:1107
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "pick border color from image"
 msgstr "从图片选取边框颜色"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1117
+=======
+#: ../src/iop/borders.c:1119
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "frame line color"
 msgstr "分帧线颜色"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1120
+=======
+#: ../src/iop/borders.c:1122
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "pick frame line color from image"
 msgstr "从图片选取分帧线颜色"
 
@@ -3008,8 +4568,13 @@ msgstr "目的地"
 
 #. dt_bauhaus_slider_set_format(g->gslider2, "");
 #: ../src/iop/channelmixer.c:438 ../src/iop/colorcorrection.c:282
+<<<<<<< HEAD
 #: ../src/iop/colorize.c:431 ../src/iop/colorzones.c:1019
 #: ../src/iop/colorzones.c:1055 ../src/iop/graduatednd.c:1064
+=======
+#: ../src/iop/colorize.c:431 ../src/iop/colorzones.c:974
+#: ../src/iop/colorzones.c:1003 ../src/iop/graduatednd.c:1064
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/lowpass.c:523 ../src/iop/soften.c:584
 #: ../src/iop/splittoning.c:554 ../src/iop/vignette.c:1129
 msgid "saturation"
@@ -3083,6 +4648,7 @@ msgstr "效果的力度"
 msgid "crop and rotate"
 msgstr "裁剪和旋转"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1360
 msgid "invalid ratio format. it should be \"number:number\""
 msgstr ""
@@ -3094,9 +4660,25 @@ msgstr "垂直"
 
 #: ../src/iop/clipping.c:1461 ../src/iop/clipping.c:1700
 #: ../src/iop/clipping.c:1719
+=======
+#: ../src/iop/clipping.c:1363
+msgid "invalid ratio format. it should be \"number:number\""
+msgstr ""
+
+#: ../src/iop/clipping.c:1463 ../src/iop/clipping.c:1704
+#: ../src/iop/clipping.c:1721
+#, fuzzy
+msgid "vertical"
+msgstr "垂直翻转"
+
+#: ../src/iop/clipping.c:1464 ../src/iop/clipping.c:1703
+#: ../src/iop/clipping.c:1722
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "horizontal"
 msgstr "水平"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1462 ../src/iop/clipping.c:1720
 #, fuzzy
 msgid "full"
@@ -3108,24 +4690,50 @@ msgid "old system"
 msgstr "明度分区系统"
 
 #: ../src/iop/clipping.c:1464
+=======
+#: ../src/iop/clipping.c:1465 ../src/iop/clipping.c:1723
+msgid "full"
+msgstr ""
+
+#: ../src/iop/clipping.c:1466
+#, fuzzy
+msgid "old system"
+msgstr "明度分区系统"
+
+#: ../src/iop/clipping.c:1467
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "correction applied"
 msgstr "修正集合"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1698 ../src/iop/clipping.c:1776
+=======
+#: ../src/iop/clipping.c:1701 ../src/iop/clipping.c:1779
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/live_view.c:335
 msgid "flip"
 msgstr "翻转"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1702 ../src/iop/clipping.c:1780
+=======
+#: ../src/iop/clipping.c:1705 ../src/iop/clipping.c:1783
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/live_view.c:339
 msgid "both"
 msgstr "两者"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1704
+=======
+#: ../src/iop/clipping.c:1707
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "mirror image horizontally and/or vertically"
 msgstr "镜像图像水平和/或垂直"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1709
 msgid "angle"
 msgstr "角度"
@@ -3135,29 +4743,57 @@ msgid "right-click and drag a line on the image to drag a straight line"
 msgstr "右击在图像上拖线可以得到一条直线"
 
 #: ../src/iop/clipping.c:1716
+=======
+#: ../src/iop/clipping.c:1712
+msgid "angle"
+msgstr "角度"
+
+#: ../src/iop/clipping.c:1715
+msgid "right-click and drag a line on the image to drag a straight line"
+msgstr "右击在图像上拖线可以得到一条直线"
+
+#: ../src/iop/clipping.c:1719
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "keystone"
 msgstr "水平梯形校正"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1721
 msgid "set perspective correction for your image"
 msgstr ""
 
 #: ../src/iop/clipping.c:1726
+=======
+#: ../src/iop/clipping.c:1724
+msgid "set perspective correction for your image"
+msgstr ""
+
+#: ../src/iop/clipping.c:1729
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "automatic cropping"
 msgstr "自动比例"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1727
+=======
+#: ../src/iop/clipping.c:1730
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "no"
 msgstr "没有"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1728
+=======
+#: ../src/iop/clipping.c:1731
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "yes"
 msgstr "风格"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1729
 msgid "automatically crop to avoid black edges"
 msgstr ""
@@ -3171,25 +4807,58 @@ msgid "1:2"
 msgstr "1:2"
 
 #: ../src/iop/clipping.c:1741
+=======
+#: ../src/iop/clipping.c:1732
+msgid "automatically crop to avoid black edges"
+msgstr ""
+
+#: ../src/iop/clipping.c:1739
+msgid "free"
+msgstr "自由"
+
+#: ../src/iop/clipping.c:1742
+msgid "1:2"
+msgstr "1:2"
+
+#: ../src/iop/clipping.c:1744
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "7:5"
 msgstr "7:5"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1743
 msgid "5:4"
 msgstr "5:4"
 
 #: ../src/iop/clipping.c:1747
+=======
+#: ../src/iop/clipping.c:1746
+msgid "5:4"
+msgstr "5:4"
+
+#: ../src/iop/clipping.c:1750
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "16:10"
 msgstr "16:10"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1748
+=======
+#: ../src/iop/clipping.c:1751
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "10:8 in print"
 msgstr "打印（10:8）"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1753
+=======
+#: ../src/iop/clipping.c:1756
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "set the aspect ratio (w:h)"
 msgstr "设置宽高比（w:h)"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1759 ../src/libs/live_view.c:323
 msgid "guides"
 msgstr "参考线"
@@ -3215,52 +4884,128 @@ msgid "golden mean"
 msgstr "黄金比例"
 
 #: ../src/iop/clipping.c:1771 ../src/libs/live_view.c:330
+=======
+#: ../src/iop/clipping.c:1762 ../src/libs/live_view.c:323
+msgid "guides"
+msgstr "参考线"
+
+#: ../src/iop/clipping.c:1764 ../src/libs/live_view.c:325
+msgid "grid"
+msgstr "方格"
+
+#: ../src/iop/clipping.c:1765 ../src/libs/live_view.c:326
+msgid "rules of thirds"
+msgstr "三分法"
+
+#: ../src/iop/clipping.c:1766 ../src/libs/live_view.c:327
+msgid "diagonal method"
+msgstr "45度角"
+
+#: ../src/iop/clipping.c:1767 ../src/libs/live_view.c:328
+msgid "harmonious triangles"
+msgstr "均衡三角形"
+
+#: ../src/iop/clipping.c:1768 ../src/libs/live_view.c:329
+msgid "golden mean"
+msgstr "黄金比例"
+
+#: ../src/iop/clipping.c:1774 ../src/libs/live_view.c:330
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "display guide lines to help compose your photograph"
 msgstr "显示参考线来帮助构成图片"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1778 ../src/libs/live_view.c:337
+=======
+#: ../src/iop/clipping.c:1781 ../src/libs/live_view.c:337
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "horizontally"
 msgstr "水平地"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1779 ../src/libs/live_view.c:338
+=======
+#: ../src/iop/clipping.c:1782 ../src/libs/live_view.c:338
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "vertically"
 msgstr "垂直地"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1781 ../src/libs/live_view.c:340
+=======
+#: ../src/iop/clipping.c:1784 ../src/libs/live_view.c:340
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "flip guides"
 msgstr "翻转参考线"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1786 ../src/libs/live_view.c:344
+=======
+#: ../src/iop/clipping.c:1789 ../src/libs/live_view.c:344
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "extra"
 msgstr "额外的"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1787 ../src/libs/live_view.c:345
 msgid "golden sections"
 msgstr "黄金分割部分"
 
 #: ../src/iop/clipping.c:1788 ../src/libs/live_view.c:346
+=======
+#: ../src/iop/clipping.c:1790 ../src/libs/live_view.c:345
+msgid "golden sections"
+msgstr "黄金分割部分"
+
+#: ../src/iop/clipping.c:1791 ../src/libs/live_view.c:346
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "golden spiral sections"
 msgstr "黄金螺线分割"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1789 ../src/libs/live_view.c:347
 msgid "golden spiral"
 msgstr "黄金螺线/等角螺线"
 
 #: ../src/iop/clipping.c:1790 ../src/iop/lens.c:1711
+=======
+#: ../src/iop/clipping.c:1792 ../src/libs/live_view.c:347
+msgid "golden spiral"
+msgstr "黄金螺线/等角螺线"
+
+#: ../src/iop/clipping.c:1793 ../src/iop/lens.c:1713
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/live_view.c:348 ../src/libs/tools/filter.c:101
 msgid "all"
 msgstr "全部"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1791 ../src/libs/live_view.c:349
+=======
+#: ../src/iop/clipping.c:1794 ../src/libs/live_view.c:349
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "show some extra guides"
 msgstr "显示额外的参考线"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:2792
+=======
+#: ../src/iop/clipping.c:2795
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "commit"
 msgstr "提交"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:2794
+=======
+#: ../src/iop/clipping.c:2797
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "angle"
 msgstr "角度"
@@ -3349,10 +5094,18 @@ msgid "enhanced color matrix"
 msgstr "增强颜色矩阵"
 
 #: ../src/iop/colorin.c:748 ../src/iop/colorin.c:780
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "vendor color matrix"
 msgstr "供应商颜色矩阵"
 
 #: ../src/iop/colorin.c:750 ../src/iop/colorin.c:782
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "alternate color matrix"
 msgstr "备用颜色矩阵"
 
@@ -3367,7 +5120,11 @@ msgstr ""
 
 #: ../src/iop/colorin.c:756 ../src/iop/colorin.c:788 ../src/iop/colorout.c:909
 #: ../src/iop/colorout.c:910 ../src/iop/colorout.c:911
+<<<<<<< HEAD
 #: ../src/libs/export.c:556
+=======
+#: ../src/libs/export.c:521
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "linear RGB"
 msgstr "线性RGB"
 
@@ -3385,7 +5142,11 @@ msgid "Lab"
 msgstr "Lab"
 
 #: ../src/iop/colorin.c:896 ../src/iop/denoiseprofile.c:1712
+<<<<<<< HEAD
 #: ../src/libs/export.c:597
+=======
+#: ../src/libs/export.c:562
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "profile"
 msgstr "档案"
 
@@ -3525,23 +5286,39 @@ msgid "output intent"
 msgstr "输出目的"
 
 #: ../src/iop/colorout.c:869 ../src/iop/colorout.c:876
+<<<<<<< HEAD
 #: ../src/libs/export.c:525
+=======
+#: ../src/libs/export.c:490
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "perceptual"
 msgstr "可感知度"
 
 #: ../src/iop/colorout.c:870 ../src/iop/colorout.c:877
+<<<<<<< HEAD
 #: ../src/libs/export.c:526
+=======
+#: ../src/libs/export.c:491
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "relative colorimetric"
 msgstr "相对色度"
 
 #: ../src/iop/colorout.c:871 ../src/iop/colorout.c:878
+<<<<<<< HEAD
 #: ../src/libs/export.c:527
+=======
+#: ../src/libs/export.c:492
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "rendering intent"
 msgid "saturation"
 msgstr "饱和度"
 
 #: ../src/iop/colorout.c:872 ../src/iop/colorout.c:879
+<<<<<<< HEAD
 #: ../src/libs/export.c:528
+=======
+#: ../src/libs/export.c:493
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "absolute colorimetric"
 msgstr "绝对色度"
 
@@ -3562,12 +5339,20 @@ msgid "display profile"
 msgstr "显示配置"
 
 #. the system display profile is only suitable for display purposes
+<<<<<<< HEAD
 #: ../src/iop/colorout.c:905 ../src/libs/export.c:609
+=======
+#: ../src/iop/colorout.c:905 ../src/libs/export.c:574
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "system display profile"
 msgstr "系统显示配置"
 
 #: ../src/iop/colorout.c:915 ../src/iop/colorout.c:916
+<<<<<<< HEAD
 #: ../src/iop/colorout.c:917 ../src/libs/export.c:537
+=======
+#: ../src/iop/colorout.c:917 ../src/libs/export.c:502
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "sRGB (web-safe)"
 msgstr "sRGB (网络安全色)"
 
@@ -3596,6 +5381,10 @@ msgid "toggle softproofing"
 msgstr "切换软打样"
 
 #: ../src/iop/colorout.c:981
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "toggle gamutcheck"
 msgstr "切换色域检查"
@@ -3645,6 +5434,7 @@ msgstr "应用"
 msgid "apply previously analyzed image look to this image"
 msgstr "应用之前分析的图片概括到此图皮"
 
+<<<<<<< HEAD
 #: ../src/iop/colorzones.c:120
 msgid "color zones"
 msgstr "色彩空间"
@@ -3674,6 +5464,37 @@ msgid "select by"
 msgstr "选择于"
 
 #: ../src/iop/colorzones.c:1053
+=======
+#: ../src/iop/colorzones.c:111
+msgid "color zones"
+msgstr "色彩空间"
+
+#: ../src/iop/colorzones.c:403
+msgid "red black white"
+msgstr "红 黑 白"
+
+#: ../src/iop/colorzones.c:421
+msgid "black white and skin tones"
+msgstr "黑白和皮肤色调"
+
+#: ../src/iop/colorzones.c:439
+msgid "polarizing filter"
+msgstr "偏振片"
+
+#: ../src/iop/colorzones.c:467
+msgid "natural skin tones"
+msgstr "天然皮肤色调"
+
+#: ../src/iop/colorzones.c:495
+msgid "black & white film"
+msgstr "黑白胶片"
+
+#: ../src/iop/colorzones.c:1000
+msgid "select by"
+msgstr "选择于"
+
+#: ../src/iop/colorzones.c:1001
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "choose selection criterion, will be the abscissa in the graph"
 msgstr "选择选取标准作为图中的横坐标"
 
@@ -3722,14 +5543,26 @@ msgid "color smoothing"
 msgstr "颜色平滑"
 
 #: ../src/iop/demosaic.c:1330
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "one time"
 msgstr "一次"
 
 #: ../src/iop/demosaic.c:1331
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "two times"
 msgstr "二次"
 
 #: ../src/iop/demosaic.c:1332
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "three times"
 msgstr "三次"
 
@@ -3738,6 +5571,10 @@ msgid "four times"
 msgstr "四次"
 
 #: ../src/iop/demosaic.c:1334
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "five times"
 msgstr "五次"
 
@@ -3772,7 +5609,115 @@ msgstr "绿色通道匹配方法"
 #: ../src/iop/denoiseprofile.c:129
 #, fuzzy
 msgid "denoise (profiled)"
+<<<<<<< HEAD
 msgstr "降噪(弱)"
+=======
+msgstr "降噪(强)"
+
+#: ../src/iop/denoiseprofile.c:1461 ../src/iop/denoiseprofile.c:1469
+#, c-format
+msgid "found match for iso %d"
+msgstr ""
+
+#: ../src/iop/denoiseprofile.c:1478
+#, c-format
+msgid "interpolated from iso %d and %d"
+msgstr ""
+
+#: ../src/iop/denoiseprofile.c:1713 ../src/iop/lens.c:1868
+msgid "mode"
+msgstr "模式"
+
+#: ../src/iop/denoiseprofile.c:1714 ../src/iop/nlmeans.c:712
+#, fuzzy
+msgid "patch size"
+msgstr "最大尺寸"
+
+#: ../src/iop/denoiseprofile.c:1717
+#, fuzzy
+msgid "non-local means"
+msgstr "去噪点(非局部均)"
+
+#: ../src/iop/denoiseprofile.c:1718
+msgid "wavelets"
+msgstr ""
+
+#: ../src/iop/denoiseprofile.c:1719
+msgid "profile used for variance stabilization"
+msgstr ""
+
+#: ../src/iop/denoiseprofile.c:1720
+msgid ""
+"method used in the denoising core. non-local means works best for "
+"`lightness' blending, wavelets work best for `color' blending"
+msgstr ""
+
+#: ../src/iop/denoiseprofile.c:1721
+msgid "radius of the patches to match. increase for more sharpness"
+msgstr ""
+
+#: ../src/iop/denoiseprofile.c:1722
+msgid "finetune denoising strength"
+msgstr ""
+
+#: ../src/iop/dither.c:98 ../src/iop/vignette.c:1134
+#, fuzzy
+msgid "dithering"
+msgstr "连机拍摄"
+
+#. add the preset.
+#: ../src/iop/dither.c:124
+msgid "dither"
+msgstr ""
+
+#: ../src/iop/dither.c:561
+msgid "random"
+msgstr ""
+
+#: ../src/iop/dither.c:562
+msgid "floyd-steinberg 1-bit b&w"
+msgstr ""
+
+#: ../src/iop/dither.c:563
+msgid "floyd-steinberg 4-bit gray"
+msgstr ""
+
+#: ../src/iop/dither.c:564
+msgid "floyd-steinberg 8-bit rgb"
+msgstr ""
+
+#: ../src/iop/dither.c:565
+msgid "floyd-steinberg 16-bit rgb"
+msgstr ""
+
+#: ../src/iop/dither.c:566
+msgid "floyd-steinberg auto"
+msgstr ""
+
+#: ../src/iop/dither.c:571
+msgid "radius for blurring step"
+msgstr ""
+
+#: ../src/iop/dither.c:583
+msgid "the gradient range where to apply random dither"
+msgstr ""
+
+#: ../src/iop/dither.c:584
+msgid "gradient range"
+msgstr ""
+
+#: ../src/iop/dither.c:591
+msgid "damping level of random dither"
+msgstr ""
+
+#: ../src/iop/dither.c:592
+msgid "damping"
+msgstr ""
+
+#: ../src/iop/equalizer.c:42
+msgid "legacy equalizer"
+msgstr "传统的均衡器"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/iop/denoiseprofile.c:1461 ../src/iop/denoiseprofile.c:1469
 #, c-format
@@ -3976,14 +5921,26 @@ msgid "gamma"
 msgstr "伽马"
 
 #: ../src/iop/globaltonemap.c:101
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "global tonemap"
 msgstr "全局色调映射"
 
 #: ../src/iop/globaltonemap.c:620
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "operator"
 msgstr "操作"
 
 #: ../src/iop/globaltonemap.c:626
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "the global tonemap operator"
 msgstr "全局色调映射操作"
 
@@ -3998,6 +5955,10 @@ msgid ""
 msgstr "色调映射器的偏差为线性，越高则越多细节位于黑色区域"
 
 #: ../src/iop/globaltonemap.c:642
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "target"
 msgstr "目标"
 
@@ -4076,6 +6037,10 @@ msgid "density"
 msgstr "密度"
 
 #: ../src/iop/graduatednd.c:1019
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "the density in ev for the filter"
 msgstr "滤波器的密度（ev）"
 
@@ -4226,7 +6191,11 @@ msgstr "从图像中选取胶片材料的颜色"
 msgid "lens correction"
 msgstr "镜头矫正"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:71 ../src/iop/vignette.c:158 ../src/iop/watermark.c:164
+=======
+#: ../src/iop/lens.c:71 ../src/iop/vignette.c:158 ../src/iop/watermark.c:163
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "scale"
 msgstr "拉伸"
@@ -4272,7 +6241,11 @@ msgid "select corrections"
 msgstr "选择修正方式"
 
 # mount 翻译不确定
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1050
+=======
+#: ../src/iop/lens.c:1052
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid ""
 "maker:\t\t%s\n"
@@ -4285,6 +6258,7 @@ msgstr ""
 "挂载:\t\t%s\n"
 "裁切系数:\t%.1f"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1281
 msgid "camera/lens not found - please select manually"
 msgstr ""
@@ -4294,6 +6268,17 @@ msgid "try to locate your camera/lens in the above two menus"
 msgstr ""
 
 #: ../src/iop/lens.c:1328
+=======
+#: ../src/iop/lens.c:1283
+msgid "camera/lens not found - please select manually"
+msgstr ""
+
+#: ../src/iop/lens.c:1285
+msgid "try to locate your camera/lens in the above two menus"
+msgstr ""
+
+#: ../src/iop/lens.c:1330
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid ""
 "maker:\t\t%s\n"
@@ -4312,6 +6297,7 @@ msgstr ""
 "类型:\t\t%s\n"
 "挂载:\t\t%s"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1374
 msgid "mm"
 msgstr "mm 毫米"
@@ -4337,29 +6323,80 @@ msgid "distance to subject"
 msgstr "到主体的距离"
 
 #: ../src/iop/lens.c:1717
+=======
+#: ../src/iop/lens.c:1376
+msgid "mm"
+msgstr "mm 毫米"
+
+#: ../src/iop/lens.c:1377
+msgid "focal length (mm)"
+msgstr "镜头焦距 (mm)"
+
+#: ../src/iop/lens.c:1404
+msgid "f/"
+msgstr "f/"
+
+#: ../src/iop/lens.c:1405
+msgid "f-number (aperture)"
+msgstr "F值(光圈)"
+
+#: ../src/iop/lens.c:1420
+msgid "d"
+msgstr "d"
+
+#: ../src/iop/lens.c:1421
+msgid "distance to subject"
+msgstr "到主体的距离"
+
+#: ../src/iop/lens.c:1719
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "distortion & TCA"
 msgstr "失真和横向色差"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1723
+=======
+#: ../src/iop/lens.c:1725
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "distortion & vignetting"
 msgstr "失真和渐晕"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1729
+=======
+#: ../src/iop/lens.c:1731
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "TCA & vignetting"
 msgstr "横向色差和渐晕"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1735
+=======
+#: ../src/iop/lens.c:1737
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "only distortion"
 msgstr "仅失真"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1741
+=======
+#: ../src/iop/lens.c:1743
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "only TCA"
 msgstr "仅横向色差"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1747
+=======
+#: ../src/iop/lens.c:1749
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "only vignetting"
 msgstr "仅渐晕"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1770
 msgid "find camera"
 msgstr "寻找相机"
@@ -4369,13 +6406,31 @@ msgid "find lens"
 msgstr "寻找镜头"
 
 #: ../src/iop/lens.c:1820
+=======
+#: ../src/iop/lens.c:1772
+msgid "find camera"
+msgstr "寻找相机"
+
+#: ../src/iop/lens.c:1789
+msgid "find lens"
+msgstr "寻找镜头"
+
+#: ../src/iop/lens.c:1822
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "corrections"
 msgstr "修正方式"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1822
+=======
+#: ../src/iop/lens.c:1824
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "which corrections to apply"
 msgstr "应用的修正"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1837
 msgid "geometry"
 msgstr "几何校正"
@@ -4413,10 +6468,50 @@ msgid "equisolid angle"
 msgstr ""
 
 #: ../src/iop/lens.c:1848
+=======
+#: ../src/iop/lens.c:1839
+msgid "geometry"
+msgstr "几何校正"
+
+#: ../src/iop/lens.c:1841
+msgid "target geometry"
+msgstr "光学测量"
+
+#: ../src/iop/lens.c:1842
+msgid "rectilinear"
+msgstr "rectilinear 直线性"
+
+#: ../src/iop/lens.c:1843
+msgid "fish-eye"
+msgstr "鱼眼(超广角)"
+
+#: ../src/iop/lens.c:1844
+msgid "panoramic"
+msgstr "全景"
+
+#: ../src/iop/lens.c:1845
+msgid "equirectangular"
+msgstr "equirectangular 八边多棱(用于球形全景图)"
+
+#: ../src/iop/lens.c:1847
+msgid "orthographic"
+msgstr ""
+
+#: ../src/iop/lens.c:1848
+msgid "stereographic"
+msgstr ""
+
+#: ../src/iop/lens.c:1849
+msgid "equisolid angle"
+msgstr ""
+
+#: ../src/iop/lens.c:1850
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "thoby fish-eye"
 msgstr "鱼眼(超广角)"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1856
 msgid "auto scale"
 msgstr "自动缩放"
@@ -4427,38 +6522,89 @@ msgid "scale"
 msgstr "拉伸"
 
 #: ../src/iop/lens.c:1868
+=======
+#: ../src/iop/lens.c:1858
+msgid "auto scale"
+msgstr "自动缩放"
+
+#: ../src/iop/lens.c:1859 ../src/iop/vignette.c:1126
+#: ../src/iop/watermark.c:1018
+msgid "scale"
+msgstr "拉伸"
+
+#: ../src/iop/lens.c:1870
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "correct distortions or apply them"
 msgstr "修正失真或应用它们"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1869
+=======
+#: ../src/iop/lens.c:1871
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "correct"
 msgstr "修正"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1870
+=======
+#: ../src/iop/lens.c:1872
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "distort"
 msgstr "失真"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1877
+=======
+#: ../src/iop/lens.c:1879
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "transversal chromatic aberration red"
 msgstr "横向色差红色"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1878
+=======
+#: ../src/iop/lens.c:1880
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "tca red"
 msgstr "红（横向色差）"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1883
+=======
+#: ../src/iop/lens.c:1885
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "transversal chromatic aberration blue"
 msgstr "横向色差蓝色"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1884
+=======
+#: ../src/iop/lens.c:1886
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "tca blue"
 msgstr "蓝（横向色差）"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1891
+=======
+#: ../src/iop/lens.c:1893
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "corrections done: "
 msgstr "修正完成："
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1892
+=======
+#: ../src/iop/lens.c:1894
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "which corrections have actually been done"
 msgstr "已经完成的修正"
 
@@ -4593,6 +6739,10 @@ msgid "filter order of gaussian blur"
 msgstr "高斯模糊过滤阶数"
 
 #: ../src/iop/lowpass.c:526 ../src/iop/shadhi.c:643
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "soften with"
 msgstr "柔化"
 
@@ -4601,18 +6751,34 @@ msgid "gaussian"
 msgstr "高斯"
 
 #: ../src/iop/lowpass.c:528 ../src/iop/shadhi.c:645
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "bilateral filter"
 msgstr "降噪(双边滤波)"
 
 #: ../src/iop/lowpass.c:534
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "radius of gaussian/bilateral blur"
 msgstr "高斯（双边）模糊半径"
 
 #: ../src/iop/lowpass.c:535
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "contrast of lowpass filter"
 msgstr "低通滤镜的对比度"
 
 #: ../src/iop/lowpass.c:536
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "color saturation of lowpass filter"
 msgstr "低通滤镜的颜色饱和度"
 
@@ -4633,6 +6799,10 @@ msgid "drag and scroll mouse wheel to adjust the virtual color filter"
 msgstr "拖动并滚动鼠标滚轮调整虚拟色彩滤镜"
 
 #: ../src/iop/monochrome.c:551
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "how much to keep highlights"
 msgstr "保持高亮的数量"
 
@@ -4786,14 +6956,26 @@ msgid "shadows color adjustment"
 msgstr "阴影颜色调整"
 
 #: ../src/iop/shadhi.c:655
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "highlights color adjustment"
 msgstr "高亮色彩调整"
 
 #: ../src/iop/shadhi.c:671
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "correct shadows"
 msgstr "修正阴影"
 
 #: ../src/iop/shadhi.c:672
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "correct highlights"
 msgstr "修正高亮"
 
@@ -4814,10 +6996,18 @@ msgstr ""
 "并保留中间色调"
 
 #: ../src/iop/shadhi.c:676
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "adjust saturation of shadows"
 msgstr "调整阴影的饱和度"
 
 #: ../src/iop/shadhi.c:677
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "adjust saturation of highlights"
 msgstr "调整高亮的饱和度"
 
@@ -4830,6 +7020,10 @@ msgstr "锐化"
 #. restrict to raw images
 #. make it auto-apply for matching images:
 #: ../src/iop/sharpen.c:95 ../src/iop/sharpen.c:97 ../src/iop/sharpen.c:99
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "sharpen"
 msgstr "锐化"
 
@@ -4951,6 +7145,7 @@ msgstr ""
 "压缩高亮/阴影处的效果\n"
 "并保留中间色调"
 
+<<<<<<< HEAD
 #: ../src/iop/spots.c:54
 msgid "spot removal"
 msgstr "去污点"
@@ -4959,6 +7154,30 @@ msgstr "去污点"
 msgid "number of strokes:"
 msgstr "笔画数目"
 
+=======
+#: ../src/iop/spots.c:82
+msgid "spot removal"
+msgstr "去污点"
+
+#: ../src/iop/spots.c:468
+msgid ""
+"click on a spot and drag on canvas to heal.\n"
+"use the mouse wheel to adjust size.\n"
+"right click to remove a stroke."
+msgstr ""
+"点击一个污点并在画布上拖动鼠标以修复。\n"
+"使用鼠标滚轮调整大小。\n"
+"右击以除去一个笔画。"
+
+#: ../src/iop/spots.c:472
+msgid "number of strokes:"
+msgstr "笔画数目"
+
+#: ../src/iop/spots.c:706
+msgid "spot removal only supports up to 32 spots"
+msgstr "最多只能去除32个污点"
+
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/temperature.c:78
 msgctxt "modulename"
 msgid "white balance"
@@ -4990,8 +7209,23 @@ msgstr "直通"
 #: ../src/iop/temperature.c:731
 msgid "tint"
 msgstr "淡色(掺入白色)"
+<<<<<<< HEAD
 
 #: ../src/iop/temperature.c:732
+=======
+
+#: ../src/iop/temperature.c:732
+#, fuzzy
+msgid "temperature"
+msgstr "入色温"
+
+#: ../src/iop/temperature.c:747
+#, fuzzy
+msgid "choose white balance preset from camera"
+msgstr "微调白平衡预设"
+
+#: ../src/iop/temperature.c:750
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "temperature"
 msgstr "入色温"
@@ -5058,14 +7292,26 @@ msgid "double click to reset curve"
 msgstr "双击重置曲线"
 
 #: ../src/iop/tonecurve.c:553
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "scale chroma"
 msgstr "色标度"
 
 #: ../src/iop/tonecurve.c:555
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "manual"
 msgstr "手动"
 
 #: ../src/iop/tonecurve.c:557
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "if set to auto, a and b curves have no effect and are not displayed. chroma "
 "values (a and b) of each pixel are then adjusted based on L curve data."
@@ -5171,7 +7417,11 @@ msgstr "自动化"
 #: ../src/iop/vignette.c:1121
 #, fuzzy
 msgid "8-bit output"
+<<<<<<< HEAD
 msgstr "输出"
+=======
+msgstr "输出目的"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/iop/vignette.c:1122
 #, fuzzy
@@ -5247,30 +7497,51 @@ msgstr "宽高比例"
 msgid "add some level of random noise to prevent banding"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/watermark.c:141
 msgid "watermark"
 msgstr "水印"
 
 #: ../src/iop/watermark.c:162
+=======
+#: ../src/iop/watermark.c:140
+msgid "watermark"
+msgstr "水印"
+
+#: ../src/iop/watermark.c:161
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "refresh"
 msgstr "刷新"
 
+<<<<<<< HEAD
 #: ../src/iop/watermark.c:163
+=======
+#: ../src/iop/watermark.c:162
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "opacity"
 msgstr "透明度"
 
+<<<<<<< HEAD
 #: ../src/iop/watermark.c:165
+=======
+#: ../src/iop/watermark.c:164
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "x offset"
 msgstr "x 偏移 水平偏移"
 
+<<<<<<< HEAD
 #: ../src/iop/watermark.c:166
+=======
+#: ../src/iop/watermark.c:165
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "y offset"
 msgstr "y 偏移 垂直偏移"
 
+<<<<<<< HEAD
 #: ../src/iop/watermark.c:1034
 msgid "marker"
 msgstr "标记"
@@ -5303,15 +7574,38 @@ msgid "x offset"
 msgstr "x 偏移 水平偏移"
 
 #: ../src/iop/watermark.c:1085
+=======
+#: ../src/iop/watermark.c:1000
+msgid "marker"
+msgstr "标记"
+
+#: ../src/iop/watermark.c:1001
+msgid "alignment"
+msgstr "对齐"
+
+#: ../src/iop/watermark.c:1039
+msgid "x offset"
+msgstr "x 偏移 水平偏移"
+
+#: ../src/iop/watermark.c:1042
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "y offset"
 msgstr "y 偏移 垂直偏移"
 
 #. Let's add some tooltips and hook up some signals...
+<<<<<<< HEAD
 #: ../src/iop/watermark.c:1091
 msgid "the opacity of the watermark"
 msgstr "水印的透明度"
 
 #: ../src/iop/watermark.c:1092
+=======
+#: ../src/iop/watermark.c:1048
+msgid "the opacity of the watermark"
+msgstr "水印的透明度"
+
+#: ../src/iop/watermark.c:1049
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "the scale of the watermark"
 msgstr "水印的尺寸"
 
@@ -5565,6 +7859,10 @@ msgid "shutterspeed2"
 msgstr "快门速度 2"
 
 #: ../src/libs/camera.c:587
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "shutterspeed"
 msgstr "快门速度"
 
@@ -5599,25 +7897,39 @@ msgid "filename"
 msgstr "文件名"
 
 #. create
+<<<<<<< HEAD
 #: ../src/libs/capture.c:146 ../src/libs/styles.c:383
+=======
+#: ../src/libs/capture.c:146 ../src/libs/styles.c:382
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "create"
 msgstr "创建"
 
 #: ../src/libs/capture.c:169
+<<<<<<< HEAD
 #, fuzzy
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "enter the pattern for retrieved images\n"
 "⚠\t$(SEQUENCE) is mandatory\n"
 "recognized variables:"
 msgstr ""
+<<<<<<< HEAD
 "输入导出图像的路径\n"
 "可识别的参数："
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/libs/collect.c:117
 msgid "collect images"
 msgstr "采集图片"
 
 #: ../src/libs/collect.c:417
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "search filmroll"
 msgstr "搜索胶卷"
 
@@ -5627,6 +7939,10 @@ msgid "Problem selecting new path for the filmroll in %s"
 msgstr "为 %s 中胶卷选择新的路径的问题"
 
 #: ../src/libs/collect.c:544
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "search filmroll..."
 msgstr "搜索胶卷..."
 
@@ -5635,6 +7951,10 @@ msgid "sync..."
 msgstr "同步..."
 
 #: ../src/libs/collect.c:556
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "remove..."
 msgstr "移除..."
 
@@ -5793,7 +8113,11 @@ msgid "xmp sidecar files"
 msgstr "xmp 附属文件"
 
 #: ../src/libs/copy_history.c:88 ../src/libs/geotagging.c:446
+<<<<<<< HEAD
 #: ../src/libs/import.c:680 ../src/libs/styles.c:281
+=======
+#: ../src/libs/import.c:680 ../src/libs/styles.c:280
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "all files"
 msgstr "全部文件"
 
@@ -5929,6 +8253,7 @@ msgctxt "accel"
 msgid "write sidecar files"
 msgstr "写入附属文件"
 
+<<<<<<< HEAD
 #: ../src/libs/export.c:72
 msgid "export selected"
 msgstr "导出选中的"
@@ -5946,6 +8271,25 @@ msgid "global options"
 msgstr "全局选项"
 
 #: ../src/libs/export.c:497
+=======
+#: ../src/libs/export.c:70
+msgid "export selected"
+msgstr "导出选中的"
+
+#: ../src/libs/export.c:423
+msgid "target storage"
+msgstr "导出目的地"
+
+#: ../src/libs/export.c:443
+msgid "file format"
+msgstr "文件格式"
+
+#: ../src/libs/export.c:458
+msgid "global options"
+msgstr "全局选项"
+
+#: ../src/libs/export.c:462
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "maximum output width\n"
 "set to 0 for no scaling"
@@ -5953,7 +8297,11 @@ msgstr ""
 "最大导出宽度\n"
 "设为 0 防止拉伸"
 
+<<<<<<< HEAD
 #: ../src/libs/export.c:499
+=======
+#: ../src/libs/export.c:464
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "maximum output height\n"
 "set to 0 for no scaling"
@@ -5969,6 +8317,7 @@ msgstr ""
 #. g_signal_connect (G_OBJECT (d->height), "focus-in-event",  G_CALLBACK(focus_in),  NULL);
 #. g_signal_connect (G_OBJECT (d->height), "focus-out-event", G_CALLBACK(focus_out), NULL);
 #.
+<<<<<<< HEAD
 #: ../src/libs/export.c:511
 msgid "max size"
 msgstr "最大尺寸"
@@ -5978,10 +8327,22 @@ msgid "x"
 msgstr "x"
 
 #: ../src/libs/export.c:520
+=======
+#: ../src/libs/export.c:476
+msgid "max size"
+msgstr "最大尺寸"
+
+#: ../src/libs/export.c:481
+msgid "x"
+msgstr "x"
+
+#: ../src/libs/export.c:485
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "intent"
 msgstr "意图"
 
 #. gtk_table_attach(GTK_TABLE(self->widget), GTK_WIDGET(d->profile), 1, 2, 9, 10, GTK_EXPAND|GTK_FILL, 0, 0, 0);
+<<<<<<< HEAD
 #: ../src/libs/export.c:524 ../src/libs/export.c:604
 msgid "image settings"
 msgstr "图像设定"
@@ -5991,28 +8352,56 @@ msgid "Adobe RGB"
 msgstr "Adobe RGB"
 
 #: ../src/libs/export.c:617
+=======
+#: ../src/libs/export.c:489 ../src/libs/export.c:569
+msgid "image settings"
+msgstr "图像设定"
+
+#: ../src/libs/export.c:509
+msgid "Adobe RGB"
+msgstr "Adobe RGB"
+
+#: ../src/libs/export.c:582
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "output icc profiles in %s/color/out or %s/color/out"
 msgstr "导出 icc 档案到 %s/color/out 或 %s/color/out"
 
 #. Add style combo
+<<<<<<< HEAD
 #: ../src/libs/export.c:623
+=======
+#: ../src/libs/export.c:588
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "style"
 msgstr "风格"
 
+<<<<<<< HEAD
 #: ../src/libs/export.c:640
 #, fuzzy
 msgid "temporary style to append while exporting"
 msgstr "导入时应用创建器"
 
 #: ../src/libs/export.c:658
+=======
+#: ../src/libs/export.c:605
+msgid "temporary style to append while exporting"
+msgstr ""
+
+#: ../src/libs/export.c:623
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "export with current settings (ctrl-e)"
 msgstr "当前设定下导出 (ctrl-e)"
 
 #. enable shortcut to export with current export settings:
+<<<<<<< HEAD
 #: ../src/libs/export.c:863 ../src/libs/styles.c:69
 #: ../src/views/darkroom.c:1674
+=======
+#: ../src/libs/export.c:827 ../src/libs/styles.c:69
+#: ../src/views/darkroom.c:1617
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "export"
 msgstr "导出"
@@ -6071,6 +8460,10 @@ msgstr ""
 "大多数相机不在exif文件中存储时区。给予正确的时区，这样gpx数据能够正确匹配"
 
 #: ../src/libs/geotagging.c:573
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "time offset"
 msgstr "时间偏移"
 
@@ -6087,6 +8480,10 @@ msgid "calculate the time offset from an image"
 msgstr "从图像中计算时间偏移"
 
 #: ../src/libs/geotagging.c:598
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "apply time offset to selected images"
 msgstr "选中的图像应用时间偏移"
 
@@ -6096,6 +8493,10 @@ msgid "apply gpx track file"
 msgstr "应用gpx跟踪文件"
 
 #: ../src/libs/geotagging.c:607
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "parses a gpx file and updates location of selected images"
 msgstr "解析gpx文件并更新所选图像的位置"
 
@@ -6199,10 +8600,18 @@ msgid "physically delete from disk"
 msgstr "文件删除"
 
 #: ../src/libs/image.c:152
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "move"
 msgstr "移动"
 
 #: ../src/libs/image.c:154
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "move to other folder"
 msgstr "移到其它文件夹"
 
@@ -6223,6 +8632,10 @@ msgid "duplicate"
 msgstr "复制"
 
 #: ../src/libs/image.c:176
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "add a duplicate to the collection, including its history stack"
 msgstr "添加一个重复的集合，包括它的历史记录栈"
 
@@ -6243,6 +8656,10 @@ msgid "reset rotation to exif data"
 msgstr "将重置的旋转信息放入 exif"
 
 #: ../src/libs/image.c:206
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "group"
 msgstr "分组"
 
@@ -6251,10 +8668,18 @@ msgid "add selected images to expanded group or create a new one"
 msgstr "添加选中的图像至展开的分组或新建组"
 
 #: ../src/libs/image.c:212
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "ungroup"
 msgstr "取消分组"
 
 #: ../src/libs/image.c:214
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "remove selected images from the group"
 msgstr "移除分组中选中的图片"
 
@@ -6295,11 +8720,19 @@ msgstr "重置旋转"
 
 #. Grouping keys
 #: ../src/libs/image.c:243
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "group"
 msgstr "分组"
 
 #: ../src/libs/image.c:244
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "ungroup"
 msgstr "取消分组"
@@ -6380,7 +8813,11 @@ msgstr "所有新导入的图像应用元数据。"
 
 #: ../src/libs/import.c:435
 msgid "comma separated list of tags"
+<<<<<<< HEAD
 msgstr "逗号分隔的标签列表"
+=======
+msgstr ""
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/libs/import.c:650
 msgid "import image"
@@ -6743,10 +9180,18 @@ msgid "effect group"
 msgstr "特效集合"
 
 #: ../src/libs/modulelist.c:57
+<<<<<<< HEAD
 msgid "more modules"
 msgstr "更多模块"
 
 #: ../src/libs/navigation.c:56
+=======
+#, fuzzy
+msgid "more modules"
+msgstr "模块"
+
+#: ../src/libs/navigation.c:55
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "navigation"
 msgstr "导航"
 
@@ -6875,6 +9320,7 @@ msgctxt "accel"
 msgid "import"
 msgstr "导入"
 
+<<<<<<< HEAD
 #: ../src/libs/styles.c:263
 msgid "select style"
 msgstr "选择风格"
@@ -6884,6 +9330,17 @@ msgid "darktable style files"
 msgstr "darktable 样式文件"
 
 #: ../src/libs/styles.c:352
+=======
+#: ../src/libs/styles.c:262
+msgid "select style"
+msgstr "选择风格"
+
+#: ../src/libs/styles.c:275
+msgid "darktable style files"
+msgstr "darktable 样式文件"
+
+#: ../src/libs/styles.c:351
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "available styles,\n"
 "doubleclick to apply"
@@ -6891,6 +9348,7 @@ msgstr ""
 "可用样式，\n"
 "双击应用"
 
+<<<<<<< HEAD
 #: ../src/libs/styles.c:358
 msgid "enter style name"
 msgstr "输入样式名称"
@@ -6904,34 +9362,74 @@ msgid "creates a duplicate of the image before applying style"
 msgstr "样式应用前创建一个此图片的复制品"
 
 #: ../src/libs/styles.c:385
+=======
+#: ../src/libs/styles.c:357
+msgid "enter style name"
+msgstr "输入样式名称"
+
+#: ../src/libs/styles.c:370
+msgid "create duplicate"
+msgstr "创建复制品"
+
+#: ../src/libs/styles.c:374
+msgid "creates a duplicate of the image before applying style"
+msgstr "样式应用前创建一个此图片的复制品"
+
+#: ../src/libs/styles.c:384
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "create styles from history stack of selected images"
 msgstr "丢弃所有选中图片的更改历史"
 
 #. edit
+<<<<<<< HEAD
 #: ../src/libs/styles.c:389
 msgid "edit"
 msgstr "编辑"
 
 #: ../src/libs/styles.c:392
+=======
+#: ../src/libs/styles.c:388
+msgid "edit"
+msgstr "编辑"
+
+#: ../src/libs/styles.c:391
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "edit the selected style in list above"
 msgstr "编辑上面的列表中选定的样式"
 
+<<<<<<< HEAD
 #: ../src/libs/styles.c:399
+=======
+#: ../src/libs/styles.c:398
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "deletes the selected style in list above"
 msgstr "删除上列选中的样式"
 
 #. import button
+<<<<<<< HEAD
 #: ../src/libs/styles.c:403
+=======
+#: ../src/libs/styles.c:402
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "styles"
 msgid "import"
 msgstr "导入"
 
+<<<<<<< HEAD
 #: ../src/libs/styles.c:405
 msgid "import style from a style file"
 msgstr "从样式文件导入导入样式"
 
 #: ../src/libs/styles.c:412
+=======
+#: ../src/libs/styles.c:404
+msgid "import style from a style file"
+msgstr "从样式文件导入导入样式"
+
+#: ../src/libs/styles.c:411
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "export the selected style into a style file"
 msgstr "导出样式到一个样式文件"
 
@@ -6955,6 +9453,10 @@ msgid "new"
 msgstr "新"
 
 #: ../src/libs/tagging.c:83
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "tag"
 msgstr "标签"
@@ -7270,11 +9772,19 @@ msgstr "首选项"
 
 #: ../src/libs/tools/global_toolbox.c:79
 #: ../src/libs/tools/global_toolbox.c:113
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "expand grouped images"
 msgstr "展开分组的图像"
 
 #: ../src/libs/tools/global_toolbox.c:81
 #: ../src/libs/tools/global_toolbox.c:115
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "collapse grouped images"
 msgstr "折叠分组的图像"
 
@@ -7286,7 +9796,11 @@ msgstr "显示全局首选项"
 #, fuzzy
 msgctxt "accel"
 msgid "grouping"
+<<<<<<< HEAD
 msgstr "分组"
+=======
+msgstr "色调集合"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/libs/tools/global_toolbox.c:124
 #, fuzzy
@@ -7363,11 +9877,16 @@ msgstr "没有相机支持连机拍摄..."
 
 #. Setup key accelerators in capture view...
 #. Film strip shortcuts
+<<<<<<< HEAD
 #: ../src/views/capture.c:564 ../src/views/darkroom.c:1662
+=======
+#: ../src/views/capture.c:564 ../src/views/darkroom.c:1605
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "toggle film strip"
 msgstr "开关胶片条"
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:83
 msgid "darkroom"
 msgstr "暗房"
@@ -7377,10 +9896,22 @@ msgid "no userdefined presets for favorite modules were found"
 msgstr "没有发现用户预设的常用模块"
 
 #: ../src/views/darkroom.c:876
+=======
+#: ../src/views/darkroom.c:81
+msgid "darkroom"
+msgstr "暗房"
+
+#: ../src/views/darkroom.c:840
+msgid "no userdefined presets for favorite modules were found"
+msgstr "没有发现用户预设的常用模块"
+
+#: ../src/views/darkroom.c:845
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "applied style `%s' on current image"
 msgstr "在当前图片使用样式 `%s'"
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:934
 msgid "no styles have been created yet"
 msgstr "还没有创建样式"
@@ -7394,12 +9925,28 @@ msgid "quick access for applying any of your styles"
 msgstr "快速途经应用你的样式"
 
 #: ../src/views/darkroom.c:1102
+=======
+#: ../src/views/darkroom.c:903
+msgid "no styles have been created yet"
+msgstr "还没有创建样式"
+
+#: ../src/views/darkroom.c:1042
+msgid "quick access to presets of your favorites"
+msgstr "快速途经预设你的常用项目"
+
+#: ../src/views/darkroom.c:1054
+msgid "quick access for applying any of your styles"
+msgstr "快速途经应用你的样式"
+
+#: ../src/views/darkroom.c:1062
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid ""
 "toggle over/under exposed indication\n"
 "right click for options"
 msgstr "切换曝光不足/过量的指示"
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1147
 msgid "color scheme"
 msgstr "配色方案"
@@ -7433,38 +9980,107 @@ msgid "upper threshold"
 msgstr "增加阈值"
 
 #: ../src/views/darkroom.c:1173
+=======
+#: ../src/views/darkroom.c:1107
+#, fuzzy
+msgid "color scheme"
+msgstr "色 绿"
+
+#: ../src/views/darkroom.c:1108
+#, fuzzy
+msgid "black & white"
+msgstr "黑白"
+
+#: ../src/views/darkroom.c:1109
+#, fuzzy
+msgid "red & blue"
+msgstr "红色滤镜"
+
+#: ../src/views/darkroom.c:1110
+#, fuzzy
+msgid "purple & green"
+msgstr "紫"
+
+#: ../src/views/darkroom.c:1112
+msgid "select colors to indicate over/under exposure"
+msgstr ""
+
+#: ../src/views/darkroom.c:1122
+msgid "lower threshold"
+msgstr "降低阈值"
+
+#: ../src/views/darkroom.c:1123
+msgid "threshold of what shall be considered underexposed"
+msgstr "应被作为曝光不足部分的阈值"
+
+#: ../src/views/darkroom.c:1132
+msgid "upper threshold"
+msgstr "增加阈值"
+
+#: ../src/views/darkroom.c:1133
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "threshold of what shall be considered overexposed"
 msgstr "应被作为曝光过度部分的阈值"
 
 #. Zoom shortcuts
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1666
+=======
+#: ../src/views/darkroom.c:1609
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "zoom close-up"
 msgstr "拉近缩放"
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1668
+=======
+#: ../src/views/darkroom.c:1611
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "zoom fill"
 msgstr "填充缩放"
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1670
+=======
+#: ../src/views/darkroom.c:1613
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "zoom fit"
 msgstr "适应缩放"
 
 #. Shortcut to skip images
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1678
+=======
+#: ../src/views/darkroom.c:1621
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "image forward"
 msgstr "前进一个"
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1680
+=======
+#: ../src/views/darkroom.c:1623
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "image back"
 msgstr "后退一个"
 
 #. toggle overexposure indication
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1684
+=======
+#: ../src/views/darkroom.c:1627
+#, fuzzy
+msgctxt "accel"
+msgid "overexposed"
+msgstr "曝光过度"
+
+#: ../src/views/lighttable.c:407
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgctxt "accel"
 msgid "overexposed"
@@ -7475,6 +10091,10 @@ msgid "there are no images in this collection"
 msgstr "当前集合中无图像"
 
 #: ../src/views/lighttable.c:409
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "if you have not imported any images yet"
 msgstr "若您还没有导入任何图像"
 
@@ -7487,6 +10107,10 @@ msgid "try to relax the filter settings in the top panel"
 msgstr "使用顶部面板的过滤设置"
 
 #: ../src/views/lighttable.c:425
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "or add images in the collection module in the left panel"
 msgstr "或者添加图像至左面板的集合模块"
 
@@ -7549,6 +10173,10 @@ msgid "preview"
 msgstr "预览"
 
 #: ../src/views/map.c:95
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "map"
 msgstr "地图"
 
@@ -7835,6 +10463,172 @@ msgstr "GUI选项"
 
 #~ msgid "match images with selected image and views the result"
 #~ msgstr "匹配选中的图像并查看结果"
+
+#: ../src/views/map.c:553
+msgctxt "accel"
+msgid "undo"
+msgstr ""
+
+#: ../src/views/map.c:554
+msgctxt "accel"
+msgid "redo"
+msgstr ""
+
+#~ msgid " (needs a restart) "
+#~ msgstr " (需要重启生效) "
+
+#~ msgid "export multiple images in parallel"
+#~ msgstr "多图象并行导出"
+
+#~ msgid ""
+#~ "set this variable to num_threads if you want multithreaded export to "
+#~ "process multiple images at a time. be warned: every thread will need "
+#~ "about 1GB of memory. setting this to 1 switches on per-image "
+#~ "parallelization."
+#~ msgstr ""
+#~ "设置此变量为线程数可以激活多线程导出以同时处理多个图象。警告：每个线程需要"
+#~ "大约1GB内存，设置为1将使用多线程处理单张图像。"
+
+#~ msgid ""
+#~ "darktable has trapped an illegal instruction which probably means that an "
+#~ "invalid processor optimized codepath is used for your cpu, please try "
+#~ "reproduce the crash running 'gdb darktable' from the console and post the "
+#~ "backtrace log to mailing list with information about your CPU and where "
+#~ "you got the package from."
+#~ msgstr ""
+#~ "darktable 捕获了一条非法指令，这通常意味着你的CPU使用了一个无效的处理器优"
+#~ "化codepath，请通过在控制台运行‘gdb darktable’命令重现这次崩溃并将回溯日志"
+#~ "(backtrace log)贴至邮件列表，并告知我们你的CPU信息和获得本软件包的途径。"
+
+#~ msgid "SIMD extensions found: "
+#~ msgstr "发现SIMD扩展"
+
+#~ msgid ""
+#~ "darktable is very cpu intensive and uses SSE2 SIMD instructions for heavy "
+#~ "calculations. This gives a better user experience but also defines a "
+#~ "minimum processor requirement.\n"
+#~ "\n"
+#~ "The processor in YOUR system does NOT support SSE2. darktable will now "
+#~ "close down.\n"
+#~ "\n"
+#~ "%s"
+#~ msgstr ""
+#~ "darktable非常依赖CPU并且使用SSE2 SIMD指令集用于繁重的计算。这带来了更佳的"
+#~ "用户体验，但同时规定了最低CPU需求。\n"
+#~ "\n"
+#~ "您的系统使用的CPU不支持SSE2。darktable将退出。\n"
+#~ "\n"
+#~ "%s"
+
+#, fuzzy
+#~ msgid "re-indexing %d image"
+#~ msgid_plural "re-indexing %d images"
+#~ msgstr[0] "移除 %d 张图像"
+
+#~ msgid "use preset as default"
+#~ msgstr "作为默认预置使用"
+
+#~ msgid "remove default"
+#~ msgstr "移除默认"
+
+#~ msgid "float hdr"
+#~ msgstr "float HDR"
+
+#~ msgid "user"
+#~ msgstr "用户"
+
+#, fuzzy
+#~ msgid "album"
+#~ msgstr "分辨率"
+
+#~ msgid "authentication failed"
+#~ msgstr "获取认证失败"
+
+#~ msgid "password"
+#~ msgstr "密码"
+
+#~ msgid "albums"
+#~ msgstr "分辨率"
+
+#~ msgid "my new album"
+#~ msgstr "我的新相册"
+
+#~ msgid "adjust perspective for horizontal keystone distortion"
+#~ msgstr "设置水平梯形失真的角度"
+
+#~ msgid "keystone v"
+#~ msgstr "垂直梯形校正"
+
+#~ msgid "adjust perspective for vertical keystone distortion"
+#~ msgstr "设置垂直梯形失真的角度"
+
+#~ msgctxt "accel"
+#~ msgid "keystone h"
+#~ msgstr "水平梯度校正"
+
+#~ msgctxt "accel"
+#~ msgid "keystone v"
+#~ msgstr "垂直梯度校正"
+
+#~ msgctxt "accel"
+#~ msgid "rotation"
+#~ msgstr "旋转"
+
+#~ msgctxt "accel"
+#~ msgid "split"
+#~ msgstr "分离"
+
+#~ msgid "split"
+#~ msgstr "分离"
+
+#~ msgid "offset of filter in angle of rotation"
+#~ msgstr "滤波器偏移一个旋转角"
+
+#~ msgctxt "accel"
+#~ msgid "lower threshold"
+#~ msgstr "降低阈值"
+
+#~ msgctxt "accel"
+#~ msgid "upper threshold"
+#~ msgstr "增加阈值"
+
+#, fuzzy
+#~ msgctxt "accel"
+#~ msgid "color scheme"
+#~ msgstr "色 绿"
+
+#~ msgid "select the hue tone for shadows"
+#~ msgstr "选择阴影色调"
+
+#~ msgid "select the hue tone for highlights"
+#~ msgstr "选择高亮色调"
+
+#~ msgid "select the saturation highlights tone"
+#~ msgstr "选择饱和高亮的色调"
+
+#~ msgctxt "accel"
+#~ msgid "temperature out"
+#~ msgstr "出色温"
+
+#~ msgid "temperature out"
+#~ msgstr "出色温"
+
+#~ msgid "show %s"
+#~ msgstr "显示 %s"
+
+#~ msgid "%s as favorite"
+#~ msgstr "%s 启用"
+
+#~ msgid "hide %s"
+#~ msgstr "隐蔽 %s"
+
+#, fuzzy
+#~ msgid "similar images"
+#~ msgstr "导入图片"
+
+#, fuzzy
+#~ msgid "histogram weight"
+#~ msgstr "直方图"
 
 #~ msgid "filename of your custom theme in share/darktable/"
 #~ msgstr "share/darktable/ 下自定义主题的文件名"

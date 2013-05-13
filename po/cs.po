@@ -8,10 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: darktable 1.0\n"
 "Report-Msgid-Bugs-To: \n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2013-05-07 10:04+0200\n"
 "PO-Revision-Date: 2013-04-29 20:34+0200\n"
 "Last-Translator: Milan Knizek <knizek@volny.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+=======
+"POT-Creation-Date: 2013-05-07 18:50+0200\n"
+"PO-Revision-Date: 2012-11-15 23:13+0100\n"
+"Last-Translator: Milan Knížek <knizek@volny.cz>\n"
+"Language-Team: Czech\n"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 "Language: cs_CZ\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,10 +39,17 @@ msgstr "šířka postranních panelů v pixelech"
 #: ../build/src/preferences_gen.h:1148 ../build/src/preferences_gen.h:1191
 #: ../build/src/preferences_gen.h:1215 ../build/src/preferences_gen.h:1289
 #: ../build/src/preferences_gen.h:1376 ../build/src/preferences_gen.h:1400
+<<<<<<< HEAD
 #: ../build/src/preferences_gen.h:1425 ../src/lua/preferences.c:368
 #, c-format
 msgid "double click to reset to `%d'"
 msgstr "dvojitým kliknutím obnovíte \"%d\""
+=======
+#: ../build/src/preferences_gen.h:1425
+#, fuzzy, c-format
+msgid "double click to reset to `%d'"
+msgstr "dvojitým kliknutím obnovíte `%s'"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../build/src/preferences_gen.h:897 ../build/src/preferences_gen.h:1355
 msgid "(needs a restart)"
@@ -56,11 +70,18 @@ msgstr "nepoužívat vložený náhled jpeg, ale vygenerovat poloviční raw"
 #: ../build/src/preferences_gen.h:1463 ../build/src/preferences_gen.h:1486
 #: ../build/src/preferences_gen.h:1505 ../build/src/preferences_gen.h:1524
 #: ../build/src/preferences_gen.h:1556 ../build/src/preferences_gen.h:1591
+<<<<<<< HEAD
 #: ../build/src/preferences_gen.h:1623 ../src/lua/preferences.c:351
 #: ../src/lua/preferences.c:359
 #, c-format
 msgid "double click to reset to `%s'"
 msgstr "dvojitým kliknutím obnovíte \"%s\""
+=======
+#: ../build/src/preferences_gen.h:1623
+#, c-format
+msgid "double click to reset to `%s'"
+msgstr "dvojitým kliknutím obnovíte `%s'"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../build/src/preferences_gen.h:916
 msgid ""
@@ -236,6 +257,7 @@ msgid "core options"
 msgstr "základní volby"
 
 #: ../build/src/preferences_gen.h:1337
+<<<<<<< HEAD
 msgid "memory in megabytes to use for mipmap cache"
 msgstr "paměť v megabajtech použitá pro dočasnou mipmap"
 
@@ -243,6 +265,16 @@ msgstr "paměť v megabajtech použitá pro dočasnou mipmap"
 #, c-format
 msgid "double click to reset to `%<PRId64>'"
 msgstr "dvojitým kliknutím obnovíte na \"%<PRId64>\""
+=======
+#, fuzzy
+msgid "memory in megabytes to use for mipmap cache"
+msgstr "paměť v bajtech použitá pro dočasnou mipmap"
+
+#: ../build/src/preferences_gen.h:1352
+#, fuzzy, c-format
+msgid "double click to reset to `%<PRId64>'"
+msgstr "dvojitým kliknutím obnovíte `%s'"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../build/src/preferences_gen.h:1362
 msgid "number of background threads"
@@ -256,13 +288,21 @@ msgid ""
 msgstr ""
 "toto například udává, kolik vláken bude použito pro vytváření náhledů během "
 "importu. vyrovnávací paměť se zvýší na maximálně dvojnásobek tohoto počtu "
+<<<<<<< HEAD
 "mezipamětí snímků v plném rozlišení. (vyžaduje restart.)"
+=======
+"bufferů snímků v plném rozlišení. (vyžaduje restart.)"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../build/src/preferences_gen.h:1386
 msgid "host memory limit (in MB) for tiling"
 msgstr "limit pro pamět (v MB) pro segmentování"
 
 #: ../build/src/preferences_gen.h:1403
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "this variable controls the maximum amount of memory (in MB) a module may use "
 "during image processing. lower values will force memory hungry modules to "
@@ -281,6 +321,10 @@ msgstr ""
 "minimální velikost paměti (v MB) pro jednu mezipaměť během segmentování"
 
 #: ../build/src/preferences_gen.h:1428
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "if set to a positive, non-zero value this variable defines the minimum "
 "amount of memory (in MB) that tiling should take for a single image buffer. "
@@ -317,6 +361,7 @@ msgstr ""
 
 #: ../build/src/preferences_gen.h:1470
 msgid "not available on this system"
+<<<<<<< HEAD
 msgstr "na tomto systému není k dispozici"
 
 #: ../build/src/preferences_gen.h:1477
@@ -326,6 +371,19 @@ msgstr "vždy zkusit použít littlecms2"
 #: ../build/src/preferences_gen.h:1489
 msgid "this is significantly slower as the default."
 msgstr "toto je významně pomalejší než výchozí nastavení."
+=======
+msgstr ""
+
+#: ../build/src/preferences_gen.h:1477
+#, fuzzy
+msgid "always try to use littlecms2"
+msgstr "během exportu vždy použít littlecms2"
+
+#: ../build/src/preferences_gen.h:1489
+#, fuzzy
+msgid "this is significantly slower as the default."
+msgstr "toto je asi 28krát pomalejší než výchozí nastavení."
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../build/src/preferences_gen.h:1496
 msgid "do high quality resampling during export"
@@ -341,8 +399,14 @@ msgstr ""
 "občas docílí lepší kvality, ale bude to vždy pomalejší."
 
 #: ../build/src/preferences_gen.h:1515
+<<<<<<< HEAD
 msgid "dithering for darkroom mode"
 msgstr "dithering pro režim fotokomory"
+=======
+#, fuzzy
+msgid "dithering for darkroom mode"
+msgstr "přepnout do režimu fotokomory"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../build/src/preferences_gen.h:1527
 msgid ""
@@ -350,9 +414,12 @@ msgid ""
 "activated (default for new images). switch this to off if you can accept "
 "display banding and prefer to have a slightly faster processing speed."
 msgstr ""
+<<<<<<< HEAD
 "pokud je tato volba zapnuta a modul ditheringu aktivní, bude pro aktuální "
 "pohled použit dithering (výchozí pro nové snímky). volbu vypněte, pokud "
 "preferujete rychlejší zpracování před kvalitou zobrazení na displeji."
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../build/src/preferences_gen.h:1534
 msgid "demosaicing for zoomed out darkroom mode"
@@ -433,26 +500,42 @@ msgstr "neznámá přípona \".%s\""
 msgid "failed to get parameters from format module, aborting export ..."
 msgstr "selhalo získání parametrů z modulu formátu, export ukončen..."
 
+<<<<<<< HEAD
 #: ../src/common/collection.c:454 ../src/develop/lightroom.c:974
+=======
+#: ../src/common/collection.c:454 ../src/develop/lightroom.c:964
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/bilateral.cc:349 ../src/iop/channelmixer.c:440
 #: ../src/iop/channelmixer.c:452 ../src/iop/temperature.c:733
 #: ../src/libs/collect.c:1139 ../src/libs/collect.c:1141
 msgid "red"
 msgstr "červená"
 
+<<<<<<< HEAD
 #: ../src/common/collection.c:455 ../src/develop/lightroom.c:976
+=======
+#: ../src/common/collection.c:455 ../src/develop/lightroom.c:966
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/collect.c:1145 ../src/libs/collect.c:1147
 msgid "yellow"
 msgstr "žlutá"
 
+<<<<<<< HEAD
 #: ../src/common/collection.c:456 ../src/develop/lightroom.c:978
+=======
+#: ../src/common/collection.c:456 ../src/develop/lightroom.c:968
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/bilateral.cc:350 ../src/iop/channelmixer.c:441
 #: ../src/iop/channelmixer.c:459 ../src/iop/temperature.c:734
 #: ../src/libs/collect.c:1151 ../src/libs/collect.c:1153
 msgid "green"
 msgstr "zelená"
 
+<<<<<<< HEAD
 #: ../src/common/collection.c:457 ../src/develop/lightroom.c:980
+=======
+#: ../src/common/collection.c:457 ../src/develop/lightroom.c:970
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/bilateral.cc:351 ../src/iop/channelmixer.c:442
 #: ../src/iop/channelmixer.c:466 ../src/iop/temperature.c:735
 #: ../src/libs/collect.c:1157 ../src/libs/collect.c:1159
@@ -478,27 +561,47 @@ msgstr[0] "vybrán %d snímek z %d v aktuální sbírce"
 msgstr[1] "vybrány %d snímky z %d v aktuální sbírce"
 msgstr[2] "vybrán %d snímků z %d v aktuální sbírce"
 
+<<<<<<< HEAD
 #: ../src/common/darktable.c:287
+=======
+#: ../src/common/darktable.c:286
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "found strange path `%s'"
 msgstr "nalezena podivná cesta \"%s\""
 
+<<<<<<< HEAD
 #: ../src/common/darktable.c:305
+=======
+#: ../src/common/darktable.c:304
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "error loading directory `%s'"
 msgstr "chyba při čtení adresáře  \"%s\""
 
+<<<<<<< HEAD
 #: ../src/common/darktable.c:325
+=======
+#: ../src/common/darktable.c:324
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "file `%s' has unknown format!"
 msgstr "soubor \"%s\" je neznámého formátu!"
 
+<<<<<<< HEAD
 #: ../src/common/darktable.c:339 ../src/libs/import.c:711
+=======
+#: ../src/common/darktable.c:338 ../src/libs/import.c:711
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "error loading file `%s'"
 msgstr "chyba při čtení souboru \"%s\""
 
+<<<<<<< HEAD
 #: ../src/common/darktable.c:481
+=======
+#: ../src/common/darktable.c:478
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "ERROR : invalid temporary directory : %s\n"
 msgstr "CHYBA: neplatná cesta pro dočasné soubory: %s\n"
@@ -519,6 +622,7 @@ msgstr[2] "importování %d snímků"
 msgid "you need to copy history from an image before you paste it onto another"
 msgstr "musíte zkopírovat historii snímku dříve, než ji vložíte na jiný snímek"
 
+<<<<<<< HEAD
 #: ../src/common/history.c:263 ../src/common/history.c:264
 #: ../src/common/history.c:280 ../src/common/styles.c:559
 #: ../src/common/styles.c:561 ../src/develop/blend_gui.c:1439
@@ -531,6 +635,18 @@ msgstr "zapnuto"
 #: ../src/common/styles.c:561 ../src/develop/blend_gui.c:1277
 #: ../src/develop/blend_gui.c:1436 ../src/develop/develop.c:1113
 #: ../src/imageio/format/j2k.c:618 ../src/iop/demosaic.c:1329
+=======
+#: ../src/common/history.c:238 ../src/common/history.c:239
+#: ../src/common/history.c:255 ../src/common/styles.c:546
+#: ../src/develop/develop.c:1109 ../src/libs/live_view.c:406
+msgid "on"
+msgstr "zapnuto"
+
+#: ../src/common/history.c:238 ../src/common/history.c:239
+#: ../src/common/history.c:255 ../src/common/styles.c:546
+#: ../src/develop/blend_gui.c:1028 ../src/develop/develop.c:1109
+#: ../src/imageio/format/j2k.c:601 ../src/iop/demosaic.c:1329
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/vignette.c:1120 ../src/libs/history.c:155
 #: ../src/libs/live_view.c:405
 msgid "off"
@@ -566,14 +682,35 @@ msgstr "snímek \"%s\" není dostupný!"
 msgid "none"
 msgstr "nic"
 
+<<<<<<< HEAD
 #: ../src/common/imageio.c:572
 #, c-format
 msgid "cannot find the style '%s' to apply during export."
 msgstr "nelze nalézt styl \"%s\" pro aplikování během exportu."
+=======
+#. If a style is to be applied during export, add the iop params into the history
+#. set export style to "none" by default
+#: ../src/common/imageio.c:563 ../src/common/variables.c:220
+#: ../src/control/control.c:120 ../src/iop/clipping.c:1462
+#: ../src/iop/clipping.c:1702 ../src/iop/clipping.c:1720
+#: ../src/iop/clipping.c:1763 ../src/iop/clipping.c:1780
+#: ../src/iop/lens.c:1707 ../src/libs/export.c:159 ../src/libs/export.c:162
+#: ../src/libs/export.c:595 ../src/libs/live_view.c:324
+#: ../src/libs/live_view.c:336 ../src/libs/live_view.c:354
+#, c-format
+msgid "none"
+msgstr "nic"
+
+#: ../src/common/imageio.c:572
+#, c-format
+msgid "cannot find the style '%s' to apply during export."
+msgstr ""
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #. preset name                   maker    model            iso    a a a                                 b b b
 #: ../src/common/noiseprofiles.h:37
 msgid "generic poissonian"
+<<<<<<< HEAD
 msgstr "obecný poissonian"
 
 #: ../src/common/ratings.c:45
@@ -583,6 +720,17 @@ msgid_plural "rejecting %d images"
 msgstr[0] "odmítnutí %d snímku"
 msgstr[1] "odmítnutí %d snímků"
 msgstr[2] "odmítnutí %d snímků"
+=======
+msgstr ""
+
+#: ../src/common/ratings.c:45
+#, fuzzy, c-format
+msgid "rejecting %d image"
+msgid_plural "rejecting %d images"
+msgstr[0] "mazání %d snímku"
+msgstr[1] "mazání %d snímků"
+msgstr[2] "mazání %d snímků"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/common/ratings.c:47
 #, c-format
@@ -601,7 +749,11 @@ msgstr "není vybrán snímek pro hodnocení"
 msgid "style with name '%s' already exists"
 msgstr "styl pojmenovaný \"%s\" již existuje"
 
+<<<<<<< HEAD
 #: ../src/common/styles.c:307 ../src/gui/styles_dialog.c:145
+=======
+#: ../src/common/styles.c:307 ../src/common/styles.c:368
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "style named '%s' successfully created"
 msgstr "styl pojmenovaný \"%s\" byl úspěšně vytvořen"
@@ -612,16 +764,31 @@ msgstr "styl pojmenovaný \"%s\" byl úspěšně vytvořen"
 msgid "no image selected!"
 msgstr "není vybrán žádný snímek!"
 
+<<<<<<< HEAD
 #: ../src/common/styles.c:646
+=======
+#. fail :(
+#: ../src/common/styles.c:388 ../src/common/styles.c:407
+#: ../src/views/darkroom.c:446
+msgid "no image selected!"
+msgstr "není vybrán žádný snímek!"
+
+#: ../src/common/styles.c:630
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "failed to overwrite style file for %s"
 msgstr "nelze přepsat soubor stylů pro %s"
 
+<<<<<<< HEAD
 #: ../src/common/styles.c:652
+=======
+#: ../src/common/styles.c:636
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "style file for %s exists"
 msgstr "soubor se stylem pro \"%s\" již existuje"
 
+<<<<<<< HEAD
 #: ../src/common/styles.c:891
 #, c-format
 msgid "style %s was successfully imported"
@@ -632,6 +799,23 @@ msgid "working.."
 msgstr "zpracovává se..."
 
 #: ../src/control/control.c:1455
+=======
+#: ../src/common/styles.c:683
+#, fuzzy, c-format
+msgid "style %s was successfully saved"
+msgstr "styl '%s' byl úspěšně uložen"
+
+#: ../src/common/styles.c:876
+#, fuzzy, c-format
+msgid "style %s was successfully imported"
+msgstr "styl '%s' byl úspěšně načten"
+
+#: ../src/control/control.c:1355 ../src/control/control.c:1358
+msgid "working.."
+msgstr "zpracovává se..."
+
+#: ../src/control/control.c:1439
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "switch to %s mode"
 msgstr "přepnout do režimu %s"
@@ -688,7 +872,11 @@ msgid "failed to create filmroll for camera import, import aborted."
 msgstr ""
 "selhalo vytvoření role filmu pro import z fotoaparátu, import snímků ukončen."
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:120
+=======
+#: ../src/control/jobs/control_jobs.c:127
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "merging %d image"
 msgid_plural "merging %d images"
@@ -696,25 +884,45 @@ msgstr[0] "slučování %d snímku"
 msgstr[1] "slučování %d snímků"
 msgstr[2] "slučování %d snímků"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:141
 msgid "exposure bracketing only works on raw images"
 msgstr "krokování expozice funguje pouze se snímky raw"
 
 #: ../src/control/jobs/control_jobs.c:150
+=======
+#: ../src/control/jobs/control_jobs.c:148
+msgid "exposure bracketing only works on raw images"
+msgstr "krokování expozice funguje pouze se snímky raw"
+
+#: ../src/control/jobs/control_jobs.c:157
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "failed to get raw buffer from image `%s'"
 msgstr "selhalo získání raw bufferu ze snímku \"%s\""
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:169
 msgid "images have to be of same size!"
 msgstr "snímky musejí být stejně veliké!"
 
 #: ../src/control/jobs/control_jobs.c:244
+=======
+#: ../src/control/jobs/control_jobs.c:176
+msgid "images have to be of same size!"
+msgstr "snímky musejí být stejně veliké!"
+
+#: ../src/control/jobs/control_jobs.c:251
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "wrote merged hdr `%s'"
 msgstr "spojený snímek hdr \"%s\" uložen"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:270
+=======
+#: ../src/control/jobs/control_jobs.c:277
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "duplicating %d image"
 msgid_plural "duplicating %d images"
@@ -722,7 +930,11 @@ msgstr[0] "vytváření duplikátu %d snímku"
 msgstr[1] "vytváření duplikátu %d snímků"
 msgstr[2] "vytváření duplikátu %d snímků"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:295
+=======
+#: ../src/control/jobs/control_jobs.c:302
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "flipping %d image"
 msgid_plural "flipping %d images"
@@ -730,7 +942,11 @@ msgstr[0] "převracení %d snímku"
 msgstr[1] "převracení %d snímků"
 msgstr[2] "převracení %d snímků"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:318
+=======
+#: ../src/control/jobs/control_jobs.c:325
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "removing %d image"
 msgid_plural "removing %d images"
@@ -738,7 +954,11 @@ msgstr[0] "odstraňování %d snímku"
 msgstr[1] "odstraňování %d snímků"
 msgstr[2] "odstraňování %d snímků"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:369
+=======
+#: ../src/control/jobs/control_jobs.c:376
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "deleting %d image"
 msgid_plural "deleting %d images"
@@ -746,16 +966,28 @@ msgstr[0] "mazání %d snímku"
 msgstr[1] "mazání %d snímků"
 msgstr[2] "mazání %d snímků"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:454
 msgid "failed to parse gpx file"
 msgstr "selhala analýza souboru gpx"
 
 #: ../src/control/jobs/control_jobs.c:521
+=======
+#: ../src/control/jobs/control_jobs.c:461
+msgid "failed to parse gpx file"
+msgstr "selhala analýza souboru gpx"
+
+#: ../src/control/jobs/control_jobs.c:528
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "applied matched gpx location onto %d image(s)"
 msgstr "zapsána nalezená lokace gpx do %d snímku(ů)"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:672
+=======
+#: ../src/control/jobs/control_jobs.c:679
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "do you really want to remove %d selected image from the collection?"
 msgid_plural ""
@@ -764,11 +996,19 @@ msgstr[0] "opravdu chcete vyjmout %d vybraný snímek ze sbírky?"
 msgstr[1] "opravdu chcete vyjmout %d vybrané snímky ze sbírky?"
 msgstr[2] "opravdu chcete vyjmout %d vybraných snímků ze sbírky?"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:675
 msgid "remove images?"
 msgstr "odstranit snímky?"
 
 #: ../src/control/jobs/control_jobs.c:701
+=======
+#: ../src/control/jobs/control_jobs.c:682
+msgid "remove images?"
+msgstr "odstranit snímky?"
+
+#: ../src/control/jobs/control_jobs.c:708
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "do you really want to physically delete %d selected image from disk?"
 msgid_plural ""
@@ -777,15 +1017,24 @@ msgstr[0] "opravdu chcete fyzicky smazat %d vybraný snímek z disku?"
 msgstr[1] "opravdu chcete fyzicky smazat %d vybrané snímky z disku?"
 msgstr[2] "opravdu chcete fyzicky smazat %d vybraných snímků z disku?"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:704
 msgid "delete images?"
 msgstr "smazat snímky?"
 
 #: ../src/control/jobs/control_jobs.c:737
+=======
+#: ../src/control/jobs/control_jobs.c:711
+msgid "delete images?"
+msgstr "smazat snímky?"
+
+#: ../src/control/jobs/control_jobs.c:744
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "failed to create film roll for destination directory, aborting move.."
 msgstr ""
 "selhalo vytvoření role filmu pro cílový adresář, přesun snímků ukončen..."
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:769
 #: ../src/control/jobs/control_jobs.c:826 ../src/imageio/storage/disk.c:68
 #: ../src/imageio/storage/disk.c:121 ../src/imageio/storage/gallery.c:79
@@ -795,6 +1044,17 @@ msgid "select directory"
 msgstr "vybrat adresář"
 
 #: ../src/control/jobs/control_jobs.c:792
+=======
+#: ../src/control/jobs/control_jobs.c:776
+#: ../src/control/jobs/control_jobs.c:833 ../src/imageio/storage/disk.c:67
+#: ../src/imageio/storage/disk.c:120 ../src/imageio/storage/gallery.c:78
+#: ../src/imageio/storage/gallery.c:161 ../src/imageio/storage/latex.c:78
+#: ../src/imageio/storage/latex.c:161 ../src/libs/styles.c:240
+msgid "select directory"
+msgstr "vybrat adresář"
+
+#: ../src/control/jobs/control_jobs.c:799
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid ""
 "do you really want to physically move the %d selected image to %s?\n"
@@ -812,14 +1072,22 @@ msgstr[2] ""
 "opravdu chcete fyzicky přesunout %d vybraných snímků do %s?\n"
 "(všechny nevybrané duplikáty budou taktéž přesunuty)"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:796
+=======
+#: ../src/control/jobs/control_jobs.c:803
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "move image?"
 msgid_plural "move images?"
 msgstr[0] "přesunout snímek?"
 msgstr[1] "přesunout snímky?"
 msgstr[2] "přesunout snímky?"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:849
+=======
+#: ../src/control/jobs/control_jobs.c:856
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "do you really want to physically copy the %d selected image to %s?"
 msgid_plural "do you really want to physically copy %d selected images to %s?"
@@ -827,13 +1095,18 @@ msgstr[0] "opravdu chcete fyzicky smazat %d vybraný snímek z disku?"
 msgstr[1] "opravdu chcete fyzicky zkopírovat %d vybrané snímky do %s?"
 msgstr[2] "opravdu chcete fyzicky zkopírovat %d vybraných snímků do %s?"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:852
+=======
+#: ../src/control/jobs/control_jobs.c:859
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "copy image?"
 msgid_plural "copy images?"
 msgstr[0] "opuštěný snímek"
 msgstr[1] "kopírovat snímky?"
 msgstr[2] "kopírovat snímky?"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:891
 #, c-format
 msgid "moving %d image"
@@ -860,6 +1133,34 @@ msgid "failed to get parameters from storage module `%s', aborting export.."
 msgstr "selhalo získání parametrů z modulu úložiště \"%s\", export ukončen.."
 
 #: ../src/control/jobs/control_jobs.c:932
+=======
+#: ../src/control/jobs/control_jobs.c:898
+#, fuzzy, c-format
+msgid "moving %d image"
+msgstr "odstraňování %d snímku"
+
+#: ../src/control/jobs/control_jobs.c:898
+#, fuzzy, c-format
+msgid "moving %d images"
+msgstr "odstraňování %d snímku"
+
+#: ../src/control/jobs/control_jobs.c:904
+#, fuzzy, c-format
+msgid "copying %d image"
+msgstr "pořizování %d snímku"
+
+#: ../src/control/jobs/control_jobs.c:904
+#, fuzzy, c-format
+msgid "copying %d images"
+msgstr "pořizování %d snímku"
+
+#: ../src/control/jobs/control_jobs.c:936
+#, fuzzy, c-format
+msgid "failed to get parameters from storage module `%s', aborting export.."
+msgstr "selhalo získání parametrů z mechanismu uskladnění, export ukončen."
+
+#: ../src/control/jobs/control_jobs.c:940
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "exporting %d image.."
 msgid_plural "exporting %d images.."
@@ -867,7 +1168,11 @@ msgstr[0] "exportování %d snímku..."
 msgstr[1] "exportování %d snímků..."
 msgstr[2] "exportování %d snímků..."
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:934
+=======
+#: ../src/control/jobs/control_jobs.c:942
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "exporting %d image to %s"
 msgid_plural "exporting %d images to %s"
@@ -875,13 +1180,22 @@ msgstr[0] "exportování %d snímku do %s"
 msgstr[1] "exportování %d snímků do %s"
 msgstr[2] "exportování %d snímků do %s"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:997
 #: ../src/control/jobs/control_jobs.c:998 ../src/views/darkroom.c:470
+=======
+#: ../src/control/jobs/control_jobs.c:1005
+#: ../src/control/jobs/control_jobs.c:1006 ../src/views/darkroom.c:457
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "image `%s' is currently unavailable"
 msgstr "snímek \"%s\" je aktuálně nedostupný"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:1076
+=======
+#: ../src/control/jobs/control_jobs.c:1087
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "adding time offset to %d image"
 msgid_plural "adding time offset to %d images"
@@ -889,11 +1203,16 @@ msgstr[0] "přidávání posunu času do %d snímku"
 msgstr[1] "přidávání posunu času do %d snímků"
 msgstr[2] "přidávání posunu času do %d snímků"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:1096
+=======
+#: ../src/control/jobs/control_jobs.c:1107
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "added time offset to %d image(s)"
 msgstr "přidán posun času pro %d snímek(snímků)"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:785
 msgid "sliders for L channel"
 msgstr "posuvníky pro kanál L"
@@ -915,13 +1234,41 @@ msgid "sliders for hue channel (of LCh)"
 msgstr "posuvníky pro kanál hue (dle LCh)"
 
 #: ../src/develop/blend_gui.c:786
+=======
+#: ../src/develop/blend_gui.c:707
+msgid "sliders for L channel"
+msgstr "posuvníky pro kanál L"
+
+#: ../src/develop/blend_gui.c:707
+msgid "sliders for a channel"
+msgstr "posuvníky pro kanál"
+
+#: ../src/develop/blend_gui.c:707
+msgid "sliders for b channel"
+msgstr "posuvníky pro kanál b"
+
+#: ../src/develop/blend_gui.c:707
+msgid "sliders for chroma channel (of LCh)"
+msgstr "posuvníky pro kanál chroma (dle LCh)"
+
+#: ../src/develop/blend_gui.c:707
+msgid "sliders for hue channel (of LCh)"
+msgstr "posuvníky pro kanál hue (dle LCh)"
+
+#: ../src/develop/blend_gui.c:708
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid " g "
 msgstr " g "
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:786
+=======
+#: ../src/develop/blend_gui.c:708
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid " R "
 msgstr " R "
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:786
 msgid " G "
 msgstr " G "
@@ -971,6 +1318,57 @@ msgid "sliders for value channel (of HSL)"
 msgstr "posuvníky pro kanál hodnota (dle HSL)"
 
 #: ../src/develop/blend_gui.c:791
+=======
+#: ../src/develop/blend_gui.c:708
+msgid " G "
+msgstr " G "
+
+#: ../src/develop/blend_gui.c:708
+msgid " B "
+msgstr " B "
+
+#: ../src/develop/blend_gui.c:708
+msgid " H "
+msgstr " H "
+
+#: ../src/develop/blend_gui.c:708
+msgid " S "
+msgstr " S "
+
+#: ../src/develop/blend_gui.c:708
+msgid " L "
+msgstr " L "
+
+#: ../src/develop/blend_gui.c:709
+msgid "sliders for gray value"
+msgstr "posuvníky pro hodnotu šedé"
+
+#: ../src/develop/blend_gui.c:709
+msgid "sliders for red channel"
+msgstr "posuvníky pro červený kanál"
+
+#: ../src/develop/blend_gui.c:709
+msgid "sliders for green channel"
+msgstr "posuvníky pro zelený kanál"
+
+#: ../src/develop/blend_gui.c:709
+msgid "sliders for blue channel"
+msgstr "posuvníky pro modrý kanál"
+
+#: ../src/develop/blend_gui.c:710
+msgid "sliders for hue channel (of HSL)"
+msgstr "posuvníky pro kanál hue (dle HSL)"
+
+#: ../src/develop/blend_gui.c:710
+msgid "sliders for chroma channel (of HSL)"
+msgstr "posuvníky pro kanál chroma (dle HSL)"
+
+#: ../src/develop/blend_gui.c:710
+msgid "sliders for value channel (of HSL)"
+msgstr "posuvníky pro kanál hodnota (dle HSL)"
+
+#: ../src/develop/blend_gui.c:713
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "adjustment based on input received by this module:\n"
 "* range defined by upper markers: blend fully\n"
@@ -982,7 +1380,11 @@ msgstr ""
 "* rozsah definovaný dolními značkami: vůbec neprolínat\n"
 "* rozsah mezi sousedícími horními/dolními značkami: částečně prolnout."
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:793
+=======
+#: ../src/develop/blend_gui.c:715
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "adjustment based on unblended output of this module:\n"
 "* range defined by upper markers: blend fully\n"
@@ -994,11 +1396,28 @@ msgstr ""
 "* rozsah definovaný dolními značkami: vůbec nemísit\n"
 "* rozsah mezi sousedícími horními/dolními značkami: částečně smísit"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:912 ../src/iop/colorzones.c:1029
+=======
+#: ../src/develop/blend_gui.c:821
+msgid "blend"
+msgstr "prolnout"
+
+#: ../src/develop/blend_gui.c:822
+msgid "uniformly"
+msgstr "jednotně"
+
+#: ../src/develop/blend_gui.c:823
+msgid "only, if.."
+msgstr "pouze, když..."
+
+#: ../src/develop/blend_gui.c:843 ../src/iop/colorzones.c:984
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/tonecurve.c:513
 msgid "pick gui color from image"
 msgstr "kliknutím vybrat barvu z obrázku"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:915
 msgid "reset blend mask settings"
 msgstr "obnovit nastavení masky prolnutí"
@@ -1008,10 +1427,26 @@ msgid "invert all channel's polarities"
 msgstr ""
 
 #: ../src/develop/blend_gui.c:929 ../src/develop/blend_gui.c:932
+=======
+#: ../src/develop/blend_gui.c:846
+msgid "display mask"
+msgstr "zobrazit masku"
+
+#: ../src/develop/blend_gui.c:849
+msgid "reset blend mask settings"
+msgstr "obnovit nastavení masky prolnutí"
+
+#: ../src/develop/blend_gui.c:852
+msgid "temporarily switch off blend mask. only for module in focus."
+msgstr "dočasně vypnout masku prolnutí. pouze pro vybraný modul."
+
+#: ../src/develop/blend_gui.c:864 ../src/develop/blend_gui.c:867
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "toggle polarity. best seen by enabling 'display mask'"
 msgstr ""
 "přepnout polaritu. nejlépe viditelné, pokud zapnete \"zobrazit masku\"."
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:941
 msgid "output"
 msgstr "výstup"
@@ -1120,10 +1555,78 @@ msgid "screen"
 msgstr "závoj"
 
 #: ../src/develop/blend_gui.c:1339 ../src/libs/live_view.c:353
+=======
+#: ../src/develop/blend_gui.c:876
+msgid "output"
+msgstr "výstup"
+
+#: ../src/develop/blend_gui.c:887
+msgid "input"
+msgstr "vstup"
+
+#: ../src/develop/blend_gui.c:899
+msgid "mask blur"
+msgstr "rozostření masky"
+
+#: ../src/develop/blend_gui.c:902
+msgid "enable conditional blending"
+msgstr "umožnit podmíněné prolínání"
+
+#: ../src/develop/blend_gui.c:903 ../src/develop/blend_gui.c:904
+msgid "double click to reset"
+msgstr "dvojitým kliknutím obnovit výchozí"
+
+#: ../src/develop/blend_gui.c:907
+msgid "radius for gaussian blur of blend mask"
+msgstr "poloměr gaussovského rozostření masky prolnutí"
+
+#: ../src/develop/blend_gui.c:1030 ../src/libs/live_view.c:377
+msgid "normal"
+msgstr "normální"
+
+#: ../src/develop/blend_gui.c:1032
+msgid "inverse"
+msgstr "invertovat"
+
+#: ../src/develop/blend_gui.c:1034 ../src/libs/live_view.c:386
+msgid "lighten"
+msgstr "zesvětlit"
+
+#: ../src/develop/blend_gui.c:1036 ../src/libs/live_view.c:385
+msgid "darken"
+msgstr "ztmavit"
+
+#: ../src/develop/blend_gui.c:1038 ../src/libs/live_view.c:382
+msgid "multiply"
+msgstr "násobit"
+
+#: ../src/develop/blend_gui.c:1040
+msgid "average"
+msgstr "průměr"
+
+#: ../src/develop/blend_gui.c:1042
+msgid "addition"
+msgstr "přidat"
+
+#: ../src/develop/blend_gui.c:1044
+msgid "subtract"
+msgstr "odečíst"
+
+#: ../src/develop/blend_gui.c:1046 ../src/libs/live_view.c:391
+msgid "difference"
+msgstr "rozdíl"
+
+#: ../src/develop/blend_gui.c:1048 ../src/libs/live_view.c:383
+msgid "screen"
+msgstr "závoj"
+
+#: ../src/develop/blend_gui.c:1050 ../src/libs/live_view.c:353
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/live_view.c:384
 msgid "overlay"
 msgstr "překrytí"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1342
 msgid "softlight"
 msgstr "měkké světlo"
@@ -1151,18 +1654,54 @@ msgid "lightness"
 msgstr "jas"
 
 #: ../src/develop/blend_gui.c:1360 ../src/iop/atrous.c:1419
+=======
+#: ../src/develop/blend_gui.c:1052
+msgid "softlight"
+msgstr "měkké světlo"
+
+#: ../src/develop/blend_gui.c:1054
+msgid "hardlight"
+msgstr "tvrdé světlo"
+
+#: ../src/develop/blend_gui.c:1056
+msgid "vividlight"
+msgstr "živé světlo"
+
+#: ../src/develop/blend_gui.c:1058
+msgid "linearlight"
+msgstr "lineární světlo"
+
+#: ../src/develop/blend_gui.c:1060
+msgid "pinlight"
+msgstr "bodové světlo"
+
+#: ../src/develop/blend_gui.c:1062 ../src/iop/channelmixer.c:439
+#: ../src/iop/colorize.c:441 ../src/iop/colorzones.c:973
+#: ../src/iop/colorzones.c:1004
+msgid "lightness"
+msgstr "jas"
+
+#: ../src/develop/blend_gui.c:1064 ../src/iop/atrous.c:1419
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/equalizer.c:343 ../src/iop/nlmeans.c:718
 msgid "chroma"
 msgstr "chroma"
 
 #. dt_bauhaus_slider_set_format(g->gslider1, "");
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1363 ../src/iop/channelmixer.c:437
 #: ../src/iop/colorize.c:417 ../src/iop/colorzones.c:1020
 #: ../src/iop/colorzones.c:1054 ../src/iop/graduatednd.c:1049
+=======
+#: ../src/develop/blend_gui.c:1066 ../src/iop/channelmixer.c:437
+#: ../src/iop/colorize.c:417 ../src/iop/colorzones.c:975
+#: ../src/iop/colorzones.c:1002 ../src/iop/graduatednd.c:1049
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/splittoning.c:542
 msgid "hue"
 msgstr "odstín"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1366
 msgid "color"
 msgstr "barvy"
@@ -1259,15 +1798,51 @@ msgid "temporarily switch off blend mask. only for module in focus"
 msgstr "dočasně vypnout masku prolnutí. pouze pro vybraný modul."
 
 #: ../src/develop/develop.c:953
+=======
+#: ../src/develop/blend_gui.c:1068
+msgid "color"
+msgstr "barvy"
+
+#: ../src/develop/blend_gui.c:1070
+msgid "coloradjustment"
+msgstr "úprava barev"
+
+#: ../src/develop/blend_gui.c:1072
+msgid "unbounded"
+msgstr "nesvázaný"
+
+#: ../src/develop/blend_gui.c:1084
+msgid "blend mode"
+msgstr "režim prolnutí"
+
+#: ../src/develop/blend_gui.c:1086 ../src/iop/watermark.c:1015
+msgid "opacity"
+msgstr "průhlednost"
+
+#: ../src/develop/blend_gui.c:1096
+msgid "set the opacity of the blending"
+msgstr "nastavit průhlednost prolnutí"
+
+#: ../src/develop/blend_gui.c:1097
+msgid "choose blending mode"
+msgstr "vybrat režim prolínání"
+
+#: ../src/develop/develop.c:932
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%s: module `%s' version mismatch: %d != %d"
 msgstr "%s: neshoda verze modulu \"%s\": %d != %d"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:297 ../src/develop/imageop.c:305
+=======
+#: ../src/develop/imageop.c:295 ../src/develop/imageop.c:303
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "error creating gui, see stderr"
 msgstr "chyba při přípravě gui, viz stderr"
 
 #. should never happen
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:380
 msgid "error creating gui, DT_SIMPLE_GUI_NONE could not be found"
 msgstr "chyba při vytváření gui, nelze nalézt DT_SIMPLE_GUI_NONE "
@@ -1281,60 +1856,119 @@ msgid "move up"
 msgstr "posunout nahoru"
 
 #: ../src/develop/imageop.c:1146 ../src/libs/masks.c:916
+=======
+#: ../src/develop/imageop.c:378
+msgid "error creating gui, DT_SIMPLE_GUI_NONE could not be found"
+msgstr "chyba při vytváření gui, nelze nalézt DT_SIMPLE_GUI_NONE "
+
+#: ../src/develop/imageop.c:1134
+#, fuzzy
+msgid "new instance"
+msgstr "vzd. zaostření"
+
+#: ../src/develop/imageop.c:1139
+#, fuzzy
+msgid "move up"
+msgstr "přesunout"
+
+#: ../src/develop/imageop.c:1145
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "move down"
 msgstr "posunout dolu"
 
 #. delete
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1152 ../src/libs/image.c:143
 #: ../src/libs/styles.c:396 ../src/libs/tagging.c:487
 msgid "delete"
 msgstr "smazat"
 
 #: ../src/develop/imageop.c:1174 ../src/develop/imageop.c:2020
+=======
+#: ../src/develop/imageop.c:1151 ../src/libs/image.c:143
+#: ../src/libs/styles.c:395 ../src/libs/tagging.c:487
+msgid "delete"
+msgstr "smazat"
+
+#: ../src/develop/imageop.c:1173 ../src/develop/imageop.c:2010
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%s is switched on"
 msgstr "%s je zapnuto"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1174 ../src/develop/imageop.c:2020
+=======
+#: ../src/develop/imageop.c:1173 ../src/develop/imageop.c:2010
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%s is switched off"
 msgstr "%s je vypnuto"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1404 ../src/gui/accelerators.c:637
 #: ../src/gui/accelerators.c:717 ../src/gui/accelerators.c:861
 #: ../src/gui/accelerators.c:886 ../src/gui/presets.c:197
 #: ../src/gui/presets.c:299 ../src/gui/presets.c:604
+=======
+#: ../src/develop/imageop.c:1403 ../src/gui/accelerators.c:637
+#: ../src/gui/accelerators.c:717 ../src/gui/accelerators.c:861
+#: ../src/gui/accelerators.c:886 ../src/gui/presets.c:196
+#: ../src/gui/presets.c:298 ../src/gui/presets.c:603
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/temperature.c:745 ../src/libs/import.c:487 ../src/libs/lib.c:291
 #: ../src/libs/lib.c:320 ../src/libs/lib.c:971
 msgid "preset"
 msgstr "přednastavení"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1445
+=======
+#: ../src/develop/imageop.c:1444
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "fusion"
 msgstr "fúze"
 
 #. Adding the optional show accelerator to the table (blank)
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1450
+=======
+#: ../src/develop/imageop.c:1449
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "show module"
 msgstr "zobrazit modul"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1451
+=======
+#: ../src/develop/imageop.c:1450
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "enable module"
 msgstr "zapnout modul"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1454 ../src/libs/lib.c:545
+=======
+#: ../src/develop/imageop.c:1453 ../src/libs/lib.c:545
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "reset module parameters"
 msgstr "obnovit parametry modulu"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1456 ../src/libs/lib.c:550
+=======
+#: ../src/develop/imageop.c:1455 ../src/libs/lib.c:550
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "show preset menu"
 msgstr "zobrazit menu přednastavení"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1990
 msgid "multiple instances actions"
 msgstr "akce násobných instancí"
@@ -1344,10 +1978,22 @@ msgid "reset parameters"
 msgstr "obnovit parametry"
 
 #: ../src/develop/imageop.c:2008 ../src/gui/preferences.c:403
+=======
+#: ../src/develop/imageop.c:1980
+msgid "multiple instances actions"
+msgstr ""
+
+#: ../src/develop/imageop.c:1989 ../src/libs/lib.c:830
+msgid "reset parameters"
+msgstr "obnovit parametry"
+
+#: ../src/develop/imageop.c:1998 ../src/gui/preferences.c:398
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:843
 msgid "presets"
 msgstr "výchozí hodnoty"
 
+<<<<<<< HEAD
 #: ../src/develop/lightroom.c:407
 msgid "cannot find lightroom xmp!"
 msgstr "nelze nalézt xmp lightroomu!"
@@ -1372,10 +2018,37 @@ msgid "geotagging"
 msgstr "geografická poloha"
 
 #: ../src/develop/lightroom.c:1432 ../src/libs/collect.h:37
+=======
+#: ../src/develop/lightroom.c:400
+msgid "cannot find lightroom xmp!"
+msgstr ""
+
+#: ../src/develop/lightroom.c:425 ../src/develop/lightroom.c:447
+#: ../src/develop/lightroom.c:467 ../src/develop/lightroom.c:477
+#: ../src/develop/lightroom.c:498
+#, c-format
+msgid "`%s' not a lightroom xmp!"
+msgstr ""
+
+#: ../src/develop/lightroom.c:1324 ../src/libs/import.c:511
+msgid "tags"
+msgstr "štítky"
+
+#: ../src/develop/lightroom.c:1333 ../src/libs/tools/filter.c:128
+msgid "rating"
+msgstr "hodnocení"
+
+#: ../src/develop/lightroom.c:1342 ../src/libs/geotagging.c:45
+msgid "geotagging"
+msgstr "geografická poloha"
+
+#: ../src/develop/lightroom.c:1351 ../src/libs/collect.h:37
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/tools/filter.c:130
 msgid "color label"
 msgstr "barevná značka"
 
+<<<<<<< HEAD
 #: ../src/develop/lightroom.c:1442
 #, c-format
 msgid "%s has been imported"
@@ -1383,6 +2056,15 @@ msgid_plural "%s have been imported"
 msgstr[0] "%s byl importován"
 msgstr[1] "%s byly importovány"
 msgstr[2] "%s byly importovány"
+=======
+#: ../src/develop/lightroom.c:1361
+#, fuzzy, c-format
+msgid "%s has been imported"
+msgid_plural "%s have been imported"
+msgstr[0] "styl '%s' byl úspěšně načten"
+msgstr[1] "styl '%s' byl úspěšně načten"
+msgstr[2] "styl '%s' byl úspěšně načten"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/develop/tiling.c:805 ../src/develop/tiling.c:1101
 #, c-format
@@ -1536,6 +2218,7 @@ msgid "storage structure"
 msgstr "ukládání dat"
 
 #: ../src/gui/camera_import_dialog.c:356
+#, fuzzy
 msgid ""
 "the following three settings describe the directory structure and file "
 "renaming for import storage and images; if you don't know how to use this, "
@@ -1725,6 +2408,7 @@ msgctxt "accel"
 msgid "switch view"
 msgstr "přepnout pohled"
 
+<<<<<<< HEAD
 #: ../src/gui/gtkentry.c:193 ../src/imageio/storage/gallery.c:127
 #: ../src/imageio/storage/latex.c:127
 msgid "$(ROLL_NAME) - roll of the input image"
@@ -1807,10 +2491,95 @@ msgstr "$(EXIF_MINUTE) - minuta dle exif"
 
 #: ../src/gui/gtkentry.c:209 ../src/imageio/storage/gallery.c:143
 #: ../src/imageio/storage/latex.c:143
+=======
+#: ../src/gui/gtkentry.c:193 ../src/imageio/storage/gallery.c:126
+#: ../src/imageio/storage/latex.c:126
+msgid "$(ROLL_NAME) - roll of the input image"
+msgstr "$(ROLL_NAME) - jméno role vstupního snímku"
+
+#: ../src/gui/gtkentry.c:194 ../src/imageio/storage/gallery.c:127
+#: ../src/imageio/storage/latex.c:127
+msgid "$(FILE_FOLDER) - folder containing the input image"
+msgstr "$(FILE_FOLDER) - složka obsahující vstupní snímek"
+
+#: ../src/gui/gtkentry.c:195 ../src/imageio/storage/gallery.c:128
+#: ../src/imageio/storage/latex.c:128
+msgid "$(FILE_NAME) - basename of the input image"
+msgstr "$(FILE_NAME) - základní jméno vstupního souboru"
+
+#: ../src/gui/gtkentry.c:196 ../src/imageio/storage/gallery.c:129
+#: ../src/imageio/storage/latex.c:129
+msgid "$(FILE_EXTENSION) - extension of the input image"
+msgstr "$(FILE_EXTENSION) - přípona vstupního souboru"
+
+#: ../src/gui/gtkentry.c:197 ../src/imageio/storage/gallery.c:130
+#: ../src/imageio/storage/latex.c:130
+msgid "$(SEQUENCE) - sequence number"
+msgstr "$(SEQUENCE) - číslo pořadí"
+
+#: ../src/gui/gtkentry.c:198 ../src/imageio/storage/gallery.c:131
+#: ../src/imageio/storage/latex.c:131
+msgid "$(YEAR) - year"
+msgstr "$(YEAR) - rok"
+
+#: ../src/gui/gtkentry.c:199 ../src/imageio/storage/gallery.c:132
+#: ../src/imageio/storage/latex.c:132
+msgid "$(MONTH) - month"
+msgstr "$(MONTH) - měsíc"
+
+#: ../src/gui/gtkentry.c:200 ../src/imageio/storage/gallery.c:133
+#: ../src/imageio/storage/latex.c:133
+msgid "$(DAY) - day"
+msgstr "$(DAY) - den"
+
+#: ../src/gui/gtkentry.c:201 ../src/imageio/storage/gallery.c:134
+#: ../src/imageio/storage/latex.c:134
+msgid "$(HOUR) - hour"
+msgstr "$(HOUR) - hodina"
+
+#: ../src/gui/gtkentry.c:202 ../src/imageio/storage/gallery.c:135
+#: ../src/imageio/storage/latex.c:135
+msgid "$(MINUTE) - minute"
+msgstr "$(MINUTE) - minuta"
+
+#: ../src/gui/gtkentry.c:203 ../src/imageio/storage/gallery.c:136
+#: ../src/imageio/storage/latex.c:136
+msgid "$(SECOND) - second"
+msgstr "$(SECOND) - sekunda"
+
+#: ../src/gui/gtkentry.c:204 ../src/imageio/storage/gallery.c:137
+#: ../src/imageio/storage/latex.c:137
+msgid "$(EXIF_YEAR) - exif year"
+msgstr "$(EXIF_YEAR) - rok dle exif"
+
+#: ../src/gui/gtkentry.c:205 ../src/imageio/storage/gallery.c:138
+#: ../src/imageio/storage/latex.c:138
+msgid "$(EXIF_MONTH) - exif month"
+msgstr "$(EXIF_MONTH) - měsíc dle exif"
+
+#: ../src/gui/gtkentry.c:206 ../src/imageio/storage/gallery.c:139
+#: ../src/imageio/storage/latex.c:139
+msgid "$(EXIF_DAY) - exif day"
+msgstr "$(EXIF_DAY) - den dle exif"
+
+#: ../src/gui/gtkentry.c:207 ../src/imageio/storage/gallery.c:140
+#: ../src/imageio/storage/latex.c:140
+msgid "$(EXIF_HOUR) - exif hour"
+msgstr "$(EXIF_HOUR) - hodina dle exif"
+
+#: ../src/gui/gtkentry.c:208 ../src/imageio/storage/gallery.c:141
+#: ../src/imageio/storage/latex.c:141
+msgid "$(EXIF_MINUTE) - exif minute"
+msgstr "$(EXIF_MINUTE) - minuta dle exif"
+
+#: ../src/gui/gtkentry.c:209 ../src/imageio/storage/gallery.c:142
+#: ../src/imageio/storage/latex.c:142
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "$(EXIF_SECOND) - exif second"
 msgstr "$(EXIF_SECOND) - sekunda exif"
 
 #: ../src/gui/gtkentry.c:210
+<<<<<<< HEAD
 msgid "$(EXIF_ISO) - iso value"
 msgstr "$(EXIF_ISO) - iso dle exif"
 
@@ -1852,10 +2621,55 @@ msgid "module"
 msgstr "modul"
 
 #: ../src/gui/preferences.c:430
+=======
+#, fuzzy
+msgid "$(EXIF_ISO) - iso value"
+msgstr "$(EXIF_HOUR) - hodina dle exif"
+
+#: ../src/gui/gtkentry.c:211 ../src/imageio/storage/gallery.c:143
+#: ../src/imageio/storage/latex.c:143
+msgid "$(STARS) - star rating"
+msgstr "$(STARS) - hvězdičky hodnocení"
+
+#: ../src/gui/gtkentry.c:212 ../src/imageio/storage/gallery.c:144
+#: ../src/imageio/storage/latex.c:144
+msgid "$(LABELS) - colorlabels"
+msgstr "$(LABELS) - barevné značky"
+
+#: ../src/gui/gtkentry.c:213 ../src/imageio/storage/gallery.c:145
+#: ../src/imageio/storage/latex.c:145
+msgid "$(PICTURES_FOLDER) - pictures folder"
+msgstr "$(PICTURES_FOLDER) - složka obrázků"
+
+#: ../src/gui/gtkentry.c:214 ../src/imageio/storage/gallery.c:146
+#: ../src/imageio/storage/latex.c:146
+msgid "$(HOME) - home folder"
+msgstr "$(HOME) - domovská složka"
+
+#: ../src/gui/gtkentry.c:215 ../src/imageio/storage/gallery.c:147
+#: ../src/imageio/storage/latex.c:147
+msgid "$(DESKTOP) - desktop folder"
+msgstr "$(DESKTOP) - složka plochy"
+
+#: ../src/gui/preferences.c:220
+msgid "darktable preferences"
+msgstr "předvolby darktable"
+
+#: ../src/gui/preferences.c:222
+msgid "close"
+msgstr "zavřít"
+
+#: ../src/gui/preferences.c:411
+msgid "module"
+msgstr "modul"
+
+#: ../src/gui/preferences.c:425
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "name"
 msgstr "jméno"
 
 #. exif
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:437 ../src/gui/preferences.c:1353
 #: ../src/gui/presets.c:420 ../src/libs/metadata_view.c:82
 msgid "model"
@@ -1868,44 +2682,83 @@ msgstr "výrobce"
 
 #: ../src/gui/preferences.c:451 ../src/gui/preferences.c:1369
 #: ../src/gui/presets.c:434 ../src/libs/collect.h:43
+=======
+#: ../src/gui/preferences.c:432 ../src/gui/preferences.c:1348
+#: ../src/gui/presets.c:419 ../src/libs/metadata_view.c:82
+msgid "model"
+msgstr "model"
+
+#: ../src/gui/preferences.c:439 ../src/gui/preferences.c:1356
+#: ../src/gui/presets.c:426 ../src/libs/metadata_view.c:83
+msgid "maker"
+msgstr "výrobce"
+
+#: ../src/gui/preferences.c:446 ../src/gui/preferences.c:1364
+#: ../src/gui/presets.c:433 ../src/libs/collect.h:43
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/metadata_view.c:84
 msgid "lens"
 msgstr "objektiv"
 
 #. iso
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:458 ../src/gui/preferences.c:1376
 #: ../src/gui/presets.c:441 ../src/libs/camera.c:597 ../src/libs/collect.h:44
+=======
+#: ../src/gui/preferences.c:453 ../src/gui/preferences.c:1371
+#: ../src/gui/presets.c:440 ../src/libs/camera.c:597 ../src/libs/collect.h:44
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/metadata_view.c:89
 msgid "iso"
 msgstr "iso"
 
 #. exposure
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:465 ../src/gui/preferences.c:1389
 #: ../src/gui/presets.c:454 ../src/iop/exposure.c:42 ../src/iop/exposure.c:406
+=======
+#: ../src/gui/preferences.c:460 ../src/gui/preferences.c:1384
+#: ../src/gui/presets.c:453 ../src/iop/exposure.c:42 ../src/iop/exposure.c:406
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/relight.c:384 ../src/libs/metadata_view.c:86
 msgid "exposure"
 msgstr "expozice"
 
 #. aperture
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:472 ../src/gui/preferences.c:1404
 #: ../src/gui/presets.c:469 ../src/libs/camera.c:549 ../src/libs/camera.c:558
+=======
+#: ../src/gui/preferences.c:467 ../src/gui/preferences.c:1399
+#: ../src/gui/presets.c:468 ../src/libs/camera.c:549 ../src/libs/camera.c:558
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/collect.h:45 ../src/libs/metadata_view.c:85
 msgid "aperture"
 msgstr "clona"
 
 #. focal length
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:479 ../src/gui/preferences.c:1419
 #: ../src/gui/presets.c:484 ../src/libs/camera.c:568
+=======
+#: ../src/gui/preferences.c:474 ../src/gui/preferences.c:1414
+#: ../src/gui/presets.c:483 ../src/libs/camera.c:568
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/metadata_view.c:87
 msgid "focal length"
 msgstr "ohn. vzdálenost"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:486 ../src/iop/borders.c:1064
+=======
+#: ../src/gui/preferences.c:481 ../src/iop/borders.c:1066
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/exposure.c:411 ../src/iop/levels.c:286
 #: ../src/iop/tonecurve.c:554
 msgid "auto"
 msgstr "auto"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:536
 msgid "shortcuts"
 msgstr "zkratky"
@@ -1915,22 +2768,42 @@ msgid "shortcut"
 msgstr "zkratka"
 
 #: ../src/gui/preferences.c:558
+=======
+#: ../src/gui/preferences.c:531
+msgid "shortcuts"
+msgstr "zkratky"
+
+#: ../src/gui/preferences.c:546
+msgid "shortcut"
+msgstr "zkratka"
+
+#: ../src/gui/preferences.c:553
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "binding"
 msgstr "klávesová zkratka"
 
 #. Adding the restore defaults button
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:597
+=======
+#: ../src/gui/preferences.c:592
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "default"
 msgstr "výchozí"
 
 #. Adding the import/export buttons
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:606
+=======
+#: ../src/gui/preferences.c:601
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "preferences"
 msgid "import"
 msgstr "importovat"
 
 #. Export button
 #. export button
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:613 ../src/libs/export.c:656
 #: ../src/libs/styles.c:410
 msgid "export"
@@ -1947,10 +2820,29 @@ msgid "do you really want to delete the preset `%s'?"
 msgstr "opravdu chcete smazat přednastavení \"%s\"?"
 
 #: ../src/gui/preferences.c:1077 ../src/gui/presets.c:193
+=======
+#: ../src/gui/preferences.c:608 ../src/libs/export.c:621
+#: ../src/libs/styles.c:409
+msgid "export"
+msgstr "exportovat"
+
+#: ../src/gui/preferences.c:908
+msgid "press key combination to remap..."
+msgstr "stlačte kombinaci kláves k novému přiřazení..."
+
+#: ../src/gui/preferences.c:1071 ../src/gui/presets.c:191
+#: ../src/libs/lib.c:315
+#, c-format
+msgid "do you really want to delete the preset `%s'?"
+msgstr "opravdu chcete smazat přednastavení `%s'?"
+
+#: ../src/gui/preferences.c:1072 ../src/gui/presets.c:192
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:316
 msgid "delete preset?"
 msgstr "smazat přednastavení?"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1113
 msgid "select file to export"
 msgstr "vyberte soubory k exportu"
@@ -1960,6 +2852,17 @@ msgid "select file to import"
 msgstr "vyberte soubory k importu"
 
 #: ../src/gui/preferences.c:1194
+=======
+#: ../src/gui/preferences.c:1108
+msgid "select file to export"
+msgstr "vyberte soubory k exportu"
+
+#: ../src/gui/preferences.c:1139
+msgid "select file to import"
+msgstr "vyberte soubory k importu"
+
+#: ../src/gui/preferences.c:1189
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "Are you sure you want to restore the default keybindings?  This will erase "
 "any modifications you have made."
@@ -1967,16 +2870,25 @@ msgstr ""
 "Opravdu chcete obnovit výchozí přiřazení kláves? Dojde ke smazání všech "
 "změn, které jste provedli."
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1302 ../src/gui/presets.c:368
+=======
+#: ../src/gui/preferences.c:1297 ../src/gui/presets.c:367
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "edit `%s' for module `%s'"
 msgstr "upravit \"%s\" pro modul \"%s\""
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1331 ../src/gui/presets.c:399
+=======
+#: ../src/gui/preferences.c:1326 ../src/gui/presets.c:398
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:234
 msgid "description or further information"
 msgstr "popis nebo další informace"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1333 ../src/gui/presets.c:401
 msgid "auto apply this preset to matching images"
 msgstr "automaticky použít toto nastavení na shodné snímky"
@@ -1986,6 +2898,17 @@ msgid "only show this preset for matching images"
 msgstr "toto nastavení zobrazit pouze pro shodné snímky"
 
 #: ../src/gui/preferences.c:1336 ../src/gui/presets.c:404
+=======
+#: ../src/gui/preferences.c:1328 ../src/gui/presets.c:400
+msgid "auto apply this preset to matching images"
+msgstr "automaticky použít toto nastavení na shodné snímky"
+
+#: ../src/gui/preferences.c:1330 ../src/gui/presets.c:402
+msgid "only show this preset for matching images"
+msgstr "toto nastavení zobrazit pouze pro shodné snímky"
+
+#: ../src/gui/preferences.c:1331 ../src/gui/presets.c:403
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "be very careful with this option. this might be the last time you see your "
 "preset."
@@ -1993,21 +2916,34 @@ msgstr ""
 "u této volby buďte velmi opatrní. toto může být poslední moment, kdy vidíte "
 "svá nastavení."
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1352 ../src/gui/presets.c:419
+=======
+#: ../src/gui/preferences.c:1347 ../src/gui/presets.c:418
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, no-c-format
 msgid "string to match model (use % as wildcard)"
 msgstr "řetězec pro hledání modelu (použijte % jako žolík)"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1360 ../src/gui/presets.c:426
+=======
+#: ../src/gui/preferences.c:1355 ../src/gui/presets.c:425
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, no-c-format
 msgid "string to match maker (use % as wildcard)"
 msgstr "řetězec pro hledání výrobce (použijte % jako žolík)"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1368 ../src/gui/presets.c:433
+=======
+#: ../src/gui/preferences.c:1363 ../src/gui/presets.c:432
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, no-c-format
 msgid "string to match lens (use % as wildcard)"
 msgstr "řetězec pro hledání objektivu (použijte % jako žolík)"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1380 ../src/gui/presets.c:445
 msgid "minimum iso value"
 msgstr "nejmenší hodnota iso"
@@ -2041,18 +2977,59 @@ msgid "maximum focal length"
 msgstr "největší ohn. vzdálenost"
 
 #: ../src/gui/presets.c:147 ../src/gui/presets.c:789 ../src/gui/presets.c:802
+=======
+#: ../src/gui/preferences.c:1375 ../src/gui/presets.c:444
+msgid "minimum iso value"
+msgstr "nejmenší hodnota iso"
+
+#: ../src/gui/preferences.c:1379 ../src/gui/presets.c:448
+msgid "maximum iso value"
+msgstr "největší hodnota iso"
+
+#: ../src/gui/preferences.c:1389 ../src/gui/presets.c:458
+msgid "minimum exposure time"
+msgstr "nejmenší exp. čas"
+
+#: ../src/gui/preferences.c:1390 ../src/gui/presets.c:459
+msgid "maximum exposure time"
+msgstr "největší exp. čas"
+
+#: ../src/gui/preferences.c:1404 ../src/gui/presets.c:473
+msgid "minimum aperture value"
+msgstr "nejmenší clonové číslo"
+
+#: ../src/gui/preferences.c:1405 ../src/gui/presets.c:474
+msgid "maximum aperture value"
+msgstr "největší clonové číslo"
+
+#: ../src/gui/preferences.c:1421 ../src/gui/presets.c:490
+msgid "minimum focal length"
+msgstr "nejmenší ohn. vzdálenost"
+
+#: ../src/gui/preferences.c:1422 ../src/gui/presets.c:491
+msgid "maximum focal length"
+msgstr "největší ohn. vzdálenost"
+
+#: ../src/gui/presets.c:146 ../src/gui/presets.c:788 ../src/gui/presets.c:801
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:73
 msgid "(default)"
 msgstr "(výchozí)"
 
 #. then show edit dialog
+<<<<<<< HEAD
 #: ../src/gui/presets.c:223 ../src/gui/presets.c:597 ../src/gui/presets.c:604
 #: ../src/gui/presets.c:606 ../src/gui/presets.c:608 ../src/libs/lib.c:275
+=======
+#: ../src/gui/presets.c:222 ../src/gui/presets.c:596 ../src/gui/presets.c:603
+#: ../src/gui/presets.c:605 ../src/gui/presets.c:607 ../src/libs/lib.c:275
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:283 ../src/libs/lib.c:291 ../src/libs/lib.c:293
 #: ../src/libs/lib.c:295
 msgid "new preset"
 msgstr "nové nastavení"
 
+<<<<<<< HEAD
 #: ../src/gui/presets.c:231
 msgid "please give preset a name"
 msgstr "pojmenujte prosím předvolbu"
@@ -2062,6 +3039,18 @@ msgid "unnamed preset"
 msgstr "nepojmenovaná předvolba"
 
 #: ../src/gui/presets.c:256 ../src/libs/lib.c:138
+=======
+#: ../src/gui/presets.c:230
+msgid "please give preset a name"
+msgstr ""
+
+#: ../src/gui/presets.c:232
+#, fuzzy
+msgid "unnamed preset"
+msgstr "nové nastavení"
+
+#: ../src/gui/presets.c:255 ../src/libs/lib.c:138
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid ""
 "preset `%s' already exists.\n"
@@ -2070,6 +3059,7 @@ msgstr ""
 "přednastavené \"%s\" již existuje.\n"
 "chcete jej přepsat?"
 
+<<<<<<< HEAD
 #: ../src/gui/presets.c:259 ../src/libs/lib.c:141
 msgid "overwrite preset?"
 msgstr "přepsat přednastavení?"
@@ -2105,10 +3095,43 @@ msgid "style %s was successfully saved"
 msgstr "styl %s byl úspěšně uložen"
 
 #: ../src/gui/styles_dialog.c:293
+=======
+#: ../src/gui/presets.c:258 ../src/libs/lib.c:141
+msgid "overwrite preset?"
+msgstr "přepsat přednastavení?"
+
+#: ../src/gui/presets.c:394 ../src/libs/lib.c:230
+msgid "name of the preset"
+msgstr "jméno nastavení"
+
+#: ../src/gui/presets.c:811
+msgid "disabled: wrong module version"
+msgstr ""
+
+#: ../src/gui/presets.c:831 ../src/libs/lib.c:446
+msgid "edit this preset.."
+msgstr "editovat toto nastavení..."
+
+#: ../src/gui/presets.c:835 ../src/libs/lib.c:450
+msgid "delete this preset"
+msgstr "smazat toto nastavení"
+
+#: ../src/gui/presets.c:841 ../src/libs/lib.c:457
+msgid "store new preset.."
+msgstr "uložit nové nastavení..."
+
+#: ../src/gui/presets.c:848 ../src/libs/lib.c:464
+#, fuzzy
+msgid "update preset"
+msgstr "smazat přednastavení?"
+
+#: ../src/gui/styles_dialog.c:284
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "edit style"
 msgstr "úpravy stylu"
 
+<<<<<<< HEAD
 #: ../src/gui/styles_dialog.c:297
 msgid "duplicate style"
 msgstr "styl duplikace"
@@ -2130,24 +3153,61 @@ msgid "enter a description for the new style, this description is searchable"
 msgstr "zadejte popis pro nový styl, tento popis je hledatelný"
 
 #: ../src/gui/styles_dialog.c:359 ../src/gui/styles_dialog.c:372
+=======
+#: ../src/gui/styles_dialog.c:288
+msgid "duplicate style"
+msgstr "styl duplikace"
+
+#: ../src/gui/styles_dialog.c:289
+msgid "creates a duplicate of the style before applying changes"
+msgstr "vytvoří duplikát stylu před použitím změn"
+
+#: ../src/gui/styles_dialog.c:293
+msgid "create new style"
+msgstr "vytvořit nový styl"
+
+#: ../src/gui/styles_dialog.c:314
+msgid "enter a name for the new style"
+msgstr "zadejte jméno pro nový styl"
+
+#: ../src/gui/styles_dialog.c:317
+msgid "enter a description for the new style, this description is searchable"
+msgstr "zadejte popis pro nový styl, tento popis je hledatelný"
+
+#: ../src/gui/styles_dialog.c:350 ../src/gui/styles_dialog.c:363
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/gui/hist_dialog.c:181
 msgid "include"
 msgstr "zahrnout"
 
+<<<<<<< HEAD
 #: ../src/gui/styles_dialog.c:389
 msgid "update"
 msgstr "aktualizovat"
 
 #: ../src/gui/styles_dialog.c:401 ../src/gui/styles_dialog.c:408
+=======
+#: ../src/gui/styles_dialog.c:380
+#, fuzzy
+msgid "update"
+msgstr "datum"
+
+#: ../src/gui/styles_dialog.c:392 ../src/gui/styles_dialog.c:399
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/gui/hist_dialog.c:192
 msgid "item"
 msgstr "položka"
 
+<<<<<<< HEAD
 #: ../src/gui/styles_dialog.c:507
+=======
+#: ../src/gui/styles_dialog.c:498
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "can't create style out of unaltered image"
 msgstr "nelze vytvořit styl z nezměněného snímku"
 
 #: ../src/gui/hist_dialog.c:150
+<<<<<<< HEAD
 msgid "select parts"
 msgstr "vybrat části"
 
@@ -2156,11 +3216,27 @@ msgid "can't copy history out of unaltered image"
 msgstr "nelze kopírovat historii z nezměněného snímku"
 
 #: ../src/imageio/format/copy.c:150 ../src/libs/copy_history.c:256
+=======
+#, fuzzy
+msgid "select parts"
+msgstr "vybrat vše"
+
+#: ../src/gui/hist_dialog.c:228
+#, fuzzy
+msgid "can't copy history out of unaltered image"
+msgstr "nelze vytvořit styl z nezměněného snímku"
+
+#: ../src/imageio/format/copy.c:144 ../src/libs/copy_history.c:256
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/image.c:158
 msgid "copy"
 msgstr "kopírovat"
 
+<<<<<<< HEAD
 #: ../src/imageio/format/copy.c:161
+=======
+#: ../src/imageio/format/copy.c:155
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "do a 1:1 copy of the selected files.\n"
 "the global options below do not apply!"
@@ -2168,6 +3244,7 @@ msgstr ""
 "provést kopii 1:1 z vybraných souborů.\n"
 "níže uvedené globální volby se nepoužijí!"
 
+<<<<<<< HEAD
 #: ../src/imageio/format/exr.cc:160
 msgid "openexr"
 msgstr "openexr"
@@ -2185,10 +3262,30 @@ msgid "j2k"
 msgstr "j2k"
 
 #: ../src/imageio/format/j2k.c:604 ../src/imageio/format/jpeg.c:542
+=======
+#: ../src/imageio/format/exr.cc:152
+msgid "openexr"
+msgstr "openexr"
+
+#: ../src/imageio/format/j2k.c:540
+msgid "jpeg 2000"
+msgstr ""
+
+#: ../src/imageio/format/j2k.c:575
+msgid "jp2"
+msgstr ""
+
+#: ../src/imageio/format/j2k.c:580
+msgid "j2k"
+msgstr ""
+
+#: ../src/imageio/format/j2k.c:587 ../src/imageio/format/jpeg.c:669
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/camera.c:617
 msgid "quality"
 msgstr "kvalita"
 
+<<<<<<< HEAD
 #: ../src/imageio/format/j2k.c:613
 msgid "dcp mode"
 msgstr "režim dcp"
@@ -2230,6 +3327,50 @@ msgid "16-bit ppm"
 msgstr "16-bit ppm"
 
 #: ../src/imageio/format/tiff.c:242
+=======
+#: ../src/imageio/format/j2k.c:596
+#, fuzzy
+msgid "dcp mode"
+msgstr "režim prolnutí"
+
+#: ../src/imageio/format/j2k.c:602
+msgid "cinema2k, 24fps"
+msgstr ""
+
+#: ../src/imageio/format/j2k.c:603
+msgid "cinema2k, 48fps"
+msgstr ""
+
+#: ../src/imageio/format/j2k.c:604
+msgid "cinema4k, 24fps"
+msgstr ""
+
+#: ../src/imageio/format/jpeg.c:649
+msgid "8-bit jpg"
+msgstr "8-bit jpg"
+
+#: ../src/imageio/format/pfm.c:97
+msgid "float pfm"
+msgstr "float pfm"
+
+#: ../src/imageio/format/png.c:384
+msgid "8/16-bit png"
+msgstr "8/16-bit png"
+
+#: ../src/imageio/format/png.c:405 ../src/imageio/format/tiff.c:256
+msgid "8-bit"
+msgstr "8-bit"
+
+#: ../src/imageio/format/png.c:410 ../src/imageio/format/tiff.c:261
+msgid "16-bit"
+msgstr "16-bit"
+
+#: ../src/imageio/format/ppm.c:103
+msgid "16-bit ppm"
+msgstr "16-bit ppm"
+
+#: ../src/imageio/format/tiff.c:235
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "8/16-bit tiff"
 msgstr "8/16-bit tiff"
 
@@ -2246,27 +3387,48 @@ msgstr ""
 "napište cestu, kam se mají uložit exportované snímky\n"
 "možné proměnné:"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/disk.c:200 ../src/imageio/storage/gallery.c:252
 #: ../src/imageio/storage/latex.c:249
+=======
+#: ../src/imageio/storage/disk.c:199 ../src/imageio/storage/gallery.c:251
+#: ../src/imageio/storage/latex.c:248
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "could not create directory `%s'!"
 msgstr "nelze vytvořit adresář \"%s\"!"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/disk.c:207
+=======
+#: ../src/imageio/storage/disk.c:206
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "could not write to directory `%s'!"
 msgstr "nelze zapisovat do adresáře \"%s\"!"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/disk.c:240 ../src/imageio/storage/email.c:107
 #: ../src/imageio/storage/facebook.c:1191 ../src/imageio/storage/flickr.c:670
 #: ../src/imageio/storage/gallery.c:327 ../src/imageio/storage/gallery.c:346
 #: ../src/imageio/storage/picasa.c:1484
+=======
+#: ../src/imageio/storage/disk.c:239 ../src/imageio/storage/email.c:106
+#: ../src/imageio/storage/facebook.c:1190 ../src/imageio/storage/flickr.c:669
+#: ../src/imageio/storage/gallery.c:326 ../src/imageio/storage/gallery.c:345
+#: ../src/imageio/storage/picasa.c:1483
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "could not export to file `%s'!"
 msgstr "nelze exportovat do souboru \"%s\"!"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/disk.c:256 ../src/imageio/storage/email.c:115
 #: ../src/imageio/storage/gallery.c:356 ../src/imageio/storage/latex.c:339
+=======
+#: ../src/imageio/storage/disk.c:255 ../src/imageio/storage/email.c:114
+#: ../src/imageio/storage/gallery.c:355 ../src/imageio/storage/latex.c:338
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%d/%d exported to `%s%s'"
 msgstr "%d/%d exportováno do \"%s%s\""
@@ -2279,13 +3441,22 @@ msgstr "poslat emailem"
 msgid "images exported from darktable"
 msgstr "snímky exportovány z darktable"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:242
+=======
+#: ../src/imageio/storage/facebook.c:241
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "[facebook] unexpeted url format\n"
 msgstr "[facebook] neočekávaný formát url\n"
 
 #. //////////// build & show the validation dialog
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:603
+=======
+#: ../src/imageio/storage/facebook.c:602
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "step 1: a new window or tab of your browser should have been loaded. you "
 "have to login into your facebook account there and authorize darktable to "
@@ -2295,12 +3466,17 @@ msgstr ""
 "než budete pokračovat, musíte se přihlásit do svého účtu na facebooku a "
 "autorizovat darktable k nahrání fotografií."
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:606 ../src/imageio/storage/picasa.c:837
+=======
+#: ../src/imageio/storage/facebook.c:605 ../src/imageio/storage/picasa.c:836
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "step 2: paste your browser url and click the ok button once you are done."
 msgstr ""
 "krok 2: vložte url z prohlížeče a klikněte na tlačítko ok pro dokončení."
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:614
 msgid "Facebook authentication"
 msgstr "autentizace facebooku"
@@ -2336,10 +3512,48 @@ msgstr "vytvořit nové album"
 
 #: ../src/imageio/storage/facebook.c:925 ../src/imageio/storage/picasa.c:1107
 #: ../src/imageio/storage/picasa.c:1267
+=======
+#: ../src/imageio/storage/facebook.c:613
+msgid "Facebook authentication"
+msgstr "autentizace facebooku"
+
+#: ../src/imageio/storage/facebook.c:619 ../src/imageio/storage/picasa.c:850
+msgid "url:"
+msgstr "url:"
+
+#: ../src/imageio/storage/facebook.c:639 ../src/imageio/storage/picasa.c:870
+msgid "please enter the validation url"
+msgstr "prosím napište kontrolní url"
+
+#: ../src/imageio/storage/facebook.c:650 ../src/imageio/storage/picasa.c:882
+msgid "the given url is not valid, it should look like: "
+msgstr "dané url není platné, mělo by vypadat jako:"
+
+#: ../src/imageio/storage/facebook.c:756 ../src/imageio/storage/picasa.c:1013
+msgid "new account"
+msgstr "nový účet"
+
+#: ../src/imageio/storage/facebook.c:763 ../src/imageio/storage/picasa.c:1020
+msgid "other account"
+msgstr "jiný účet"
+
+#: ../src/imageio/storage/facebook.c:794 ../src/imageio/storage/picasa.c:1050
+msgid "unable to retreive the album list"
+msgstr "nelze načíst seznam alb"
+
+#: ../src/imageio/storage/facebook.c:802 ../src/imageio/storage/flickr.c:387
+#: ../src/imageio/storage/flickr.c:415 ../src/imageio/storage/picasa.c:1058
+msgid "create new album"
+msgstr "vytvořit nové album"
+
+#: ../src/imageio/storage/facebook.c:924 ../src/imageio/storage/picasa.c:1106
+#: ../src/imageio/storage/picasa.c:1266
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "logout"
 msgstr "odhlásit se"
 
 #. Set default permission to private
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:929 ../src/imageio/storage/facebook.c:942
 #: ../src/imageio/storage/facebook.c:969
 #: ../src/imageio/storage/facebook.c:1072 ../src/imageio/storage/flickr.c:526
@@ -2349,18 +3563,36 @@ msgid "login"
 msgstr "přihlásit"
 
 #: ../src/imageio/storage/facebook.c:1006
+=======
+#: ../src/imageio/storage/facebook.c:928 ../src/imageio/storage/facebook.c:941
+#: ../src/imageio/storage/facebook.c:968
+#: ../src/imageio/storage/facebook.c:1071 ../src/imageio/storage/flickr.c:525
+#: ../src/imageio/storage/picasa.c:1112 ../src/imageio/storage/picasa.c:1270
+#: ../src/imageio/storage/picasa.c:1283 ../src/imageio/storage/picasa.c:1362
+msgid "login"
+msgstr "přihlásit"
+
+#: ../src/imageio/storage/facebook.c:1005
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "facebook webalbum"
 msgstr "webové album facebooku"
 
 #. create labels
 #. xmp
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:1019 ../src/imageio/storage/flickr.c:480
 #: ../src/imageio/storage/gallery.c:168 ../src/imageio/storage/latex.c:168
 #: ../src/imageio/storage/picasa.c:1312 ../src/libs/collect.h:38
+=======
+#: ../src/imageio/storage/facebook.c:1018 ../src/imageio/storage/flickr.c:479
+#: ../src/imageio/storage/gallery.c:167 ../src/imageio/storage/latex.c:167
+#: ../src/imageio/storage/picasa.c:1311 ../src/libs/collect.h:38
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/metadata.c:303 ../src/libs/metadata_view.c:95
 msgid "title"
 msgstr "název"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:1020 ../src/imageio/storage/flickr.c:481
 #: ../src/imageio/storage/picasa.c:1313
 msgid "summary"
@@ -2395,21 +3627,69 @@ msgid "unable to create album"
 msgstr "nelze vytvořit album"
 
 #: ../src/imageio/storage/facebook.c:1217 ../src/imageio/storage/picasa.c:1510
+=======
+#: ../src/imageio/storage/facebook.c:1019 ../src/imageio/storage/flickr.c:480
+#: ../src/imageio/storage/picasa.c:1312
+msgid "summary"
+msgstr "souhrn"
+
+#: ../src/imageio/storage/facebook.c:1020 ../src/imageio/storage/picasa.c:1313
+msgid "privacy"
+msgstr "soukromí"
+
+#: ../src/imageio/storage/facebook.c:1060
+msgid "Only Me"
+msgstr "Pouze já"
+
+#: ../src/imageio/storage/facebook.c:1062
+msgid "Friends"
+msgstr "Přátelé"
+
+#: ../src/imageio/storage/facebook.c:1064
+msgid "Public"
+msgstr "Veřejné"
+
+#: ../src/imageio/storage/facebook.c:1066
+msgid "Friends of Friends"
+msgstr "Přátelé přátel"
+
+#: ../src/imageio/storage/facebook.c:1199 ../src/imageio/storage/picasa.c:1492
+msgid "unable to create album, no title provided"
+msgstr "nelze vytvořit album, neboť chybí jeho název"
+
+#: ../src/imageio/storage/facebook.c:1206 ../src/imageio/storage/picasa.c:1499
+msgid "unable to create album"
+msgstr "nelze vytvořit album"
+
+#: ../src/imageio/storage/facebook.c:1216 ../src/imageio/storage/picasa.c:1509
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "unable to export photo to webalbum"
 msgstr "nelze exportovat snímek do webového alba"
 
 #. this makes sense only if the export was successful
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:1234
+=======
+#: ../src/imageio/storage/facebook.c:1233
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%d/%d exported to facebook webalbum"
 msgstr "%d/%d exportováno do alba na facebooku"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:116
+=======
+#: ../src/imageio/storage/flickr.c:115
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "flickr authentication: %s"
 msgstr "autentizace flickru: %s"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:191
+=======
+#: ../src/imageio/storage/flickr.c:190
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "step 1: a new window or tab of your browser should have been loaded. you "
 "have to login into your flickr account there and authorize darktable to "
@@ -2419,6 +3699,7 @@ msgstr ""
 "než budete pokračovat, musíte se přihlásit do svého účtu na flickru a "
 "autorizovat darktable k nahrání fotografií."
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:192
 msgid "step 2: click the ok button once you are done."
 msgstr "krok 2: klikněte na tlačítko ok, jakmile budete hotovi."
@@ -2437,10 +3718,31 @@ msgid "not authenticated"
 msgstr "identita neověřena"
 
 #: ../src/imageio/storage/flickr.c:368 ../src/imageio/storage/flickr.c:845
+=======
+#: ../src/imageio/storage/flickr.c:191
+msgid "step 2: click the ok button once you are done."
+msgstr "krok 2: klikněte na tlačítko ok, jakmile budete hotovi."
+
+#: ../src/imageio/storage/flickr.c:198
+msgid "flickr authentication"
+msgstr "autentizace flickru"
+
+#: ../src/imageio/storage/flickr.c:307
+msgid "flickr webalbum"
+msgstr "webové album flickru"
+
+#: ../src/imageio/storage/flickr.c:331 ../src/imageio/storage/flickr.c:371
+#: ../src/imageio/storage/flickr.c:840 ../src/imageio/storage/flickr.c:846
+msgid "not authenticated"
+msgstr "identita neověřena"
+
+#: ../src/imageio/storage/flickr.c:367 ../src/imageio/storage/flickr.c:836
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "authenticated"
 msgstr "identita ověřena"
 
 #. Add standard action
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:387
 msgid "without album"
 msgstr "bez alba"
@@ -2498,16 +3800,87 @@ msgid "friends + family"
 msgstr "přátelé + rodina"
 
 #: ../src/imageio/storage/flickr.c:542
+=======
+#: ../src/imageio/storage/flickr.c:386
+msgid "without album"
+msgstr "bez alba"
+
+#: ../src/imageio/storage/flickr.c:472
+msgid "flickr user"
+msgstr "uživatel"
+
+#: ../src/imageio/storage/flickr.c:473
+msgid "photosets"
+msgstr "foto sety"
+
+#: ../src/imageio/storage/flickr.c:474
+msgid "visible to"
+msgstr "viditelné pro"
+
+#: ../src/imageio/storage/flickr.c:477
+msgid "click login button to start"
+msgstr "klikněte na tlačítko přihlásit"
+
+#: ../src/imageio/storage/flickr.c:514
+msgid "my new photoset"
+msgstr "můj nový foto set"
+
+#: ../src/imageio/storage/flickr.c:515
+msgid "exported from darktable"
+msgstr "exportováno z darktable"
+
+#: ../src/imageio/storage/flickr.c:523
+msgid "refresh album list"
+msgstr "aktualizovat seznam alb"
+
+#: ../src/imageio/storage/flickr.c:526
+msgid "Flickr login"
+msgstr "Flickr login"
+
+#: ../src/imageio/storage/flickr.c:533
+msgid "export tags"
+msgstr "exportovat štítky"
+
+#: ../src/imageio/storage/flickr.c:537
+msgid "you"
+msgstr "ty"
+
+#: ../src/imageio/storage/flickr.c:538
+msgid "friends"
+msgstr "přátelé"
+
+#: ../src/imageio/storage/flickr.c:539
+msgid "family"
+msgstr "rodina"
+
+#: ../src/imageio/storage/flickr.c:540
+msgid "friends + family"
+msgstr "přátelé + rodina"
+
+#: ../src/imageio/storage/flickr.c:541
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "everyone"
 msgstr "kdokoliv"
 
 #. this makes sense only if the export was successful
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:744
+=======
+#: ../src/imageio/storage/flickr.c:743
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%d/%d exported to flickr webalbum"
 msgstr "%d/%d exportováno do webového alba flickr"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/gallery.c:71
+=======
+#: ../src/imageio/storage/flickr.c:848
+msgid "Flickr account not authenticated"
+msgstr "účet flickru není autentizován"
+
+#: ../src/imageio/storage/gallery.c:70
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "website gallery"
 msgstr "galerie na internetu"
 
@@ -2525,13 +3898,19 @@ msgid "enter the title of the book"
 msgstr "napište název knihy"
 
 #. //////////// build & show the validation dialog
+<<<<<<< HEAD
 #: ../src/imageio/storage/picasa.c:834
+=======
+#: ../src/imageio/storage/picasa.c:833
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "step 1: a new window or tab of your browser should have been loaded. you "
 "have to login into your picasa account there and authorize darktable to "
 "upload photos before continuing."
 msgstr ""
 "krok 1: mělo by se otevřít nové okno nebo záložka internetového prohlížeče. "
+<<<<<<< HEAD
 "než budete pokračovat, musíte se přihlásit do svého účtu na picasa a "
 "autorizovat darktable k nahrání fotografií."
 
@@ -2553,6 +3932,32 @@ msgstr "veřejné"
 
 #. this makes sense only if the export was successful
 #: ../src/imageio/storage/picasa.c:1527
+=======
+"než budete pokračovat, musíte se přihlásit do svého účtu na flickru a "
+"autorizovat darktable k nahrání fotografií."
+
+#: ../src/imageio/storage/picasa.c:844
+#, fuzzy
+msgid "picasa authentication"
+msgstr "autentizace flickru"
+
+#: ../src/imageio/storage/picasa.c:1298
+msgid "picasa webalbum"
+msgstr "webové album picasa"
+
+#: ../src/imageio/storage/picasa.c:1355
+#, fuzzy
+msgid "private"
+msgstr "soukromí"
+
+#: ../src/imageio/storage/picasa.c:1357
+#, fuzzy
+msgid "public"
+msgstr "Veřejné"
+
+#. this makes sense only if the export was successful
+#: ../src/imageio/storage/picasa.c:1526
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%d/%d exported to picasa webalbum"
 msgstr "%d/%d exportováno do webového alba picasa"
@@ -2665,12 +4070,20 @@ msgstr "ostrost"
 msgid "sharpness of edges at each feature size"
 msgstr "hranová ostrost u každé velikosti struktury"
 
+<<<<<<< HEAD
 #: ../src/iop/atrous.c:1457 ../src/iop/colorzones.c:1045
 #: ../src/iop/soften.c:601
 msgid "mix"
 msgstr "mix"
 
 #: ../src/iop/atrous.c:1458 ../src/iop/colorzones.c:1047
+=======
+#: ../src/iop/atrous.c:1457 ../src/iop/soften.c:601
+msgid "mix"
+msgstr "mix"
+
+#: ../src/iop/atrous.c:1458
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "make effect stronger or weaker"
 msgstr "zesílit či zeslabit efekt"
 
@@ -2884,6 +4297,7 @@ msgctxt "accel"
 msgid "pick frame line color from image"
 msgstr "kliknutím vybrat barvu rámečku z obrázku"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:546
 msgid "15:10 postcard white"
 msgstr "15:10 pohlednice bílá"
@@ -2897,10 +4311,26 @@ msgid "select border color"
 msgstr "vybrat barvu okraje"
 
 #: ../src/iop/borders.c:831
+=======
+#: ../src/iop/borders.c:548
+msgid "15:10 postcard white"
+msgstr "15:10 pohlednice bílá"
+
+#: ../src/iop/borders.c:551
+msgid "15:10 postcard black"
+msgstr "15:10 pohlednice černá"
+
+#: ../src/iop/borders.c:796
+msgid "select border color"
+msgstr "vybrat barvu okraje"
+
+#: ../src/iop/borders.c:833
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "select frame line color"
 msgstr "vybrat barvu linky rámečku"
 
 #. add import singel image buttons
+<<<<<<< HEAD
 #: ../src/iop/borders.c:981 ../src/iop/clipping.c:1737
 #: ../src/iop/watermark.c:1057 ../src/libs/import.c:814
 msgid "image"
@@ -2983,10 +4413,95 @@ msgid "aspect"
 msgstr "poměr"
 
 #: ../src/iop/borders.c:1060
+=======
+#: ../src/iop/borders.c:983 ../src/iop/clipping.c:1740
+#: ../src/libs/import.c:814
+msgid "image"
+msgstr "snímek"
+
+#: ../src/iop/borders.c:984
+msgid "3:1"
+msgstr "3:1"
+
+#: ../src/iop/borders.c:985
+msgid "95:33"
+msgstr "95:33"
+
+#: ../src/iop/borders.c:986
+msgid "2:1"
+msgstr "2:1"
+
+#: ../src/iop/borders.c:987 ../src/iop/clipping.c:1749
+msgid "16:9"
+msgstr "16:9"
+
+#: ../src/iop/borders.c:988 ../src/iop/clipping.c:1741
+msgid "golden cut"
+msgstr "zlatý řez"
+
+#: ../src/iop/borders.c:989 ../src/iop/clipping.c:1743
+msgid "3:2"
+msgstr "3:2"
+
+#: ../src/iop/borders.c:990
+msgid "A4"
+msgstr "A4"
+
+#: ../src/iop/borders.c:991 ../src/iop/clipping.c:1748
+msgid "DIN"
+msgstr "DIN"
+
+#: ../src/iop/borders.c:992 ../src/iop/clipping.c:1745
+msgid "4:3"
+msgstr "4:3"
+
+#: ../src/iop/borders.c:993 ../src/iop/clipping.c:1747
+msgid "square"
+msgstr "čtverec"
+
+#: ../src/iop/borders.c:994
+msgid "constant border"
+msgstr "rovnoměrný okraj"
+
+#: ../src/iop/borders.c:1016 ../src/iop/borders.c:1021
+msgid "center"
+msgstr "střed"
+
+#: ../src/iop/borders.c:1017 ../src/iop/borders.c:1022
+msgid "1/3"
+msgstr "1/3"
+
+#: ../src/iop/borders.c:1018 ../src/iop/borders.c:1023
+msgid "3/8"
+msgstr "3/8"
+
+#: ../src/iop/borders.c:1019 ../src/iop/borders.c:1024
+msgid "5/8"
+msgstr "5/8"
+
+#: ../src/iop/borders.c:1020 ../src/iop/borders.c:1025
+msgid "2/3"
+msgstr "2/3"
+
+#: ../src/iop/borders.c:1050
+msgid "border size"
+msgstr "velikost okraje"
+
+#: ../src/iop/borders.c:1053
+msgid "size of the border in percent of the full image"
+msgstr "velikost okraje v procentech z celého snímku"
+
+#: ../src/iop/borders.c:1058 ../src/iop/clipping.c:1738
+msgid "aspect"
+msgstr "poměr"
+
+#: ../src/iop/borders.c:1062
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "select the aspect ratio or right click and type your own (w:h)"
 msgstr ""
 "vyberte poměr stran nebo klikněte pravým tlačítkem a napište vlastní (š:v)"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1063 ../src/iop/flip.c:81
 msgid "orientation"
 msgstr "orientace"
@@ -3008,6 +4523,30 @@ msgid "horizontal position"
 msgstr "vodorovná pozice"
 
 #: ../src/iop/borders.c:1076
+=======
+#: ../src/iop/borders.c:1065 ../src/iop/flip.c:81
+msgid "orientation"
+msgstr "orientace"
+
+#: ../src/iop/borders.c:1067
+#, fuzzy
+msgid "portrait"
+msgstr "na výšku"
+
+#: ../src/iop/borders.c:1068
+msgid "landscape"
+msgstr "na šířku"
+
+#: ../src/iop/borders.c:1069
+msgid "aspect ratio orientation of the image with border"
+msgstr "orientace snímku s okrajem"
+
+#: ../src/iop/borders.c:1075
+msgid "horizontal position"
+msgstr "vodorovná pozice"
+
+#: ../src/iop/borders.c:1078
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "select the horizontal position ratio relative to top or right click and type "
 "your own (y:h)"
@@ -3015,11 +4554,19 @@ msgstr ""
 "zvolte vodorovnou pozici poměru stran relativně vůči hornímu okraji nebo "
 "klikněte pravým tl. a napište vlastní (y:v)"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1079
 msgid "vertical position"
 msgstr "svislá pozice"
 
 #: ../src/iop/borders.c:1082
+=======
+#: ../src/iop/borders.c:1081
+msgid "vertical position"
+msgstr "svislá pozice"
+
+#: ../src/iop/borders.c:1084
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "select the vertical position ratio relative to left or right click and type "
 "your own (x:w)"
@@ -3027,6 +4574,7 @@ msgstr ""
 "zvolte svislou pozici poměru stran relativně vůči levému okraji nebo "
 "klikněte pravým tl. a napište vlastní (x:š)"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1086
 msgid "frame line size"
 msgstr "tloušťka linky rámečku"
@@ -3056,6 +4604,38 @@ msgid "frame line color"
 msgstr "barva linky rámečku"
 
 #: ../src/iop/borders.c:1120
+=======
+#: ../src/iop/borders.c:1088
+msgid "frame line size"
+msgstr "tloušťka linky rámečku"
+
+#: ../src/iop/borders.c:1091
+msgid "size of the frame line in percent of min border width"
+msgstr "velikost linky rámečku v procentech z minimální šířky okraje"
+
+#: ../src/iop/borders.c:1095
+msgid "frame line offset"
+msgstr "posun linky rámečku"
+
+#: ../src/iop/borders.c:1098
+#, fuzzy
+msgid "offset of the frame line beginning on picture side"
+msgstr "posun linky rámečku s počátkem na straně snímku"
+
+#: ../src/iop/borders.c:1104
+msgid "border color"
+msgstr "barva okraje"
+
+#: ../src/iop/borders.c:1107
+msgid "pick border color from image"
+msgstr "kliknutím vybrat barvu okraje z obrázku"
+
+#: ../src/iop/borders.c:1119
+msgid "frame line color"
+msgstr "barva linky rámečku"
+
+#: ../src/iop/borders.c:1122
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "pick frame line color from image"
 msgstr "kliknutím vybrat barvu rámečku z obrázku"
 
@@ -3086,8 +4666,13 @@ msgstr "cíl"
 
 #. dt_bauhaus_slider_set_format(g->gslider2, "");
 #: ../src/iop/channelmixer.c:438 ../src/iop/colorcorrection.c:282
+<<<<<<< HEAD
 #: ../src/iop/colorize.c:431 ../src/iop/colorzones.c:1019
 #: ../src/iop/colorzones.c:1055 ../src/iop/graduatednd.c:1064
+=======
+#: ../src/iop/colorize.c:431 ../src/iop/colorzones.c:974
+#: ../src/iop/colorzones.c:1003 ../src/iop/graduatednd.c:1064
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/lowpass.c:523 ../src/iop/soften.c:584
 #: ../src/iop/splittoning.c:554 ../src/iop/vignette.c:1129
 msgid "saturation"
@@ -3161,6 +4746,7 @@ msgstr "síla účinku"
 msgid "crop and rotate"
 msgstr "oříznout a otočit"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1360
 msgid "invalid ratio format. it should be \"number:number\""
 msgstr "chybný formát poměru stran. mělo by být \"číslo:číslo\""
@@ -3188,15 +4774,52 @@ msgid "correction applied"
 msgstr "oprava aplikována"
 
 #: ../src/iop/clipping.c:1698 ../src/iop/clipping.c:1776
+=======
+#: ../src/iop/clipping.c:1363
+msgid "invalid ratio format. it should be \"number:number\""
+msgstr ""
+
+#: ../src/iop/clipping.c:1463 ../src/iop/clipping.c:1704
+#: ../src/iop/clipping.c:1721
+msgid "vertical"
+msgstr "svislé"
+
+#: ../src/iop/clipping.c:1464 ../src/iop/clipping.c:1703
+#: ../src/iop/clipping.c:1722
+msgid "horizontal"
+msgstr "vodorovné"
+
+#: ../src/iop/clipping.c:1465 ../src/iop/clipping.c:1723
+#, fuzzy
+msgid "full"
+msgstr "plná cesta"
+
+#: ../src/iop/clipping.c:1466
+#, fuzzy
+msgid "old system"
+msgstr "zonální systém"
+
+#: ../src/iop/clipping.c:1467
+#, fuzzy
+msgid "correction applied"
+msgstr "opravy"
+
+#: ../src/iop/clipping.c:1701 ../src/iop/clipping.c:1779
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/live_view.c:335
 msgid "flip"
 msgstr "převrátit"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1702 ../src/iop/clipping.c:1780
+=======
+#: ../src/iop/clipping.c:1705 ../src/iop/clipping.c:1783
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/live_view.c:339
 msgid "both"
 msgstr "oba"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1704
 msgid "mirror image horizontally and/or vertically"
 msgstr "převrátit snímek vodorovně a/nebo svisle"
@@ -3206,10 +4829,22 @@ msgid "angle"
 msgstr "úhel"
 
 #: ../src/iop/clipping.c:1712
+=======
+#: ../src/iop/clipping.c:1707
+msgid "mirror image horizontally and/or vertically"
+msgstr "převrátit snímek vodorovně a/nebo svisle"
+
+#: ../src/iop/clipping.c:1712
+msgid "angle"
+msgstr "úhel"
+
+#: ../src/iop/clipping.c:1715
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "right-click and drag a line on the image to drag a straight line"
 msgstr ""
 "abyste namalovali přímku, klikněte pravým tlačítkem a táhněte na snímku."
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1716
 msgid "keystone"
 msgstr "vrchol"
@@ -3319,20 +4954,147 @@ msgid "golden spiral"
 msgstr "zlatá spirála"
 
 #: ../src/iop/clipping.c:1790 ../src/iop/lens.c:1711
+=======
+#: ../src/iop/clipping.c:1719
+#, fuzzy
+msgid "keystone"
+msgstr "vrchol h"
+
+#: ../src/iop/clipping.c:1724
+msgid "set perspective correction for your image"
+msgstr ""
+
+#: ../src/iop/clipping.c:1729
+#, fuzzy
+msgid "automatic cropping"
+msgstr "automatický poměr"
+
+#: ../src/iop/clipping.c:1730
+#, fuzzy
+msgid "no"
+msgstr "nic"
+
+#: ../src/iop/clipping.c:1731
+#, fuzzy
+msgid "yes"
+msgstr "styly"
+
+#: ../src/iop/clipping.c:1732
+msgid "automatically crop to avoid black edges"
+msgstr ""
+
+#: ../src/iop/clipping.c:1739
+msgid "free"
+msgstr "volný"
+
+#: ../src/iop/clipping.c:1742
+msgid "1:2"
+msgstr "1:2"
+
+#: ../src/iop/clipping.c:1744
+msgid "7:5"
+msgstr "7:5"
+
+#: ../src/iop/clipping.c:1746
+msgid "5:4"
+msgstr "5:4"
+
+#: ../src/iop/clipping.c:1750
+msgid "16:10"
+msgstr "16:10"
+
+#: ../src/iop/clipping.c:1751
+msgid "10:8 in print"
+msgstr "10:8 v tisku"
+
+#: ../src/iop/clipping.c:1756
+msgid "set the aspect ratio (w:h)"
+msgstr "nastavit poměr stran (š:v)"
+
+#: ../src/iop/clipping.c:1762 ../src/libs/live_view.c:323
+msgid "guides"
+msgstr "vodítka"
+
+#: ../src/iop/clipping.c:1764 ../src/libs/live_view.c:325
+msgid "grid"
+msgstr "síť"
+
+#: ../src/iop/clipping.c:1765 ../src/libs/live_view.c:326
+msgid "rules of thirds"
+msgstr "pravidlo třetin"
+
+#: ../src/iop/clipping.c:1766 ../src/libs/live_view.c:327
+msgid "diagonal method"
+msgstr "úhlopříčky"
+
+#: ../src/iop/clipping.c:1767 ../src/libs/live_view.c:328
+msgid "harmonious triangles"
+msgstr "harmonické trojúhelníky"
+
+#: ../src/iop/clipping.c:1768 ../src/libs/live_view.c:329
+msgid "golden mean"
+msgstr "zlatý střed"
+
+#: ../src/iop/clipping.c:1774 ../src/libs/live_view.c:330
+msgid "display guide lines to help compose your photograph"
+msgstr "zobrazit vodítka usnadňující kompozici fotografie"
+
+#: ../src/iop/clipping.c:1781 ../src/libs/live_view.c:337
+msgid "horizontally"
+msgstr "vodorovně"
+
+#: ../src/iop/clipping.c:1782 ../src/libs/live_view.c:338
+msgid "vertically"
+msgstr "svisle"
+
+#: ../src/iop/clipping.c:1784 ../src/libs/live_view.c:340
+msgid "flip guides"
+msgstr "překlopit vodítka"
+
+#: ../src/iop/clipping.c:1789 ../src/libs/live_view.c:344
+msgid "extra"
+msgstr "více"
+
+#: ../src/iop/clipping.c:1790 ../src/libs/live_view.c:345
+msgid "golden sections"
+msgstr "zlaté oblasti"
+
+#: ../src/iop/clipping.c:1791 ../src/libs/live_view.c:346
+msgid "golden spiral sections"
+msgstr "výběry zlaté spirály"
+
+#: ../src/iop/clipping.c:1792 ../src/libs/live_view.c:347
+msgid "golden spiral"
+msgstr "zlatá spirála"
+
+#: ../src/iop/clipping.c:1793 ../src/iop/lens.c:1713
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/live_view.c:348 ../src/libs/tools/filter.c:101
 msgid "all"
 msgstr "vše"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1791 ../src/libs/live_view.c:349
 msgid "show some extra guides"
 msgstr "zobrazit více vodítek"
 
 #: ../src/iop/clipping.c:2792
+=======
+#: ../src/iop/clipping.c:1794 ../src/libs/live_view.c:349
+msgid "show some extra guides"
+msgstr "zobrazit více vodítek"
+
+#: ../src/iop/clipping.c:2795
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "commit"
 msgstr "zapsání"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:2794
+=======
+#: ../src/iop/clipping.c:2797
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "angle"
 msgstr "úhel"
@@ -3437,11 +5199,19 @@ msgstr "sRGB (např. jpg)"
 #: ../src/iop/colorin.c:754 ../src/iop/colorin.c:786 ../src/iop/colorout.c:921
 #: ../src/iop/colorout.c:922 ../src/iop/colorout.c:923
 msgid "Adobe RGB (compatible)"
+<<<<<<< HEAD
 msgstr "Adobe RGB (kompatibilní)"
 
 #: ../src/iop/colorin.c:756 ../src/iop/colorin.c:788 ../src/iop/colorout.c:909
 #: ../src/iop/colorout.c:910 ../src/iop/colorout.c:911
 #: ../src/libs/export.c:556
+=======
+msgstr ""
+
+#: ../src/iop/colorin.c:756 ../src/iop/colorin.c:788 ../src/iop/colorout.c:909
+#: ../src/iop/colorout.c:910 ../src/iop/colorout.c:911
+#: ../src/libs/export.c:521
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "linear RGB"
 msgstr "lineární RGB"
 
@@ -3459,7 +5229,11 @@ msgid "Lab"
 msgstr "Lab"
 
 #: ../src/iop/colorin.c:896 ../src/iop/denoiseprofile.c:1712
+<<<<<<< HEAD
 #: ../src/libs/export.c:597
+=======
+#: ../src/libs/export.c:562
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "profile"
 msgstr "profil"
 
@@ -3595,23 +5369,39 @@ msgid "output intent"
 msgstr "výstupní záměr"
 
 #: ../src/iop/colorout.c:869 ../src/iop/colorout.c:876
+<<<<<<< HEAD
 #: ../src/libs/export.c:525
+=======
+#: ../src/libs/export.c:490
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "perceptual"
 msgstr "perceptuální"
 
 #: ../src/iop/colorout.c:870 ../src/iop/colorout.c:877
+<<<<<<< HEAD
 #: ../src/libs/export.c:526
+=======
+#: ../src/libs/export.c:491
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "relative colorimetric"
 msgstr "rel. kolorimetrický"
 
 #: ../src/iop/colorout.c:871 ../src/iop/colorout.c:878
+<<<<<<< HEAD
 #: ../src/libs/export.c:527
+=======
+#: ../src/libs/export.c:492
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "rendering intent"
 msgid "saturation"
 msgstr "sytost"
 
 #: ../src/iop/colorout.c:872 ../src/iop/colorout.c:879
+<<<<<<< HEAD
 #: ../src/libs/export.c:528
+=======
+#: ../src/libs/export.c:493
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "absolute colorimetric"
 msgstr "abs. kolorimetrický"
 
@@ -3632,12 +5422,20 @@ msgid "display profile"
 msgstr "profil displeje"
 
 #. the system display profile is only suitable for display purposes
+<<<<<<< HEAD
 #: ../src/iop/colorout.c:905 ../src/libs/export.c:609
+=======
+#: ../src/iop/colorout.c:905 ../src/libs/export.c:574
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "system display profile"
 msgstr "syst. profil displeje"
 
 #: ../src/iop/colorout.c:915 ../src/iop/colorout.c:916
+<<<<<<< HEAD
 #: ../src/iop/colorout.c:917 ../src/libs/export.c:537
+=======
+#: ../src/iop/colorout.c:917 ../src/libs/export.c:502
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "sRGB (web-safe)"
 msgstr "sRGB (pro web)"
 
@@ -3685,14 +5483,24 @@ msgid "apply"
 msgstr "použít"
 
 #: ../src/iop/colortransfer.c:647
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "this module will be removed in the future\n"
 "and is only here so you can switch it off\n"
 "and move to the new color mapping module."
 msgstr ""
+<<<<<<< HEAD
 "tento modul bude v budoucnosti odstraněn.\n"
 "a je tu jen proto, abyste jej mohli vypnout\n"
 "přejít na nový modul mapování barev."
+=======
+"modul bude v budoucnosti odstraněn.\n"
+"vypněte jej prosím\n"
+"a použijte nový ekvalizér."
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/iop/colortransfer.c:673
 msgid "number of clusters to find in image"
@@ -3714,6 +5522,7 @@ msgstr "použít"
 msgid "apply previously analyzed image look to this image"
 msgstr "použít výsledek předchozí analýzy vzhledu snímku na tento snímek"
 
+<<<<<<< HEAD
 #: ../src/iop/colorzones.c:120
 msgid "color zones"
 msgstr "zóny barev"
@@ -3743,6 +5552,37 @@ msgid "select by"
 msgstr "vybrat dle"
 
 #: ../src/iop/colorzones.c:1053
+=======
+#: ../src/iop/colorzones.c:111
+msgid "color zones"
+msgstr "zóny barev"
+
+#: ../src/iop/colorzones.c:403
+msgid "red black white"
+msgstr "červená černá bílá"
+
+#: ../src/iop/colorzones.c:421
+msgid "black white and skin tones"
+msgstr "černá bílá a odstíny pokožky"
+
+#: ../src/iop/colorzones.c:439
+msgid "polarizing filter"
+msgstr "polarizační filtr"
+
+#: ../src/iop/colorzones.c:467
+msgid "natural skin tones"
+msgstr "přirozené odstíny pokožky"
+
+#: ../src/iop/colorzones.c:495
+msgid "black & white film"
+msgstr "černobílý film"
+
+#: ../src/iop/colorzones.c:1000
+msgid "select by"
+msgstr "vybrat dle"
+
+#: ../src/iop/colorzones.c:1001
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "choose selection criterion, will be the abscissa in the graph"
 msgstr "zvolte kritérium výběru, bude hodnotou na ose x v grafu"
 
@@ -3839,20 +5679,36 @@ msgid "green channels matching method"
 msgstr "metoda porovnání zeleného kanálu"
 
 #: ../src/iop/denoiseprofile.c:129
+<<<<<<< HEAD
 msgid "denoise (profiled)"
 msgstr "odšumění (s profily)"
+=======
+#, fuzzy
+msgid "denoise (profiled)"
+msgstr "odstranit šum (jemně)"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/iop/denoiseprofile.c:1461 ../src/iop/denoiseprofile.c:1469
 #, c-format
 msgid "found match for iso %d"
+<<<<<<< HEAD
 msgstr "nalezen pro iso %d"
+=======
+msgstr ""
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/iop/denoiseprofile.c:1478
 #, c-format
 msgid "interpolated from iso %d and %d"
+<<<<<<< HEAD
 msgstr "interpolováno z iso %d a %d"
 
 #: ../src/iop/denoiseprofile.c:1713 ../src/iop/lens.c:1866
+=======
+msgstr ""
+
+#: ../src/iop/denoiseprofile.c:1713 ../src/iop/lens.c:1868
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "mode"
 msgstr "režim"
 
@@ -3861,6 +5717,7 @@ msgid "patch size"
 msgstr "velikost vzorku"
 
 #: ../src/iop/denoiseprofile.c:1717
+<<<<<<< HEAD
 msgid "non-local means"
 msgstr "nelokální stř. hodnoty"
 
@@ -3871,12 +5728,26 @@ msgstr "vlnková funkce"
 #: ../src/iop/denoiseprofile.c:1719
 msgid "profile used for variance stabilization"
 msgstr "profil použitý pro stabilizaci rozptylu"
+=======
+#, fuzzy
+msgid "non-local means"
+msgstr "odstranění šumu"
+
+#: ../src/iop/denoiseprofile.c:1718
+msgid "wavelets"
+msgstr ""
+
+#: ../src/iop/denoiseprofile.c:1719
+msgid "profile used for variance stabilization"
+msgstr ""
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/iop/denoiseprofile.c:1720
 msgid ""
 "method used in the denoising core. non-local means works best for "
 "`lightness' blending, wavelets work best for `color' blending"
 msgstr ""
+<<<<<<< HEAD
 "metoda použitá pro odstraňování šumu. nelokální střední hodnoty fungují "
 "nejlépe pro prolínání dle \"jasu\", vlnková funkce pak pro prolínání dle "
 "\"barvy\""
@@ -3892,10 +5763,27 @@ msgstr "doladit sílu odšumění"
 #: ../src/iop/dither.c:98 ../src/iop/vignette.c:1134
 msgid "dithering"
 msgstr "dithering"
+=======
+
+#: ../src/iop/denoiseprofile.c:1721
+#, fuzzy
+msgid "radius of the patches to match. increase for more sharpness"
+msgstr "poloměr vzorků, které mají být vybrány"
+
+#: ../src/iop/denoiseprofile.c:1722
+msgid "finetune denoising strength"
+msgstr ""
+
+#: ../src/iop/dither.c:98 ../src/iop/vignette.c:1134
+#, fuzzy
+msgid "dithering"
+msgstr "snímání"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #. add the preset.
 #: ../src/iop/dither.c:124
 msgid "dither"
+<<<<<<< HEAD
 msgstr "dither"
 
 #: ../src/iop/dither.c:561
@@ -3941,6 +5829,53 @@ msgstr "úroveň oslabení náhodného ditheringu"
 #: ../src/iop/dither.c:592
 msgid "damping"
 msgstr "oslabení"
+=======
+msgstr ""
+
+#: ../src/iop/dither.c:561
+msgid "random"
+msgstr ""
+
+#: ../src/iop/dither.c:562
+msgid "floyd-steinberg 1-bit b&w"
+msgstr ""
+
+#: ../src/iop/dither.c:563
+msgid "floyd-steinberg 4-bit gray"
+msgstr ""
+
+#: ../src/iop/dither.c:564
+msgid "floyd-steinberg 8-bit rgb"
+msgstr ""
+
+#: ../src/iop/dither.c:565
+msgid "floyd-steinberg 16-bit rgb"
+msgstr ""
+
+#: ../src/iop/dither.c:566
+msgid "floyd-steinberg auto"
+msgstr ""
+
+#: ../src/iop/dither.c:571
+msgid "radius for blurring step"
+msgstr ""
+
+#: ../src/iop/dither.c:583
+msgid "the gradient range where to apply random dither"
+msgstr ""
+
+#: ../src/iop/dither.c:584
+msgid "gradient range"
+msgstr ""
+
+#: ../src/iop/dither.c:591
+msgid "damping level of random dither"
+msgstr ""
+
+#: ../src/iop/dither.c:592
+msgid "damping"
+msgstr ""
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/iop/equalizer.c:42
 msgid "legacy equalizer"
@@ -4300,7 +6235,11 @@ msgstr "vybrat barvu filmového materiálu ze snímku"
 msgid "lens correction"
 msgstr "korekce objektivu"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:71 ../src/iop/vignette.c:158 ../src/iop/watermark.c:164
+=======
+#: ../src/iop/lens.c:71 ../src/iop/vignette.c:158 ../src/iop/watermark.c:163
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "scale"
 msgstr "měřítko"
@@ -4345,7 +6284,11 @@ msgctxt "accel"
 msgid "select corrections"
 msgstr "vybrat korekce"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1050
+=======
+#: ../src/iop/lens.c:1052
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid ""
 "maker:\t\t%s\n"
@@ -4358,6 +6301,7 @@ msgstr ""
 "bajonet:\t\t%s\n"
 "faktor ořezu:\t%.1f"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1281
 msgid "camera/lens not found - please select manually"
 msgstr "fotoaparát/objektiv nenalezen - vyberte jej prosím ručně"
@@ -4368,6 +6312,18 @@ msgstr "zkuste najít váš fotoaparát/objektiv výše ve dvou menu"
 
 #: ../src/iop/lens.c:1328
 #, c-format
+=======
+#: ../src/iop/lens.c:1283
+msgid "camera/lens not found - please select manually"
+msgstr ""
+
+#: ../src/iop/lens.c:1285
+msgid "try to locate your camera/lens in the above two menus"
+msgstr ""
+
+#: ../src/iop/lens.c:1330
+#, fuzzy, c-format
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "maker:\t\t%s\n"
 "model:\t\t%s\n"
@@ -4385,6 +6341,7 @@ msgstr ""
 "typ:\t\t%s\n"
 "bajonety:\t\t%s"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1374
 msgid "mm"
 msgstr "mm"
@@ -4531,6 +6488,155 @@ msgid "corrections done: "
 msgstr "provedené korekce:"
 
 #: ../src/iop/lens.c:1892
+=======
+#: ../src/iop/lens.c:1376
+msgid "mm"
+msgstr "mm"
+
+#: ../src/iop/lens.c:1377
+msgid "focal length (mm)"
+msgstr "ohnisková vzd. (mm)"
+
+#: ../src/iop/lens.c:1404
+msgid "f/"
+msgstr "f/"
+
+#: ../src/iop/lens.c:1405
+msgid "f-number (aperture)"
+msgstr "clonové číslo"
+
+#: ../src/iop/lens.c:1420
+msgid "d"
+msgstr "d"
+
+#: ../src/iop/lens.c:1421
+msgid "distance to subject"
+msgstr "předmětná vzdálenost"
+
+#: ../src/iop/lens.c:1719
+msgid "distortion & TCA"
+msgstr "zkreslení & TCA"
+
+#: ../src/iop/lens.c:1725
+msgid "distortion & vignetting"
+msgstr "zkreslení & vinětace"
+
+#: ../src/iop/lens.c:1731
+msgid "TCA & vignetting"
+msgstr "TCA & vinětace"
+
+#: ../src/iop/lens.c:1737
+msgid "only distortion"
+msgstr "pouze zkreslení"
+
+#: ../src/iop/lens.c:1743
+msgid "only TCA"
+msgstr "pouze TCA"
+
+#: ../src/iop/lens.c:1749
+msgid "only vignetting"
+msgstr "pouze vinětace"
+
+#: ../src/iop/lens.c:1772
+msgid "find camera"
+msgstr "nalézt fotoaparát"
+
+#: ../src/iop/lens.c:1789
+msgid "find lens"
+msgstr "nalézt objektiv"
+
+#: ../src/iop/lens.c:1822
+msgid "corrections"
+msgstr "korekce"
+
+#: ../src/iop/lens.c:1824
+msgid "which corrections to apply"
+msgstr "které korekce se mají použít"
+
+#: ../src/iop/lens.c:1839
+msgid "geometry"
+msgstr "geometrie"
+
+#: ../src/iop/lens.c:1841
+msgid "target geometry"
+msgstr "cílová geometrie"
+
+#: ../src/iop/lens.c:1842
+msgid "rectilinear"
+msgstr "rektilineární"
+
+#: ../src/iop/lens.c:1843
+msgid "fish-eye"
+msgstr "rybí oko"
+
+#: ../src/iop/lens.c:1844
+msgid "panoramic"
+msgstr "panoramatická"
+
+#: ../src/iop/lens.c:1845
+msgid "equirectangular"
+msgstr "ekvirektangulární"
+
+#: ../src/iop/lens.c:1847
+msgid "orthographic"
+msgstr ""
+
+#: ../src/iop/lens.c:1848
+msgid "stereographic"
+msgstr ""
+
+#: ../src/iop/lens.c:1849
+msgid "equisolid angle"
+msgstr ""
+
+#: ../src/iop/lens.c:1850
+#, fuzzy
+msgid "thoby fish-eye"
+msgstr "rybí oko"
+
+#: ../src/iop/lens.c:1858
+msgid "auto scale"
+msgstr "automatické měřítko"
+
+#: ../src/iop/lens.c:1859 ../src/iop/vignette.c:1126
+#: ../src/iop/watermark.c:1018
+msgid "scale"
+msgstr "měřítko"
+
+#: ../src/iop/lens.c:1870
+msgid "correct distortions or apply them"
+msgstr "upravit nebo použít zkreslení"
+
+#: ../src/iop/lens.c:1871
+msgid "correct"
+msgstr "opravit"
+
+#: ../src/iop/lens.c:1872
+msgid "distort"
+msgstr "deformovat"
+
+#: ../src/iop/lens.c:1879
+msgid "transversal chromatic aberration red"
+msgstr "červená (TCA)"
+
+#: ../src/iop/lens.c:1880
+msgid "tca red"
+msgstr "tca červená"
+
+#: ../src/iop/lens.c:1885
+msgid "transversal chromatic aberration blue"
+msgstr "modrá (TCA)"
+
+#: ../src/iop/lens.c:1886
+msgid "tca blue"
+msgstr "tca modrá"
+
+#: ../src/iop/lens.c:1893
+msgid "corrections done: "
+msgstr "provedené korekce:"
+
+#: ../src/iop/lens.c:1894
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "which corrections have actually been done"
 msgstr "které korekce byly skutečně provedeny"
 
@@ -4545,6 +6651,7 @@ msgstr "přetažením vodítek nastavte černý, šedý a bílý bod. pracuje v 
 
 #: ../src/iop/levels.c:287
 msgid "apply auto levels"
+<<<<<<< HEAD
 msgstr "aplikovat automatické úrovně"
 
 #: ../src/iop/levels.c:291
@@ -4558,6 +6665,24 @@ msgstr "vybrat šedý bod z obrázku"
 #: ../src/iop/levels.c:299
 msgid "pick whitepoint from image"
 msgstr "vybrat bílý bod z obrázku"
+=======
+msgstr ""
+
+#: ../src/iop/levels.c:291
+#, fuzzy
+msgid "pick blackpoint from image"
+msgstr "kliknutím vybrat barvu z obrázku"
+
+#: ../src/iop/levels.c:295
+#, fuzzy
+msgid "pick medium greypoint from image"
+msgstr "kliknutím vybrat barvu z obrázku"
+
+#: ../src/iop/levels.c:299
+#, fuzzy
+msgid "pick whitepoint from image"
+msgstr "kliknutím vybrat barvu z obrázku"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/iop/lowlight.c:87
 msgid "lowlight vision"
@@ -5002,8 +7127,14 @@ msgid "chocolate brown"
 msgstr "čokoládově hnědá"
 
 #: ../src/iop/splittoning.c:557
+<<<<<<< HEAD
 msgid "select the saturation tone"
 msgstr "vybrat míru sytosti"
+=======
+#, fuzzy
+msgid "select the saturation tone"
+msgstr "vybrat sytost stínů"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/iop/splittoning.c:593
 msgid "balance"
@@ -5021,6 +7152,7 @@ msgstr ""
 "stlačení efektu na světla/stíny a\n"
 "upřednostnit střední tóny"
 
+<<<<<<< HEAD
 #: ../src/iop/spots.c:54
 msgid "spot removal"
 msgstr "odstranění skvrn"
@@ -5029,6 +7161,30 @@ msgstr "odstranění skvrn"
 msgid "number of strokes:"
 msgstr "počet tahů:"
 
+=======
+#: ../src/iop/spots.c:82
+msgid "spot removal"
+msgstr "odstranění skvrn"
+
+#: ../src/iop/spots.c:468
+msgid ""
+"click on a spot and drag on canvas to heal.\n"
+"use the mouse wheel to adjust size.\n"
+"right click to remove a stroke."
+msgstr ""
+"klikněte na skvrnu a tažením dojde k opravě.\n"
+"použijte kolečko myši pro změnu velikosti.\n"
+"klikněte pravým tlačítkem pro odstranění tahu."
+
+#: ../src/iop/spots.c:472
+msgid "number of strokes:"
+msgstr "počet tahů:"
+
+#: ../src/iop/spots.c:706
+msgid "spot removal only supports up to 32 spots"
+msgstr "odstranění skvrn je podporováno pouze pro maximálně 32 skvrn"
+
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/temperature.c:78
 msgctxt "modulename"
 msgid "white balance"
@@ -5040,9 +7196,16 @@ msgid "tint"
 msgstr "zbarvení"
 
 #: ../src/iop/temperature.c:97
+<<<<<<< HEAD
 msgctxt "accel"
 msgid "temperature"
 msgstr "teplota"
+=======
+#, fuzzy
+msgctxt "accel"
+msgid "temperature"
+msgstr "vstupní teplota"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/iop/temperature.c:385
 msgid "camera white balance"
@@ -5061,8 +7224,14 @@ msgid "tint"
 msgstr "zbarvení"
 
 #: ../src/iop/temperature.c:732
+<<<<<<< HEAD
 msgid "temperature"
 msgstr "teplota"
+=======
+#, fuzzy
+msgid "temperature"
+msgstr "vstupní teplota"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/iop/temperature.c:747
 msgid "choose white balance preset from camera"
@@ -5223,9 +7392,16 @@ msgid "width-height ratio"
 msgstr "poměr šířka/výška"
 
 #: ../src/iop/vignette.c:166
+<<<<<<< HEAD
 msgctxt "accel"
 msgid "dithering"
 msgstr "dithering"
+=======
+#, fuzzy
+msgctxt "accel"
+msgid "dithering"
+msgstr "snímání"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/iop/vignette.c:1107
 msgid "automatic ratio"
@@ -5236,12 +7412,23 @@ msgid "automatic"
 msgstr "automaticky"
 
 #: ../src/iop/vignette.c:1121
+<<<<<<< HEAD
 msgid "8-bit output"
 msgstr "8bitový výstup"
 
 #: ../src/iop/vignette.c:1122
 msgid "16-bit output"
 msgstr "16bitový výstup"
+=======
+#, fuzzy
+msgid "8-bit output"
+msgstr "výstup"
+
+#: ../src/iop/vignette.c:1122
+#, fuzzy
+msgid "16-bit output"
+msgstr "16-bit ppm"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/iop/vignette.c:1127
 msgid "fall-off strength"
@@ -5309,6 +7496,7 @@ msgstr "poměr šířka-k-výšce"
 
 #: ../src/iop/vignette.c:1162
 msgid "add some level of random noise to prevent banding"
+<<<<<<< HEAD
 msgstr "přidat trochu náhodného šumu k zabránění bandingu"
 
 #: ../src/iop/watermark.c:141
@@ -5316,25 +7504,47 @@ msgid "watermark"
 msgstr "vodoznak"
 
 #: ../src/iop/watermark.c:162
+=======
+msgstr ""
+
+#: ../src/iop/watermark.c:140
+msgid "watermark"
+msgstr "vodoznak"
+
+#: ../src/iop/watermark.c:161
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "refresh"
 msgstr "obnovit"
 
+<<<<<<< HEAD
 #: ../src/iop/watermark.c:163
+=======
+#: ../src/iop/watermark.c:162
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "opacity"
 msgstr "průhlednost"
 
+<<<<<<< HEAD
 #: ../src/iop/watermark.c:165
+=======
+#: ../src/iop/watermark.c:164
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "x offset"
 msgstr "posunutí x"
 
+<<<<<<< HEAD
 #: ../src/iop/watermark.c:166
+=======
+#: ../src/iop/watermark.c:165
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "y offset"
 msgstr "posunutí y"
 
+<<<<<<< HEAD
 #: ../src/iop/watermark.c:1034
 msgid "marker"
 msgstr "popisek"
@@ -5364,15 +7574,38 @@ msgid "x offset"
 msgstr "posunutí x"
 
 #: ../src/iop/watermark.c:1085
+=======
+#: ../src/iop/watermark.c:1000
+msgid "marker"
+msgstr "popisek"
+
+#: ../src/iop/watermark.c:1001
+msgid "alignment"
+msgstr "zarovnání"
+
+#: ../src/iop/watermark.c:1039
+msgid "x offset"
+msgstr "posunutí x"
+
+#: ../src/iop/watermark.c:1042
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "y offset"
 msgstr "posunutí y"
 
 #. Let's add some tooltips and hook up some signals...
+<<<<<<< HEAD
 #: ../src/iop/watermark.c:1091
 msgid "the opacity of the watermark"
 msgstr "průhlednost vodotisku"
 
 #: ../src/iop/watermark.c:1092
+=======
+#: ../src/iop/watermark.c:1048
+msgid "the opacity of the watermark"
+msgstr "průhlednost vodotisku"
+
+#: ../src/iop/watermark.c:1049
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "the scale of the watermark"
 msgstr "měřítko vodotisku"
 
@@ -5586,6 +7819,10 @@ msgid "the count of seconds before actually doing a capture"
 msgstr "počet sekund před skutečným pořízením snímku"
 
 #: ../src/libs/camera.c:500
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "the amount of images to capture in a sequence,\n"
 "you can use this in conjunction with delayed mode to create stop-motion "
@@ -5664,18 +7901,30 @@ msgid "filename"
 msgstr "soubor"
 
 #. create
+<<<<<<< HEAD
 #: ../src/libs/capture.c:146 ../src/libs/styles.c:383
+=======
+#: ../src/libs/capture.c:146 ../src/libs/styles.c:382
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "create"
 msgstr "vytvořit"
 
 #: ../src/libs/capture.c:169
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "enter the pattern for retrieved images\n"
 "⚠\t$(SEQUENCE) is mandatory\n"
 "recognized variables:"
 msgstr ""
+<<<<<<< HEAD
 "napište vzor pro získané snímky\n"
 "⚠\t$(SEQUENCE) je povinné\n"
+=======
+"napište cestu, kam se mají uložit exportované snímky\n"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 "možné proměnné:"
 
 #: ../src/libs/collect.c:117
@@ -5860,7 +8109,11 @@ msgid "xmp sidecar files"
 msgstr "postranní soubory xmp"
 
 #: ../src/libs/copy_history.c:88 ../src/libs/geotagging.c:446
+<<<<<<< HEAD
 #: ../src/libs/import.c:680 ../src/libs/styles.c:281
+=======
+#: ../src/libs/import.c:680 ../src/libs/styles.c:280
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "all files"
 msgstr "všechny soubory"
 
@@ -5881,6 +8134,23 @@ msgstr ""
 msgid "copy all"
 msgstr "kopírovat vše"
 
+<<<<<<< HEAD
+=======
+#: ../src/libs/copy_history.c:258
+#, fuzzy
+msgid ""
+"copy part history stack of\n"
+"first selected image (ctrl-shift-c)"
+msgstr ""
+"kopírovat štos historie\n"
+"z prvního vybraného snímku (ctrl-c)"
+
+#: ../src/libs/copy_history.c:261
+#, fuzzy
+msgid "copy all"
+msgstr "kopírovat"
+
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/copy_history.c:263
 msgid ""
 "copy history stack of\n"
@@ -5903,6 +8173,7 @@ msgstr ""
 
 #: ../src/libs/copy_history.c:274
 msgid "paste"
+<<<<<<< HEAD
 msgstr "vložit"
 
 #: ../src/libs/copy_history.c:275
@@ -5917,6 +8188,24 @@ msgstr ""
 msgid "paste all"
 msgstr "vložit vše"
 
+=======
+msgstr "vložit"
+
+#: ../src/libs/copy_history.c:275
+#, fuzzy
+msgid ""
+"paste part history stack to\n"
+"all selected images (ctrl-shift-v)"
+msgstr ""
+"přilepit štos historie ke\n"
+"všem vybraným snímkům (ctrl+v)"
+
+#: ../src/libs/copy_history.c:280
+#, fuzzy
+msgid "paste all"
+msgstr "vložit"
+
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/copy_history.c:281
 msgid ""
 "paste history stack to\n"
@@ -5958,9 +8247,16 @@ msgid "write history stack and tags to xmp sidecar files"
 msgstr "zapsat štos historie a štítky do postranních souborů xmp"
 
 #: ../src/libs/copy_history.c:340
+<<<<<<< HEAD
 msgctxt "accel"
 msgid "copy all"
 msgstr "kopírovat vše"
+=======
+#, fuzzy
+msgctxt "accel"
+msgid "copy all"
+msgstr "kopírovat"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/libs/copy_history.c:341
 msgctxt "accel"
@@ -5973,9 +8269,16 @@ msgid "discard"
 msgstr "zrušit"
 
 #: ../src/libs/copy_history.c:343
+<<<<<<< HEAD
 msgctxt "accel"
 msgid "paste all"
 msgstr "vložit vše"
+=======
+#, fuzzy
+msgctxt "accel"
+msgid "paste all"
+msgstr "vložit"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/libs/copy_history.c:344
 msgctxt "accel"
@@ -5992,6 +8295,7 @@ msgctxt "accel"
 msgid "write sidecar files"
 msgstr "uložit soubory xmp"
 
+<<<<<<< HEAD
 #: ../src/libs/export.c:72
 msgid "export selected"
 msgstr "exportovat vybrané"
@@ -6009,6 +8313,25 @@ msgid "global options"
 msgstr "globální volby"
 
 #: ../src/libs/export.c:497
+=======
+#: ../src/libs/export.c:70
+msgid "export selected"
+msgstr "exportovat vybrané"
+
+#: ../src/libs/export.c:423
+msgid "target storage"
+msgstr "cílové úložiště"
+
+#: ../src/libs/export.c:443
+msgid "file format"
+msgstr "formát souboru"
+
+#: ../src/libs/export.c:458
+msgid "global options"
+msgstr "globální volby"
+
+#: ../src/libs/export.c:462
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "maximum output width\n"
 "set to 0 for no scaling"
@@ -6016,7 +8339,11 @@ msgstr ""
 "maximální výstupní šířka\n"
 "nastavte na 0 pro zachování velikosti"
 
+<<<<<<< HEAD
 #: ../src/libs/export.c:499
+=======
+#: ../src/libs/export.c:464
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "maximum output height\n"
 "set to 0 for no scaling"
@@ -6032,6 +8359,7 @@ msgstr ""
 #. g_signal_connect (G_OBJECT (d->height), "focus-in-event",  G_CALLBACK(focus_in),  NULL);
 #. g_signal_connect (G_OBJECT (d->height), "focus-out-event", G_CALLBACK(focus_out), NULL);
 #.
+<<<<<<< HEAD
 #: ../src/libs/export.c:511
 msgid "max size"
 msgstr "max. vel."
@@ -6041,10 +8369,22 @@ msgid "x"
 msgstr "x"
 
 #: ../src/libs/export.c:520
+=======
+#: ../src/libs/export.c:476
+msgid "max size"
+msgstr "max. vel."
+
+#: ../src/libs/export.c:481
+msgid "x"
+msgstr "x"
+
+#: ../src/libs/export.c:485
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "intent"
 msgstr "záměr"
 
 #. gtk_table_attach(GTK_TABLE(self->widget), GTK_WIDGET(d->profile), 1, 2, 9, 10, GTK_EXPAND|GTK_FILL, 0, 0, 0);
+<<<<<<< HEAD
 #: ../src/libs/export.c:524 ../src/libs/export.c:604
 msgid "image settings"
 msgstr "nastavení snímku"
@@ -6054,11 +8394,23 @@ msgid "Adobe RGB"
 msgstr "Adobe RGB"
 
 #: ../src/libs/export.c:617
+=======
+#: ../src/libs/export.c:489 ../src/libs/export.c:569
+msgid "image settings"
+msgstr "nastavení snímku"
+
+#: ../src/libs/export.c:509
+msgid "Adobe RGB"
+msgstr "Adobe RGB"
+
+#: ../src/libs/export.c:582
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "output icc profiles in %s/color/out or %s/color/out"
 msgstr "výstupní profily icc v %s/color/out nebo %s/color/out"
 
 #. Add style combo
+<<<<<<< HEAD
 #: ../src/libs/export.c:623
 msgid "style"
 msgstr "styl"
@@ -6068,12 +8420,30 @@ msgid "temporary style to append while exporting"
 msgstr "dočasný styl, který má být přidán během exportu"
 
 #: ../src/libs/export.c:658
+=======
+#: ../src/libs/export.c:588
+#, fuzzy
+msgid "style"
+msgstr "styly"
+
+#: ../src/libs/export.c:605
+#, fuzzy
+msgid "temporary style to append while exporting"
+msgstr "autor, který má být přidán během importu"
+
+#: ../src/libs/export.c:623
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "export with current settings (ctrl-e)"
 msgstr "exportovat dle aktuálního nastavení (ctrl+e)"
 
 #. enable shortcut to export with current export settings:
+<<<<<<< HEAD
 #: ../src/libs/export.c:863 ../src/libs/styles.c:69
 #: ../src/views/darkroom.c:1674
+=======
+#: ../src/libs/export.c:827 ../src/libs/styles.c:69
+#: ../src/views/darkroom.c:1617
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "export"
 msgstr "exportovat"
@@ -6946,6 +9316,7 @@ msgctxt "accel"
 msgid "import"
 msgstr "importovat"
 
+<<<<<<< HEAD
 #: ../src/libs/styles.c:263
 msgid "select style"
 msgstr "vybrat styl"
@@ -6955,6 +9326,17 @@ msgid "darktable style files"
 msgstr "soubory stylu darktable"
 
 #: ../src/libs/styles.c:352
+=======
+#: ../src/libs/styles.c:262
+msgid "select style"
+msgstr "vybrat styl"
+
+#: ../src/libs/styles.c:275
+msgid "darktable style files"
+msgstr "soubory stylu darktable"
+
+#: ../src/libs/styles.c:351
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "available styles,\n"
 "doubleclick to apply"
@@ -6962,6 +9344,7 @@ msgstr ""
 "dostupné styly,\n"
 "dvojitým kliknutím je přiřadíte"
 
+<<<<<<< HEAD
 #: ../src/libs/styles.c:358
 msgid "enter style name"
 msgstr "zadejte jméno stylu"
@@ -6988,20 +9371,63 @@ msgid "edit the selected style in list above"
 msgstr "upravit vybraný styl z horního seznamu"
 
 #: ../src/libs/styles.c:399
+=======
+#: ../src/libs/styles.c:357
+msgid "enter style name"
+msgstr "zadejte jméno stylu"
+
+#: ../src/libs/styles.c:370
+msgid "create duplicate"
+msgstr "vytvořit duplikát"
+
+#: ../src/libs/styles.c:374
+msgid "creates a duplicate of the image before applying style"
+msgstr "vytvoří duplikát snímku před použitím stylu"
+
+#: ../src/libs/styles.c:384
+#, fuzzy
+msgid "create styles from history stack of selected images"
+msgstr ""
+"zrušit štos historie pro\n"
+"všechny vybrané snímky"
+
+#. edit
+#: ../src/libs/styles.c:388
+msgid "edit"
+msgstr "upravit"
+
+#: ../src/libs/styles.c:391
+msgid "edit the selected style in list above"
+msgstr "upravit vybraný styl z horního seznamu"
+
+#: ../src/libs/styles.c:398
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "deletes the selected style in list above"
 msgstr "vymaže vybraný styl z horního seznamu"
 
 #. import button
+<<<<<<< HEAD
 #: ../src/libs/styles.c:403
+=======
+#: ../src/libs/styles.c:402
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "styles"
 msgid "import"
 msgstr "importovat"
 
+<<<<<<< HEAD
 #: ../src/libs/styles.c:405
 msgid "import style from a style file"
 msgstr "importovat styl ze souboru se styly"
 
 #: ../src/libs/styles.c:412
+=======
+#: ../src/libs/styles.c:404
+msgid "import style from a style file"
+msgstr "importovat styl ze souboru se styly"
+
+#: ../src/libs/styles.c:411
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "export the selected style into a style file"
 msgstr "exportuje vybraný styl do souboru stylů"
 
@@ -7233,9 +9659,16 @@ msgid "copy history"
 msgstr "kopírovat historii"
 
 #: ../src/libs/tools/filmstrip.c:173
+<<<<<<< HEAD
 msgctxt "accel"
 msgid "copy history parts"
 msgstr "kopírovat části historie"
+=======
+#, fuzzy
+msgctxt "accel"
+msgid "copy history parts"
+msgstr "kopírovat historii"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/libs/tools/filmstrip.c:175
 msgctxt "accel"
@@ -7243,9 +9676,16 @@ msgid "paste history"
 msgstr "vložit historii"
 
 #: ../src/libs/tools/filmstrip.c:177
+<<<<<<< HEAD
 msgctxt "accel"
 msgid "paste history parts"
 msgstr "vložit části historie"
+=======
+#, fuzzy
+msgctxt "accel"
+msgid "paste history parts"
+msgstr "vložit historii"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/libs/tools/filmstrip.c:179
 msgctxt "accel"
@@ -7253,9 +9693,16 @@ msgid "discard history"
 msgstr "zrušit historii"
 
 #: ../src/libs/tools/filmstrip.c:182
+<<<<<<< HEAD
 msgctxt "accel"
 msgid "duplicate image"
 msgstr "duplikovat snímek"
+=======
+#, fuzzy
+msgctxt "accel"
+msgid "duplicate image"
+msgstr "vytváření duplikátu %d snímku"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #. setup color label accelerators
 #. Color keys
@@ -7356,11 +9803,21 @@ msgid "show global preferences"
 msgstr "zobrazit globální předvolby"
 
 #: ../src/libs/tools/global_toolbox.c:123
+<<<<<<< HEAD
 msgctxt "accel"
 msgid "grouping"
 msgstr "seskupení"
 
 #: ../src/libs/tools/global_toolbox.c:124
+=======
+#, fuzzy
+msgctxt "accel"
+msgid "grouping"
+msgstr "seskupit"
+
+#: ../src/libs/tools/global_toolbox.c:124
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "preferences"
 msgstr "předvolby"
@@ -7434,11 +9891,16 @@ msgstr "není připojen fotoaparát podporující vzdálené snímání"
 
 #. Setup key accelerators in capture view...
 #. Film strip shortcuts
+<<<<<<< HEAD
 #: ../src/views/capture.c:564 ../src/views/darkroom.c:1662
+=======
+#: ../src/views/capture.c:564 ../src/views/darkroom.c:1605
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "toggle film strip"
 msgstr "přepnout pás filmu"
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:83
 msgid "darkroom"
 msgstr "fotokomora"
@@ -7448,10 +9910,22 @@ msgid "no userdefined presets for favorite modules were found"
 msgstr "nebyla nalezena přednastavení pro oblíbené moduly"
 
 #: ../src/views/darkroom.c:876
+=======
+#: ../src/views/darkroom.c:81
+msgid "darkroom"
+msgstr "fotokomora"
+
+#: ../src/views/darkroom.c:840
+msgid "no userdefined presets for favorite modules were found"
+msgstr "nebyla nalezena přednastavení pro oblíbené moduly"
+
+#: ../src/views/darkroom.c:845
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "applied style `%s' on current image"
 msgstr "styl \"%s\" použit na aktuální snímek"
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:934
 msgid "no styles have been created yet"
 msgstr "nemáte vytvořené žádné styly"
@@ -7505,41 +9979,123 @@ msgid "upper threshold"
 msgstr "horní práh"
 
 #: ../src/views/darkroom.c:1173
+=======
+#: ../src/views/darkroom.c:903
+msgid "no styles have been created yet"
+msgstr "nemáte vytvořené žádné styly"
+
+#: ../src/views/darkroom.c:1042
+msgid "quick access to presets of your favorites"
+msgstr "rychlý přístup k přednastavením vašich oblíbených filtrů"
+
+#: ../src/views/darkroom.c:1054
+msgid "quick access for applying any of your styles"
+msgstr "rychlý přístup pro použití stylů"
+
+#: ../src/views/darkroom.c:1062
+#, fuzzy
+msgid ""
+"toggle over/under exposed indication\n"
+"right click for options"
+msgstr "přepnout zobrazení indikace přeexpozice/podexpozice"
+
+#: ../src/views/darkroom.c:1107
+msgid "color scheme"
+msgstr "barevné schéma"
+
+#: ../src/views/darkroom.c:1108
+msgid "black & white"
+msgstr "černá/bílá"
+
+#: ../src/views/darkroom.c:1109
+msgid "red & blue"
+msgstr "červená/modrá"
+
+#: ../src/views/darkroom.c:1110
+msgid "purple & green"
+msgstr "purpová/zelená"
+
+#: ../src/views/darkroom.c:1112
+msgid "select colors to indicate over/under exposure"
+msgstr "zvolit barvy pro indikaci pod- a přeexpozice"
+
+#: ../src/views/darkroom.c:1122
+msgid "lower threshold"
+msgstr "spodní práh"
+
+#: ../src/views/darkroom.c:1123
+msgid "threshold of what shall be considered underexposed"
+msgstr "práh pro podexpozici"
+
+#: ../src/views/darkroom.c:1132
+msgid "upper threshold"
+msgstr "horní práh"
+
+#: ../src/views/darkroom.c:1133
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "threshold of what shall be considered overexposed"
 msgstr "práh pro přeexpozici"
 
 #. Zoom shortcuts
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1666
+=======
+#: ../src/views/darkroom.c:1609
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "zoom close-up"
 msgstr "zoom detail"
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1668
+=======
+#: ../src/views/darkroom.c:1611
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "zoom fill"
 msgstr "zoom vyplnit"
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1670
+=======
+#: ../src/views/darkroom.c:1613
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "zoom fit"
 msgstr "zoom přizpůsobit"
 
 #. Shortcut to skip images
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1678
+=======
+#: ../src/views/darkroom.c:1621
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "image forward"
 msgstr "následující snímek"
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1680
+=======
+#: ../src/views/darkroom.c:1623
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "image back"
 msgstr "předchozí snímek"
 
 #. toggle overexposure indication
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1684
 msgctxt "accel"
 msgid "overexposed"
 msgstr "přeexponováno"
+=======
+#: ../src/views/darkroom.c:1627
+#, fuzzy
+msgctxt "accel"
+msgid "overexposed"
+msgstr "přeexpozice"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #: ../src/views/lighttable.c:407
 msgid "there are no images in this collection"
@@ -7611,7 +10167,11 @@ msgstr "posun na střed"
 #: ../src/views/lighttable.c:1627
 msgctxt "accel"
 msgid "realign images to grid"
+<<<<<<< HEAD
 msgstr "znovu zarovnat snímky na síť"
+=======
+msgstr ""
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #. Preview key
 #: ../src/views/lighttable.c:1631
@@ -7624,6 +10184,10 @@ msgid "map"
 msgstr "mapa"
 
 #: ../src/views/map.c:553
+<<<<<<< HEAD
+=======
+#, fuzzy
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "undo"
 msgstr "zpět"
@@ -7631,6 +10195,7 @@ msgstr "zpět"
 #: ../src/views/map.c:554
 msgctxt "accel"
 msgid "redo"
+<<<<<<< HEAD
 msgstr "znovu"
 
 #: ../src/develop/blend.c:1767 ../src/develop/blend.c:1967
@@ -7713,6 +10278,9 @@ msgstr "volby gui"
 
 #~ msgid "<add existing shape"
 #~ msgstr "<přidat existující tvar"
+=======
+msgstr ""
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 
 #~ msgid " (needs a restart)"
 #~ msgstr "(vyžaduje restart spuštění.)"
@@ -7868,6 +10436,7 @@ msgstr "volby gui"
 #~ msgid "select the saturation highlights tone"
 #~ msgstr "vybrat sytost světel"
 
+<<<<<<< HEAD
 #~ msgid ""
 #~ "click on a spot and drag on canvas to heal.\n"
 #~ "use the mouse wheel to adjust size.\n"
@@ -7880,6 +10449,8 @@ msgstr "volby gui"
 #~ msgid "spot removal only supports up to 32 spots"
 #~ msgstr "odstranění skvrn je podporováno pouze pro maximálně 32 skvrn"
 
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #~ msgctxt "accel"
 #~ msgid "temperature out"
 #~ msgstr "výstupní teplota"
@@ -7890,6 +10461,12 @@ msgstr "volby gui"
 #~ msgid "similar images"
 #~ msgstr "podobné snímky"
 
+<<<<<<< HEAD
+=======
+#~ msgid "histogram weight"
+#~ msgstr "váha histogramu"
+
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #~ msgid "set the score weight of histogram matching"
 #~ msgstr "nastavit váhu skóre pro porovnání histogramu"
 
@@ -7899,6 +10476,12 @@ msgstr "volby gui"
 #~ msgid "set the score weight of light map matching"
 #~ msgstr "nastavit váhu skóre pro porovnání světlosti"
 
+<<<<<<< HEAD
+=======
+#~ msgid "color map weight"
+#~ msgstr "váha mapy barev"
+
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #~ msgid "set the score weight of color map matching"
 #~ msgstr "nastavit váhu skóre pro porovnání barev"
 

@@ -6,8 +6,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: darktable 0.9\n"
 "Report-Msgid-Bugs-To: \n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2013-05-07 10:04+0200\n"
 "PO-Revision-Date: 2013-04-08 20:06+0300\n"
+=======
+"POT-Creation-Date: 2013-05-07 18:50+0200\n"
+"PO-Revision-Date: 2013-04-08 20:03+0300\n"
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 "Last-Translator: Александр Прокудин <alexandre.prokoudine@gmail.com>\n"
 "Language-Team: русский <>\n"
 "Language: ru\n"
@@ -32,7 +37,11 @@ msgstr "Ширина боковых панелей в пикселах"
 #: ../build/src/preferences_gen.h:1148 ../build/src/preferences_gen.h:1191
 #: ../build/src/preferences_gen.h:1215 ../build/src/preferences_gen.h:1289
 #: ../build/src/preferences_gen.h:1376 ../build/src/preferences_gen.h:1400
+<<<<<<< HEAD
 #: ../build/src/preferences_gen.h:1425 ../src/lua/preferences.c:368
+=======
+#: ../build/src/preferences_gen.h:1425
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "double click to reset to `%d'"
 msgstr "Двойной щелчок сбрасывает изменения до «%s»"
@@ -56,8 +65,12 @@ msgstr "Использовать половинный Raw вместо встр�
 #: ../build/src/preferences_gen.h:1463 ../build/src/preferences_gen.h:1486
 #: ../build/src/preferences_gen.h:1505 ../build/src/preferences_gen.h:1524
 #: ../build/src/preferences_gen.h:1556 ../build/src/preferences_gen.h:1591
+<<<<<<< HEAD
 #: ../build/src/preferences_gen.h:1623 ../src/lua/preferences.c:351
 #: ../src/lua/preferences.c:359
+=======
+#: ../build/src/preferences_gen.h:1623
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "double click to reset to `%s'"
 msgstr "Двойной щелчок сбрасывает изменения до «%s»"
@@ -385,7 +398,11 @@ msgstr "Ошибка при загрузке файла «%s»"
 msgid "empty history stack"
 msgstr "История изменений"
 
+<<<<<<< HEAD
 #: ../src/cli/main.c:208
+=======
+#: ../src/cli/main.c:209
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "cannot find disk storage module. please check your installation, something "
 "seems to be broken."
@@ -406,26 +423,42 @@ msgstr ""
 msgid "failed to get parameters from format module, aborting export ..."
 msgstr "Не удалось получить параметры от модуля формата, экспорт прерван."
 
+<<<<<<< HEAD
 #: ../src/common/collection.c:454 ../src/develop/lightroom.c:974
+=======
+#: ../src/common/collection.c:454 ../src/develop/lightroom.c:964
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/bilateral.cc:349 ../src/iop/channelmixer.c:440
 #: ../src/iop/channelmixer.c:452 ../src/iop/temperature.c:733
 #: ../src/libs/collect.c:1139 ../src/libs/collect.c:1141
 msgid "red"
 msgstr "Красный"
 
+<<<<<<< HEAD
 #: ../src/common/collection.c:455 ../src/develop/lightroom.c:976
+=======
+#: ../src/common/collection.c:455 ../src/develop/lightroom.c:966
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/collect.c:1145 ../src/libs/collect.c:1147
 msgid "yellow"
 msgstr "Жёлтая"
 
+<<<<<<< HEAD
 #: ../src/common/collection.c:456 ../src/develop/lightroom.c:978
+=======
+#: ../src/common/collection.c:456 ../src/develop/lightroom.c:968
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/bilateral.cc:350 ../src/iop/channelmixer.c:441
 #: ../src/iop/channelmixer.c:459 ../src/iop/temperature.c:734
 #: ../src/libs/collect.c:1151 ../src/libs/collect.c:1153
 msgid "green"
 msgstr "Зелёный"
 
+<<<<<<< HEAD
 #: ../src/common/collection.c:457 ../src/develop/lightroom.c:980
+=======
+#: ../src/common/collection.c:457 ../src/develop/lightroom.c:970
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/bilateral.cc:351 ../src/iop/channelmixer.c:442
 #: ../src/iop/channelmixer.c:466 ../src/iop/temperature.c:735
 #: ../src/libs/collect.c:1157 ../src/libs/collect.c:1159
@@ -466,7 +499,11 @@ msgstr "Ошибка при загрузке каталога «%s»"
 msgid "file `%s' has unknown format!"
 msgstr "У файла \"%s\" неизвестный формат!"
 
+<<<<<<< HEAD
 #: ../src/common/darktable.c:339 ../src/libs/import.c:711
+=======
+#: ../src/common/darktable.c:338 ../src/libs/import.c:711
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "error loading file `%s'"
 msgstr "Ошибка при загрузке файла «%s»"
@@ -493,6 +530,7 @@ msgstr[2] "Импортируется %d фотографий..."
 msgid "you need to copy history from an image before you paste it onto another"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/common/history.c:263 ../src/common/history.c:264
 #: ../src/common/history.c:280 ../src/common/styles.c:559
 #: ../src/common/styles.c:561 ../src/develop/blend_gui.c:1439
@@ -505,6 +543,18 @@ msgstr "Вкл."
 #: ../src/common/styles.c:561 ../src/develop/blend_gui.c:1277
 #: ../src/develop/blend_gui.c:1436 ../src/develop/develop.c:1113
 #: ../src/imageio/format/j2k.c:618 ../src/iop/demosaic.c:1329
+=======
+#: ../src/common/history.c:238 ../src/common/history.c:239
+#: ../src/common/history.c:255 ../src/common/styles.c:546
+#: ../src/develop/develop.c:1109 ../src/libs/live_view.c:406
+msgid "on"
+msgstr "Вкл."
+
+#: ../src/common/history.c:238 ../src/common/history.c:239
+#: ../src/common/history.c:255 ../src/common/styles.c:546
+#: ../src/develop/blend_gui.c:1028 ../src/develop/develop.c:1109
+#: ../src/imageio/format/j2k.c:601 ../src/iop/demosaic.c:1329
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/vignette.c:1120 ../src/libs/history.c:155
 #: ../src/libs/live_view.c:405
 msgid "off"
@@ -529,11 +579,19 @@ msgstr "Фотография \"%s\" недоступна!"
 #. If a style is to be applied during export, add the iop params into the history
 #. set export style to "none" by default
 #: ../src/common/imageio.c:563 ../src/common/variables.c:220
+<<<<<<< HEAD
 #: ../src/control/control.c:120 ../src/iop/clipping.c:1459
 #: ../src/iop/clipping.c:1699 ../src/iop/clipping.c:1717
 #: ../src/iop/clipping.c:1760 ../src/iop/clipping.c:1777
 #: ../src/iop/lens.c:1705 ../src/libs/export.c:167 ../src/libs/export.c:170
 #: ../src/libs/export.c:630 ../src/libs/live_view.c:324
+=======
+#: ../src/control/control.c:120 ../src/iop/clipping.c:1462
+#: ../src/iop/clipping.c:1702 ../src/iop/clipping.c:1720
+#: ../src/iop/clipping.c:1763 ../src/iop/clipping.c:1780
+#: ../src/iop/lens.c:1707 ../src/libs/export.c:159 ../src/libs/export.c:162
+#: ../src/libs/export.c:595 ../src/libs/live_view.c:324
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/live_view.c:336 ../src/libs/live_view.c:354
 #, c-format
 msgid "none"
@@ -575,14 +633,23 @@ msgstr "Не выбранных фотографий!"
 msgid "style with name '%s' already exists"
 msgstr "Стиль с названием «%s» уже существует"
 
+<<<<<<< HEAD
 #: ../src/common/styles.c:307 ../src/gui/styles_dialog.c:145
+=======
+#: ../src/common/styles.c:307 ../src/common/styles.c:368
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "style named '%s' successfully created"
 msgstr "Стиль с названием «%s» успешно создан"
 
 #. fail :(
+<<<<<<< HEAD
 #: ../src/common/styles.c:389 ../src/common/styles.c:408
 #: ../src/views/darkroom.c:459
+=======
+#: ../src/common/styles.c:388 ../src/common/styles.c:407
+#: ../src/views/darkroom.c:446
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "no image selected!"
 msgstr "Не выбранных фотографий!"
 
@@ -601,7 +668,11 @@ msgstr "Файл стиля для «%s» уже существует"
 msgid "style %s was successfully imported"
 msgstr "Стиль «%s» успешно импортирован"
 
+<<<<<<< HEAD
 #: ../src/control/control.c:1371 ../src/control/control.c:1374
+=======
+#: ../src/control/control.c:1355 ../src/control/control.c:1358
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "working.."
 msgstr "минуточку..."
 
@@ -763,11 +834,19 @@ msgstr "Удалить фотографии?"
 msgid "failed to create film roll for destination directory, aborting move.."
 msgstr "Не удалось создать съёмку для импорта с камеры, импорт прерван."
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:769
 #: ../src/control/jobs/control_jobs.c:826 ../src/imageio/storage/disk.c:68
 #: ../src/imageio/storage/disk.c:121 ../src/imageio/storage/gallery.c:79
 #: ../src/imageio/storage/gallery.c:162 ../src/imageio/storage/latex.c:79
 #: ../src/imageio/storage/latex.c:162 ../src/libs/styles.c:240
+=======
+#: ../src/control/jobs/control_jobs.c:776
+#: ../src/control/jobs/control_jobs.c:833 ../src/imageio/storage/disk.c:67
+#: ../src/imageio/storage/disk.c:120 ../src/imageio/storage/gallery.c:78
+#: ../src/imageio/storage/gallery.c:161 ../src/imageio/storage/latex.c:78
+#: ../src/imageio/storage/latex.c:161 ../src/libs/styles.c:240
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "select directory"
 msgstr "Выберите каталог"
 
@@ -832,7 +911,11 @@ msgstr "Делается %d снимок"
 msgid "copying %d images"
 msgstr "Делается %d снимок"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:928
+=======
+#: ../src/control/jobs/control_jobs.c:936
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "failed to get parameters from storage module `%s', aborting export.."
 msgstr "Не удалось получить параметры от модуля хранения, экспорт прерван."
@@ -853,8 +936,13 @@ msgstr[0] "Экспортируется %d фото в %s"
 msgstr[1] "Экспортируются %d фото в %s"
 msgstr[2] "Экспортируется %d фото в %s"
 
+<<<<<<< HEAD
 #: ../src/control/jobs/control_jobs.c:997
 #: ../src/control/jobs/control_jobs.c:998 ../src/views/darkroom.c:470
+=======
+#: ../src/control/jobs/control_jobs.c:1005
+#: ../src/control/jobs/control_jobs.c:1006 ../src/views/darkroom.c:457
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "image `%s' is currently unavailable"
 msgstr "Фотография \"%s\" сейчас недоступна"
@@ -964,7 +1052,23 @@ msgid ""
 "* range between adjacent upper/lower markers: blend gradually"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:912 ../src/iop/colorzones.c:1029
+=======
+#: ../src/develop/blend_gui.c:821
+msgid "blend"
+msgstr "Смешивание"
+
+#: ../src/develop/blend_gui.c:822
+msgid "uniformly"
+msgstr "Однородное"
+
+#: ../src/develop/blend_gui.c:823
+msgid "only, if.."
+msgstr "Только если..."
+
+#: ../src/develop/blend_gui.c:843 ../src/iop/colorzones.c:984
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/tonecurve.c:513
 msgid "pick gui color from image"
 msgstr "Взять цвет с фотографии"
@@ -977,7 +1081,11 @@ msgstr "Сбросить параметры маски смешивания"
 msgid "invert all channel's polarities"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:929 ../src/develop/blend_gui.c:932
+=======
+#: ../src/develop/blend_gui.c:864 ../src/develop/blend_gui.c:867
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "toggle polarity. best seen by enabling 'display mask'"
 msgstr "Переключить полярность, виднее всего при включённой маске"
 
@@ -989,7 +1097,19 @@ msgstr "Выход"
 msgid "input"
 msgstr "Вход"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:963 ../src/develop/blend_gui.c:964
+=======
+#: ../src/develop/blend_gui.c:899
+msgid "mask blur"
+msgstr "Размывание маски"
+
+#: ../src/develop/blend_gui.c:902
+msgid "enable conditional blending"
+msgstr "Включить условное смешивание"
+
+#: ../src/develop/blend_gui.c:903 ../src/develop/blend_gui.c:904
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "double click to reset"
 msgstr "Двойной щелчок сбрасывает изменения"
 
@@ -1038,6 +1158,7 @@ msgstr ""
 msgid "drawn & parametric mask"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1302
 msgid ""
 "activate blending: uniformly, with drawn mask, with parametric mask, or "
@@ -1049,6 +1170,9 @@ msgid "blend mode"
 msgstr "Режим смешивания"
 
 #: ../src/develop/blend_gui.c:1309 ../src/libs/live_view.c:377
+=======
+#: ../src/develop/blend_gui.c:1030 ../src/libs/live_view.c:377
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "normal"
 msgstr "Обычный"
 
@@ -1057,6 +1181,7 @@ msgstr "Обычный"
 msgid "normal bounded"
 msgstr "Обычный"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1315 ../src/libs/live_view.c:386
 msgid "lighten"
 msgstr "Только светлое"
@@ -1066,6 +1191,17 @@ msgid "darken"
 msgstr "Только тёмное"
 
 #: ../src/develop/blend_gui.c:1321 ../src/libs/live_view.c:382
+=======
+#: ../src/develop/blend_gui.c:1034 ../src/libs/live_view.c:386
+msgid "lighten"
+msgstr "Только светлое"
+
+#: ../src/develop/blend_gui.c:1036 ../src/libs/live_view.c:385
+msgid "darken"
+msgstr "Только тёмное"
+
+#: ../src/develop/blend_gui.c:1038 ../src/libs/live_view.c:382
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "multiply"
 msgstr "Умножение"
 
@@ -1081,6 +1217,7 @@ msgstr "Сложение"
 msgid "subtract"
 msgstr "Вычитание"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1333 ../src/libs/live_view.c:391
 msgid "difference"
 msgstr "Разница"
@@ -1090,6 +1227,17 @@ msgid "screen"
 msgstr "Экран"
 
 #: ../src/develop/blend_gui.c:1339 ../src/libs/live_view.c:353
+=======
+#: ../src/develop/blend_gui.c:1046 ../src/libs/live_view.c:391
+msgid "difference"
+msgstr "Разница"
+
+#: ../src/develop/blend_gui.c:1048 ../src/libs/live_view.c:383
+msgid "screen"
+msgstr "Экран"
+
+#: ../src/develop/blend_gui.c:1050 ../src/libs/live_view.c:353
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/live_view.c:384
 msgid "overlay"
 msgstr "Перекрытие"
@@ -1114,6 +1262,7 @@ msgstr "Линейный свет"
 msgid "pinlight"
 msgstr "Точечный свет"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1357 ../src/iop/channelmixer.c:439
 #: ../src/iop/colorize.c:441 ../src/iop/colorzones.c:1018
 #: ../src/iop/colorzones.c:1056
@@ -1121,14 +1270,29 @@ msgid "lightness"
 msgstr "Светлота"
 
 #: ../src/develop/blend_gui.c:1360 ../src/iop/atrous.c:1419
+=======
+#: ../src/develop/blend_gui.c:1062 ../src/iop/channelmixer.c:439
+#: ../src/iop/colorize.c:441 ../src/iop/colorzones.c:973
+#: ../src/iop/colorzones.c:1004
+msgid "lightness"
+msgstr "Светлота"
+
+#: ../src/develop/blend_gui.c:1064 ../src/iop/atrous.c:1419
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/equalizer.c:343 ../src/iop/nlmeans.c:718
 msgid "chroma"
 msgstr "Цвет"
 
 #. dt_bauhaus_slider_set_format(g->gslider1, "");
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1363 ../src/iop/channelmixer.c:437
 #: ../src/iop/colorize.c:417 ../src/iop/colorzones.c:1020
 #: ../src/iop/colorzones.c:1054 ../src/iop/graduatednd.c:1049
+=======
+#: ../src/develop/blend_gui.c:1066 ../src/iop/channelmixer.c:437
+#: ../src/iop/colorize.c:417 ../src/iop/colorzones.c:975
+#: ../src/iop/colorzones.c:1002 ../src/iop/graduatednd.c:1049
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/splittoning.c:542
 msgid "hue"
 msgstr "Тон"
@@ -1150,6 +1314,7 @@ msgstr "Выберите режим смешивания"
 msgid "difference (deprecated)"
 msgstr " (устаревший)"
 
+<<<<<<< HEAD
 #: ../src/develop/blend_gui.c:1388
 #, fuzzy
 msgid "inverse (deprecated)"
@@ -1166,6 +1331,9 @@ msgid "unbounded (deprecated)"
 msgstr " (устаревший)"
 
 #: ../src/develop/blend_gui.c:1404 ../src/iop/watermark.c:1049
+=======
+#: ../src/develop/blend_gui.c:1086 ../src/iop/watermark.c:1015
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "opacity"
 msgstr "Непрозрачность"
 
@@ -1232,7 +1400,11 @@ msgstr "Временно отключить маску смешивания, т�
 msgid "%s: module `%s' version mismatch: %d != %d"
 msgstr "%s: несоответствие версии модуля `%s': %d != %d"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:297 ../src/develop/imageop.c:305
+=======
+#: ../src/develop/imageop.c:295 ../src/develop/imageop.c:303
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "error creating gui, see stderr"
 msgstr ""
 
@@ -1254,25 +1426,45 @@ msgid "move down"
 msgstr "Опустить"
 
 #. delete
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1152 ../src/libs/image.c:143
 #: ../src/libs/styles.c:396 ../src/libs/tagging.c:487
 msgid "delete"
 msgstr "Удалить"
 
 #: ../src/develop/imageop.c:1174 ../src/develop/imageop.c:2020
+=======
+#: ../src/develop/imageop.c:1151 ../src/libs/image.c:143
+#: ../src/libs/styles.c:395 ../src/libs/tagging.c:487
+msgid "delete"
+msgstr "Удалить"
+
+#: ../src/develop/imageop.c:1173 ../src/develop/imageop.c:2010
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%s is switched on"
 msgstr "%s включен"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1174 ../src/develop/imageop.c:2020
+=======
+#: ../src/develop/imageop.c:1173 ../src/develop/imageop.c:2010
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%s is switched off"
 msgstr "%s выключен"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1404 ../src/gui/accelerators.c:637
 #: ../src/gui/accelerators.c:717 ../src/gui/accelerators.c:861
 #: ../src/gui/accelerators.c:886 ../src/gui/presets.c:197
 #: ../src/gui/presets.c:299 ../src/gui/presets.c:604
+=======
+#: ../src/develop/imageop.c:1403 ../src/gui/accelerators.c:637
+#: ../src/gui/accelerators.c:717 ../src/gui/accelerators.c:861
+#: ../src/gui/accelerators.c:886 ../src/gui/presets.c:196
+#: ../src/gui/presets.c:298 ../src/gui/presets.c:603
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/temperature.c:745 ../src/libs/import.c:487 ../src/libs/lib.c:291
 #: ../src/libs/lib.c:320 ../src/libs/lib.c:971
 msgid "preset"
@@ -1294,12 +1486,20 @@ msgctxt "accel"
 msgid "enable module"
 msgstr "Включить модуль"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1454 ../src/libs/lib.c:545
+=======
+#: ../src/develop/imageop.c:1453 ../src/libs/lib.c:545
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "reset module parameters"
 msgstr "Сбросить параметры модуля"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1456 ../src/libs/lib.c:550
+=======
+#: ../src/develop/imageop.c:1455 ../src/libs/lib.c:550
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "show preset menu"
 msgstr "Показать меню профилей"
@@ -1308,15 +1508,24 @@ msgstr "Показать меню профилей"
 msgid "multiple instances actions"
 msgstr "Действия с несколькими копиями"
 
+<<<<<<< HEAD
 #: ../src/develop/imageop.c:1999 ../src/libs/lib.c:830
 msgid "reset parameters"
 msgstr "Сбросить параметры"
 
 #: ../src/develop/imageop.c:2008 ../src/gui/preferences.c:403
+=======
+#: ../src/develop/imageop.c:1989 ../src/libs/lib.c:830
+msgid "reset parameters"
+msgstr "Сбросить параметры"
+
+#: ../src/develop/imageop.c:1998 ../src/gui/preferences.c:398
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:843
 msgid "presets"
 msgstr "Профили"
 
+<<<<<<< HEAD
 #: ../src/develop/lightroom.c:407
 msgid "cannot find lightroom xmp!"
 msgstr ""
@@ -1324,10 +1533,20 @@ msgstr ""
 #: ../src/develop/lightroom.c:432 ../src/develop/lightroom.c:454
 #: ../src/develop/lightroom.c:474 ../src/develop/lightroom.c:484
 #: ../src/develop/lightroom.c:505
+=======
+#: ../src/develop/lightroom.c:400
+msgid "cannot find lightroom xmp!"
+msgstr ""
+
+#: ../src/develop/lightroom.c:425 ../src/develop/lightroom.c:447
+#: ../src/develop/lightroom.c:467 ../src/develop/lightroom.c:477
+#: ../src/develop/lightroom.c:498
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "`%s' not a lightroom xmp!"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/lightroom.c:1405 ../src/libs/import.c:511
 msgid "tags"
 msgstr "Метки"
@@ -1341,11 +1560,30 @@ msgid "geotagging"
 msgstr "Геотеггинг"
 
 #: ../src/develop/lightroom.c:1432 ../src/libs/collect.h:37
+=======
+#: ../src/develop/lightroom.c:1324 ../src/libs/import.c:511
+msgid "tags"
+msgstr "Метки"
+
+#: ../src/develop/lightroom.c:1333 ../src/libs/tools/filter.c:128
+msgid "rating"
+msgstr "Оценка"
+
+#: ../src/develop/lightroom.c:1342 ../src/libs/geotagging.c:45
+msgid "geotagging"
+msgstr "Геотеггинг"
+
+#: ../src/develop/lightroom.c:1351 ../src/libs/collect.h:37
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/tools/filter.c:130
 msgid "color label"
 msgstr "Цветовая метка"
 
+<<<<<<< HEAD
 #: ../src/develop/lightroom.c:1442
+=======
+#: ../src/develop/lightroom.c:1361
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%s has been imported"
 msgid_plural "%s have been imported"
@@ -1691,6 +1929,7 @@ msgctxt "accel"
 msgid "switch view"
 msgstr "Переключить режим"
 
+<<<<<<< HEAD
 #: ../src/gui/gtkentry.c:193 ../src/imageio/storage/gallery.c:127
 #: ../src/imageio/storage/latex.c:127
 msgid "$(ROLL_NAME) - roll of the input image"
@@ -1773,6 +2012,90 @@ msgstr ""
 
 #: ../src/gui/gtkentry.c:209 ../src/imageio/storage/gallery.c:143
 #: ../src/imageio/storage/latex.c:143
+=======
+#: ../src/gui/gtkentry.c:193 ../src/imageio/storage/gallery.c:126
+#: ../src/imageio/storage/latex.c:126
+msgid "$(ROLL_NAME) - roll of the input image"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:194 ../src/imageio/storage/gallery.c:127
+#: ../src/imageio/storage/latex.c:127
+msgid "$(FILE_FOLDER) - folder containing the input image"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:195 ../src/imageio/storage/gallery.c:128
+#: ../src/imageio/storage/latex.c:128
+msgid "$(FILE_NAME) - basename of the input image"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:196 ../src/imageio/storage/gallery.c:129
+#: ../src/imageio/storage/latex.c:129
+msgid "$(FILE_EXTENSION) - extension of the input image"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:197 ../src/imageio/storage/gallery.c:130
+#: ../src/imageio/storage/latex.c:130
+msgid "$(SEQUENCE) - sequence number"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:198 ../src/imageio/storage/gallery.c:131
+#: ../src/imageio/storage/latex.c:131
+msgid "$(YEAR) - year"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:199 ../src/imageio/storage/gallery.c:132
+#: ../src/imageio/storage/latex.c:132
+msgid "$(MONTH) - month"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:200 ../src/imageio/storage/gallery.c:133
+#: ../src/imageio/storage/latex.c:133
+msgid "$(DAY) - day"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:201 ../src/imageio/storage/gallery.c:134
+#: ../src/imageio/storage/latex.c:134
+msgid "$(HOUR) - hour"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:202 ../src/imageio/storage/gallery.c:135
+#: ../src/imageio/storage/latex.c:135
+msgid "$(MINUTE) - minute"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:203 ../src/imageio/storage/gallery.c:136
+#: ../src/imageio/storage/latex.c:136
+msgid "$(SECOND) - second"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:204 ../src/imageio/storage/gallery.c:137
+#: ../src/imageio/storage/latex.c:137
+msgid "$(EXIF_YEAR) - exif year"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:205 ../src/imageio/storage/gallery.c:138
+#: ../src/imageio/storage/latex.c:138
+msgid "$(EXIF_MONTH) - exif month"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:206 ../src/imageio/storage/gallery.c:139
+#: ../src/imageio/storage/latex.c:139
+msgid "$(EXIF_DAY) - exif day"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:207 ../src/imageio/storage/gallery.c:140
+#: ../src/imageio/storage/latex.c:140
+msgid "$(EXIF_HOUR) - exif hour"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:208 ../src/imageio/storage/gallery.c:141
+#: ../src/imageio/storage/latex.c:141
+msgid "$(EXIF_MINUTE) - exif minute"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:209 ../src/imageio/storage/gallery.c:142
+#: ../src/imageio/storage/latex.c:142
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "$(EXIF_SECOND) - exif second"
 msgstr ""
 
@@ -1780,6 +2103,7 @@ msgstr ""
 msgid "$(EXIF_ISO) - iso value"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/gui/gtkentry.c:211 ../src/imageio/storage/gallery.c:144
 #: ../src/imageio/storage/latex.c:144
 msgid "$(STARS) - star rating"
@@ -1787,10 +2111,20 @@ msgstr ""
 
 #: ../src/gui/gtkentry.c:212 ../src/imageio/storage/gallery.c:145
 #: ../src/imageio/storage/latex.c:145
+=======
+#: ../src/gui/gtkentry.c:211 ../src/imageio/storage/gallery.c:143
+#: ../src/imageio/storage/latex.c:143
+msgid "$(STARS) - star rating"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:212 ../src/imageio/storage/gallery.c:144
+#: ../src/imageio/storage/latex.c:144
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "$(LABELS) - colorlabels"
 msgstr "Цветовая метка"
 
+<<<<<<< HEAD
 #: ../src/gui/gtkentry.c:213 ../src/imageio/storage/gallery.c:146
 #: ../src/imageio/storage/latex.c:146
 msgid "$(PICTURES_FOLDER) - pictures folder"
@@ -1803,6 +2137,20 @@ msgstr ""
 
 #: ../src/gui/gtkentry.c:215 ../src/imageio/storage/gallery.c:148
 #: ../src/imageio/storage/latex.c:148
+=======
+#: ../src/gui/gtkentry.c:213 ../src/imageio/storage/gallery.c:145
+#: ../src/imageio/storage/latex.c:145
+msgid "$(PICTURES_FOLDER) - pictures folder"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:214 ../src/imageio/storage/gallery.c:146
+#: ../src/imageio/storage/latex.c:146
+msgid "$(HOME) - home folder"
+msgstr ""
+
+#: ../src/gui/gtkentry.c:215 ../src/imageio/storage/gallery.c:147
+#: ../src/imageio/storage/latex.c:147
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "$(DESKTOP) - desktop folder"
 msgstr ""
 
@@ -1823,6 +2171,7 @@ msgid "name"
 msgstr "Название"
 
 #. exif
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:437 ../src/gui/preferences.c:1353
 #: ../src/gui/presets.c:420 ../src/libs/metadata_view.c:82
 msgid "model"
@@ -1835,39 +2184,77 @@ msgstr "Производитель"
 
 #: ../src/gui/preferences.c:451 ../src/gui/preferences.c:1369
 #: ../src/gui/presets.c:434 ../src/libs/collect.h:43
+=======
+#: ../src/gui/preferences.c:432 ../src/gui/preferences.c:1348
+#: ../src/gui/presets.c:419 ../src/libs/metadata_view.c:82
+msgid "model"
+msgstr "Модель"
+
+#: ../src/gui/preferences.c:439 ../src/gui/preferences.c:1356
+#: ../src/gui/presets.c:426 ../src/libs/metadata_view.c:83
+msgid "maker"
+msgstr "Производитель"
+
+#: ../src/gui/preferences.c:446 ../src/gui/preferences.c:1364
+#: ../src/gui/presets.c:433 ../src/libs/collect.h:43
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/metadata_view.c:84
 msgid "lens"
 msgstr "Объектив"
 
 #. iso
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:458 ../src/gui/preferences.c:1376
 #: ../src/gui/presets.c:441 ../src/libs/camera.c:597 ../src/libs/collect.h:44
+=======
+#: ../src/gui/preferences.c:453 ../src/gui/preferences.c:1371
+#: ../src/gui/presets.c:440 ../src/libs/camera.c:597 ../src/libs/collect.h:44
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/metadata_view.c:89
 msgid "iso"
 msgstr "ISO"
 
 #. exposure
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:465 ../src/gui/preferences.c:1389
 #: ../src/gui/presets.c:454 ../src/iop/exposure.c:42 ../src/iop/exposure.c:406
+=======
+#: ../src/gui/preferences.c:460 ../src/gui/preferences.c:1384
+#: ../src/gui/presets.c:453 ../src/iop/exposure.c:42 ../src/iop/exposure.c:406
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/relight.c:384 ../src/libs/metadata_view.c:86
 msgid "exposure"
 msgstr "Экспозиция"
 
 #. aperture
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:472 ../src/gui/preferences.c:1404
 #: ../src/gui/presets.c:469 ../src/libs/camera.c:549 ../src/libs/camera.c:558
+=======
+#: ../src/gui/preferences.c:467 ../src/gui/preferences.c:1399
+#: ../src/gui/presets.c:468 ../src/libs/camera.c:549 ../src/libs/camera.c:558
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/collect.h:45 ../src/libs/metadata_view.c:85
 msgid "aperture"
 msgstr "Диафрагма"
 
 #. focal length
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:479 ../src/gui/preferences.c:1419
 #: ../src/gui/presets.c:484 ../src/libs/camera.c:568
+=======
+#: ../src/gui/preferences.c:474 ../src/gui/preferences.c:1414
+#: ../src/gui/presets.c:483 ../src/libs/camera.c:568
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/metadata_view.c:87
 msgid "focal length"
 msgstr "Фокусное расстояние"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:486 ../src/iop/borders.c:1064
+=======
+#: ../src/gui/preferences.c:481 ../src/iop/borders.c:1066
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/exposure.c:411 ../src/iop/levels.c:286
 #: ../src/iop/tonecurve.c:554
 msgid "auto"
@@ -1898,8 +2285,13 @@ msgstr "Импортировать"
 
 #. Export button
 #. export button
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:613 ../src/libs/export.c:656
 #: ../src/libs/styles.c:410
+=======
+#: ../src/gui/preferences.c:608 ../src/libs/export.c:621
+#: ../src/libs/styles.c:409
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "export"
 msgstr "Экспортировать"
 
@@ -1907,17 +2299,26 @@ msgstr "Экспортировать"
 msgid "press key combination to remap..."
 msgstr "Нажмите новую комбинацию клавиш..."
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1076 ../src/gui/presets.c:192
+=======
+#: ../src/gui/preferences.c:1071 ../src/gui/presets.c:191
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:315
 #, c-format
 msgid "do you really want to delete the preset `%s'?"
 msgstr "Вы действительно хотите удалить профиль «%s»?"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1077 ../src/gui/presets.c:193
+=======
+#: ../src/gui/preferences.c:1072 ../src/gui/presets.c:192
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:316
 msgid "delete preset?"
 msgstr "Удалить этот профиль?"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1113
 msgid "select file to export"
 msgstr "Выберите файл для сохранения схемы клавиш"
@@ -1927,6 +2328,17 @@ msgid "select file to import"
 msgstr "Выберите файл загружаемой схемы клавиш"
 
 #: ../src/gui/preferences.c:1194
+=======
+#: ../src/gui/preferences.c:1108
+msgid "select file to export"
+msgstr "Выберите файл для сохранения схемы клавиш"
+
+#: ../src/gui/preferences.c:1139
+msgid "select file to import"
+msgstr "Выберите файл загружаемой схемы клавиш"
+
+#: ../src/gui/preferences.c:1189
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "Are you sure you want to restore the default keybindings?  This will erase "
 "any modifications you have made."
@@ -1934,50 +2346,83 @@ msgstr ""
 "Вы действительно хотите восстановить исходные клавиатурные комбинации?  Все "
 "внесённые изменения будут стёрты."
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1302 ../src/gui/presets.c:368
+=======
+#: ../src/gui/preferences.c:1297 ../src/gui/presets.c:367
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "edit `%s' for module `%s'"
 msgstr "Изменить профиль «%s» для модуля «%s»"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1331 ../src/gui/presets.c:399
+=======
+#: ../src/gui/preferences.c:1326 ../src/gui/presets.c:398
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:234
 msgid "description or further information"
 msgstr "Описание профиля"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1333 ../src/gui/presets.c:401
+=======
+#: ../src/gui/preferences.c:1328 ../src/gui/presets.c:400
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "auto apply this preset to matching images"
 msgstr ""
 "Автоматически применять к фотографиям,\n"
 "соответствующим указанным критериям"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1335 ../src/gui/presets.c:403
+=======
+#: ../src/gui/preferences.c:1330 ../src/gui/presets.c:402
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "only show this preset for matching images"
 msgstr ""
 "Показывать этот профиль только для фотографий, \n"
 "соответствующих указанным критериям"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1336 ../src/gui/presets.c:404
+=======
+#: ../src/gui/preferences.c:1331 ../src/gui/presets.c:403
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "be very careful with this option. this might be the last time you see your "
 "preset."
 msgstr "Будьте осторожны — возможно, вы видите этот профиль в последний раз"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1352 ../src/gui/presets.c:419
+=======
+#: ../src/gui/preferences.c:1347 ../src/gui/presets.c:418
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, no-c-format
 msgid "string to match model (use % as wildcard)"
 msgstr "Строка для поиска модели камеры (% используется для выбора всего)"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1360 ../src/gui/presets.c:426
+=======
+#: ../src/gui/preferences.c:1355 ../src/gui/presets.c:425
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, no-c-format
 msgid "string to match maker (use % as wildcard)"
 msgstr ""
 "Строка для поиска производителя камеры (% используется для выбора всего)"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1368 ../src/gui/presets.c:433
+=======
+#: ../src/gui/preferences.c:1363 ../src/gui/presets.c:432
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, no-c-format
 msgid "string to match lens (use % as wildcard)"
 msgstr "Строка для поиска модели объектива (% используется для выбора всего)"
 
+<<<<<<< HEAD
 #: ../src/gui/preferences.c:1380 ../src/gui/presets.c:445
 msgid "minimum iso value"
 msgstr "Минимальное значение ISO"
@@ -2011,13 +2456,53 @@ msgid "maximum focal length"
 msgstr "Максимальное фокусное расстояние"
 
 #: ../src/gui/presets.c:147 ../src/gui/presets.c:789 ../src/gui/presets.c:802
+=======
+#: ../src/gui/preferences.c:1375 ../src/gui/presets.c:444
+msgid "minimum iso value"
+msgstr "Минимальное значение ISO"
+
+#: ../src/gui/preferences.c:1379 ../src/gui/presets.c:448
+msgid "maximum iso value"
+msgstr "Максимальное значение ISO"
+
+#: ../src/gui/preferences.c:1389 ../src/gui/presets.c:458
+msgid "minimum exposure time"
+msgstr "Минимальное время экспозиции"
+
+#: ../src/gui/preferences.c:1390 ../src/gui/presets.c:459
+msgid "maximum exposure time"
+msgstr "Максимальное время экспозиции"
+
+#: ../src/gui/preferences.c:1404 ../src/gui/presets.c:473
+msgid "minimum aperture value"
+msgstr "Минимальное значение диафрагмы"
+
+#: ../src/gui/preferences.c:1405 ../src/gui/presets.c:474
+msgid "maximum aperture value"
+msgstr "Максимальное значение диафрагмы"
+
+#: ../src/gui/preferences.c:1421 ../src/gui/presets.c:490
+msgid "minimum focal length"
+msgstr "Минимальное фокусное расстояние"
+
+#: ../src/gui/preferences.c:1422 ../src/gui/presets.c:491
+msgid "maximum focal length"
+msgstr "Максимальное фокусное расстояние"
+
+#: ../src/gui/presets.c:146 ../src/gui/presets.c:788 ../src/gui/presets.c:801
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:73
 msgid "(default)"
 msgstr "(по умолчанию)"
 
 #. then show edit dialog
+<<<<<<< HEAD
 #: ../src/gui/presets.c:223 ../src/gui/presets.c:597 ../src/gui/presets.c:604
 #: ../src/gui/presets.c:606 ../src/gui/presets.c:608 ../src/libs/lib.c:275
+=======
+#: ../src/gui/presets.c:222 ../src/gui/presets.c:596 ../src/gui/presets.c:603
+#: ../src/gui/presets.c:605 ../src/gui/presets.c:607 ../src/libs/lib.c:275
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/lib.c:283 ../src/libs/lib.c:291 ../src/libs/lib.c:293
 #: ../src/libs/lib.c:295
 msgid "new preset"
@@ -2031,7 +2516,11 @@ msgstr "Дайте профилю название"
 msgid "unnamed preset"
 msgstr "Безымянный профиль"
 
+<<<<<<< HEAD
 #: ../src/gui/presets.c:256 ../src/libs/lib.c:138
+=======
+#: ../src/gui/presets.c:255 ../src/libs/lib.c:138
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid ""
 "preset `%s' already exists.\n"
@@ -2040,11 +2529,19 @@ msgstr ""
 "Профиль «%s» уже существует.\n"
 "Вы хотите его перезаписать?"
 
+<<<<<<< HEAD
 #: ../src/gui/presets.c:259 ../src/libs/lib.c:141
 msgid "overwrite preset?"
 msgstr "Перезаписать профиль?"
 
 #: ../src/gui/presets.c:395 ../src/libs/lib.c:230
+=======
+#: ../src/gui/presets.c:258 ../src/libs/lib.c:141
+msgid "overwrite preset?"
+msgstr "Перезаписать профиль?"
+
+#: ../src/gui/presets.c:394 ../src/libs/lib.c:230
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "name of the preset"
 msgstr "Имя профиля"
 
@@ -2052,6 +2549,7 @@ msgstr "Имя профиля"
 msgid "disabled: wrong module version"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/gui/presets.c:832 ../src/libs/lib.c:446
 msgid "edit this preset.."
 msgstr "Изменить этот профиль"
@@ -2065,6 +2563,21 @@ msgid "store new preset.."
 msgstr "Создать новый профиль..."
 
 #: ../src/gui/presets.c:849 ../src/libs/lib.c:464
+=======
+#: ../src/gui/presets.c:831 ../src/libs/lib.c:446
+msgid "edit this preset.."
+msgstr "Изменить этот профиль"
+
+#: ../src/gui/presets.c:835 ../src/libs/lib.c:450
+msgid "delete this preset"
+msgstr "Удалить этот профиль"
+
+#: ../src/gui/presets.c:841 ../src/libs/lib.c:457
+msgid "store new preset.."
+msgstr "Создать новый профиль..."
+
+#: ../src/gui/presets.c:848 ../src/libs/lib.c:464
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "update preset"
 msgstr "Обновить профиль"
 
@@ -2099,7 +2612,11 @@ msgstr "Введите имя нового стиля"
 msgid "enter a description for the new style, this description is searchable"
 msgstr "Введите описание нового стиля, по которому выполняется поиск"
 
+<<<<<<< HEAD
 #: ../src/gui/styles_dialog.c:359 ../src/gui/styles_dialog.c:372
+=======
+#: ../src/gui/styles_dialog.c:350 ../src/gui/styles_dialog.c:363
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/gui/hist_dialog.c:181
 msgid "include"
 msgstr "Включить"
@@ -2108,7 +2625,11 @@ msgstr "Включить"
 msgid "update"
 msgstr "Обновить"
 
+<<<<<<< HEAD
 #: ../src/gui/styles_dialog.c:401 ../src/gui/styles_dialog.c:408
+=======
+#: ../src/gui/styles_dialog.c:392 ../src/gui/styles_dialog.c:399
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/gui/hist_dialog.c:192
 msgid "item"
 msgstr "Изменение"
@@ -2125,7 +2646,11 @@ msgstr ""
 msgid "can't copy history out of unaltered image"
 msgstr "Невозможно скопировать историю изменений в неизменённой фотографии"
 
+<<<<<<< HEAD
 #: ../src/imageio/format/copy.c:150 ../src/libs/copy_history.c:256
+=======
+#: ../src/imageio/format/copy.c:144 ../src/libs/copy_history.c:256
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/image.c:158
 msgid "copy"
 msgstr "Скопировать"
@@ -2140,6 +2665,7 @@ msgstr ""
 msgid "openexr"
 msgstr "OpenEXR"
 
+<<<<<<< HEAD
 #: ../src/imageio/format/j2k.c:557
 msgid "jpeg 2000"
 msgstr ""
@@ -2153,10 +2679,26 @@ msgid "j2k"
 msgstr ""
 
 #: ../src/imageio/format/j2k.c:604 ../src/imageio/format/jpeg.c:542
+=======
+#: ../src/imageio/format/j2k.c:540
+msgid "jpeg 2000"
+msgstr ""
+
+#: ../src/imageio/format/j2k.c:575
+msgid "jp2"
+msgstr ""
+
+#: ../src/imageio/format/j2k.c:580
+msgid "j2k"
+msgstr ""
+
+#: ../src/imageio/format/j2k.c:587 ../src/imageio/format/jpeg.c:669
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/camera.c:617
 msgid "quality"
 msgstr "Качество"
 
+<<<<<<< HEAD
 #: ../src/imageio/format/j2k.c:613
 msgid "dcp mode"
 msgstr "Режим DCP"
@@ -2170,6 +2712,21 @@ msgid "cinema2k, 48fps"
 msgstr ""
 
 #: ../src/imageio/format/j2k.c:621
+=======
+#: ../src/imageio/format/j2k.c:596
+msgid "dcp mode"
+msgstr "Режим DCP"
+
+#: ../src/imageio/format/j2k.c:602
+msgid "cinema2k, 24fps"
+msgstr ""
+
+#: ../src/imageio/format/j2k.c:603
+msgid "cinema2k, 48fps"
+msgstr ""
+
+#: ../src/imageio/format/j2k.c:604
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "cinema4k, 24fps"
 msgstr ""
 
@@ -2185,11 +2742,19 @@ msgstr "PFM float"
 msgid "8/16-bit png"
 msgstr "8/16-разрядный PNG"
 
+<<<<<<< HEAD
 #: ../src/imageio/format/png.c:414 ../src/imageio/format/tiff.c:263
 msgid "8-bit"
 msgstr "8-разрядный"
 
 #: ../src/imageio/format/png.c:419 ../src/imageio/format/tiff.c:268
+=======
+#: ../src/imageio/format/png.c:405 ../src/imageio/format/tiff.c:256
+msgid "8-bit"
+msgstr "8-разрядный"
+
+#: ../src/imageio/format/png.c:410 ../src/imageio/format/tiff.c:261
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "16-bit"
 msgstr "16-разрядный"
 
@@ -2205,34 +2770,60 @@ msgstr "8/16-разрядный TIFF"
 msgid "file on disk"
 msgstr "файлы на диске"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/disk.c:113 ../src/imageio/storage/gallery.c:155
 #: ../src/imageio/storage/latex.c:155
+=======
+#: ../src/imageio/storage/disk.c:112 ../src/imageio/storage/gallery.c:154
+#: ../src/imageio/storage/latex.c:154
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "enter the path where to put exported images\n"
 "recognized variables:"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/disk.c:200 ../src/imageio/storage/gallery.c:252
 #: ../src/imageio/storage/latex.c:249
+=======
+#: ../src/imageio/storage/disk.c:199 ../src/imageio/storage/gallery.c:251
+#: ../src/imageio/storage/latex.c:248
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "could not create directory `%s'!"
 msgstr "Не удалось создать каталог «%s»!"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/disk.c:207
+=======
+#: ../src/imageio/storage/disk.c:206
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "could not write to directory `%s'!"
 msgstr "Не удалось записать в каталог «%s»!"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/disk.c:240 ../src/imageio/storage/email.c:107
 #: ../src/imageio/storage/facebook.c:1191 ../src/imageio/storage/flickr.c:670
 #: ../src/imageio/storage/gallery.c:327 ../src/imageio/storage/gallery.c:346
 #: ../src/imageio/storage/picasa.c:1484
+=======
+#: ../src/imageio/storage/disk.c:239 ../src/imageio/storage/email.c:106
+#: ../src/imageio/storage/facebook.c:1190 ../src/imageio/storage/flickr.c:669
+#: ../src/imageio/storage/gallery.c:326 ../src/imageio/storage/gallery.c:345
+#: ../src/imageio/storage/picasa.c:1483
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "could not export to file `%s'!"
 msgstr "Не удалось экспортировать в файл «%s»!"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/disk.c:256 ../src/imageio/storage/email.c:115
 #: ../src/imageio/storage/gallery.c:356 ../src/imageio/storage/latex.c:339
+=======
+#: ../src/imageio/storage/disk.c:255 ../src/imageio/storage/email.c:114
+#: ../src/imageio/storage/gallery.c:355 ../src/imageio/storage/latex.c:338
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%d/%d exported to `%s%s'"
 msgstr "%d/%d экспортировано в %s%s"
@@ -2245,13 +2836,21 @@ msgstr "отправить по почте"
 msgid "images exported from darktable"
 msgstr "Изображения, экспортированные из darktable"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:242
+=======
+#: ../src/imageio/storage/facebook.c:241
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "[facebook] unexpeted url format\n"
 msgstr ""
 
 #. //////////// build & show the validation dialog
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:603
+=======
+#: ../src/imageio/storage/facebook.c:602
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "step 1: a new window or tab of your browser should have been loaded. you "
 "have to login into your facebook account there and authorize darktable to "
@@ -2261,13 +2860,18 @@ msgstr ""
 "авторизоваться и разрешить darktable доступ к вашей учётной записи для того, "
 "чтобы в дальнейшем загружать туда фотографии."
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:606 ../src/imageio/storage/picasa.c:837
+=======
+#: ../src/imageio/storage/facebook.c:605 ../src/imageio/storage/picasa.c:836
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "step 2: paste your browser url and click the ok button once you are done."
 msgstr ""
 "Шаг 2: Скопируйте адрес из строки браузера и вставьте его в строку ниже, "
 "затем нажмите ОК."
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:614
 msgid "Facebook authentication"
 msgstr "Авторизация на Facebook"
@@ -2303,10 +2907,48 @@ msgstr "Создать новый альбом"
 
 #: ../src/imageio/storage/facebook.c:925 ../src/imageio/storage/picasa.c:1107
 #: ../src/imageio/storage/picasa.c:1267
+=======
+#: ../src/imageio/storage/facebook.c:613
+msgid "Facebook authentication"
+msgstr "Авторизация на Facebook"
+
+#: ../src/imageio/storage/facebook.c:619 ../src/imageio/storage/picasa.c:850
+msgid "url:"
+msgstr "Адрес:"
+
+#: ../src/imageio/storage/facebook.c:639 ../src/imageio/storage/picasa.c:870
+msgid "please enter the validation url"
+msgstr ""
+
+#: ../src/imageio/storage/facebook.c:650 ../src/imageio/storage/picasa.c:882
+msgid "the given url is not valid, it should look like: "
+msgstr ""
+
+#: ../src/imageio/storage/facebook.c:756 ../src/imageio/storage/picasa.c:1013
+msgid "new account"
+msgstr "Новая учётная запись"
+
+#: ../src/imageio/storage/facebook.c:763 ../src/imageio/storage/picasa.c:1020
+msgid "other account"
+msgstr "Другая учётная запись"
+
+#: ../src/imageio/storage/facebook.c:794 ../src/imageio/storage/picasa.c:1050
+msgid "unable to retreive the album list"
+msgstr "Не удалось получить список альбомов"
+
+#: ../src/imageio/storage/facebook.c:802 ../src/imageio/storage/flickr.c:387
+#: ../src/imageio/storage/flickr.c:415 ../src/imageio/storage/picasa.c:1058
+msgid "create new album"
+msgstr "Создать новый альбом"
+
+#: ../src/imageio/storage/facebook.c:924 ../src/imageio/storage/picasa.c:1106
+#: ../src/imageio/storage/picasa.c:1266
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "logout"
 msgstr "Выйти"
 
 #. Set default permission to private
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:929 ../src/imageio/storage/facebook.c:942
 #: ../src/imageio/storage/facebook.c:969
 #: ../src/imageio/storage/facebook.c:1072 ../src/imageio/storage/flickr.c:526
@@ -2316,18 +2958,36 @@ msgid "login"
 msgstr "Войти"
 
 #: ../src/imageio/storage/facebook.c:1006
+=======
+#: ../src/imageio/storage/facebook.c:928 ../src/imageio/storage/facebook.c:941
+#: ../src/imageio/storage/facebook.c:968
+#: ../src/imageio/storage/facebook.c:1071 ../src/imageio/storage/flickr.c:525
+#: ../src/imageio/storage/picasa.c:1112 ../src/imageio/storage/picasa.c:1270
+#: ../src/imageio/storage/picasa.c:1283 ../src/imageio/storage/picasa.c:1362
+msgid "login"
+msgstr "Войти"
+
+#: ../src/imageio/storage/facebook.c:1005
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "facebook webalbum"
 msgstr "Альбом Facebook"
 
 #. create labels
 #. xmp
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:1019 ../src/imageio/storage/flickr.c:480
 #: ../src/imageio/storage/gallery.c:168 ../src/imageio/storage/latex.c:168
 #: ../src/imageio/storage/picasa.c:1312 ../src/libs/collect.h:38
+=======
+#: ../src/imageio/storage/facebook.c:1018 ../src/imageio/storage/flickr.c:479
+#: ../src/imageio/storage/gallery.c:167 ../src/imageio/storage/latex.c:167
+#: ../src/imageio/storage/picasa.c:1311 ../src/libs/collect.h:38
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/metadata.c:303 ../src/libs/metadata_view.c:95
 msgid "title"
 msgstr "Название"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:1020 ../src/imageio/storage/flickr.c:481
 #: ../src/imageio/storage/picasa.c:1313
 msgid "summary"
@@ -2362,11 +3022,51 @@ msgid "unable to create album"
 msgstr "Не удалось создать альбом"
 
 #: ../src/imageio/storage/facebook.c:1217 ../src/imageio/storage/picasa.c:1510
+=======
+#: ../src/imageio/storage/facebook.c:1019 ../src/imageio/storage/flickr.c:480
+#: ../src/imageio/storage/picasa.c:1312
+msgid "summary"
+msgstr "Описание"
+
+#: ../src/imageio/storage/facebook.c:1020 ../src/imageio/storage/picasa.c:1313
+msgid "privacy"
+msgstr "Кому видно"
+
+#: ../src/imageio/storage/facebook.c:1060
+msgid "Only Me"
+msgstr "Только мне"
+
+#: ../src/imageio/storage/facebook.c:1062
+msgid "Friends"
+msgstr "Друзьям"
+
+#: ../src/imageio/storage/facebook.c:1064
+msgid "Public"
+msgstr "Всем"
+
+#: ../src/imageio/storage/facebook.c:1066
+msgid "Friends of Friends"
+msgstr "Друзьям друзей"
+
+#: ../src/imageio/storage/facebook.c:1199 ../src/imageio/storage/picasa.c:1492
+msgid "unable to create album, no title provided"
+msgstr "Невозможно создать альбом, заголовок не указан"
+
+#: ../src/imageio/storage/facebook.c:1206 ../src/imageio/storage/picasa.c:1499
+msgid "unable to create album"
+msgstr "Не удалось создать альбом"
+
+#: ../src/imageio/storage/facebook.c:1216 ../src/imageio/storage/picasa.c:1509
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "unable to export photo to webalbum"
 msgstr "Невозможно экспортировать фото в альбом"
 
 #. this makes sense only if the export was successful
+<<<<<<< HEAD
 #: ../src/imageio/storage/facebook.c:1234
+=======
+#: ../src/imageio/storage/facebook.c:1233
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid "%d/%d exported to facebook webalbum"
 msgstr "%d/%d экспортировано в альбом Flickr"
@@ -2376,6 +3076,19 @@ msgstr "%d/%d экспортировано в альбом Flickr"
 msgid "flickr authentication: %s"
 msgstr "Авторизация на Flickr: %s"
 
+<<<<<<< HEAD
+=======
+#: ../src/imageio/storage/flickr.c:190
+msgid ""
+"step 1: a new window or tab of your browser should have been loaded. you "
+"have to login into your flickr account there and authorize darktable to "
+"upload photos before continuing."
+msgstr ""
+"Шаг 1: Сейчас Flickr должен открыться в браузере. Вам нужно будет "
+"авторизоваться и разрешить darktable доступ к вашей учётной записи для того, "
+"чтобы в дальнейшем загружать туда фотографии."
+
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/imageio/storage/flickr.c:191
 msgid ""
 "step 1: a new window or tab of your browser should have been loaded. you "
@@ -2400,12 +3113,21 @@ msgstr "Авторизация на Flickr"
 msgid "flickr webalbum"
 msgstr "Альбом Flickr"
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/flickr.c:332 ../src/imageio/storage/flickr.c:372
 #: ../src/imageio/storage/flickr.c:849 ../src/imageio/storage/flickr.c:855
 msgid "not authenticated"
 msgstr "Нет авторизации"
 
 #: ../src/imageio/storage/flickr.c:368 ../src/imageio/storage/flickr.c:845
+=======
+#: ../src/imageio/storage/flickr.c:331 ../src/imageio/storage/flickr.c:371
+#: ../src/imageio/storage/flickr.c:840 ../src/imageio/storage/flickr.c:846
+msgid "not authenticated"
+msgstr "Нет авторизации"
+
+#: ../src/imageio/storage/flickr.c:367 ../src/imageio/storage/flickr.c:836
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "authenticated"
 msgstr "Авторизация выполнена"
 
@@ -2494,7 +3216,11 @@ msgid "enter the title of the book"
 msgstr "Введите название книги"
 
 #. //////////// build & show the validation dialog
+<<<<<<< HEAD
 #: ../src/imageio/storage/picasa.c:834
+=======
+#: ../src/imageio/storage/picasa.c:833
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "step 1: a new window or tab of your browser should have been loaded. you "
 "have to login into your picasa account there and authorize darktable to "
@@ -2504,6 +3230,7 @@ msgstr ""
 "авторизоваться и разрешить darktable доступ к вашей учётной записи для того, "
 "чтобы в дальнейшем загружать туда фотографии."
 
+<<<<<<< HEAD
 #: ../src/imageio/storage/picasa.c:845
 msgid "picasa authentication"
 msgstr "Авторизация на Picasa"
@@ -2517,11 +3244,30 @@ msgid "private"
 msgstr ""
 
 #: ../src/imageio/storage/picasa.c:1358
+=======
+#: ../src/imageio/storage/picasa.c:844
+msgid "picasa authentication"
+msgstr "Авторизация на Picasa"
+
+#: ../src/imageio/storage/picasa.c:1298
+msgid "picasa webalbum"
+msgstr "Picasa WebAlbum"
+
+#: ../src/imageio/storage/picasa.c:1355
+msgid "private"
+msgstr ""
+
+#: ../src/imageio/storage/picasa.c:1357
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "public"
 msgstr ""
 
 #. this makes sense only if the export was successful
+<<<<<<< HEAD
 #: ../src/imageio/storage/picasa.c:1527
+=======
+#: ../src/imageio/storage/picasa.c:1526
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "%d/%d exported to picasa webalbum"
 msgstr "%d/%d экспортировано в альбом Picasa WebAlbum"
@@ -2634,8 +3380,12 @@ msgstr "Резкость"
 msgid "sharpness of edges at each feature size"
 msgstr "Менять резкость краёв для каждого уровня детализации раздельно"
 
+<<<<<<< HEAD
 #: ../src/iop/atrous.c:1457 ../src/iop/colorzones.c:1045
 #: ../src/iop/soften.c:601
+=======
+#: ../src/iop/atrous.c:1457 ../src/iop/soften.c:601
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "mix"
 msgstr "Смешивание"
 
@@ -2874,8 +3624,13 @@ msgid "select frame line color"
 msgstr "Выберите цвет линии рамки"
 
 #. add import singel image buttons
+<<<<<<< HEAD
 #: ../src/iop/borders.c:981 ../src/iop/clipping.c:1737
 #: ../src/iop/watermark.c:1057 ../src/libs/import.c:814
+=======
+#: ../src/iop/borders.c:983 ../src/iop/clipping.c:1740
+#: ../src/libs/import.c:814
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "image"
 msgstr "Фотография"
 
@@ -2891,6 +3646,7 @@ msgstr "95:33"
 msgid "2:1"
 msgstr "2:1"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:985 ../src/iop/clipping.c:1746
 msgid "16:9"
 msgstr "16:9"
@@ -2900,6 +3656,17 @@ msgid "golden cut"
 msgstr "Золотое сечение"
 
 #: ../src/iop/borders.c:987 ../src/iop/clipping.c:1740
+=======
+#: ../src/iop/borders.c:987 ../src/iop/clipping.c:1749
+msgid "16:9"
+msgstr "16:9"
+
+#: ../src/iop/borders.c:988 ../src/iop/clipping.c:1741
+msgid "golden cut"
+msgstr "Золотое сечение"
+
+#: ../src/iop/borders.c:989 ../src/iop/clipping.c:1743
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "3:2"
 msgstr "3:2"
 
@@ -2907,6 +3674,7 @@ msgstr "3:2"
 msgid "A4"
 msgstr "A4"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:989 ../src/iop/clipping.c:1745
 msgid "DIN"
 msgstr "DIN"
@@ -2916,6 +3684,17 @@ msgid "4:3"
 msgstr "4:3"
 
 #: ../src/iop/borders.c:991 ../src/iop/clipping.c:1744
+=======
+#: ../src/iop/borders.c:991 ../src/iop/clipping.c:1748
+msgid "DIN"
+msgstr "DIN"
+
+#: ../src/iop/borders.c:992 ../src/iop/clipping.c:1745
+msgid "4:3"
+msgstr "4:3"
+
+#: ../src/iop/borders.c:993 ../src/iop/clipping.c:1747
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "square"
 msgstr "Квадрат"
 
@@ -2923,6 +3702,7 @@ msgstr "Квадрат"
 msgid "constant border"
 msgstr "Постоянная толщина"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1014 ../src/iop/borders.c:1019
 msgid "center"
 msgstr "Центр"
@@ -2940,6 +3720,25 @@ msgid "5/8"
 msgstr "5/8"
 
 #: ../src/iop/borders.c:1018 ../src/iop/borders.c:1023
+=======
+#: ../src/iop/borders.c:1016 ../src/iop/borders.c:1021
+msgid "center"
+msgstr "Центр"
+
+#: ../src/iop/borders.c:1017 ../src/iop/borders.c:1022
+msgid "1/3"
+msgstr "1/3"
+
+#: ../src/iop/borders.c:1018 ../src/iop/borders.c:1023
+msgid "3/8"
+msgstr "3/8"
+
+#: ../src/iop/borders.c:1019 ../src/iop/borders.c:1024
+msgid "5/8"
+msgstr "5/8"
+
+#: ../src/iop/borders.c:1020 ../src/iop/borders.c:1025
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "2/3"
 msgstr "2/3"
 
@@ -2951,7 +3750,11 @@ msgstr "Размер"
 msgid "size of the border in percent of the full image"
 msgstr "Размер рамки в процентах от всего изображения"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1056 ../src/iop/clipping.c:1735
+=======
+#: ../src/iop/borders.c:1058 ../src/iop/clipping.c:1738
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "aspect"
 msgstr "Формат"
 
@@ -2959,11 +3762,19 @@ msgstr "Формат"
 msgid "select the aspect ratio or right click and type your own (w:h)"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1063 ../src/iop/flip.c:81
 msgid "orientation"
 msgstr "Ориентация"
 
 #: ../src/iop/borders.c:1065
+=======
+#: ../src/iop/borders.c:1065 ../src/iop/flip.c:81
+msgid "orientation"
+msgstr "Ориентация"
+
+#: ../src/iop/borders.c:1067
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "portrait"
 msgstr "Портрет"
@@ -2980,7 +3791,11 @@ msgstr ""
 msgid "horizontal position"
 msgstr "Положение по горизонтали"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1076
+=======
+#: ../src/iop/borders.c:1078
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "select the horizontal position ratio relative to top or right click and type "
 "your own (y:h)"
@@ -2990,7 +3805,11 @@ msgstr ""
 msgid "vertical position"
 msgstr "Положение по вертикали"
 
+<<<<<<< HEAD
 #: ../src/iop/borders.c:1082
+=======
+#: ../src/iop/borders.c:1084
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "select the vertical position ratio relative to left or right click and type "
 "your own (x:w)"
@@ -3055,8 +3874,13 @@ msgstr "Канал вывода"
 
 #. dt_bauhaus_slider_set_format(g->gslider2, "");
 #: ../src/iop/channelmixer.c:438 ../src/iop/colorcorrection.c:282
+<<<<<<< HEAD
 #: ../src/iop/colorize.c:431 ../src/iop/colorzones.c:1019
 #: ../src/iop/colorzones.c:1055 ../src/iop/graduatednd.c:1064
+=======
+#: ../src/iop/colorize.c:431 ../src/iop/colorzones.c:974
+#: ../src/iop/colorzones.c:1003 ../src/iop/graduatednd.c:1064
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/lowpass.c:523 ../src/iop/soften.c:584
 #: ../src/iop/splittoning.c:554 ../src/iop/vignette.c:1129
 msgid "saturation"
@@ -3134,6 +3958,7 @@ msgstr "Трансформации"
 msgid "invalid ratio format. it should be \"number:number\""
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1460 ../src/iop/clipping.c:1701
 #: ../src/iop/clipping.c:1718
 msgid "vertical"
@@ -3145,6 +3970,19 @@ msgid "horizontal"
 msgstr "Горизонталь"
 
 #: ../src/iop/clipping.c:1462 ../src/iop/clipping.c:1720
+=======
+#: ../src/iop/clipping.c:1463 ../src/iop/clipping.c:1704
+#: ../src/iop/clipping.c:1721
+msgid "vertical"
+msgstr "Вертикаль"
+
+#: ../src/iop/clipping.c:1464 ../src/iop/clipping.c:1703
+#: ../src/iop/clipping.c:1722
+msgid "horizontal"
+msgstr "Горизонталь"
+
+#: ../src/iop/clipping.c:1465 ../src/iop/clipping.c:1723
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "full"
 msgstr ""
 
@@ -3156,12 +3994,20 @@ msgstr "Старая система"
 msgid "correction applied"
 msgstr "Корректировка применена"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1698 ../src/iop/clipping.c:1776
+=======
+#: ../src/iop/clipping.c:1701 ../src/iop/clipping.c:1779
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/live_view.c:335
 msgid "flip"
 msgstr "Отразить"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1702 ../src/iop/clipping.c:1780
+=======
+#: ../src/iop/clipping.c:1705 ../src/iop/clipping.c:1783
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/live_view.c:339
 msgid "both"
 msgstr ""
@@ -3232,6 +4078,7 @@ msgstr "10:8 в печати"
 msgid "set the aspect ratio (w:h)"
 msgstr "Установить соотношение сторон (ш:в)"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1759 ../src/libs/live_view.c:323
 msgid "guides"
 msgstr "Композиция"
@@ -3289,11 +4136,74 @@ msgid "golden spiral"
 msgstr "Золотая спираль"
 
 #: ../src/iop/clipping.c:1790 ../src/iop/lens.c:1711
+=======
+#: ../src/iop/clipping.c:1762 ../src/libs/live_view.c:323
+msgid "guides"
+msgstr "Композиция"
+
+#: ../src/iop/clipping.c:1764 ../src/libs/live_view.c:325
+msgid "grid"
+msgstr "Сетка"
+
+#: ../src/iop/clipping.c:1765 ../src/libs/live_view.c:326
+msgid "rules of thirds"
+msgstr "Правило третей"
+
+#: ../src/iop/clipping.c:1766 ../src/libs/live_view.c:327
+msgid "diagonal method"
+msgstr "Диагонали"
+
+#: ../src/iop/clipping.c:1767 ../src/libs/live_view.c:328
+msgid "harmonious triangles"
+msgstr "Гармоничные треугольники"
+
+#: ../src/iop/clipping.c:1768 ../src/libs/live_view.c:329
+msgid "golden mean"
+msgstr "Золотое сечение"
+
+#: ../src/iop/clipping.c:1774 ../src/libs/live_view.c:330
+msgid "display guide lines to help compose your photograph"
+msgstr "Различные варианты подсказок по композиции при кадрировании"
+
+#: ../src/iop/clipping.c:1781 ../src/libs/live_view.c:337
+msgid "horizontally"
+msgstr "По горизонтали"
+
+#: ../src/iop/clipping.c:1782 ../src/libs/live_view.c:338
+msgid "vertically"
+msgstr "По вертикали"
+
+#: ../src/iop/clipping.c:1784 ../src/libs/live_view.c:340
+msgid "flip guides"
+msgstr "Отразить направляющие"
+
+#: ../src/iop/clipping.c:1789 ../src/libs/live_view.c:344
+msgid "extra"
+msgstr ""
+
+#: ../src/iop/clipping.c:1790 ../src/libs/live_view.c:345
+msgid "golden sections"
+msgstr "Золотые деления"
+
+#: ../src/iop/clipping.c:1791 ../src/libs/live_view.c:346
+msgid "golden spiral sections"
+msgstr "Деления спирали"
+
+#: ../src/iop/clipping.c:1792 ../src/libs/live_view.c:347
+msgid "golden spiral"
+msgstr "Золотая спираль"
+
+#: ../src/iop/clipping.c:1793 ../src/iop/lens.c:1713
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/libs/live_view.c:348 ../src/libs/tools/filter.c:101
 msgid "all"
 msgstr "Все"
 
+<<<<<<< HEAD
 #: ../src/iop/clipping.c:1791 ../src/libs/live_view.c:349
+=======
+#: ../src/iop/clipping.c:1794 ../src/libs/live_view.c:349
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "show some extra guides"
 msgstr ""
 
@@ -3409,7 +4319,11 @@ msgstr ""
 
 #: ../src/iop/colorin.c:756 ../src/iop/colorin.c:788 ../src/iop/colorout.c:909
 #: ../src/iop/colorout.c:910 ../src/iop/colorout.c:911
+<<<<<<< HEAD
 #: ../src/libs/export.c:556
+=======
+#: ../src/libs/export.c:521
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "linear RGB"
 msgstr "Линейный RGB"
 
@@ -3427,7 +4341,11 @@ msgid "Lab"
 msgstr "LAB"
 
 #: ../src/iop/colorin.c:896 ../src/iop/denoiseprofile.c:1712
+<<<<<<< HEAD
 #: ../src/libs/export.c:597
+=======
+#: ../src/libs/export.c:562
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "profile"
 msgstr "Профиль"
 
@@ -3568,23 +4486,39 @@ msgid "output intent"
 msgstr "Цветопередача вывода"
 
 #: ../src/iop/colorout.c:869 ../src/iop/colorout.c:876
+<<<<<<< HEAD
 #: ../src/libs/export.c:525
+=======
+#: ../src/libs/export.c:490
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "perceptual"
 msgstr "Воспринимаемая"
 
 #: ../src/iop/colorout.c:870 ../src/iop/colorout.c:877
+<<<<<<< HEAD
 #: ../src/libs/export.c:526
+=======
+#: ../src/libs/export.c:491
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "relative colorimetric"
 msgstr "Отн. колориметрическая"
 
 #: ../src/iop/colorout.c:871 ../src/iop/colorout.c:878
+<<<<<<< HEAD
 #: ../src/libs/export.c:527
+=======
+#: ../src/libs/export.c:492
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "rendering intent"
 msgid "saturation"
 msgstr "Насыщенная"
 
 #: ../src/iop/colorout.c:872 ../src/iop/colorout.c:879
+<<<<<<< HEAD
 #: ../src/libs/export.c:528
+=======
+#: ../src/libs/export.c:493
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "absolute colorimetric"
 msgstr "Абс. колориметрическая"
 
@@ -3605,12 +4539,20 @@ msgid "display profile"
 msgstr "Профиль монитора"
 
 #. the system display profile is only suitable for display purposes
+<<<<<<< HEAD
 #: ../src/iop/colorout.c:905 ../src/libs/export.c:609
+=======
+#: ../src/iop/colorout.c:905 ../src/libs/export.c:574
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "system display profile"
 msgstr "Профиль монитора"
 
 #: ../src/iop/colorout.c:915 ../src/iop/colorout.c:916
+<<<<<<< HEAD
 #: ../src/iop/colorout.c:917 ../src/libs/export.c:537
+=======
+#: ../src/iop/colorout.c:917 ../src/libs/export.c:502
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "sRGB (web-safe)"
 msgstr "sRGB (для веба)"
 
@@ -3827,7 +4769,11 @@ msgstr "Найден вариант для ISO%d"
 msgid "interpolated from iso %d and %d"
 msgstr "Интерполировано между ISO%d и %d"
 
+<<<<<<< HEAD
 #: ../src/iop/denoiseprofile.c:1713 ../src/iop/lens.c:1866
+=======
+#: ../src/iop/denoiseprofile.c:1713 ../src/iop/lens.c:1868
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "mode"
 msgstr "Режим"
 
@@ -4268,7 +5214,11 @@ msgstr "Взять цвет плёнки с фотографии"
 msgid "lens correction"
 msgstr "Оптические искажения"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:71 ../src/iop/vignette.c:158 ../src/iop/watermark.c:164
+=======
+#: ../src/iop/lens.c:71 ../src/iop/vignette.c:158 ../src/iop/watermark.c:163
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "scale"
 msgstr "Масштаб"
@@ -4326,6 +5276,7 @@ msgstr ""
 "Байонет:\t\t%s\n"
 "Кроп-фактор:\t%.1f"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1281
 msgid "camera/lens not found - please select manually"
 msgstr ""
@@ -4335,6 +5286,17 @@ msgid "try to locate your camera/lens in the above two menus"
 msgstr ""
 
 #: ../src/iop/lens.c:1328
+=======
+#: ../src/iop/lens.c:1283
+msgid "camera/lens not found - please select manually"
+msgstr ""
+
+#: ../src/iop/lens.c:1285
+msgid "try to locate your camera/lens in the above two menus"
+msgstr ""
+
+#: ../src/iop/lens.c:1330
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy, c-format
 msgid ""
 "maker:\t\t%s\n"
@@ -4353,6 +5315,7 @@ msgstr ""
 "Тип:\t\t\t\t%s\n"
 "Байонеты:\t\t\t%s"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1374
 msgid "mm"
 msgstr "мм"
@@ -4454,10 +5417,114 @@ msgid "equisolid angle"
 msgstr ""
 
 #: ../src/iop/lens.c:1848
+=======
+#: ../src/iop/lens.c:1376
+msgid "mm"
+msgstr "мм"
+
+#: ../src/iop/lens.c:1377
+msgid "focal length (mm)"
+msgstr "Фокусное расстояние (мм)"
+
+#: ../src/iop/lens.c:1404
+msgid "f/"
+msgstr "f/"
+
+#: ../src/iop/lens.c:1405
+msgid "f-number (aperture)"
+msgstr "Число F (диафрагма)"
+
+#: ../src/iop/lens.c:1420
+msgid "d"
+msgstr "d"
+
+#: ../src/iop/lens.c:1421
+msgid "distance to subject"
+msgstr "Расстояние до объекта"
+
+#: ../src/iop/lens.c:1719
+msgid "distortion & TCA"
+msgstr "Искажения оптики и ХА"
+
+#: ../src/iop/lens.c:1725
+msgid "distortion & vignetting"
+msgstr "Искажения оптики и виньетирование"
+
+#: ../src/iop/lens.c:1731
+msgid "TCA & vignetting"
+msgstr "ХА и виньетирование"
+
+#: ../src/iop/lens.c:1737
+msgid "only distortion"
+msgstr "Только искажения оптики"
+
+#: ../src/iop/lens.c:1743
+msgid "only TCA"
+msgstr "Только ХА"
+
+#: ../src/iop/lens.c:1749
+msgid "only vignetting"
+msgstr "Только виньетирование"
+
+#: ../src/iop/lens.c:1772
+msgid "find camera"
+msgstr "Найти камеру"
+
+#: ../src/iop/lens.c:1789
+msgid "find lens"
+msgstr "Найти объектив"
+
+#: ../src/iop/lens.c:1822
+msgid "corrections"
+msgstr "Коррективы"
+
+#: ../src/iop/lens.c:1824
+msgid "which corrections to apply"
+msgstr "Какие коррективы применить"
+
+#: ../src/iop/lens.c:1839
+msgid "geometry"
+msgstr "Геометрия"
+
+#: ../src/iop/lens.c:1841
+msgid "target geometry"
+msgstr "Целевая геометрия объектива"
+
+#: ../src/iop/lens.c:1842
+msgid "rectilinear"
+msgstr "Прямолинейная"
+
+#: ../src/iop/lens.c:1843
+msgid "fish-eye"
+msgstr "Рыбий глаз"
+
+#: ../src/iop/lens.c:1844
+msgid "panoramic"
+msgstr "Панорамная"
+
+#: ../src/iop/lens.c:1845
+msgid "equirectangular"
+msgstr "Эквидистантная"
+
+#: ../src/iop/lens.c:1847
+msgid "orthographic"
+msgstr ""
+
+#: ../src/iop/lens.c:1848
+msgid "stereographic"
+msgstr ""
+
+#: ../src/iop/lens.c:1849
+msgid "equisolid angle"
+msgstr ""
+
+#: ../src/iop/lens.c:1850
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "thoby fish-eye"
 msgstr "Рыбий глаз"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1856
 msgid "auto scale"
 msgstr "Автомасштабирование"
@@ -4480,30 +5547,74 @@ msgid "distort"
 msgstr "Искажение"
 
 #: ../src/iop/lens.c:1877
+=======
+#: ../src/iop/lens.c:1858
+msgid "auto scale"
+msgstr "Автомасштабирование"
+
+#: ../src/iop/lens.c:1859 ../src/iop/vignette.c:1126
+#: ../src/iop/watermark.c:1018
+msgid "scale"
+msgstr "Масштаб"
+
+#: ../src/iop/lens.c:1870
+msgid "correct distortions or apply them"
+msgstr "Скорректировать или применить искажения"
+
+#: ../src/iop/lens.c:1871
+msgid "correct"
+msgstr "Коррекция"
+
+#: ../src/iop/lens.c:1872
+msgid "distort"
+msgstr "Искажение"
+
+#: ../src/iop/lens.c:1879
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "transversal chromatic aberration red"
 msgstr "Хроматические аберрации"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1878
+=======
+#: ../src/iop/lens.c:1880
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "tca red"
 msgstr "TCA R"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1883
+=======
+#: ../src/iop/lens.c:1885
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "transversal chromatic aberration blue"
 msgstr "Хроматические аберрации"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1884
+=======
+#: ../src/iop/lens.c:1886
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgid "tca blue"
 msgstr "TCA B"
 
+<<<<<<< HEAD
 #: ../src/iop/lens.c:1891
 msgid "corrections done: "
 msgstr "Применённые коррективы:"
 
 #: ../src/iop/lens.c:1892
+=======
+#: ../src/iop/lens.c:1893
+msgid "corrections done: "
+msgstr "Применённые коррективы:"
+
+#: ../src/iop/lens.c:1894
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "which corrections have actually been done"
 msgstr "Какие коррективы применены на самом деле"
 
@@ -5009,6 +6120,13 @@ msgstr "Удаление пятен"
 msgid "number of strokes:"
 msgstr "Количество замен:"
 
+<<<<<<< HEAD
+=======
+#: ../src/iop/spots.c:706
+msgid "spot removal only supports up to 32 spots"
+msgstr "Можно удалять не более 32 пятен"
+
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #: ../src/iop/temperature.c:78
 msgctxt "modulename"
 msgid "white balance"
@@ -5645,7 +6763,11 @@ msgid "filename"
 msgstr "Имя файла"
 
 #. create
+<<<<<<< HEAD
 #: ../src/libs/capture.c:146 ../src/libs/styles.c:383
+=======
+#: ../src/libs/capture.c:146 ../src/libs/styles.c:382
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "create"
 msgstr "Создать"
 
@@ -5836,7 +6958,11 @@ msgid "xmp sidecar files"
 msgstr "Файлы XMP"
 
 #: ../src/libs/copy_history.c:88 ../src/libs/geotagging.c:446
+<<<<<<< HEAD
 #: ../src/libs/import.c:680 ../src/libs/styles.c:281
+=======
+#: ../src/libs/import.c:680 ../src/libs/styles.c:280
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "all files"
 msgstr "Все файлы"
 
@@ -5974,6 +7100,7 @@ msgstr "Записать файлы XMP"
 msgid "export selected"
 msgstr "Экспорт выбранного"
 
+<<<<<<< HEAD
 #: ../src/libs/export.c:457
 msgid "target storage"
 msgstr "Куда сохранить"
@@ -5987,6 +7114,21 @@ msgid "global options"
 msgstr "Общие параметры"
 
 #: ../src/libs/export.c:497
+=======
+#: ../src/libs/export.c:423
+msgid "target storage"
+msgstr "Куда сохранить"
+
+#: ../src/libs/export.c:443
+msgid "file format"
+msgstr "Формат файлов"
+
+#: ../src/libs/export.c:458
+msgid "global options"
+msgstr "Общие параметры"
+
+#: ../src/libs/export.c:462
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "maximum output width\n"
 "set to 0 for no scaling"
@@ -5994,7 +7136,11 @@ msgstr ""
 "Максимальная ширина конечной фотографии,\n"
 "при значении 0 размер не меняется"
 
+<<<<<<< HEAD
 #: ../src/libs/export.c:499
+=======
+#: ../src/libs/export.c:464
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid ""
 "maximum output height\n"
 "set to 0 for no scaling"
@@ -6010,6 +7156,7 @@ msgstr ""
 #. g_signal_connect (G_OBJECT (d->height), "focus-in-event",  G_CALLBACK(focus_in),  NULL);
 #. g_signal_connect (G_OBJECT (d->height), "focus-out-event", G_CALLBACK(focus_out), NULL);
 #.
+<<<<<<< HEAD
 #: ../src/libs/export.c:511
 msgid "max size"
 msgstr "Макс. размер"
@@ -6019,10 +7166,22 @@ msgid "x"
 msgstr "×"
 
 #: ../src/libs/export.c:520
+=======
+#: ../src/libs/export.c:476
+msgid "max size"
+msgstr "Макс. размер"
+
+#: ../src/libs/export.c:481
+msgid "x"
+msgstr "×"
+
+#: ../src/libs/export.c:485
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "intent"
 msgstr "Цветопередача"
 
 #. gtk_table_attach(GTK_TABLE(self->widget), GTK_WIDGET(d->profile), 1, 2, 9, 10, GTK_EXPAND|GTK_FILL, 0, 0, 0);
+<<<<<<< HEAD
 #: ../src/libs/export.c:524 ../src/libs/export.c:604
 msgid "image settings"
 msgstr "Как в изображении"
@@ -6032,11 +7191,23 @@ msgid "Adobe RGB"
 msgstr "Adobe RGB"
 
 #: ../src/libs/export.c:617
+=======
+#: ../src/libs/export.c:489 ../src/libs/export.c:569
+msgid "image settings"
+msgstr "Как в изображении"
+
+#: ../src/libs/export.c:509
+msgid "Adobe RGB"
+msgstr "Adobe RGB"
+
+#: ../src/libs/export.c:582
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, c-format
 msgid "output icc profiles in %s/color/out or %s/color/out"
 msgstr "Профили вывода в %s/color/out или %s/color/out"
 
 #. Add style combo
+<<<<<<< HEAD
 #: ../src/libs/export.c:623
 msgid "style"
 msgstr "Стиль обработки"
@@ -6046,12 +7217,28 @@ msgid "temporary style to append while exporting"
 msgstr ""
 
 #: ../src/libs/export.c:658
+=======
+#: ../src/libs/export.c:588
+msgid "style"
+msgstr "Стиль обработки"
+
+#: ../src/libs/export.c:605
+msgid "temporary style to append while exporting"
+msgstr ""
+
+#: ../src/libs/export.c:623
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgid "export with current settings (ctrl-e)"
 msgstr "Экспортировать с текущими параметрами (Ctrl+E)"
 
 #. enable shortcut to export with current export settings:
+<<<<<<< HEAD
 #: ../src/libs/export.c:863 ../src/libs/styles.c:69
 #: ../src/views/darkroom.c:1674
+=======
+#: ../src/libs/export.c:827 ../src/libs/styles.c:69
+#: ../src/views/darkroom.c:1617
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "export"
 msgstr "Экспортировать"
@@ -7453,7 +8640,11 @@ msgstr "Нет подключенных камер с поддержкой уд�
 
 #. Setup key accelerators in capture view...
 #. Film strip shortcuts
+<<<<<<< HEAD
 #: ../src/views/capture.c:564 ../src/views/darkroom.c:1662
+=======
+#: ../src/views/capture.c:564 ../src/views/darkroom.c:1605
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "toggle film strip"
 msgstr "Переключить ленту фотографий"
@@ -7529,37 +8720,61 @@ msgid "threshold of what shall be considered overexposed"
 msgstr "Порог того, что будет считаться избыточно экспонированным"
 
 #. Zoom shortcuts
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1666
+=======
+#: ../src/views/darkroom.c:1609
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgctxt "accel"
 msgid "zoom close-up"
 msgstr "1:1"
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1668
+=======
+#: ../src/views/darkroom.c:1611
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgctxt "accel"
 msgid "zoom fill"
 msgstr "Заполнить по ширине"
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1670
+=======
+#: ../src/views/darkroom.c:1613
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgctxt "accel"
 msgid "zoom fit"
 msgstr "Масштаб"
 
 #. Shortcut to skip images
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1678
+=======
+#: ../src/views/darkroom.c:1621
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "image forward"
 msgstr "Следующая фотография"
 
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1680
+=======
+#: ../src/views/darkroom.c:1623
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 msgctxt "accel"
 msgid "image back"
 msgstr "Предыдущая фотография"
 
 #. toggle overexposure indication
+<<<<<<< HEAD
 #: ../src/views/darkroom.c:1684
+=======
+#: ../src/views/darkroom.c:1627
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #, fuzzy
 msgctxt "accel"
 msgid "overexposed"
@@ -7667,6 +8882,7 @@ msgctxt "accel"
 msgid "redo"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../src/develop/blend.c:1767 ../src/develop/blend.c:1967
 msgid "could not allocate buffer for blending"
 msgstr ""
@@ -7736,6 +8952,8 @@ msgstr "Объединить в HDR"
 msgid "lua options"
 msgstr "Интерфейс"
 
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #~ msgid " (needs a restart)"
 #~ msgstr " (требует перезапуска)"
 
@@ -7745,6 +8963,7 @@ msgstr "Интерфейс"
 #~ msgid "export multiple images in parallel"
 #~ msgstr "Количество потоков для экспорта"
 
+<<<<<<< HEAD
 #~ msgid "only, if.."
 #~ msgstr "Только если..."
 
@@ -7757,6 +8976,8 @@ msgstr "Интерфейс"
 #~ msgid "Flickr account not authenticated"
 #~ msgstr "Авторизация на Flickr не выполнена"
 
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #~ msgid "select the hue tone for shadows"
 #~ msgstr "Выбрать тон теней"
 
@@ -7766,6 +8987,7 @@ msgstr "Интерфейс"
 #~ msgid "select the saturation highlights tone"
 #~ msgstr "Выбрать насыщенность тона светов"
 
+<<<<<<< HEAD
 #~ msgid ""
 #~ "click on a spot and drag on canvas to heal.\n"
 #~ "use the mouse wheel to adjust size.\n"
@@ -7778,6 +9000,8 @@ msgstr "Интерфейс"
 #~ msgid "spot removal only supports up to 32 spots"
 #~ msgstr "Можно удалять не более 32 пятен"
 
+=======
+>>>>>>> 6895188bec1bb68e3d99ed82e0f06baaa584f37c
 #~ msgctxt "accel"
 #~ msgid "temperature out"
 #~ msgstr "Конечная температура"
