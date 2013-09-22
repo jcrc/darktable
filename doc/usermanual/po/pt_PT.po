@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: darktable\n"
 "POT-Creation-Date: 2013-09-22 18:34+0100\n"
-"PO-Revision-Date: 2013-09-22 19:04+0100\n"
+"PO-Revision-Date: 2013-09-22 19:18+0100\n"
 "Last-Translator: Jose Carlos <jcrc@portugalmail.com>\n"
 "Language-Team:  <jcrc@portugalmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -1384,9 +1384,8 @@ msgid "Filtering and sort order"
 msgstr "Filtrar e ordenar"
 
 #: /home/jcrc/darktable/build/doc/usermanual/po/darktable-usermanual_profiled.xml:688(primary)
-#, fuzzy
 msgid "filtering"
-msgstr "Captura"
+msgstr "filtragem"
 
 #: /home/jcrc/darktable/build/doc/usermanual/po/darktable-usermanual_profiled.xml:691(primary)
 msgid "sort order"
@@ -14581,8 +14580,9 @@ msgid ""
 msgstr ""
 
 #: /home/jcrc/darktable/build/doc/usermanual/po/darktable-usermanual_profiled.xml:10179(para)
+#, fuzzy
 msgid "Here are a few cases observed in the past:"
-msgstr ""
+msgstr "Alguns casos observados no passado:"
 
 #: /home/jcrc/darktable/build/doc/usermanual/po/darktable-usermanual_profiled.xml:10181(para)
 msgid ""
