@@ -27,8 +27,8 @@
 /** a poor man's memory management: just a sloppy monitoring of buffer usage with automatic reallocation */
 static int _brush_buffer_grow(float **buffer, int *buffer_count, int *buffer_max)
 {
-  const int stepsize = 200000;
-  const int reserve = 40000;
+  const int stepsize = 300000;
+  const int reserve = 100000;
 
   //printf("buffer %p, buffer_count %d, buffer_max %d\n", *buffer, *buffer_count, *buffer_max);
 
@@ -419,12 +419,16 @@ static void _brush_points_recurs_border_small_gaps(float *cmax, float *bmin, flo
   float r1 = sqrtf((bmin[1]-cmax[1])*(bmin[1]-cmax[1])+(bmin[0]-cmax[0])*(bmin[0]-cmax[0]));
   float r2 = sqrtf((bmax[1]-cmax[1])*(bmax[1]-cmax[1])+(bmax[0]-cmax[0])*(bmax[0]-cmax[0]));
 
-  //and the max length of the circle arc
-  int l = fmodf(fabsf(a2-a1), M_PI)*fmaxf(r1,r2);
+  //we close the gap in the shortest direction
+  float delta = a2 - a1;
+  if (fabsf(delta) > M_PI) delta = delta - copysignf(2.0f*M_PI, delta);
+
+  //get the max length of the circle arc
+  int l = fabsf(delta)*fmaxf(r1,r2);
   if (l < 2) return;
 
   //and now we add the points
-  float incra = (a2-a1)/l;
+  float incra = delta/l;
   float incrr = (r2-r1)/l;
   float rr = r1+incrr;
   float aa = a1+incra;
@@ -489,7 +493,7 @@ static void _brush_points_recurs(float *p1, float *p2,
                          points_max,points_max+1,border_max,border_max+1);
   }
   //are the points near ?
-  if ((tmax-tmin < 1e-6f) || ((int)points_min[0]-(int)points_max[0]<2 && (int)points_min[0]-(int)points_max[0]>-2 &&
+  if ((tmax-tmin < 0.0001f) || ((int)points_min[0]-(int)points_max[0]<2 && (int)points_min[0]-(int)points_max[0]>-2 &&
                                (int)points_min[1]-(int)points_max[1]<2 && (int)points_min[1]-(int)points_max[1]>-2 &&
                                (!withborder || (
                                   (int)border_min[0]-(int)border_max[0]<2 && (int)border_min[0]-(int)border_max[0]>-2 &&
