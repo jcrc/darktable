@@ -77,6 +77,13 @@ int dt_dev_pixelpipe_init_thumbnail(dt_dev_pixelpipe_t *pipe, int32_t width, int
   return res;
 }
 
+int dt_dev_pixelpipe_init_dummy(dt_dev_pixelpipe_t *pipe, int32_t width, int32_t height)
+{
+  int res = dt_dev_pixelpipe_init_cached(pipe, 4*sizeof(float)*width*height, 0);
+  pipe->type = DT_DEV_PIXELPIPE_THUMBNAIL;
+  return res;
+}
+
 int dt_dev_pixelpipe_init_preview(dt_dev_pixelpipe_t *pipe)
 {
   int res = dt_dev_pixelpipe_init_cached(pipe, 4*sizeof(float)*darktable.thumbnail_width*darktable.thumbnail_height, 5);
@@ -379,7 +386,7 @@ histogram_collect_cl(int devid, dt_iop_module_t *module, cl_mem img, const dt_io
   cl_int err = dt_opencl_copy_device_to_host(devid, pixel, img, roi->width, roi->height, 4*sizeof(float));
   if(err != CL_SUCCESS)
   {
-    free(pixel);
+    dt_free_align(pixel);
     return;
   }
 
@@ -445,7 +452,7 @@ histogram_collect_cl(int devid, dt_iop_module_t *module, cl_mem img, const dt_io
       break;
   }
 
-  free(pixel);
+  dt_free_align(pixel);
 }
 #endif
 
@@ -641,7 +648,7 @@ pixelpipe_picker_cl(int devid, dt_iop_module_t *module, cl_mem img, const dt_iop
     }
   }
 
-  free(buffer);
+  dt_free_align(buffer);
 }
 #endif
 

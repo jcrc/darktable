@@ -18,6 +18,7 @@
 
 #include "common/darktable.h"
 #include "common/exif.h"
+#include "common/grealpath.h"
 #include "common/image_cache.h"
 #include "common/imageio.h"
 #include "common/imageio_module.h"
@@ -229,12 +230,9 @@ dt_mipmap_cache_get_filename(
     goto exit;
   }
 
-  abspath = malloc(PATH_MAX);
-  if (!abspath)
-    goto exit;
-
-  if (!realpath(dbfilename, abspath))
-    snprintf(abspath, PATH_MAX, "%s", dbfilename);
+  abspath = g_realpath(dbfilename);
+  if(!abspath)
+    abspath = g_strdup(dbfilename);
 
   GChecksum* chk = g_checksum_new(G_CHECKSUM_SHA1);
   g_checksum_update(chk, (guchar*)abspath, strlen(abspath));
@@ -249,7 +247,7 @@ dt_mipmap_cache_get_filename(
   r = 0;
 
 exit:
-  free(abspath);
+  g_free(abspath);
 
   return r;
 }
@@ -323,6 +321,7 @@ dt_mipmap_cache_deserialize(dt_mipmap_cache_t *cache)
   int32_t rd = 0;
   const dt_mipmap_size_t mip = DT_MIPMAP_2;
   uint8_t *blob = NULL;
+  FILE *f = NULL;
   int file_width[mip+1], file_height[mip+1];
 
   gchar dbfilename[DT_MAX_PATH_LEN];
@@ -337,7 +336,14 @@ dt_mipmap_cache_deserialize(dt_mipmap_cache_t *cache)
     return 0;
   }
 
-  FILE *f = fopen(dbfilename, "rb");
+  // drop any old cache if the database is new. in that case newly imported images will probably mapped to old thumbnails
+  if(dt_database_is_new(darktable.db) && g_file_test(dbfilename, G_FILE_TEST_IS_REGULAR))
+  {
+    fprintf(stderr, "[mipmap_cache] database is new, dropping old cache `%s'\n", dbfilename);
+    goto read_finalize;
+  }
+
+  f = fopen(dbfilename, "rb");
   if(!f)
   {
     if (errno == ENOENT)
@@ -523,7 +529,7 @@ dt_mipmap_cache_alloc(dt_image_t *img, dt_mipmap_size_t size, dt_mipmap_cache_al
   if(!(*dsc) || ((*dsc)->size < buffer_size) || ((void *)*dsc == (void *)dt_mipmap_cache_static_dead_image))
   {
     if((void *)*dsc != (void *)dt_mipmap_cache_static_dead_image)
-      free(*dsc);
+      dt_free_align(*dsc);
     *dsc = dt_alloc_align(64, buffer_size);
     // fprintf(stderr, "[mipmap cache] alloc for key %u %p\n", get_key(img->id, size), *buf);
     if(!(*dsc))
@@ -760,7 +766,7 @@ void dt_mipmap_cache_cleanup(dt_mipmap_cache_t *cache)
   {
     dt_cache_cleanup(&cache->mip[k].cache);
     // now mem is actually freed, not during cache cleanup
-    free(cache->mip[k].buf);
+    dt_free_align(cache->mip[k].buf);
   }
   dt_cache_cleanup(&cache->mip[DT_MIPMAP_FULL].cache);
   dt_cache_cleanup(&cache->mip[DT_MIPMAP_F].cache);
@@ -769,7 +775,7 @@ void dt_mipmap_cache_cleanup(dt_mipmap_cache_t *cache)
   if(cache->compression_type)
   {
     dt_cache_cleanup(&cache->scratchmem.cache);
-    free(cache->scratchmem.buf);
+    dt_free_align(cache->scratchmem.buf);
   }
 }
 
@@ -1254,7 +1260,6 @@ _init_8(
   else if(!altered && !dt_conf_get_bool("never_use_embedded_thumb") && !incompatible)
   {
     // try to load the embedded thumbnail in raw
-    int ret;
     gboolean from_cache = TRUE;
     memset(filename, 0, DT_MAX_PATH_LEN);
     dt_image_full_path(imgid, filename, DT_MAX_PATH_LEN, &from_cache);
@@ -1279,47 +1284,14 @@ _init_8(
     }
     else
     {
-      // raw image thumbnail
-      libraw_data_t *raw = libraw_init(0);
-      libraw_processed_image_t *image = NULL;
-      ret = libraw_open_file(raw, filename);
-      if(ret) goto libraw_fail;
-      ret = libraw_unpack_thumb(raw);
-      if(ret) goto libraw_fail;
-      ret = libraw_adjust_sizes_info_only(raw);
-      if(ret) goto libraw_fail;
-
-      image = libraw_dcraw_make_mem_thumb(raw, &ret);
-      if(!image || ret) goto libraw_fail;
-      const int orientation = raw->sizes.flip;
-      if(image->type == LIBRAW_IMAGE_JPEG)
+      uint8_t *tmp = 0;
+      int32_t thumb_width, thumb_height, orientation;
+      res = dt_imageio_large_thumbnail(filename, &tmp, &thumb_width, &thumb_height, &orientation);
+      if(!res)
       {
-        // JPEG: decode (directly rescaled to mip4)
-        dt_imageio_jpeg_t jpg;
-        if(dt_imageio_jpeg_decompress_header(image->data, image->data_size, &jpg)) goto libraw_fail;
-        uint8_t *tmp = (uint8_t *)malloc(sizeof(uint8_t)*jpg.width*jpg.height*4);
-        if(dt_imageio_jpeg_decompress(&jpg, tmp))
-        {
-          free(tmp);
-          goto libraw_fail;
-        }
         // scale to fit
-        dt_iop_flip_and_zoom_8(tmp, jpg.width, jpg.height, buf, wd, ht, orientation, width, height);
-
+        dt_iop_flip_and_zoom_8(tmp, thumb_width, thumb_height, buf, wd, ht, orientation, width, height);
         free(tmp);
-        res = 0;
-      }
-
-      // clean up raw stuff.
-      libraw_recycle(raw);
-      libraw_close(raw);
-      free(image);
-      if(0)
-      {
-libraw_fail:
-        // fprintf(stderr,"[imageio] %s: %s\n", filename, libraw_strerror(ret));
-        libraw_close(raw);
-        res = 1;
       }
     }
   }
