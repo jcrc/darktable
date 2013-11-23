@@ -450,6 +450,12 @@ static bool dt_exif_read_exif_data(dt_image_t *img, Exiv2::ExifData &exifData)
       float value = pos->toFloat();
       img->exif_focus_distance = (0.01 * pow(10, value/40));
     }
+    else if ( (pos=exifData.findKey(Exiv2::ExifKey("Exif.OlympusFi.FocusDistance")))
+              != exifData.end() && pos->size())
+    {
+      float value = pos->toFloat();
+      img->exif_focus_distance = (0.001 * value);
+    }
     else if ( (pos=Exiv2::subjectDistance(exifData))
               != exifData.end() && pos->size())
     {
@@ -531,6 +537,10 @@ static bool dt_exif_read_exif_data(dt_image_t *img, Exiv2::ExifData &exifData)
     }
 #endif
     else if ( (pos=Exiv2::lensName(exifData)) != exifData.end() && pos->size())
+    {
+      dt_strlcpy_to_utf8(img->exif_lens, sizeof(img->exif_lens), pos, exifData);
+    }
+    else if ( (pos=exifData.findKey(Exiv2::ExifKey("Exif.Photo.LensModel"))) != exifData.end() && pos->size())
     {
       dt_strlcpy_to_utf8(img->exif_lens, sizeof(img->exif_lens), pos, exifData);
     }
