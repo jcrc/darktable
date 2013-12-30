@@ -25,7 +25,7 @@
 #include "common/debug.h"
 
 /** a poor man's memory management: just a sloppy monitoring of buffer usage with automatic reallocation */
-static int _brush_buffer_grow(float **buffer, int *buffer_count, int *buffer_max)
+static gboolean _brush_buffer_grow(float **buffer, int *buffer_count, int *buffer_max)
 {
   const int stepsize = 300000;
   const int reserve = 100000;
@@ -37,7 +37,7 @@ static int _brush_buffer_grow(float **buffer, int *buffer_count, int *buffer_max
     *buffer = malloc(stepsize*sizeof(float));
     *buffer_count = 0;
     *buffer_max = stepsize;
-    return TRUE;
+    return (*buffer != NULL);
   }
 
   if(*buffer_count > *buffer_max)
@@ -50,7 +50,11 @@ static int _brush_buffer_grow(float **buffer, int *buffer_count, int *buffer_max
     float *oldbuffer = *buffer;
     *buffer_max += stepsize;
     *buffer = malloc(*buffer_max*sizeof(float));
-    if(*buffer == NULL) return FALSE;
+    if(*buffer == NULL)
+    {
+      free(oldbuffer);
+      return FALSE;
+    }
     memset(*buffer, 0, *buffer_max*sizeof(float));
     memcpy(*buffer, oldbuffer, *buffer_count*sizeof(float));
     free(oldbuffer);
@@ -1381,7 +1385,21 @@ static int dt_brush_events_button_pressed(struct dt_iop_module_t *module, float 
     }
     gui->point_edited = -1;
   }
-    else if (gui->point_selected>=0 && which == 3 && gui->edit_mode == DT_MASKS_EDIT_FULL)
+  else if (gui->creation && which == 3)
+  {
+    free(gui->guipoints);
+    free(gui->guipoints_payload);
+    gui->guipoints = NULL;
+    gui->guipoints_payload = NULL;
+    gui->guipoints_count = 0;
+    darktable.develop->form_visible = NULL;
+    dt_masks_clear_form_gui(darktable.develop);
+    dt_masks_set_edit_mode(module, DT_MASKS_EDIT_FULL);
+    dt_masks_iop_update(module);
+    dt_control_queue_redraw_center();
+    return 1;
+  }
+  else if (gui->point_selected>=0 && which == 3 && gui->edit_mode == DT_MASKS_EDIT_FULL)
   {
     //we remove the point (and the entire form if there is too few points)
     if (g_list_length(form->points) < 2)
@@ -1495,7 +1513,7 @@ static int dt_brush_events_button_released(struct dt_iop_module_t *module,float 
   if (form->type & DT_MASKS_CLONE) masks_hardness = MIN(dt_conf_get_float("plugins/darkroom/spots/brush_hardness"),1.0f);
   else masks_hardness = MIN(dt_conf_get_float("plugins/darkroom/masks/brush/hardness"),1.0f);
 
-  if (gui->creation)
+  if (gui->creation && which == 1)
   {
     dt_iop_module_t *crea_module = gui->creation_module;
 
