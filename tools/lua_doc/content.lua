@@ -265,6 +265,20 @@ NOTE2: If the parameter is a directory the call is non-blocking; the film object
 
 ]])
 darktable.database.duplicate:add_return(my_tostring(types.dt_lua_image_t),[[The created image if an image is imported or the toplevel film object if a film was imported.]])
+darktable.database.move_image:set_text([[Physically moves an image (and all its duplicates) to another film.]]..para()..
+[[This will move the image file, the related XMP and all XMP for the duplicates to the directory of the new film]]..para()..
+[[Note that the parameter order is not relevant.]])
+darktable.database.move_image:add_version_info("function added")
+darktable.database.move_image:add_parameter("image",tostring(types.dt_lua_image_t),[[The image to move]])
+darktable.database.move_image:add_parameter("film",tostring(types.dt_lua_film_t),[[The film to move to]])
+darktable.database.copy_image:set_text([[Physically copies an image to another film.]]..para()..
+[[This will copy the image file and the related XMP to the directory of the new film]]..para()..
+[[If there is already a file with the same name as the image file, it wil create a duplicate from that file instead]]..para()..
+[[Note that the parameter order is not relevant.]])
+darktable.database.copy_image:add_version_info("function added")
+darktable.database.copy_image:add_parameter("image",tostring(types.dt_lua_image_t),[[The image to copy]])
+darktable.database.copy_image:add_parameter("film",tostring(types.dt_lua_film_t),[[The film to copy to]])
+darktable.database.copy_image:add_return(tostring(types.dt_lua_image_t),[[The new image]])
 
 ------------------------
 --  DARKTABLE.MODULES --
@@ -368,6 +382,9 @@ types.dt_lua_image_t.red:set_alias(types.dt_lua_image_t.purple)
 types.dt_lua_image_t.reset:set_text([[Removes all processing from the image, reseting it back to its original state]])
 types.dt_lua_image_t.reset:add_version_info("field added")
 types.dt_lua_image_t.reset:add_parameter("image",my_tostring(types.dt_lua_image_t),[[The image whose history will be deleted]])
+types.dt_lua_image_t.delete:set_text([[Removes an image from the database]])
+types.dt_lua_image_t.delete:add_version_info("field added")
+types.dt_lua_image_t.delete:add_parameter("image",my_tostring(types.dt_lua_image_t),[[The image to remove]])
 
 types.dt_lua_image_t.group_with:set_text([[Puts the first image in the same group as the second image. If no second image is provided the image will be in its own group.]])
 types.dt_lua_image_t.group_with:add_parameter("image",my_tostring(types.dt_lua_image_t),[[The image whose group must be changed.]])
