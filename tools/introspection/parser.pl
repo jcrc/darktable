@@ -15,6 +15,11 @@
 #  You should have received a copy of the GNU General Public License
 #  along with darktable.  If not, see <http://www.gnu.org/licenses/>.
 
+# 0 -- print nothing
+# 1 -- print errors
+# 2 -- print warnings
+# 3 -- print debug info
+our $ERROR_LEVEL = 0;
 
 use strict;
 use warnings;
@@ -25,20 +30,26 @@ use parser;
 use ast;
 use code_gen;
 
-my $input_file = $ARGV[0];
-my $output_file = $ARGV[1];
+my $base_dir = $ARGV[0];
+my $input_file = $ARGV[1];
+my $output_file = $ARGV[2];
 
-if(!defined($input_file) or !defined($output_file))
+if(!defined($base_dir) or !defined($input_file) or !defined($output_file))
 {
-  print "usage: parse.pl <input file> <output_file>\n";
+  print STDERR "usage: parse.pl <base dir> <input file> <output_file>\n";
   exit(1);
 }
 
+# set the directory where to look for #includes
+$scanner::folder = $base_dir;
+
 read_file($input_file);
+
+# dump_tokens(); exit 1;
 
 my %types;
 my $version = -1;
-my $params_type = "";
+my $params_type;
 
 while()
 {
@@ -61,7 +72,7 @@ while()
   }
 }
 
-if($params_type ne "")
+if(defined($params_type))
 {
   # needed for variable metadata like min, max, default and description
   parse_comments();
@@ -91,16 +102,22 @@ else
 
 ################# some debug functions #################
 
+# sub print_token
+# {
+#   my $token = shift;
+#   print @$token[0]." : ".@$token[1]." : ".@$token[2]." : ".@$token[3]."\n";
+# }
+#
 # sub dump_tokens
 # {
 #   while()
 #   {
 #     my @token = get_token();
 #     last if($token[$P_TYPE] == $T_NONE);
-#     print $token[0]." : ".$token[1]." : ".$token[2]."\n";
+#     print_token(\@token);
 #   }
 # }
-
+#
 # sub dump_comments
 # {
 #   my $lineno = 0;

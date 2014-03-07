@@ -108,7 +108,7 @@ typedef struct dt_iop_module_so_t
   /** called once per module, at shutdown. */
   void (*cleanup_global)       (struct dt_iop_module_so_t *self);
   /** called once per module, at startup. */
-  int (*introspection_init)    (int api_version);
+  int (*introspection_init)    (struct dt_iop_module_so_t *self, int api_version);
 
   /** callbacks, loaded once, referenced by the instances. */
   int (*version)               ();
@@ -165,7 +165,8 @@ typedef struct dt_iop_module_so_t
   // introspection related callbacks
   dt_introspection_t*          (*get_introspection)        ();
   dt_introspection_field_t*    (*get_introspection_linear) ();
-  void*                        (*get_p)                    (void *param, const char *name);
+  void*                        (*get_p)                    (const void *param, const char *name);
+  dt_introspection_field_t*    (*get_f)                    (const char *name);
 
 }
 dt_iop_module_so_t;
@@ -348,7 +349,8 @@ typedef struct dt_iop_module_t
   // introspection related data
   dt_introspection_t*       (*get_introspection)        ();
   dt_introspection_field_t* (*get_introspection_linear) ();
-  void*                     (*get_p)                    (void *param, const char *name);
+  void*                     (*get_p)                    (const void *param, const char *name);
+  dt_introspection_field_t* (*get_f)                    (const char *name);
 
 }
 dt_iop_module_t;

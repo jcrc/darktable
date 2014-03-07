@@ -589,10 +589,11 @@ int dt_iop_load_module_so(dt_iop_module_so_t *module, const char *libname, const
 
   // the introspection api
   if(!g_module_symbol(module->module, "introspection_init",     (gpointer)&(module->introspection_init)))     module->introspection_init = NULL;
-  if(module->introspection_init && !module->introspection_init(DT_INTROSPECTION_VERSION))
+  if(module->introspection_init && !module->introspection_init(module, DT_INTROSPECTION_VERSION))
   {
     // set the introspection related fields in module
     if(!g_module_symbol(module->module, "get_p",                    (gpointer)&(module->get_p)))                    module->get_p = NULL;
+    if(!g_module_symbol(module->module, "get_f",                    (gpointer)&(module->get_f)))                    module->get_f = NULL;
     if(!g_module_symbol(module->module, "get_introspection",        (gpointer)&(module->get_introspection)))        module->get_introspection = NULL;
     if(!g_module_symbol(module->module, "get_introspection_linear", (gpointer)&(module->get_introspection_linear))) module->get_introspection_linear = NULL;
   }
@@ -687,6 +688,7 @@ dt_iop_load_module_by_so(dt_iop_module_t *module, dt_iop_module_so_t *so, dt_dev
   module->get_introspection        = so->get_introspection;
   module->get_introspection_linear = so->get_introspection_linear;
   module->get_p                    = so->get_p;
+  module->get_f                    = so->get_f;
 
   module->accel_closures = NULL;
   module->accel_closures_local = NULL;
@@ -1329,8 +1331,10 @@ init_presets(dt_iop_module_so_t *module_so)
         free(module);
         continue;
       }
+      module->reload_defaults(module);
       int32_t new_params_size = module->params_size;
       void *new_params = malloc(new_params_size);
+      memset(new_params, 0, new_params_size);
 
       // convert the old params to new
       if( module->legacy_params(module, old_params, old_params_version, new_params, module_version ) )
