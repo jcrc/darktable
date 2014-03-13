@@ -347,7 +347,12 @@ static GList *_film_recursive_get_files(const gchar *path, gboolean recursive,GL
 */
 int _film_filename_cmp(gchar *a, gchar *b)
 {
-  return g_strcmp0(g_path_get_basename(a), g_path_get_basename(b));
+  gchar *a_basename = g_path_get_basename(a);
+  gchar *b_basename = g_path_get_basename(b);
+  int ret = g_strcmp0(a_basename, b_basename);
+  g_free(a_basename);
+  g_free(b_basename);
+  return ret;
 }
 
 void dt_film_import1(dt_film_t *film)
@@ -399,8 +404,10 @@ void dt_film_import1(dt_film_t *film)
               strcmp(dfn+strlen(dfn)-4,".GPX") == 0)
           {
             gchar *gpx_file = g_build_path (G_DIR_SEPARATOR_S, cfr->dirname, dfn, NULL);
-            dt_control_gpx_apply(gpx_file, cfr->id, dt_conf_get_string("plugins/lighttable/geotagging/tz"));
+            gchar *tz = dt_conf_get_string("plugins/lighttable/geotagging/tz");
+            dt_control_gpx_apply(gpx_file, cfr->id, tz);
             g_free(gpx_file);
+            g_free(tz);
           }
         }
       }
@@ -423,6 +430,8 @@ void dt_film_import1(dt_film_t *film)
       dt_film_init(cfr);
       dt_film_new(cfr, cdn);
     }
+
+    g_free(cdn);
 
     /* import image */
     dt_image_import(cfr->id, (const gchar *)image->data, FALSE);
@@ -454,8 +463,10 @@ void dt_film_import1(dt_film_t *film)
           strcmp(dfn+strlen(dfn)-4,".GPX") == 0)
       {
         gchar *gpx_file = g_build_path (G_DIR_SEPARATOR_S, cfr->dirname, dfn, NULL);
-        dt_control_gpx_apply(gpx_file, cfr->id, dt_conf_get_string("plugins/lighttable/geotagging/tz"));
+        gchar *tz = dt_conf_get_string("plugins/lighttable/geotagging/tz");
+        dt_control_gpx_apply(gpx_file, cfr->id, tz);
         g_free(gpx_file);
+        g_free(tz);
       }
     }
   }
