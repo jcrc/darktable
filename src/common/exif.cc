@@ -1238,7 +1238,7 @@ char *dt_exif_xmp_encode (const unsigned char *input, const int len, int *output
     output[1] = 'z';
     output[2] = factor / 10 + '0';
     output[3] = factor % 10 + '0';
-    strcpy(output+4, buffer2);
+    g_strlcpy(output+4, buffer2, outlen);
     g_free(buffer2);
 
     if(output_len) *output_len = outlen;
@@ -2002,7 +2002,7 @@ int dt_exif_xmp_attach (const int imgid, const char* filename)
   {
     char input_filename[1024];
     gboolean from_cache = FALSE;
-    dt_image_full_path(imgid, input_filename, 1024, &from_cache);
+    dt_image_full_path(imgid, input_filename, sizeof(input_filename), &from_cache);
 
     Exiv2::Image::AutoPtr img = Exiv2::ImageFactory::open(filename);
     // unfortunately it seems we have to read the metadata, to not erase the exif (which we just wrote).
@@ -2036,7 +2036,7 @@ int dt_exif_xmp_write (const int imgid, const char* filename)
   char imgfname[1024];
   gboolean from_cache = TRUE;
 
-  dt_image_full_path(imgid, imgfname, 1024, &from_cache);
+  dt_image_full_path(imgid, imgfname, sizeof(imgfname), &from_cache);
   if(!g_file_test(imgfname, G_FILE_TEST_IS_REGULAR)) return 1;
 
   try
