@@ -837,6 +837,9 @@ void dt_cleanup()
 {
   const int init_gui = (darktable.gui != NULL);
 
+#ifdef USE_LUA
+  dt_lua_finalize();
+#endif
   if(init_gui)
   {
     dt_ctl_switch_mode_to(DT_MODE_NONE);
@@ -848,14 +851,6 @@ void dt_cleanup()
     dt_lib_cleanup(darktable.lib);
     free(darktable.lib);
   }
-#ifdef USE_LUA
-  if(darktable.lua_state.state)
-  {
-    lua_close(darktable.lua_state.state);
-    luaA_close();
-    darktable.lua_state.state = NULL;
-  }
-#endif
   dt_view_manager_cleanup(darktable.view_manager);
   free(darktable.view_manager);
   if(init_gui)
@@ -920,16 +915,16 @@ void dt_print(dt_debug_thread_t thread, const char *msg, ...)
   }
 }
 
-void dt_gettime_t(char *datetime, time_t t)
+void dt_gettime_t(char *datetime, size_t datetime_len, time_t t)
 {
   struct tm tt;
   (void)localtime_r(&t, &tt);
-  strftime(datetime, 20, "%Y:%m:%d %H:%M:%S", &tt);
+  strftime(datetime, datetime_len, "%Y:%m:%d %H:%M:%S", &tt);
 }
 
-void dt_gettime(char *datetime)
+void dt_gettime(char *datetime, size_t datetime_len)
 {
-  dt_gettime_t(datetime, time(NULL));
+  dt_gettime_t(datetime, datetime_len, time(NULL));
 }
 
 void *dt_alloc_align(size_t alignment, size_t size)
@@ -962,7 +957,7 @@ void dt_show_times(const dt_times_t *start, const char *prefix, const char *suff
   if (darktable.unmuted & DT_DEBUG_PERF)
   {
     dt_get_times(&end);
-    i = sprintf(buf, "%s took %.3f secs (%.3f CPU)", prefix, end.clock - start->clock, end.user - start->user);
+    i = snprintf(buf, sizeof(buf), "%s took %.3f secs (%.3f CPU)", prefix, end.clock - start->clock, end.user - start->user);
     if (suffix != NULL)
     {
       va_list ap;

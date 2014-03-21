@@ -15,22 +15,19 @@
     You should have received a copy of the GNU General Public License
     along with darktable.  If not, see <http://www.gnu.org/licenses/>.
 */
-#ifndef DT_LUA_STORAGE_H
-#define DT_LUA_STORAGE_H
+#ifndef DT_LUA_LIB_H
+#define DT_LUA_LIB_H
 #include <lua/lua.h>
-#include <common/imageio_module.h>
-
-// forward declaration
-struct dt_imageio_module_storage_t;
+#include "libs/lib.h"
 
 
-#define dt_lua_register_storage(L,storage,type_name) \
-  dt_lua_register_storage_typeid(L,storage,luaA_type_find(#type_name))
-void dt_lua_register_storage_typeid(lua_State* L, struct dt_imageio_module_storage_t* module,luaA_Type type_id);
+struct dt_lib_module_t;
+
+void dt_lua_register_lib(lua_State* L,struct dt_lib_module_t* self);
 
 
 
-int dt_lua_init_storage(lua_State *L);
+int dt_lua_init_lib(lua_State *L);
 
 #endif
 // modelines: These editor modelines have been set for all relevant files by tools/update_modelines.sh

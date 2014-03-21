@@ -208,11 +208,14 @@ if(USE_LUA)
       "lua/database.c"
       "lua/events.c"
       "lua/film.c"
+      "lua/format.c"
       "lua/glist.c"
       "lua/gui.c"
       "lua/image.c"
       "lua/init.c"
+      "lua/lib.c"
       "lua/lua.c"
+      "lua/luastorage.c"
       "lua/modules.c"
       "lua/preferences.c"
       "lua/print.c"
@@ -220,6 +223,7 @@ if(USE_LUA)
       "lua/styles.c"
       "lua/tags.c"
       "lua/types.c"
+      "lua/view.c"
       )
     set(SOURCES ${SOURCES} ${SOURCE_FILES_LUA})
   endif(USE_LUA)
@@ -410,15 +414,6 @@ if(NOT APPLE AND NOT CMAKE_C_COMPILER_ID STREQUAL "Clang")
   if(NOT SOURCE_PACKAGE)
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Werror -Werror=type-limits")
   endif(NOT SOURCE_PACKAGE)
-
-  # gcc-4.8 build fails on unused local typedefs in gmacros.h:162
-  # to be removed when glib will get fixed
-  if (CMAKE_C_COMPILER_ID STREQUAL "GNU")
-    execute_process(COMMAND ${CMAKE_C_COMPILER} -dumpversion OUTPUT_VARIABLE GCC_VERSION)
-    if (GCC_VERSION VERSION_GREATER 4.8 OR GCC_VERSION VERSION_EQUAL 4.8)
-      set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-unused-local-typedefs")
-    endif()
-  endif()
 endif(NOT APPLE AND NOT CMAKE_C_COMPILER_ID STREQUAL "Clang")
 
 if(NOT BINARY_PACKAGE_BUILD)
@@ -627,6 +622,18 @@ add_definitions("-DGTK_DISABLE_DEPRECATED")
 add_definitions("-Werror=implicit-function-declaration")
 
 ###### GTK+3 port ######
+
+###### Some good warnings ######
+# Clang-specific warnings:
+if(CMAKE_C_COMPILER_ID STREQUAL "Clang")
+# so far, this option is only avaliable on trunk clang, disabling it until next clang release
+#  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Werror=absolute-value")
+endif(CMAKE_C_COMPILER_ID STREQUAL "Clang")
+
+# Generic (gcc) warnings:
+#set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ")
+###### Some good warnings ######
+
 
 target_link_libraries(lib_darktable ${LIBS})
 
