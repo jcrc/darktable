@@ -1249,20 +1249,6 @@
     <longdescription/>
   </dtconfig>
   <dtconfig>
-    <name>plugins/darkroom/anlfyeni/visible</name>
-    <type>bool</type>
-    <default>false</default>
-    <shortdescription/>
-    <longdescription/>
-  </dtconfig>
-  <dtconfig>
-    <name>plugins/darkroom/anlfyeni/expanded</name>
-    <type>bool</type>
-    <default>false</default>
-    <shortdescription/>
-    <longdescription/>
-  </dtconfig>
-  <dtconfig>
     <name>plugins/darkroom/atrous/visible</name>
     <type>bool</type>
     <default>false</default>
@@ -1523,20 +1509,6 @@
   </dtconfig>
   <dtconfig>
     <name>plugins/darkroom/demosaic/expanded</name>
-    <type>bool</type>
-    <default>false</default>
-    <shortdescription/>
-    <longdescription/>
-  </dtconfig>
-  <dtconfig>
-    <name>plugins/darkroom/densitycurve/visible</name>
-    <type>bool</type>
-    <default>false</default>
-    <shortdescription/>
-    <longdescription/>
-  </dtconfig>
-  <dtconfig>
-    <name>plugins/darkroom/densitycurve/expanded</name>
     <type>bool</type>
     <default>false</default>
     <shortdescription/>
@@ -1859,20 +1831,6 @@
   </dtconfig>
   <dtconfig>
     <name>plugins/darkroom/sharpen/expanded</name>
-    <type>bool</type>
-    <default>false</default>
-    <shortdescription/>
-    <longdescription/>
-  </dtconfig>
-  <dtconfig>
-    <name>plugins/darkroom/shrecovery/visible</name>
-    <type>bool</type>
-    <default>false</default>
-    <shortdescription/>
-    <longdescription/>
-  </dtconfig>
-  <dtconfig>
-    <name>plugins/darkroom/shrecovery/expanded</name>
     <type>bool</type>
     <default>false</default>
     <shortdescription/>
