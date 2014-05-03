@@ -34,6 +34,8 @@
 #include "dtgtk/resetlabel.h"
 #include "dtgtk/slider.h"
 #include "bauhaus/bauhaus.h"
+#include "develop/pixelpipe.h"
+#include "common/histogram.h"
 
 #define exposure2white(x)	exp2f(-(x))
 #define white2exposure(x)	-dt_log2f(fmaxf(0.001, x))
@@ -211,7 +213,7 @@ static int compute_correction(dt_iop_module_t *self, float *correction)
   if(self->histogram == NULL) return 1;
 
   float total = 0;
-  for(int i=0; i < self->histogram_bins_count; i++)
+  for(int i=0; i < self->histogram_params.bins_count; i++)
   {
     total += self->histogram[4*i];
     total += self->histogram[4*i+1];
@@ -222,7 +224,7 @@ static int compute_correction(dt_iop_module_t *self, float *correction)
   float n = 0;
   float raw = -1;
 
-  for(int i=0; i < self->histogram_bins_count; i++)
+  for(int i=0; i < self->histogram_params.bins_count; i++)
   {
     n += self->histogram[4*i];
     n += self->histogram[4*i+1];
@@ -288,6 +290,7 @@ void init_pipe (struct dt_iop_module_t *self, dt_dev_pixelpipe_t *pipe, dt_dev_p
 void cleanup_pipe (struct dt_iop_module_t *self, dt_dev_pixelpipe_t *pipe, dt_dev_pixelpipe_iop_t *piece)
 {
   free(piece->data);
+  piece->data = NULL;
 }
 
 void gui_update(struct dt_iop_module_t *self)
@@ -308,7 +311,7 @@ void gui_update(struct dt_iop_module_t *self)
   dt_bauhaus_slider_set(g->deflicker_level, p->deflicker_level);
   gtk_widget_set_sensitive(GTK_WIDGET(g->deflicker_level), p->deflicker);
 
-  self->request_color_pick = 0;
+  self->request_color_pick = DT_REQUEST_COLORPICK_OFF;
 }
 
 void gui_focus(struct dt_iop_module_t *self, gboolean in)
@@ -326,9 +329,8 @@ void init(dt_iop_module_t *module)
   module->params = malloc(sizeof(dt_iop_exposure_params_t));
   module->default_params = malloc(sizeof(dt_iop_exposure_params_t));
   module->default_enabled = 0;
-  module->request_histogram |= (DT_REQUEST_ON); //FIXME: only when deflicker is enabled maybe?
-  module->histogram_bins_count = 16384; // we neeed really maximally reliable histogrem
-  module->histogram_step_rgb = 1; // only way do do so - analyze full-sized thumbnail
+  module->request_histogram |=  (DT_REQUEST_ON); //FIXME: only when deflicker is enabled maybe?
+  module->histogram_params.bins_count = 16384; // we neeed really maximally reliable histogrem
   module->priority = 175; // module order created by iop_dependencies.py, do not edit!
   module->params_size = sizeof(dt_iop_exposure_params_t);
   module->gui_data = NULL;
@@ -380,7 +382,7 @@ static void exposure_set_black(struct dt_iop_module_t *self, const float black);
 static void
 autoexp_disable(dt_iop_module_t *self)
 {
-  if (self->request_color_pick <= 0) return;
+  if (self->request_color_pick != DT_REQUEST_COLORPICK_MODULE) return;
 
   dt_iop_exposure_gui_data_t *g = (dt_iop_exposure_gui_data_t *)self->gui_data;
 
@@ -396,7 +398,7 @@ autoexp_disable(dt_iop_module_t *self)
 
   gtk_widget_set_sensitive(GTK_WIDGET(g->autoexpp), FALSE);
 
-  self->request_color_pick = 0;
+  self->request_color_pick = DT_REQUEST_COLORPICK_OFF;
 }
 
 static void
@@ -495,11 +497,11 @@ autoexp_callback (GtkToggleButton *button, gpointer user_data)
 
   deflicker_disable(self);
 
-  self->request_color_pick = gtk_toggle_button_get_active(button);
+  self->request_color_pick = gtk_toggle_button_get_active(button) ? DT_REQUEST_COLORPICK_MODULE : DT_REQUEST_COLORPICK_OFF;
 
   dt_iop_request_focus(self);
 
-  if (self->request_color_pick > 0)
+  if (self->request_color_pick == DT_REQUEST_COLORPICK_MODULE)
   {
     dt_lib_colorpicker_set_area(darktable.lib, 0.99);
     dt_dev_reprocess_all(self->dev);
@@ -517,7 +519,7 @@ autoexpp_callback (GtkWidget* slider, gpointer user_data)
 {
   dt_iop_module_t *self = (dt_iop_module_t *)user_data;
   if(self->dt->gui->reset) return;
-  if(self->request_color_pick <= 0 || self->picked_color_max[0] < 0.0f) return;
+  if(self->request_color_pick != DT_REQUEST_COLORPICK_MODULE || self->picked_color_max[0] < 0.0f) return;
 
   dt_iop_exposure_gui_data_t *g = (dt_iop_exposure_gui_data_t *)self->gui_data;
   const float white = fmaxf(fmaxf(self->picked_color_max[0], self->picked_color_max[1]), self->picked_color_max[2])
@@ -620,7 +622,7 @@ expose (GtkWidget *widget, GdkEventExpose *event, dt_iop_module_t *self)
   // Needed if deflicker is part of auto-applied preset
   deflicker_process(self);
 
-  if(self->request_color_pick <= 0) return FALSE;
+  if(self->request_color_pick != DT_REQUEST_COLORPICK_MODULE) return FALSE;
 
   if(self->picked_color_max[0] < 0.0f) return FALSE;
 
@@ -650,7 +652,7 @@ void gui_init(struct dt_iop_module_t *self)
   darktable.develop->proxy.exposure.set_black = dt_iop_exposure_set_black;
   darktable.develop->proxy.exposure.get_black = dt_iop_exposure_get_black;
 
-  self->request_color_pick = 0;
+  self->request_color_pick = DT_REQUEST_COLORPICK_OFF;
 
   self->widget = GTK_WIDGET(gtk_vbox_new(FALSE, DT_BAUHAUS_SPACE));
 

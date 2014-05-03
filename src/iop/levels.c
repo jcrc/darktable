@@ -252,6 +252,7 @@ void cleanup_pipe (struct dt_iop_module_t *self, dt_dev_pixelpipe_t *pipe, dt_de
 {
   // clean up everything again.
   free(piece->data);
+  piece->data = NULL;
 }
 
 void gui_update(struct dt_iop_module_t *self)
@@ -425,7 +426,7 @@ static gboolean dt_iop_levels_expose(GtkWidget *widget, GdkEventExpose *event, g
   /* we need to save the last picked color to prevent flickering when
    * changing from one picker to another, as the picked_color value does not
    * update as rapidly */
-  if(self->request_color_pick &&
+  if(self->request_color_pick != DT_REQUEST_COLORPICK_OFF &&
       self->color_picker_point[0] >= 0.0f && self->color_picker_point[1] >= 0.0f &&
       self->picked_color_max[0] >= 0.0f &&
       mean_picked_color != c->last_picked_color)
@@ -788,7 +789,7 @@ static void dt_iop_levels_pick_general_handler(GtkToggleButton *togglebutton, dt
 
   if (TRUE == toggle)
   {
-    self->request_color_pick = 1;
+    self->request_color_pick = DT_REQUEST_COLORPICK_MODULE;
     dt_lib_colorpicker_set_point(darktable.lib, xpick, ypick);
     c->activeToggleButton = togglebutton;
     c->current_pick = picklevel;
@@ -796,7 +797,7 @@ static void dt_iop_levels_pick_general_handler(GtkToggleButton *togglebutton, dt
   }
   else
   {
-    self->request_color_pick = 0;
+    self->request_color_pick = DT_REQUEST_COLORPICK_OFF;
     c->activeToggleButton = NULL;
     c->current_pick = NONE;
     //gtk_widget_queue_draw(self->widget);

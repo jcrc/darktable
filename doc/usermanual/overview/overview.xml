@@ -512,7 +512,7 @@
       <title>Views</title>
 
       <para>
-        darktable consists of several views or modes. There are four available views as
+        darktable consists of several views or modes. There are five available views as
         described in this section. You can switch between views by clicking the view name at the
         top of the right panel - the active view is highlighted - or by using one of the key
         accelerators:
@@ -551,6 +551,14 @@
                 </entry>
                 <entry>
                   switches to map
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  <emphasis>s</emphasis>
+                </entry>
+                <entry>
+                  switches to slideshow
                 </entry>
               </row>
             </tbody>
@@ -604,6 +612,17 @@
 
       </sect3>
 
+      <sect3 status="draft">
+
+        <title>Slideshow</title>
+
+        <para>
+          This view shows images as a slideshow, processing them on-the-fly
+          (see <xref linkend="slideshow_chapter"/>).
+        </para>
+
+      </sect3>
+
     </sect2>
 
     <sect2 status="final" id="screen_layout">
@@ -640,6 +659,10 @@
     </sect2>
 
     <sect2 status="final" id="filmstrip_overview">
+
+      <indexterm>
+        <primary>filmstrip</primary>
+      </indexterm>
 
       <title>Filmstrip</title>
 

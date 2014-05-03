@@ -145,7 +145,7 @@ gui_reset (dt_lib_module_t *self)
   g_free(storage_name);
   gtk_combo_box_set_active(d->storage, storage_index);
 
-  gtk_combo_box_set_active(d->intent, (int)dt_conf_get_int("plugins/lighttable/export/iccintent") + 1);
+  gtk_combo_box_set_active(d->intent, dt_conf_get_int("plugins/lighttable/export/iccintent") + 1);
   // iccprofile
   int iccfound = 0;
   gchar *iccprofile = dt_conf_get_string("plugins/lighttable/export/iccprofile");
@@ -560,14 +560,14 @@ gui_init (dt_lib_module_t *self)
   d->profiles = g_list_append(d->profiles, prof);
 
   prof = (dt_lib_export_profile_t *)g_malloc0(sizeof(dt_lib_export_profile_t));
-  g_strlcpy(prof->filename, "X profile", sizeof(prof->filename));
-  dt_utf8_strlcpy(prof->name, "X profile", sizeof(prof->name));
-  prof->pos = 3;
+  g_strlcpy(prof->filename, "linear_rgb", sizeof(prof->filename));
+  dt_utf8_strlcpy(prof->name, _("linear Rec709 RGB"), sizeof(prof->name));
+  pos = prof->pos = 3;
   d->profiles = g_list_append(d->profiles, prof);
 
   prof = (dt_lib_export_profile_t *)g_malloc0(sizeof(dt_lib_export_profile_t));
-  g_strlcpy(prof->filename, "linear_rgb", sizeof(prof->filename));
-  dt_utf8_strlcpy(prof->name, _("linear Rec709 RGB"), sizeof(prof->name));
+  g_strlcpy(prof->filename, "linear_rec2020_rgb", sizeof(prof->filename));
+  dt_utf8_strlcpy(prof->name, _("linear Rec2020 RGB"), sizeof(prof->name));
   pos = prof->pos = 4;
   d->profiles = g_list_append(d->profiles, prof);
 
@@ -617,10 +617,7 @@ gui_init (dt_lib_module_t *self)
   while(l)
   {
     dt_lib_export_profile_t *prof = (dt_lib_export_profile_t *)l->data;
-    if(!strcmp(prof->name, "X profile"))
-      gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(d->profile), _("system display profile"));
-    else
-      gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(d->profile), prof->name);
+    gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(d->profile), prof->name);
     l = g_list_next(l);
   }
 
