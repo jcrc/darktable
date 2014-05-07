@@ -752,13 +752,13 @@ dt_gui_gtk_init(dt_gui_gtk_t *gui, int argc, char *argv[])
 
   // unset gtk rc from kde:
   char path[PATH_MAX], datadir[PATH_MAX], configdir[PATH_MAX];
-  dt_loc_get_datadir(datadir, PATH_MAX);
-  dt_loc_get_user_config_dir(configdir, PATH_MAX);
+  dt_loc_get_datadir(datadir, sizeof(datadir));
+  dt_loc_get_user_config_dir(configdir, sizeof(configdir));
 
-  g_snprintf(gui->gtkrc, PATH_MAX, "%s/darktable.gtkrc", configdir);
+  g_snprintf(gui->gtkrc, sizeof(gui->gtkrc), "%s/darktable.gtkrc", configdir);
 
   if (!g_file_test(gui->gtkrc, G_FILE_TEST_EXISTS))
-    g_snprintf(gui->gtkrc, PATH_MAX, "%s/darktable.gtkrc", datadir);
+    g_snprintf(gui->gtkrc, sizeof(gui->gtkrc), "%s/darktable.gtkrc", datadir);
 
   if (g_file_test(gui->gtkrc, G_FILE_TEST_EXISTS))
   {
@@ -833,8 +833,8 @@ dt_gui_gtk_init(dt_gui_gtk_t *gui, int argc, char *argv[])
   //  dt_gui_background_jobs_init();
 
   /* Have the delete event (window close) end the program */
-  dt_loc_get_datadir(datadir, PATH_MAX);
-  snprintf(path, PATH_MAX, "%s/icons", datadir);
+  dt_loc_get_datadir(datadir, sizeof(datadir));
+  snprintf(path, sizeof(path), "%s/icons", datadir);
   gtk_icon_theme_append_search_path (gtk_icon_theme_get_default (), path);
 
   widget = dt_ui_center(darktable.gui->ui);

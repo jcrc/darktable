@@ -331,14 +331,15 @@ void connect_key_accels(dt_lib_module_t *self)
 void gui_init(dt_lib_module_t *self)
 {
   /* initialize ui widgets */
-  dt_lib_filmstrip_t *d = (dt_lib_filmstrip_t *)g_malloc(sizeof(dt_lib_filmstrip_t));
+  dt_lib_filmstrip_t *d = (dt_lib_filmstrip_t *)calloc(1, sizeof(dt_lib_filmstrip_t));
   self->data = (void *)d;
-  memset(d,0,sizeof(dt_lib_filmstrip_t));
 
   d->last_selected_id = -1;
   d->history_copy_imgid = -1;
   d->activated_image = -1;
   d->mouse_over_id = -1;
+  d->pointerx = -1;
+  d->pointery = -1;
   dt_gui_hist_dialog_init(&d->dg);
 
   /* creating drawing area */
@@ -444,7 +445,7 @@ void gui_cleanup(dt_lib_module_t *self)
   darktable.view_manager->proxy.filmstrip.module = NULL;
 
   /* cleanup */
-  g_free(self->data);
+  free(self->data);
   self->data = NULL;
 }
 
@@ -704,7 +705,8 @@ static gboolean _lib_filmstrip_expose_callback(GtkWidget *widget, GdkEventExpose
     darktable.gui->center_tooltip++;
 
   strip->image_over = DT_VIEW_DESERT;
-  dt_control_set_mouse_over_id(-1);
+  if(pointerx >= 0 && pointery >= 0) // don't reset the global mouse_over_id when the cursor isn't even over the filmstrip
+    dt_control_set_mouse_over_id(-1);
 
   /* create cairo surface */
   cairo_t *cr = gdk_cairo_create(gtk_widget_get_window(widget));
@@ -1092,9 +1094,9 @@ _lib_filmstrip_dnd_get_callback(GtkWidget *widget, GdkDragContext *context, GtkS
     {
       if(count == 1)
       {
-        gchar pathname[DT_MAX_PATH_LEN] = {0};
+        gchar pathname[PATH_MAX] = {0};
         gboolean from_cache = TRUE;
-        dt_image_full_path(mouse_over_id, pathname, DT_MAX_PATH_LEN, &from_cache);
+        dt_image_full_path(mouse_over_id, pathname, sizeof(pathname), &from_cache);
         gchar *uri = g_strdup_printf("file://%s", pathname); // TODO: should we add the host?
         gtk_selection_data_set(selection_data, gtk_selection_data_get_target(selection_data), _BYTE, (guchar*) uri, strlen(uri));
         g_free(uri);
@@ -1107,9 +1109,9 @@ _lib_filmstrip_dnd_get_callback(GtkWidget *widget, GdkDragContext *context, GtkS
         while (sqlite3_step (stmt) == SQLITE_ROW)
         {
           int id = sqlite3_column_int(stmt, 0);
-          gchar pathname[DT_MAX_PATH_LEN] = {0};
+          gchar pathname[PATH_MAX] = {0};
           gboolean from_cache = TRUE;
-          dt_image_full_path(id, pathname, DT_MAX_PATH_LEN, &from_cache);
+          dt_image_full_path(id, pathname, sizeof(pathname), &from_cache);
           gchar *uri = g_strdup_printf("file://%s", pathname); // TODO: should we add the host?
           images = g_list_append(images, uri);
         }
