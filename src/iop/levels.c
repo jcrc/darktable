@@ -33,7 +33,7 @@
 #include "common/opencl.h"
 #include "libs/colorpicker.h"
 
-#define DT_GUI_CURVE_EDITOR_INSET 5
+#define DT_GUI_CURVE_EDITOR_INSET DT_PIXEL_APPLY_DPI(5)
 #define DT_GUI_CURVE_INFL .3f
 
 DT_MODULE_INTROSPECTION(1, dt_iop_levels_params_t)
@@ -314,6 +314,8 @@ void gui_init(struct dt_iop_module_t *self)
   self->gui_data = malloc(sizeof(dt_iop_levels_gui_data_t));
   dt_iop_levels_gui_data_t *c = (dt_iop_levels_gui_data_t *)self->gui_data;
 
+  const int panel_width = dt_conf_get_int("panel_width") * 0.95;
+
   c->mouse_x = c->mouse_y = -1.0;
   c->dragging = 0;
   c->activeToggleButton = NULL;
@@ -326,7 +328,7 @@ void gui_init(struct dt_iop_module_t *self)
   GtkWidget *asp = gtk_aspect_frame_new(NULL, 0.5, 0.5, 1.0, TRUE);
   gtk_box_pack_start(GTK_BOX(self->widget), asp, TRUE, TRUE, 0);
   gtk_container_add(GTK_CONTAINER(asp), GTK_WIDGET(c->area));
-  gtk_widget_set_size_request(GTK_WIDGET(c->area), 258, 150);
+  gtk_widget_set_size_request(GTK_WIDGET(c->area), panel_width, panel_width * 0.5);
   g_object_set (GTK_OBJECT(c->area), "tooltip-text", _("drag handles to set black, grey, and white points.  operates on L channel."), (char *)NULL);
 
   gtk_widget_add_events(GTK_WIDGET(c->area), GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_LEAVE_NOTIFY_MASK);
@@ -345,19 +347,19 @@ void gui_init(struct dt_iop_module_t *self)
 
   GtkWidget *autobutton = dtgtk_button_new_with_label(_("auto"), NULL, CPF_STYLE_FLAT|CPF_DO_NOT_USE_BORDER);
   g_object_set(G_OBJECT(autobutton), "tooltip-text", _("apply auto levels"), (char *)NULL);
-  gtk_widget_set_size_request(autobutton, 70, 24);
+  gtk_widget_set_size_request(autobutton, DT_PIXEL_APPLY_DPI(70), DT_PIXEL_APPLY_DPI(24));
 
   GtkWidget *blackpick = dtgtk_togglebutton_new(dtgtk_cairo_paint_colorpicker, CPF_STYLE_FLAT);
   g_object_set(G_OBJECT(blackpick), "tooltip-text", _("pick blackpoint from image"), (char *)NULL);
-  gtk_widget_set_size_request(blackpick, 24, 24);
+  gtk_widget_set_size_request(blackpick, DT_PIXEL_APPLY_DPI(24), DT_PIXEL_APPLY_DPI(24));
 
   GtkWidget *greypick = dtgtk_togglebutton_new(dtgtk_cairo_paint_colorpicker, CPF_STYLE_FLAT);
   g_object_set(G_OBJECT(greypick), "tooltip-text", _("pick medium greypoint from image"), (char *)NULL);
-  gtk_widget_set_size_request(greypick, 24, 24);
+  gtk_widget_set_size_request(greypick, DT_PIXEL_APPLY_DPI(24), DT_PIXEL_APPLY_DPI(24));
 
   GtkWidget *whitepick = dtgtk_togglebutton_new(dtgtk_cairo_paint_colorpicker, CPF_STYLE_FLAT);
   g_object_set(G_OBJECT(whitepick), "tooltip-text", _("pick whitepoint from image"), (char *)NULL);
-  gtk_widget_set_size_request(whitepick, 24, 24);
+  gtk_widget_set_size_request(whitepick, DT_PIXEL_APPLY_DPI(24), DT_PIXEL_APPLY_DPI(24));
 
   GdkColor col;
   col.red = col.green = col.blue = 0;
@@ -494,7 +496,7 @@ static gboolean dt_iop_levels_expose(GtkWidget *widget, GdkEventExpose *event, g
   width -= 2*inset;
   height -= 2*inset;
 
-  cairo_set_line_width(cr, 1.0);
+  cairo_set_line_width(cr, DT_PIXEL_APPLY_DPI(1.0));
   cairo_set_source_rgb (cr, .1, .1, .1);
   cairo_rectangle(cr, 0, 0, width, height);
   cairo_stroke(cr);
@@ -504,7 +506,7 @@ static gboolean dt_iop_levels_expose(GtkWidget *widget, GdkEventExpose *event, g
   cairo_fill(cr);
 
   // draw grid
-  cairo_set_line_width(cr, .4);
+  cairo_set_line_width(cr, DT_PIXEL_APPLY_DPI(.4));
   cairo_set_source_rgb (cr, .1, .1, .1);
   if(dev->histogram_type == DT_DEV_HISTOGRAM_WAVEFORM)
     dt_draw_waveform_lines(cr, 0, 0, width, height);
@@ -512,7 +514,7 @@ static gboolean dt_iop_levels_expose(GtkWidget *widget, GdkEventExpose *event, g
     dt_draw_vertical_lines(cr, 4, 0, 0, width, height);
 
   // Drawing the vertical line indicators
-  cairo_set_line_width(cr, 2.);
+  cairo_set_line_width(cr, DT_PIXEL_APPLY_DPI(2.));
 
   for(int k = 0; k < 3; k++)
   {
@@ -527,8 +529,8 @@ static gboolean dt_iop_levels_expose(GtkWidget *widget, GdkEventExpose *event, g
   }
 
   // draw x positions
-  cairo_set_line_width(cr, 1.);
-  const float arrw = 7.0f;
+  cairo_set_line_width(cr, DT_PIXEL_APPLY_DPI(1.));
+  const float arrw = DT_PIXEL_APPLY_DPI(7.0f);
   for(int k=0; k<3; k++)
   {
     switch(k)
@@ -569,7 +571,7 @@ static gboolean dt_iop_levels_expose(GtkWidget *widget, GdkEventExpose *event, g
     if(hist && hist_max > 0)
     {
       cairo_save(cr);
-      cairo_scale(cr, width/63.0, -(height-5)/(float)hist_max);
+      cairo_scale(cr, width/63.0, -(height-DT_PIXEL_APPLY_DPI(5))/(float)hist_max);
       cairo_set_source_rgba(cr, .2, .2, .2, 0.5);
       dt_draw_histogram_8(cr, hist, 0, dev->histogram_type == DT_DEV_HISTOGRAM_WAVEFORM?DT_DEV_HISTOGRAM_LOGARITHMIC:dev->histogram_type); // TODO: make draw handle waveform histograms
       cairo_restore(cr);
