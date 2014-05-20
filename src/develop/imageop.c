@@ -295,6 +295,8 @@ dt_iop_load_module_by_so(dt_iop_module_t *module, dt_iop_module_so_t *so, dt_dev
   module->request_histogram_source = DT_DEV_PIXELPIPE_PREVIEW;
   module->histogram_params.roi = NULL;
   module->histogram_params.bins_count = 64;
+  module->histogram_bins_count = 0;
+  module->histogram_pixels = 0;
   module->multi_priority = 0;
   for(int k=0; k<3; k++)
   {
@@ -391,10 +393,8 @@ dt_iop_load_module_by_so(dt_iop_module_t *module, dt_iop_module_so_t *so, dt_dev
   module->init(module);
 
   /* initialize blendop params and default values */
-  module->blend_params=g_malloc(sizeof(dt_develop_blend_params_t));
-  module->default_blendop_params=g_malloc(sizeof(dt_develop_blend_params_t));
-  memset(module->blend_params, 0, sizeof(dt_develop_blend_params_t));
-  memset(module->default_blendop_params, 0, sizeof(dt_develop_blend_params_t));
+  module->blend_params = g_malloc0(sizeof(dt_develop_blend_params_t));
+  module->default_blendop_params = g_malloc0(sizeof(dt_develop_blend_params_t));
   memcpy(module->default_blendop_params, &_default_blendop_params, sizeof(dt_develop_blend_params_t));
   memcpy(module->blend_params, &_default_blendop_params, sizeof(dt_develop_blend_params_t));
 
@@ -415,8 +415,7 @@ dt_iop_load_module_by_so(dt_iop_module_t *module, dt_iop_module_so_t *so, dt_dev
 void dt_iop_init_pipe(struct dt_iop_module_t *module, struct dt_dev_pixelpipe_t *pipe, struct dt_dev_pixelpipe_iop_t *piece)
 {
   module->init_pipe(module, pipe, piece);
-  piece->blendop_data = malloc(sizeof(dt_develop_blend_params_t));
-  memset(piece->blendop_data, 0, sizeof(dt_develop_blend_params_t));
+  piece->blendop_data = calloc(1, sizeof(dt_develop_blend_params_t));
   /// FIXME: Commit params is already done in module
   dt_iop_commit_params(module, module->default_params, module->default_blendop_params, pipe, piece);
 }
@@ -1047,8 +1046,7 @@ init_presets(dt_iop_module_so_t *module_so)
 
       // we need a dt_iop_module_t for dt_develop_blend_legacy_params()
       dt_iop_module_t *module;
-      module = (dt_iop_module_t *)malloc(sizeof(dt_iop_module_t));
-      memset(module, 0, sizeof(dt_iop_module_t));
+      module = (dt_iop_module_t *)calloc(1, sizeof(dt_iop_module_t));
       if( dt_iop_load_module_by_so(module, module_so, NULL) )
       {
         free(module);
@@ -1133,8 +1131,7 @@ void dt_iop_load_modules_so()
     if(!g_str_has_suffix(d_name, SHARED_MODULE_SUFFIX)) continue;
     strncpy(op, d_name+name_offset, strlen(d_name)-name_end);
     op[strlen(d_name)-name_end] = '\0';
-    module = (dt_iop_module_so_t *)malloc(sizeof(dt_iop_module_so_t));
-    memset(module,0,sizeof(dt_iop_module_so_t));
+    module = (dt_iop_module_so_t *)calloc(1, sizeof(dt_iop_module_so_t));
     gchar *libname = g_module_build_path(plugindir, (const gchar *)op);
     if(dt_iop_load_module_so(module, libname, op))
     {
@@ -1191,8 +1188,7 @@ GList *dt_iop_load_modules(dt_develop_t *dev)
   while(iop)
   {
     module_so = (dt_iop_module_so_t *)iop->data;
-    module    = (dt_iop_module_t *)malloc(sizeof(dt_iop_module_t));
-    memset(module,0,sizeof(dt_iop_module_t));
+    module    = (dt_iop_module_t *)calloc(1, sizeof(dt_iop_module_t));
     if(dt_iop_load_module_by_so(module, module_so, dev))
     {
       free(module);
