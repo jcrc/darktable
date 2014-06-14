@@ -7,12 +7,26 @@ events = doc.toplevel.events
 attributes = doc.toplevel.attributes
 local tmp_node
 
-
-for _,v in pairs({"node_to_string","para","startlist","listel","endlist","code"})   do -- add p a way to have code sections
+---------------------
+-- check for generator functions
+---------------------
+for _,v in pairs({"node_to_string","para","startlist","listel","endlist","code","emphasis"})   do
 	if _ENV[v]== nil then
 		error("function '"..v.."' not defined when requiring content")
 	end
 end
+---------------------
+-- check for database content
+---------------------
+if  #real_darktable.database == 0 then
+	error("The database needs to contain at least one image to generate documentation")
+end
+if  #real_darktable.styles == 0 then
+	error("The database needs to contain at least one style to generate documentation")
+end
+
+
+
 ----------------------
 --  EARLY TWEAKING  --
 ----------------------
@@ -284,6 +298,7 @@ darktable.database.move_image:set_text([[Physically moves an image (and all its 
 darktable.database.move_image:add_version_info("function added")
 darktable.database.move_image:add_parameter("image",tostring(types.dt_lua_image_t),[[The image to move]])
 darktable.database.move_image:add_parameter("film",tostring(types.dt_lua_film_t),[[The film to move to]])
+darktable.database.move_image:set_main_parent(darktable.database)
 darktable.database.copy_image:set_text([[Physically copies an image to another film.]]..para()..
 [[This will copy the image file and the related XMP to the directory of the new film]]..para()..
 [[If there is already a file with the same name as the image file, it wil create a duplicate from that file instead]]..para()..
@@ -292,6 +307,7 @@ darktable.database.copy_image:add_version_info("function added")
 darktable.database.copy_image:add_parameter("image",tostring(types.dt_lua_image_t),[[The image to copy]])
 darktable.database.copy_image:add_parameter("film",tostring(types.dt_lua_film_t),[[The film to copy to]])
 darktable.database.copy_image:add_return(tostring(types.dt_lua_image_t),[[The new image]])
+darktable.database.copy_image:set_main_parent(darktable.database)
 
 ------------------------
 --  DARKTABLE.MODULES --
@@ -418,9 +434,15 @@ darktable.debug.dump:set_text([[This will return a string describing everything 
 This function is recursion-safe and can be used to dump _G if needed.]])
 darktable.debug.dump:add_parameter("object","anything",[[The object to dump.]])
 darktable.debug.dump:add_parameter("name","string",[[A name to use for the object.]]):set_attribute("optional",true)
+tmp_node = darktable.debug.dump:add_parameter("known","table",[[A table of object,string pairs. Any object in that table will not be dumped, the string will be printed instead.]]..para().."defaults to "..my_tostring(darktable.debug.known).." if not set")
+tmp_node:set_attribute("optional",true)
 darktable.debug.dump:add_return("string",[[A string containing a text description of the object - can be very long.]])
 
 darktable.debug.debug:set_text([[Initialized to false; set it to true to also dump information about metatables.]])
+darktable.debug.max_depth:set_text([[Initialized to 10; The maximum depth to recursively dump content.]])
+
+remove_all_children(darktable.debug.known) -- debug values, not interesting
+darktable.debug.known:set_text([[A table containing the default value of ]]..my_tostring(tmp_node))
 darktable.debug.type:set_text([[Similar to the system function type() but it will return the real type instead of "userdata" for darktable specific objects.]])
 darktable.debug.type:add_parameter("object","anything",[[The object whos type must be reported.]])
 darktable.debug.type:add_return("string",[[A string describing the type of the object.]])
@@ -459,8 +481,8 @@ types.dt_lua_image_t.exif_iso:set_text([[The iso used on the image.]])
 types.dt_lua_image_t.exif_datetime_taken:set_text([[The date and time of the image.]])
 types.dt_lua_image_t.exif_focus_distance:set_text([[The distance of the subject.]])
 types.dt_lua_image_t.exif_crop:set_text([[The exif crop data.]])
-types.dt_lua_image_t.latitude:set_text([[GPS latitude data of the image.]])
-types.dt_lua_image_t.longitude:set_text([[GPS longitude data of the image.]])
+types.dt_lua_image_t.latitude:set_text([[GPS latitude data of the image, nil if not set.]]):add_version_info("the field is now nil instead of NAN if not set")
+types.dt_lua_image_t.longitude:set_text([[GPS longitude data of the image, nil if not set.]]):add_version_info("the field is now nil instead of NAN if not set")
 types.dt_lua_image_t.is_raw:set_text([[True if the image is a RAW file.]])
 types.dt_lua_image_t.is_ldr:set_text([[True if the image is a ldr image.]])
 types.dt_lua_image_t.is_hdr:set_text([[True if the image is a hdr image.]])

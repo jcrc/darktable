@@ -253,8 +253,7 @@ static _flickr_api_context_t *_flickr_api_authenticate(dt_storage_flickr_gui_dat
     }
   }
 
-  if (perms)
-    free(perms);
+  free(perms);
 
   return NULL;
 }
@@ -326,11 +325,8 @@ static void flickr_entry_changed(GtkEntry *entry, gpointer data)
   if( ui->flickr_api != NULL)
   {
     ui->flickr_api->needsReauthentication=TRUE;
-    if (ui->user_token)
-    {
-      g_free(ui->user_token);
-      ui->user_token = NULL;
-    }
+    g_free(ui->user_token);
+    ui->user_token = NULL;
     set_status(ui,_("not authenticated"), "#e07f7f");
     gtk_widget_set_sensitive(GTK_WIDGET( ui->comboBox1 ) ,FALSE);
   }
@@ -431,7 +427,7 @@ static gboolean combobox_separator(GtkTreeModel *model,GtkTreeIter *iter,gpointe
   gchar *v=NULL;
   if (G_VALUE_HOLDS_STRING (&value))
   {
-    if( (v=(gchar *)g_value_get_string (&value))!=NULL && strlen(v) == 0 ) return TRUE;
+    if( (v=(gchar *)g_value_get_string (&value))!=NULL && *v == '\0' ) return TRUE;
   }
   return FALSE;
 }
