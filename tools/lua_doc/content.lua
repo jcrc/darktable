@@ -269,6 +269,15 @@ darktable.styles.apply:add_parameter("style",my_tostring(types.dt_style_t),[[The
 darktable.styles.apply:add_parameter("image",my_tostring(types.dt_lua_image_t),[[The image to apply the style to.]])
 darktable.styles.apply:set_main_parent(darktable.styles)
 
+darktable.styles.import:set_text([[Import a style from an external .dtstyle file]]):add_version_info("function_added")
+darktable.styles.import:add_parameter("filename","string","The file to import");
+darktable.styles.import:set_main_parent(darktable.styles)
+
+darktable.styles.export:set_text([[Export a style to an external .dtstyle file]]):add_version_info("function_added")
+darktable.styles.export:add_parameter("style",my_tostring(types.dt_style_t),"The file to import");
+darktable.styles.export:add_parameter("directory","string","The directory to export to");
+darktable.styles.export:add_parameter("overwrite","boolean","Is overwriting an existing file allowed"):set_attribute("optional")
+darktable.styles.export:set_main_parent(darktable.styles)
 -------------------------
 --  DARKTABLE.DATABASE --
 -------------------------
@@ -341,6 +350,9 @@ darktable.modules.storage.email:set_alias(darktable.modules.storage.flickr)
 darktable.modules.storage.email:set_alias(darktable.modules.storage.facebook)
 darktable.modules.storage.email:set_alias(darktable.modules.storage.picasa)
 
+for k, v in darktable.modules.view:unskiped_children() do
+	v:set_main_parent(darktable.modules.view)
+end
 darktable.modules.view:set_text([[The different views in darktable]])
 darktable.modules.view:add_version_info([[View objects added]])
 darktable.modules.view.map:set_text([[The map view]])
@@ -601,7 +613,7 @@ types.dt_lib_module_t:add_version_info([[Type added]])
 types.dt_lib_module_t.id:set_text([[A unit string identifying the lib]])
 types.dt_lib_module_t.name:set_text([[The translated title of the UI element]])
 types.dt_lib_module_t.version:set_text([[The version of the internal data of this lib]])
-types.dt_lib_module_t.visible:set_text([[Whether the UI element is visible.]]..para()..
+types.dt_lib_module_t.visible:set_text([[Allow to make a lib module completely invisible to the user.]]..para()..
 [[Note that if the module is invisible the user will have no way to restore it without lua]])
 types.dt_lib_module_t.visible:set_attribute("implicit_yield",true)
 types.dt_lib_module_t.container:set_text([[The location of the lib in the darktable UI]])
@@ -609,6 +621,10 @@ types.dt_lib_module_t.expandable:set_text([[True if the lib can be expanded/retr
 types.dt_lib_module_t.expanded:set_text([[True if the lib is expanded]]);
 types.dt_lib_module_t.position:set_text([[A value deciding the position of the lib within its container]])
 types.dt_lib_module_t.views:set_text([[A table of all teh views that display this widget]])
+types.dt_lib_module_t.reset:set_text([[A function to reset the lib to its default values]]..para()..
+[[This function will do nothing if the lib is not visible or can't be reset]])
+types.dt_lib_module_t.reset:add_parameter("self",my_tostring(types.dt_lib_module_t),[[The lib to reset]])
+types.dt_lib_module_t.on_screen:set_text([[True if the lib is currently visible on the screen]])
 
 types.dt_view_t:set_text([[A darktable view]])
 types.dt_view_t:add_version_info([[Type added]])
@@ -668,6 +684,10 @@ events["post-import-film"].callback:add_parameter("event","string",[[The name of
 
 events["post-import-film"].callback:add_parameter("film",my_tostring(types.dt_lua_film_t),[[The new film that has been added. If multiple films were added recursively only the top level film is reported.]])
 events["post-import-film"].extra_registration_parameters:set_text([[This event has no extra registration parameters.]])
+events["view-changed"]:set_text([[This event is triggered after the user changed the active view]])
+events["view-changed"].callback:add_parameter("old_view",my_tostring(types.dt_view_t),[[The view that we just left]])
+events["view-changed"].callback:add_parameter("new_view",my_tostring(types.dt_view_t),[[The view we are now in]])
+events["view-changed"].extra_registration_parameters:set_text([[This event has no extra registration parameters.]])
 ----------------------
 --  ATTRIBUTES      --
 ----------------------

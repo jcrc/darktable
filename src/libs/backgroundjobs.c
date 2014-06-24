@@ -64,7 +64,7 @@ static const guint *_lib_backgroundjobs_create(dt_lib_module_t *self,int type,co
 /* proxy function for destroying a ui bgjob plate */
 static void _lib_backgroundjobs_destroy(dt_lib_module_t *self, const guint *key);
 /* proxy function for assigning and set cancel job for a ui bgjob plate*/
-static void _lib_backgroundjobs_set_cancellable(dt_lib_module_t *self, const guint *key, struct dt_job_t *job);
+static void _lib_backgroundjobs_set_cancellable(dt_lib_module_t *self, const guint *key, dt_job_t *job);
 /* proxy function for setting the progress of a ui bgjob plate */
 static void _lib_backgroundjobs_progress(dt_lib_module_t *self, const guint *key, double progress);
 #ifdef USE_LUA
@@ -252,7 +252,7 @@ static void _lib_backgroundjobs_cancel_callback(GtkWidget *w, gpointer user_data
   dt_control_job_cancel(job);
 }
 
-static void _lib_backgroundjobs_set_cancellable(dt_lib_module_t *self, const guint *key, struct dt_job_t *job)
+static void _lib_backgroundjobs_set_cancellable(dt_lib_module_t *self, const guint *key, dt_job_t *job)
 {
   lib_backgroundjobs_set_cancellable(self,key, G_CALLBACK (_lib_backgroundjobs_cancel_callback), (gpointer)job);
 }
@@ -304,9 +304,9 @@ static double _lib_backgroundjobs_get_progress(dt_lib_module_t *self, const guin
 
 typedef guint* dt_lua_backgroundjob_t;
 
-static int32_t lua_job_canceled_job(struct dt_job_t *job) 
+static int32_t lua_job_canceled_job(dt_job_t *job)
 {
-  const guint* key = job->user_data;
+  const guint* key = dt_control_job_get_params(job);
   lua_State * L = darktable.lua_state.state;
   gboolean has_lock = dt_lua_lock();
   luaA_push(L,dt_lua_backgroundjob_t,&key);
@@ -321,12 +321,11 @@ static int32_t lua_job_canceled_job(struct dt_job_t *job)
 
 static void lua_job_cancelled(GtkWidget *w, gpointer user_data)
 {
-  dt_job_t job;
   guint* key = user_data;
-  dt_control_job_init(&job, "lua: on background cancel");
-  job.execute = &lua_job_canceled_job;
-  job.user_data = key;
-  dt_control_add_job(darktable.control, &job);
+  dt_job_t *job = dt_control_job_create(&lua_job_canceled_job, "lua: on background cancel");
+  if(!job) return;
+  dt_control_job_set_params(job, key);
+  dt_control_add_job(darktable.control, DT_JOB_QUEUE_SYSTEM_FG, job);
 }
 
 static int lua_create_job(lua_State *L){
@@ -419,16 +418,17 @@ void init(struct dt_lib_module_t *self)
   int my_typeid = dt_lua_module_get_entry_typeid(L,"lib",self->plugin_name);
   lua_pushlightuserdata(L,self);
   lua_pushcclosure(L,lua_create_job,1);
-  dt_lua_register_type_callback_stack_typeid(L,my_typeid,"create_job");
+  lua_pushcclosure(L,dt_lua_type_member_common,1);
+  dt_lua_type_register_const_typeid(L,my_typeid,"create_job");
 
   // create a type describing a job object
   int job_typeid = dt_lua_init_gpointer_type(L,dt_lua_backgroundjob_t);
   lua_pushlightuserdata(L,self);
   lua_pushcclosure(L,lua_job_progress,1);
-  dt_lua_register_type_callback_stack_entry_typeid(L,job_typeid,"percent");
+  dt_lua_type_register_typeid(L,job_typeid,"percent");
   lua_pushlightuserdata(L,self);
   lua_pushcclosure(L,lua_job_valid,1);
-  dt_lua_register_type_callback_stack_entry_typeid(L,job_typeid,"valid");
+  dt_lua_type_register_typeid(L,job_typeid,"valid");
 #endif //USE_LUA
 }
 // modelines: These editor modelines have been set for all relevant files by tools/update_modelines.sh

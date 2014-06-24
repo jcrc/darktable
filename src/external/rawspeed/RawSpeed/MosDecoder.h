@@ -1,7 +1,8 @@
-/* 
+/*
     RawSpeed - RAW file decoder.
 
     Copyright (C) 2009-2014 Klaus Post
+    Copyright (C) 2014 Pedro Côrte-Real
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -19,25 +20,28 @@
 
     http://www.klauspost.com
 */
-#ifndef FILE_READER_H
-#define FILE_READER_H
+#ifndef MOS_DECODER_H
+#define MOS_DECODER_H
 
-#include "FileIOException.h"
-#include "FileMap.h"
+#include "RawDecoder.h"
+#include "string.h"
 
 namespace RawSpeed {
 
-class FileReader
+class MosDecoder :
+  public RawDecoder
 {
 public:
-	FileReader(LPCWSTR filename);
-public:
-	FileMap* readFile();
-	virtual ~FileReader();
-  LPCWSTR Filename() const { return mFilename; }
-//  void Filename(LPCWSTR val) { mFilename = val; }
-private:
-  LPCWSTR mFilename;
+  MosDecoder(TiffIFD *rootIFD, FileMap* file);
+  virtual ~MosDecoder(void);
+  virtual RawImage decodeRawInternal();
+  virtual void checkSupportInternal(CameraMetaData *meta);
+  virtual void decodeMetaDataInternal(CameraMetaData *meta);
+protected:
+  TiffIFD *mRootIFD;
+  char *make, *model;
+  uchar8 *xmpText;
+  void parseXMP(TiffEntry *xmp);
 };
 
 } // namespace RawSpeed

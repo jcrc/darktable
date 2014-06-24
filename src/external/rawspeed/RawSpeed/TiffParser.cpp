@@ -4,7 +4,8 @@
 /*
     RawSpeed - RAW file decoder.
 
-    Copyright (C) 2009 Klaus Post
+    Copyright (C) 2009-2014 Klaus Post
+    Copyright (C) 2014 Pedro Côrte-Real
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -112,6 +113,7 @@ RawDecoder* TiffParser::getDecoder() {
   }
 
   potentials = mRootIFD->getIFDsWithTag(MAKE);
+
   if (!potentials.empty()) {  // We have make entry
     for (vector<TiffIFD*>::iterator i = potentials.begin(); i != potentials.end(); ++i) {
       string make = (*i)->getEntry(MAKE)->getString();
@@ -158,8 +160,23 @@ RawDecoder* TiffParser::getDecoder() {
         mRootIFD = NULL;
         return new SrwDecoder(root, mInput);
       }
+      if (!make.compare("Mamiya-OP Co.,Ltd.")) {
+        mRootIFD = NULL;
+        return new MefDecoder(root, mInput);
+      }
     }
   }
+
+  potentials = mRootIFD->getIFDsWithTag(SOFTWARE);
+  if (!potentials.empty()) {
+    string software = potentials[0]->getEntry(SOFTWARE)->getString();
+    TrimSpaces(software);
+    if (!software.compare("Camera Library")) {
+      mRootIFD = NULL;
+      return new MosDecoder(root, mInput);
+    }
+  }
+
   throw TiffParserException("No decoder found. Sorry.");
   return NULL;
 }
@@ -179,7 +196,6 @@ void TiffParser::MergeIFD( TiffParser* other_tiff)
   }
   other_root->mSubIFD.clear();
   other_root->mEntry.clear();
-  other_tiff->mRootIFD = NULL;
 }
 
 } // namespace RawSpeed

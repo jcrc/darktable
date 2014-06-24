@@ -162,7 +162,7 @@ int dt_lua_do_chunk(lua_State *L,int nargs,int nresults)
 error:
   {
     const char *error_msg = lua_tostring(new_thread,-1);
-    luaL_traceback(L,L,error_msg,0);
+    luaL_traceback(L,new_thread,error_msg,0);
     lua_remove(L,-2); // remove the new thread from L
     return thread_result;
   }
@@ -185,6 +185,19 @@ int dt_lua_dostring(lua_State *L,const char* command,int nargs,int nresults)
 int dt_lua_dofile_silent(lua_State *L,const char* filename,int nargs,int nresults)
 {
   if(luaL_loadfile(L, filename))
+  {
+    dt_print(DT_DEBUG_LUA,"LUA ERROR %s\n",lua_tostring(L,-1));
+    lua_pop(L,1);
+    return -1;
+  }
+  lua_insert(L,-(nargs+1));
+  return dt_lua_do_chunk_silent(L,nargs,nresults);
+}
+
+int dt_lua_dostring_silent(lua_State *L,const char* command,int nargs,int nresults)
+{
+  int load_result = luaL_loadstring(L, command);
+  if(load_result != LUA_OK )
   {
     dt_print(DT_DEBUG_LUA,"LUA ERROR %s\n",lua_tostring(L,-1));
     lua_pop(L,1);
