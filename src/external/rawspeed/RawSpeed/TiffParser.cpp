@@ -1,5 +1,20 @@
 #include "StdAfx.h"
 #include "TiffParser.h"
+#include "DngDecoder.h"
+#include "Cr2Decoder.h"
+#include "ArwDecoder.h"
+#include "PefDecoder.h"
+#include "NefDecoder.h"
+#include "OrfDecoder.h"
+#include "RafDecoder.h"
+#include "Rw2Decoder.h"
+#include "SrwDecoder.h"
+#include "MefDecoder.h"
+#include "MosDecoder.h"
+#include "DcrDecoder.h"
+#include "KdcDecoder.h"
+#include "ErfDecoder.h"
+#include "ThreefrDecoder.h"
 
 /*
     RawSpeed - RAW file decoder.
@@ -163,6 +178,22 @@ RawDecoder* TiffParser::getDecoder() {
       if (!make.compare("Mamiya-OP Co.,Ltd.")) {
         mRootIFD = NULL;
         return new MefDecoder(root, mInput);
+      }
+      if (!make.compare("Kodak")) {
+        mRootIFD = NULL;
+        return new DcrDecoder(root, mInput);
+      }
+      if (!make.compare("EASTMAN KODAK COMPANY")) {
+        mRootIFD = NULL;
+        return new KdcDecoder(root, mInput);
+      }
+      if (!make.compare("SEIKO EPSON CORP.")) {
+        mRootIFD = NULL;
+        return new ErfDecoder(root, mInput);
+      }
+      if (!make.compare("Hasselblad")) {
+        mRootIFD = NULL;
+        return new ThreefrDecoder(root, mInput);
       }
     }
   }

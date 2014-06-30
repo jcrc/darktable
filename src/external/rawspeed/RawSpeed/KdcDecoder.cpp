@@ -1,5 +1,6 @@
 #include "StdAfx.h"
-#include "MefDecoder.h"
+#include "KdcDecoder.h"
+
 /*
     RawSpeed - RAW file decoder.
 
@@ -25,54 +26,59 @@
 
 namespace RawSpeed {
 
-MefDecoder::MefDecoder(TiffIFD *rootIFD, FileMap* file)  :
+KdcDecoder::KdcDecoder(TiffIFD *rootIFD, FileMap* file)  :
     RawDecoder(file), mRootIFD(rootIFD) {
   decoderVersion = 0;
 }
 
-MefDecoder::~MefDecoder(void) {
+KdcDecoder::~KdcDecoder(void) {
 }
 
-RawImage MefDecoder::decodeRawInternal() {
-  vector<TiffIFD*> data = mRootIFD->getIFDsWithTag(STRIPOFFSETS);
+RawImage KdcDecoder::decodeRawInternal() {
+  int compression = mRootIFD->getEntryRecursive(COMPRESSION)->getInt();
+  if (7 != compression)
+    ThrowRDE("KDC Decoder: Unsupported compression %d", compression);
 
-  if (data.size() < 2)
-    ThrowRDE("MEF Decoder: No image data found");
-    
-  TiffIFD* raw = data[1];
-  uint32 width = raw->getEntry(IMAGEWIDTH)->getInt();
-  uint32 height = raw->getEntry(IMAGELENGTH)->getInt();
-  uint32 off = raw->getEntry(STRIPOFFSETS)->getInt();
-  uint32 c2 = raw->getEntry(STRIPBYTECOUNTS)->getInt();
+  TiffEntry *ex = mRootIFD->getEntryRecursive(PIXELXDIMENSION);
+  TiffEntry *ey = mRootIFD->getEntryRecursive(PIXELYDIMENSION);
 
-  if (c2 > mFile->getSize() - off) {
-    mRaw->setError("Warning: byte count larger than file size, file probably truncated.");
-  }
+  if (NULL == ex || NULL == ey)
+    ThrowRDE("KDC Decoder: Unable to retrieve image size");
+
+  uint32 width = ex->getInt();
+  uint32 height = ey->getInt();
+
+  TiffEntry *offset = mRootIFD->getEntryRecursive(KODAK_KDC_OFFSET);
+  if (!offset || offset->count < 13)
+    ThrowRDE("KDC Decoder: Couldn't find the KDC offset");
+  const uint32 *offsetarray = offset->getIntArray();
+  uint32 off = offsetarray[4] + offsetarray[12];
 
   mRaw->dim = iPoint2D(width, height);
   mRaw->createData();
-  ByteStream input(mFile->getData(off), mFile->getSize() - off);
+  ByteStream input(mFile->getData(off), mFile->getSize()-off);
 
   Decode12BitRawBE(input, width, height);
+
   return mRaw;
 }
 
-void MefDecoder::checkSupportInternal(CameraMetaData *meta) {
+void KdcDecoder::checkSupportInternal(CameraMetaData *meta) {
   vector<TiffIFD*> data = mRootIFD->getIFDsWithTag(MODEL);
   if (data.empty())
-    ThrowRDE("MEF Support check: Model name not found");
+    ThrowRDE("KDC Support check: Model name not found");
   string make = data[0]->getEntry(MAKE)->getString();
   string model = data[0]->getEntry(MODEL)->getString();
   this->checkCameraSupported(meta, make, model, "");
 }
 
-void MefDecoder::decodeMetaDataInternal(CameraMetaData *meta) {
+void KdcDecoder::decodeMetaDataInternal(CameraMetaData *meta) {
   vector<TiffIFD*> data = mRootIFD->getIFDsWithTag(MODEL);
 
   if (data.empty())
-    ThrowRDE("MEF Decoder: Model name found");
+    ThrowRDE("KDC Decoder: Model name found");
   if (!data[0]->hasEntry(MAKE))
-    ThrowRDE("MEF Decoder: Make name not found");
+    ThrowRDE("KDC Decoder: Make name not found");
 
   string make = data[0]->getEntry(MAKE)->getString();
   string model = data[0]->getEntry(MODEL)->getString();

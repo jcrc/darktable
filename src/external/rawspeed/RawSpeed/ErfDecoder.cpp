@@ -1,5 +1,6 @@
 #include "StdAfx.h"
-#include "MefDecoder.h"
+#include "ErfDecoder.h"
+
 /*
     RawSpeed - RAW file decoder.
 
@@ -25,19 +26,19 @@
 
 namespace RawSpeed {
 
-MefDecoder::MefDecoder(TiffIFD *rootIFD, FileMap* file)  :
+ErfDecoder::ErfDecoder(TiffIFD *rootIFD, FileMap* file)  :
     RawDecoder(file), mRootIFD(rootIFD) {
   decoderVersion = 0;
 }
 
-MefDecoder::~MefDecoder(void) {
+ErfDecoder::~ErfDecoder(void) {
 }
 
-RawImage MefDecoder::decodeRawInternal() {
+RawImage ErfDecoder::decodeRawInternal() {
   vector<TiffIFD*> data = mRootIFD->getIFDsWithTag(STRIPOFFSETS);
 
   if (data.size() < 2)
-    ThrowRDE("MEF Decoder: No image data found");
+    ThrowRDE("ERF Decoder: No image data found");
     
   TiffIFD* raw = data[1];
   uint32 width = raw->getEntry(IMAGEWIDTH)->getInt();
@@ -53,26 +54,27 @@ RawImage MefDecoder::decodeRawInternal() {
   mRaw->createData();
   ByteStream input(mFile->getData(off), mFile->getSize() - off);
 
-  Decode12BitRawBE(input, width, height);
+  Decode12BitRawBEWithControl(input, width, height);
+
   return mRaw;
 }
 
-void MefDecoder::checkSupportInternal(CameraMetaData *meta) {
+void ErfDecoder::checkSupportInternal(CameraMetaData *meta) {
   vector<TiffIFD*> data = mRootIFD->getIFDsWithTag(MODEL);
   if (data.empty())
-    ThrowRDE("MEF Support check: Model name not found");
+    ThrowRDE("ERF Support check: Model name not found");
   string make = data[0]->getEntry(MAKE)->getString();
   string model = data[0]->getEntry(MODEL)->getString();
   this->checkCameraSupported(meta, make, model, "");
 }
 
-void MefDecoder::decodeMetaDataInternal(CameraMetaData *meta) {
+void ErfDecoder::decodeMetaDataInternal(CameraMetaData *meta) {
   vector<TiffIFD*> data = mRootIFD->getIFDsWithTag(MODEL);
 
   if (data.empty())
-    ThrowRDE("MEF Decoder: Model name found");
+    ThrowRDE("ERF Decoder: Model name found");
   if (!data[0]->hasEntry(MAKE))
-    ThrowRDE("MEF Decoder: Make name not found");
+    ThrowRDE("ERF Decoder: Make name not found");
 
   string make = data[0]->getEntry(MAKE)->getString();
   string model = data[0]->getEntry(MODEL)->getString();

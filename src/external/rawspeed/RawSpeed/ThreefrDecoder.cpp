@@ -1,5 +1,7 @@
 #include "StdAfx.h"
-#include "MefDecoder.h"
+#include "ThreefrDecoder.h"
+#include "HasselbladDecompressor.h"
+#include "LJpegPlain.h"
 /*
     RawSpeed - RAW file decoder.
 
@@ -25,54 +27,63 @@
 
 namespace RawSpeed {
 
-MefDecoder::MefDecoder(TiffIFD *rootIFD, FileMap* file)  :
+ThreefrDecoder::ThreefrDecoder(TiffIFD *rootIFD, FileMap* file)  :
     RawDecoder(file), mRootIFD(rootIFD) {
   decoderVersion = 0;
 }
 
-MefDecoder::~MefDecoder(void) {
+ThreefrDecoder::~ThreefrDecoder(void) {
 }
 
-RawImage MefDecoder::decodeRawInternal() {
+RawImage ThreefrDecoder::decodeRawInternal() {
   vector<TiffIFD*> data = mRootIFD->getIFDsWithTag(STRIPOFFSETS);
 
   if (data.size() < 2)
-    ThrowRDE("MEF Decoder: No image data found");
-    
+    ThrowRDE("3FR Decoder: No image data found");
+
   TiffIFD* raw = data[1];
   uint32 width = raw->getEntry(IMAGEWIDTH)->getInt();
   uint32 height = raw->getEntry(IMAGELENGTH)->getInt();
   uint32 off = raw->getEntry(STRIPOFFSETS)->getInt();
-  uint32 c2 = raw->getEntry(STRIPBYTECOUNTS)->getInt();
-
-  if (c2 > mFile->getSize() - off) {
-    mRaw->setError("Warning: byte count larger than file size, file probably truncated.");
-  }
 
   mRaw->dim = iPoint2D(width, height);
   mRaw->createData();
   ByteStream input(mFile->getData(off), mFile->getSize() - off);
 
-  Decode12BitRawBE(input, width, height);
+  HasselbladDecompressor l(mFile, mRaw);
+  map<string,string>::iterator pixelOffset = hints.find("pixelBaseOffset");
+  if (pixelOffset != hints.end()) {
+    stringstream convert((*pixelOffset).second);
+    convert >> l.pixelBaseOffset;
+  }
+
+  try {
+    l.decodeHasselblad(mRootIFD, off, mFile->getSize() - off);
+  } catch (IOException &e) {
+    mRaw->setError(e.what());
+    // Let's ignore it, it may have delivered somewhat useful data.
+  }
+
   return mRaw;
 }
 
-void MefDecoder::checkSupportInternal(CameraMetaData *meta) {
+void ThreefrDecoder::checkSupportInternal(CameraMetaData *meta) {
   vector<TiffIFD*> data = mRootIFD->getIFDsWithTag(MODEL);
   if (data.empty())
-    ThrowRDE("MEF Support check: Model name not found");
+    ThrowRDE("3FR Support check: Model name not found");
   string make = data[0]->getEntry(MAKE)->getString();
   string model = data[0]->getEntry(MODEL)->getString();
   this->checkCameraSupported(meta, make, model, "");
 }
 
-void MefDecoder::decodeMetaDataInternal(CameraMetaData *meta) {
+void ThreefrDecoder::decodeMetaDataInternal(CameraMetaData *meta) {
+  mRaw->cfa.setCFA(iPoint2D(2,2), CFA_RED, CFA_GREEN, CFA_GREEN, CFA_BLUE);
   vector<TiffIFD*> data = mRootIFD->getIFDsWithTag(MODEL);
 
   if (data.empty())
-    ThrowRDE("MEF Decoder: Model name found");
+    ThrowRDE("3FR Decoder: Model name found");
   if (!data[0]->hasEntry(MAKE))
-    ThrowRDE("MEF Decoder: Make name not found");
+    ThrowRDE("3FR Decoder: Make name not found");
 
   string make = data[0]->getEntry(MAKE)->getString();
   string model = data[0]->getEntry(MODEL)->getString();

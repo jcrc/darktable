@@ -58,6 +58,18 @@ static int id_member(lua_State*L) {
   return 1;
 }
 
+gboolean dt_lua_lib_check(lua_State *L,struct dt_lib_module_t* self)
+{
+  return(self->widget !=NULL);
+}
+
+void dt_lua_lib_check_error(lua_State *L,struct dt_lib_module_t* self)
+{
+  if(!self->widget) {
+    luaL_error(L,"Attempt to access a non-visible module");
+  }
+}
+
 static int name_member(lua_State*L) {
   dt_lib_module_t * module = *(dt_lib_module_t**)lua_touserdata(L,1);
   lua_pushstring(L,module->name());
@@ -119,7 +131,7 @@ static int lib_tostring(lua_State* L)
   return 1;
 }
 
-void dt_lua_register_lib(lua_State* L,dt_lib_module_t* module)
+void dt_lua_lib_register(lua_State* L,dt_lib_module_t* module)
 {
   dt_lua_register_module_entry_new(L,"lib",module->plugin_name,module);
   int my_type = dt_lua_module_get_entry_typeid(L,"lib",module->plugin_name);
