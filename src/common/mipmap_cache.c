@@ -53,10 +53,10 @@ struct dt_mipmap_buffer_dsc
 {
   uint32_t width;
   uint32_t height;
-  uint32_t size;
+  size_t size;
   uint32_t flags;
   /* NB: sizeof must be a multiple of 4*sizeof(float) */
-}  __attribute__((packed));
+} __attribute__((packed,aligned(16)));
 
 // last resort mem alloc for dead images. sizeof(dt_mipmap_buffer_dsc) + dead image pixels (8x8)
 // __m128 type for sse alignment.
@@ -533,8 +533,7 @@ dt_mipmap_cache_alloc(dt_image_t *img, dt_mipmap_size_t size, dt_mipmap_cache_al
   int32_t wd = img->width;
   int32_t ht = img->height;
   int32_t bpp = img->bpp;
-  const uint32_t buffer_size =
-    ((wd*ht*bpp) + sizeof(**dsc));
+  const size_t buffer_size = (((size_t)wd*ht*bpp) + sizeof(**dsc));
 
   // buf might have been alloc'ed before,
   // so only check size and re-alloc if necessary:

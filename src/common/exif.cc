@@ -769,9 +769,11 @@ static bool dt_exif_read_exif_data(dt_image_t *img, Exiv2::ExifData &exifData)
       }
     }
 
+#if EXIV2_MINOR_VERSION<23
     // workaround for an exiv2 bug writing random garbage into exif_lens for this camera:
     // http://dev.exiv2.org/issues/779
     if(!strcmp(img->exif_model, "DMC-GH2")) snprintf(img->exif_lens, sizeof(img->exif_lens), "(unknown)");
+#endif
 
     // Workaround for an issue on newer Sony NEX cams.
     // The default EXIF field is not used by Sony to store lens data
@@ -854,14 +856,11 @@ int dt_exif_read(dt_image_t *img, const char* path)
   // at least set datetime taken to something useful in case there is no exif data in this file (pfm, png, ...)
   struct stat statbuf;
 
-  if(stat(path, &statbuf) == -1)
+  if(!stat(path, &statbuf))
   {
-    perror("dt_exif_read(): stat()");
-    return 1;
+    struct tm result;
+    strftime(img->exif_datetime_taken, 20, "%Y:%m:%d %H:%M:%S", localtime_r(&statbuf.st_mtime, &result));
   }
-
-  struct tm result;
-  strftime(img->exif_datetime_taken, 20, "%Y:%m:%d %H:%M:%S", localtime_r(&statbuf.st_mtime, &result));
 
   try
   {
