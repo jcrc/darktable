@@ -47,6 +47,10 @@ print("warning, avoid problems with picasa/facebook")
 types.dt_imageio_module_storage_data_email:set_text([[TBSL undocumented, force first]])
 
 ----------------------
+--  REANAMINGS      --
+----------------------
+
+----------------------
 --  TOPLEVEL        --
 ----------------------
 doc.toplevel:set_text([[To access the darktable specific functions you must load the darktable environement:]]..
@@ -137,7 +141,7 @@ darktable.gui.current_view:set_text([[Allows to change the current view.]])
 darktable.gui.current_view:add_parameter("view",my_tostring(types.dt_view_t),[[The view to switch to. If empty the current view is unchanged]]):set_attribute("optional",true)
 darktable.gui.current_view:add_return(my_tostring(types.dt_view_t),[[the current view]])
 darktable.gui.current_view:add_version_info([[Function added]])
-darktable.gui.create_job:set_text([[Create a new progress_bar displayed in ]]..my_tostring(darktable.modules.lib.backgroundjobs))
+darktable.gui.create_job:set_text([[Create a new progress_bar displayed in ]]..my_tostring(darktable.gui.libs.backgroundjobs))
 darktable.gui.create_job:add_parameter("text","string",[[The text to display in the job entry]])
 darktable.gui.create_job:add_parameter("percentage","boolean",[[Should a progress bar be displayed]]):set_attribute("optional",true)
 tmp = darktable.gui.create_job:add_parameter("cancel_callback","function",[[A function called when the cancel button for that job is pressed]]..para().."note that the job won't be destroyed automatically. You need to set "..my_tostring(types.dt_lua_backgroundjob_t.valid).." to false for that")
@@ -192,6 +196,12 @@ darktable.configuration.api_version_suffix:set_text([[The version suffix of the 
 darktable.configuration.api_version_suffix:add_version_info([[field added]])
 darktable.configuration.api_version_string:set_text([[The version description of the lua API. This is a string compatible with the semantic versionning convention]])
 darktable.configuration.api_version_string:add_version_info([[field added]])
+darktable.configuration.check_version:set_text([[Check that a module is compatible with the running version of darktable]]..para().."Add the following line at the top of your module : "..
+code("darktable.configuration.check(...,{M,m,p},{M2,m2,p2})").."To document that your module has been tested with API version M.m.p and M2.m2.p2."..para()..
+"This will raise an error if the user is running a released version of DT and a warning if he is running a developement version"..para().."(the ... here will automatically expand to your module name if used at the top of your script")
+darktable.configuration.check_version:add_parameter("module name","string","The name of the module to report on error")
+darktable.configuration.check_version:add_parameter("...","table...","Tables of API versions that are known to work with the scrip")
+
 
 -----------------------------
 --  DARKTABLE.PREFERENCES  --
@@ -264,7 +274,7 @@ darktable.styles.import:add_parameter("filename","string","The file to import");
 darktable.styles.import:set_main_parent(darktable.styles)
 
 darktable.styles.export:set_text([[Export a style to an external .dtstyle file]]):add_version_info("function_added")
-darktable.styles.export:add_parameter("style",my_tostring(types.dt_style_t),"The file to import");
+darktable.styles.export:add_parameter("style",my_tostring(types.dt_style_t),"The style to export");
 darktable.styles.export:add_parameter("directory","string","The directory to export to");
 darktable.styles.export:add_parameter("overwrite","boolean","Is overwriting an existing file allowed"):set_attribute("optional")
 darktable.styles.export:set_main_parent(darktable.styles)
@@ -340,89 +350,91 @@ darktable.modules.storage.email:set_alias(darktable.modules.storage.flickr)
 darktable.modules.storage.email:set_alias(darktable.modules.storage.facebook)
 darktable.modules.storage.email:set_alias(darktable.modules.storage.picasa)
 
-for k, v in darktable.modules.view:unskiped_children() do
-	v:set_main_parent(darktable.modules.view)
+for k, v in darktable.gui.views:unskiped_children() do
+	v:set_main_parent(darktable.gui.views)
 end
-darktable.modules.view:set_text([[The different views in darktable]])
-darktable.modules.view:add_version_info([[View objects added]])
-darktable.modules.view.map:set_text([[The map view]])
-darktable.modules.view.map.latitude:set_text([[The latitude of the center of the map]])
-darktable.modules.view.map.longitude:set_text([[The longitude of the center of the map]])
-darktable.modules.view.map.zoom:set_text([[The current zoom level of the map]])
+darktable.gui.views:set_text([[The different views in darktable]])
+darktable.gui.views:add_version_info([[View objects added]])
+darktable.gui.views.map:set_text([[The map view]])
+darktable.gui.views.map.latitude:set_text([[The latitude of the center of the map]])
+darktable.gui.views.map.longitude:set_text([[The longitude of the center of the map]])
+darktable.gui.views.map.zoom:set_text([[The current zoom level of the map]])
 
-darktable.modules.view.darkroom:set_text([[The darkroom view]])
-darktable.modules.view.lighttable:set_text([[The lighttable view]])
-darktable.modules.view.tethering:set_text([[The tethering view]])
-darktable.modules.view.slideshow:set_text([[The slideshow view]])
+darktable.gui.views.darkroom:set_text([[The darkroom view]])
+darktable.gui.views.lighttable:set_text([[The lighttable view]])
+darktable.gui.views.tethering:set_text([[The tethering view]])
+darktable.gui.views.slideshow:set_text([[The slideshow view]])
 
-for k, v in darktable.modules.lib:unskiped_children() do
-	local real_node = real_darktable.modules.lib[k]
+for k, v in darktable.gui.libs:unskiped_children() do
+	local real_node = real_darktable.gui.libs[k]
 	v:set_attribute("position",real_node.position);
 	v:set_attribute("container",real_node.container);
 	local matching_views={}
 	for k2,v2 in pairs(real_node.views) do
-		table.insert(matching_views,darktable.modules.view[v2.id])
+		table.insert(matching_views,darktable.gui.views[v2.id])
 	end
 	v:set_attribute("views",matching_views);
 end
-darktable.modules.lib:set_text([[This table allows to reference all lib objects]]..para()..
+darktable.gui.libs:set_text([[This table allows to reference all lib objects]]..para()..
 [[lib are the graphical blocks within each view.]]..para()..
 [[To quickly figure out what lib is what, you can use the following code which will make a given lib blink.]]..para()..
 code([[local tested_module="global_toolbox"
-dt.modules.lib[tested_module].visible=false
+dt.gui.libs[tested_module].visible=false
 coroutine.yield("wait_ms",2000)
 while true do
-	dt.modules.lib[tested_module].visible = not dt.modules.lib[tested_module].visible
+	dt.gui.libs[tested_module].visible = not dt.gui.libs[tested_module].visible
 	coroutine.yield("wait_ms",2000)
 end]]))
-darktable.modules.lib:add_version_info([[lib were added]])
+darktable.gui.libs:add_version_info([[lib were added]])
 
 
-darktable.modules.lib.snapshots:set_text([[The UI element that manipulates snapshots in darkroom]])
-darktable.modules.lib.snapshots.ratio:set_text([[The place in the screen where the line separating the snapshot is. Between 0 and 1]])
-darktable.modules.lib.snapshots.direction:set_text([[The direction of the snapshot overlay]]):set_reported_type(types.snapshot_direction_t)
+darktable.gui.libs.snapshots:set_text([[The UI element that manipulates snapshots in darkroom]])
+darktable.gui.libs.snapshots.ratio:set_text([[The place in the screen where the line separating the snapshot is. Between 0 and 1]])
+darktable.gui.libs.snapshots.direction:set_text([[The direction of the snapshot overlay]]):set_reported_type(types.snapshot_direction_t)
 
-darktable.modules.lib.snapshots["#"]:set_text([[The different snapshots for the image]])
-darktable.modules.lib.snapshots.selected:set_text([[The currently selected snapshot]])
-darktable.modules.lib.snapshots.take_snapshot:set_text([[Take a snapshot of the current image and add it to the UI]]..para()..[[The snapshot file will be generated at the next redraw of the main window]])
-darktable.modules.lib.snapshots.max_snapshot:set_text([[The maximum number of snapshots]])
+darktable.gui.libs.snapshots["#"]:set_text([[The different snapshots for the image]])
+darktable.gui.libs.snapshots.selected:set_text([[The currently selected snapshot]])
+darktable.gui.libs.snapshots.take_snapshot:set_text([[Take a snapshot of the current image and add it to the UI]]..para()..[[The snapshot file will be generated at the next redraw of the main window]])
+darktable.gui.libs.snapshots.max_snapshot:set_text([[The maximum number of snapshots]])
 
-darktable.modules.lib.styles:set_text([[The style selection menu]])
-darktable.modules.lib.metadata_view:set_text([[The widget displaying metadata about the current image]])
-darktable.modules.lib.metadata:set_text([[The widget allowing modification of metadata fields on the current image]])
-darktable.modules.lib.hinter:set_text([[The small line of text at the top of the UI showing the number of selected images]])
-darktable.modules.lib.modulelist:set_text([[The window allowing to set modules as visible/hidden/favorite]])
-darktable.modules.lib.filmstrip:set_text([[The filmstrip at the bottom of some views]])
-darktable.modules.lib.viewswitcher:set_text([[The labels allowing to switch view]])
-darktable.modules.lib.darktable_label:set_text([[The darktable logo in the upper left corner]])
-darktable.modules.lib.tagging:set_text([[The tag manipulation UI]])
-darktable.modules.lib.geotagging:set_text([[The geotagging time synchronisation UI]])
-darktable.modules.lib.recentcollect:set_text([[The recent collection UI element]])
-darktable.modules.lib.global_toolbox:set_text([[The common tools to all view (settings, grouping...)]])
-darktable.modules.lib.filter:set_text([[The image-filter menus at the top of the UI]])
-darktable.modules.lib.import:set_text([[The buttons to start importing images]])
-darktable.modules.lib.ratings:set_text([[The starts to set the rating of an image]])
-darktable.modules.lib.select:set_text([[The buttons that allow to quickly change the selection]])
-darktable.modules.lib.collect:set_text([[The collection UI element that allows to filter images by collection]])
-darktable.modules.lib.colorlabels:set_text([[The color buttons that allow to set labels on an image]])
-darktable.modules.lib.lighttable_mode:set_text([[The navigation and zoom level UI in lighttable]])
-darktable.modules.lib.copy_history:set_text([[The UI element that manipulates history]])
-darktable.modules.lib.image:set_text([[The UI element that manipulates the current image]])
-darktable.modules.lib.modulegroups:set_text([[The icons describing the different iop groups]])
-darktable.modules.lib.module_toolbox:set_text([[The tools on the bottom line of the UI (overexposure)]])
-darktable.modules.lib.session:set_text([[The session UI when tethering]])
-darktable.modules.lib.histogram:set_text([[The histogram widget]])
-darktable.modules.lib.export:set_text([[The export menu]])
-darktable.modules.lib.history:set_text([[The history manipulation menu]])
-darktable.modules.lib.colorpicker:set_text([[The colorpicker menu]])
-darktable.modules.lib.navigation:set_text([[The full image preview to allow navigation]])
-darktable.modules.lib.masks:set_text([[The masks window]])
-darktable.modules.lib.view_toolbox:set_text([[]])
-darktable.modules.lib.live_view:set_text([[The liveview window]])
-darktable.modules.lib.map_settings:set_text([[The map setting window]])
-darktable.modules.lib.camera:set_text([[The camera selection UI]])
-darktable.modules.lib.location:set_text([[The location ui]])
-darktable.modules.lib.backgroundjobs:set_text([[The window displaying the currently running jobs]])
+darktable.gui.libs.styles:set_text([[The style selection menu]])
+darktable.gui.libs.metadata_view:set_text([[The widget displaying metadata about the current image]])
+darktable.gui.libs.metadata:set_text([[The widget allowing modification of metadata fields on the current image]])
+darktable.gui.libs.hinter:set_text([[The small line of text at the top of the UI showing the number of selected images]])
+darktable.gui.libs.modulelist:set_text([[The window allowing to set modules as visible/hidden/favorite]])
+darktable.gui.libs.filmstrip:set_text([[The filmstrip at the bottom of some views]])
+darktable.gui.libs.viewswitcher:set_text([[The labels allowing to switch view]])
+darktable.gui.libs.darktable_label:set_text([[The darktable logo in the upper left corner]])
+darktable.gui.libs.tagging:set_text([[The tag manipulation UI]])
+darktable.gui.libs.geotagging:set_text([[The geotagging time synchronisation UI]])
+darktable.gui.libs.recentcollect:set_text([[The recent collection UI element]])
+darktable.gui.libs.global_toolbox:set_text([[The common tools to all view (settings, grouping...)]])
+darktable.gui.libs.global_toolbox.grouping:set_text([[The current status of the image grouping option]])
+darktable.gui.libs.global_toolbox.show_overlays:set_text([[the current status of the image overlays option]])
+darktable.gui.libs.filter:set_text([[The image-filter menus at the top of the UI]])
+darktable.gui.libs.import:set_text([[The buttons to start importing images]])
+darktable.gui.libs.ratings:set_text([[The starts to set the rating of an image]])
+darktable.gui.libs.select:set_text([[The buttons that allow to quickly change the selection]])
+darktable.gui.libs.collect:set_text([[The collection UI element that allows to filter images by collection]])
+darktable.gui.libs.colorlabels:set_text([[The color buttons that allow to set labels on an image]])
+darktable.gui.libs.lighttable_mode:set_text([[The navigation and zoom level UI in lighttable]])
+darktable.gui.libs.copy_history:set_text([[The UI element that manipulates history]])
+darktable.gui.libs.image:set_text([[The UI element that manipulates the current image]])
+darktable.gui.libs.modulegroups:set_text([[The icons describing the different iop groups]])
+darktable.gui.libs.module_toolbox:set_text([[The tools on the bottom line of the UI (overexposure)]])
+darktable.gui.libs.session:set_text([[The session UI when tethering]])
+darktable.gui.libs.histogram:set_text([[The histogram widget]])
+darktable.gui.libs.export:set_text([[The export menu]])
+darktable.gui.libs.history:set_text([[The history manipulation menu]])
+darktable.gui.libs.colorpicker:set_text([[The colorpicker menu]])
+darktable.gui.libs.navigation:set_text([[The full image preview to allow navigation]])
+darktable.gui.libs.masks:set_text([[The masks window]])
+darktable.gui.libs.view_toolbox:set_text([[]])
+darktable.gui.libs.live_view:set_text([[The liveview window]])
+darktable.gui.libs.map_settings:set_text([[The map setting window]])
+darktable.gui.libs.camera:set_text([[The camera selection UI]])
+darktable.gui.libs.location:set_text([[The location ui]])
+darktable.gui.libs.backgroundjobs:set_text([[The window displaying the currently running jobs]])
 
 ----------------------
 --  DARKTABLE.DEBUG --
@@ -499,18 +511,18 @@ darktable.debug.type:set_text([[Similar to the system function type() but it wil
 	types.dt_lua_image_t.red:set_alias(types.dt_lua_image_t.purple)
 	types.dt_lua_image_t.reset:set_text([[Removes all processing from the image, reseting it back to its original state]])
 	types.dt_lua_image_t.reset:add_version_info("field added")
-	types.dt_lua_image_t.reset:add_parameter("image",my_tostring(types.dt_lua_image_t),[[The image whose history will be deleted]])
+	types.dt_lua_image_t.reset:add_parameter("self",my_tostring(types.dt_lua_image_t),[[The image whose history will be deleted]]):set_attribute("is_self",true)
 	types.dt_lua_image_t.delete:set_text([[Removes an image from the database]])
 	types.dt_lua_image_t.delete:add_version_info("field added")
-	types.dt_lua_image_t.delete:add_parameter("image",my_tostring(types.dt_lua_image_t),[[The image to remove]])
+	types.dt_lua_image_t.delete:add_parameter("self",my_tostring(types.dt_lua_image_t),[[The image to remove]]):set_attribute("is_self",true)
 
 	types.dt_lua_image_t.group_with:set_text([[Puts the first image in the same group as the second image. If no second image is provided the image will be in its own group.]])
-	types.dt_lua_image_t.group_with:add_parameter("image",my_tostring(types.dt_lua_image_t),[[The image whose group must be changed.]])
-	types.dt_lua_image_t.group_with:add_parameter("image2",my_tostring(types.dt_lua_image_t),[[The image we want to group with.]]):set_attribute("optional",true)
+	types.dt_lua_image_t.group_with:add_parameter("self",my_tostring(types.dt_lua_image_t),[[The image whose group must be changed.]]):set_attribute("is_self",true)
+	types.dt_lua_image_t.group_with:add_parameter("image",my_tostring(types.dt_lua_image_t),[[The image we want to group with.]]):set_attribute("optional",true)
 	types.dt_lua_image_t.make_group_leader:set_text([[Makes the image the leader of its group.]])
-	types.dt_lua_image_t.make_group_leader:add_parameter("image",my_tostring(types.dt_lua_image_t),[[The image we want as the leader.]])
+	types.dt_lua_image_t.make_group_leader:add_parameter("self",my_tostring(types.dt_lua_image_t),[[The image we want as the leader.]]):set_attribute("is_self",true)
 	types.dt_lua_image_t.get_group_members:set_text([[Returns a table containing all ]]..my_tostring(types.dt_lua_image_t)..[[ of the group. The group leader is both at a numeric key and at the "leader" special key (so you probably want to use ipairs to iterate through that table).]])
-	types.dt_lua_image_t.get_group_members:add_parameter("image",my_tostring(types.dt_lua_image_t),[[The image whose group we are querying.]])
+	types.dt_lua_image_t.get_group_members:add_parameter("self",my_tostring(types.dt_lua_image_t),[[The image whose group we are querying.]]):set_attribute("is_self",true)
 	types.dt_lua_image_t.get_group_members:add_return("table of "..my_tostring(types.dt_lua_image_t),[[A table of image objects containing all images that are in the same group as the image.]])
 	darktable.tags.attach:set_alias(types.dt_lua_image_t.attach_tag)
 	types.dt_lua_image_t.group_leader:set_text([[The image which is the leader of the group this image is a member of.]])
@@ -519,7 +531,7 @@ darktable.debug.type:set_text([[Similar to the system function type() but it wil
 	types.dt_lua_image_t.drop_cache:set_text("drops the cached version of this image."..para()..
 	"This function should be called if an image is modified out of darktable to force DT to regenerate the thumbnail"..para()..
 	"Darktable will regenerate the thumbnail by itself when it is needed")
-	types.dt_lua_image_t.drop_cache:add_parameter("image",my_tostring(types.dt_lua_image_t),[[The image whose cache must be droped.]])
+	types.dt_lua_image_t.drop_cache:add_parameter("self",my_tostring(types.dt_lua_image_t),[[The image whose cache must be droped.]]):set_attribute("is_self",true)
 	types.dt_lua_image_t.drop_cache:add_version_info([[field added]])
 
 	types.dt_imageio_module_format_t:set_text([[A virtual type representing all format types.]])
@@ -531,7 +543,7 @@ darktable.debug.type:set_text([[Similar to the system function type() but it wil
 	types.dt_imageio_module_format_t.max_height:set_text([[The max height allowed for the format (0 = unlimited).]])
 	types.dt_imageio_module_format_t.write_image:set_text([[Exports an image to a file. This is a blocking operation that will not return until the image is exported.]])
 	types.dt_imageio_module_format_t.write_image:set_attribute("implicit_yield",true)
-	types.dt_imageio_module_format_t.write_image:add_parameter("format",my_tostring(types.dt_imageio_module_format_t),[[The format that will be used to export.]])
+	types.dt_imageio_module_format_t.write_image:add_parameter("self",my_tostring(types.dt_imageio_module_format_t),[[The format that will be used to export.]]):set_attribute("is_self",true)
 	types.dt_imageio_module_format_t.write_image:add_parameter("image",my_tostring(types.dt_lua_image_t),[[The image object to export.]])
 	types.dt_imageio_module_format_t.write_image:add_parameter("filename","string",[[The filename to export to.]])
 	types.dt_imageio_module_format_t.write_image:add_return("boolean",[[Returns true on success.]])
@@ -566,7 +578,7 @@ darktable.debug.type:set_text([[Similar to the system function type() but it wil
 	types.dt_imageio_module_storage_t.recommended_width:set_text([[The recommended width for the plugin.]])
 	types.dt_imageio_module_storage_t.recommended_height:set_text([[The recommended height for the plugin.]])
 	types.dt_imageio_module_storage_t.supports_format:set_text([[Checks if a format is supported by this storage.]])
-	types.dt_imageio_module_storage_t.supports_format:add_parameter("storage",my_tostring(types.dt_imageio_module_storage_t),[[The storage type to check against.]])
+	types.dt_imageio_module_storage_t.supports_format:add_parameter("self",my_tostring(types.dt_imageio_module_storage_t),[[The storage type to check against.]]):set_attribute("is_self",true)
 	types.dt_imageio_module_storage_t.supports_format:add_parameter("format",my_tostring(types.dt_imageio_module_format_t),[[The format type to check.]])
 	types.dt_imageio_module_storage_t.supports_format:add_return("boolean",[[True if the format is supported by the storage.]])
 
@@ -588,7 +600,7 @@ darktable.debug.type:set_text([[Similar to the system function type() but it wil
 	types.dt_lua_film_t.id:set_text([[A unique numeric id used by this film.]])
 	types.dt_lua_film_t.path:set_text([[The path represented by this film.]])
 	types.dt_lua_film_t.delete:set_text([[Removes the film from the database.]])
-	types.dt_lua_film_t.delete:add_parameter("film",my_tostring(types.dt_lua_film_t),[[The film to remove.]])
+	types.dt_lua_film_t.delete:add_parameter("self",my_tostring(types.dt_lua_film_t),[[The film to remove.]]):set_attribute("is_self",true)
 	types.dt_lua_film_t.delete:add_parameter("force","Boolean",[[Force removal, even if the film is not empty.]]):set_attribute("optional",true)
 	types.dt_lua_film_t.delete:add_version_info("function added")
 
@@ -620,7 +632,7 @@ darktable.debug.type:set_text([[Similar to the system function type() but it wil
 	types.dt_lib_module_t.views:set_text([[A table of all teh views that display this widget]])
 	types.dt_lib_module_t.reset:set_text([[A function to reset the lib to its default values]]..para()..
 	[[This function will do nothing if the lib is not visible or can't be reset]])
-	types.dt_lib_module_t.reset:add_parameter("self",my_tostring(types.dt_lib_module_t),[[The lib to reset]])
+	types.dt_lib_module_t.reset:add_parameter("self",my_tostring(types.dt_lib_module_t),[[The lib to reset]]):set_attribute("is_self",true)
 	types.dt_lib_module_t.on_screen:set_text([[True if the lib is currently visible on the screen]])
 
 	types.dt_view_t:set_text([[A darktable view]])
@@ -637,7 +649,7 @@ darktable.debug.type:set_text([[Similar to the system function type() but it wil
 	types.dt_lua_snapshot_t:set_text([[The description of a snapshot in the snapshot lib]]):add_version_info("type added")
 	types.dt_lua_snapshot_t.filename:set_text([[The filename of an image containing the snapshot]])
 	types.dt_lua_snapshot_t.select:set_text([[Activates this snapshot on the display. To deactivate all snapshot you need to call this function on the active snapshot]])
-	types.dt_lua_snapshot_t.select:add_parameter("snapshot",my_tostring(types.dt_lua_snapshot_t),[[The snapshot to activate]])
+	types.dt_lua_snapshot_t.select:add_parameter("self",my_tostring(types.dt_lua_snapshot_t),[[The snapshot to activate]]):set_attribute("is_self",true)
 	types.dt_lua_snapshot_t.name:set_text([[The name of the snapshot, as seen in the UI]])
 
 	types.hint_t:set_text([[a hint on the way to encode a webp image]])
@@ -699,6 +711,14 @@ darktable.debug.type:set_text([[Similar to the system function type() but it wil
 	events["view-changed"].callback:add_parameter("new_view",my_tostring(types.dt_view_t),[[The view we are now in]])
 	events["view-changed"].extra_registration_parameters:set_text([[This event has no extra registration parameters.]])
 	events["view-changed"]:add_version_info("event added")
+	events["global_toolbox-grouping_toggle"]:set_text([[This event is triggered after the user toggled the grouping button.]])
+	events["global_toolbox-grouping_toggle"].callback:add_parameter("toggle", "boolean", [[the new grouping status.]]);
+	events["global_toolbox-grouping_toggle"].extra_registration_parameters:set_text([[This event has no extra registration parameters.]])
+	events["global_toolbox-grouping_toggle"]:add_version_info("event added")
+	events["global_toolbox-overlay_toggle"]:set_text([[This event is triggered after the user toggled the overlay button.]])
+	events["global_toolbox-overlay_toggle"].callback:add_parameter("toggle", "boolean", [[the new overlay status.]]);
+	events["global_toolbox-overlay_toggle"].extra_registration_parameters:set_text([[This event has no extra registration parameters.]])
+	events["global_toolbox-overlay_toggle"]:add_version_info("event added")
 	----------------------
 	--  ATTRIBUTES      --
 	----------------------
@@ -715,12 +735,15 @@ darktable.debug.type:set_text([[Similar to the system function type() but it wil
 	invisible_attr(attributes.skiped)
 	invisible_attr(attributes.is_attribute)
 	invisible_attr(attributes.internal_attr)
+	invisible_attr(attributes.read)
+	invisible_attr(attributes.has_pairs)
+	invisible_attr(attributes.has_ipairs)
+	invisible_attr(attributes.is_self)
 	attributes.write:set_text([[This object is a variable that can be written to.]])
-	attributes.read:set_text([[This object is a variable that can be read.]])
-	attributes.has_pairs:set_text([[This object can be used as an argument to the system function "pairs" and iterated upon.]])
-	attributes.has_ipairs:set_text([[This object can be used as an argument to the system function "ipairs" and iterated upon.]])
+  --attributes.has_pairs:set_text([[This object can be used as an argument to the system function "pairs" and iterated upon.]])
+	--attributes.has_ipairs:set_text([[This object can be used as an argument to the system function "ipairs" and iterated upon.]])
 	--attributes.has_equal:set_text([[This object has a specific comparison function that will be used when comparing it to an object of the same type.]])
-	attributes.has_length:set_text([[This object has a specific length function that will be used by the # operator.]])
+	--attributes.has_length:set_text([[This object has a specific length function that will be used by the # operator.]])
 	attributes.has_tostring:set_text([[This object has a specific reimplementation of the "tostring" method that allows pretty-printing it.]])
 	attributes.implicit_yield:set_text([[This call will release the Lua lock while executing, thus allowing other Lua callbacks to run.]])
 	attributes.parent:set_text([[This object inherits some methods from another object. You can call the methods from the parent on the child object]])
@@ -739,7 +762,6 @@ darktable.debug.type:set_text([[Similar to the system function type() but it wil
 	doc.toplevel.system.coroutine = doc.create_documentation_node(nil,doc.toplevel.system,"coroutine")
 	system.coroutine:set_text("")
 	system.coroutine.yield = doc.document_function(nil,system.coroutine,"yield");
-	system.coroutine.yield:set_real_name("coroutine.yield")
 	system.coroutine.yield:set_text([[Lua functions can yield at any point. The parameters and return types depend on why we want to yield.]]..para()..
 	[[A callback that is yielding allows other Lua code to run.]]..startlist()..
 	listel("wait_ms: one extra parameter; the execution will pause for that many miliseconds; yield returns nothing;")..

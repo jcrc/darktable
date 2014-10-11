@@ -2,7 +2,7 @@ local page_name="/redmine/projects/darktable/wiki/LuaAPI"
 
 local function get_node_with_link(node,name)
 	if node:get_attribute("skiped") then return name end
-	return "\""..name.."\":"..page_name.."#"..node:get_name()
+	return "\""..name.."\":"..page_name.."#"..node:get_name(true)
 end
 
 para = function() return "\n\n" end
@@ -51,20 +51,25 @@ local function get_reported_type(node,simple)
 		doc.debug_print(node)
 		error("all types should have a reported type")
 	end
-	local rtype = node:get_reported_type()
+	local rtype = tostring(node:get_reported_type())
 	if rtype == "documentation node" then rtype = nil end
 	if rtype == "dt_singleton" then rtype = nil end
 	if( rtype and not simple and doc.get_attribute(node,"signature")) then
 		rtype = rtype.."( "
 		local sig = doc.get_attribute(node,"signature")
 		for k,v in pairs(sig) do
-			if(doc.get_attribute(v,"optional")) then
+      if(doc.get_attribute(v,"is_self")) then
+        rtype = doc.get_short_name(v)..":"..rtype
+      elseif(doc.get_attribute(v,"optional")) then
 				rtype = rtype.."[ _"..doc.get_short_name(v).."_ : "..get_reported_type(v,true).."]"
+        if next(sig,k) then
+          rtype = rtype..", "
+        end
 			else
 				rtype = rtype.."_"..doc.get_short_name(v).."_ : "..get_reported_type(v,true)
-			end
-			if next(sig,k) then
-				rtype = rtype..", "
+        if next(sig,k) then
+          rtype = rtype..", "
+        end
 			end
 		end
 		rtype = rtype.." )"
@@ -146,7 +151,7 @@ local function print_content(node)
 end
 
 local function depth(node)
-	if doc.get_name(node) == "" then return 0 end
+	if doc.get_name(node,true) == "" then return 0 end
 	return depth(doc.get_main_parent(node)) +1
 end
 
@@ -183,7 +188,7 @@ parse_doc_node = function(node,parent,prev_name)
 		result = result .. "h"..depth.."(#"..node_name.."). "..prev_name.."\n\n"
 	end
 	if(not doc.is_main_parent(node,parent,prev_name) ) then
-		result = result .. "see "..get_node_with_link(node,doc.get_name(node)).."\n\n"
+		result = result .. "see "..get_node_with_link(node,doc.get_name(node,true)).."\n\n"
 	else
 		result = result .. print_content(node,parent)
 	end

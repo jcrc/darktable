@@ -1,6 +1,6 @@
 local function get_node_with_link(node,name)
   if node:get_attribute("skiped") then return name end
-  return '<link linkend="'..node:get_name():gsub("%.","_"):gsub("#","_hash_")..'">'..name..'</link>'
+  return '<link linkend="'..node:get_name(true):gsub("%.","_"):gsub("#","_hash_")..'">'..name..'</link>'
 end
 
 para = function() return "</para>\n<para>" end
@@ -45,7 +45,7 @@ end
 
 
 local function get_reported_type(node,simple)
-  local rtype = node:get_reported_type()
+  local rtype = tostring(node:get_reported_type())
   if not rtype then
     doc.debug_print(node)
     error("all types should have a reported type")
@@ -56,13 +56,18 @@ local function get_reported_type(node,simple)
     rtype = rtype.."( "
     local sig = doc.get_attribute(node,"signature")
     for k,v in sorted_pairs(sig) do
-      if(doc.get_attribute(v,"optional")) then
+      if(doc.get_attribute(v,"is_self")) then
+        rtype = doc.get_short_name(v)..":"..rtype
+      elseif(doc.get_attribute(v,"optional")) then
         rtype = rtype.."\n\t["..emphasis(get_node_with_link(v,doc.get_short_name(v))).." : "..get_reported_type(v,true).."]"
+        if next(sig,k) then
+          rtype = rtype..", "
+        end
       else
         rtype = rtype.."\n\t"..emphasis(get_node_with_link(v,doc.get_short_name(v))).." : "..get_reported_type(v,true)
-      end
-      if next(sig,k) then
-        rtype = rtype..", "
+        if next(sig,k) then
+          rtype = rtype..", "
+        end
       end
     end
     rtype = rtype.."\n)"
@@ -148,7 +153,7 @@ local function print_content(node)
 end
 
 local function depth(node)
-  if doc.get_name(node) == "" then return 0 end
+  if doc.get_name(node,true) == "" then return 0 end
   return depth(doc.get_main_parent(node)) +1
 end
 
@@ -179,19 +184,23 @@ parse_doc_node = function(node,parent,prev_name)
     if(node:get_short_name() == "return") then
       result = result ..'<varlistentry><term><emphasis>return</emphasis></term><listitem>\n'
     else
-      result = result ..'<varlistentry id="'..doc.get_name(node):gsub("%.","_"):gsub("#","_hash_")..'"><term>'..doc.get_short_name(node).."</term><listitem>\n"
+      result = result ..'<varlistentry id="'..doc.get_name(node,true):gsub("%.","_"):gsub("#","_hash_")..'"><term>'..doc.get_short_name(node).."</term><listitem>\n"
     end
   elseif depth ~= 0 then
     --result = result..'<sect'..(depth+1)..' status="final" '
     result = result..'<section status="final" '
     if(doc.is_main_parent(node,parent,prev_name) ) then
-      result = result..'id="'..doc.get_name(node):gsub("%.","_"):gsub("#","_hash_")..'"'
+      result = result..'id="'..doc.get_name(node,true):gsub("%.","_"):gsub("#","_hash_")..'"'
     end
     result = result..'>\n'
     result = result..'<title>'..node_name..'</title>\n'
     result = result..'<indexterm>\n'
     result = result..'<primary>Lua API</primary>\n'
-    result = result..'<secondary>'..prev_name..'</secondary>\n'
+    if(doc.is_main_parent(node,parent,prev_name) ) then
+      result = result..'<secondary>'..node:get_short_name()..'</secondary>\n'
+    else
+      result = result..'<secondary>'..prev_name..'</secondary>\n'
+    end
     result = result..'</indexterm>\n'
   end
   if(not doc.is_main_parent(node,parent,prev_name) ) then

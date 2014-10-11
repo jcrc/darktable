@@ -172,15 +172,17 @@ extern "C"
       dt_imageio_exr_t *new_params = (dt_imageio_exr_t*)malloc(sizeof(dt_imageio_exr_t));
       memcpy(new_params, old_params, old_params_size);
       new_params->compression = (dt_imageio_exr_compression_t)PIZ_COMPRESSION;
-      *new_size = sizeof(dt_imageio_exr_t);
+      *new_size = self->params_size(self);
       return new_params;
     }
     if(old_version == 2 && new_version == 3)
     {
       dt_imageio_exr_t *new_params = (dt_imageio_exr_t*)malloc(sizeof(dt_imageio_exr_t));
-      memcpy(new_params, old_params, old_params_size);
-      new_params->compression = (dt_imageio_exr_compression_t)PIZ_COMPRESSION;
-      *new_size = sizeof(dt_imageio_exr_t);
+
+      //last param was dropped (pixel type)
+      memcpy(new_params, old_params, sizeof(dt_imageio_exr_t));
+
+      *new_size = self->params_size(self);
       return new_params;
     }
     return NULL;
@@ -253,10 +255,10 @@ extern "C"
 
     int compression_last = dt_conf_get_int("plugins/imageio/format/exr/compression");
 
-    GtkWidget *hbox = gtk_hbox_new(TRUE, 5);
+    GtkWidget *hbox = gtk_hbox_new(FALSE, 5);
     gtk_box_pack_start(GTK_BOX(self->widget), hbox, TRUE, TRUE, 0);
 
-    GtkWidget *label = gtk_label_new(_("Compression mode"));
+    GtkWidget *label = gtk_label_new(_("compression mode"));
     gtk_misc_set_alignment(GTK_MISC(label), 0.0, 0.0);
     gtk_box_pack_start(GTK_BOX(hbox), label, TRUE, TRUE, 0);
 
