@@ -37,7 +37,6 @@ local function create_empty_node(node,node_type,parent,prev_name)
 	result._luadoc_type = node_type
 	result._luadoc_order = {}
 	result._luadoc_attributes = {}
-	result._luadoc_version = {}
 	if parent and not parent._luadoc_type then 
 		error("parent should be a doc node, not a real node")
 	end
@@ -132,7 +131,7 @@ local function document_type_sub(node,result,parent,prev_name)
 			)	then
 			-- nothing
 		else
-			print("ERROR undocumented metafield "..field.." for type "..prev_name)
+			io.stderr:write("ERROR undocumented metafield "..field.." for type "..prev_name.."\n")
 		end
 	end
 	set_attribute(result,"reported_type","dt_type")
@@ -488,7 +487,8 @@ function M.all_children(node)
 
 	function M.set_text(node,text)
 		if node._luadoc_text then
-			print("warning, double documentation for "..node:get_name(true))
+			io.stderr:write("warning, double documentation for "..node:get_name(true).."\n")
+			io.stderr:write("was\n"..node._luadoc_text.."\nnew\n"..text.."\n")
 		end
 		node._luadoc_text = text
 		for k,v in ipairs(node._luadoc_parents) do
@@ -498,20 +498,6 @@ function M.all_children(node)
 
 	end
 
-
-	function M.add_version_info(node,version,text)
-		if not text then -- only two parameters
-			text = version
-			version ="undocumented_version" -- easy grep for the "undocumented" keyword"
-		end
-		if not node._luadoc_version[version] then
-			node._luadoc_version[version] = {}
-		end
-		table.insert(node._luadoc_version[version],text);
-	end
-	function M.get_version_info(node)
-		return node._luadoc_version
-	end
 
 	function M.set_alias(original,node)
 		for k,v in ipairs(node._luadoc_parents) do
@@ -645,8 +631,6 @@ function M.all_children(node)
 	meta_node.__index.remove_parent = M.remove_parent
 	meta_node.__index.debug_print = M.debug_print
 	meta_node.__index.set_skiped = M.set_skiped
-	meta_node.__index.add_version_info = M.add_version_info
-	meta_node.__index.get_version_info = M.get_version_info
 	meta_node.__index.get_name = M.get_name
 	meta_node.__index.get_reported_type = M.get_reported_type
 	meta_node.__index.set_reported_type = M.set_reported_type
@@ -690,12 +674,12 @@ function M.all_children(node)
 
 
 	-- formats and modules are constructors, call them all once to document
-	for k, v in pairs(dt.modules.format) do
+	local registry = debug.getregistry();
+	for k, v in pairs(registry.dt_lua_modules.format) do
 		local res = v()
 		document_type_from_obj(res,toplevel.types[dt.debug.type(res)])
 	end
-
-	for k, v in pairs(dt.modules.storage) do
+	for k, v in pairs(registry.dt_lua_modules.storage) do
 		local res = v()
 		if res then
 			document_type_from_obj(res,toplevel.types[dt.debug.type(res)])
