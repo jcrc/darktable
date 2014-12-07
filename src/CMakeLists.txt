@@ -15,6 +15,7 @@ FILE(GLOB SOURCE_FILES
   "common/colorlabels.c"
   "common/colorspaces.c"
   "common/curve_tools.c"
+  "common/cpuid.c"
   "common/darktable.c"
   "common/database.c"
   "common/dbus.c"
@@ -148,13 +149,13 @@ if(USE_CAMERA_SUPPORT)
   add_definitions(${Gphoto2_DEFINITIONS})
 endif(USE_CAMERA_SUPPORT)
 
-# INotify isn't used anymore as it seems
-find_package(INotify)
-if(INOTIFY_FOUND)
-  include_directories(SYSTEM ${INOTIFY_INCLUDE_DIRS})
-  list(APPEND LIBS ${INOTIFY_LIBRARIES})
-  add_definitions(${INOTIFY_DEFINITIONS})
-endif(INOTIFY_FOUND)
+# # INotify isn't used anymore as it seems
+# find_package(INotify)
+# if(INOTIFY_FOUND)
+#   include_directories(SYSTEM ${INOTIFY_INCLUDE_DIRS})
+#   list(APPEND LIBS ${INOTIFY_LIBRARIES})
+#   add_definitions(${INOTIFY_DEFINITIONS})
+# endif(INOTIFY_FOUND)
 
 if(USE_OPENEXR)
   find_package(OpenEXR)
@@ -232,11 +233,12 @@ endif(USE_OPENJPEG)
 #
 # Detect compile of optional pwstorage backends
 #
-if(USE_LIBSECRET)
+if(USE_LIBSECRET AND JsonGlib_FOUND)
   find_package(Libsecret)
   if(LIBSECRET_FOUND)
     if(LIBSECRET_VERSION VERSION_LESS "0.16")
-      message(FATAL_ERROR "Found libsecret version ${LIBSECRET_VERSION}. You need at least libsecret 0.16 or newer.")
+      message(STATUS "Found libsecret version ${LIBSECRET_VERSION}. You need at least libsecret 0.16 or newer.")
+      set(LIBSECRET_FOUND FALSE)
     else()
       if(LIBSECRET_VERSION VERSION_LESS "0.18")
         message(STATUS "Found libsecret version ${LIBSECRET_VERSION}. Enable unstable API. Please upgrade to version 0.18 or newer.")
@@ -248,7 +250,7 @@ if(USE_LIBSECRET)
       add_definitions("-DHAVE_LIBSECRET")
     endif()
   endif(LIBSECRET_FOUND)
-endif(USE_LIBSECRET)
+endif(USE_LIBSECRET AND JsonGlib_FOUND)
 
 if(USE_GNOME_KEYRING)
   find_package(GnomeKeyring)
@@ -308,9 +310,9 @@ endif(APRIL_FOOLS)
 #
 # Add HAVE_xxx defines used by darktable
 #
-if(INOTIFY_FOUND)
-  add_definitions("-DHAVE_INOTIFY")
-endif(INOTIFY_FOUND)
+# if(INOTIFY_FOUND)
+#   add_definitions("-DHAVE_INOTIFY")
+# endif(INOTIFY_FOUND)
 
 if(LENSFUN_FOUND)
   add_definitions("-DHAVE_LENSFUN")
@@ -438,7 +440,7 @@ if(USE_LUA)
   if(LUA52_FOUND)
     message(STATUS "Lua support: Enabled")
     include_directories(SYSTEM ${LUA52_INCLUDE_DIRS})
-    list(APPEND LIBS ${LUA52_LIBRARIES})
+    list(APPEND LIBS ${LUA52_LDFLAGS})
   else()
     if(DONT_USE_INTERNAL_LUA)
       message(STATUS "Lua support: System library not found (to use darktable's version use -DDONT_USE_INTERNAL_LUA=Off)")
@@ -539,7 +541,6 @@ if(USE_COLORD)
     add_library(colord-gtk_static STATIC IMPORTED)
     set_target_properties(colord-gtk_static PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_BINARY_DIR}/external/colord-gtk/libcolord-gtk.a)
     add_subdirectory(external/colord-gtk)
-    add_dependencies(colord-gtk colord)
     list(APPEND LIB_DEPS colord-gtk)
     list(APPEND LIBS ${COLORD_LIBRARIES})
     list(APPEND STATIC_LIBS colord-gtk_static)

@@ -524,7 +524,11 @@ print_usage(
   const char* name)
 {
   fprintf(stderr,
-    "usage: %s [OPTIONS] <inputraw.ppm (16-bit)> <inputjpg.ppm (8-bit)>\n"
+    "first pass, accumulate statistics (can be repeated to cover all tonal range):\n"
+    "%s [OPTIONS] <inputraw.ppm (16-bit)> <inputjpg.ppm (8-bit)>\n"
+    "\n"
+    "second pass, compute the curves:\n"
+    " %s -z [OPTIONS]\n"
     "\n"
     "OPTIONS:\n"
     " -n <integer>    Number of nodes for the curve\n"
@@ -544,7 +548,7 @@ print_usage(
     "\n"
     "first do a pass over a few images to accumulate data in the save state file, and then\n"
     "compute the fit curve using option -z\n",
-    name);
+    name, name);
 }
 
 static void
@@ -792,7 +796,7 @@ main(int argc, char** argv)
   raw_buff = read_ppm16(opt.filename_raw, &raw_width, &raw_height);
   if(!raw_buff)
   {
-    fprintf(stderr, "error: failed reading the raw file data\n");
+    fprintf(stderr, "error: failed reading the raw file data `%s'\n", opt.filename_raw);
     goto exit;
   }
 

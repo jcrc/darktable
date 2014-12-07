@@ -1,6 +1,6 @@
 #!/bin/sh
 
-git log ^release-1.2.3 HEAD| grep ^Author: | sed 's/ <.*//; s/^Author: //' | sort | uniq -c | sort -nr
+git log ^release-1.4.2 HEAD| grep ^Author: | sed 's/ <.*//; s/^Author: //' | sort | uniq -c | sort -nr
 
 echo "are you sure these guys received proper credit in the about dialog?"
 read answer
@@ -18,9 +18,7 @@ echo "set(PROJECT_VERSION \"$dt_decoration\")" >> darktable-$dt_decoration/cmake
 
 # remove docs, that's > 45 MB
 rm -rf darktable-$dt_decoration/doc/htdocs
-cp darktable-$dt_decoration/doc/usermanual/CMakeLists.txt dreggn.txt
-rm -rf darktable-$dt_decoration/doc/usermanual/*
-mv dreggn.txt darktable-$dt_decoration/doc/usermanual/CMakeLists.tx
+rm -rf darktable-$dt_decoration/doc/usermanual
 tar cvzf darktable-$dt_decoration.tar.gz darktable-$dt_decoration/
 tar cvJf darktable-$dt_decoration.tar.xz darktable-$dt_decoration/
 rm ../darktable-$dt_decoration.tar
