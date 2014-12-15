@@ -92,28 +92,21 @@ void cleanup(dt_view_t *self)
 }
 
 
-void expose(dt_view_t *self, cairo_t *cri, int32_t width_i, int32_t height_i, int32_t pointerx,
-            int32_t pointery)
+void expose(
+    dt_view_t *self,
+    cairo_t *cri,
+    int32_t width,
+    int32_t height,
+    int32_t pointerx,
+    int32_t pointery)
 {
-  // startup-time conf parameter:
-  const int32_t capwd = darktable.thumbnail_width;
-  const int32_t capht = darktable.thumbnail_height;
-  // if width or height > max pipeline pixels: center the view and clamp.
-  int32_t width = MIN(width_i, capwd);
-  int32_t height = MIN(height_i, capht);
-
   cairo_set_source_rgb(cri, .2, .2, .2);
   cairo_save(cri);
-  cairo_set_fill_rule(cri, CAIRO_FILL_RULE_EVEN_ODD);
-  cairo_rectangle(cri, 0, 0, width_i, height_i);
-  cairo_rectangle(cri, MAX(1.0, width_i - capwd) * .5f, MAX(1.0, height_i - capht) * .5f,
-                  MIN(width, width_i - 1), MIN(height, height_i - 1));
-  cairo_fill(cri);
-  cairo_restore(cri);
 
-  if(width_i > capwd) cairo_translate(cri, -(capwd - width_i) * .5f, 0.0f);
-  if(height_i > capht) cairo_translate(cri, 0.0f, -(capht - height_i) * .5f);
-  cairo_save(cri);
+  const int32_t tb = DT_PIXEL_APPLY_DPI(dt_conf_get_int("plugins/darkroom/ui/border_size"));
+  // account for border, make it transparent for other modules called below:
+  pointerx -= tb;
+  pointery -= tb;
 
   dt_develop_t *dev = (dt_develop_t *)self->data;
 
@@ -160,7 +153,7 @@ void expose(dt_view_t *self, cairo_t *cri, int32_t width_i, int32_t height_i, in
     image_surface_width = width;
     image_surface_height = height;
     if(image_surface) cairo_surface_destroy(image_surface);
-    image_surface = cairo_image_surface_create(CAIRO_FORMAT_RGB24, width, height);
+    image_surface = dt_cairo_image_surface_create(CAIRO_FORMAT_RGB24, width, height);
     image_surface_imgid = -1; // invalidate old stuff
   }
   cairo_surface_t *surface;
@@ -183,7 +176,9 @@ void expose(dt_view_t *self, cairo_t *cri, int32_t width_i, int32_t height_i, in
     wd = dev->pipe->backbuf_width;
     ht = dev->pipe->backbuf_height;
     stride = cairo_format_stride_for_width(CAIRO_FORMAT_RGB24, wd);
-    surface = cairo_image_surface_create_for_data(dev->pipe->backbuf, CAIRO_FORMAT_RGB24, wd, ht, stride);
+    surface = dt_cairo_image_surface_create_for_data(dev->pipe->backbuf, CAIRO_FORMAT_RGB24, wd, ht, stride);
+    wd /= darktable.gui->ppd;
+    ht /= darktable.gui->ppd;
     cairo_set_source_rgb(cr, .2, .2, .2);
     cairo_paint(cr);
     cairo_translate(cr, .5f * (width - wd), .5f * (height - ht));
@@ -215,7 +210,7 @@ void expose(dt_view_t *self, cairo_t *cri, int32_t width_i, int32_t height_i, in
     float zoom_scale = dt_dev_get_zoom_scale(dev, zoom, closeup ? 2 : 1, 1);
     cairo_set_source_rgb(cr, .2, .2, .2);
     cairo_paint(cr);
-    cairo_rectangle(cr, 0, 0, width, height);
+    cairo_rectangle(cr, tb, tb, width-2*tb, height-2*tb);
     cairo_clip(cr);
     stride = cairo_format_stride_for_width(CAIRO_FORMAT_RGB24, wd);
     surface
@@ -377,18 +372,10 @@ void expose(dt_view_t *self, cairo_t *cri, int32_t width_i, int32_t height_i, in
   {
     // masks
     if(dev->form_visible)
-    {
-      if(width_i > capwd) pointerx += (capwd - width_i) * .5f;
-      if(height_i > capht) pointery += (capht - height_i) * .5f;
       dt_masks_events_post_expose(dev->gui_module, cri, width, height, pointerx, pointery);
-    }
     // module
     if(dev->gui_module && dev->gui_module->gui_post_expose)
-    {
-      if(width_i > capwd) pointerx += (capwd - width_i) * .5f;
-      if(height_i > capht) pointery += (capht - height_i) * .5f;
       dev->gui_module->gui_post_expose(dev->gui_module, cri, width, height, pointerx, pointery);
-    }
   }
 }
 
@@ -858,8 +845,8 @@ static void _darkroom_ui_favorite_presets_popupmenu(GtkWidget *w, gpointer user_
   /* if we got any styles, lets popup menu for selection */
   if(darktable.gui->presets_popup_menu)
   {
-    gtk_menu_popup(darktable.gui->presets_popup_menu, NULL, NULL, NULL, NULL, 0, 0);
     gtk_widget_show_all(GTK_WIDGET(darktable.gui->presets_popup_menu));
+    gtk_menu_popup(darktable.gui->presets_popup_menu, NULL, NULL, NULL, NULL, 0, 0);
   }
   else
     dt_control_log(_("no userdefined presets for favorite modules were found"));
@@ -1343,8 +1330,9 @@ void mouse_leave(dt_view_t *self)
 
 void mouse_moved(dt_view_t *self, double x, double y, double pressure, int which)
 {
-  const int32_t capwd = darktable.thumbnail_width;
-  const int32_t capht = darktable.thumbnail_height;
+  const int32_t tb = DT_PIXEL_APPLY_DPI(dt_conf_get_int("plugins/darkroom/ui/border_size"));
+  const int32_t capwd = self->width  - 2*tb;
+  const int32_t capht = self->height - 2*tb;
   dt_develop_t *dev = (dt_develop_t *)self->data;
 
   // if we are not hovering over a thumbnail in the filmstrip -> show metadata of opened image.
@@ -1423,8 +1411,9 @@ void mouse_moved(dt_view_t *self, double x, double y, double pressure, int which
 
 int button_released(dt_view_t *self, double x, double y, int which, uint32_t state)
 {
-  const int32_t capwd = darktable.thumbnail_width;
-  const int32_t capht = darktable.thumbnail_height;
+  const int32_t tb = DT_PIXEL_APPLY_DPI(dt_conf_get_int("plugins/darkroom/ui/border_size"));
+  const int32_t capwd = self->width  - 2*tb;
+  const int32_t capht = self->height - 2*tb;
   dt_develop_t *dev = darktable.develop;
   const int32_t width_i = self->width;
   const int32_t height_i = self->height;
@@ -1446,8 +1435,9 @@ int button_released(dt_view_t *self, double x, double y, int which, uint32_t sta
 
 int button_pressed(dt_view_t *self, double x, double y, double pressure, int which, int type, uint32_t state)
 {
-  const int32_t capwd = darktable.thumbnail_width;
-  const int32_t capht = darktable.thumbnail_height;
+  const int32_t tb = DT_PIXEL_APPLY_DPI(dt_conf_get_int("plugins/darkroom/ui/border_size"));
+  const int32_t capwd = self->width  - 2*tb;
+  const int32_t capht = self->height - 2*tb;
   dt_develop_t *dev = (dt_develop_t *)self->data;
   const int32_t width_i = self->width;
   const int32_t height_i = self->height;
@@ -1532,8 +1522,9 @@ int button_pressed(dt_view_t *self, double x, double y, double pressure, int whi
 
 void scrolled(dt_view_t *self, double x, double y, int up, int state)
 {
-  const int32_t capwd = darktable.thumbnail_width;
-  const int32_t capht = darktable.thumbnail_height;
+  const int32_t tb = DT_PIXEL_APPLY_DPI(dt_conf_get_int("plugins/darkroom/ui/border_size"));
+  const int32_t capwd = self->width  - 2*tb;
+  const int32_t capht = self->height - 2*tb;
   dt_develop_t *dev = (dt_develop_t *)self->data;
   const int32_t width_i = self->width;
   const int32_t height_i = self->height;

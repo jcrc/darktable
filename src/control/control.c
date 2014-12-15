@@ -444,13 +444,13 @@ void *dt_control_expose(void *voidptr)
 {
   int width, height, pointerx, pointery;
   if(!darktable.gui->surface) return NULL;
-  width = cairo_image_surface_get_width(darktable.gui->surface);
-  height = cairo_image_surface_get_height(darktable.gui->surface);
+  width = dt_cairo_image_surface_get_width(darktable.gui->surface);
+  height = dt_cairo_image_surface_get_height(darktable.gui->surface);
   GtkWidget *widget = dt_ui_center(darktable.gui->ui);
   gtk_widget_get_pointer(widget, &pointerx, &pointery);
 
   // create a gtk-independent surface to draw on
-  cairo_surface_t *cst = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, width, height);
+  cairo_surface_t *cst = dt_cairo_image_surface_create(CAIRO_FORMAT_ARGB32, width, height);
   cairo_t *cr = cairo_create(cst);
 
   // TODO: control_expose: only redraw the part not overlapped by temporary control panel show!
@@ -569,7 +569,7 @@ gboolean dt_control_expose_endmarker(GtkWidget *widget, GdkEventExpose *event, g
   gtk_widget_get_allocation(widget, &allocation);
   const int width = allocation.width;
   const int height = allocation.height;
-  cairo_surface_t *cst = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, width, height);
+  cairo_surface_t *cst = dt_cairo_image_surface_create(CAIRO_FORMAT_ARGB32, width, height);
   cairo_t *cr = cairo_create(cst);
   dt_draw_endmarker(cr, width, height, GPOINTER_TO_INT(user_data));
   cairo_destroy(cr);
@@ -708,7 +708,6 @@ void dt_control_log(const char *msg, ...)
   darktable.control->log_message_timeout_id
       = g_timeout_add(DT_CTL_LOG_TIMEOUT, _dt_ctl_log_message_timeout_callback, NULL);
   dt_pthread_mutex_unlock(&darktable.control->log_mutex);
-  dt_control_queue_redraw_center();
 }
 
 static void dt_control_log_ack_all()

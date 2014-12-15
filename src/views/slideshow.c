@@ -73,6 +73,9 @@ typedef struct dt_slideshow_t
   uint32_t state_waiting_for_user; // user input (needed to step the cycle at one point)
 
   uint32_t auto_advance;
+
+  // some magic to hide the mosue pointer
+  guint mouse_timeout;
 } dt_slideshow_t;
 
 typedef struct dt_slideshow_format_t
@@ -333,6 +336,9 @@ void enter(dt_view_t *self)
 {
   dt_slideshow_t *d = (dt_slideshow_t *)self->data;
 
+  dt_control_change_cursor(GDK_BLANK_CURSOR);
+  d->mouse_timeout = 0;
+
   dt_ui_panel_show(darktable.gui->ui, DT_UI_PANEL_LEFT, FALSE, TRUE);
   dt_ui_panel_show(darktable.gui->ui, DT_UI_PANEL_RIGHT, FALSE, TRUE);
   dt_ui_panel_show(darktable.gui->ui, DT_UI_PANEL_TOP, FALSE, TRUE);
@@ -353,8 +359,8 @@ void enter(dt_view_t *self)
   GdkRectangle rect;
   gdk_screen_get_monitor_geometry(screen, monitor, &rect);
   dt_pthread_mutex_lock(&d->lock);
-  d->width = rect.width;
-  d->height = rect.height;
+  d->width = rect.width * darktable.gui->ppd;
+  d->height = rect.height * darktable.gui->ppd;
   d->buf1 = dt_alloc_align(64, sizeof(uint32_t) * d->width * d->height);
   d->buf2 = dt_alloc_align(64, sizeof(uint32_t) * d->width * d->height);
   d->front = d->buf1;
@@ -378,8 +384,12 @@ void enter(dt_view_t *self)
 
 void leave(dt_view_t *self)
 {
-  dt_ui_border_show(darktable.gui->ui, TRUE);
   dt_slideshow_t *d = (dt_slideshow_t *)self->data;
+
+  if(d->mouse_timeout > 0) g_source_remove(d->mouse_timeout);
+  d->mouse_timeout = 0;
+  dt_control_change_cursor(GDK_LEFT_PTR);
+  dt_ui_border_show(darktable.gui->ui, TRUE);
   d->auto_advance = 0;
   dt_view_lighttable_set_position(darktable.view_manager, d->front_num);
   dt_conf_set_string("plugins/lighttable/export/iccprofile", d->oldprofile);
@@ -420,14 +430,14 @@ void expose(dt_view_t *self, cairo_t *cr, int32_t width, int32_t height, int32_t
     cairo_restore(cr); // pop control
     cairo_reset_clip(cr);
     cairo_save(cr);
-    cairo_translate(cr, (d->width - d->front_width) * .5f, (d->height - d->front_height) * .5f);
+    cairo_translate(cr, (d->width - d->front_width) * .5f / darktable.gui->ppd, (d->height - d->front_height) * .5f / darktable.gui->ppd);
     cairo_surface_t *surface = NULL;
     const int32_t stride = cairo_format_stride_for_width(CAIRO_FORMAT_RGB24, d->front_width);
-    surface = cairo_image_surface_create_for_data((uint8_t *)d->front, CAIRO_FORMAT_RGB24, d->front_width,
+    surface = dt_cairo_image_surface_create_for_data((uint8_t *)d->front, CAIRO_FORMAT_RGB24, d->front_width,
                                                   d->front_height, stride);
     cairo_set_source_surface(cr, surface, 0, 0);
     cairo_pattern_set_filter(cairo_get_source(cr), CAIRO_FILTER_NEAREST);
-    cairo_rectangle(cr, 0, 0, d->front_width, d->front_height);
+    cairo_rectangle(cr, 0, 0, d->front_width/darktable.gui->ppd, d->front_height/darktable.gui->ppd);
     cairo_fill(cr);
     cairo_surface_destroy(surface);
     cairo_restore(cr);
@@ -443,8 +453,23 @@ int scrolled(dt_view_t *self, double x, double y, int up, int state)
 }
 
 
+static gboolean _hide_mouse(gpointer user_data)
+{
+  dt_view_t *self = (dt_view_t *)user_data;
+  dt_slideshow_t *d = (dt_slideshow_t *)self->data;
+  d->mouse_timeout = 0;
+  dt_control_change_cursor(GDK_BLANK_CURSOR);
+  return FALSE;
+}
+
+
 void mouse_moved(dt_view_t *self, double x, double y, int which)
 {
+  dt_slideshow_t *d = (dt_slideshow_t *)self->data;
+
+  if(d->mouse_timeout > 0) g_source_remove(d->mouse_timeout);
+  else dt_control_change_cursor(GDK_LEFT_PTR);
+  d->mouse_timeout = g_timeout_add_seconds(1, _hide_mouse, self);
 }
 
 

@@ -122,12 +122,13 @@ void gui_init(dt_lib_module_t *self)
     RsvgDimensionData dimension;
     rsvg_handle_get_dimensions(svg, &dimension);
 
-    int width = DT_PIXEL_APPLY_DPI(dimension.width), height = DT_PIXEL_APPLY_DPI(dimension.height);
+    int width = DT_PIXEL_APPLY_DPI(dimension.width) * darktable.gui->ppd,
+        height = DT_PIXEL_APPLY_DPI(dimension.height) * darktable.gui->ppd;
     int stride = cairo_format_stride_for_width(CAIRO_FORMAT_ARGB32, width);
 
     d->image_buffer = (guint8 *)calloc(stride * height, sizeof(guint8));
     surface
-        = cairo_image_surface_create_for_data(d->image_buffer, CAIRO_FORMAT_ARGB32, width, height, stride);
+        = dt_cairo_image_surface_create_for_data(d->image_buffer, CAIRO_FORMAT_ARGB32, width, height, stride);
     if(cairo_surface_status(surface) != CAIRO_STATUS_SUCCESS)
     {
       free(d->image_buffer);
@@ -167,12 +168,13 @@ png_fallback:
         png_height = cairo_image_surface_get_height(surface);
 
     // blow up the PNG. Ugly, but at least it has the correct size afterwards :-/
-    int width = DT_PIXEL_APPLY_DPI(png_width), height = DT_PIXEL_APPLY_DPI(png_height);
+    int width = DT_PIXEL_APPLY_DPI(png_width) * darktable.gui->ppd,
+        height = DT_PIXEL_APPLY_DPI(png_height) * darktable.gui->ppd;
     int stride = cairo_format_stride_for_width(CAIRO_FORMAT_ARGB32, width);
 
     d->image_buffer = (guint8 *)calloc(stride * height, sizeof(guint8));
     d->image
-        = cairo_image_surface_create_for_data(d->image_buffer, CAIRO_FORMAT_ARGB32, width, height, stride);
+        = dt_cairo_image_surface_create_for_data(d->image_buffer, CAIRO_FORMAT_ARGB32, width, height, stride);
     if(cairo_surface_status(d->image) != CAIRO_STATUS_SUCCESS)
     {
       free(d->image_buffer);
@@ -196,8 +198,8 @@ png_fallback:
 done:
   g_free(logo);
 
-  d->image_width = d->image ? cairo_image_surface_get_width(d->image) : 0;
-  d->image_height = d->image ? cairo_image_surface_get_height(d->image) : 0;
+  d->image_width = d->image ? dt_cairo_image_surface_get_width(d->image) : 0;
+  d->image_height = d->image ? dt_cairo_image_surface_get_height(d->image) : 0;
 
   /* set size of drawing area */
   gtk_widget_set_size_request(self->widget, d->image_width + (int)DT_PIXEL_APPLY_DPI(180),
@@ -293,24 +295,24 @@ static void _lib_darktable_show_about_dialog()
   gtk_about_dialog_set_logo_icon_name(GTK_ABOUT_DIALOG(dialog), icon);
   g_free(icon);
   const char *authors[]
-      = { _("* developers *"), "Henrik Andersson", "Johannes Hanika", "Tobias Ellinghaus", "Ulrich Pegelow",
-          "", _("* ubuntu packaging, color management, video tutorials *"), "Pascal de Bruijn", "",
-          _("* OpenCL pipeline: *"), "Ulrich Pegelow", "",
-          _("* networking, battle testing, translation expert *"), "Alexandre Prokoudine", "",
-          _("* contributors *"), "Aldric Renaudin", "Alexandre Prokoudine", "Alexey Dokuchaev", "Ammon Riley",
-          "Anton Keks", "Antony Dovgal", "Ari Makela", "Benjamin Cahill", "Brian Teague", "Bruce Guenter",
-          "Cherrot Luo", "Chris Mason", "Christian Tellefsen", "David Morel", "Denis Cheremisov",
-          "Dennis Gnad", "Diego Segura", "Dimitrios Psychogios", "Eckhart Pedersen", "Edouard Gomez",
-          "Edward Herr", "František Šidák", "Gaspard Jankowiak", "Ger Siemerink", "Gianluigi Calcaterra",
-          "Guilherme Brondani Torri", "Ivan Tarozzi", "James C. McPherson", "Jan Kundrát",
-          "Jean-Sébastien Pédron", "Jérémy Rosen", "Jesper Pedersen", "Joao Trindade", "Jon Leighton",
-          "Jose Carlos Garcia Sogo", "Josef Wells", "Julian J. M", "Mattias Eriksson", "Michal Babej",
-          "Michał Prędotka", "Moritz Lipp", "Olivier Tribout", "Pascal de Bruijn", "Pascal Obry", "parafin",
-          "Petr Styblo", "Pierre Le Magourou", "Richard Levitte", "Richard Tollerton", "Robert Bieber",
-          "Roland Riegel", "Roman Lebedev", "Rostyslav Pidgornyi", "Sergey Pavlov", "Simon Harhues",
-          "Simon Spannagel", "Stuart Henderson", "Terry Jeffress", "Tim Harder", "Togan Muftuoglu",
-          "Tom Vanderpoel", "Ulrich Pegelow", "Wolfgang Goetz", "Wolfgang Kuehnel", "Yari Adan", "hal", "jan",
-          "maigl", "tuxuser", "And all those of you that made previous releases possible", NULL };
+      = { _("* contributors *"),
+          "Roman Lebedev", "Pascal de Bruijn", "Tobias Ellinghaus", "Ulrich Pegelow",
+          "Pedro Côrte-Real", "Jérémy Rosen", "Pascal Obry", "johannes hanika",
+          "michleb", "Dan Torop", "Ger Siemerink", "Edouard Gomez", "Henrik Andersson",
+          "Richard Levitte", "parafin", "bartokk", "josepvm", "Dennis Gnad",
+          "simonspa", "Moritz Lipp", "Andrew Toskin", "AlicVB", "Victor", "tatica",
+          "Thomas Pryds", "Josep V. Moragues", "Ronny Kahl", "Jose Carlos Garcia Sogo",
+          "Erik Gustavsson", "Cherrot Luo", "Victor Lamoine", "Torsten Bronger",
+          "Mikhail Trishchenkov", "Martijn van Beers", "Jake Probst", "Dimitrios Psychogios",
+          "Milan Knížek", "Michel", "Jochem Kossen", "Guilherme Brondani Torri",
+          "Fernando R", "Federico Bruni", "Alexandre Prokoudine", "Stéphane Gimenez",
+          "Robert William Hutton", "Robert Bieber", "Nazarii Vitak",
+          "moopmonster", "Michael Neumann", "Messie1", "Matthieu Volat", "Matthias Gehre",
+          "Martin Kyral", "Luis Barrancos", "Krisztian", "Kevin", "Jesper Pedersen",
+          "Jean-Sébastien Pédron", "Jean-Luc Coulon (f5ibh)", "Jan Niklas Fingerle",
+          "Ilya Popov", "Gabriel Ebner", "Dmitry Ashkadov", "Daniel Kraus (bovender)",
+          "Colin Adams", "Besmir Godole", "a3novy",
+          "And all those of you that made previous releases possible", NULL };
   gtk_about_dialog_set_authors(GTK_ABOUT_DIALOG(dialog), authors);
 
   gtk_about_dialog_set_translator_credits(GTK_ABOUT_DIALOG(dialog), _("translator-credits"));
