@@ -31,12 +31,7 @@
 #include "gui/gtk.h"
 #include "gui/presets.h"
 #include "dtgtk/button.h"
-#include "dtgtk/icon.h"
-#include "dtgtk/tristatebutton.h"
-#include "dtgtk/slider.h"
-#include "dtgtk/tristatebutton.h"
 #include "dtgtk/gradientslider.h"
-#include "dtgtk/label.h"
 
 #include <strings.h>
 #include <assert.h>
@@ -48,7 +43,7 @@
 
 
 #define CLAMP_RANGE(x, y, z) (CLAMP(x, y, z))
-#define LIGHTNESS 32767.0f
+#define NEUTRAL_GRAY 0.5
 
 typedef enum _iop_gui_blendif_channel_t
 {
@@ -65,55 +60,60 @@ typedef enum _iop_gui_blendif_channel_t
 
 
 static const dt_iop_gui_blendif_colorstop_t _gradient_L[]
-    = { { 0.0f, { 0, 0, 0, 0 } },
-        { 0.5f, { 0, LIGHTNESS / 2, LIGHTNESS / 2, LIGHTNESS / 2 } },
-        { 1.0f, { 0, LIGHTNESS, LIGHTNESS, LIGHTNESS } } };
+    = { { 0.0f, { 0, 0, 0, 1.0 } },
+        { 0.5f, { NEUTRAL_GRAY / 2, NEUTRAL_GRAY / 2, NEUTRAL_GRAY / 2, 1.0 } },
+        { 1.0f, { NEUTRAL_GRAY, NEUTRAL_GRAY, NEUTRAL_GRAY, 1.0 } } };
 
 static const dt_iop_gui_blendif_colorstop_t _gradient_a[]
-    = { { 0.0f, { 0, 0, 0.34 * LIGHTNESS * 2, 0.27 * LIGHTNESS * 2 } },
-        { 0.5f, { 0, LIGHTNESS, LIGHTNESS, LIGHTNESS } },
-        { 1.0f, { 0, 0.53 * LIGHTNESS * 2, 0.08 * LIGHTNESS * 2, 0.28 * LIGHTNESS * 2 } } };
+    = { { 0.0f, { 0, 0.34 * NEUTRAL_GRAY * 2, 0.27 * NEUTRAL_GRAY * 2, 1.0 } },
+        { 0.5f, { NEUTRAL_GRAY, NEUTRAL_GRAY, NEUTRAL_GRAY, 1.0 } },
+        { 1.0f, { 0.53 * NEUTRAL_GRAY * 2, 0.08 * NEUTRAL_GRAY * 2, 0.28 * NEUTRAL_GRAY * 2, 1.0 } } };
 
 static const dt_iop_gui_blendif_colorstop_t _gradient_b[]
-    = { { 0.0f, { 0, 0, 0.27 * LIGHTNESS * 2, 0.58 * LIGHTNESS * 2 } },
-        { 0.5f, { 0, LIGHTNESS, LIGHTNESS, LIGHTNESS } },
-        { 1.0f, { 0, 0.81 * LIGHTNESS * 2, 0.66 * LIGHTNESS * 2, 0 } } };
+    = { { 0.0f, { 0, 0.27 * NEUTRAL_GRAY * 2, 0.58 * NEUTRAL_GRAY * 2, 1.0 } },
+        { 0.5f, { NEUTRAL_GRAY, NEUTRAL_GRAY, NEUTRAL_GRAY, 1.0 } },
+        { 1.0f, { 0.81 * NEUTRAL_GRAY * 2, 0.66 * NEUTRAL_GRAY * 2, 0, 1.0 } } };
 
 static const dt_iop_gui_blendif_colorstop_t _gradient_gray[]
-    = { { 0.0f, { 0, 0, 0, 0 } },
-        { 0.5f, { 0, LIGHTNESS / 2, LIGHTNESS / 2, LIGHTNESS / 2 } },
-        { 1.0f, { 0, LIGHTNESS, LIGHTNESS, LIGHTNESS } } };
+    = { { 0.0f, { 0, 0, 0, 1.0 } },
+        { 0.5f, { NEUTRAL_GRAY / 2, NEUTRAL_GRAY / 2, NEUTRAL_GRAY / 2, 1.0 } },
+        { 1.0f, { NEUTRAL_GRAY, NEUTRAL_GRAY, NEUTRAL_GRAY, 1.0 } } };
 
-static const dt_iop_gui_blendif_colorstop_t _gradient_red[]
-    = { { 0.0f, { 0, 0, 0, 0 } }, { 0.5f, { 0, LIGHTNESS / 2, 0, 0 } }, { 1.0f, { 0, LIGHTNESS, 0, 0 } } };
+static const dt_iop_gui_blendif_colorstop_t _gradient_red[] = { { 0.0f, { 0, 0, 0, 1.0 } },
+                                                                { 0.5f, { NEUTRAL_GRAY / 2, 0, 0, 1.0 } },
+                                                                { 1.0f, { NEUTRAL_GRAY, 0, 0, 1.0 } } };
 
-static const dt_iop_gui_blendif_colorstop_t _gradient_green[]
-    = { { 0.0f, { 0, 0, 0, 0 } }, { 0.5f, { 0, 0, LIGHTNESS / 2, 0 } }, { 1.0f, { 0, 0, LIGHTNESS, 0 } } };
+static const dt_iop_gui_blendif_colorstop_t _gradient_green[] = { { 0.0f, { 0, 0, 0, 1.0 } },
+                                                                  { 0.5f, { 0, NEUTRAL_GRAY / 2, 0, 1.0 } },
+                                                                  { 1.0f, { 0, NEUTRAL_GRAY, 0, 1.0 } } };
 
-static const dt_iop_gui_blendif_colorstop_t _gradient_blue[]
-    = { { 0.0f, { 0, 0, 0, 0 } }, { 0.5f, { 0, 0, 0, LIGHTNESS / 2 } }, { 1.0f, { 0, 0, 0, LIGHTNESS } } };
+static const dt_iop_gui_blendif_colorstop_t _gradient_blue[] = { { 0.0f, { 0, 0, 0, 1.0 } },
+                                                                 { 0.5f, { 0, 0, NEUTRAL_GRAY / 2, 1.0 } },
+                                                                 { 1.0f, { 0, 0, NEUTRAL_GRAY, 1.0 } } };
 
 static const dt_iop_gui_blendif_colorstop_t _gradient_chroma[]
-    = { { 0.0f, { 0, LIGHTNESS, LIGHTNESS, LIGHTNESS } },
-        { 0.5f, { 0, LIGHTNESS, LIGHTNESS / 2, LIGHTNESS } },
-        { 1.0f, { 0, LIGHTNESS, 0, LIGHTNESS } } };
+    = { { 0.0f, { NEUTRAL_GRAY, NEUTRAL_GRAY, NEUTRAL_GRAY, 1.0 } },
+        { 0.5f, { NEUTRAL_GRAY, NEUTRAL_GRAY / 2, NEUTRAL_GRAY, 1.0 } },
+        { 1.0f, { NEUTRAL_GRAY, 0, NEUTRAL_GRAY, 1.0 } } };
 
-static const dt_iop_gui_blendif_colorstop_t _gradient_hue[]
-    = { { 0.0f, { 0, 1.00f * 1.5f * LIGHTNESS, 0.68f * 1.5f * LIGHTNESS, 0.78f * 1.5f * LIGHTNESS } },
-        { 0.166f, { 0, 0.95f * 1.5f * LIGHTNESS, 0.73f * 1.5f * LIGHTNESS, 0.56f * 1.5f * LIGHTNESS } },
-        { 0.333f, { 0, 0.71f * 1.5f * LIGHTNESS, 0.81f * 1.5f * LIGHTNESS, 0.55f * 1.5f * LIGHTNESS } },
-        { 0.500f, { 0, 0.45f * 1.5f * LIGHTNESS, 0.85f * 1.5f * LIGHTNESS, 0.77f * 1.5f * LIGHTNESS } },
-        { 0.666f, { 0, 0.49f * 1.5f * LIGHTNESS, 0.82f * 1.5f * LIGHTNESS, 1.00f * 1.5f * LIGHTNESS } },
-        { 0.833f, { 0, 0.82f * 1.5f * LIGHTNESS, 0.74f * 1.5f * LIGHTNESS, 1.00f * 1.5f * LIGHTNESS } },
-        { 1.0f, { 0, 1.00f * 1.5f * LIGHTNESS, 0.68f * 1.5f * LIGHTNESS, 0.78f * 1.5f * LIGHTNESS } } };
+static const dt_iop_gui_blendif_colorstop_t _gradient_hue[] = {
+  { 0.0f, { 1.00f * 1.5f * NEUTRAL_GRAY, 0.68f * 1.5f * NEUTRAL_GRAY, 0.78f * 1.5f * NEUTRAL_GRAY, 1.0 } },
+  { 0.166f, { 0.95f * 1.5f * NEUTRAL_GRAY, 0.73f * 1.5f * NEUTRAL_GRAY, 0.56f * 1.5f * NEUTRAL_GRAY, 1.0 } },
+  { 0.333f, { 0.71f * 1.5f * NEUTRAL_GRAY, 0.81f * 1.5f * NEUTRAL_GRAY, 0.55f * 1.5f * NEUTRAL_GRAY, 1.0 } },
+  { 0.500f, { 0.45f * 1.5f * NEUTRAL_GRAY, 0.85f * 1.5f * NEUTRAL_GRAY, 0.77f * 1.5f * NEUTRAL_GRAY, 1.0 } },
+  { 0.666f, { 0.49f * 1.5f * NEUTRAL_GRAY, 0.82f * 1.5f * NEUTRAL_GRAY, 1.00f * 1.5f * NEUTRAL_GRAY, 1.0 } },
+  { 0.833f, { 0.82f * 1.5f * NEUTRAL_GRAY, 0.74f * 1.5f * NEUTRAL_GRAY, 1.00f * 1.5f * NEUTRAL_GRAY, 1.0 } },
+  { 1.0f, { 1.00f * 1.5f * NEUTRAL_GRAY, 0.68f * 1.5f * NEUTRAL_GRAY, 0.78f * 1.5f * NEUTRAL_GRAY, 1.0 } }
+};
 
-static const dt_iop_gui_blendif_colorstop_t _gradient_HUE[] = { { 0.0f, { 0, LIGHTNESS, 0, 0 } },
-                                                                { 0.166f, { 0, LIGHTNESS, LIGHTNESS, 0 } },
-                                                                { 0.332f, { 0, 0, LIGHTNESS, 0 } },
-                                                                { 0.498f, { 0, 0, LIGHTNESS, LIGHTNESS } },
-                                                                { 0.664f, { 0, 0, 0, LIGHTNESS } },
-                                                                { 0.830f, { 0, LIGHTNESS, 0, LIGHTNESS } },
-                                                                { 1.0f, { 0, LIGHTNESS, 0, 0 } } };
+static const dt_iop_gui_blendif_colorstop_t _gradient_HUE[]
+    = { { 0.0f, { NEUTRAL_GRAY, 0, 0, 1.0 } },
+        { 0.166f, { NEUTRAL_GRAY, NEUTRAL_GRAY, 0, 1.0 } },
+        { 0.332f, { 0, NEUTRAL_GRAY, 0, 1.0 } },
+        { 0.498f, { 0, NEUTRAL_GRAY, NEUTRAL_GRAY, 1.0 } },
+        { 0.664f, { 0, 0, NEUTRAL_GRAY, 1.0 } },
+        { 0.830f, { NEUTRAL_GRAY, 0, NEUTRAL_GRAY, 1.0 } },
+        { 1.0f, { NEUTRAL_GRAY, 0, 0, 1.0 } } };
 
 
 static inline void _RGB_2_HSL(const float *RGB, float *HSL)
@@ -790,7 +790,7 @@ static void _blendop_masks_polarity_callback(GtkToggleButton *togglebutton, dt_i
   dt_dev_add_history_item(darktable.develop, self, TRUE);
 }
 
-static gboolean _blendop_blendif_expose(GtkWidget *widget, GdkEventExpose *event, dt_iop_module_t *module)
+static gboolean _blendop_blendif_draw(GtkWidget *widget, cairo_t *cr, dt_iop_module_t *module)
 {
   if(darktable.gui->reset) return FALSE;
 
@@ -936,11 +936,11 @@ void dt_iop_gui_update_blendif(dt_iop_module_t *module)
 }
 
 
-void dt_iop_gui_init_blendif(GtkVBox *blendw, dt_iop_module_t *module)
+void dt_iop_gui_init_blendif(GtkBox *blendw, dt_iop_module_t *module)
 {
   dt_iop_gui_blend_data_t *bd = (dt_iop_gui_blend_data_t *)module->blend_data;
 
-  bd->blendif_box = GTK_VBOX(gtk_vbox_new(FALSE, DT_BAUHAUS_SPACE));
+  bd->blendif_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, DT_BAUHAUS_SPACE));
 
   /* create and add blendif support if module supports it */
   if(bd->blendif_support)
@@ -1059,18 +1059,19 @@ void dt_iop_gui_init_blendif(GtkVBox *blendw, dt_iop_module_t *module)
                        // here
     }
 
-    GtkWidget *uplabel = gtk_hbox_new(FALSE, 0);
-    GtkWidget *lowlabel = gtk_hbox_new(FALSE, 0);
-    GtkWidget *upslider = gtk_hbox_new(FALSE, 0);
-    GtkWidget *lowslider = gtk_hbox_new(FALSE, 0);
-    GtkWidget *notebook = gtk_vbox_new(FALSE, 0);
-    GtkWidget *header = gtk_hbox_new(FALSE, 0);
+    GtkWidget *uplabel = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+    GtkWidget *lowlabel = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+    GtkWidget *upslider = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, DT_PIXEL_APPLY_DPI(5));
+    GtkWidget *lowslider = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, DT_PIXEL_APPLY_DPI(5));
+    GtkWidget *notebook = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+    GtkWidget *header = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, DT_PIXEL_APPLY_DPI(5));
 
     bd->channel_tabs = GTK_NOTEBOOK(gtk_notebook_new());
 
     for(int ch = 0; ch < maxchannels; ch++)
     {
-      gtk_notebook_append_page(GTK_NOTEBOOK(bd->channel_tabs), GTK_WIDGET(gtk_hbox_new(FALSE, 0)),
+      gtk_notebook_append_page(GTK_NOTEBOOK(bd->channel_tabs),
+                               GTK_WIDGET(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0)),
                                gtk_label_new(labels[ch]));
       g_object_set(G_OBJECT(gtk_notebook_get_tab_label(bd->channel_tabs,
                                                        gtk_notebook_get_nth_page(bd->channel_tabs, -1))),
@@ -1079,7 +1080,6 @@ void dt_iop_gui_init_blendif(GtkVBox *blendw, dt_iop_module_t *module)
 
     gtk_widget_show_all(GTK_WIDGET(gtk_notebook_get_nth_page(bd->channel_tabs, bd->tab)));
     gtk_notebook_set_current_page(GTK_NOTEBOOK(bd->channel_tabs), bd->tab);
-    g_object_set(G_OBJECT(bd->channel_tabs), "homogeneous", TRUE, (char *)NULL);
     gtk_notebook_set_scrollable(bd->channel_tabs, TRUE);
 
     gtk_box_pack_start(GTK_BOX(notebook), GTK_WIDGET(bd->channel_tabs), FALSE, FALSE, 0);
@@ -1089,11 +1089,13 @@ void dt_iop_gui_init_blendif(GtkVBox *blendw, dt_iop_module_t *module)
     g_object_set(G_OBJECT(bd->colorpicker), "tooltip-text", _("pick GUI color from image"), (char *)NULL);
     gtk_widget_set_size_request(GTK_WIDGET(bd->colorpicker), bs, bs);
 
-    GtkWidget *res = dtgtk_button_new(dtgtk_cairo_paint_reset, CPF_STYLE_FLAT);
+    GtkWidget *res = dtgtk_button_new(dtgtk_cairo_paint_reset, CPF_STYLE_FLAT | CPF_DO_NOT_USE_BORDER);
     g_object_set(G_OBJECT(res), "tooltip-text", _("reset blend mask settings"), (char *)NULL);
+    gtk_widget_set_size_request(res, bs, bs);
 
-    GtkWidget *inv = dtgtk_button_new(dtgtk_cairo_paint_invert, CPF_STYLE_FLAT);
+    GtkWidget *inv = dtgtk_button_new(dtgtk_cairo_paint_invert, CPF_STYLE_FLAT | CPF_DO_NOT_USE_BORDER);
     g_object_set(G_OBJECT(inv), "tooltip-text", _("invert all channel's polarities"), (char *)NULL);
+    gtk_widget_set_size_request(inv, bs, bs);
 
     gtk_box_pack_start(GTK_BOX(header), GTK_WIDGET(notebook), TRUE, TRUE, 0);
     gtk_box_pack_end(GTK_BOX(header), GTK_WIDGET(res), FALSE, FALSE, 0);
@@ -1147,9 +1149,9 @@ void dt_iop_gui_init_blendif(GtkVBox *blendw, dt_iop_module_t *module)
     g_object_set(output, "tooltip-text", ttoutput, (char *)NULL);
     g_object_set(input, "tooltip-text", ttinput, (char *)NULL);
 
-    g_signal_connect(G_OBJECT(bd->lower_slider), "expose-event", G_CALLBACK(_blendop_blendif_expose), module);
+    g_signal_connect(G_OBJECT(bd->lower_slider), "draw", G_CALLBACK(_blendop_blendif_draw), module);
 
-    g_signal_connect(G_OBJECT(bd->upper_slider), "expose-event", G_CALLBACK(_blendop_blendif_expose), module);
+    g_signal_connect(G_OBJECT(bd->upper_slider), "draw", G_CALLBACK(_blendop_blendif_draw), module);
 
     g_signal_connect(G_OBJECT(bd->channel_tabs), "switch_page", G_CALLBACK(_blendop_blendif_tab_switch), bd);
 
@@ -1236,11 +1238,11 @@ void dt_iop_gui_update_masks(dt_iop_module_t *module)
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(bd->masks_brush), b5);
 }
 
-void dt_iop_gui_init_masks(GtkVBox *blendw, dt_iop_module_t *module)
+void dt_iop_gui_init_masks(GtkBox *blendw, dt_iop_module_t *module)
 {
   dt_iop_gui_blend_data_t *bd = (dt_iop_gui_blend_data_t *)module->blend_data;
 
-  bd->masks_box = GTK_VBOX(gtk_vbox_new(FALSE, DT_BAUHAUS_SPACE));
+  bd->masks_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, DT_BAUHAUS_SPACE));
 
   /* create and add masks support if module supports it */
   if(bd->masks_support)
@@ -1250,8 +1252,8 @@ void dt_iop_gui_init_masks(GtkVBox *blendw, dt_iop_module_t *module)
     bd->masks_combo_ids = NULL;
     bd->masks_shown = DT_MASKS_EDIT_OFF;
 
-    GtkWidget *hbox = gtk_hbox_new(FALSE, 0);
-    GtkWidget *abox = gtk_hbox_new(FALSE, 0);
+    GtkWidget *hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+    GtkWidget *abox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
 
     bd->masks_combo = dt_bauhaus_combobox_new(module);
     dt_bauhaus_widget_set_label(bd->masks_combo, _("blend"), _("drawn mask"));
@@ -1854,24 +1856,24 @@ void dt_iop_gui_init_blending(GtkWidget *iopw, dt_iop_module_t *module)
     gtk_widget_set_size_request(GTK_WIDGET(bd->suppress), bs, bs);
     g_signal_connect(G_OBJECT(bd->suppress), "toggled", G_CALLBACK(_blendop_blendif_suppress_toggled), module);
 
-    GtkWidget *box = gtk_vbox_new(FALSE, DT_BAUHAUS_SPACE);
+    GtkWidget *box = gtk_box_new(GTK_ORIENTATION_VERTICAL, DT_BAUHAUS_SPACE);
     gtk_box_pack_start(GTK_BOX(iopw), GTK_WIDGET(box), TRUE, TRUE, 0);
 
     gtk_box_pack_start(GTK_BOX(box), GTK_WIDGET(bd->masks_modes_combo), TRUE, TRUE, 0);
 
-    bd->top_box = GTK_VBOX(gtk_vbox_new(FALSE, DT_BAUHAUS_SPACE));
+    bd->top_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, DT_BAUHAUS_SPACE));
     gtk_box_pack_start(GTK_BOX(bd->top_box), bd->blend_modes_combo, TRUE, TRUE, 0);
     gtk_box_pack_start(GTK_BOX(bd->top_box), bd->opacity_slider, TRUE, TRUE, 0);
     gtk_box_pack_start(GTK_BOX(box), GTK_WIDGET(bd->top_box), TRUE, TRUE, 0);
 
-    dt_iop_gui_init_masks(GTK_VBOX(iopw), module);
-    dt_iop_gui_init_blendif(GTK_VBOX(iopw), module);
+    dt_iop_gui_init_masks(GTK_BOX(iopw), module);
+    dt_iop_gui_init_blendif(GTK_BOX(iopw), module);
 
-    GtkWidget *hbox = gtk_hbox_new(FALSE, 0);
+    GtkWidget *hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
     gtk_box_pack_start(GTK_BOX(hbox), bd->radius_slider, TRUE, TRUE, 0);
     gtk_box_pack_start(GTK_BOX(hbox), GTK_WIDGET(bd->suppress), FALSE, FALSE, 0);
     gtk_box_pack_start(GTK_BOX(hbox), GTK_WIDGET(bd->showmask), FALSE, FALSE, 0);
-    bd->bottom_box = GTK_VBOX(gtk_vbox_new(FALSE, DT_BAUHAUS_SPACE));
+    bd->bottom_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, DT_BAUHAUS_SPACE));
     gtk_box_pack_start(GTK_BOX(bd->bottom_box), GTK_WIDGET(bd->masks_combine_combo), TRUE, TRUE, 0);
     gtk_box_pack_start(GTK_BOX(bd->bottom_box), GTK_WIDGET(bd->masks_invert_combo), TRUE, TRUE, 0);
     gtk_box_pack_start(GTK_BOX(bd->bottom_box), hbox, TRUE, TRUE, 0);

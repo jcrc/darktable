@@ -287,6 +287,28 @@ gboolean dt_util_is_dir_empty(const char *dirname)
     return FALSE;
 }
 
+gchar *dt_util_foo_to_utf8(const char *string)
+{
+  gchar *tag = NULL;
+
+  if(g_utf8_validate(string, -1, NULL)) // first check if it's utf8 already
+    tag = g_strdup(string);
+  else
+    tag = g_convert(string, -1, "UTF-8", "LATIN1", NULL, NULL, NULL); // let's try latin1
+
+  if(!tag) // hmm, neither utf8 nor latin1, let's fall back to ascii and just remove everything that isn't
+  {
+    tag = g_strdup(string);
+    char *c = tag;
+    while(*c)
+    {
+      if((*c < 0x20) || (*c >= 0x7f)) *c = '?';
+      c++;
+    }
+  }
+  return tag;
+}
+
 // days are in [1..31], months are in [0..11], see "man localtime"
 dt_logo_season_t get_logo_season(void)
 {
@@ -299,6 +321,53 @@ dt_logo_season_t get_logo_season(void)
   if(lt.tm_mon == 11 && lt.tm_mday >= 24) return DT_LOGO_SEASON_XMAS;
   return DT_LOGO_SEASON_NONE;
 }
+
+// the following two functions (dt_util_latitude_str and dt_util_longitude_str) were taken from libosmgpsmap
+// Copyright (C) 2013 John Stowers <john.stowers@gmail.com>
+/* these can be overwritten with versions that support
+ *   localization */
+#define OSD_COORDINATES_CHR_N  "N"
+#define OSD_COORDINATES_CHR_S  "S"
+#define OSD_COORDINATES_CHR_E  "E"
+#define OSD_COORDINATES_CHR_W  "W"
+
+/* this is the classic geocaching notation */
+gchar *dt_util_latitude_str(float latitude)
+{
+  gchar *c = OSD_COORDINATES_CHR_N;
+  float integral, fractional;
+
+  if(isnan(latitude)) return NULL;
+
+  if(latitude < 0)
+  {
+    latitude = fabs(latitude);
+    c = OSD_COORDINATES_CHR_S;
+  }
+
+  fractional = modff(latitude, &integral);
+
+  return g_strdup_printf("%s %02d° %06.3f'", c, (int)integral, fractional*60.0);
+}
+
+gchar *dt_util_longitude_str(float longitude)
+{
+  gchar *c = OSD_COORDINATES_CHR_E;
+  float integral, fractional;
+
+  if(isnan(longitude)) return NULL;
+
+  if(longitude < 0)
+  {
+    longitude = fabs(longitude);
+    c = OSD_COORDINATES_CHR_W;
+  }
+
+  fractional = modff(longitude, &integral);
+
+  return g_strdup_printf("%s %03d° %06.3f'", c, (int)integral, fractional*60.0);
+}
+
 
 // modelines: These editor modelines have been set for all relevant files by tools/update_modelines.sh
 // vim: shiftwidth=2 expandtab tabstop=2 cindent

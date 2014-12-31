@@ -1,6 +1,7 @@
 /*
     This file is part of darktable,
     copyright (c) 2010--2011 Henrik Andersson and johannes hanika
+    copyright (c) 2014 LebedevRI.
 
     darktable is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -28,7 +29,7 @@
 #include "common/colorspaces.h"
 #include "control/conf.h"
 #include "common/imageio_format.h"
-#define DT_TIFFIO_STRIPE 64
+#include "bauhaus/bauhaus.h"
 
 DT_MODULE(2)
 
@@ -45,15 +46,15 @@ typedef struct dt_imageio_tiff_t
 
 typedef struct dt_imageio_tiff_gui_t
 {
-  GtkComboBox *bpp;
-  GtkComboBox *compress;
+  GtkWidget *bpp;
+  GtkWidget *compress;
 } dt_imageio_tiff_gui_t;
 
 
 int write_image(dt_imageio_module_data_t *d_tmp, const char *filename, const void *in_void, void *exif,
                 int exif_len, int imgid)
 {
-  dt_imageio_tiff_t *d = (dt_imageio_tiff_t *)d_tmp;
+  const dt_imageio_tiff_t *d = (dt_imageio_tiff_t *)d_tmp;
 
   uint8_t *profile = NULL;
   uint32_t profile_len = 0;
@@ -61,9 +62,6 @@ int write_image(dt_imageio_module_data_t *d_tmp, const char *filename, const voi
   TIFF *tif = NULL;
 
   void *rowdata = NULL;
-  uint32_t rowsize = 0;
-  uint32_t stripesize = 0;
-  uint32_t stripe = 0;
 
   int rc = 1; // default to error
 
@@ -137,7 +135,7 @@ int write_image(dt_imageio_module_data_t *d_tmp, const char *filename, const voi
   TIFFSetField(tif, TIFFTAG_IMAGELENGTH, (uint32_t)d->height);
   TIFFSetField(tif, TIFFTAG_PHOTOMETRIC, (uint16_t)PHOTOMETRIC_RGB);
   TIFFSetField(tif, TIFFTAG_PLANARCONFIG, (uint16_t)PLANARCONFIG_CONTIG);
-  TIFFSetField(tif, TIFFTAG_ROWSPERSTRIP, (uint32_t)DT_TIFFIO_STRIPE);
+  TIFFSetField(tif, TIFFTAG_ROWSPERSTRIP, (uint32_t)1);
   TIFFSetField(tif, TIFFTAG_ORIENTATION, (uint16_t)ORIENTATION_TOPLEFT);
 
   int resolution = dt_conf_get_int("metadata/resolution");
@@ -148,12 +146,8 @@ int write_image(dt_imageio_module_data_t *d_tmp, const char *filename, const voi
     TIFFSetField(tif, TIFFTAG_RESOLUTIONUNIT, (uint16_t)RESUNIT_INCH);
   }
 
-  rowsize = (d->width * 3) * d->bpp / 8;
-  stripesize = rowsize * DT_TIFFIO_STRIPE;
-  stripe = 0;
-
-  rowdata = malloc(stripesize);
-  if(!rowdata)
+  const size_t rowsize = (d->width * 3) * d->bpp / 8;
+  if((rowdata = malloc(rowsize)) == NULL)
   {
     rc = 1;
     goto exit;
@@ -161,73 +155,59 @@ int write_image(dt_imageio_module_data_t *d_tmp, const char *filename, const voi
 
   if(d->bpp == 32)
   {
-    float *wdata = rowdata;
-
     for(int y = 0; y < d->height; y++)
     {
       float *in = (float *)in_void + (size_t)4 * y * d->width;
+      float *out = (float *)rowdata;
 
-      for(int x = 0; x < d->width; x++, in += 4, wdata += 3)
+      for(int x = 0; x < d->width; x++, in += 4, out += 3)
       {
-        memcpy(wdata, in, 3 * sizeof(float));
+        memcpy(out, in, 3 * sizeof(float));
       }
 
-      if((uintptr_t)wdata - (uintptr_t)rowdata == (uintptr_t)stripesize)
+      if(TIFFWriteScanline(tif, rowdata, y, 0) == -1)
       {
-        TIFFWriteEncodedStrip(tif, stripe++, rowdata, (size_t)(rowsize * DT_TIFFIO_STRIPE));
-        wdata = rowdata;
+        rc = 1;
+        goto exit;
       }
-    }
-    if((uintptr_t)wdata - (uintptr_t)rowdata != (uintptr_t)stripesize)
-    {
-      TIFFWriteEncodedStrip(tif, stripe++, rowdata, (size_t)((uintptr_t)wdata - (uintptr_t)rowdata));
     }
   }
   else if(d->bpp == 16)
   {
-    uint16_t *wdata = rowdata;
     for(int y = 0; y < d->height; y++)
     {
       uint16_t *in = (uint16_t *)in_void + (size_t)4 * y * d->width;
+      uint16_t *out = (uint16_t *)rowdata;
 
-      for(int x = 0; x < d->width; x++, in += 4, wdata += 3)
+      for(int x = 0; x < d->width; x++, in += 4, out += 3)
       {
-        memcpy(wdata, in, 3 * sizeof(uint16_t));
+        memcpy(out, in, 3 * sizeof(uint16_t));
       }
 
-      if((uintptr_t)wdata - (uintptr_t)rowdata == (uintptr_t)stripesize)
+      if(TIFFWriteScanline(tif, rowdata, y, 0) == -1)
       {
-        TIFFWriteEncodedStrip(tif, stripe++, rowdata, (size_t)(rowsize * DT_TIFFIO_STRIPE));
-        wdata = rowdata;
+        rc = 1;
+        goto exit;
       }
-    }
-    if((uintptr_t)wdata - (uintptr_t)rowdata != (uintptr_t)stripesize)
-    {
-      TIFFWriteEncodedStrip(tif, stripe, rowdata, (size_t)((uintptr_t)wdata - (uintptr_t)rowdata));
     }
   }
   else
   {
-    uint8_t *wdata = rowdata;
-
     for(int y = 0; y < d->height; y++)
     {
       uint8_t *in = (uint8_t *)in_void + (size_t)4 * y * d->width;
+      uint8_t *out = (uint8_t *)rowdata;
 
-      for(int x = 0; x < d->width; x++, in += 4, wdata += 3)
+      for(int x = 0; x < d->width; x++, in += 4, out += 3)
       {
-        memcpy(wdata, in, 3 * sizeof(uint8_t));
+        memcpy(out, in, 3 * sizeof(uint8_t));
       }
 
-      if((uintptr_t)wdata - (uintptr_t)rowdata == (uintptr_t)stripesize)
+      if(TIFFWriteScanline(tif, rowdata, y, 0) == -1)
       {
-        TIFFWriteEncodedStrip(tif, stripe++, rowdata, (size_t)(rowsize * DT_TIFFIO_STRIPE));
-        wdata = rowdata;
+        rc = 1;
+        goto exit;
       }
-    }
-    if((uintptr_t)wdata - (uintptr_t)rowdata != (uintptr_t)stripesize)
-    {
-      TIFFWriteEncodedStrip(tif, stripe, rowdata, (size_t)((uintptr_t)wdata - (uintptr_t)rowdata));
     }
   }
 
@@ -296,7 +276,7 @@ void *legacy_params(dt_imageio_module_format_t *self, const void *const old_para
       TIFF *handle;
     } dt_imageio_tiff_v1_t;
 
-    dt_imageio_tiff_v1_t *o = (dt_imageio_tiff_v1_t *)old_params;
+    const dt_imageio_tiff_v1_t *o = (dt_imageio_tiff_v1_t *)old_params;
     dt_imageio_tiff_t *n = (dt_imageio_tiff_t *)malloc(sizeof(dt_imageio_tiff_t));
 
     n->max_width = o->max_width;
@@ -335,17 +315,17 @@ void free_params(dt_imageio_module_format_t *self, dt_imageio_module_data_t *par
 int set_params(dt_imageio_module_format_t *self, const void *params, const int size)
 {
   if(size != self->params_size(self)) return 1;
-  dt_imageio_tiff_t *d = (dt_imageio_tiff_t *)params;
-  dt_imageio_tiff_gui_t *g = (dt_imageio_tiff_gui_t *)self->gui_data;
+  const dt_imageio_tiff_t *d = (dt_imageio_tiff_t *)params;
+  const dt_imageio_tiff_gui_t *g = (dt_imageio_tiff_gui_t *)self->gui_data;
 
   if(d->bpp == 16)
-    gtk_combo_box_set_active(g->bpp, 1);
+    dt_bauhaus_combobox_set(g->bpp, 1);
   else if(d->bpp == 32)
-    gtk_combo_box_set_active(g->bpp, 2);
+    dt_bauhaus_combobox_set(g->bpp, 2);
   else // (d->bpp == 8)
-    gtk_combo_box_set_active(g->bpp, 0);
+    dt_bauhaus_combobox_set(g->bpp, 0);
 
-  gtk_combo_box_set_active(g->compress, d->compress);
+  dt_bauhaus_combobox_set(g->compress, d->compress);
 
   return 0;
 }
@@ -389,9 +369,9 @@ const char *name()
   return _("TIFF (8/16/32-bit)");
 }
 
-static void bpp_combobox_changed(GtkComboBox *widget, gpointer user_data)
+static void bpp_combobox_changed(GtkWidget *widget, gpointer user_data)
 {
-  int bpp = gtk_combo_box_get_active(widget);
+  const int bpp = dt_bauhaus_combobox_get(widget);
 
   if(bpp == 1)
     dt_conf_set_int("plugins/imageio/format/tiff/bpp", 16);
@@ -401,9 +381,9 @@ static void bpp_combobox_changed(GtkComboBox *widget, gpointer user_data)
     dt_conf_set_int("plugins/imageio/format/tiff/bpp", 8);
 }
 
-static void compress_combobox_changed(GtkComboBox *widget, gpointer user_data)
+static void compress_combobox_changed(GtkWidget *widget, gpointer user_data)
 {
-  int compress = gtk_combo_box_get_active(widget);
+  const int compress = dt_bauhaus_combobox_get(widget);
   dt_conf_set_int("plugins/imageio/format/tiff/compress", compress);
 }
 
@@ -423,35 +403,35 @@ void gui_init(dt_imageio_module_format_t *self)
   dt_imageio_tiff_gui_t *gui = (dt_imageio_tiff_gui_t *)malloc(sizeof(dt_imageio_tiff_gui_t));
   self->gui_data = (void *)gui;
 
-  int bpp = dt_conf_get_int("plugins/imageio/format/tiff/bpp");
+  const int bpp = dt_conf_get_int("plugins/imageio/format/tiff/bpp");
 
-  int compress = dt_conf_get_int("plugins/imageio/format/tiff/compress");
+  const int compress = dt_conf_get_int("plugins/imageio/format/tiff/compress");
 
-  self->widget = gtk_vbox_new(TRUE, 5);
+  self->widget = gtk_box_new(GTK_ORIENTATION_VERTICAL, DT_PIXEL_APPLY_DPI(5));
 
-  GtkComboBoxText *bpp_combo = GTK_COMBO_BOX_TEXT(gtk_combo_box_text_new());
-  gui->bpp = GTK_COMBO_BOX(bpp_combo);
-  gtk_combo_box_text_append_text(bpp_combo, _("8 bit"));
-  gtk_combo_box_text_append_text(bpp_combo, _("16 bit"));
-  gtk_combo_box_text_append_text(bpp_combo, _("32 bit (float)"));
+  gui->bpp = dt_bauhaus_combobox_new(NULL);
+  dt_bauhaus_widget_set_label(gui->bpp, NULL, _("bit depth"));
+  dt_bauhaus_combobox_add(gui->bpp, _("8 bit"));
+  dt_bauhaus_combobox_add(gui->bpp, _("16 bit"));
+  dt_bauhaus_combobox_add(gui->bpp, _("32 bit (float)"));
   if(bpp == 16)
-    gtk_combo_box_set_active(GTK_COMBO_BOX(bpp_combo), 1);
+    dt_bauhaus_combobox_set(gui->bpp, 1);
   else if(bpp == 32)
-    gtk_combo_box_set_active(GTK_COMBO_BOX(bpp_combo), 2);
+    dt_bauhaus_combobox_set(gui->bpp, 2);
   else // (bpp == 8)
-    gtk_combo_box_set_active(GTK_COMBO_BOX(bpp_combo), 0);
-  gtk_box_pack_start(GTK_BOX(self->widget), GTK_WIDGET(bpp_combo), TRUE, TRUE, 0);
-  g_signal_connect(G_OBJECT(bpp_combo), "changed", G_CALLBACK(bpp_combobox_changed), NULL);
+    dt_bauhaus_combobox_set(gui->bpp, 0);
+  gtk_box_pack_start(GTK_BOX(self->widget), gui->bpp, TRUE, TRUE, 0);
+  g_signal_connect(G_OBJECT(gui->bpp), "value-changed", G_CALLBACK(bpp_combobox_changed), NULL);
 
-  GtkComboBoxText *compress_combo = GTK_COMBO_BOX_TEXT(gtk_combo_box_text_new());
-  gui->compress = GTK_COMBO_BOX(compress_combo);
-  gtk_combo_box_text_append_text(compress_combo, _("uncompressed"));
-  gtk_combo_box_text_append_text(compress_combo, _("deflate"));
-  gtk_combo_box_text_append_text(compress_combo, _("deflate with predictor"));
-  gtk_combo_box_text_append_text(compress_combo, _("deflate with predictor (float)"));
-  gtk_combo_box_set_active(GTK_COMBO_BOX(compress_combo), compress);
-  gtk_box_pack_start(GTK_BOX(self->widget), GTK_WIDGET(compress_combo), TRUE, TRUE, 0);
-  g_signal_connect(G_OBJECT(compress_combo), "changed", G_CALLBACK(compress_combobox_changed), NULL);
+  gui->compress = dt_bauhaus_combobox_new(NULL);
+  dt_bauhaus_widget_set_label(gui->compress, NULL, _("compression"));
+  dt_bauhaus_combobox_add(gui->compress, _("uncompressed"));
+  dt_bauhaus_combobox_add(gui->compress, _("deflate"));
+  dt_bauhaus_combobox_add(gui->compress, _("deflate with predictor"));
+  dt_bauhaus_combobox_add(gui->compress, _("deflate with predictor (float)"));
+  dt_bauhaus_combobox_set(gui->compress, compress);
+  gtk_box_pack_start(GTK_BOX(self->widget), gui->compress, TRUE, TRUE, 0);
+  g_signal_connect(G_OBJECT(gui->compress), "value-changed", G_CALLBACK(compress_combobox_changed), NULL);
 }
 
 void gui_cleanup(dt_imageio_module_format_t *self)

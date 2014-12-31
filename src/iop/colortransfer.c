@@ -25,7 +25,6 @@
 #include "common/points.h"
 #include "gui/accelerators.h"
 #include "gui/gtk.h"
-#include "dtgtk/button.h"
 
 #include <stdlib.h>
 #include <math.h>
@@ -584,7 +583,7 @@ void cleanup(dt_iop_module_t *module)
 
 #if 0
 static gboolean
-cluster_preview_expose (GtkWidget *widget, GdkEventExpose *event, dt_iop_module_t *self)
+cluster_preview_draw (GtkWidget *widget, cairo_t *cr, dt_iop_module_t *self)
 {
   // dt_iop_colortransfer_params_t *p = (dt_iop_colortransfer_params_t *)self->params;
   dt_iop_colortransfer_gui_data_t *g = (dt_iop_colortransfer_gui_data_t *)self->gui_data;
@@ -592,8 +591,6 @@ cluster_preview_expose (GtkWidget *widget, GdkEventExpose *event, dt_iop_module_
   if(!g->flowback_set) p = (dt_iop_colortransfer_params_t *)self->params;
   const int inset = 5;
   int width = allocation.width, height = allocation.height;
-  cairo_surface_t *cst = dt_cairo_image_surface_create(CAIRO_FORMAT_ARGB32, width, height);
-  cairo_t *cr = cairo_create(cst);
   cairo_set_source_rgb (cr, .2, .2, .2);
   cairo_paint(cr);
 
@@ -634,12 +631,6 @@ cluster_preview_expose (GtkWidget *widget, GdkEventExpose *event, dt_iop_module_
     cairo_translate (cr, qwd + sep, 0);
   }
 
-  cairo_destroy(cr);
-  cairo_t *cr_pixmap = gdk_cairo_create(gtk_widget_get_window(widget));
-  cairo_set_source_surface (cr_pixmap, cst, 0, 0);
-  cairo_paint(cr_pixmap);
-  cairo_destroy(cr_pixmap);
-  cairo_surface_destroy(cst);
   return TRUE;
 }
 #endif
@@ -650,7 +641,7 @@ void gui_init(struct dt_iop_module_t *self)
   self->gui_data = malloc(sizeof(dt_iop_colortransfer_gui_data_t));
   self->widget = gtk_label_new(_("this module will be removed in the future\nand is only here so you can "
                                  "switch it off\nand move to the new color mapping module."));
-  gtk_misc_set_alignment(GTK_MISC(self->widget), 0.0f, 0.5f);
+  gtk_widget_set_halign(self->widget, GTK_ALIGN_START);
 
 #if 0
   self->gui_data = malloc(sizeof(dt_iop_colortransfer_gui_data_t));
@@ -662,16 +653,16 @@ void gui_init(struct dt_iop_module_t *self)
   g->hLab  = dt_colorspaces_create_lab_profile();
   g->xform = cmsCreateTransform(g->hLab, TYPE_Lab_DBL, g->hsRGB, TYPE_RGB_DBL, INTENT_PERCEPTUAL, 0);
 
-  self->widget = GTK_WIDGET(gtk_vbox_new(FALSE, DT_GUI_IOP_MODULE_CONTROL_SPACING));
-  g_signal_connect (G_OBJECT(self->widget), "expose-event",
-                    G_CALLBACK(expose), self);
+  self->widget = GTK_WIDGET(gtk_box_new(GTK_ORIENTATION_VERTICAL, DT_GUI_IOP_MODULE_CONTROL_SPACING));
+  g_signal_connect (G_OBJECT(self->widget), "draw",
+                    G_CALLBACK(draw), self);
 
   g->area = gtk_drawing_area_new();
   gtk_widget_set_size_request(GTK_WIDGET(g->area), 300, 100);
   gtk_box_pack_start(GTK_BOX(self->widget), g->area, TRUE, TRUE, 0);
-  g_signal_connect (G_OBJECT (g->area), "expose-event", G_CALLBACK (cluster_preview_expose), self);
+  g_signal_connect (G_OBJECT (g->area), "draw", G_CALLBACK (cluster_preview_draw), self);
 
-  GtkBox *box = GTK_BOX(gtk_hbox_new(FALSE, 5));
+  GtkBox *box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 5));
   gtk_box_pack_start(GTK_BOX(self->widget), GTK_WIDGET(box), TRUE, TRUE, 0);
   GtkWidget *button;
   g->spinbutton = GTK_SPIN_BUTTON(gtk_spin_button_new_with_range(1, MAXN, 1));
@@ -679,13 +670,13 @@ void gui_init(struct dt_iop_module_t *self)
   gtk_box_pack_start(box, GTK_WIDGET(g->spinbutton), FALSE, FALSE, 0);
   g_signal_connect(G_OBJECT(g->spinbutton), "value-changed", G_CALLBACK(spinbutton_changed), (gpointer)self);
 
-  button = dtgtk_button_new_with_label(_("acquire"), NULL, CPF_STYLE_FLAT|CPF_DO_NOT_USE_BORDER);
+  button = gtk_button_new_with_label(_("acquire"));
   g->acquire_button = button;
   g_object_set(G_OBJECT(button), "tooltip-text", _("analyze this image"), (char *)NULL);
   gtk_box_pack_start(box, button, TRUE, TRUE, 0);
   g_signal_connect(G_OBJECT(button), "clicked", G_CALLBACK(acquire_button_pressed), (gpointer)self);
 
-  g->apply_button = dtgtk_button_new_with_label(_("apply"), NULL, CPF_STYLE_FLAT|CPF_DO_NOT_USE_BORDER);
+  g->apply_button = gtk_button_new_with_label(_("apply"));
   g_object_set(G_OBJECT(g->apply_button), "tooltip-text", _("apply previously analyzed image look to this image"), (char *)NULL);
   gtk_box_pack_start(box, g->apply_button, TRUE, TRUE, 0);
   g_signal_connect(G_OBJECT(g->apply_button), "clicked", G_CALLBACK(apply_button_pressed), (gpointer)self);

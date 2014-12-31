@@ -286,7 +286,7 @@ colorpick_callback (GtkDarktableButton *button, gpointer user_data)
                     G_CALLBACK (colorpick_button_callback), csd);
 
   GtkColorSelection *cs = GTK_COLOR_SELECTION(gtk_color_selection_dialog_get_color_selection(csd));
-  GdkColor c;
+  GdkRGBA c;
   float color[3],h,s,l;
 
   h = p->hue;
@@ -294,18 +294,18 @@ colorpick_callback (GtkDarktableButton *button, gpointer user_data)
   l=0.5;
   hsl2rgb(color,h,s,l);
 
-  c.red= 65535 * color[0];
-  c.green= 65535 * color[1];
-  c.blue= 65535 * color[2];
+  c.red   = color[0];
+  c.green = color[1];
+  c.blue  = color[2];
 
   gtk_color_selection_set_current_color(cs,&c);
 
   if(gtk_dialog_run(GTK_DIALOG(csd))==GTK_RESPONSE_ACCEPT)
   {
     gtk_color_selection_get_current_color(cs,&c);
-    color[0]=c.red/65535.0;
-    color[1]=c.green/65535.0;
-    color[2]=c.blue/65535.0;
+    color[0] = c.red;
+    color[1] = c.green;
+    color[2] = c.blue;
     rgb2hsl(color,&h,&s,&l);
     l=0.5;
     hsl2rgb(color,h,s,l);
@@ -399,10 +399,10 @@ void gui_update(struct dt_iop_module_t *self)
   float color[3];
   hsl2rgb(color,p->hue,p->saturation,0.5);
 
-  GdkColor c;
-  c.red=color[0]*65535.0;
-  c.green=color[1]*65535.0;
-  c.blue=color[2]*65535.0;
+  GdkRGBA c;
+  c.red = color[0];
+  c.green = color[1];
+  c.blue = color[2];
 
   gtk_widget_modify_fg(GTK_WIDGET(g->colorpick1),GTK_STATE_NORMAL,&c);
 #endif
@@ -435,7 +435,7 @@ void gui_init(struct dt_iop_module_t *self)
   dt_iop_colorize_gui_data_t *g = (dt_iop_colorize_gui_data_t *)self->gui_data;
   dt_iop_colorize_params_t *p = (dt_iop_colorize_params_t *)self->params;
 
-  self->widget = gtk_vbox_new(FALSE, DT_BAUHAUS_SPACE);
+  self->widget = gtk_box_new(GTK_ORIENTATION_VERTICAL, DT_BAUHAUS_SPACE);
 
   /* hue slider */
   g->gslider1 = dt_bauhaus_slider_new_with_range_and_feedback(self, 0.0f, 1.0f, 0.01f, 0.0f, 2, 0);

@@ -7,18 +7,15 @@ if(USE_OPENCL)
 endif(USE_OPENCL)
 
 #
-# Generate and instal gtkrc
+# Generate and instal darktable.css
 #
-set(GTKRC_FONT_SIZE 8)
-set(GTKRC_HEADER_FONT_SIZE 9)
-configure_file( ${CMAKE_CURRENT_SOURCE_DIR}/darktable.gtkrc.in ${CMAKE_CURRENT_BINARY_DIR}/darktable.gtkrc )
-
-
-#
-# Add files that should go into shared
-#
-set(SHARE_FILES ${CMAKE_CURRENT_BINARY_DIR}/darktable.gtkrc)
-install(FILES ${SHARE_FILES} DESTINATION ${SHARE_INSTALL}/darktable)
+if ("${PC_GTK3_VERSION}" VERSION_GREATER "3.13.6")
+  set(GTK_CSS_CLASS "checked")
+else ()
+  set(GTK_CSS_CLASS "active")
+endif ()
+configure_file( ${CMAKE_CURRENT_SOURCE_DIR}/darktable.css.in ${CMAKE_CURRENT_BINARY_DIR}/darktable.css )
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/darktable.css DESTINATION ${SHARE_INSTALL}/darktable)
 
 #
 # web gallery export support files:

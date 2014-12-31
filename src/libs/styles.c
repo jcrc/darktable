@@ -85,21 +85,6 @@ typedef enum _styles_columns_t
   DT_STYLES_NUM_COLS
 } _styles_columns_t;
 
-static int get_font_height(GtkWidget *widget, const char *str)
-{
-  int width, height;
-
-  PangoLayout *layout = pango_layout_new(gtk_widget_get_pango_context(widget));
-
-  pango_layout_set_text(layout, str, -1);
-  pango_layout_set_font_description(layout, NULL);
-  pango_layout_get_pixel_size(layout, &width, &height);
-
-  g_object_unref(layout);
-  return height;
-}
-
-
 static void _gui_styles_update_view(dt_lib_styles_t *d)
 {
   /* clear current list */
@@ -222,8 +207,8 @@ static void export_clicked(GtkWidget *w, gpointer user_data)
   {
     GtkWidget *win = dt_ui_main_window(darktable.gui->ui);
     GtkWidget *filechooser = gtk_file_chooser_dialog_new(
-        _("select directory"), GTK_WINDOW(win), GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER, GTK_STOCK_CANCEL,
-        GTK_RESPONSE_CANCEL, GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT, (char *)NULL);
+        _("select directory"), GTK_WINDOW(win), GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER, _("_Cancel"),
+        GTK_RESPONSE_CANCEL, _("_Save"), GTK_RESPONSE_ACCEPT, (char *)NULL);
     gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER(filechooser), g_get_home_dir());
     gtk_file_chooser_set_select_multiple(GTK_FILE_CHOOSER(filechooser), FALSE);
     if(gtk_dialog_run(GTK_DIALOG(filechooser)) == GTK_RESPONSE_ACCEPT)
@@ -242,8 +227,8 @@ static void import_clicked(GtkWidget *w, gpointer user_data)
 {
   GtkWidget *win = dt_ui_main_window(darktable.gui->ui);
   GtkWidget *filechooser = gtk_file_chooser_dialog_new(
-      _("select style"), GTK_WINDOW(win), GTK_FILE_CHOOSER_ACTION_OPEN, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-      GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT, (char *)NULL);
+      _("select style"), GTK_WINDOW(win), GTK_FILE_CHOOSER_ACTION_OPEN, _("_Cancel"), GTK_RESPONSE_CANCEL,
+      _("_Open"), GTK_RESPONSE_ACCEPT, (char *)NULL);
 
   gtk_file_chooser_set_select_multiple(GTK_FILE_CHOOSER(filechooser), TRUE);
   gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER(filechooser), g_get_home_dir());
@@ -300,7 +285,7 @@ void gui_init(dt_lib_module_t *self)
   dt_lib_styles_t *d = (dt_lib_styles_t *)malloc(sizeof(dt_lib_styles_t));
   self->data = (void *)d;
   d->edit_button = NULL;
-  self->widget = gtk_vbox_new(FALSE, 5);
+  self->widget = gtk_box_new(GTK_ORIENTATION_VERTICAL, 5);
   GtkWidget *w;
   GtkWidget *scrolled;
 
@@ -313,9 +298,6 @@ void gui_init(dt_lib_module_t *self)
   GtkCellRenderer *renderer = gtk_cell_renderer_text_new();
   gtk_tree_view_column_pack_start(col, renderer, TRUE);
   gtk_tree_view_column_add_attribute(col, renderer, "text", DT_STYLES_COL_NAME);
-
-  int ht = get_font_height(GTK_WIDGET(d->list), "Dreggn");
-  gtk_widget_set_size_request(GTK_WIDGET(d->list), -1, 8 * ht);
 
   gtk_tree_selection_set_mode(gtk_tree_view_get_selection(GTK_TREE_VIEW(d->list)), GTK_SELECTION_SINGLE);
   gtk_tree_view_set_model(GTK_TREE_VIEW(d->list), GTK_TREE_MODEL(liststore));
@@ -336,6 +318,8 @@ void gui_init(dt_lib_module_t *self)
   scrolled = gtk_scrolled_window_new(NULL, NULL);
   gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(scrolled), GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
 
+  gtk_scrolled_window_set_min_content_height(GTK_SCROLLED_WINDOW(scrolled), DT_PIXEL_APPLY_DPI(150));
+
   gtk_box_pack_start(GTK_BOX(self->widget), GTK_WIDGET(d->entry), TRUE, FALSE, 0);
   gtk_box_pack_start(GTK_BOX(self->widget), GTK_WIDGET(scrolled), TRUE, FALSE, 0);
   gtk_container_add(GTK_CONTAINER(scrolled), GTK_WIDGET(d->list));
@@ -348,8 +332,8 @@ void gui_init(dt_lib_module_t *self)
   g_object_set(d->duplicate, "tooltip-text", _("creates a duplicate of the image before applying style"),
                (char *)NULL);
 
-  GtkWidget *hbox1 = gtk_hbox_new(TRUE, 5);
-  GtkWidget *hbox2 = gtk_hbox_new(TRUE, 5);
+  GtkWidget *hbox1 = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 5);
+  GtkWidget *hbox2 = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 5);
   gtk_box_pack_start(GTK_BOX(self->widget), hbox1, TRUE, FALSE, 0);
   gtk_box_pack_start(GTK_BOX(self->widget), hbox2, TRUE, FALSE, 0);
 
