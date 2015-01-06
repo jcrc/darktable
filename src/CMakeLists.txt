@@ -79,6 +79,7 @@ FILE(GLOB SOURCE_FILES
   "dtgtk/togglebutton.c"
   "dtgtk/paint.c"
   "dtgtk/resetlabel.c"
+  "dtgtk/sidepanel.c"
   "gui/accelerators.c"
   "gui/gtkentry.c"
   "gui/guides.c"
@@ -495,16 +496,13 @@ add_subdirectory(external/LibRaw)
 list(APPEND LIB_DEPS libraw_r)
 list(APPEND STATIC_LIBS libraw_static)
 
-# same for librawspeed (can switch it off with -DDONT_USE_RAWSPEED, for macs):
-if(NOT DONT_USE_RAWSPEED)
-  add_definitions("-DHAVE_RAWSPEED")
-  add_library(rawspeed_static STATIC IMPORTED)
-  set_target_properties(rawspeed_static PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_BINARY_DIR}/external/rawspeed/librawspeed.a)
-  # compile rawspeed
-  add_subdirectory(external/rawspeed)
-  list(APPEND LIB_DEPS rawspeed)
-  list(APPEND STATIC_LIBS rawspeed_static)
-endif(NOT DONT_USE_RAWSPEED)
+# same for librawspeed
+add_library(rawspeed_static STATIC IMPORTED)
+set_target_properties(rawspeed_static PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_BINARY_DIR}/external/rawspeed/librawspeed.a)
+# compile rawspeed
+add_subdirectory(external/rawspeed)
+list(APPEND LIB_DEPS rawspeed)
+list(APPEND STATIC_LIBS rawspeed_static)
 
 # osm gps map library
 if(USE_GEO)
@@ -549,16 +547,6 @@ if(USE_COLORD)
     set(USE_COLORD OFF)
   endif(COLORD_FOUND)
 endif(USE_COLORD)
-
-if(USE_SQUISH)
-  # libsquish for compressed thumbnails:
-  add_definitions("-DHAVE_SQUISH")
-  add_library(squish_static STATIC IMPORTED)
-  set_target_properties(squish_static PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_BINARY_DIR}/external/squish/libsquish.a)
-  add_subdirectory(external/squish)
-  list(APPEND LIB_DEPS squish)
-  list(APPEND STATIC_LIBS squish_static)
-endif(USE_SQUISH)
 
 if(USE_LUA)
   if(NOT LUA52_FOUND)

@@ -27,6 +27,7 @@
 #include "develop/imageop.h"
 #include "dtgtk/button.h"
 #include "gui/accelerators.h"
+#include "dtgtk/sidepanel.h"
 #include "gui/gtk.h"
 
 #include "gui/presets.h"
@@ -1113,7 +1114,7 @@ void init_main_table(GtkWidget *container)
   GtkWidget *widget;
 
   // Creating the table
-  widget = gtk_table_new(3, 5, FALSE);
+  widget = gtk_grid_new();
   gtk_box_pack_start(GTK_BOX(container), widget, TRUE, TRUE, 0);
   gtk_widget_show(widget);
 
@@ -1128,7 +1129,7 @@ void init_main_table(GtkWidget *container)
   gtk_widget_set_events(widget, GDK_EXPOSURE_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK
                                 | GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK | GDK_STRUCTURE_MASK
                                 | GDK_SCROLL_MASK);
-  gtk_table_attach(GTK_TABLE(container), widget, 0, 1, 0, 2, GTK_FILL, GTK_FILL, 0, 0);
+  gtk_grid_attach(GTK_GRID(container), widget, 0, 0, 1, 2);
   gtk_widget_show(widget);
 
   // Adding the right border
@@ -1140,7 +1141,7 @@ void init_main_table(GtkWidget *container)
   gtk_widget_set_events(widget, GDK_EXPOSURE_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK
                                 | GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK | GDK_STRUCTURE_MASK
                                 | GDK_SCROLL_MASK);
-  gtk_table_attach(GTK_TABLE(container), widget, 4, 5, 0, 2, GTK_FILL, GTK_FILL, 0, 0);
+  gtk_grid_attach(GTK_GRID(container), widget, 4, 0, 1, 2);
   gtk_widget_show(widget);
 
   /* initialize the top container */
@@ -1150,8 +1151,9 @@ void init_main_table(GtkWidget *container)
    * initialize the center top/center/bottom
    */
   widget = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
-  gtk_table_attach(GTK_TABLE(container), widget, 2, 3, 1, 2, GTK_EXPAND | GTK_FILL, GTK_EXPAND | GTK_FILL, 0,
-                   0);
+  gtk_widget_set_hexpand(GTK_WIDGET(widget), TRUE);
+  gtk_widget_set_vexpand(GTK_WIDGET(widget), TRUE);
+  gtk_grid_attach(GTK_GRID(container), widget, 2, 1, 1, 1);
 
   /* initiialize the center top panel */
   _ui_init_panel_center_top(darktable.gui->ui, widget);
@@ -1384,20 +1386,17 @@ static GtkWidget *_ui_init_panel_container_center(GtkWidget *container, gboolean
                                     left ? GTK_CORNER_TOP_LEFT : GTK_CORNER_TOP_RIGHT);
   gtk_box_pack_start(GTK_BOX(container), widget, TRUE, TRUE, 0);
   gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(widget), GTK_POLICY_NEVER, GTK_POLICY_ALWAYS);
-  gtk_widget_set_size_request(widget, dt_conf_get_int("panel_width") - DT_PIXEL_APPLY_DPI(5 + 13), -1);
 
   /* create the scrolled viewport */
   container = widget;
   widget = gtk_viewport_new(a[2], a[3]);
   gtk_viewport_set_shadow_type(GTK_VIEWPORT(widget), GTK_SHADOW_NONE);
-  gtk_container_set_resize_mode(GTK_CONTAINER(widget), GTK_RESIZE_QUEUE);
   gtk_container_add(GTK_CONTAINER(container), widget);
 
   /* create the container */
   container = widget;
   widget = gtk_box_new(GTK_ORIENTATION_VERTICAL, DT_UI_PANEL_MODULE_SPACING);
   gtk_widget_set_name(widget, "plugins_vbox_left");
-  gtk_widget_set_size_request(widget, 0, -1);
   gtk_container_add(GTK_CONTAINER(container), widget);
 
   return widget;
@@ -1415,14 +1414,10 @@ static void _ui_init_panel_left(dt_ui_t *ui, GtkWidget *container)
   GtkWidget *widget;
 
   /* create left panel main widget and add it to ui */
-  widget = ui->panels[DT_UI_PANEL_LEFT] = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+  widget = ui->panels[DT_UI_PANEL_LEFT] = dtgtk_side_panel_new();
   gtk_widget_set_name(widget, "left");
 //   gtk_widget_set_margin_left(widget, DT_PIXEL_APPLY_DPI(5)); // i prefer it with less blank space
-  gtk_table_attach(GTK_TABLE(container), widget, 1, 2, 1, 2, GTK_SHRINK, GTK_EXPAND | GTK_SHRINK | GTK_FILL,
-                   0, 0);
-
-  /* set panel width */
-  gtk_widget_set_size_request(widget, dt_conf_get_int("panel_width"), -1);
+  gtk_grid_attach(GTK_GRID(container), widget, 1, 1, 1, 1);
 
   /* add top,center,bottom*/
   container = widget;
@@ -1439,14 +1434,10 @@ static void _ui_init_panel_right(dt_ui_t *ui, GtkWidget *container)
   GtkWidget *widget;
 
   /* create left panel main widget and add it to ui */
-  widget = ui->panels[DT_UI_PANEL_RIGHT] = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+  widget = ui->panels[DT_UI_PANEL_RIGHT] = dtgtk_side_panel_new();
   gtk_widget_set_name(widget, "right");
 //   gtk_widget_set_margin_right(widget, DT_PIXEL_APPLY_DPI(5)); // i prefer it with less blank space
-  gtk_table_attach(GTK_TABLE(container), widget, 3, 4, 1, 2, GTK_SHRINK, GTK_EXPAND | GTK_SHRINK | GTK_FILL,
-                   0, 0);
-
-  /* set panel width */
-  gtk_widget_set_size_request(widget, dt_conf_get_int("panel_width"), -1);
+  gtk_grid_attach(GTK_GRID(container), widget, 3, 1, 1, 1);
 
   /* add top,center,bottom*/
   container = widget;
@@ -1464,8 +1455,8 @@ static void _ui_init_panel_top(dt_ui_t *ui, GtkWidget *container)
 
   /* create the panel box */
   ui->panels[DT_UI_PANEL_TOP] = widget = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
-  gtk_table_attach(GTK_TABLE(container), widget, 1, 4, 0, 1, GTK_EXPAND | GTK_FILL | GTK_SHRINK, GTK_SHRINK,
-                   0, 0);
+  gtk_widget_set_hexpand(GTK_WIDGET(widget), TRUE);
+  gtk_grid_attach(GTK_GRID(container), widget, 1, 0, 3, 1);
 
   /* add container for top left */
   ui->containers[DT_UI_CONTAINER_PANEL_TOP_LEFT] = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
@@ -1489,8 +1480,8 @@ static void _ui_init_panel_bottom(dt_ui_t *ui, GtkWidget *container)
 
   /* create the panel box */
   ui->panels[DT_UI_PANEL_BOTTOM] = widget = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
-  gtk_table_attach(GTK_TABLE(container), widget, 1, 4, 2, 3, GTK_EXPAND | GTK_FILL | GTK_SHRINK, GTK_SHRINK,
-                   0, 0);
+  gtk_widget_set_hexpand(GTK_WIDGET(widget), TRUE);
+  gtk_grid_attach(GTK_GRID(container), widget, 1, 2, 3, 1);
 
   /* add the container */
   ui->containers[DT_UI_CONTAINER_PANEL_BOTTOM] = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);

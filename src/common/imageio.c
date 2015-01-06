@@ -47,7 +47,11 @@
 #include "develop/develop.h"
 #include "develop/imageop.h"
 #include "develop/blend.h"
-#include "libraw/libraw.h"
+
+#ifdef HAVE_GRAPHICSMAGICK
+#include <magick/api.h>
+#include <magick/blob.h>
+#endif
 
 #include <inttypes.h>
 #include <stdio.h>
@@ -59,71 +63,105 @@
 #include <strings.h>
 #include <glib/gstdio.h>
 
-
 // load a full-res thumbnail:
-int dt_imageio_large_thumbnail(const char *filename, uint8_t **buffer, int32_t *width, int32_t *height,
-                               int32_t *orientation)
+int dt_imageio_large_thumbnail(const char *filename, uint8_t **buffer, int32_t *width, int32_t *height)
 {
-  int ret = 0;
   int res = 1;
-  // raw image thumbnail
-  libraw_data_t *raw = libraw_init(0);
-  libraw_processed_image_t *image = NULL;
-  ret = libraw_open_file(raw, filename);
-  if(ret) goto libraw_fail;
-  ret = libraw_unpack_thumb(raw);
-  if(ret) goto libraw_fail;
-  ret = libraw_adjust_sizes_info_only(raw);
-  if(ret) goto libraw_fail;
 
-  image = libraw_dcraw_make_mem_thumb(raw, &ret);
-  if(!image || ret) goto libraw_fail;
-  *orientation = raw->sizes.flip;
-  if(image->type == LIBRAW_IMAGE_JPEG)
+  uint8_t *buf = NULL;
+  char *mime_type = NULL;
+  size_t bufsize;
+
+  // get the biggest thumb from exif
+  if(dt_exif_get_thumbnail(filename, &buf, &bufsize, &mime_type)) goto error;
+
+  if(strcmp(mime_type, "image/jpeg") == 0)
   {
+    // Decompress the JPG into our own memory format
     dt_imageio_jpeg_t jpg;
-    if(dt_imageio_jpeg_decompress_header(image->data, image->data_size, &jpg)) goto libraw_fail;
+    if(dt_imageio_jpeg_decompress_header(buf, bufsize, &jpg)) goto error;
+
     *buffer = (uint8_t *)malloc((size_t)sizeof(uint8_t) * jpg.width * jpg.height * 4);
-    if(!*buffer) goto libraw_fail;
+    if(!*buffer) goto error;
+
     *width = jpg.width;
     *height = jpg.height;
     if(dt_imageio_jpeg_decompress(&jpg, *buffer))
     {
       free(*buffer);
-      *buffer = 0;
-      goto libraw_fail;
+      *buffer = NULL;
+      goto error;
     }
+
     res = 0;
   }
-
-  // clean up raw stuff.
-  libraw_recycle(raw);
-  libraw_close(raw);
-  free(image);
-  if(0)
+  else
   {
-  libraw_fail:
-    // fprintf(stderr,"[imageio] %s: %s\n", filename, libraw_strerror(ret));
-    libraw_close(raw);
-    res = 1;
+#ifdef HAVE_GRAPHICSMAGICK
+    ExceptionInfo exception;
+    Image *image = NULL;
+    ImageInfo *image_info = NULL;
+
+    GetExceptionInfo(&exception);
+    image_info = CloneImageInfo((ImageInfo *)NULL);
+
+    image = BlobToImage(image_info, buf, bufsize, &exception);
+
+    if(exception.severity != UndefinedException) CatchException(&exception);
+
+    if(!image)
+    {
+      fprintf(stderr, "[dt_imageio_large_thumbnail GM] thumbnail not found?\n");
+      goto error_gm;
+    }
+
+    *width = image->columns;
+    *height = image->rows;
+
+    *buffer = (uint8_t *)malloc((size_t)sizeof(uint8_t) * image->columns * image->rows * 4);
+    if(!*buffer) goto error_gm;
+
+    for(uint32_t row = 0; row < image->rows; row++)
+    {
+      uint8_t *bufprt = *buffer + (size_t)4 * row * image->columns;
+      int gm_ret = DispatchImage(image, 0, row, image->columns, 1, "RGBP", CharPixel, bufprt, &exception);
+
+      if(exception.severity != UndefinedException) CatchException(&exception);
+
+      if(gm_ret != MagickPass)
+      {
+        fprintf(stderr, "[dt_imageio_large_thumbnail GM] error_gm reading thumbnail\n");
+        free(*buffer);
+        *buffer = NULL;
+        goto error_gm;
+      }
+    }
+
+    // fprintf(stderr, "[dt_imageio_large_thumbnail GM] successfully decoded thumbnail\n");
+    res = 0;
+
+  error_gm:
+    if(image) DestroyImage(image);
+    if(image_info) DestroyImageInfo(image_info);
+    DestroyExceptionInfo(&exception);
+    if(res) goto error;
+#endif
   }
+
+  if(res)
+  {
+    fprintf(
+        stderr,
+        "[dt_imageio_large_thumbnail] error: Not an supported thumbnail image format or broken thumbnail: %s\n",
+        mime_type);
+    goto error;
+  }
+
+error:
+  free(mime_type);
+  free(buf);
   return res;
 }
-
-// =================================================
-//   begin libraw wrapper functions:
-// =================================================
-
-#define HANDLE_ERRORS(ret, verb)                                                                             \
-  {                                                                                                          \
-    if(ret)                                                                                                  \
-    {                                                                                                        \
-      if(verb) fprintf(stderr, "[imageio] %s: %s\n", filename, libraw_strerror(ret));                        \
-      libraw_close(raw);                                                                                     \
-      raw = NULL;                                                                                            \
-      return DT_IMAGEIO_FILE_CORRUPTED;                                                                      \
-    }                                                                                                        \
-  }
 
 void dt_imageio_flip_buffers(char *out, const char *in, const size_t bpp, const int wd, const int ht,
                              const int fwd, const int fht, const int stride,
@@ -287,18 +325,18 @@ size_t dt_imageio_write_pos(int i, int j, int wd, int ht, float fwd, float fht,
   return (size_t)jj * w + ii;
 }
 
-dt_imageio_retval_t dt_imageio_open_hdr(dt_image_t *img, const char *filename, dt_mipmap_cache_allocator_t a)
+dt_imageio_retval_t dt_imageio_open_hdr(dt_image_t *img, const char *filename, dt_mipmap_buffer_t *buf)
 {
   // needed to alloc correct buffer size:
   img->bpp = 4 * sizeof(float);
   dt_imageio_retval_t ret;
 #ifdef HAVE_OPENEXR
-  ret = dt_imageio_open_exr(img, filename, a);
+  ret = dt_imageio_open_exr(img, filename, buf);
   if(ret == DT_IMAGEIO_OK || ret == DT_IMAGEIO_CACHE_FULL) goto return_label;
 #endif
-  ret = dt_imageio_open_rgbe(img, filename, a);
+  ret = dt_imageio_open_rgbe(img, filename, buf);
   if(ret == DT_IMAGEIO_OK || ret == DT_IMAGEIO_CACHE_FULL) goto return_label;
-  ret = dt_imageio_open_pfm(img, filename, a);
+  ret = dt_imageio_open_pfm(img, filename, buf);
   if(ret == DT_IMAGEIO_OK || ret == DT_IMAGEIO_CACHE_FULL) goto return_label;
 return_label:
   if(ret == DT_IMAGEIO_OK)
@@ -309,139 +347,6 @@ return_label:
     img->flags |= DT_IMAGE_HDR;
   }
   return ret;
-}
-
-// most common modern raw files are handled by rawspeed, which accidentally
-// may go through LibRaw, since it may break history stacks because of different
-// blackpoint handling. in addition guarding LibRaw from these
-// extensions slightly reduces our security surface
-static gboolean _blacklisted_ext(const gchar *filename)
-{
-  const char *extensions_blacklist[]
-      = { "dng", "cr2", "nef", "nrw", "orf", "rw2", "rwl", "pef", "srw", "arw", "raf",
-          "mrw", "raw", "sr2", "mef", "mos", "dcr", "erf", "3fr", "crw", NULL };
-  gboolean supported = TRUE;
-  char *ext = g_strrstr(filename, ".");
-  if(!ext) return FALSE;
-  ext++;
-  for(const char **i = extensions_blacklist; *i != NULL; i++)
-    if(!g_ascii_strncasecmp(ext, *i, strlen(*i)))
-    {
-      supported = FALSE;
-      break;
-    }
-  return supported;
-}
-
-// open a raw file, libraw path:
-dt_imageio_retval_t dt_imageio_open_raw(dt_image_t *img, const char *filename, dt_mipmap_cache_allocator_t a)
-{
-  if(!_blacklisted_ext(filename)) return DT_IMAGEIO_FILE_CORRUPTED;
-
-  if(!img->exif_inited) (void)dt_exif_read(img, filename);
-
-  int ret;
-  libraw_data_t *raw = libraw_init(0);
-  libraw_processed_image_t *image = NULL;
-  raw->params.half_size = 0; /* dcraw -h */
-  raw->params.use_camera_wb = 0;
-  raw->params.use_auto_wb = 0;
-  raw->params.med_passes = 0; // img->raw_params.med_passes;
-  raw->params.no_auto_bright = 1;
-  // raw->params.filtering_mode |= LIBRAW_FILTERING_NOBLACKS;
-  // raw->params.document_mode = 2; // no color scaling, no black, no max, no wb..?
-  raw->params.document_mode = 2; // color scaling (clip,wb,max) and black point, but no demosaic
-  raw->params.output_color = 0;
-  raw->params.output_bps = 16;
-  raw->params.user_flip = 0; // -1: use orientation from raw; 0: do not rotate
-  raw->params.gamm[0] = 1.0;
-  raw->params.gamm[1] = 1.0;
-  // raw->params.user_qual = img->raw_params.demosaic_method; // 3: AHD, 2: PPG, 1: VNG
-  raw->params.user_qual = 0;
-  // raw->params.four_color_rgb = img->raw_params.four_color_rgb;
-  raw->params.four_color_rgb = 0;
-  raw->params.use_camera_matrix = 0;
-  raw->params.green_matching = 0;
-  raw->params.highlight = 1;
-  raw->params.threshold = 0;
-  // raw->params.auto_bright_thr = img->raw_auto_bright_threshold;
-
-  // raw->params.amaze_ca_refine = 0;
-  raw->params.fbdd_noiserd = 0;
-
-  ret = libraw_open_file(raw, filename);
-  HANDLE_ERRORS(ret, 0);
-  raw->params.user_qual = 0;
-  raw->params.half_size = 0;
-
-  ret = libraw_unpack(raw);
-  img->raw_black_level = raw->color.black;
-  img->raw_white_point = raw->color.maximum;
-  HANDLE_ERRORS(ret, 1);
-  ret = libraw_dcraw_process(raw);
-  // ret = libraw_dcraw_document_mode_processing(raw);
-  HANDLE_ERRORS(ret, 1);
-  image = libraw_dcraw_make_mem_image(raw, &ret);
-  HANDLE_ERRORS(ret, 1);
-
-  // fallback for broken exif read in case of phase one H25
-  if(!strncmp(img->exif_maker, "Phase One", 9)) img->orientation = raw->sizes.flip;
-  // filters seem only ever to take a useful value after unpack/process
-  img->filters = raw->idata.filters;
-  img->bpp = img->filters ? sizeof(uint16_t) : 4 * sizeof(float);
-  img->width = raw->sizes.width;
-  img->height = raw->sizes.height;
-#if 0 // disabled libraw exif data. it's inconsistent with exiv2, we don't want that.
-  img->exif_iso = raw->other.iso_speed;
-  img->exif_exposure = raw->other.shutter;
-  img->exif_aperture = raw->other.aperture;
-  img->exif_focal_length = raw->other.focal_len;
-  g_strlcpy(img->exif_maker, raw->idata.make, sizeof(img->exif_maker));
-  img->exif_maker[sizeof(img->exif_maker) - 1] = 0x0;
-  g_strlcpy(img->exif_model, raw->idata.model, sizeof(img->exif_model));
-  img->exif_model[sizeof(img->exif_model) - 1] = 0x0;
-  dt_gettime_t(img->exif_datetime_taken, raw->other.timestamp);
-#endif
-
-  void *buf = dt_mipmap_cache_alloc(img, DT_MIPMAP_FULL, a);
-  if(!buf)
-  {
-    libraw_recycle(raw);
-    libraw_close(raw);
-    free(image);
-    return DT_IMAGEIO_CACHE_FULL;
-  }
-  if(img->filters)
-  {
-#ifdef _OPENMP
-#pragma omp parallel for schedule(static) default(none) shared(img, image, raw, buf)
-#endif
-    for(size_t k = 0; k < (size_t)img->width * img->height; k++)
-      ((uint16_t *)buf)[k] = CLAMPS((((uint16_t *)image->data)[k] - raw->color.black) * 65535.0f
-                                    / (float)(raw->color.maximum - raw->color.black),
-                                    0, 0xffff);
-  }
-  // clean up raw stuff.
-  libraw_recycle(raw);
-  libraw_close(raw);
-  free(image);
-  raw = NULL;
-  image = NULL;
-
-  if(img->filters)
-  {
-    img->flags &= ~DT_IMAGE_LDR;
-    img->flags &= ~DT_IMAGE_HDR;
-    img->flags |= DT_IMAGE_RAW;
-  }
-  else
-  {
-    // ldr dng. it exists :(
-    img->flags &= ~DT_IMAGE_RAW;
-    img->flags &= ~DT_IMAGE_HDR;
-    img->flags |= DT_IMAGE_LDR;
-  }
-  return DT_IMAGEIO_OK;
 }
 
 /* magic data: exclusion,offset,length, xx, yy, ...
@@ -522,10 +427,10 @@ int dt_imageio_is_hdr(const char *filename)
 }
 
 // transparent read method to load ldr image to dt_raw_image_t with exif and so on.
-dt_imageio_retval_t dt_imageio_open_ldr(dt_image_t *img, const char *filename, dt_mipmap_cache_allocator_t a)
+dt_imageio_retval_t dt_imageio_open_ldr(dt_image_t *img, const char *filename, dt_mipmap_buffer_t *buf)
 {
   dt_imageio_retval_t ret;
-  ret = dt_imageio_open_tiff(img, filename, a);
+  ret = dt_imageio_open_tiff(img, filename, buf);
   if(ret == DT_IMAGEIO_OK || ret == DT_IMAGEIO_CACHE_FULL)
   {
     img->filters = 0u;
@@ -535,7 +440,7 @@ dt_imageio_retval_t dt_imageio_open_ldr(dt_image_t *img, const char *filename, d
     return ret;
   }
 
-  ret = dt_imageio_open_png(img, filename, a);
+  ret = dt_imageio_open_png(img, filename, buf);
   if(ret == DT_IMAGEIO_OK || ret == DT_IMAGEIO_CACHE_FULL)
   {
     img->filters = 0u;
@@ -546,7 +451,7 @@ dt_imageio_retval_t dt_imageio_open_ldr(dt_image_t *img, const char *filename, d
   }
 
 #ifdef HAVE_OPENJPEG
-  ret = dt_imageio_open_j2k(img, filename, a);
+  ret = dt_imageio_open_j2k(img, filename, buf);
   if(ret == DT_IMAGEIO_OK || ret == DT_IMAGEIO_CACHE_FULL)
   {
     img->filters = 0u;
@@ -557,7 +462,7 @@ dt_imageio_retval_t dt_imageio_open_ldr(dt_image_t *img, const char *filename, d
   }
 #endif
 
-  ret = dt_imageio_open_jpeg(img, filename, a);
+  ret = dt_imageio_open_jpeg(img, filename, buf);
   if(ret == DT_IMAGEIO_OK || ret == DT_IMAGEIO_CACHE_FULL)
   {
     img->filters = 0u;
@@ -612,9 +517,9 @@ int dt_imageio_export_with_flags(const uint32_t imgid, const char *filename,
   dt_dev_init(&dev, 0);
   dt_mipmap_buffer_t buf;
   if(thumbnail_export && dt_conf_get_bool("plugins/lighttable/low_quality_thumbnails"))
-    dt_mipmap_cache_read_get(darktable.mipmap_cache, &buf, imgid, DT_MIPMAP_F, DT_MIPMAP_BLOCKING);
+    dt_mipmap_cache_get(darktable.mipmap_cache, &buf, imgid, DT_MIPMAP_F, DT_MIPMAP_BLOCKING, 'r');
   else
-    dt_mipmap_cache_read_get(darktable.mipmap_cache, &buf, imgid, DT_MIPMAP_FULL, DT_MIPMAP_BLOCKING);
+    dt_mipmap_cache_get(darktable.mipmap_cache, &buf, imgid, DT_MIPMAP_FULL, DT_MIPMAP_BLOCKING, 'r');
   dt_dev_load_image(&dev, imgid);
   const dt_image_t *img = &dev.image_storage;
   const int wd = img->width;
@@ -633,14 +538,15 @@ int dt_imageio_export_with_flags(const uint32_t imgid, const char *filename,
         _("failed to allocate memory for %s, please lower the threads used for export or buy more memory."),
         thumbnail_export ? C_("noun", "thumbnail export") : C_("noun", "export"));
     dt_dev_cleanup(&dev);
-    dt_mipmap_cache_read_release(darktable.mipmap_cache, &buf);
+    dt_mipmap_cache_release(darktable.mipmap_cache, &buf);
     return 1;
   }
 
   if(!buf.buf)
   {
+    fprintf(stderr, "allocation failed???\n");
     dt_control_log(_("image `%s' is not available!"), img->filename);
-    dt_mipmap_cache_read_release(darktable.mipmap_cache, &buf);
+    dt_mipmap_cache_release(darktable.mipmap_cache, &buf);
     dt_dev_cleanup(&dev);
     return 1;
   }
@@ -657,7 +563,7 @@ int dt_imageio_export_with_flags(const uint32_t imgid, const char *filename,
     {
       dt_control_log(_("cannot find the style '%s' to apply during export."), format_params->style);
       dt_dev_cleanup(&dev);
-      dt_mipmap_cache_read_release(darktable.mipmap_cache, &buf);
+      dt_mipmap_cache_release(darktable.mipmap_cache, &buf);
       return 1;
     }
 
@@ -906,7 +812,7 @@ int dt_imageio_export_with_flags(const uint32_t imgid, const char *filename,
 
   dt_dev_pixelpipe_cleanup(&pipe);
   dt_dev_cleanup(&dev);
-  dt_mipmap_cache_read_release(darktable.mipmap_cache, &buf);
+  dt_mipmap_cache_release(darktable.mipmap_cache, &buf);
   dt_free_align(moutbuf);
   /* now write xmp into that container, if possible */
   if(copy_metadata && (format->flags(format_params) & FORMAT_FLAGS_SUPPORT_XMP))
@@ -928,10 +834,10 @@ int dt_imageio_export_with_flags(const uint32_t imgid, const char *filename,
 // fallback read method in case file could not be opened yet.
 // use GraphicsMagick (if supported) to read exotic LDRs
 dt_imageio_retval_t dt_imageio_open_exotic(dt_image_t *img, const char *filename,
-                                           dt_mipmap_cache_allocator_t a)
+                                           dt_mipmap_buffer_t *buf)
 {
 #ifdef HAVE_GRAPHICSMAGICK
-  dt_imageio_retval_t ret = dt_imageio_open_gm(img, filename, a);
+  dt_imageio_retval_t ret = dt_imageio_open_gm(img, filename, buf);
   if(ret == DT_IMAGEIO_OK || ret == DT_IMAGEIO_CACHE_FULL)
   {
     img->filters = 0u;
@@ -952,7 +858,7 @@ dt_imageio_retval_t dt_imageio_open_exotic(dt_image_t *img, const char *filename
 
 dt_imageio_retval_t dt_imageio_open(dt_image_t *img,               // non-const * means you hold a write lock!
                                     const char *filename,          // full path
-                                    dt_mipmap_cache_allocator_t a) // allocate via dt_mipmap_cache_alloc
+                                    dt_mipmap_buffer_t *buf)
 {
   /* first of all, check if file exists, don't bother to test loading if not exists */
   if(!g_file_test(filename, G_FILE_TEST_IS_REGULAR)) return !DT_IMAGEIO_OK;
@@ -960,20 +866,19 @@ dt_imageio_retval_t dt_imageio_open(dt_image_t *img,               // non-const 
   dt_imageio_retval_t ret = DT_IMAGEIO_FILE_CORRUPTED;
 
   /* check if file is ldr using magic's */
-  if(dt_imageio_is_ldr(filename)) ret = dt_imageio_open_ldr(img, filename, a);
+  if(dt_imageio_is_ldr(filename)) ret = dt_imageio_open_ldr(img, filename, buf);
 
   /* silly check using file extensions: */
   if(ret != DT_IMAGEIO_OK && ret != DT_IMAGEIO_CACHE_FULL && dt_imageio_is_hdr(filename))
-    ret = dt_imageio_open_hdr(img, filename, a);
-
-#ifdef HAVE_RAWSPEED
-  if(ret != DT_IMAGEIO_OK && ret != DT_IMAGEIO_CACHE_FULL) ret = dt_imageio_open_rawspeed(img, filename, a);
-#endif
-
-  if(ret != DT_IMAGEIO_OK && ret != DT_IMAGEIO_CACHE_FULL) ret = dt_imageio_open_raw(img, filename, a);
+    ret = dt_imageio_open_hdr(img, filename, buf);
+  
+  /* use rawspeed to load the raw */
+  if(ret != DT_IMAGEIO_OK && ret != DT_IMAGEIO_CACHE_FULL) 
+    ret = dt_imageio_open_rawspeed(img, filename, buf);
 
   /* fallback that tries to open file via GraphicsMagick */
-  if(ret != DT_IMAGEIO_OK && ret != DT_IMAGEIO_CACHE_FULL) ret = dt_imageio_open_exotic(img, filename, a);
+  if(ret != DT_IMAGEIO_OK && ret != DT_IMAGEIO_CACHE_FULL) 
+    ret = dt_imageio_open_exotic(img, filename, buf);
 
   return ret;
 }

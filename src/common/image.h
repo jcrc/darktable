@@ -99,6 +99,7 @@ typedef enum dt_image_orientation_t
   ORIENTATION_421 /* ??? */ = ORIENTATION_FLIP_Y | ORIENTATION_FLIP_X | ORIENTATION_SWAP_XY // 7
 } dt_image_orientation_t;
 
+struct dt_cache_entry_t;
 // TODO: add color labels and such as cachable
 // __attribute__ ((aligned (128)))
 typedef struct dt_image_t
@@ -148,8 +149,10 @@ typedef struct dt_image_t
   /* filter for Fuji X-Trans images, only used if filters == 9u */
   uint8_t xtrans[6][6];
 
-  /* If the image already has WB applied from the start */
-  gboolean pre_applied_wb;
+  /* White balance coeffs from the raw */
+  float wb_coeffs[3];
+  /* convenience pointer back into the image cache, so we can return dt_image_t* there directly. */
+  struct dt_cache_entry_t *cache_entry;
 } dt_image_t;
 
 // image buffer operations:
@@ -266,7 +269,7 @@ int32_t dt_image_move(const int32_t imgid, const int32_t filmid);
 /** physically cope image to the folder of the film roll with filmid and
  *  duplicate update database entries. */
 int32_t dt_image_copy(const int32_t imgid, const int32_t filmid);
-void dt_image_local_copy_set(const int32_t imgid);
+int dt_image_local_copy_set(const int32_t imgid);
 int dt_image_local_copy_reset(const int32_t imgid);
 /* check whether it is safe to remove a file */
 gboolean dt_image_safe_remove(const int32_t imgid);

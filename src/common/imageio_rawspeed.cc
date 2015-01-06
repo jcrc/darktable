@@ -15,7 +15,6 @@
     You should have received a copy of the GNU General Public License
     along with darktable.  If not, see <http://www.gnu.org/licenses/>.
 */
-#ifdef HAVE_RAWSPEED
 #ifdef _OPENMP
 #include <omp.h>
 #endif
@@ -50,7 +49,7 @@ int rawspeed_get_number_of_processor_cores()
 
 using namespace RawSpeed;
 
-dt_imageio_retval_t dt_imageio_open_rawspeed_sraw(dt_image_t *img, RawImage r, dt_mipmap_cache_allocator_t a);
+dt_imageio_retval_t dt_imageio_open_rawspeed_sraw(dt_image_t *img, RawImage r, dt_mipmap_buffer_t *buf);
 static CameraMetaData *meta = NULL;
 
 #if 0
@@ -74,7 +73,7 @@ scale_black_white(uint16_t *const buf, const uint16_t black, const uint16_t whit
 #endif
 
 dt_imageio_retval_t dt_imageio_open_rawspeed(dt_image_t *img, const char *filename,
-                                             dt_mipmap_cache_allocator_t a)
+                                             dt_mipmap_buffer_t *mbuf)
 {
   if(!img->exif_inited) (void)dt_exif_read(img, filename);
 
@@ -140,10 +139,9 @@ dt_imageio_retval_t dt_imageio_open_rawspeed(dt_image_t *img, const char *filena
     m.reset();
 
     img->filters = 0u;
-    img->pre_applied_wb = r->preAppliedWB;
     if(!r->isCFA)
     {
-      dt_imageio_retval_t ret = dt_imageio_open_rawspeed_sraw(img, r, a);
+      dt_imageio_retval_t ret = dt_imageio_open_rawspeed_sraw(img, r, mbuf);
       return ret;
     }
 
@@ -183,10 +181,13 @@ dt_imageio_retval_t dt_imageio_open_rawspeed(dt_image_t *img, const char *filena
     img->raw_black_level = r->blackLevel;
     img->raw_white_point = r->whitePoint;
 
-    img->fuji_rotation_pos = r->fujiRotationPos;
-    img->pixel_aspect_ratio = (float)r->pixelAspectRatio;
+    img->fuji_rotation_pos = r->metadata.fujiRotationPos;
+    img->pixel_aspect_ratio = (float)r->metadata.pixelAspectRatio;
 
-    void *buf = dt_mipmap_cache_alloc(img, DT_MIPMAP_FULL, a);
+    for (int i=0; i<3; i++)
+      img->wb_coeffs[i] = r->metadata.wbCoeffs[i];
+
+    void *buf = dt_mipmap_cache_alloc(mbuf, img);
     if(!buf) return DT_IMAGEIO_CACHE_FULL;
 
     dt_imageio_flip_buffers((char *)buf, (char *)r->getData(), r->getBpp(), r->dim.x, r->dim.y, r->dim.x,
@@ -209,7 +210,7 @@ dt_imageio_retval_t dt_imageio_open_rawspeed(dt_image_t *img, const char *filena
   return DT_IMAGEIO_OK;
 }
 
-dt_imageio_retval_t dt_imageio_open_rawspeed_sraw(dt_image_t *img, RawImage r, dt_mipmap_cache_allocator_t a)
+dt_imageio_retval_t dt_imageio_open_rawspeed_sraw(dt_image_t *img, RawImage r, dt_mipmap_buffer_t *mbuf)
 {
   // sraw aren't real raw, but not ldr either (need white balance and stuff)
   img->flags &= ~DT_IMAGE_LDR;
@@ -235,7 +236,7 @@ dt_imageio_retval_t dt_imageio_open_rawspeed_sraw(dt_image_t *img, RawImage r, d
   // actually we want to store full floats here:
   img->bpp = 4 * sizeof(float);
   img->cpp = r->getCpp();
-  void *buf = dt_mipmap_cache_alloc(img, DT_MIPMAP_FULL, a);
+  void *buf = dt_mipmap_cache_alloc(mbuf, img);
   if(!buf) return DT_IMAGEIO_CACHE_FULL;
 
   int black = r->blackLevel;
@@ -283,8 +284,6 @@ dt_imageio_retval_t dt_imageio_open_rawspeed_sraw(dt_image_t *img, RawImage r, d
 
   return DT_IMAGEIO_OK;
 }
-
-#endif
 
 // modelines: These editor modelines have been set for all relevant files by tools/update_modelines.sh
 // vim: shiftwidth=2 expandtab tabstop=2 cindent

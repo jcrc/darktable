@@ -5,7 +5,7 @@
     RawSpeed - RAW file decoder.
 
     Copyright (C) 2009-2014 Klaus Post
-    Copyright (C) 2014 Pedro Côrte-Real
+    Copyright (C) 2014-2015 Pedro Côrte-Real
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -104,6 +104,25 @@ RawImage RafDecoder::decodeRawInternal() {
     else
       readUncompressedRaw(input, mRaw->dim, pos, width*bps/8, bps, BitOrder_Plain);
   }
+
+  if (raw->hasEntry(FUJI_WB_GRBLEVELS)) {
+    TiffEntry *wb = raw->getEntry(FUJI_WB_GRBLEVELS);
+    if (wb->count != 3)
+      ThrowRDE("RAF: WB has %d entries instead of 3");
+    const uint32 *tmp = wb->getIntArray();
+    mRaw->metadata.wbCoeffs[0] = (float)tmp[1];
+    mRaw->metadata.wbCoeffs[1] = (float)tmp[0];
+    mRaw->metadata.wbCoeffs[2] = (float)tmp[2];
+  } else if (raw->hasEntry(FUJIOLDWB)) {
+    TiffEntry *wb = raw->getEntry(FUJIOLDWB);
+    if (wb->count != 8)
+      ThrowRDE("RAF: WB has %d bytes instead of 8", wb->count);
+    const ushort16 *tmp = wb->getShortArray();
+    mRaw->metadata.wbCoeffs[0] = (float)tmp[1];
+    mRaw->metadata.wbCoeffs[1] = (float)tmp[0];
+    mRaw->metadata.wbCoeffs[2] = (float)tmp[3];
+  }
+
   return mRaw;
 }
 
@@ -136,7 +155,7 @@ void RafDecoder::decodeMetaDataInternal(CameraMetaData *meta) {
   int iso = 0;
   if (mRootIFD->hasEntryRecursive(ISOSPEEDRATINGS))
     iso = mRootIFD->getEntryRecursive(ISOSPEEDRATINGS)->getInt();
-  mRaw->isoSpeed = iso;
+  mRaw->metadata.isoSpeed = iso;
 
   // This is where we'd normally call setMetaData but since we may still need
   // to rotate the image for SuperCCD cameras we do everything ourselves
@@ -182,7 +201,8 @@ void RafDecoder::decodeMetaDataInternal(CameraMetaData *meta) {
     iPoint2D final_size(rotatedsize, rotatedsize-1);
     RawImage rotated = RawImage::create(final_size, TYPE_USHORT16, 1);
     rotated->clearArea(iRectangle2D(iPoint2D(0,0), rotated->dim));
-    rotated->fujiRotationPos = rotationPos;
+    rotated->metadata = mRaw->metadata;
+    rotated->metadata.fujiRotationPos = rotationPos;
 
     int dest_pitch = (int)rotated->pitch / 2;
     ushort16 *dst = (ushort16*)rotated->getData(0,0);
