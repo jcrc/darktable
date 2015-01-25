@@ -1181,6 +1181,34 @@
     <longdescription/>
   </dtconfig>
   <dtconfig>
+    <name>plugins/imageio/format/pdf/size</name>
+    <type>string</type>
+    <default>a4</default>
+    <shortdescription/>
+    <longdescription/>
+  </dtconfig>
+  <dtconfig>
+    <name>plugins/imageio/format/pdf/border</name>
+    <type>string</type>
+    <default>0 mm</default>
+    <shortdescription/>
+    <longdescription/>
+  </dtconfig>
+  <dtconfig>
+    <name>plugins/imageio/format/pdf/dpi</name>
+    <type>float</type>
+    <default>300</default>
+    <shortdescription/>
+    <longdescription/>
+  </dtconfig>
+  <dtconfig>
+    <name>plugins/imageio/format/pdf/compression</name>
+    <type>int</type>
+    <default>1</default>
+    <shortdescription/>
+    <longdescription/>
+  </dtconfig>
+  <dtconfig>
     <name>plugins/imageio/format/jpeg/quality</name>
     <type>int</type>
     <default>95</default>

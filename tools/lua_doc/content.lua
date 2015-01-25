@@ -152,6 +152,15 @@ for k,v in sorted_pairs(debug.getregistry().dt_lua_modules.storage) do
 end
 darktable.new_storage:add_parameter("type","string",[[The type of storage object to create, one of : ]]..  startlist().. tmp..endlist().."(Other, lua-defined, storage types may appear.)") 
 darktable.new_storage:add_return(types.dt_imageio_module_storage_t,"The newly created object. Exact type depends on the type passed")
+
+darktable.new_widget:set_text("Creates a new widget object to display in the UI")
+tmp =""
+for k,v in sorted_pairs(debug.getregistry().dt_lua_modules.widget) do
+  tmp = tmp..listel(k)
+end
+darktable.new_widget:add_parameter("type","string",[[The type of storage object to create, one of : ]]..  startlist().. tmp..endlist()) 
+darktable.new_widget:add_parameter("...","variable",[[Extra parameters, depend on the type of widget created]]) 
+darktable.new_widget:add_return(types.lua_widget,"The newly created object. Exact type depends on the type passed")
 ----------------------
 --  DARKTABLE.GUI   --
 ----------------------
@@ -165,6 +174,7 @@ darktable.gui.action_images:set_text([[A table of ]]..my_tostring(types.dt_lua_i
 remove_all_children(darktable.gui.action_images)
 
 darktable.gui.hovered:set_text([[The image under the cursor or nil if no image is hovered.]])
+darktable.gui.hovered:set_reported_type(types.dt_lua_image_t)
 darktable.gui.selection:set_text([[Allows to change the set of selected images.]])
 darktable.gui.selection:add_parameter("selection","table of "..my_tostring(types.dt_lua_image_t),[[A table of images which will define the selected images. If this parameter is not given the selection will be untouched. If an empty table is given the selection will be emptied.]]):set_attribute("optional",true)
 darktable.gui.selection:add_return("table of "..my_tostring(types.dt_lua_image_t),[[A table containing the selection as it was before the function was called.]])
@@ -386,6 +396,7 @@ darktable.gui.libs.snapshots.direction:set_text([[The direction of the snapshot 
 
 darktable.gui.libs.snapshots["#"]:set_text([[The different snapshots for the image]])
 darktable.gui.libs.snapshots.selected:set_text([[The currently selected snapshot]])
+darktable.gui.libs.snapshots.selected:set_reported_type(types.dt_lua_snapshot_t)
 darktable.gui.libs.snapshots.take_snapshot:set_text([[Take a snapshot of the current image and add it to the UI]]..para()..[[The snapshot file will be generated at the next redraw of the main window]])
 darktable.gui.libs.snapshots.max_snapshot:set_text([[The maximum number of snapshots]])
 
@@ -503,7 +514,9 @@ darktable.debug.type:set_text([[Similar to the system function type() but it wil
 	types.dt_lua_image_t.exif_focus_distance:set_text([[The distance of the subject.]])
 	types.dt_lua_image_t.exif_crop:set_text([[The exif crop data.]])
 	types.dt_lua_image_t.latitude:set_text([[GPS latitude data of the image, nil if not set.]])
+	types.dt_lua_image_t.latitude:set_reported_type("float or nil")
 	types.dt_lua_image_t.longitude:set_text([[GPS longitude data of the image, nil if not set.]])
+	types.dt_lua_image_t.longitude:set_reported_type("float or nil")
 	types.dt_lua_image_t.is_raw:set_text([[True if the image is a RAW file.]])
 	types.dt_lua_image_t.is_ldr:set_text([[True if the image is a ldr image.]])
 	types.dt_lua_image_t.is_hdr:set_text([[True if the image is a hdr image.]])
@@ -675,6 +688,81 @@ darktable.debug.type:set_text([[Similar to the system function type() but it wil
   types.dt_lua_lib_collect_params_rule_t.item:set_reported_type(types.dt_collection_properties_t)
   types.dt_lib_collect_mode_t:set_text("The logical operators to apply between rules");
   types.dt_collection_properties_t:set_text("The different elements on which a collection can be filtered");
+
+
+  types.lua_widget:set_text("Common parent type for all lua-handled widgets");
+  types.lua_widget.tooltip:set_text("Tooltip to display for the widget");
+  types.lua_widget.tooltip:set_reported_type("string or nil")
+  types.lua_widget.reset_callback:set_text("A function to call when the widget needs to reset itself"..para()..
+  "Note that some widgets have a default implementation that can be overridden, (containers in particular will recursively reset their children). If you replace that default implementation you need to reimplement that functionality")
+  types.lua_widget.reset_callback:set_reported_type("function")
+  types.lua_widget.reset_callback:add_parameter("widget",types.lua_widget,"The widget that triggered the callback")
+
+  types.dt_lua_orientation_t:set_text("A possible orientation for a widget")
+
+  types.lua_check_button:set_text("A checkable button with a label next to it");
+  types.lua_check_button.label:set_text("The label displayed next to the button");
+  types.lua_check_button.value:set_text("If the widget is checked or not");
+	types.lua_check_button.extra_registration_parameters:set_text("")
+	types.lua_check_button.extra_registration_parameters:add_parameter("label","string","The label to use"):set_attribute("optional",true)
+
+  types.lua_label:set_text("A label containing some text");
+  types.lua_label.label:set_text("The label displayed");
+	types.lua_label.extra_registration_parameters:set_text("")
+	types.lua_label.extra_registration_parameters:add_parameter("label","string","The label to use"):set_attribute("optional",true)
+
+  types.lua_button:set_text("A clickable button");
+  types.lua_button.label:set_text("The label displayed on the button");
+	types.lua_button.extra_registration_parameters:set_text("")
+	types.lua_button.extra_registration_parameters:add_parameter("label","string","The label to use"):set_attribute("optional",true)
+	types.lua_button.extra_registration_parameters:add_parameter("callback",types.lua_button.clicked_callback,"A function to call on button click"):set_attribute("optional",true)
+  types.lua_button.clicked_callback:set_text("A function to call on button click")
+  types.lua_button.clicked_callback:set_reported_type("function")
+  types.lua_button.clicked_callback:add_parameter("widget",types.lua_widget,"The widget that triggered the callback")
+
+  types.lua_box:set_text("A widget containing other widgets");
+	types.lua_box.extra_registration_parameters:set_text("")
+	types.lua_box.extra_registration_parameters:add_parameter("orientation",types.dt_lua_orientation_t,"The orientation of the box widget")
+	types.lua_box["#"]:set_reported_type(types.lua_widget)
+	types.lua_box["#"]:set_text("The widgets contained by the box")
+  types.lua_box.append:set_text("Add a widget at the end of the box")
+  types.lua_box.append:add_parameter("widget",types.lua_widget,"The widget to append")
+
+  types.lua_entry:set_text("A widget in which the user can input text")
+  types.lua_entry.text:set_text("The content of the entry")
+  types.lua_entry.placeholder:set_reported_type("string")
+  types.lua_entry.placeholder:set_text("The text to display when the entry is empty")
+  types.lua_entry.is_password:set_text("True if the text content should be hidden")
+  types.lua_entry.editable:set_text("False if the entry should be read-only")
+	types.lua_entry.extra_registration_parameters:set_text([[This widget has no extra registration parameters.]])
+
+  types.lua_separator:set_text("A widget providing a separation in the UI.")
+	types.lua_separator.extra_registration_parameters:set_text("")
+	types.lua_separator.extra_registration_parameters:add_parameter("orientation",types.dt_lua_orientation_t,"The orientation of the separator")
+
+  types.lua_combobox:set_text("A widget with multiple text entries in a menu"..para()..
+      "This widget can be set as editable at construction time."..para()..
+      "If it is editable the user can type a value and is not constrained by the values in the menu")
+  types.lua_combobox.value:set_reported_type("string")
+  types.lua_combobox.value:set_text("The text content of the selected entry, can be nil"..para()..
+      "You can set it to a number to select the corresponding entry from the menu"..para()..
+      "If the combo box is editable, you can set it to any string"..para()..
+      "You can set it to nil to deselect all entries")
+  types.lua_combobox["#"]:set_text("The various menu entries."..para()..
+      "You can add new entries by writing to the first element beyond the end"..para()..
+      "You can removes entries by setting them to nil")
+  types.lua_combobox["#"]:set_reported_type("string")
+	types.lua_combobox.extra_registration_parameters:set_text("")
+	types.lua_combobox.extra_registration_parameters:add_parameter("editable","boolean","True if the combo box should be editable by the user")
+
+  types.lua_file_chooser_button:set_text("A button that allows the user to select an existing file")
+  types.lua_file_chooser_button.title:set_text("The title of the window when choosing a file")
+  types.lua_file_chooser_button.value:set_text("The currently selected file")
+  types.lua_file_chooser_button.value:set_reported_type("string")
+  types.lua_file_chooser_button.extra_registration_parameters:set_text("")
+  types.lua_file_chooser_button.extra_registration_parameters:add_parameter("directory_only","boolean","True if the selection menu should allow only directorie"):set_attribute("optional",true)
+  types.lua_file_chooser_button.extra_registration_parameters:add_parameter("title","string","The tile for the selection window"):set_attribute("optional",true)
+
 	----------------------
 	--  EVENTS          --
 	----------------------

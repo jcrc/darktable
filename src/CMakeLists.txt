@@ -43,6 +43,7 @@ FILE(GLOB SOURCE_FILES
   "common/interpolation.c"
   "common/metadata.c"
   "common/mipmap_cache.c"
+  "common/pdf.c"
   "common/styles.c"
   "common/selection.c"
   "common/tags.c"
@@ -478,6 +479,15 @@ if(USE_LUA)
       "lua/tags.c"
       "lua/types.c"
       "lua/view.c"
+      "lua/widget/widget.c"
+      "lua/widget/box.c"
+      "lua/widget/button.c"
+      "lua/widget/check_button.c"
+      "lua/widget/combobox.c"
+      "lua/widget/entry.c"
+      "lua/widget/file_chooser.c"
+      "lua/widget/label.c"
+      "lua/widget/separator.c"
       )
     set(SOURCES ${SOURCES} ${SOURCE_FILES_LUA})
   endif(USE_LUA)

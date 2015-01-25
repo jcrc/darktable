@@ -109,7 +109,7 @@ static int FileWriter(const uint8_t *data, size_t data_size, const WebPPicture *
 }
 
 int write_image(dt_imageio_module_data_t *webp, const char *filename, const void *in_tmp, void *exif,
-                int exif_len, int imgid)
+                int exif_len, int imgid, int num, int total)
 {
   dt_imageio_webp_t *webp_data = (dt_imageio_webp_t *)webp;
   FILE *out = fopen(filename, "wb");
@@ -261,11 +261,6 @@ const char *mime(dt_imageio_module_data_t *data)
 const char *extension(dt_imageio_module_data_t *data)
 {
   return "webp";
-}
-
-int dimension(dt_imageio_module_format_t *self, uint32_t *width, uint32_t *height)
-{
-  return 0;
 }
 
 const char *name()

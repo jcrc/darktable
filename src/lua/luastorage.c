@@ -17,6 +17,7 @@
  */
 #include "lua/luastorage.h"
 #include "lua/image.h"
+#include "lua/widget/widget.h"
 #include <stdio.h>
 #include <common/darktable.h>
 #include "common/imageio_module.h"
@@ -38,6 +39,7 @@ typedef struct
 {
   char *name;
   GList *supported_formats;
+  lua_widget widget;
 } lua_storage_gui_t;
 
 static const char *name_wrapper(const struct dt_imageio_module_storage_t *self)
@@ -57,8 +59,8 @@ static int default_supported_wrapper(struct dt_imageio_module_storage_t *self,
     return FALSE;
   }
 }
-static int default_dimension_wrapper(struct dt_imageio_module_storage_t *self, uint32_t *width,
-                                     uint32_t *height)
+static int default_dimension_wrapper(struct dt_imageio_module_storage_t *self, dt_imageio_module_data_t *data,
+                                     uint32_t *width, uint32_t *height)
 {
   return 0;
 };
@@ -82,7 +84,7 @@ static int store_wrapper(struct dt_imageio_module_storage_t *self, struct dt_ima
 
   gchar *complete_name = g_build_filename(tmpdir, filename, (char *)NULL);
 
-  if(dt_imageio_export(imgid, complete_name, format, fdata, high_quality, FALSE, self, self_data) != 0)
+  if(dt_imageio_export(imgid, complete_name, format, fdata, high_quality, FALSE, self, self_data, num, total) != 0)
   {
     fprintf(stderr, "[%s] could not export to file: `%s'!\n", self->name(self), complete_name);
     g_free(complete_name);
@@ -135,8 +137,10 @@ static int store_wrapper(struct dt_imageio_module_storage_t *self, struct dt_ima
   g_free(filename);
   return result;
 }
-static void initialize_store_wrapper(struct dt_imageio_module_storage_t *self, dt_imageio_module_data_t *data,
-                                     dt_imageio_module_format_t *format, dt_imageio_module_data_t *fdata,
+
+// FIXME: return 0 on success and 1 on error!
+static int initialize_store_wrapper(struct dt_imageio_module_storage_t *self, dt_imageio_module_data_t *data,
+                                     dt_imageio_module_format_t **format, dt_imageio_module_data_t **fdata,
                                      GList **images, const gboolean high_quality)
 {
   dt_lua_lock();
@@ -150,11 +154,11 @@ static void initialize_store_wrapper(struct dt_imageio_module_storage_t *self, d
   {
     lua_pop(L, 3);
     dt_lua_unlock();
-    return;
+    return 1;
   }
 
   luaA_push_type(L, self->parameter_lua_type, data);
-  luaA_push_type(L, format->parameter_lua_type, fdata);
+  luaA_push_type(L, (*format)->parameter_lua_type, *fdata);
 
   GList *imgids = *images;
   lua_newtable(L);
@@ -196,6 +200,7 @@ static void initialize_store_wrapper(struct dt_imageio_module_storage_t *self, d
   }
   lua_pop(L, 3);
   dt_lua_unlock();
+  return 0;
 }
 static void finalize_store_wrapper(struct dt_imageio_module_storage_t *self, dt_imageio_module_data_t *data)
 {
@@ -305,15 +310,33 @@ static int version_wrapper()
   return 0;
 }
 
+static void gui_init_wrapper(struct dt_imageio_module_storage_t *self)
+{
+  lua_storage_gui_t *gui_data =self->gui_data;
+  self->widget = gui_data->widget->widget;
+}
+
+static void gui_reset_wrapper(struct dt_imageio_module_storage_t *self)
+{
+  lua_storage_gui_t *gui_data =self->gui_data;
+  dt_lua_widget_trigger_callback_async(gui_data->widget,"reset");
+}
+
+static void gui_cleanup_wrapper(struct dt_imageio_module_storage_t *self)
+{
+  self->widget = NULL;
+}
+
+
 static dt_imageio_module_storage_t ref_storage = {
   .plugin_name = { 0 },
   .module = NULL,
   .widget = NULL,
   .gui_data = NULL,
   .name = name_wrapper,
-  .gui_init = empty_wrapper,
-  .gui_cleanup = empty_wrapper,
-  .gui_reset = empty_wrapper,
+  .gui_init = gui_init_wrapper,
+  .gui_cleanup = gui_cleanup_wrapper,
+  .gui_reset = gui_reset_wrapper,
   .init = NULL,
   .supported = default_supported_wrapper,
   .dimension = default_dimension_wrapper,
@@ -335,7 +358,7 @@ static dt_imageio_module_storage_t ref_storage = {
 
 static int register_storage(lua_State *L)
 {
-  lua_settop(L, 6);
+  lua_settop(L, 7);
   lua_getfield(L, LUA_REGISTRYINDEX, "dt_lua_storages");
   lua_newtable(L);
 
@@ -354,6 +377,7 @@ static int register_storage(lua_State *L)
   lua_setfield(L, -2, "name");
   data->name = strdup(name);
   data->supported_formats = NULL;
+  data->widget = NULL;
 
   if(!lua_isnoneornil(L, 3))
   {
@@ -390,6 +414,22 @@ static int register_storage(lua_State *L)
     lua_pushvalue(L, 6);
     lua_setfield(L, -2, "initialize_store");
   }
+
+  if(lua_isnil(L, 7))
+  {
+    storage->gui_init = empty_wrapper;
+    storage->gui_reset = empty_wrapper;
+    storage->gui_cleanup = empty_wrapper;
+  }
+  else
+  {
+    lua_pushvalue(L, 7);
+    lua_setfield(L, -2, "widget"); // protect the widget from GC
+    lua_widget widget;
+    luaA_to(L,lua_widget,&widget,7);
+    data->widget = widget;
+  }
+
 
   lua_setfield(L, -2, plugin_name);
 
@@ -436,6 +476,8 @@ static int register_storage(lua_State *L)
     }
   }
 
+  storage->gui_init(storage);
+  if(storage->widget) g_object_ref(storage->widget);
   dt_imageio_insert_storage(storage);
 
   return 0;

@@ -368,7 +368,12 @@ static int full_pushfunc(lua_State *L, luaA_Type type_id, const void *cin)
 
 static void full_tofunc(lua_State *L, luaA_Type type_id, void *cout, int index)
 {
-  void *udata = luaL_checkudata(L, index, luaA_typename(L, type_id));
+  if(!dt_lua_isa_type(L,index,type_id)) {
+    char error_msg[256];
+    snprintf(error_msg,sizeof(error_msg),"%s expected",luaA_typename(L,type_id));
+    luaL_argerror(L,index,error_msg);
+  } 
+  void* udata = lua_touserdata(L,index);
   memcpy(cout, udata, luaA_typesize(L, type_id));
 }
 
@@ -403,7 +408,12 @@ static int int_pushfunc(lua_State *L, luaA_Type type_id, const void *cin)
 
 static void int_tofunc(lua_State *L, luaA_Type type_id, void *cout, int index)
 {
-  void *udata = luaL_checkudata(L, index, luaA_typename(L, type_id));
+  if(!dt_lua_isa_type(L,index,type_id)) {
+    char error_msg[256];
+    snprintf(error_msg,sizeof(error_msg),"%s expected",luaA_typename(L,type_id));
+    luaL_argerror(L,index,error_msg);
+  } 
+  void* udata = lua_touserdata(L,index);
   memcpy(cout, udata, sizeof(int));
 }
 
@@ -439,7 +449,12 @@ static int gpointer_pushfunc(lua_State *L, luaA_Type type_id, const void *cin)
 
 static void gpointer_tofunc(lua_State *L, luaA_Type type_id, void *cout, int index)
 {
-  void *udata = luaL_checkudata(L, index, luaA_typename(L, type_id));
+  if(!dt_lua_isa_type(L,index,type_id)) {
+    char error_msg[256];
+    snprintf(error_msg,sizeof(error_msg),"%s expected",luaA_typename(L,type_id));
+    luaL_argerror(L,index,error_msg);
+  } 
+  void* udata = lua_touserdata(L,index);
   memcpy(cout, udata, sizeof(gpointer));
 }
 
@@ -583,7 +598,13 @@ void dt_lua_type_register_parent_type(lua_State *L, luaA_Type type_id, luaA_Type
   lua_pushnil(L); /* first key */
   while(lua_next(L, -2) != 0)
   {
-    lua_setfield(L, -4, lua_tostring(L, -2));
+    lua_getfield(L,-4,lua_tostring(L,-2));
+    if(lua_isnil(L,-1)) {
+      lua_pop(L,1);
+      lua_setfield(L, -4, lua_tostring(L,-2));
+    } else {
+      lua_pop(L,2);
+    }
   }
   lua_pop(L, 2);
 
@@ -592,21 +613,30 @@ void dt_lua_type_register_parent_type(lua_State *L, luaA_Type type_id, luaA_Type
   lua_pushnil(L); /* first key */
   while(lua_next(L, -2) != 0)
   {
-    lua_setfield(L, -4, lua_tostring(L, -2));
+    lua_getfield(L,-4,lua_tostring(L,-2));
+    if(lua_isnil(L,-1)) {
+      lua_pop(L,1);
+      lua_setfield(L, -4, lua_tostring(L,-2));
+    } else {
+      lua_pop(L,2);
+    }
   }
   lua_pop(L, 2);
 
-  lua_getfield(L, -1, "__len");
-  if(!lua_isnil(L, -1))
+  lua_pushnil(L); /* first key */
+  while(lua_next(L, -2) != 0)
   {
-    lua_getfield(L, -1, "__len");
-    lua_setfield(L, -3, "__len");
-    lua_getfield(L, -1, "__number_index");
-    lua_setfield(L, -3, "__number_index");
-    lua_getfield(L, -1, "__number_newindex");
-    lua_setfield(L, -3, "__number_newindex");
+    lua_getfield(L,-4,lua_tostring(L,-2));
+    if(lua_isnil(L,-1)) {
+      lua_pop(L,1);
+      lua_setfield(L, -4, lua_tostring(L,-2));
+    } else {
+      lua_pop(L,2);
+    }
   }
-  lua_pop(L, 3);
+
+
+  lua_pop(L, 2);
 }
 
 static void init_metatable(lua_State *L, luaA_Type type_id)

@@ -29,13 +29,13 @@ void gui_init(struct dt_imageio_module_format_t *self);
 void gui_cleanup(struct dt_imageio_module_format_t *self);
 const char *mime(dt_imageio_module_data_t *data);
 const char *extension(dt_imageio_module_data_t *data);
-int dimension(struct dt_imageio_module_format_t *self, uint32_t *width, uint32_t *height);
+int dimension(struct dt_imageio_module_format_t *self, dt_imageio_module_data_t *data, uint32_t *width, uint32_t *height);
 size_t params_size(struct dt_imageio_module_format_t *self);
 void *get_params(struct dt_imageio_module_format_t *self);
 void free_params(struct dt_imageio_module_format_t *self, dt_imageio_module_data_t *data);
 int set_params(struct dt_imageio_module_format_t *self, const void *params, const int size);
 int write_image(dt_imageio_module_data_t *data, const char *filename, const void *in, void *exif,
-                int exif_len, int imgid);
+                int exif_len, int imgid, int num, int total);
 int bpp(dt_imageio_module_data_t *data);
 int flags(dt_imageio_module_data_t *data);
 int levels(dt_imageio_module_data_t *data);

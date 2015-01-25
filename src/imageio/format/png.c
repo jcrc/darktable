@@ -121,7 +121,7 @@ static void PNGwriteRawProfile(png_struct *ping, png_info *ping_info, char *prof
 }
 
 int write_image(dt_imageio_module_data_t *p_tmp, const char *filename, const void *ivoid, void *exif,
-                int exif_len, int imgid)
+                int exif_len, int imgid, int num, int total)
 {
   dt_imageio_png_t *p = (dt_imageio_png_t *)p_tmp;
   const int width = p->width, height = p->height;
@@ -201,7 +201,7 @@ int write_image(dt_imageio_module_data_t *p_tmp, const char *filename, const voi
    */
   png_set_filler(png_ptr, 0, PNG_FILLER_AFTER);
 
-  png_bytep *row_pointers = malloc(height * sizeof(png_bytep));
+  png_bytep *row_pointers = malloc((size_t)height * sizeof(png_bytep));
 
   if(p->bpp > 8)
   {

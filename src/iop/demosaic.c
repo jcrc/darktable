@@ -1432,69 +1432,24 @@ void process(struct dt_iop_module_t *self, dt_dev_pixelpipe_iop_t *piece, void *
     demosaicing_method = (img->filters != 9u) ? DT_IOP_DEMOSAIC_PPG : DT_IOP_DEMOSAIC_MARKESTEIJN;
 
   const float *const pixels = (float *)i;
-  if(roi_out->scale > .99999f && roi_out->scale < 1.00001f)
-  {
-    // output 1:1
-    if(img->filters == 9u)
-    {
-      if(demosaicing_method < DT_IOP_DEMOSAIC_MARKESTEIJN)
-        vng_interpolate((float *)o, pixels, &roo, &roi, data->filters, img->xtrans);
-      else
-        xtrans_markesteijn_interpolate((float *)o, pixels, &roo, &roi, img, img->xtrans,
-                                       1 + (demosaicing_method - DT_IOP_DEMOSAIC_MARKESTEIJN) * 2);
-    }
-    // green eq:
-    else if(data->green_eq != DT_IOP_GREEN_EQ_NO)
-    {
-      float *in = (float *)dt_alloc_align(16, (size_t)roi_in->height * roi_in->width * sizeof(float));
-      switch(data->green_eq)
-      {
-        case DT_IOP_GREEN_EQ_FULL:
-          green_equilibration_favg(in, pixels, roi_in->width, roi_in->height, data->filters, roi_in->x,
-                                   roi_in->y);
-          break;
-        case DT_IOP_GREEN_EQ_LOCAL:
-          green_equilibration_lavg(in, pixels, roi_in->width, roi_in->height, data->filters, roi_in->x,
-                                   roi_in->y, 0, threshold);
-          break;
-        case DT_IOP_GREEN_EQ_BOTH:
-          green_equilibration_favg(in, pixels, roi_in->width, roi_in->height, data->filters, roi_in->x,
-                                   roi_in->y);
-          green_equilibration_lavg(in, in, roi_in->width, roi_in->height, data->filters, roi_in->x, roi_in->y,
-                                   1, threshold);
-          break;
-      }
-      if(demosaicing_method == DT_IOP_DEMOSAIC_VNG4)
-        vng_interpolate((float *)o, in, &roo, &roi, data->filters, img->xtrans);
-      else if(demosaicing_method != DT_IOP_DEMOSAIC_AMAZE)
-        demosaic_ppg((float *)o, in, &roo, &roi, data->filters, data->median_thrs);
-      else
-        amaze_demosaic_RT(self, piece, in, (float *)o, &roi, &roo, data->filters);
-      dt_free_align(in);
-    }
-    else
-    {
-      if(demosaicing_method == DT_IOP_DEMOSAIC_VNG4)
-        vng_interpolate((float *)o, pixels, &roo, &roi, data->filters, img->xtrans);
-      else if(demosaicing_method != DT_IOP_DEMOSAIC_AMAZE)
-        demosaic_ppg((float *)o, pixels, &roo, &roi, data->filters, data->median_thrs);
-      else
-        amaze_demosaic_RT(self, piece, pixels, (float *)o, &roi, &roo, data->filters);
-    }
-  }
-  else if(roi_out->scale > (img->filters == 9u ? 0.333f : .5f) || // also covers roi_out->scale >1
-          (piece->pipe->type == DT_DEV_PIXELPIPE_FULL && qual > 0)
-          || // or in darkroom mode and quality requested by user settings
-          (piece->pipe->type == DT_DEV_PIXELPIPE_EXPORT)) // we assume you always want that for exports.
-  {
-    // demosaic and then clip and zoom
-    // we demosaic at 1:1 the size of input roi, so make sure
-    // we fit these bounds exactly, to avoid crashes..
-    roo.width = roi_in->width;
-    roo.height = roi_in->height;
-    roo.scale = 1.0f;
 
-    float *tmp = (float *)dt_alloc_align(16, (size_t)roo.width * roo.height * 4 * sizeof(float));
+  if((piece->pipe->type == DT_DEV_PIXELPIPE_FULL && qual > 0) ||
+      piece->pipe->type == DT_DEV_PIXELPIPE_EXPORT ||
+      roi_out->scale > (img->filters == 9u ? 0.333f : .5f))
+  {
+    // Full demosaic and then scaling if needed
+    int scaled = (roi_out->scale <= 0.99999f || roi_out->scale >= 1.00001f);
+    float *tmp = (float *) o;
+    if (scaled) {
+      // demosaic and then clip and zoom
+      // we demosaic at 1:1 the size of input roi, so make sure
+      // we fit these bounds exactly, to avoid crashes..
+      roo.width = roi_in->width;
+      roo.height = roi_in->height;
+      roo.scale = 1.0f;
+      tmp = (float *)dt_alloc_align(16, (size_t)roo.width * roo.height * 4 * sizeof(float));
+    }
+
     if(img->filters == 9u)
     {
       if(demosaicing_method < DT_IOP_DEMOSAIC_MARKESTEIJN)
@@ -1541,11 +1496,14 @@ void process(struct dt_iop_module_t *self, dt_dev_pixelpipe_iop_t *piece, void *
       else
         amaze_demosaic_RT(self, piece, pixels, tmp, &roi, &roo, data->filters);
     }
-    roi = *roi_out;
-    roi.x = roi.y = 0;
-    roi.scale = roi_out->scale;
-    dt_iop_clip_and_zoom((float *)o, tmp, &roi, &roo, roi.width, roo.width);
-    dt_free_align(tmp);
+
+    if (scaled) {
+      roi = *roi_out;
+      roi.x = roi.y = 0;
+      roi.scale = roi_out->scale;
+      dt_iop_clip_and_zoom((float *)o, tmp, &roi, &roo, roi.width, roo.width);
+      dt_free_align(tmp);
+    }
   }
   else
   {
@@ -1553,18 +1511,12 @@ void process(struct dt_iop_module_t *self, dt_dev_pixelpipe_iop_t *piece, void *
     const float clip = fminf(piece->pipe->processed_maximum[0],
                              fminf(piece->pipe->processed_maximum[1], piece->pipe->processed_maximum[2]));
     if(img->filters == 9u)
-      dt_iop_clip_and_zoom_demosaic_third_size_xtrans_f((float *)o, pixels, &roo, &roi, roo.width, roi.width,
+      dt_iop_clip_and_zoom_demosaic_third_size_xtrans_f((float *)o, pixels, &roo, &roi,
+                                                        roo.width, roi.width,
                                                         img->xtrans);
-    else if(piece->pipe->type == DT_DEV_PIXELPIPE_EXPORT && data->median_thrs > 0.0f)
-    {
-      float *tmp = (float *)dt_alloc_align(16, (size_t)sizeof(float) * roi_in->width * roi_in->height);
-      pre_median_b(tmp, pixels, roi_in, data->filters, 1, data->median_thrs);
-      dt_iop_clip_and_zoom_demosaic_half_size_f((float *)o, tmp, &roo, &roi, roo.width, roi.width,
-                                                data->filters, clip);
-      dt_free_align(tmp);
-    }
     else
-      dt_iop_clip_and_zoom_demosaic_half_size_f((float *)o, pixels, &roo, &roi, roo.width, roi.width,
+      dt_iop_clip_and_zoom_demosaic_half_size_f((float *)o, pixels, &roo, &roi,
+                                                roo.width, roi.width,
                                                 data->filters, clip);
   }
   if(data->color_smoothing) color_smoothing(o, roi_out, data->color_smoothing);
@@ -1592,91 +1544,27 @@ int process_cl(struct dt_iop_module_t *self, dt_dev_pixelpipe_iop_t *piece, cl_m
   cl_mem dev_green_eq = NULL;
   cl_int err = -999;
 
-  if(roi_out->scale > .99999f)
+  if((piece->pipe->type == DT_DEV_PIXELPIPE_FULL && qual > 0) ||
+      piece->pipe->type == DT_DEV_PIXELPIPE_EXPORT ||
+      roi_out->scale > (img->filters == 9u ? 0.333f : .5f))
   {
-    const int width = roi_out->width;
-    const int height = roi_out->height;
+    // Full demosaic and then scaling if needed
+    int scaled = (roi_out->scale <= 0.99999f || roi_out->scale >= 1.00001f);
+
+    int width = roi_out->width;
+    int height = roi_out->height;
+    dev_tmp = dev_out;
+    if (scaled) {
+      // need to scale to right res
+      dev_tmp = dt_opencl_alloc_device(devid, roi_in->width, roi_in->height, 4 * sizeof(float));
+      if(dev_tmp == NULL) goto error;
+      width = roi_in->width;
+      height = roi_in->height;
+    }
     size_t sizes[2] = { ROUNDUPWD(width), ROUNDUPHT(height) };
+
     // 1:1 demosaic
     dev_green_eq = NULL;
-    if(data->green_eq != DT_IOP_GREEN_EQ_NO)
-    {
-      // green equilibration
-      dev_green_eq = dt_opencl_alloc_device(devid, roi_in->width, roi_in->height, sizeof(float));
-      if(dev_green_eq == NULL) goto error;
-      dt_opencl_set_kernel_arg(devid, gd->kernel_green_eq, 0, sizeof(cl_mem), &dev_in);
-      dt_opencl_set_kernel_arg(devid, gd->kernel_green_eq, 1, sizeof(cl_mem), &dev_green_eq);
-      dt_opencl_set_kernel_arg(devid, gd->kernel_green_eq, 2, sizeof(int), &width);
-      dt_opencl_set_kernel_arg(devid, gd->kernel_green_eq, 3, sizeof(int), &height);
-      dt_opencl_set_kernel_arg(devid, gd->kernel_green_eq, 4, sizeof(uint32_t), (void *)&data->filters);
-      dt_opencl_set_kernel_arg(devid, gd->kernel_green_eq, 5, sizeof(float), (void *)&threshold);
-      err = dt_opencl_enqueue_kernel_2d(devid, gd->kernel_green_eq, sizes);
-      if(err != CL_SUCCESS) goto error;
-      dev_in = dev_green_eq;
-    }
-
-    if(data->median_thrs > 0.0f)
-    {
-      const int one = 1;
-      dt_opencl_set_kernel_arg(devid, gd->kernel_pre_median, 0, sizeof(cl_mem), &dev_in);
-      dt_opencl_set_kernel_arg(devid, gd->kernel_pre_median, 1, sizeof(cl_mem), &dev_out);
-      dt_opencl_set_kernel_arg(devid, gd->kernel_pre_median, 2, sizeof(int), &width);
-      dt_opencl_set_kernel_arg(devid, gd->kernel_pre_median, 3, sizeof(int), &height);
-      dt_opencl_set_kernel_arg(devid, gd->kernel_pre_median, 4, sizeof(uint32_t), (void *)&data->filters);
-      dt_opencl_set_kernel_arg(devid, gd->kernel_pre_median, 5, sizeof(float), (void *)&data->median_thrs);
-      dt_opencl_set_kernel_arg(devid, gd->kernel_pre_median, 6, sizeof(int), (void *)&one);
-      err = dt_opencl_enqueue_kernel_2d(devid, gd->kernel_pre_median, sizes);
-      if(err != CL_SUCCESS) goto error;
-
-      dt_opencl_set_kernel_arg(devid, gd->kernel_ppg_green_median, 0, sizeof(cl_mem), &dev_out);
-      dt_opencl_set_kernel_arg(devid, gd->kernel_ppg_green_median, 1, sizeof(cl_mem), &dev_out);
-      dt_opencl_set_kernel_arg(devid, gd->kernel_ppg_green_median, 2, sizeof(int), &width);
-      dt_opencl_set_kernel_arg(devid, gd->kernel_ppg_green_median, 3, sizeof(int), &height);
-      dt_opencl_set_kernel_arg(devid, gd->kernel_ppg_green_median, 4, sizeof(uint32_t),
-                               (void *)&data->filters);
-      err = dt_opencl_enqueue_kernel_2d(devid, gd->kernel_ppg_green_median, sizes);
-      if(err != CL_SUCCESS) goto error;
-    }
-    else
-    {
-      dt_opencl_set_kernel_arg(devid, gd->kernel_ppg_green, 0, sizeof(cl_mem), &dev_in);
-      dt_opencl_set_kernel_arg(devid, gd->kernel_ppg_green, 1, sizeof(cl_mem), &dev_out);
-      dt_opencl_set_kernel_arg(devid, gd->kernel_ppg_green, 2, sizeof(int), &width);
-      dt_opencl_set_kernel_arg(devid, gd->kernel_ppg_green, 3, sizeof(int), &height);
-      dt_opencl_set_kernel_arg(devid, gd->kernel_ppg_green, 4, sizeof(uint32_t), (void *)&data->filters);
-      err = dt_opencl_enqueue_kernel_2d(devid, gd->kernel_ppg_green, sizes);
-      if(err != CL_SUCCESS) goto error;
-    }
-
-    dt_opencl_set_kernel_arg(devid, gd->kernel_ppg_redblue, 0, sizeof(cl_mem), &dev_out);
-    dt_opencl_set_kernel_arg(devid, gd->kernel_ppg_redblue, 1, sizeof(cl_mem), &dev_out);
-    dt_opencl_set_kernel_arg(devid, gd->kernel_ppg_redblue, 2, sizeof(int), &width);
-    dt_opencl_set_kernel_arg(devid, gd->kernel_ppg_redblue, 3, sizeof(int), &height);
-    dt_opencl_set_kernel_arg(devid, gd->kernel_ppg_redblue, 4, sizeof(uint32_t), (void *)&data->filters);
-    err = dt_opencl_enqueue_kernel_2d(devid, gd->kernel_ppg_redblue, sizes);
-    if(err != CL_SUCCESS) goto error;
-
-    // manage borders
-    dt_opencl_set_kernel_arg(devid, gd->kernel_border_interpolate, 0, sizeof(cl_mem), &dev_in);
-    dt_opencl_set_kernel_arg(devid, gd->kernel_border_interpolate, 1, sizeof(cl_mem), &dev_out);
-    dt_opencl_set_kernel_arg(devid, gd->kernel_border_interpolate, 2, sizeof(int), (void *)&width);
-    dt_opencl_set_kernel_arg(devid, gd->kernel_border_interpolate, 3, sizeof(int), (void *)&height);
-    dt_opencl_set_kernel_arg(devid, gd->kernel_border_interpolate, 4, sizeof(uint32_t),
-                             (void *)&data->filters);
-    err = dt_opencl_enqueue_kernel_2d(devid, gd->kernel_border_interpolate, sizes);
-    if(err != CL_SUCCESS) goto error;
-  }
-  else if(roi_out->scale > .5f || // full needed because zoomed in enough
-          (piece->pipe->type == DT_DEV_PIXELPIPE_FULL && qual > 0)
-          || // or in darkroom mode and quality requested by user settings
-          (piece->pipe->type == DT_DEV_PIXELPIPE_EXPORT)) // we assume you always want that for exports.
-  {
-    // need to scale to right res
-    dev_tmp = dt_opencl_alloc_device(devid, roi_in->width, roi_in->height, 4 * sizeof(float));
-    if(dev_tmp == NULL) goto error;
-    const int width = roi_in->width;
-    const int height = roi_in->height;
-    size_t sizes[2] = { ROUNDUPWD(width), ROUNDUPHT(height) };
     if(data->green_eq != DT_IOP_GREEN_EQ_NO)
     {
       // green equilibration
@@ -1744,39 +1632,21 @@ int process_cl(struct dt_iop_module_t *self, dt_dev_pixelpipe_iop_t *piece, cl_m
     err = dt_opencl_enqueue_kernel_2d(devid, gd->kernel_border_interpolate, sizes);
     if(err != CL_SUCCESS) goto error;
 
-    // scale temp buffer to output buffer
-    dt_iop_roi_t roi, roo;
-    roi = *roi_in;
-    roo = *roi_out;
-    roo.x = roo.y = roi.x = roi.y = 0;
-    err = dt_iop_clip_and_zoom_cl(devid, dev_out, dev_tmp, &roo, &roi);
-    if(err != CL_SUCCESS) goto error;
+    if (scaled) {
+      // scale temp buffer to output buffer
+      dt_iop_roi_t roi, roo;
+      roi = *roi_in;
+      roo = *roi_out;
+      roo.x = roo.y = roi.x = roi.y = 0;
+      err = dt_iop_clip_and_zoom_cl(devid, dev_out, dev_tmp, &roo, &roi);
+      if(err != CL_SUCCESS) goto error;
+    }
   }
   else
   {
     // sample half-size image:
     const int zero = 0;
     cl_mem dev_pix = dev_in;
-    if(piece->pipe->type == DT_DEV_PIXELPIPE_EXPORT && data->median_thrs > 0.0f)
-    {
-      dev_tmp = dt_opencl_alloc_device(devid, roi_in->width, roi_in->height, sizeof(float));
-      if(dev_tmp == NULL) goto error;
-      const int width = roi_in->width;
-      const int height = roi_in->height;
-      size_t sizes[2] = { ROUNDUPWD(width), ROUNDUPHT(height) };
-
-      dt_opencl_set_kernel_arg(devid, gd->kernel_pre_median, 0, sizeof(cl_mem), &dev_in);
-      dt_opencl_set_kernel_arg(devid, gd->kernel_pre_median, 1, sizeof(cl_mem), &dev_tmp);
-      dt_opencl_set_kernel_arg(devid, gd->kernel_pre_median, 2, sizeof(int), &width);
-      dt_opencl_set_kernel_arg(devid, gd->kernel_pre_median, 3, sizeof(int), &height);
-      dt_opencl_set_kernel_arg(devid, gd->kernel_pre_median, 4, sizeof(uint32_t), (void *)&data->filters);
-      dt_opencl_set_kernel_arg(devid, gd->kernel_pre_median, 5, sizeof(float), (void *)&data->median_thrs);
-      dt_opencl_set_kernel_arg(devid, gd->kernel_pre_median, 6, sizeof(int), (void *)&zero);
-      err = dt_opencl_enqueue_kernel_2d(devid, gd->kernel_pre_median, sizes);
-      if(err != CL_SUCCESS) goto error;
-      dev_pix = dev_tmp;
-    }
-
     const int width = roi_out->width;
     const int height = roi_out->height;
     size_t sizes[2] = { ROUNDUPWD(width), ROUNDUPHT(height) };
@@ -1795,7 +1665,7 @@ int process_cl(struct dt_iop_module_t *self, dt_dev_pixelpipe_iop_t *piece, cl_m
     if(err != CL_SUCCESS) goto error;
   }
 
-  if(dev_tmp != NULL) dt_opencl_release_mem_object(dev_tmp);
+  if(dev_tmp != NULL && dev_tmp != dev_out) dt_opencl_release_mem_object(dev_tmp);
   if(dev_green_eq != NULL) dt_opencl_release_mem_object(dev_green_eq);
   dev_tmp = dev_green_eq = NULL;
 
