@@ -1,6 +1,7 @@
 /*
     This file is part of darktable,
     copyright (c) 2009--2013 johannes hanika.
+    copyright (c) 2015 LebedevRI.
 
     darktable is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -31,9 +32,12 @@
 #include "common/opencl.h"
 #include "gui/accelerators.h"
 #include "gui/gtk.h"
-#include "libraw/libraw.h"
 #include "external/wb_presets.c"
 #include "bauhaus/bauhaus.h"
+
+// for Kelvin temperature and bogus WB
+#include "external/adobe_coeff.c"
+#include "common/colorspaces.h"
 
 DT_MODULE_INTROSPECTION(2, dt_iop_temperature_params_t)
 
@@ -515,6 +519,39 @@ void gui_update(struct dt_iop_module_t *self)
   }
 }
 
+int calculate_bogus_daylight_wb(dt_iop_module_t *module, float bwb[3])
+{
+  // color matrix
+  char makermodel[1024];
+  dt_colorspaces_get_makermodel(makermodel, sizeof(makermodel), module->dev->image_storage.exif_maker,
+                                module->dev->image_storage.exif_model);
+  float cam_xyz[4][3];
+  cam_xyz[0][0] = NAN;
+  dt_dcraw_adobe_coeff(makermodel, (float(*)[12])cam_xyz);
+  if(!isnan(cam_xyz[0][0]))
+  {
+    float mat[3][3];
+
+    dt_colorspaces_create_cmatrix(cam_xyz, mat);
+
+    for(int c = 0; c < 3; c++)
+    {
+      float num = 0.0f;
+
+      for(int j = 0; j < 3; j++)
+      {
+        num += mat[c][j];
+      }
+
+      bwb[c] = 1.0f / num;
+    }
+
+    return 0;
+  }
+
+  return 1;
+}
+
 void reload_defaults(dt_iop_module_t *module)
 {
   dt_iop_temperature_params_t tmp
@@ -526,45 +563,40 @@ void reload_defaults(dt_iop_module_t *module)
   // raw images need wb:
   module->default_enabled = dt_image_is_raw(&module->dev->image_storage);
 
-  // get white balance coefficients, as shot
-  char filename[PATH_MAX] = { 0 };
-  int ret = 0;
-
   /* check if file is raw / hdr */
   if(dt_image_is_raw(&module->dev->image_storage))
   {
-    gboolean from_cache = TRUE;
-    dt_image_full_path(module->dev->image_storage.id, filename, sizeof(filename), &from_cache);
-
     char makermodel[1024];
     char *model = makermodel;
     dt_colorspaces_get_makermodel_split(makermodel, sizeof(makermodel), &model,
                                         module->dev->image_storage.exif_maker,
                                         module->dev->image_storage.exif_model);
 
-    for(int k = 0; k < 3; k++) tmp.coeffs[k] = module->dev->image_storage.wb_coeffs[k];
+    module->default_enabled = 1;
 
-    libraw_data_t *raw = libraw_init(0);
-    ret = libraw_open_file(raw, filename);
-    if(!ret)
+    int found = 1, is_monochrom = 0;
+
+    for(int k = 0; k < 3; k++)
     {
-      module->default_enabled = 1;
-
-      for(int k = 0; k < 3; k++) tmp.coeffs[k] = raw->color.cam_mul[k];
-      if(tmp.coeffs[0] <= 0.0)
+      if(isnan(module->dev->image_storage.wb_coeffs[k]) || module->dev->image_storage.wb_coeffs[k] == 0.0f)
       {
-        for(int k = 0; k < 3; k++) tmp.coeffs[k] = raw->color.pre_mul[k];
+        found = 0;
+        break;
       }
+    }
 
-      /*for(int k = 0; k < 3; k+=2) {
-        float libraw = tmp.coeffs[k]/tmp.coeffs[1];
-        float rawspeed = module->dev->image_storage.wb_coeffs[k]/module->dev->image_storage.wb_coeffs[1];
-        if (libraw != rawspeed)
-          fprintf(stderr, "Coeff %d is %f in libraw and %f in rawspeed\n", k, libraw, rawspeed);
-      }*/
-
-      if(tmp.coeffs[0] == 0 || tmp.coeffs[1] == 0 || tmp.coeffs[2] == 0)
+    if(found)
+    {
+      for(int k = 0; k < 3; k++) tmp.coeffs[k] = module->dev->image_storage.wb_coeffs[k];
+    }
+    else
+    {
+      if(!(!strncmp(module->dev->image_storage.exif_maker, "Leica Camera AG", 15)
+           && !strncmp(module->dev->image_storage.exif_model, "M9 monochrom", 12)))
       {
+        dt_control_log(_("failed to read camera white balance information!"));
+        fprintf(stderr, "[temperature] failed to read camera white balance information!\n");
+
         // could not get useful info, try presets:
         for(int i = 0; i < wb_preset_count; i++)
         {
@@ -572,25 +604,32 @@ void reload_defaults(dt_iop_module_t *module)
           {
             // just take the first preset we find for this camera
             for(int k = 0; k < 3; k++) tmp.coeffs[k] = wb_preset[i].channel[k];
+            found = 1;
             break;
           }
         }
       }
-    }
-    if(tmp.coeffs[0] == 1.0f && tmp.coeffs[1] == 1.0f && tmp.coeffs[2] == 1.0f)
-    {
-      // nop white balance is valid for monochrome sraws (like the leica monochrom produces)
-      if(!(!strncmp(module->dev->image_storage.exif_maker, "Leica Camera AG", 15)
-           && !strncmp(module->dev->image_storage.exif_model, "M9 monochrom", 12)))
+      else
       {
-        dt_control_log(_("failed to read camera white balance information!"));
-        fprintf(stderr, "[temperature] failed to read camera white balance information!\n");
-
-        // final security net: hardcoded default that fits most cams.
-        tmp.coeffs[0] = 2.0f;
-        tmp.coeffs[1] = 1.0f;
-        tmp.coeffs[2] = 1.5f;
+        // nop white balance is valid for monochrome sraws (like the leica monochrom produces)
+        is_monochrom = 1;
       }
+    }
+
+    // did not find preset either?
+    if(!is_monochrom && !found && !calculate_bogus_daylight_wb(module, tmp.coeffs))
+    {
+      // found camera matrix and used it to calculate bogus daylight wb
+      found = 1;
+    }
+
+    // and no cam matrix too???
+    if(!found && !is_monochrom)
+    {
+      // final security net: hardcoded default that fits most cams.
+      tmp.coeffs[0] = 2.0f;
+      tmp.coeffs[1] = 1.0f;
+      tmp.coeffs[2] = 1.5f;
     }
 
     tmp.coeffs[0] /= tmp.coeffs[1];
@@ -602,29 +641,35 @@ void reload_defaults(dt_iop_module_t *module)
     if(module->gui_data)
     {
       dt_iop_temperature_gui_data_t *g = (dt_iop_temperature_gui_data_t *)module->gui_data;
-      for(int c = 0; c < 3; c++) g->daylight_wb[c] = raw->color.pre_mul[c];
 
-      if(g->daylight_wb[0] == 1.0f && g->daylight_wb[1] == 1.0f && g->daylight_wb[2] == 1.0f)
+      // to have at least something and definitely not crash
+      for(int c = 0; c < 3; c++) g->daylight_wb[c] = module->dev->image_storage.wb_coeffs[c];
+
+      if(!calculate_bogus_daylight_wb(module, g->daylight_wb))
+      {
+        // found camera matrix and used it to calculate bogus daylight wb
+      }
+      else
       {
         // if we didn't find anything for daylight wb, look for a wb preset with appropriate name.
-        // we're normalising that to be D65
+        // we're normalizing that to be D65
         for(int i = 0; i < wb_preset_count; i++)
         {
           if(!strcmp(wb_preset[i].make, makermodel) && !strcmp(wb_preset[i].model, model)
-             && !strncasecmp(wb_preset[i].name, "daylight", 8))
+             && !strcmp(wb_preset[i].name, Daylight) && wb_preset[i].tuning == 0)
           {
             for(int k = 0; k < 3; k++) g->daylight_wb[k] = wb_preset[i].channel[k];
             break;
           }
         }
       }
+
       float temp, tint, mul[3];
       for(int k = 0; k < 3; k++) mul[k] = g->daylight_wb[k] / tmp.coeffs[k];
       convert_rgb_to_k(mul, &temp, &tint);
       dt_bauhaus_slider_set_default(g->scale_k, temp);
       dt_bauhaus_slider_set_default(g->scale_tint, tint);
     }
-    libraw_close(raw);
   }
 
 end:

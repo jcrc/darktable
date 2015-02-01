@@ -348,8 +348,9 @@ int dt_load_from_string(const gchar *input, gboolean open_image_in_dr)
       // make sure buffers are loaded (load full for testing)
       dt_mipmap_buffer_t buf;
       dt_mipmap_cache_get(darktable.mipmap_cache, &buf, id, DT_MIPMAP_FULL, DT_MIPMAP_BLOCKING, 'r');
+      gboolean loaded = (buf.buf != NULL);
       dt_mipmap_cache_release(darktable.mipmap_cache, &buf);
-      if(!buf.buf)
+      if(!loaded)
       {
         id = 0;
         dt_control_log(_("file `%s' has unknown format!"), filename);
@@ -577,6 +578,8 @@ int dt_init(int argc, char *argv[], const int init_gui, lua_State *L)
           darktable.unmuted |= DT_DEBUG_MASKS; // masks related stuff.
         else if(!strcmp(argv[k + 1], "lua"))
           darktable.unmuted |= DT_DEBUG_LUA; // lua errors are reported on console
+        else if(!strcmp(argv[k + 1], "print"))
+          darktable.unmuted |= DT_DEBUG_PRINT; // print errors are reported on console
         else
           return usage(argv[0]);
         k++;

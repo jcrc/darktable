@@ -21,6 +21,15 @@
 #include "common/darktable.h"
 #include <lcms2.h>
 
+// constants fit to the ones from lcms.h:
+typedef enum dt_iop_color_intent_t
+{
+  DT_INTENT_PERCEPTUAL = INTENT_PERCEPTUAL,                       // 0
+  DT_INTENT_RELATIVE_COLORIMETRIC = INTENT_RELATIVE_COLORIMETRIC, // 1
+  DT_INTENT_SATURATION = INTENT_SATURATION,                       // 2
+  DT_INTENT_ABSOLUTE_COLORIMETRIC = INTENT_ABSOLUTE_COLORIMETRIC  // 3
+} dt_iop_color_intent_t;
+
 /** create the lab profile. */
 cmsHPROFILE dt_colorspaces_create_lab_profile();
 
@@ -42,8 +51,8 @@ cmsHPROFILE dt_colorspaces_create_adobergb_profile(void);
 /** create a ICC virtual profile for XYZ. */
 cmsHPROFILE dt_colorspaces_create_xyz_profile(void);
 
-/** create a profile from a color matrix from dcraw. */
-cmsHPROFILE dt_colorspaces_create_cmatrix_profile(float cmatrix[3][4]);
+/** create a RGB matrix from a color matrix from dcraw. */
+void dt_colorspaces_create_cmatrix(float cmatrix[4][3], float mat[3][3]);
 
 /** create a profile from a camera->xyz matrix. */
 cmsHPROFILE dt_colorspaces_create_xyzmatrix_profile(float cam_xyz[3][3]);

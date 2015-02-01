@@ -28,6 +28,8 @@
 #include "rawspeed/RawSpeed/CameraMetaData.h"
 #include "rawspeed/RawSpeed/ColorFilterArray.h"
 
+#define __STDC_LIMIT_MACROS
+
 extern "C" {
 #include "imageio.h"
 #include "common/imageio_rawspeed.h"
@@ -35,6 +37,7 @@ extern "C" {
 #include "common/darktable.h"
 #include "common/colorspaces.h"
 #include "common/file_location.h"
+#include <stdint.h>
 }
 
 // define this function, it is only declared in rawspeed:
@@ -134,6 +137,35 @@ dt_imageio_retval_t dt_imageio_open_rawspeed(dt_image_t *img, const char *filena
     d->decodeMetaData(meta);
     RawImage r = d->mRaw;
 
+    img->raw_black_level = r->blackLevel;
+    img->raw_white_point = r->whitePoint;
+
+    if(r->blackLevelSeparate[0] == -1 || r->blackLevelSeparate[1] == -1 || r->blackLevelSeparate[2] == -1
+       || r->blackLevelSeparate[3] == -1)
+    {
+      r->calculateBlackAreas();
+    }
+
+    for(uint8_t i = 0; i < 4; i++) img->raw_black_level_separate[i] = r->blackLevelSeparate[i];
+
+    if(r->blackLevel == -1)
+    {
+      float black = 0.0f;
+      for(uint8_t i = 0; i < 4; i++)
+      {
+        black += img->raw_black_level_separate[i];
+      }
+      black /= 4.0f;
+
+      img->raw_black_level = CLAMP(black, 0, UINT16_MAX);
+    }
+
+    /*
+     * FIXME
+     * if(r->whitePoint == 65536)
+     *   ???
+     */
+
     /* free auto pointers on spot */
     d.reset();
     m.reset();
@@ -145,10 +177,6 @@ dt_imageio_retval_t dt_imageio_open_rawspeed(dt_image_t *img, const char *filena
       return ret;
     }
 
-    // only scale colors for sizeof(uint16_t) per pixel, not sizeof(float)
-    // if(r->getDataType() != TYPE_FLOAT32) scale_black_white((uint16_t *)r->getData(), r->blackLevel,
-    // r->whitePoint, r->dim.x, r->dim.y, r->pitch/r->getBpp());
-    if(r->getDataType() != TYPE_FLOAT32) r->scaleBlackWhite();
     img->bpp = r->getBpp();
     img->filters = r->cfa.getDcrawFilter();
     if(img->filters)
@@ -223,10 +251,6 @@ dt_imageio_retval_t dt_imageio_open_rawspeed_sraw(dt_image_t *img, RawImage r, d
   for (int i=0; i<3; i++)
     img->wb_coeffs[i] = r->metadata.wbCoeffs[i];
 
-  /* needed by Deflicker */
-  img->raw_black_level = r->blackLevel;
-  img->raw_white_point = r->whitePoint;
-
   size_t raw_width = r->dim.x;
   size_t raw_height = r->dim.y;
 
@@ -243,16 +267,11 @@ dt_imageio_retval_t dt_imageio_open_rawspeed_sraw(dt_image_t *img, RawImage r, d
   void *buf = dt_mipmap_cache_alloc(mbuf, img);
   if(!buf) return DT_IMAGEIO_CACHE_FULL;
 
-  int black = r->blackLevel;
-  int white = r->whitePoint;
-
   uint16_t *raw_img = (uint16_t *)r->getDataUncropped(0, 0);
-
-  const float scale = (float)(white - black);
 
 #ifdef _OPENMP
 #pragma omp parallel for default(none) schedule(static) shared(raw_width, raw_height, raw_img, img,          \
-                                                               dimUncropped, cropTL, buf, black)
+                                                               dimUncropped, cropTL, buf)
 #endif
   for(size_t row = 0; row < raw_height; row++)
   {
@@ -271,7 +290,7 @@ dt_imageio_retval_t dt_imageio_open_rawspeed_sraw(dt_image_t *img, RawImage r, d
            * we need to copy data from only channel to each of 3 channels
            */
 
-          out[k] = MAX(0.0f, (((float)(*in)) - black) / scale);
+          out[k] = (float)*in / (float)UINT16_MAX;
         }
         else
         {
@@ -280,7 +299,7 @@ dt_imageio_retval_t dt_imageio_open_rawspeed_sraw(dt_image_t *img, RawImage r, d
            * just copy 3 ch to 3 ch
            */
 
-          out[k] = MAX(0.0f, (((float)(in[k])) - black) / scale);
+          out[k] = (float)in[k] / (float)UINT16_MAX;
         }
       }
     }
