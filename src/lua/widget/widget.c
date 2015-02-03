@@ -15,33 +15,53 @@
    You should have received a copy of the GNU General Public License
    along with darktable.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include "lua/widget/widget.h"
+#include "lua/widget/common.h"
+#include "lua/widget/common.h"
 #include "lua/types.h"
 #include "lua/modules.h"
 #include "lua/call.h"
 #include "control/control.h"
+#include "stdarg.h"
 /**
   TODO
   generic property member registration
-  generic container registration
   use name to save/restore states as pref like other widgets
   have a way to save presets
   storage lib looses index for lua storages, 
+  luastorage can't save presets
 
-  cleanup, not symetrical with init, maybe use lua_to to push ?
-    * or use only the size to malloc ourselves, push, pass to gui_init ?
-    * can't use __init because there is no way to pass params/detect if params are here in a reliable way 
-      * make all params optional ? is __init called as a do_chunk ?
   */
 
+dt_lua_widget_type_t widget_type = {
+  .name = "widget",
+  .gui_init = NULL,
+  .gui_cleanup = NULL,
+  .alloc_size = sizeof(dt_lua_widget_t),
+  .parent = NULL
+};
 
+
+static void init_widget_sub(lua_State *L,dt_lua_widget_type_t*widget_type);
+static void init_widget_sub(lua_State *L,dt_lua_widget_type_t*widget_type) {
+  if(widget_type->parent) 
+    init_widget_sub(L,widget_type->parent);
+  if(widget_type->gui_init) 
+    widget_type->gui_init(L);
+}
 static int get_widget_params(lua_State *L)
 {
   struct dt_lua_widget_type_t *widget_type = lua_touserdata(L, lua_upvalueindex(1));
-  widget_type->gui_init(L);
+  if(G_TYPE_IS_ABSTRACT(widget_type->gtk_type)){
+    luaL_error(L,"Trying to create a widget of an abstract type : %s\n",widget_type->name);
+  }
+  lua_widget widget= malloc(widget_type->alloc_size);
+  widget->widget = gtk_widget_new(widget_type->gtk_type,NULL);
+  g_object_ref_sink(widget->widget);
+  widget->type = widget_type;
+  luaA_push_type(L,widget_type->associated_type,&widget);
+  dt_lua_type_gpointer_alias_type(L,widget_type->associated_type,widget,widget->widget);
+  init_widget_sub(L,widget_type);
 
-  lua_widget widget;
-  luaA_to(L,lua_widget,&widget,-1);
   luaL_getmetafield(L,-1,"__gtk_signals");
   lua_pushnil(L); /* first key */
   while(lua_next(L, -2) != 0)
@@ -65,11 +85,12 @@ static int widget_gc(lua_State *L)
   return 0;
 }
 
-luaA_Type dt_lua_init_widget_type_type(lua_State *L, dt_lua_widget_type_t* widget_type,const char* lua_type)
+luaA_Type dt_lua_init_widget_type_type(lua_State *L, dt_lua_widget_type_t* widget_type,const char* lua_type,GType gtk_type)
 {
   luaA_Type type_id = dt_lua_init_gpointer_type_type(L,luaA_type_add(L,lua_type,sizeof(gpointer)));
   widget_type->associated_type = type_id;
-  dt_lua_type_register_parent_type(L, type_id, luaA_type_find(L, "lua_widget"));
+  widget_type->gtk_type = gtk_type;
+  dt_lua_type_register_parent_type(L, type_id, widget_type->parent->associated_type);
 
   lua_newtable(L);
   dt_lua_type_setmetafield_type(L,type_id,"__gtk_signals");
@@ -112,23 +133,39 @@ void dt_lua_widget_get_callback(lua_State *L,int index,const char* name)
 }
 
 
-
-void dt_lua_widget_trigger_callback(lua_State*L,lua_widget object,const char* name)
+void dt_lua_widget_trigger_callback_glist(lua_State*L,lua_widget object,const char* name,GList*extra)
 {
   luaA_push_type(L,object->type->associated_type,&object);
   lua_getuservalue(L,-1);
   lua_getfield(L,-1,name);
   if(! lua_isnil(L,-1)) {
     lua_pushvalue(L,-3);
-    dt_lua_do_chunk(L,1,0);
+    GList* cur_elt = extra;
+    int nargs = 1;
+    while(cur_elt) {
+      const char* next_type = cur_elt->data;
+      cur_elt = g_list_next(cur_elt);
+      luaA_push_type(L,luaA_type_find(L,next_type),&cur_elt->data);
+      nargs++;
+      cur_elt = g_list_next(cur_elt);
+    }
+    dt_lua_do_chunk(L,nargs,0);
   }
+  dt_lua_redraw_screen();
+  g_list_free(extra);
   lua_pop(L,2);
+}
+
+void dt_lua_widget_trigger_callback(lua_State*L,lua_widget object,const char* name)
+{
+  dt_lua_widget_trigger_callback_glist(L,object,name,NULL);
 }
 
 
 typedef struct {
   lua_widget object;
   char * event_name;
+  GList* extra;
 }widget_callback_data;
 
 
@@ -137,7 +174,7 @@ static int32_t widget_callback_job(dt_job_t *job)
   dt_lua_lock();
   lua_State* L= darktable.lua_state.state;
   widget_callback_data* data = (widget_callback_data*)dt_control_job_get_params(job);
-  dt_lua_widget_trigger_callback(L,data->object,data->event_name);
+  dt_lua_widget_trigger_callback_glist(L,data->object,data->event_name,data->extra);
   free(data->event_name);
   free(data);
   dt_lua_unlock();
@@ -145,7 +182,7 @@ static int32_t widget_callback_job(dt_job_t *job)
 
 }
 
-void dt_lua_widget_trigger_callback_async(lua_widget object,const char* name)
+void dt_lua_widget_trigger_callback_async(lua_widget object,const char* name,const char* type_name,...)
 {
   dt_job_t *job = dt_control_job_create(&widget_callback_job, "lua: widget event");
   if(job)
@@ -153,6 +190,18 @@ void dt_lua_widget_trigger_callback_async(lua_widget object,const char* name)
     widget_callback_data*data = malloc(sizeof(widget_callback_data));
     data->object = object;
     data->event_name = strdup(name);
+    data->extra=NULL;
+    va_list ap;
+    va_start(ap,type_name);
+    const char *cur_type = type_name;
+    while(cur_type ){
+      data->extra=g_list_append(data->extra,GINT_TO_POINTER(cur_type));
+      data->extra=g_list_append(data->extra,va_arg(ap,gpointer));
+      cur_type = va_arg(ap,const char*);
+
+    }
+    va_end(ap);
+    
     dt_control_job_set_params(job, data);
     dt_control_add_job(darktable.control, DT_JOB_QUEUE_USER_FG, job);
   }
@@ -214,20 +263,25 @@ void dt_lua_widget_register_gtk_callback_type(lua_State *L,luaA_Type type_id,con
   
 }
 
-extern int dt_lua_init_widget_box(lua_State* L);
-extern int dt_lua_init_widget_button(lua_State* L);
-extern int dt_lua_init_widget_check_button(lua_State* L);
-extern int dt_lua_init_widget_label(lua_State* L);
-extern int dt_lua_init_widget_entry(lua_State* L);
-extern int dt_lua_init_widget_file_chooser_button(lua_State* L);
-extern int dt_lua_init_widget_separator(lua_State* L);
-extern int dt_lua_init_widget_combobox(lua_State* L);
+int widget_call(lua_State *L)
+{
+  lua_pushnil(L); /* first key */
+  while(lua_next(L, 2) != 0)
+  {
+    lua_pushvalue(L,-2);
+    lua_pushvalue(L,-2);
+    lua_settable(L,1);
+    lua_pop(L,1);
+  }
+  lua_pop(L,1);
+  return 1;
+}
 
 int dt_lua_init_widget(lua_State* L)
 {
   dt_lua_module_new(L,"widget");
 
-  dt_lua_init_gpointer_type(L,lua_widget);
+  widget_type.associated_type = dt_lua_init_gpointer_type(L,lua_widget);
   lua_pushcfunction(L,tooltip_member);
   lua_pushcclosure(L,dt_lua_gtk_wrap,1);
   dt_lua_type_register(L, lua_widget, "tooltip");
@@ -236,7 +290,10 @@ int dt_lua_init_widget(lua_State* L)
   dt_lua_type_setmetafield(L,lua_widget,"__gc");
   lua_pushcfunction(L,reset_member);
   dt_lua_type_register(L, lua_widget, "reset_callback");
+  lua_pushcfunction(L,widget_call);
+  dt_lua_type_setmetafield(L,lua_widget,"__call");
   
+  dt_lua_init_widget_container(L);
   dt_lua_init_widget_box(L);
   dt_lua_init_widget_button(L);
   dt_lua_init_widget_check_button(L);

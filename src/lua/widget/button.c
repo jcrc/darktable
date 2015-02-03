@@ -15,51 +15,22 @@
    You should have received a copy of the GNU General Public License
    along with darktable.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include "lua/widget/widget.h"
+#include "lua/widget/common.h"
 #include "lua/types.h"
 
-typedef struct {
-  dt_lua_widget_t parent;
-} dt_lua_button_t;
-
-typedef dt_lua_button_t* lua_button;
-
-static void button_init(lua_State* L);
 static dt_lua_widget_type_t button_type = {
   .name = "button",
-  .gui_init = button_init,
+  .gui_init = NULL,
   .gui_cleanup = NULL,
+  .alloc_size = sizeof(dt_lua_widget_t),
+  .parent= &widget_type
 };
 
 static void clicked_callback(GtkButton *widget, gpointer user_data)
 {
-  dt_lua_widget_trigger_callback_async((lua_widget)user_data,"clicked");
+  dt_lua_widget_trigger_callback_async((lua_widget)user_data,"clicked",NULL);
 }
 
-static void button_init(lua_State* L)
-{
-  const char * new_value = NULL;
-  lua_settop(L,2);
-  if(!lua_isnil(L,1)){
-    new_value = luaL_checkstring(L,1);
-  }
-  lua_button button = malloc(sizeof(dt_lua_button_t));
-  if(new_value) {
-    button->parent.widget = gtk_button_new_with_label(new_value);
-  } else {
-    button->parent.widget = gtk_button_new();
-  }
-
-
-  button->parent.type = &button_type;
-  luaA_push_type(L, button_type.associated_type, &button);
-  g_object_ref_sink(button->parent.widget);
-
-  if(!lua_isnil(L,2)){
-    lua_pushvalue(L,2);
-    dt_lua_widget_set_callback(L,-2,"clicked");
-  }
-}
 
 
 
@@ -69,16 +40,16 @@ static int label_member(lua_State *L)
   luaA_to(L,lua_button,&button,1);
   if(lua_gettop(L) > 2) {
     const char * label = luaL_checkstring(L,3);
-    gtk_button_set_label(GTK_BUTTON(button->parent.widget),label);
+    gtk_button_set_label(GTK_BUTTON(button->widget),label);
     return 0;
   }
-  lua_pushstring(L,gtk_button_get_label(GTK_BUTTON(button->parent.widget)));
+  lua_pushstring(L,gtk_button_get_label(GTK_BUTTON(button->widget)));
   return 1;
 }
 
 int dt_lua_init_widget_button(lua_State* L)
 {
-  dt_lua_init_widget_type(L,&button_type,lua_button);
+  dt_lua_init_widget_type(L,&button_type,lua_button,GTK_TYPE_BUTTON);
 
   lua_pushcfunction(L,label_member);
   lua_pushcclosure(L,dt_lua_gtk_wrap,1);

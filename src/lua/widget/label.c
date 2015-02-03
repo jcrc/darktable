@@ -15,40 +15,17 @@
    You should have received a copy of the GNU General Public License
    along with darktable.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include "lua/widget/widget.h"
+#include "lua/widget/common.h"
 #include "lua/types.h"
 
-typedef struct {
-  dt_lua_widget_t parent;
-} dt_lua_label_t;
-
-typedef dt_lua_label_t* lua_label;
-
-static void label_init(lua_State* L);
 static dt_lua_widget_type_t label_type = {
   .name = "label",
-  .gui_init = label_init,
+  .gui_init = NULL,
   .gui_cleanup = NULL,
+  .alloc_size = sizeof(dt_lua_widget_t),
+  .parent= &widget_type
 };
 
-
-static void label_init(lua_State* L)
-{
-  const char * new_value = NULL;
-  if(!lua_isnoneornil(L,1)){
-    new_value = luaL_checkstring(L,1);
-  }
-  lua_label label = malloc(sizeof(dt_lua_label_t));
-  if(new_value) {
-    label->parent.widget = gtk_label_new(new_value);
-  } else {
-    label->parent.widget = gtk_label_new(NULL);
-  }
-  label->parent.type = &label_type;
-  luaA_push_type(L, label_type.associated_type, &label);
-  g_object_ref_sink(label->parent.widget);
-
-}
 
 static int label_member(lua_State *L)
 {
@@ -56,16 +33,16 @@ static int label_member(lua_State *L)
   luaA_to(L,lua_label,&label,1);
   if(lua_gettop(L) > 2) {
     const char * text = luaL_checkstring(L,3);
-    gtk_label_set_text(GTK_LABEL(label->parent.widget),text);
+    gtk_label_set_text(GTK_LABEL(label->widget),text);
     return 0;
   }
-  lua_pushstring(L,gtk_label_get_text(GTK_LABEL(label->parent.widget)));
+  lua_pushstring(L,gtk_label_get_text(GTK_LABEL(label->widget)));
   return 1;
 }
 
 int dt_lua_init_widget_label(lua_State* L)
 {
-  dt_lua_init_widget_type(L,&label_type,lua_label);
+  dt_lua_init_widget_type(L,&label_type,lua_label,GTK_TYPE_LABEL);
 
   lua_pushcfunction(L,label_member);
   lua_pushcclosure(L,dt_lua_gtk_wrap,1);

@@ -81,17 +81,23 @@ local function document_type_sub(node,result,parent,prev_name)
 		elseif field == "__singleton" then
 			set_attribute(result,"is_singleton",true)
 		elseif field == "__number_index" then
-			nojoin[value] = true
-			result["#"] = document_unknown(value,result,"#")
-			set_attribute(result["#"],"read",true)
-			set_attribute(result["#"],"is_attribute",true)
+      if not node.__luaA_ParentMetatable or
+        node.__luaA_ParentMetatable.__number_index ~= value then
+        nojoin[value] = true
+        result["#"] = document_unknown(value,result,"#")
+        set_attribute(result["#"],"read",true)
+        set_attribute(result["#"],"is_attribute",true)
+      end
 		elseif field == "__number_newindex" then
-			nojoin[value] = true
-			if not result["#"] then
-				result["#"] = document_unknown(value,result,"#")
-			end
-			set_attribute(result["#"],"write",true)
-			set_attribute(result["#"],"is_attribute",true)
+      if not node.__luaA_ParentMetatable or
+        node.__luaA_ParentMetatable.__number_newindex ~= value then
+        nojoin[value] = true
+        if not result["#"] then
+          result["#"] = document_unknown(value,result,"#")
+        end
+        set_attribute(result["#"],"write",true)
+        set_attribute(result["#"],"is_attribute",true)
+      end
 		elseif field == "__get" then
 			for k,v in pairs(node.__get) do
 				if not node.__luaA_ParentMetatable or
@@ -116,6 +122,9 @@ local function document_type_sub(node,result,parent,prev_name)
 		elseif field == "__luaA_ParentMetatable" then
 			local type_node = create_node(value,toplevel.types,value.__luaA_TypeName);
 			set_attribute(result,"parent",type_node)
+		elseif field == "__call" then
+     result["__call"] =  create_node(value,result,"__call")
+     result["__call"]:set_real_name("As a function")
 		elseif (field == "__index"
 			or field == "__newindex"
 			or field == "__luaA_TypeName"
@@ -696,18 +705,11 @@ function M.all_children(node)
 
   -- create one widget of each type
 	for k, v in pairs(registry.dt_lua_modules.widget) do
-    local res
-    if k == "box" or k == "separator" then
-      res = v("horizontal","")
-    elseif k == "file_chooser_button" then
-      res = v(true,"")
-    else
-      res = v("")
+    success,res = pcall(v)
+    if success then
+      local thetype= toplevel.types[dt.debug.type(res)]
+      document_from_obj(res,thetype)
     end
-    local thetype= toplevel.types[dt.debug.type(res)]
-		document_from_obj(res,thetype)
-    thetype.extra_registration_parameters = create_documentation_node(nil,thetype,"extra_registration_parameters");
-    thetype.extra_registration_parameters:set_real_name("extra registration parameters")
 	end
 
   local collect_data = dt.gui.libs.collect.filter()

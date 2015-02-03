@@ -15,50 +15,20 @@
    You should have received a copy of the GNU General Public License
    along with darktable.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include "lua/widget/widget.h"
+#include "lua/widget/common.h"
 #include "lua/types.h"
 
-typedef struct {
-  dt_lua_widget_t parent;
-} dt_lua_check_button_t;
-
-typedef dt_lua_check_button_t* lua_check_button;
-
-static void check_button_init(lua_State* L);
 static dt_lua_widget_type_t check_button_type = {
   .name = "check_button",
-  .gui_init = check_button_init,
+  .gui_init = NULL,
   .gui_cleanup = NULL,
+  .alloc_size = sizeof(dt_lua_widget_t),
+  .parent= &widget_type
 };
 
 static void clicked_callback(GtkButton *widget, gpointer user_data)
 {
-  dt_lua_widget_trigger_callback_async((lua_widget)user_data,"clicked");
-}
-
-static void check_button_init(lua_State* L)
-{
-  lua_settop(L,3);
-  const char * new_value = NULL;
-  if(!lua_isnil(L,1)){
-    new_value = luaL_checkstring(L,1);
-  }
-  lua_check_button check_button = malloc(sizeof(dt_lua_check_button_t));
-  if(new_value) {
-    check_button->parent.widget = gtk_check_button_new_with_label(new_value);
-  } else {
-    check_button->parent.widget = gtk_check_button_new();
-  }
-  gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(check_button->parent.widget),lua_toboolean(L,2));
-
-  check_button->parent.type = &check_button_type;
-  luaA_push_type(L, check_button_type.associated_type, &check_button);
-  g_object_ref_sink(check_button->parent.widget);
-
-  if(!lua_isnil(L,3)){
-    lua_pushvalue(L,3);
-    dt_lua_widget_set_callback(L,-2,"clicked");
-  }
+  dt_lua_widget_trigger_callback_async((lua_widget)user_data,"clicked",NULL);
 }
 
 static int label_member(lua_State *L)
@@ -67,10 +37,10 @@ static int label_member(lua_State *L)
   luaA_to(L,lua_check_button,&check_button,1);
   if(lua_gettop(L) > 2) {
     const char * label = luaL_checkstring(L,3);
-    gtk_button_set_label(GTK_BUTTON(check_button->parent.widget),label);
+    gtk_button_set_label(GTK_BUTTON(check_button->widget),label);
     return 0;
   }
-  lua_pushstring(L,gtk_button_get_label(GTK_BUTTON(check_button->parent.widget)));
+  lua_pushstring(L,gtk_button_get_label(GTK_BUTTON(check_button->widget)));
   return 1;
 }
 
@@ -81,16 +51,16 @@ static int value_member(lua_State *L)
   if(lua_gettop(L) > 2) {
     luaL_checktype(L,3,LUA_TBOOLEAN);
     gboolean value = lua_toboolean(L,3);
-    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(check_button->parent.widget),value);
+    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(check_button->widget),value);
     return 0;
   }
-  lua_pushboolean(L,gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(check_button->parent.widget)));
+  lua_pushboolean(L,gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(check_button->widget)));
   return 1;
 }
 
 int dt_lua_init_widget_check_button(lua_State* L)
 {
-  dt_lua_init_widget_type(L,&check_button_type,lua_check_button);
+  dt_lua_init_widget_type(L,&check_button_type,lua_check_button,GTK_TYPE_CHECK_BUTTON);
 
   lua_pushcfunction(L,value_member);
   lua_pushcclosure(L,dt_lua_gtk_wrap,1);
