@@ -133,8 +133,9 @@ void dt_lua_widget_get_callback(lua_State *L,int index,const char* name)
 }
 
 
-void dt_lua_widget_trigger_callback_glist(lua_State*L,lua_widget object,const char* name,GList*extra)
+int dt_lua_widget_trigger_callback_glist(lua_State*L,lua_widget object,const char* name,GList*extra)
 {
+  int result = LUA_OK;
   luaA_push_type(L,object->type->associated_type,&object);
   lua_getuservalue(L,-1);
   lua_getfield(L,-1,name);
@@ -149,16 +150,21 @@ void dt_lua_widget_trigger_callback_glist(lua_State*L,lua_widget object,const ch
       nargs++;
       cur_elt = g_list_next(cur_elt);
     }
-    dt_lua_do_chunk(L,nargs,0);
+    result = dt_lua_do_chunk(L,nargs,0);
+    if(result != LUA_OK) {
+      //save the error message below what will be popped
+      lua_insert(L,-3);
+    }
   }
+  lua_pop(L,2);
   dt_lua_redraw_screen();
   g_list_free(extra);
-  lua_pop(L,2);
+  return result;
 }
 
-void dt_lua_widget_trigger_callback(lua_State*L,lua_widget object,const char* name)
+int dt_lua_widget_trigger_callback(lua_State*L,lua_widget object,const char* name)
 {
-  dt_lua_widget_trigger_callback_glist(L,object,name,NULL);
+  return dt_lua_widget_trigger_callback_glist(L,object,name,NULL);
 }
 
 
@@ -174,7 +180,15 @@ static int32_t widget_callback_job(dt_job_t *job)
   dt_lua_lock();
   lua_State* L= darktable.lua_state.state;
   widget_callback_data* data = (widget_callback_data*)dt_control_job_get_params(job);
-  dt_lua_widget_trigger_callback_glist(L,data->object,data->event_name,data->extra);
+  int result = dt_lua_widget_trigger_callback_glist(L,data->object,data->event_name,data->extra);
+  if(result != LUA_OK)
+  {
+    if(darktable.unmuted & DT_DEBUG_LUA)
+    {
+      dt_print(DT_DEBUG_LUA, "LUA ERROR : %s", lua_tostring(L, -1));
+    }
+    lua_pop(L, 1); // remove the error message
+  }
   free(data->event_name);
   free(data);
   dt_lua_unlock();
@@ -294,6 +308,7 @@ int dt_lua_init_widget(lua_State* L)
   dt_lua_type_setmetafield(L,lua_widget,"__call");
   
   dt_lua_init_widget_container(L);
+
   dt_lua_init_widget_box(L);
   dt_lua_init_widget_button(L);
   dt_lua_init_widget_check_button(L);
@@ -302,6 +317,7 @@ int dt_lua_init_widget(lua_State* L)
   dt_lua_init_widget_entry(L);
   dt_lua_init_widget_file_chooser_button(L);
   dt_lua_init_widget_separator(L);
+  dt_lua_init_widget_stack(L);
 
   luaA_enum(L,dt_lua_orientation_t);
   luaA_enum_value_name(L,dt_lua_orientation_t,GTK_ORIENTATION_HORIZONTAL,"horizontal");
