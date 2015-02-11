@@ -253,6 +253,7 @@ darktable.preferences.register:add_parameter("name","string",[[A unique name use
 darktable.preferences.register:add_parameter("type",types.lua_pref_type,[[The type of the preference - one of the string values described above.]])
 darktable.preferences.register:add_parameter("label","string",[[The label displayed in the preference screen.]])
 darktable.preferences.register:add_parameter("tooltip","string",[[The tooltip to display in the preference menue.]])
+darktable.preferences.register:add_parameter("sensitive","boolean",[[True if the widget can be interacted with.]])
 darktable.preferences.register:add_parameter("default","depends on type",[[Default value to use when not set explicitely or by the user.]]..para().."For the enum type of pref, this is mandatory"):set_attribute("optional",true)
 darktable.preferences.register:add_parameter("min","int or float",[[Minimum value (integer and float preferences only).]]):set_attribute("optional",true)
 darktable.preferences.register:add_parameter("max","int or float",[[Maximum value (integer and float preferences only).]]):set_attribute("optional",true)
@@ -364,6 +365,7 @@ darktable.gui.views.darkroom:set_text([[The darkroom view]])
 darktable.gui.views.lighttable:set_text([[The lighttable view]])
 darktable.gui.views.tethering:set_text([[The tethering view]])
 darktable.gui.views.slideshow:set_text([[The slideshow view]])
+darktable.gui.views.print:set_text([[The print view]])
 
 --[[
 for k, v in darktable.gui.libs:unskiped_children() do
@@ -442,6 +444,7 @@ darktable.gui.libs.map_settings:set_text([[The map setting window]])
 darktable.gui.libs.camera:set_text([[The camera selection UI]])
 darktable.gui.libs.location:set_text([[The location ui]])
 darktable.gui.libs.backgroundjobs:set_text([[The window displaying the currently running jobs]])
+darktable.gui.libs.print_settings:set_text([[The settings window in the print view]])
 
 
 darktable.control:set_text([[This table contain function to manipulate the control flow of lua programs. It provides ways to do background jobs and other related functions]])
@@ -561,6 +564,7 @@ darktable.debug.type:set_text([[Similar to the system function type() but it wil
 	types.dt_imageio_module_format_t.write_image:add_parameter("self",types.dt_imageio_module_format_t,[[The format that will be used to export.]]):set_attribute("is_self",true)
 	types.dt_imageio_module_format_t.write_image:add_parameter("image",types.dt_lua_image_t,[[The image object to export.]])
 	types.dt_imageio_module_format_t.write_image:add_parameter("filename","string",[[The filename to export to.]])
+	types.dt_imageio_module_format_t.write_image:add_parameter("allow_upscale","boolean",[[Set to true to allow upscaling of the image.]]):set_attribute("optional",true)
 	types.dt_imageio_module_format_t.write_image:add_return("boolean",[[Returns true on success.]])
 
 	types.dt_imageio_module_format_data_png:set_text([[Type object describing parameters to export to png.]])
@@ -691,10 +695,11 @@ darktable.debug.type:set_text([[Similar to the system function type() but it wil
   types.dt_lua_orientation_t:set_text("A possible orientation for a widget")
 
   types.lua_widget:set_text("Common parent type for all lua-handled widgets");
+  types.lua_widget.sensitive:set_text("Set if the widget is enabled/disabled");
   types.lua_widget.tooltip:set_text("Tooltip to display for the widget");
   types.lua_widget.tooltip:set_reported_type("string or nil")
   types.lua_widget.reset_callback:set_text("A function to call when the widget needs to reset itself"..para()..
-  "Note that some widgets have a default implementation that can be overridden, (containers in particular will recursively reset their children). If you replace that default implementation you need to reimplement that functionality")
+  "Note that some widgets have a default implementation that can be overridden, (containers in particular will recursively reset their children). If you replace that default implementation you need to reimplement that functionality or call the original function within your callback")
   types.lua_widget.reset_callback:set_reported_type("function")
   types.lua_widget.reset_callback:add_parameter("widget",types.lua_widget,"The widget that triggered the callback")
   types.lua_widget.__call:set_main_parent(types.lua_widget)

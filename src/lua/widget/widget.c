@@ -27,7 +27,6 @@
   generic property member registration
   use name to save/restore states as pref like other widgets
   have a way to save presets
-  storage lib looses index for lua storages, 
   luastorage can't save presets
 
   */
@@ -155,6 +154,9 @@ int dt_lua_widget_trigger_callback_glist(lua_State*L,lua_widget object,const cha
       //save the error message below what will be popped
       lua_insert(L,-3);
     }
+  } else {
+    // pop the nil that would be the function in the normal path
+    lua_pop(L,1);
   }
   lua_pop(L,2);
   dt_lua_redraw_screen();
@@ -196,7 +198,7 @@ static int32_t widget_callback_job(dt_job_t *job)
 
 }
 
-void dt_lua_widget_trigger_callback_async(lua_widget object,const char* name,const char* type_name,...)
+void dt_lua_widget_trigger_callback_async(lua_widget object,const char* name,char* type_name,...)
 {
   dt_job_t *job = dt_control_job_create(&widget_callback_job, "lua: widget event");
   if(job)
@@ -207,11 +209,11 @@ void dt_lua_widget_trigger_callback_async(lua_widget object,const char* name,con
     data->extra=NULL;
     va_list ap;
     va_start(ap,type_name);
-    const char *cur_type = type_name;
+    char *cur_type = type_name;
     while(cur_type ){
-      data->extra=g_list_append(data->extra,GINT_TO_POINTER(cur_type));
+      data->extra=g_list_append(data->extra,cur_type);
       data->extra=g_list_append(data->extra,va_arg(ap,gpointer));
-      cur_type = va_arg(ap,const char*);
+      cur_type = va_arg(ap,char*);
 
     }
     va_end(ap);
@@ -248,6 +250,20 @@ static int tooltip_member(lua_State *L)
   char* result = gtk_widget_get_tooltip_text(widget->widget);
   lua_pushstring(L,result);
   free(result);
+  return 1;
+}
+
+static int sensitive_member(lua_State *L)
+{
+  lua_widget widget;
+  luaA_to(L,lua_widget,&widget,1);
+  if(lua_gettop(L) > 2) {
+    gboolean value = lua_toboolean(L,3);
+    gtk_widget_set_sensitive(widget->widget,value);
+    return 0;
+  }
+  gboolean result = gtk_widget_get_sensitive(widget->widget);
+  lua_pushboolean(L,result);
   return 1;
 }
 
@@ -306,6 +322,9 @@ int dt_lua_init_widget(lua_State* L)
   dt_lua_type_register(L, lua_widget, "reset_callback");
   lua_pushcfunction(L,widget_call);
   dt_lua_type_setmetafield(L,lua_widget,"__call");
+  lua_pushcfunction(L,sensitive_member);
+  lua_pushcclosure(L,dt_lua_gtk_wrap,1);
+  dt_lua_type_register(L, lua_widget, "sensitive");
   
   dt_lua_init_widget_container(L);
 

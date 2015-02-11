@@ -817,6 +817,27 @@
     </tgroup></informaltable>
 </section>
 
+<section status="final" id="darktable_gui_views_print">
+<title>darktable.gui.views.print</title>
+<indexterm>
+<primary>Lua API</primary>
+<secondary>print</secondary>
+</indexterm>
+<para>The print view</para>
+<informaltable frame="none" width="80%"><tgroup cols="2" colsep="0" rowsep="0">
+    <colspec colwidth="2*"/>
+    <colspec colwidth="8*"/>
+    <tbody><row>
+    <entry>Attributes:</entry>
+    <entry><itemizedlist>
+<listitem><para><emphasis><link linkend="attributes_has_tostring">has_tostring</link></emphasis></para></listitem>
+<listitem><para><emphasis><link linkend="attributes_parent">parent</link> : </emphasis><link linkend="types_dt_view_t">types.dt_view_t</link></para></listitem>
+</itemizedlist>
+</entry>
+    </row></tbody>
+    </tgroup></informaltable>
+</section>
+
 </section>
 
 <section status="final" id="darktable_gui_libs">
@@ -1787,6 +1808,27 @@ end</programlisting></para>
     </tgroup></informaltable>
 </section>
 
+<section status="final" id="darktable_gui_libs_print_settings">
+<title>darktable.gui.libs.print_settings</title>
+<indexterm>
+<primary>Lua API</primary>
+<secondary>print_settings</secondary>
+</indexterm>
+<para>The settings window in the print view</para>
+<informaltable frame="none" width="80%"><tgroup cols="2" colsep="0" rowsep="0">
+    <colspec colwidth="2*"/>
+    <colspec colwidth="8*"/>
+    <tbody><row>
+    <entry>Attributes:</entry>
+    <entry><itemizedlist>
+<listitem><para><emphasis><link linkend="attributes_has_tostring">has_tostring</link></emphasis></para></listitem>
+<listitem><para><emphasis><link linkend="attributes_parent">parent</link> : </emphasis><link linkend="types_dt_lib_module_t">types.dt_lib_module_t</link></para></listitem>
+</itemizedlist>
+</entry>
+    </row></tbody>
+    </tgroup></informaltable>
+</section>
+
 </section>
 
 </section>
@@ -2157,6 +2199,7 @@ end</programlisting></para>
 	<emphasis><link linkend="darktable_preferences_register_type">type</link></emphasis> : <link linkend="types_lua_pref_type">types.lua_pref_type</link>, 
 	<emphasis><link linkend="darktable_preferences_register_label">label</link></emphasis> : string, 
 	<emphasis><link linkend="darktable_preferences_register_tooltip">tooltip</link></emphasis> : string, 
+	<emphasis><link linkend="darktable_preferences_register_sensitive">sensitive</link></emphasis> : boolean, 
 	[<emphasis><link linkend="darktable_preferences_register_default">default</link></emphasis> : depends on type], 
 	[<emphasis><link linkend="darktable_preferences_register_min">min</link></emphasis> : int or float], 
 	[<emphasis><link linkend="darktable_preferences_register_max">max</link></emphasis> : int or float], 
@@ -2193,6 +2236,12 @@ end</programlisting></para>
 <varlistentry id="darktable_preferences_register_tooltip"><term>tooltip</term><listitem>
 <synopsis>string</synopsis>
 <para>The tooltip to display in the preference menue.</para>
+
+</listitem></varlistentry>
+
+<varlistentry id="darktable_preferences_register_sensitive"><term>sensitive</term><listitem>
+<synopsis>boolean</synopsis>
+<para>True if the widget can be interacted with.</para>
 
 </listitem></varlistentry>
 
@@ -3792,7 +3841,8 @@ This function is recursion-safe and can be used to dump _G if needed.</para>
 </indexterm>
 <synopsis>self:function( 
 	<emphasis><link linkend="types_dt_imageio_module_format_t_write_image_image">image</link></emphasis> : <link linkend="types_dt_lua_image_t">types.dt_lua_image_t</link>, 
-	<emphasis><link linkend="types_dt_imageio_module_format_t_write_image_filename">filename</link></emphasis> : string
+	<emphasis><link linkend="types_dt_imageio_module_format_t_write_image_filename">filename</link></emphasis> : string, 
+	[<emphasis><link linkend="types_dt_imageio_module_format_t_write_image_allow_upscale">allow_upscale</link></emphasis> : boolean]
 ) : boolean</synopsis>
 <para>Exports an image to a file. This is a blocking operation that will not return until the image is exported.</para>
 <informaltable frame="none" width="80%"><tgroup cols="2" colsep="0" rowsep="0">
@@ -3822,6 +3872,12 @@ This function is recursion-safe and can be used to dump _G if needed.</para>
 <varlistentry id="types_dt_imageio_module_format_t_write_image_filename"><term>filename</term><listitem>
 <synopsis>string</synopsis>
 <para>The filename to export to.</para>
+
+</listitem></varlistentry>
+
+<varlistentry id="types_dt_imageio_module_format_t_write_image_allow_upscale"><term>[allow_upscale]</term><listitem>
+<synopsis>boolean</synopsis>
+<para>Set to true to allow upscaling of the image.</para>
 
 </listitem></varlistentry>
 
@@ -5526,7 +5582,17 @@ This function is recursion-safe and can be used to dump _G if needed.</para>
 </indexterm>
 <synopsis><link linkend="types_dt_lua_lib_collect_params_rule_t">types.dt_lua_lib_collect_params_rule_t</link></synopsis>
 <para>Each rule has a numeric index. You can add a rule by setting a rule after the last valid one, you can remove a rule by setting it to nil</para>
-
+<informaltable frame="none" width="80%"><tgroup cols="2" colsep="0" rowsep="0">
+    <colspec colwidth="2*"/>
+    <colspec colwidth="8*"/>
+    <tbody><row>
+    <entry>Attributes:</entry>
+    <entry><itemizedlist>
+<listitem><para><emphasis><link linkend="attributes_write">write</link></emphasis></para></listitem>
+</itemizedlist>
+</entry>
+    </row></tbody>
+    </tgroup></informaltable>
 </section>
 
 </section>
@@ -5709,6 +5775,27 @@ This function is recursion-safe and can be used to dump _G if needed.</para>
 <synopsis>dt_type</synopsis>
 <para>Common parent type for all lua-handled widgets</para>
 
+<section status="final" id="types_lua_widget_sensitive">
+<title>types.lua_widget.sensitive</title>
+<indexterm>
+<primary>Lua API</primary>
+<secondary>sensitive</secondary>
+</indexterm>
+<synopsis>boolean</synopsis>
+<para>Set if the widget is enabled/disabled</para>
+<informaltable frame="none" width="80%"><tgroup cols="2" colsep="0" rowsep="0">
+    <colspec colwidth="2*"/>
+    <colspec colwidth="8*"/>
+    <tbody><row>
+    <entry>Attributes:</entry>
+    <entry><itemizedlist>
+<listitem><para><emphasis><link linkend="attributes_write">write</link></emphasis></para></listitem>
+</itemizedlist>
+</entry>
+    </row></tbody>
+    </tgroup></informaltable>
+</section>
+
 <section status="final" id="types_lua_widget_tooltip">
 <title>types.lua_widget.tooltip</title>
 <indexterm>
@@ -5740,7 +5827,7 @@ This function is recursion-safe and can be used to dump _G if needed.</para>
 	<emphasis><link linkend="types_lua_widget_reset_callback_widget">widget</link></emphasis> : <link linkend="types_lua_widget">types.lua_widget</link>
 )</synopsis>
 <para>A function to call when the widget needs to reset itself</para>
-<para>Note that some widgets have a default implementation that can be overridden, (containers in particular will recursively reset their children). If you replace that default implementation you need to reimplement that functionality</para>
+<para>Note that some widgets have a default implementation that can be overridden, (containers in particular will recursively reset their children). If you replace that default implementation you need to reimplement that functionality or call the original function within your callback</para>
 <informaltable frame="none" width="80%"><tgroup cols="2" colsep="0" rowsep="0">
     <colspec colwidth="2*"/>
     <colspec colwidth="8*"/>
