@@ -486,6 +486,10 @@ int dt_init(int argc, char *argv[], const int init_gui, lua_State *L)
   char *configdir_from_command = NULL;
   char *cachedir_from_command = NULL;
 
+#ifdef HAVE_OPENCL
+  gboolean exclude_opencl = FALSE;
+#endif
+
 #ifdef USE_LUA
   char *lua_command = NULL;
 #endif
@@ -652,6 +656,12 @@ int dt_init(int argc, char *argv[], const int init_gui, lua_State *L)
         lua_command = argv[++k];
 #else
         ++k;
+#endif
+      }
+      else if(!strcmp(argv[k], "--disable-opencl"))
+      {
+#ifdef HAVE_OPENCL
+        exclude_opencl = TRUE;
 #endif
       }
       else if(!strcmp(argv[k], "--"))
@@ -821,7 +831,7 @@ int dt_init(int argc, char *argv[], const int init_gui, lua_State *L)
 
   darktable.opencl = (dt_opencl_t *)calloc(1, sizeof(dt_opencl_t));
 #ifdef HAVE_OPENCL
-  dt_opencl_init(darktable.opencl, argc, argv);
+  dt_opencl_init(darktable.opencl, exclude_opencl);
 #endif
 
   darktable.blendop = (dt_blendop_t *)calloc(1, sizeof(dt_blendop_t));
@@ -853,8 +863,13 @@ int dt_init(int argc, char *argv[], const int init_gui, lua_State *L)
   else
     darktable.gui = NULL;
 
-  darktable.view_manager = (dt_view_manager_t *)calloc(1, sizeof(dt_view_manager_t));
-  dt_view_manager_init(darktable.view_manager);
+  if(init_gui)
+  {
+    darktable.view_manager = (dt_view_manager_t *)calloc(1, sizeof(dt_view_manager_t));
+    dt_view_manager_init(darktable.view_manager);
+  }
+  else
+    darktable.view_manager = NULL;
 
   darktable.imageio = (dt_imageio_t *)calloc(1, sizeof(dt_imageio_t));
   dt_imageio_init(darktable.imageio);
