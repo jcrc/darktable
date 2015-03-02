@@ -1210,8 +1210,7 @@ void dt_iop_load_modules_so()
     // get lib*.so
     if(!g_str_has_prefix(d_name, SHARED_MODULE_PREFIX)) continue;
     if(!g_str_has_suffix(d_name, SHARED_MODULE_SUFFIX)) continue;
-    strncpy(op, d_name + name_offset, strlen(d_name) - name_end);
-    op[strlen(d_name) - name_end] = '\0';
+    g_strlcpy(op, d_name + name_offset, MIN(sizeof(op), strlen(d_name) - name_end + 1));
     module = (dt_iop_module_so_t *)calloc(1, sizeof(dt_iop_module_so_t));
     gchar *libname = g_module_build_path(plugindir, (const gchar *)op);
     if(dt_iop_load_module_so(module, libname, op))
@@ -1223,6 +1222,7 @@ void dt_iop_load_modules_so()
     res = g_list_append(res, module);
     init_presets(module);
 
+    // do not init accelerators if there is no gui
     if(darktable.gui)
     {
       // Calling the accelerator initialization callback, if present
