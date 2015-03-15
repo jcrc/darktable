@@ -964,6 +964,9 @@
 		</CFA>
 		<Crop x="96" y="18" width="0" height="0"/>
 		<Sensor black="511" white="4000"/>
+		<Hints>
+			<Hint name="wb_offset" value="142"/>
+		</Hints>
 	</Camera>
 	<Camera make="Canon" model="Canon PowerShot G1 X">
 		<CFA width="2" height="2">
@@ -1758,10 +1761,7 @@
 	</Camera>
 	<Camera make="NIKON CORPORATION" model="NIKON D810" mode="sNEF-uncompressed">
 		<Crop x="0" y="0" width="0" height="0"/>
-		<Sensor black="0" white="16384"/>
-		<Hints>
-			<Hint name="nikon_override_auto_black" value=""/>
-		</Hints>
+		<Sensor black="0" white="65535"/>
 	</Camera>
 	<Camera make="NIKON CORPORATION" model="NIKON D810" mode="12bit-uncompressed">
 		<CFA width="2" height="2">
@@ -1819,10 +1819,7 @@
 	</Camera>
 	<Camera make="NIKON CORPORATION" model="NIKON D4S" mode="sNEF-uncompressed">
 		<Crop x="0" y="0" width="0" height="0"/>
-		<Sensor black="0" white="16384"/>
-		<Hints>
-			<Hint name="nikon_override_auto_black" value=""/>
-		</Hints>
+		<Sensor black="0" white="65535"/>
 	</Camera>
 	<Camera make="NIKON CORPORATION" model="NIKON D4S" mode="12bit-compressed">
 		<CFA width="2" height="2">
@@ -5353,6 +5350,7 @@
 		<Crop x="0" y="0" width="-16" height="0"/>
 		<Sensor black="520" white="16596"/>
 	</Camera>
+	<!-- Measured on images from https://github.com/klauspost/rawspeed/issues/78 -->
 	<Camera make="SONY" model="NEX-7" supported="yes">
 		<CFA width="2" height="2">
 			<Color x="0" y="0">RED</Color>
@@ -5361,7 +5359,7 @@
 			<Color x="1" y="1">BLUE</Color>
 		</CFA>
 		<Crop x="0" y="0" width="-26" height="0"/>
-		<Sensor black="520" white="16383"/>
+		<Sensor black="512" white="16300"/>
 	</Camera>
 	<Camera make="SONY" model="NEX-C3" supported="yes">
 		<CFA width="2" height="2">
