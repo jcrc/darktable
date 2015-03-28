@@ -38,6 +38,8 @@
 
 DT_MODULE(3)
 
+#define EXPORT_MAX_IMAGE_SIZE UINT16_MAX
+
 typedef struct dt_lib_export_t
 {
   GtkSpinButton *width, *height;
@@ -279,8 +281,8 @@ static void _update_dimensions(dt_lib_export_t *d)
 {
   uint32_t w = 0, h = 0;
   _get_max_output_dimension(d, &w, &h);
-  gtk_spin_button_set_range(d->width, 0, (w > 0 ? w : 10000));
-  gtk_spin_button_set_range(d->height, 0, (h > 0 ? h : 10000));
+  gtk_spin_button_set_range(d->width, 0, (w > 0 ? w : EXPORT_MAX_IMAGE_SIZE));
+  gtk_spin_button_set_range(d->height, 0, (h > 0 ? h : EXPORT_MAX_IMAGE_SIZE));
 }
 
 static void set_storage_by_name(dt_lib_export_t *d, const char *name)
@@ -478,6 +480,25 @@ static void on_storage_list_changed(gpointer instance, dt_lib_module_t *self)
   dt_bauhaus_combobox_set(d->storage, dt_imageio_get_index_of_storage(storage));
 }
 
+static void _lib_export_styles_changed_callback(gpointer instance, gpointer user_data)
+{
+  dt_lib_module_t *self = (dt_lib_module_t *)user_data;
+  dt_lib_export_t *d = self->data;
+
+  dt_bauhaus_combobox_clear(d->style);
+  dt_bauhaus_combobox_add(d->style, _("none"));
+
+  GList *styles = dt_styles_get_list("");
+  while(styles)
+  {
+    dt_style_t *style = (dt_style_t *)styles->data;
+    dt_bauhaus_combobox_add(d->style, style->name);
+    styles = g_list_next(styles);
+  }
+  dt_bauhaus_combobox_set(d->style, 0);
+
+  g_list_free_full(styles, dt_style_free);
+}
 
 void gui_init(dt_lib_module_t *self)
 {
@@ -541,10 +562,10 @@ void gui_init(dt_lib_module_t *self)
   gtk_widget_set_margin_top(label, DT_PIXEL_APPLY_DPI(20));
   gtk_box_pack_start(GTK_BOX(self->widget), label, FALSE, TRUE, 0);
 
-  d->width = GTK_SPIN_BUTTON(gtk_spin_button_new_with_range(0, 10000, 1));
+  d->width = GTK_SPIN_BUTTON(gtk_spin_button_new_with_range(0, EXPORT_MAX_IMAGE_SIZE, 1));
   g_object_set(G_OBJECT(d->width), "tooltip-text", _("maximum output width\nset to 0 for no scaling"),
                (char *)NULL);
-  d->height = GTK_SPIN_BUTTON(gtk_spin_button_new_with_range(0, 10000, 1));
+  d->height = GTK_SPIN_BUTTON(gtk_spin_button_new_with_range(0, EXPORT_MAX_IMAGE_SIZE, 1));
   g_object_set(G_OBJECT(d->height), "tooltip-text", _("maximum output height\nset to 0 for no scaling"),
                (char *)NULL);
 
@@ -664,16 +685,7 @@ void gui_init(dt_lib_module_t *self)
 
   d->style = dt_bauhaus_combobox_new(NULL);
   dt_bauhaus_widget_set_label(d->style, NULL, _("style"));
-
-  dt_bauhaus_combobox_add(d->style, _("none"));
-
-  GList *styles = dt_styles_get_list("");
-  while(styles)
-  {
-    dt_style_t *style = (dt_style_t *)styles->data;
-    dt_bauhaus_combobox_add(d->style, style->name);
-    styles = g_list_next(styles);
-  }
+  _lib_export_styles_changed_callback(NULL, self);
   gtk_box_pack_start(GTK_BOX(self->widget), d->style, FALSE, TRUE, 0);
   g_object_set(G_OBJECT(d->style), "tooltip-text", _("temporary style to use while exporting"),
                (char *)NULL);
@@ -702,6 +714,9 @@ void gui_init(dt_lib_module_t *self)
   g_signal_connect(G_OBJECT(d->style), "value-changed", G_CALLBACK(style_changed), (gpointer)d);
   g_signal_connect(G_OBJECT(d->style_mode), "value-changed", G_CALLBACK(style_mode_changed), (gpointer)d);
 
+  dt_control_signal_connect(darktable.signals, DT_SIGNAL_STYLE_CHANGED,
+                            G_CALLBACK(_lib_export_styles_changed_callback), self);
+
   // Export button
 
   GtkButton *button = GTK_BUTTON(gtk_button_new_with_label(_("export")));
@@ -721,6 +736,9 @@ void gui_cleanup(dt_lib_module_t *self)
   dt_lib_export_t *d = (dt_lib_export_t *)self->data;
   dt_gui_key_accel_block_on_focus_disconnect(GTK_WIDGET(d->width));
   dt_gui_key_accel_block_on_focus_disconnect(GTK_WIDGET(d->height));
+
+  dt_control_signal_disconnect(darktable.signals, G_CALLBACK(on_storage_list_changed), self);
+  dt_control_signal_disconnect(darktable.signals, G_CALLBACK(_lib_export_styles_changed_callback), self);
 
   GList *it = g_list_first(darktable.imageio->plugins_storage);
   if(it != NULL) do
