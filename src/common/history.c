@@ -153,6 +153,12 @@ void dt_history_delete_on_image(int32_t imgid)
   sqlite3_step(stmt);
   sqlite3_finalize(stmt);
 
+  DT_DEBUG_SQLITE3_PREPARE_V2(dt_database_get(darktable.db),
+                              "update images set history_end = 0 where id = ?1", -1, &stmt, NULL);
+  DT_DEBUG_SQLITE3_BIND_INT(stmt, 1, imgid);
+  sqlite3_step(stmt);
+  sqlite3_finalize(stmt);
+
   DT_DEBUG_SQLITE3_PREPARE_V2(dt_database_get(darktable.db), "delete from mask where imgid = ?1", -1, &stmt,
                               NULL);
   DT_DEBUG_SQLITE3_BIND_INT(stmt, 1, imgid);
@@ -234,8 +240,15 @@ int dt_history_copy_and_paste_on_image(int32_t imgid, int32_t dest_imgid, gboole
   if(merge)
   {
     /* apply on top of history stack */
+    // first trim the stack to get rid of whatever is above the selected entry
     DT_DEBUG_SQLITE3_PREPARE_V2(dt_database_get(darktable.db),
-                                "SELECT MAX(num)+1 FROM history WHERE imgid = ?1", -1, &stmt, NULL);
+                                "DELETE FROM history WHERE imgid = ?1 AND num >= (SELECT history_end FROM images WHERE id = imgid)", -1, &stmt, NULL);
+    DT_DEBUG_SQLITE3_BIND_INT(stmt, 1, dest_imgid);
+    sqlite3_step(stmt);
+    sqlite3_finalize(stmt);
+
+    DT_DEBUG_SQLITE3_PREPARE_V2(dt_database_get(darktable.db),
+                                "SELECT IFNULL(MAX(num), -1) FROM history WHERE imgid = ?1", -1, &stmt, NULL);
     DT_DEBUG_SQLITE3_BIND_INT(stmt, 1, dest_imgid);
     if(sqlite3_step(stmt) == SQLITE_ROW) offs = sqlite3_column_int(stmt, 0);
   }
@@ -249,12 +262,17 @@ int dt_history_copy_and_paste_on_image(int32_t imgid, int32_t dest_imgid, gboole
   }
   sqlite3_finalize(stmt);
 
+  /* delete all items from the temp styles_items, this table is used only to get a ROWNUM of the results */
+  DT_DEBUG_SQLITE3_EXEC(dt_database_get(darktable.db), "DELETE FROM MEMORY.style_items", NULL, NULL, NULL);
+
+  /* copy history items from styles onto temp table */
+
   //  prepare SQL request
   char req[2048];
-  g_strlcpy(req, "insert into history (imgid, num, module, operation, op_params, enabled, blendop_params, "
-                 "blendop_version, multi_name, multi_priority) select ?1, num+?2, module, operation, "
-                 "op_params, enabled, blendop_params, blendop_version, multi_name, multi_priority from "
-                 "history where imgid = ?3",
+  g_strlcpy(req, "INSERT INTO MEMORY.style_items (num, module, operation, op_params, enabled, blendop_params, "
+                 "blendop_version, multi_name, multi_priority) SELECT num, module, operation, "
+                 "op_params, enabled, blendop_params, blendop_version, multi_name, multi_priority FROM "
+                 "history WHERE imgid = ?1",
             sizeof(req));
 
   //  Add ops selection if any format: ... and num in (val1, val2)
@@ -278,11 +296,21 @@ int dt_history_copy_and_paste_on_image(int32_t imgid, int32_t dest_imgid, gboole
     g_strlcat(req, ")", sizeof(req));
   }
 
-  /* add the history items to stack offest */
   DT_DEBUG_SQLITE3_PREPARE_V2(dt_database_get(darktable.db), req, -1, &stmt, NULL);
+  DT_DEBUG_SQLITE3_BIND_INT(stmt, 1, imgid);
+  sqlite3_step(stmt);
+  sqlite3_finalize(stmt);
+
+  /* copy the history items into the history of the dest image */
+  DT_DEBUG_SQLITE3_PREPARE_V2(dt_database_get(darktable.db),
+                              "INSERT INTO history "
+                              "(imgid,num,module,operation,op_params,enabled,blendop_params,blendop_"
+                              "version,multi_priority,multi_name) SELECT "
+                              "?1,?2+rowid,module,operation,op_params,enabled,blendop_params,blendop_"
+                              "version,multi_priority,multi_name FROM MEMORY.style_items",
+                              -1, &stmt, NULL);
   DT_DEBUG_SQLITE3_BIND_INT(stmt, 1, dest_imgid);
   DT_DEBUG_SQLITE3_BIND_INT(stmt, 2, offs);
-  DT_DEBUG_SQLITE3_BIND_INT(stmt, 3, imgid);
   sqlite3_step(stmt);
   sqlite3_finalize(stmt);
 
@@ -313,6 +341,14 @@ int dt_history_copy_and_paste_on_image(int32_t imgid, int32_t dest_imgid, gboole
   DT_DEBUG_SQLITE3_PREPARE_V2(dt_database_get(darktable.db), req, -1, &stmt, NULL);
   DT_DEBUG_SQLITE3_BIND_INT(stmt, 1, dest_imgid);
   DT_DEBUG_SQLITE3_BIND_INT(stmt, 2, imgid);
+  sqlite3_step(stmt);
+  sqlite3_finalize(stmt);
+
+  // always make the whole stack active
+  DT_DEBUG_SQLITE3_PREPARE_V2(dt_database_get(darktable.db),
+                              "UPDATE images SET history_end = (SELECT MAX(num) + 1 FROM history WHERE imgid = ?1) WHERE id = ?1",
+                              -1, &stmt, NULL);
+  DT_DEBUG_SQLITE3_BIND_INT(stmt, 1, dest_imgid);
   sqlite3_step(stmt);
   sqlite3_finalize(stmt);
 

@@ -789,13 +789,21 @@ void dt_dev_write_history(dt_develop_t *dev)
   sqlite3_step(stmt);
   sqlite3_finalize(stmt);
   GList *history = dev->history;
-  for(int i = 0; i < dev->history_end && history; i++)
+  for(int i = 0; history; i++)
   {
     dt_dev_history_item_t *hist = (dt_dev_history_item_t *)(history->data);
     (void)dt_dev_write_history_item(&dev->image_storage, hist, i);
     history = g_list_next(history);
     changed = TRUE;
   }
+
+  DT_DEBUG_SQLITE3_PREPARE_V2(dt_database_get(darktable.db),
+                              "UPDATE images SET history_end = ?1 where id = ?2", -1,
+                              &stmt, NULL);
+  DT_DEBUG_SQLITE3_BIND_INT(stmt, 1, dev->history_end);
+  DT_DEBUG_SQLITE3_BIND_INT(stmt, 2, dev->image_storage.id);
+  sqlite3_step(stmt);
+  sqlite3_finalize(stmt);
 
   /* attach / detach changed tag reflecting actual change */
   guint tagid = 0;
@@ -836,11 +844,11 @@ static void auto_apply_presets(dt_develop_t *dev)
   snprintf(query, sizeof(query), "insert into memory.history select ?1, 0, op_version, operation, op_params, "
                                  "enabled, blendop_params, blendop_version, multi_priority, multi_name "
                                  "from %s where autoapply=1 and "
-                                 "?2 like model and ?3 like maker and ?4 like lens and "
-                                 "?5 between iso_min and iso_max and "
-                                 "?6 between exposure_min and exposure_max and "
-                                 "?7 between aperture_min and aperture_max and "
-                                 "?8 between focal_length_min and focal_length_max and "
+                                 "((?2 like model and ?3 like maker) or (?4 like model and ?5 like maker)) and"
+                                 "?6 like lens and ?7 between iso_min and iso_max and "
+                                 "?8 between exposure_min and exposure_max and "
+                                 "?9 between aperture_min and aperture_max and "
+                                 "?10 between focal_length_min and focal_length_max and "
                                  "(format = 0 or format&?9!=0) order by writeprotect desc, "
                                  "length(model), length(maker), length(lens)",
            preset_table[legacy]);
@@ -850,11 +858,13 @@ static void auto_apply_presets(dt_develop_t *dev)
   DT_DEBUG_SQLITE3_BIND_INT(stmt, 1, imgid);
   DT_DEBUG_SQLITE3_BIND_TEXT(stmt, 2, image->exif_model, -1, SQLITE_TRANSIENT);
   DT_DEBUG_SQLITE3_BIND_TEXT(stmt, 3, image->exif_maker, -1, SQLITE_TRANSIENT);
-  DT_DEBUG_SQLITE3_BIND_TEXT(stmt, 4, image->exif_lens, -1, SQLITE_TRANSIENT);
-  DT_DEBUG_SQLITE3_BIND_DOUBLE(stmt, 5, fmaxf(0.0f, fminf(1000000, image->exif_iso)));
-  DT_DEBUG_SQLITE3_BIND_DOUBLE(stmt, 6, fmaxf(0.0f, fminf(1000000, image->exif_exposure)));
-  DT_DEBUG_SQLITE3_BIND_DOUBLE(stmt, 7, fmaxf(0.0f, fminf(1000000, image->exif_aperture)));
-  DT_DEBUG_SQLITE3_BIND_DOUBLE(stmt, 8, fmaxf(0.0f, fminf(1000000, image->exif_focal_length)));
+  DT_DEBUG_SQLITE3_BIND_TEXT(stmt, 4, image->camera_alias, -1, SQLITE_TRANSIENT);
+  DT_DEBUG_SQLITE3_BIND_TEXT(stmt, 5, image->camera_maker, -1, SQLITE_TRANSIENT);
+  DT_DEBUG_SQLITE3_BIND_TEXT(stmt, 6, image->exif_lens, -1, SQLITE_TRANSIENT);
+  DT_DEBUG_SQLITE3_BIND_DOUBLE(stmt, 7, fmaxf(0.0f, fminf(1000000, image->exif_iso)));
+  DT_DEBUG_SQLITE3_BIND_DOUBLE(stmt, 8, fmaxf(0.0f, fminf(1000000, image->exif_exposure)));
+  DT_DEBUG_SQLITE3_BIND_DOUBLE(stmt, 9, fmaxf(0.0f, fminf(1000000, image->exif_aperture)));
+  DT_DEBUG_SQLITE3_BIND_DOUBLE(stmt, 10, fmaxf(0.0f, fminf(1000000, image->exif_focal_length)));
   // 0: dontcare, 1: ldr, 2: raw
   DT_DEBUG_SQLITE3_BIND_DOUBLE(
       stmt, 9, dt_image_is_ldr(image) ? FOR_LDR : (dt_image_is_raw(image) ? FOR_RAW : FOR_HDR));
@@ -881,14 +891,23 @@ static void auto_apply_presets(dt_develop_t *dev)
 
       if(sqlite3_step(stmt) == SQLITE_DONE)
       {
-        // and finally prepend the rest with increasing numbers (starting at 0)
         sqlite3_finalize(stmt);
-        DT_DEBUG_SQLITE3_PREPARE_V2(
-            dt_database_get(darktable.db),
-            "insert into history select imgid, rowid-1, module, operation, op_params, enabled, "
-            "blendop_params, blendop_version, multi_priority, multi_name from memory.history",
-            -1, &stmt, NULL);
-        sqlite3_step(stmt);
+        DT_DEBUG_SQLITE3_PREPARE_V2(dt_database_get(darktable.db),
+                                    "UPDATE images SET history_end=history_end+?1 where id=?2",
+                                    -1, &stmt, NULL);
+        DT_DEBUG_SQLITE3_BIND_INT(stmt, 1, cnt);
+        DT_DEBUG_SQLITE3_BIND_INT(stmt, 2, imgid);
+        if(sqlite3_step(stmt) == SQLITE_DONE)
+        {
+          // and finally prepend the rest with increasing numbers (starting at 0)
+          sqlite3_finalize(stmt);
+          DT_DEBUG_SQLITE3_PREPARE_V2(
+              dt_database_get(darktable.db),
+              "insert into history select imgid, rowid-1, module, operation, op_params, enabled, "
+              "blendop_params, blendop_version, multi_priority, multi_name from memory.history",
+              -1, &stmt, NULL);
+          sqlite3_step(stmt);
+        }
       }
     }
   }
@@ -1085,6 +1104,15 @@ void dt_dev_read_history(dt_develop_t *dev)
     dev->history = g_list_append(dev->history, hist);
     dev->history_end++;
   }
+  sqlite3_finalize(stmt);
+
+  DT_DEBUG_SQLITE3_PREPARE_V2(dt_database_get(darktable.db), "SELECT history_end FROM images WHERE id = ?1",
+                              -1, &stmt, NULL);
+  DT_DEBUG_SQLITE3_BIND_INT(stmt, 1, dev->image_storage.id);
+  if(sqlite3_step(stmt) == SQLITE_ROW) // seriously, this should never fail
+  {
+    dev->history_end = sqlite3_column_int(stmt, 0);
+  }
 
   if(dev->gui_attached)
   {
@@ -1262,7 +1290,7 @@ void dt_dev_exposure_set_white(dt_develop_t *dev, const float white)
 
 float dt_dev_exposure_get_white(dt_develop_t *dev)
 {
-  if(dev->proxy.exposure.module && dev->proxy.exposure.set_white)
+  if(dev->proxy.exposure.module && dev->proxy.exposure.get_white)
     return dev->proxy.exposure.get_white(dev->proxy.exposure.module);
 
   return 0.0;
@@ -1276,7 +1304,7 @@ void dt_dev_exposure_set_black(dt_develop_t *dev, const float black)
 
 float dt_dev_exposure_get_black(dt_develop_t *dev)
 {
-  if(dev->proxy.exposure.module && dev->proxy.exposure.set_black)
+  if(dev->proxy.exposure.module && dev->proxy.exposure.get_black)
     return dev->proxy.exposure.get_black(dev->proxy.exposure.module);
 
   return 0.0;
