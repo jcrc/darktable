@@ -1300,6 +1300,30 @@ static void list_view(dt_lib_collect_rule_t *dr)
       snprintf(query, sizeof(query),
                "select distinct lens, 1 from images where lens like '%%%s%%' order by lens", escaped_text);
       break;
+
+    case DT_COLLECTION_PROP_FOCAL_LENGTH: // focal length
+    {
+      gchar *operator, *number;
+      dt_collection_split_operator_number(escaped_text, &number, &operator);
+
+      if(operator&& number)
+        snprintf(query, sizeof(query), "select distinct cast(focal_length as integer) as focal_length, 1 from images where "
+        "focal_length %s %s order by focal_length",
+        operator, number);
+      else if(number)
+        snprintf(query, sizeof(query), "select distinct cast(focal_length as integer) as focal_length, 1 from images where "
+        "focal_length = %s order by focal_length",
+        number);
+      else
+        snprintf(query, sizeof(query), "select distinct cast(focal_length as integer) as focal_length, 1 from images where "
+        "focal_length like '%%%s%%' order by focal_length",
+        escaped_text);
+
+      g_free(operator);
+      g_free(number);
+    }
+    break;
+
     case DT_COLLECTION_PROP_ISO: // iso
     {
       gchar *operator, *number;
@@ -2125,7 +2149,7 @@ void gui_cleanup(dt_lib_module_t *self)
   dt_control_signal_disconnect(darktable.signals, G_CALLBACK(filmrolls_imported), self);
   dt_control_signal_disconnect(darktable.signals, G_CALLBACK(filmrolls_removed), self);
   darktable.view_manager->proxy.module_collect.module = NULL;
-  g_free(((dt_lib_collect_t *)self->data)->params);
+  free(d->params);
 
   /* cleanup mem */
   // g_ptr_array_free(d->labels, TRUE);
@@ -2133,7 +2157,7 @@ void gui_cleanup(dt_lib_module_t *self)
 
   /* TODO: Make sure we are cleaning up all allocations */
 
-  g_free(self->data);
+  free(self->data);
   self->data = NULL;
 }
 
@@ -2301,6 +2325,7 @@ void init(struct dt_lib_module_t *self)
   luaA_enum_value(L,dt_collection_properties_t,DT_COLLECTION_PROP_PUBLISHER);
   luaA_enum_value(L,dt_collection_properties_t,DT_COLLECTION_PROP_RIGHTS);
   luaA_enum_value(L,dt_collection_properties_t,DT_COLLECTION_PROP_LENS);
+  luaA_enum_value(L,dt_collection_properties_t,DT_COLLECTION_PROP_FOCAL_LENGTH);
   luaA_enum_value(L,dt_collection_properties_t,DT_COLLECTION_PROP_ISO);
   luaA_enum_value(L,dt_collection_properties_t,DT_COLLECTION_PROP_APERTURE);
   luaA_enum_value(L,dt_collection_properties_t,DT_COLLECTION_PROP_FILENAME);

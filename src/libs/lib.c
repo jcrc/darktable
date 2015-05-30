@@ -850,6 +850,8 @@ gboolean dt_lib_gui_get_expanded(dt_lib_module_t *module)
 
 static gboolean _lib_plugin_header_button_press(GtkWidget *w, GdkEventButton *e, gpointer user_data)
 {
+  if(e->type == GDK_2BUTTON_PRESS || e->type == GDK_3BUTTON_PRESS) return TRUE;
+
   dt_lib_module_t *module = (dt_lib_module_t *)user_data;
 
   if(e->button == 1)
@@ -1015,6 +1017,11 @@ void dt_lib_cleanup(dt_lib_t *lib)
     dt_lib_module_t *module = (dt_lib_module_t *)(lib->plugins->data);
     if(module) 
     {
+      if(module->data != NULL)
+      {
+        module->gui_cleanup(module);
+        module->data = NULL;
+      }
       dt_lib_unload_module(module);
       free(module);
     }
