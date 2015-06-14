@@ -131,8 +131,7 @@ static dt_lib_module_t ref_lib = {
   .button_pressed = NULL,
   .scrolled = NULL,
   .configure = NULL,
-  //.position = position_wrapper,
-  .position = NULL,
+  .position = position_wrapper,
   .legacy_params = NULL,
   .get_params = NULL,
   .set_params = NULL,
@@ -146,7 +145,7 @@ static dt_lib_module_t ref_lib = {
 
 static int register_lib(lua_State *L)
 {
-  lua_settop(L, 5);
+  lua_settop(L, 6);
   lua_getfield(L, LUA_REGISTRYINDEX, "dt_lua_libs");
   lua_newtable(L);
 
@@ -170,11 +169,16 @@ static int register_lib(lua_State *L)
   luaL_checktype(L,3,LUA_TBOOLEAN);
   data->expandable = lua_toboolean(L,3);
 
-  luaL_checktype(L,4,LUA_TTABLE);
+  luaL_checktype(L,4,LUA_TBOOLEAN);
+  if(!lua_toboolean(L,4)) {
+    lib->gui_reset = NULL;
+  }
+
+  luaL_checktype(L,5,LUA_TTABLE);
   uint32_t views = 0;
   int nb_views =0;
   lua_pushnil(L);
-  while(lua_next(L,4)) {
+  while(lua_next(L,5)) {
     dt_view_t *tmp_view;
     luaA_to(L,dt_lua_view_t,&tmp_view,-2);
     dt_view_type_flags_t view = darktable.view_manager->view[0].view(tmp_view);
@@ -205,8 +209,8 @@ static int register_lib(lua_State *L)
   data->views = views;
 
   lua_widget widget;
-  luaA_to(L,lua_widget,&widget,5);
-  lua_pushvalue(L, 5);
+  luaA_to(L,lua_widget,&widget,6);
+  lua_pushvalue(L, 6);
   lua_setfield(L, -2, "widget"); // protect the widget from GC
   data->widget = widget;
 

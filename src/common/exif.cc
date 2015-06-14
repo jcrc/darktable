@@ -310,6 +310,22 @@ static bool dt_exif_read_xmp_data(dt_image_t *img, Exiv2::XmpData &xmpData, bool
       img->longitude = _gps_string_to_number(pos->toString().c_str());
     }
 
+    /* read lens type from Xmp.exifEX.LensModel */
+    if((pos = xmpData.findKey(Exiv2::XmpKey("Xmp.exifEX.LensModel"))) != xmpData.end())
+    {
+      // lens model
+      char *lens = strdup(pos->toString().c_str());
+      char *adr =  lens;
+      if(strncmp(lens, "lang=", 5) == 0)
+      {
+        lens = strchr(lens, ' ');
+        if(lens != NULL) lens++;
+      }
+      // no need to do any Unicode<->locale conversion, the field is specified as ASCII
+      g_strlcpy(img->exif_lens, lens, sizeof(img->exif_lens));
+      free(adr);
+    }
+
     return true;
   }
   catch(Exiv2::AnyError &e)
@@ -549,8 +565,10 @@ static bool dt_exif_read_exif_data(dt_image_t *img, Exiv2::ExifData &exifData)
     }
 
     /* Read lens name */
-    if((((pos = exifData.findKey(Exiv2::ExifKey("Exif.CanonCs.LensType"))) != exifData.end())
-        || ((pos = exifData.findKey(Exiv2::ExifKey("Exif.Canon.0x0095"))) != exifData.end())) && pos->size())
+    if((((pos = exifData.findKey(Exiv2::ExifKey("Exif.CanonCs.LensType"))) != exifData.end()
+         && pos->print(&exifData) != "(0)")
+        || ((pos = exifData.findKey(Exiv2::ExifKey("Exif.Canon.0x0095"))) != exifData.end()))
+       && pos->size())
     {
       dt_strlcpy_to_utf8(img->exif_lens, sizeof(img->exif_lens), pos, exifData);
     }
@@ -954,7 +972,7 @@ int dt_exif_read(dt_image_t *img, const char *path)
   }
 }
 
-int dt_exif_write_blob(uint8_t *blob, uint32_t size, const char *path)
+int dt_exif_write_blob(uint8_t *blob, uint32_t size, const char *path, const int compressed)
 {
   try
   {
@@ -986,6 +1004,15 @@ int dt_exif_write_blob(uint8_t *blob, uint32_t size, const char *path)
     if((it = imgExifData.findKey(Exiv2::ExifKey("Exif.Thumbnail.JPEGInterchangeFormatLength")))
        != imgExifData.end())
       imgExifData.erase(it);
+
+    // only compressed images may set PixelXDimension and PixelYDimension
+    if(!compressed)
+    {
+      if((it = imgExifData.findKey(Exiv2::ExifKey("Exif.Photo.PixelXDimension"))) != imgExifData.end())
+        imgExifData.erase(it);
+      if((it = imgExifData.findKey(Exiv2::ExifKey("Exif.Photo.PixelYDimension"))) != imgExifData.end())
+        imgExifData.erase(it);
+    }
 
     imgExifData.sortByTag();
     image->writeMetadata();
@@ -2206,6 +2233,7 @@ void dt_exif_init()
   // this has te stay with the old url (namespace already propagated outside dt)
   Exiv2::XmpProperties::registerNs("http://darktable.sf.net/", "darktable");
   Exiv2::XmpProperties::registerNs("http://ns.adobe.com/lightroom/1.0/", "lr");
+  Exiv2::XmpProperties::registerNs("http://cipa.jp/exif/1.0/", "exifEX");
 }
 
 void dt_exif_cleanup()
