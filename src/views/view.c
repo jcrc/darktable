@@ -262,6 +262,7 @@ int dt_view_manager_switch(dt_view_manager_t *vm, int k)
           /* does this module belong to current view ?*/
           if(plugin->views(plugin) & v->view(v))
       {
+        if(plugin->view_leave) plugin->view_leave(plugin,v,NULL);
         plugin->gui_cleanup(plugin);
         plugin->data = NULL;
         dt_accel_disconnect_list(plugin->accel_closures);
@@ -291,7 +292,15 @@ int dt_view_manager_switch(dt_view_manager_t *vm, int k)
   if(!error)
   {
     GList *plugins;
-    dt_view_t *v = vm->view + vm->current_view;
+    dt_view_t *v;
+    if(vm->current_view >=0)
+    {
+     v = vm->view + vm->current_view;
+    }
+    else
+    {
+      v = NULL;
+    }
 
     /* cleanup current view before initialization of new  */
     if(vm->current_view >= 0)
@@ -319,6 +328,7 @@ int dt_view_manager_switch(dt_view_manager_t *vm, int k)
         /* does this module belong to current view ?*/
         if(plugin->views(plugin) & v->view(v))
         {
+          if(plugin->view_leave) plugin->view_leave(plugin,v,nv);
           dt_accel_disconnect_list(plugin->accel_closures);
           plugin->accel_closures = NULL;
         }
@@ -391,6 +401,7 @@ int dt_view_manager_switch(dt_view_manager_t *vm, int k)
           else
             gtk_widget_hide(plugin->widget);
         }
+        if(plugin->view_enter) plugin->view_enter(plugin,v,nv);
       }
 
       /* lets get next plugin */
@@ -505,6 +516,8 @@ void dt_view_manager_mouse_enter(dt_view_manager_t *vm)
   if(vm->current_view < 0) return;
   dt_view_t *v = vm->view + vm->current_view;
   if(v->mouse_enter) v->mouse_enter(v);
+  /* raise widget */
+  gtk_widget_grab_focus(dt_ui_center(darktable.gui->ui));
 }
 
 void dt_view_manager_mouse_moved(dt_view_manager_t *vm, double x, double y, double pressure, int which)
@@ -1476,14 +1489,14 @@ void dt_view_filmstrip_prefetch()
   sqlite3_finalize(stmt);
 }
 
-void dt_view_manager_view_toolbox_add(dt_view_manager_t *vm, GtkWidget *tool)
+void dt_view_manager_view_toolbox_add(dt_view_manager_t *vm, GtkWidget *tool, dt_view_type_flags_t views)
 {
-  if(vm->proxy.view_toolbox.module) vm->proxy.view_toolbox.add(vm->proxy.view_toolbox.module, tool);
+  if(vm->proxy.view_toolbox.module) vm->proxy.view_toolbox.add(vm->proxy.view_toolbox.module, tool, views);
 }
 
-void dt_view_manager_module_toolbox_add(dt_view_manager_t *vm, GtkWidget *tool)
+void dt_view_manager_module_toolbox_add(dt_view_manager_t *vm, GtkWidget *tool, dt_view_type_flags_t views)
 {
-  if(vm->proxy.module_toolbox.module) vm->proxy.module_toolbox.add(vm->proxy.module_toolbox.module, tool);
+  if(vm->proxy.module_toolbox.module) vm->proxy.module_toolbox.add(vm->proxy.module_toolbox.module, tool, views);
 }
 
 void dt_view_lighttable_set_zoom(dt_view_manager_t *vm, gint zoom)

@@ -1,8 +1,7 @@
 /*
     RawSpeed - RAW file decoder.
 
-    Copyright (C) 2009-2014 Klaus Post
-    Copyright (C) 2014 Pedro Côrte-Real
+    Copyright (C) 2009-2015 Klaus Post
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -20,30 +19,29 @@
 
     http://www.klauspost.com
 */
-#ifndef MOS_DECODER_H
-#define MOS_DECODER_H
+#ifndef ARI_DECODER_H
+#define ARI_DECODER_H
 
 #include "RawDecoder.h"
-#include "string.h"
-#include "LJpegPlain.h"
 
 namespace RawSpeed {
 
-class MosDecoder :
+class AriDecoder :
   public RawDecoder
 {
 public:
-  MosDecoder(TiffIFD *rootIFD, FileMap* file);
-  virtual ~MosDecoder(void);
+  AriDecoder(FileMap* file);
+  virtual ~AriDecoder(void);
   virtual RawImage decodeRawInternal();
   virtual void checkSupportInternal(CameraMetaData *meta);
   virtual void decodeMetaDataInternal(CameraMetaData *meta);
+  virtual void decodeThreaded(RawDecoderThread * t);
 protected:
-  uint32 black_level;
-  TiffIFD *mRootIFD;
-  string make, model;
-  string getXMPTag(string xmp, string tag);
-  void DecodePhaseOneC(uint32 data_offset, uint32 strip_offset, uint32 width, uint32 height);
+  uint32 mWidth, mHeight, mIso;
+  string mModel;
+  string mEncoder;
+  uint32 mDataOffset, mDataSize;
+  float mWB[3];
 };
 
 } // namespace RawSpeed

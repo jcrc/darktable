@@ -85,6 +85,23 @@ static void _dt_history_cleanup_multi_instance(int imgid, int minnum)
   GList *hitems = NULL;
   while(sqlite3_step(stmt) == SQLITE_ROW)
   {
+    const char *op = (const char *)sqlite3_column_text(stmt, 1);
+    GList *modules = darktable.iop;
+    while (modules)
+    {
+      dt_iop_module_so_t *find_op = (dt_iop_module_so_t *)(modules->data);
+      if (!strcmp(find_op->op, op))
+      {
+        break;
+      }
+      modules = g_list_next(modules);
+    }
+    if (modules && (((dt_iop_module_so_t *)(modules->data))->flags() & IOP_FLAGS_ONE_INSTANCE))
+    {
+      // the current module is a single-instance one, so there's no point in trying to mess up our multi_priority value
+      continue;
+    }
+
     _history_item_t *hi = (_history_item_t *)calloc(1, sizeof(_history_item_t));
     hi->num = sqlite3_column_int(stmt, 0);
     snprintf(hi->op, sizeof(hi->op), "%s", sqlite3_column_text(stmt, 1));
@@ -248,7 +265,7 @@ int dt_history_copy_and_paste_on_image(int32_t imgid, int32_t dest_imgid, gboole
     sqlite3_finalize(stmt);
 
     DT_DEBUG_SQLITE3_PREPARE_V2(dt_database_get(darktable.db),
-                                "SELECT IFNULL(MAX(num), -1) FROM history WHERE imgid = ?1", -1, &stmt, NULL);
+                                "SELECT IFNULL(MAX(num), -1)+1 FROM history WHERE imgid = ?1", -1, &stmt, NULL);
     DT_DEBUG_SQLITE3_BIND_INT(stmt, 1, dest_imgid);
     if(sqlite3_step(stmt) == SQLITE_ROW) offs = sqlite3_column_int(stmt, 0);
   }
@@ -302,11 +319,12 @@ int dt_history_copy_and_paste_on_image(int32_t imgid, int32_t dest_imgid, gboole
   sqlite3_finalize(stmt);
 
   /* copy the history items into the history of the dest image */
+  /* note: rowid starts at 1 while num has to start at 0! */
   DT_DEBUG_SQLITE3_PREPARE_V2(dt_database_get(darktable.db),
                               "INSERT INTO history "
                               "(imgid,num,module,operation,op_params,enabled,blendop_params,blendop_"
                               "version,multi_priority,multi_name) SELECT "
-                              "?1,?2+rowid,module,operation,op_params,enabled,blendop_params,blendop_"
+                              "?1,?2+rowid-1,module,operation,op_params,enabled,blendop_params,blendop_"
                               "version,multi_priority,multi_name FROM MEMORY.style_items",
                               -1, &stmt, NULL);
   DT_DEBUG_SQLITE3_BIND_INT(stmt, 1, dest_imgid);
