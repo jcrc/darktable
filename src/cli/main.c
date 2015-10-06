@@ -25,6 +25,7 @@
  *  - profit
  */
 
+#include "version.h"
 #include "common/darktable.h"
 #include "common/debug.h"
 #include "common/collection.h"
@@ -48,7 +49,7 @@
 static void usage(const char *progname)
 {
   fprintf(stderr, "usage: %s <input file> [<xmp file>] <output file> [--width <max width>,--height <max "
-                  "height>,--bpp <bpp>,--hq <0|1|true|false>,--upscale <0|1|true|false>,--verbose] [--core <darktable options>] [--generate-cache]\n",
+                  "height>,--bpp <bpp>,--hq <0|1|true|false>,--upscale <0|1|true|false>,--verbose] [--core <darktable options>]\n",
           progname);
 }
 
@@ -80,7 +81,7 @@ int main(int argc, char *arg[])
       }
       else if(!strcmp(arg[k], "--version"))
       {
-        printf("this is darktable-cli\ncopyright (c) 2012-2014 johannes hanika, tobias ellinghaus\n");
+        printf("this is darktable-cli " PACKAGE_VERSION  "\ncopyright (c) 2012-2015 johannes hanika, tobias ellinghaus\n");
         exit(1);
       }
       else if(!strcmp(arg[k], "--width"))

@@ -4005,6 +4005,14 @@ const wb_data wb_preset[] =
   { "Olympus", "E-M10", "3300K", 0,		{ 1.453125, 1, 2.640625, 0 } },
   { "Olympus", "E-M10", "5000K", 0,		{ 1.882813, 1, 1.906250, 0 } },
 
+  { "Olympus", "E-M10 Mark II", Daylight, 0, { 1.851563, 1, 1.835938, 0 } },
+  { "Olympus", "E-M10 Mark II", Shade, 0, { 2.171875, 1, 1.429688, 0 } },
+  { "Olympus", "E-M10 Mark II", Cloudy, 0, { 1.992188, 1, 1.664063, 0 } },
+  { "Olympus", "E-M10 Mark II", Tungsten, 0, { 1.140625, 1, 3.429688, 0 } },
+  { "Olympus", "E-M10 Mark II", Fluorescent, 0, { 1.875, 1, 2.695313, 0 } },
+  { "Olympus", "E-M10 Mark II", Underwater, 0, { 1.890625, 1, 2.257813, 0 } },
+  { "Olympus", "E-M10 Mark II", Flash, 0, { 2.148438, 1, 1.601563, 0 } },
+
   { "Olympus", "E-P1", Daylight, 0,		{ 1.835938, 1, 1.351563, 0 } },
   { "Olympus", "E-P1", Shade, 0,		{ 2.195313, 1, 1.046875, 0 } },
   { "Olympus", "E-P1", Cloudy, 0,		{ 2.031250, 1, 1.203125, 0 } },
@@ -6256,6 +6264,28 @@ const wb_data wb_preset[] =
   { "Sony", "ILCE-7R", DaylightFluorescent, 0,	{ 2.68359375, 1, 1.40625, 0 } },
   { "Sony", "ILCE-7R", Flash, 0,		{ 2.75, 1, 1.34375, 0 } },
   { "Sony", "ILCE-7R", "5500K", 0,		{ 2.55859375, 1, 1.45703125, 0 } },
+
+  // firmware ILCE-7RM2 (A7R ii) Ver 1.0
+  { "Sony", "ILCE-7RM2", Daylight, 0,   { 2.40234375, 1, 1.56640625, 0 } },
+  { "Sony", "ILCE-7RM2", Shade, 0,    { 2.87890625, 1, 1.2890625, 0 } },
+  { "Sony", "ILCE-7RM2", Cloudy, 0,   { 2.6015625, 1, 1.43359375, 0 } },
+  { "Sony", "ILCE-7RM2", Incandescent, 0, { 1.46484375, 1, 2.84765625, 0 } },
+  { "Sony", "ILCE-7RM2", WarmWhiteFluorescent, 0,{ 1.73046875, 1, 2.734375, 0 } },
+  { "Sony", "ILCE-7RM2", CoolWhiteFluorescent, 0,{ 2.1875, 1, 2.2265625, 0 } },
+  { "Sony", "ILCE-7RM2", DayWhiteFluorescent, 0,  { 2.328125, 1, 1.64453125, 0 } },
+  { "Sony", "ILCE-7RM2", DaylightFluorescent, 0,  { 2.6171875, 1, 1.515625, 0 } },
+  { "Sony", "ILCE-7RM2", Flash, 0,    { 2.65625, 1, 1.41015625, 0 } },
+  { "Sony", "ILCE-7RM2", "5500K", 0,    { 2.45703125, 1, 1.52734375, 0 } },
+
+  { "Sony", "ILCE-7M2", Daylight, 0, { 2.27734375, 1, 1.48828125, 0 } },
+  { "Sony", "ILCE-7M2", Shade, 0,     { 2.71484375, 1, 1.234375, 0 } },
+  { "Sony", "ILCE-7M2", Cloudy, 0,   { 2.4609375, 1, 1.3671875, 0 } },
+  { "Sony", "ILCE-7M2", Incandescent, 0,{ 1.3984375, 1, 2.625, 0 } },
+  { "Sony", "ILCE-7M2", WarmWhiteFluorescent, 0,{ 1.625, 1, 2.609375, 0 } },
+  { "Sony", "ILCE-7M2", CoolWhiteFluorescent, 0,{ 2.1328125, 1, 2.1328125, 0 } },
+  { "Sony", "ILCE-7M2", DayWhiteFluorescent, 0,{ 2.1796875, 1, 1.61328125, 0 } },
+  { "Sony", "ILCE-7M2", DaylightFluorescent, 0,{ 2.4453125, 1, 1.40625, 0 } },
+  { "Sony", "ILCE-7M2", Flash, 0,    { 2.5078125, 1, 1.34765625, 0 } },
 
   { "Sony", "SLT-A37", Daylight, 0,		{ 2.6641, 1, 1.5156, 0 } },
   { "Sony", "SLT-A37", Shade, 0,		{ 3.1836, 1, 1.2539, 0 } },
