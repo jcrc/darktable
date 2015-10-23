@@ -386,6 +386,13 @@ const wb_data wb_preset[] =
   { "Canon", "PowerShot S100", Flash, 0,	{ 2.615783, 1, 2.001294, 0 } },
   { "Canon", "PowerShot S100", Underwater, 0,	{ 2.248391, 1, 2.338481, 0 } },
 
+  { "Canon", "PowerShot S120", Daylight, 0,   { 2.33333333333333, 1, 1.46938775510204, 0 } },
+  { "Canon", "PowerShot S120", Cloudy, 0,     { 2.5, 1, 1.3704128440367, 0 } },
+  { "Canon", "PowerShot S120", Flash, 0,      { 2.63519813519814, 1, 1.32983682983683, 0 } },
+  { "Canon", "PowerShot S120", Fluorescent, 0,{ 2.52364475201845, 1, 1.37831603229527, 0 } },
+  { "Canon", "PowerShot S120", Shade, 0,      { 2.5, 1, 1.3704128440367, 0 } },
+  { "Canon", "PowerShot S120", Tungsten, 0,   { 1.7545045045045, 1, 2.00675675675676, 0 } },
+
   { "Canon", "PowerShot Pro1", Daylight, 0,	{ 1.829238, 1, 1.571253, 0 } },
   { "Canon", "PowerShot Pro1", Cloudy, 0,	{ 1.194139, 1, 2.755800, 0 } },
   { "Canon", "PowerShot Pro1", Tungsten, 0,	{ 1.701416, 1, 2.218790, 0 } },
@@ -1485,6 +1492,13 @@ const wb_data wb_preset[] =
   { "Canon", "EOS M", Shade, 0,			{ 2.300781, 1, 1.334961, 0 } },
   { "Canon", "EOS M", Fluorescent, 0,		{ 1.784180, 1, 2.275391, 0 } },
 
+  { "Canon", "EOS M2", Cloudy, 0,             { 2.0859375, 1, 1.4931640625, 0 } },
+  { "Canon", "EOS M2", Daylight, 0,           { 1.943359375, 1, 1.615234375, 0 } },
+  { "Canon", "EOS M2", Flash, 0,              { 2.1650390625, 1, 1.4755859375, 0 } },
+  { "Canon", "EOS M2", Tungsten, 0,           { 1.3916015625, 1, 2.392578125, 0 } },
+  { "Canon", "EOS M2", Shade, 0,              { 2.2265625, 1, 1.3818359375, 0 } },
+  { "Canon", "EOS M2", Fluorescent, 0,        { 1.7353515625, 1, 2.2802734375, 0 } },
+
   { "Fujifilm", "FinePix E900", Daylight, 0,		{ 1.571875, 1, 1.128125, 0 } },
   { "Fujifilm", "FinePix E900", Shade, 0,		{ 1.668750, 1, 1.006250, 0 } },
   { "Fujifilm", "FinePix E900", DaylightFluorescent, 0,	{ 1.907609, 1, 1.016304, 0 } },
@@ -1633,6 +1647,13 @@ const wb_data wb_preset[] =
   { "Fujifilm", "X100S", "6300K", 0,		{ 2.019868, 1, 1.334437, 0 } },
   { "Fujifilm", "X100S", "6700K", 0,		{ 2.076159, 1, 1.291391, 0 } },
   { "Fujifilm", "X100S", "10000K", 0,		{ 2.360927, 1, 1.079470, 0 } },
+
+  { "Fujifilm", "X-M1", Daylight, 0,                  { 1.943709, 1, 1.824503, 0 } },
+  { "Fujifilm", "X-M1", Cloudy, 0,                    { 2.139073, 1, 1.599338, 0 } },
+  { "Fujifilm", "X-M1", DaylightFluorescent, 0,      { 2.440397, 1, 1.592715, 0 } },
+  { "Fujifilm", "X-M1", DayWhiteFluorescent, 0,     { 2.066225, 1, 1.870861, 0 } },
+  { "Fujifilm", "X-M1", WhiteFluorescent, 0,         { 1.937086, 1, 2.360927, 0 } },
+  { "Fujifilm", "X-M1", Incandescent, 0,              { 1.225166, 1, 2.976821, 0 } },
 
   { "Fujifilm", "X-A2", Daylight, 0,                  { 1.824503, 1, 1.758278, 0 } },
   { "Fujifilm", "X-A2", Cloudy, 0,                    { 2.033113, 1, 1.496689, 0 } },
