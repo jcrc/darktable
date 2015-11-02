@@ -212,8 +212,8 @@ static void edit_preset(const char *name_in, dt_lib_module_info_t *minfo)
   char title[1024];
   GtkWidget *window = dt_ui_main_window(darktable.gui->ui);
   snprintf(title, sizeof(title), _("edit `%s'"), name);
-  dialog = gtk_dialog_new_with_buttons(title, GTK_WINDOW(window), GTK_DIALOG_DESTROY_WITH_PARENT, _("_OK"),
-                                       GTK_RESPONSE_ACCEPT, _("_Cancel"), GTK_RESPONSE_REJECT, NULL);
+  dialog = gtk_dialog_new_with_buttons(title, GTK_WINDOW(window), GTK_DIALOG_DESTROY_WITH_PARENT, _("_ok"),
+                                       GTK_RESPONSE_ACCEPT, _("_cancel"), GTK_RESPONSE_REJECT, NULL);
   GtkContainer *content_area = GTK_CONTAINER(gtk_dialog_get_content_area(GTK_DIALOG(dialog)));
   GtkBox *box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 5));
   gtk_widget_set_margin_start(GTK_WIDGET(box), DT_PIXEL_APPLY_DPI(10));
@@ -802,17 +802,22 @@ void dt_lib_gui_set_expanded(dt_lib_module_t *module, gboolean expanded)
   gint flags = CPF_DIRECTION_DOWN;
   int c = module->container(module);
 
+  GList *header_childs = gtk_container_get_children(GTK_CONTAINER(header));
+
   if((c == DT_UI_CONTAINER_PANEL_LEFT_TOP) || (c == DT_UI_CONTAINER_PANEL_LEFT_CENTER)
      || (c == DT_UI_CONTAINER_PANEL_LEFT_BOTTOM))
   {
-    icon = g_list_nth_data(gtk_container_get_children(GTK_CONTAINER(header)), 0);
+    icon = g_list_nth_data(header_childs, 0);
     if(!expanded) flags = CPF_DIRECTION_RIGHT;
   }
   else
   {
-    icon = g_list_last(gtk_container_get_children(GTK_CONTAINER(header)))->data;
+    icon = g_list_last(header_childs)->data;
     if(!expanded) flags = CPF_DIRECTION_LEFT;
   }
+
+  g_list_free(header_childs);
+
   dtgtk_icon_set_paint(icon, dtgtk_cairo_paint_solid_arrow, flags);
 
   /* show / hide plugin widget */

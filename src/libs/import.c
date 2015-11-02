@@ -186,11 +186,14 @@ void _lib_import_ui_devices_update(dt_lib_module_t *self)
   GList *citem;
 
   /* cleanup of widgets in devices container*/
-  GList *item;
-  if((item = gtk_container_get_children(GTK_CONTAINER(d->devices))) != NULL) do
+  GList *item, *iter;
+
+  if((iter = item = gtk_container_get_children(GTK_CONTAINER(d->devices))) != NULL) do
     {
-      gtk_container_remove(GTK_CONTAINER(d->devices), GTK_WIDGET(item->data));
-    } while((item = g_list_next(item)) != NULL);
+      gtk_container_remove(GTK_CONTAINER(d->devices), GTK_WIDGET(iter->data));
+    } while((iter = g_list_next(iter)) != NULL);
+
+  g_list_free(item);
 
   uint32_t count = 0;
   /* FIXME: Verify that it's safe to access camctl->cameras list here ? */
@@ -758,8 +761,8 @@ static void _lib_import_single_image_callback(GtkWidget *widget, gpointer user_d
   dt_lib_module_t* self = (dt_lib_module_t*)user_data;
   GtkWidget *win = dt_ui_main_window(darktable.gui->ui);
   GtkWidget *filechooser = gtk_file_chooser_dialog_new(
-      _("import image"), GTK_WINDOW(win), GTK_FILE_CHOOSER_ACTION_OPEN, _("_Cancel"), GTK_RESPONSE_CANCEL,
-      _("_Open"), GTK_RESPONSE_ACCEPT, (char *)NULL);
+      _("import image"), GTK_WINDOW(win), GTK_FILE_CHOOSER_ACTION_OPEN, _("_cancel"), GTK_RESPONSE_CANCEL,
+      _("_open"), GTK_RESPONSE_ACCEPT, (char *)NULL);
 
   gtk_file_chooser_set_select_multiple(GTK_FILE_CHOOSER(filechooser), TRUE);
 
@@ -855,8 +858,8 @@ static void _lib_import_folder_callback(GtkWidget *widget, gpointer user_data)
   dt_lib_module_t* self= (dt_lib_module_t*) user_data;
   GtkWidget *win = dt_ui_main_window(darktable.gui->ui);
   GtkWidget *filechooser = gtk_file_chooser_dialog_new(
-      _("import film"), GTK_WINDOW(win), GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER, _("_Cancel"),
-      GTK_RESPONSE_CANCEL, _("_Open"), GTK_RESPONSE_ACCEPT, (char *)NULL);
+      _("import film"), GTK_WINDOW(win), GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER, _("_cancel"),
+      GTK_RESPONSE_CANCEL, _("_open"), GTK_RESPONSE_ACCEPT, (char *)NULL);
 
   gtk_file_chooser_set_select_multiple(GTK_FILE_CHOOSER(filechooser), TRUE);
 
