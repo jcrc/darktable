@@ -429,8 +429,8 @@ static int dt_iop_load_module_by_so(dt_iop_module_t *module, dt_iop_module_so_t 
   module->init(module);
 
   /* initialize blendop params and default values */
-  module->blend_params = g_malloc0(sizeof(dt_develop_blend_params_t));
-  module->default_blendop_params = g_malloc0(sizeof(dt_develop_blend_params_t));
+  module->blend_params = calloc(1, sizeof(dt_develop_blend_params_t));
+  module->default_blendop_params = calloc(1, sizeof(dt_develop_blend_params_t));
   memcpy(module->default_blendop_params, &_default_blendop_params, sizeof(dt_develop_blend_params_t));
   memcpy(module->blend_params, &_default_blendop_params, sizeof(dt_develop_blend_params_t));
 
@@ -1690,6 +1690,10 @@ static gboolean _iop_plugin_header_button_press(GtkWidget *w, GdkEventButton *e,
 
   if(e->button == 1)
   {
+    // make gtk scroll to the module once it updated its allocation size
+    if(dt_conf_get_bool("darkroom/ui/scroll_to_module"))
+      darktable.gui->scroll_to[1] = module->expander;
+
     gboolean collapse_others = !dt_conf_get_bool("darkroom/ui/single_module") != !(e->state & GDK_SHIFT_MASK);
     dt_iop_gui_set_expanded(module, !module->expanded, collapse_others);
 

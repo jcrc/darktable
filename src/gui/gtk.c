@@ -698,6 +698,11 @@ int dt_gui_gtk_init(dt_gui_gtk_t *gui, int argc, char *argv[])
   /* lets zero mem */
   memset(gui, 0, sizeof(dt_gui_gtk_t));
 
+  // force gtk3 to use normal scroll bars instead of the popup thing. they get in the way of controls
+  // the alternative would be to gtk_scrolled_window_set_overlay_scrolling(..., FALSE); every single widget
+  // that might have scroll bars
+  g_setenv("GTK_OVERLAY_SCROLLING", "0", 0);
+
   // unset gtk rc from kde:
   char path[PATH_MAX] = { 0 }, datadir[PATH_MAX] = { 0 }, configdir[PATH_MAX] = { 0 };
   dt_loc_get_datadir(datadir, sizeof(datadir));
@@ -1363,6 +1368,20 @@ static gboolean _ui_init_panel_container_center_scroll_event(GtkWidget *widget, 
   return TRUE;
 }
 
+// this should work as long as everything happens in the gui thread
+static void _ui_panel_size_changed(GtkAdjustment *adjustment, GParamSpec *pspec, gpointer user_data)
+{
+  int side = GPOINTER_TO_INT(user_data);
+
+  if(!darktable.gui->scroll_to[side]) return;
+
+  GtkAllocation allocation;
+  gtk_widget_get_allocation(darktable.gui->scroll_to[side], &allocation);
+  gtk_adjustment_set_value(adjustment, allocation.y);
+
+  darktable.gui->scroll_to[side] = NULL;
+}
+
 static GtkWidget *_ui_init_panel_container_center(GtkWidget *container, gboolean left)
 {
   GtkWidget *widget;
@@ -1380,6 +1399,9 @@ static GtkWidget *_ui_init_panel_container_center(GtkWidget *container, gboolean
                                     left ? GTK_CORNER_TOP_LEFT : GTK_CORNER_TOP_RIGHT);
   gtk_box_pack_start(GTK_BOX(container), widget, TRUE, TRUE, 0);
   gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(widget), GTK_POLICY_AUTOMATIC, GTK_POLICY_ALWAYS);
+
+  g_signal_connect(G_OBJECT(gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(widget))), "notify::lower",
+                   G_CALLBACK(_ui_panel_size_changed), GINT_TO_POINTER(left ? 1 : 0));
 
   /* create the scrolled viewport */
   container = widget;

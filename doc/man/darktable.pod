@@ -28,8 +28,7 @@ Options:
 
 =head1 DESCRIPTION
 
-B<darktable> is a digital photography workflow application for B<Linux>, B<Mac OS X>
-and several other B<Unices> in the lines of B<Adobe Lightroom> and B<Apple Aperture>.
+B<darktable> is a digital photography workflow application for B<Linux>, B<Mac OS X> and several other B<Unices>.
 
 The application is designed to ease editing and consistent processing of large
 photo sessions and provides an easy to use digital light-table and a set
@@ -41,7 +40,7 @@ B<darktable> is also fully color managed, which gives you full control over the 
 
 The application relies on a modern plug-in architecture thus making it easy for
 3rd party developers to extend the existing capabilities of the application.
-All light-table and darkroom features are implemented as plug-ins, so you can
+All lighttable and darkroom features are implemented as plug-ins, so you can
 create your plug-ins reusing existing code.
 Most workflow specific things can also be scripted in B<Lua>.
 
@@ -57,13 +56,13 @@ If a folder is given darktable starts in lighttable view with the content of tha
 If there is already an instance of darktable running (using the same library) the image or folder will be opened
 there, using B<D-Bus> to communicate between the two processes.
 
-=item B<< -d <debugoption> >>
+=item B<< -d <debug option> >>
 
 This option enables debug output to the terminal.
 There are several subsystems of darktable and debugging of each of them can be activated separately.
 You can use this option multiple times if you want debugging output of more than one subsystem.
 
-A few of those debugoptions are:
+A few of those debug options are:
 
 =over
 
@@ -75,7 +74,7 @@ you will get a nice B<control.svg> with a visualization of the threads' work.
 
 =item B<cache>
 
-This will give you a lot of debugging info about the thumbnail cache for light table mode.
+This will give you a lot of debugging info about the thumbnail cache for lighttable mode.
 If compiled in debug mode, this will also tell you where in the code a certain buffer has last been locked.
 
 =item B<perf>
@@ -114,7 +113,7 @@ Typical places are C</opt/darktable/share/darktable/> and C</usr/share/darktable
 darktable has a modular structure and organizes its modules as shared libraries for loading at runtime.
 With this option you tell darktable where to look for its shared libraries.
 The default place depends on your installation; typical places are
-C</opt/darktable/lib64/darktable/> and C</usr/lib64/darktable/>.
+C</opt/darktable/lib/darktable/> and C</usr/lib/darktable/>.
 
 =item B<< --tmpdir <tmp directory> >>
 
@@ -170,7 +169,7 @@ C</opt/darktable/share/darktable/> or C</usr/share/darktable/>.
 
 =item B<l>
 
-Switch to lightroom view
+Switch to lighttable view
 
 =item B<d>
 
@@ -192,11 +191,11 @@ Switch to slideshow view
 
 Switch to print view
 
-=item B<period>
+=item B<.>
 
 Switch between lighttable and darkroom views
 
-=item B<< <Primary>q >>
+=item B<Ctrl-q>
 
 Quit
 
@@ -208,7 +207,7 @@ Switch between fullscreen and normal modes of the application's window
 
 Leave fullscreen mode
 
-=item B<< <Primary>h >>
+=item B<Ctrl-h>
 
 Show/hide header
 
@@ -222,7 +221,7 @@ Show/hide sidebars
 
 =over
 
-=item B<< g, <shift>g >>
+=item B<g, Shift-g>
 
 Navigate to top, bottom row
 
@@ -242,7 +241,7 @@ Scroll down, left, right, up
 
 Preview image
 
-=item B<< <Primary>z >>
+=item B<Ctrl-z>
 
 Preview image with focus detection
 
@@ -266,35 +265,35 @@ Mark as rejected
 
 Realign images to the grid
 
-=item B<alt-1>
+=item B<Alt-1>
 
 Zoom in on first visible image
 
-=item B<alt-2, 3>
+=item B<Alt-2, 3>
 
 Adjust zoom
 
-=item B<alt-4>
+=item B<Alt-4>
 
 Zoom out completely
 
-=item B<< <Primary>a >>
+=item B<Ctrl-a>
 
 Select all images
 
-=item B<< <Primary><Shift>a >>
+=item B<Ctrl-Shift-a>
 
 Select no images
 
-=item B<< <Primary>i >>
+=item B<Ctrl-i>
 
 Invert selection
 
-=item B<< <Primary>d >>
+=item B<Ctrl-d>
 
 Duplicate image
 
-=item B<< <Primary>g, <Primary><Shift>g >>
+=item B<Ctrl-g, Ctrl-Shift-g>
 
 Group/ungroup selected images
 
@@ -302,11 +301,11 @@ Group/ungroup selected images
 
 Remove image from collection
 
-=item B<< <Primary>c, <Primary><Shift>c >>
+=item B<Ctrl-c, Ctrl-Shift-c>
 
 Copy all, selected history
 
-=item B<< <Primary>v, <Primary><Shift>v >>
+=item B<Ctrl-v, Ctrl-Shift-v>
 
 Paste all, selected history
 
@@ -318,23 +317,23 @@ Toggle selection of an image
 
 Select an image
 
-=item B<< <Primary>e >>
+=item B<Ctrl-e>
 
 Export currently selected images
 
-=item B<< <Primary>k >>
+=item B<Ctrl-k>
 
 Jump back to the previous collection
 
-=item B<< <Primary>t >>
+=item B<Ctrl-t>
 
 Open a popup to quickly tag an image
 
-=item B<< <Primary><Shift>i >>
+=item B<Ctrl-Shift-i>
 
 Import a folder
 
-=item B<< <Primary>j >>
+=item B<Ctrl-j>
 
 Jump to the filmroll of an image
 
@@ -344,27 +343,27 @@ Jump to the filmroll of an image
 
 =over
 
-=item B<alt-1, 2, 3>
+=item B<Alt-1, 2, 3>
 
 Zoom to 1:1, fill, and fit, respectively
 
-=item B<ctrl-f>
+=item B<Ctrl-f>
 
-show/hide film strip
+Show/hide filmstrip
 
 =item B<Space, Backspace>
 
 Step to next, previous image
 
-=item B<< <Primary>e >>
+=item B<Ctrl-e>
 
 Export current image
 
-=item B<< <Primary>c, <Primary><Shift>c >>
+=item B<Ctrl-c, Ctrl-Shift-c>
 
 Copy all, selected history
 
-=item B<< <Primary>v, <Primary><Shift>v >>
+=item B<Ctrl-v, Ctrl-Shift-v>
 
 Paste all, selected history
 
@@ -372,11 +371,11 @@ Paste all, selected history
 
 Toggle show of over- and under-exposure
 
-=item B<< <Primary>g >>
+=item B<Ctrl-g>
 
 Toggle gamut check
 
-=item B<< <Primary>s >>
+=item B<Ctrl-s>
 
 Toggle softproofing
 
@@ -406,9 +405,9 @@ When drawing masks, decrease, increase brush size, respectively
 
 =over
 
-=item B<< <Primary>f >>
+=item B<Ctrl-f>
 
-Show/hide film strip
+Show/hide filmstrip
 
 =item B<v>
 
@@ -420,21 +419,21 @@ Toggle live view
 
 =over
 
-=item B<< <Primary>f >>
+=item B<Ctrl-f>
 
-Show/hide film strip
+Show/hide filmstrip
 
-=item B<< <Primary>z >>
+=item B<Ctrl-z>
 
 Undo
 
-=item B<< <Primary>r >>
+=item B<Ctrl-r>
 
 Redo
 
 =back
 
-=head3 Film strip (when the cursor is on top of the film strip)
+=head3 Filmstrip (when the cursor is on top of the filmstrip)
 
 =over
 
@@ -454,27 +453,27 @@ Strip all stars
 
 Mark as rejected
 
-=item B<< <Primary>d >>
+=item B<Ctrl-d>
 
 Duplicate image
 
-=item B<< <Primary>a >>
+=item B<Ctrl-a>
 
 Select all images
 
-=item B<< <Primary><Shift>a >>
+=item B<Ctrl-Shift-a>
 
 Select no images
 
-=item B<< <Primary>i >>
+=item B<Ctrl-i>
 
 Invert selection
 
-=item B<< <Primary>c, <Primary><Shift>c >>
+=item B<Ctrl-c, Ctrl-Shift-c>
 
 Copy all, selected history
 
-=item B<< <Primary>v, <Primary><Shift>v >>
+=item B<Ctrl-v, Ctrl-Shift-v>
 
 Paste all, selected history
 
@@ -498,6 +497,12 @@ L<darktable-cli(1)|darktable-cli(1)>
 
 Please visit B<darktable>'s website for news, blog and bug tracker: L<http://www.darktable.org/>
 
+L<http://www.darktable.org/usermanual/> The complete darktable usermanual.
+
+B<darktablerc.html> An overview over all default config settings.
+The default place depends on your installation.
+Typical places are C</opt/darktable/share/doc/darktable/> and C</usr/share/doc/darktable/>.
+
 =head1 RELATED
 
 =over
@@ -519,7 +524,7 @@ bugs, feature requests and so on.
 The principal developer of darktable is Johannes Hanika.
 The (hopefully) complete list of contributors to the project is:
 
-DREGGNAUTHORS
+DREGGNAUTHORS -- don't translate this line!
 
 This man page was written by Alexandre Prokoudine
 E<lt>alexandre.prokoudine@gmail.comE<gt> and Richard Levitte
@@ -539,5 +544,5 @@ B<darktable> is free software; you can redistribute it and/or modify it
 under the terms of the GPL v3 or (at your option) any later version.
 
 =for comment
-$Date: 2015-11-05$
+$Date: 2015-11-08$
 $Release: 2.0$
