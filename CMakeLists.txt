@@ -26,7 +26,6 @@ option(USE_DARKTABLE_PROFILING OFF)
 option(CUSTOM_CFLAGS "Don't override compiler optimization flags." OFF)
 option(BUILD_USERMANUAL "Build all the versions of the usermanual." OFF)
 option(BINARY_PACKAGE_BUILD "Sets march optimization to generic" OFF)
-option(APRIL_FOOLS "Add the \"file manager\" (a shell) to lighttable mode" OFF)
 option(USE_XMLLINT "Run xmllint to test if darktableconfig.xml is valid" ON)
 option(USE_OPENJPEG "Enable JPEG 2000 support" ON)
 option(USE_WEBP "Enable WebP export support" ON)
@@ -99,6 +98,7 @@ endif()
 #
 # Set package version
 #
+set(DO_GENERATE_VERSION Off)
 file(MAKE_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/src/") # the src/ subdirectory won't exist yet
 if(DEFINED PROJECT_VERSION)
   #project version is defined by -D on the cmake command line
@@ -119,6 +119,7 @@ else(DEFINED PROJECT_VERSION)
       COMMENT "Updating version string"
       WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
     )
+    set(DO_GENERATE_VERSION On)
   elseif(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/src/version_gen.h)
   # no need to create version_gen.h if it's already shipped. that is for example the case with our release tarballs
 #   else(NOT SOURCE_PACKAGE)

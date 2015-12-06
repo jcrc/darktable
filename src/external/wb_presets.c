@@ -124,6 +124,13 @@ const wb_data wb_preset[] =
   { "Canon", "PowerShot G5", FluorescentHigh, 0, { 1.463297, 1, 1.764140, 0 } },
   { "Canon", "PowerShot G5", Flash, 0,		{ 1.603593, 1, 1.562874, 0 } },
 
+  { "Canon", "PowerShot G5 X", Daylight, 0,{ 2.21040462427746, 1, 1.70520231213873, 0 } },
+  { "Canon", "PowerShot G5 X", Shade, 0, { 2.54460093896714, 1, 1.46244131455399, 0 } },
+  { "Canon", "PowerShot G5 X", Cloudy, 0,{ 2.38927738927739, 1, 1.57459207459207, 0 } },
+  { "Canon", "PowerShot G5 X", Tungsten, 0,{ 1.49786780383795, 1, 2.71535181236674, 0 } },
+  { "Canon", "PowerShot G5 X", Fluorescent, 0,{ 2.18576598311218, 1, 2.39686369119421, 0 } },
+  { "Canon", "PowerShot G5 X", Flash, 0, { 2.63764705882353, 1, 1.38470588235294, 0 } },
+
   { "Canon", "PowerShot G6", Daylight, 0,	{ 1.769704, 1, 1.637931, 0 } },
   { "Canon", "PowerShot G6", Cloudy, 0,		{ 2.062731, 1, 1.442804, 0 } },
   { "Canon", "PowerShot G6", Tungsten, 0,	{ 1.077106, 1, 2.721234, 0 } },
@@ -4680,6 +4687,11 @@ const wb_data wb_preset[] =
   { "Panasonic", "DMC-LX100", Shade, 0,		{ 2.640625, 1, 1.410156, 0 } },
   { "Panasonic", "DMC-LX100", Flash, 0,		{ 2.410156, 1, 1.578125, 0 } },
   { "Panasonic", "DMC-LX100", Incandescent, 0,	{ 1.585938, 1, 2.382813, 0 } },
+
+  {"Panasonic", "DMC-LF1", Daylight, 0,     { 1.912879, 1, 1.75, 0 } },
+  {"Panasonic", "DMC-LF1", Cloudy, 0,       { 2.037879, 1, 1.609848, 0 } },
+  {"Panasonic", "DMC-LF1", Shade, 0,        { 2.159091, 1, 1.511364, 0 } },
+  {"Panasonic", "DMC-LF1", Incandescent, 0, { 1.268939, 1, 2.799242, 0 } },
 
   { "Leica", "D-LUX 6", Daylight, 0,		{ 1.992453, 1, 1.750943, 0 } },
   { "Leica", "D-LUX 6", Cloudy, 0,		{ 2.143396, 1, 1.603774, 0 } },

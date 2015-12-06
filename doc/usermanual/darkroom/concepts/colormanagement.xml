@@ -38,7 +38,7 @@
     </itemizedlist>
   </para>
 
-  <sect3 status="draft" id="display_profile">
+  <sect3 status="final" id="display_profile">
 
     <title>Display profile</title>
 
@@ -74,13 +74,14 @@
 
     <para>
       In rare cases you may need to manually select the display profile. This is possible from
-      the softproof and gamut check option dialogs (see <xref linkend="softproof"/> and
-      <xref linkend="gamutcheck"/>).
+      the softproof and gamut check option dialogs in the darkroom view (see
+      <xref linkend="softproof"/> and <xref linkend="gamutcheck"/>), and the display profile
+      dialog in the lighttable view (see <xref linkend="lighttable_overview"/>).
     </para>
 
   </sect3>
 
-  <sect3 status="draft" id="rendering_method">
+  <sect3 status="final" id="rendering_method">
 
     <title>Rendering method</title>
 
@@ -109,7 +110,7 @@
 
   </sect3>
 
-  <sect3 status="draft" id="rendering_intent">
+  <sect3 status="final" id="rendering_intent">
 
     <title>Rendering intent</title>
 

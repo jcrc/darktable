@@ -101,6 +101,9 @@ static void _ui_init_panel_bottom(dt_ui_t *ui, GtkWidget *container);
 /* generic callback for redraw widget signals */
 static void _ui_widget_redraw_callback(gpointer instance, GtkWidget *widget);
 
+/* Set the HiDPI stuff */
+static void configure_ppd_dpi(dt_gui_gtk_t *gui);
+
 /*
  * OLD UI API
  */
@@ -166,21 +169,17 @@ static gboolean fullscreen_key_accel_callback(GtkAccelGroup *accel_group, GObjec
   if(data)
   {
     widget = dt_ui_main_window(darktable.gui->ui);
-    fullscreen = dt_conf_get_bool("ui_last/fullscreen");
+    fullscreen = gdk_window_get_state(gtk_widget_get_window(widget)) & GDK_WINDOW_STATE_FULLSCREEN;
     if(fullscreen)
       gtk_window_unfullscreen(GTK_WINDOW(widget));
     else
       gtk_window_fullscreen(GTK_WINDOW(widget));
-    fullscreen ^= 1;
-    dt_conf_set_bool("ui_last/fullscreen", fullscreen);
     dt_dev_invalidate(darktable.develop);
   }
   else
   {
     widget = dt_ui_main_window(darktable.gui->ui);
     gtk_window_unfullscreen(GTK_WINDOW(widget));
-    fullscreen = 0;
-    dt_conf_set_bool("ui_last/fullscreen", fullscreen);
     dt_dev_invalidate(darktable.develop);
   }
 
@@ -610,6 +609,10 @@ static gboolean configure(GtkWidget *da, GdkEventConfigure *event, gpointer user
   oldw = event->width;
   oldh = event->height;
 
+#ifndef GDK_WINDOWING_QUARTZ
+  configure_ppd_dpi((dt_gui_gtk_t *) user_data);
+#endif
+
   return dt_control_configure(da, event, user_data);
 }
 
@@ -789,14 +792,15 @@ int dt_gui_gtk_init(dt_gui_gtk_t *gui, int argc, char *argv[])
   //  dt_gui_background_jobs_init();
 
   /* Have the delete event (window close) end the program */
-  dt_loc_get_datadir(datadir, sizeof(datadir));
   snprintf(path, sizeof(path), "%s/icons", datadir);
+  gtk_icon_theme_append_search_path(gtk_icon_theme_get_default(), path);
+  snprintf(path, sizeof(path), "%s/icons", DARKTABLE_SHAREDIR);
   gtk_icon_theme_append_search_path(gtk_icon_theme_get_default(), path);
 
   widget = dt_ui_center(darktable.gui->ui);
 
   g_signal_connect(G_OBJECT(widget), "key-press-event", G_CALLBACK(key_pressed), NULL);
-  g_signal_connect(G_OBJECT(widget), "configure-event", G_CALLBACK(configure), NULL);
+  g_signal_connect(G_OBJECT(widget), "configure-event", G_CALLBACK(configure), gui);
   g_signal_connect(G_OBJECT(widget), "draw", G_CALLBACK(draw), NULL);
   g_signal_connect(G_OBJECT(widget), "motion-notify-event", G_CALLBACK(mouse_moved), NULL);
   g_signal_connect(G_OBJECT(widget), "leave-notify-event", G_CALLBACK(center_leave), NULL);
@@ -966,18 +970,12 @@ void dt_gui_gtk_run(dt_gui_gtk_t *gui)
   dt_cleanup();
 }
 
-static void init_widgets(dt_gui_gtk_t *gui)
+static void configure_ppd_dpi(dt_gui_gtk_t *gui)
 {
-
-  GtkWidget *container;
-  GtkWidget *widget;
-
-  // Creating the main window
-  widget = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-  gui->ui->main_window = widget;
+  GtkWidget *widget = gui->ui->main_window;
 
   // check if in HiDPI mode
-#if (CAIRO_VERSION >= CAIRO_VERSION_ENCODE(1, 14, 0))
+#if (CAIRO_VERSION >= CAIRO_VERSION_ENCODE(1, 13, 1))
   float screen_ppd_overwrite = dt_conf_get_float("screen_ppd_overwrite");
   if(screen_ppd_overwrite > 0.0)
   {
@@ -986,8 +984,7 @@ static void init_widgets(dt_gui_gtk_t *gui)
   }
   else
   {
-#ifdef GDK_WINDOWING_QUARTZ
-    gui->ppd = dt_osx_get_ppd();
+    gui->ppd = gtk_widget_get_scale_factor(widget);
     if(gui->ppd < 0.0)
     {
       gui->ppd = 1.0;
@@ -995,9 +992,6 @@ static void init_widgets(dt_gui_gtk_t *gui)
     }
     else
       dt_print(DT_DEBUG_CONTROL, "[HiDPI] setting ppd to %f\n", gui->ppd);
-#else
-    gui->ppd = 1.0;
-#endif
   }
 #else
   gui->ppd = 1.0;
@@ -1029,6 +1023,20 @@ static void init_widgets(dt_gui_gtk_t *gui)
   }
   gui->dpi_factor
       = gui->dpi / 96; // according to man xrandr and the docs of gdk_screen_set_resolution 96 is the default
+}
+
+static void init_widgets(dt_gui_gtk_t *gui)
+{
+
+  GtkWidget *container;
+  GtkWidget *widget;
+
+  // Creating the main window
+  widget = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+  gtk_widget_set_name(widget, "main_window");
+  gui->ui->main_window = widget;
+
+  configure_ppd_dpi(gui);
 
   gtk_window_set_default_size(GTK_WINDOW(widget), DT_PIXEL_APPLY_DPI(900), DT_PIXEL_APPLY_DPI(500));
 
@@ -1038,6 +1046,12 @@ static void init_widgets(dt_gui_gtk_t *gui)
   g_signal_connect(G_OBJECT(widget), "delete_event", G_CALLBACK(dt_gui_quit_callback), NULL);
   g_signal_connect(G_OBJECT(widget), "key-press-event", G_CALLBACK(key_pressed_override), NULL);
   g_signal_connect(G_OBJECT(widget), "key-release-event", G_CALLBACK(key_released), NULL);
+#ifdef GDK_WINDOWING_QUARTZ
+  if(gtk_widget_get_realized(widget))
+    dt_osx_allow_fullscreen(widget);
+  else
+    g_signal_connect(G_OBJECT(widget), "realize", G_CALLBACK(dt_osx_allow_fullscreen), NULL);
+#endif
 
   container = widget;
 
@@ -1371,11 +1385,18 @@ static gboolean _ui_init_panel_container_center_scroll_event(GtkWidget *widget, 
 // this should work as long as everything happens in the gui thread
 static void _ui_panel_size_changed(GtkAdjustment *adjustment, GParamSpec *pspec, gpointer user_data)
 {
+  GtkAllocation allocation;
+  static float last_height[2] = { 0 };
+
   int side = GPOINTER_TO_INT(user_data);
+
+  // don't do anything when the size didn't actually change.
+  float height = gtk_adjustment_get_upper(adjustment) - gtk_adjustment_get_lower(adjustment);
+  if(height == last_height[side]) return;
+  last_height[side] = height;
 
   if(!darktable.gui->scroll_to[side]) return;
 
-  GtkAllocation allocation;
   gtk_widget_get_allocation(darktable.gui->scroll_to[side], &allocation);
   gtk_adjustment_set_value(adjustment, allocation.y);
 

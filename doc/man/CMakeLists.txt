@@ -6,6 +6,10 @@ cmake_minimum_required(VERSION 2.6)
 set(MANPAGES
   "darktable.pod"
   "darktable-cli.pod"
+  "darktable-viewer.pod"
+  "darktable-generate-cache.pod"
+  "darktable-cltest.pod"
+  "darktable-cmstest.pod"
 )
 ###################################
 # THAT'S IT, NO MORE CHANGES NEEDED
@@ -77,7 +81,7 @@ else()
       )
       add_custom_target(manpage-${language}-${manpage} ALL DEPENDS ${target})
       add_dependencies(manpage-${language} manpage-${language}-${manpage})
-      install(FILES ${target} DESTINATION ${MAN_INSTALL_DIR}/../${language}/man1/)
+      install(FILES ${target} DESTINATION ${MAN_INSTALL_DIR}/../${language}/man1)
     endforeach(pod)
   endforeach(language)
 endif()

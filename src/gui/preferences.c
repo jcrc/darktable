@@ -335,11 +335,11 @@ static void tree_insert_presets(GtkTreeStore *tree_model)
     int focal_length_max = sqlite3_column_double(stmt, 14);
     const gboolean writeprotect = (sqlite3_column_int(stmt, 15) == 0 ? FALSE : TRUE);
 
-    gchar *iso, *exposure, *aperture, *focal_length;
+    gchar *iso = NULL, *exposure = NULL, *aperture = NULL, *focal_length = NULL;
     int min, max;
 
-    gchar *module = dt_iop_get_localized_name(operation);
-    if(module == NULL) module = dt_lib_get_localized_name(operation);
+    gchar *module = g_strdup(dt_iop_get_localized_name(operation));
+    if(module == NULL) module = g_strdup(dt_lib_get_localized_name(operation));
     if(module == NULL) module = g_strdup(operation);
 
     if(iso_min == 0.0 && iso_max == 51200.0)
@@ -393,7 +393,14 @@ static void tree_insert_presets(GtkTreeStore *tree_model)
                        P_ISO_COLUMN, iso, P_EXPOSURE_COLUMN, exposure, P_APERTURE_COLUMN, aperture,
                        P_FOCAL_LENGTH_COLUMN, focal_length, P_AUTOAPPLY_COLUMN,
                        autoapply ? check_pixbuf : NULL, -1);
+
+    g_free(focal_length);
+    g_free(aperture);
+    g_free(exposure);
+    g_free(iso);
+    g_free(module);
   }
+  g_free(last_module);
   sqlite3_finalize(stmt);
 
   g_object_unref(lock_pixbuf);
@@ -621,7 +628,7 @@ static void tree_insert_rec(GtkTreeStore *model, GtkTreeIter *parent, const gcha
     gchar *name = gtk_accelerator_get_label(accel_key, accel_mods);
     gtk_tree_store_append(model, &iter, parent);
     gtk_tree_store_set(model, &iter, A_ACCEL_COLUMN, accel_path, A_BINDING_COLUMN,
-                       g_dpgettext2("gtk20", "keyboard label", name), A_TRANS_COLUMN, translated_path, -1);
+                       g_dpgettext2("gtk30", "keyboard label", name), A_TRANS_COLUMN, translated_path, -1);
     g_free(name);
   }
   else
@@ -742,8 +749,9 @@ static void update_accels_model_rec(GtkTreeModel *model, GtkTreeIter *parent, gc
     // Leaf node, update the text
 
     gtk_accel_map_lookup_entry(path, &key);
-    gtk_tree_store_set(GTK_TREE_STORE(model), parent, A_BINDING_COLUMN,
-                       gtk_accelerator_get_label(key.accel_key, key.accel_mods), -1);
+    gchar *name = gtk_accelerator_get_label(key.accel_key, key.accel_mods);
+    gtk_tree_store_set(GTK_TREE_STORE(model), parent, A_BINDING_COLUMN, name, -1);
+    g_free(name);
   }
 }
 
@@ -861,8 +869,9 @@ static void tree_selection_changed(GtkTreeSelection *selection, gpointer data)
 
   // Restoring the A_BINDING_COLUMN text
   gtk_accel_map_lookup_entry(darktable.control->accel_remap_str, &key);
-  gtk_tree_store_set(GTK_TREE_STORE(model), &iter, A_BINDING_COLUMN,
-                     gtk_accelerator_get_label(key.accel_key, key.accel_mods), -1);
+  gchar *name = gtk_accelerator_get_label(key.accel_key, key.accel_mods);
+  gtk_tree_store_set(GTK_TREE_STORE(model), &iter, A_BINDING_COLUMN, name, -1);
+  g_free(name);
 
   // Cleaning up the darktable.gui info
   darktable.control->accel_remap_str = NULL;

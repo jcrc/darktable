@@ -376,7 +376,7 @@ static bool dt_exif_read_xmp_data(dt_image_t *img, Exiv2::XmpData &xmpData, bool
   catch(Exiv2::AnyError &e)
   {
     std::string s(e.what());
-    std::cerr << "[exiv2] " << s << std::endl;
+    std::cerr << "[exiv2] " << img->filename << ": " << s << std::endl;
     return false;
   }
 }
@@ -447,7 +447,7 @@ static bool dt_exif_read_iptc_data(dt_image_t *img, Exiv2::IptcData &iptcData)
   catch(Exiv2::AnyError &e)
   {
     std::string s(e.what());
-    std::cerr << "[exiv2] " << s << std::endl;
+    std::cerr << "[exiv2] " << img->filename << ": " << s << std::endl;
     return false;
   }
 }
@@ -474,6 +474,42 @@ static bool dt_exif_read_exif_data(dt_image_t *img, Exiv2::ExifData &exifData)
     /* List of tag names taken from exiv2's printSummary() in actions.cpp */
     Exiv2::ExifData::const_iterator pos;
 
+    // look for maker & model first so we can use that info later
+    if(FIND_EXIF_TAG("Exif.Image.Make"))
+    {
+      dt_strlcpy_to_utf8(img->exif_maker, sizeof(img->exif_maker), pos, exifData);
+    }
+    else if(FIND_EXIF_TAG("Exif.PanasonicRaw.Make"))
+    {
+      dt_strlcpy_to_utf8(img->exif_maker, sizeof(img->exif_maker), pos, exifData);
+    }
+
+    for(char *c = img->exif_maker + sizeof(img->exif_maker) - 1; c > img->exif_maker; c--)
+      if(*c != ' ' && *c != '\0')
+      {
+        *(c + 1) = '\0';
+        break;
+      }
+
+    if(FIND_EXIF_TAG("Exif.Image.Model"))
+    {
+      dt_strlcpy_to_utf8(img->exif_model, sizeof(img->exif_model), pos, exifData);
+    }
+    else if(FIND_EXIF_TAG("Exif.PanasonicRaw.Model"))
+    {
+      dt_strlcpy_to_utf8(img->exif_model, sizeof(img->exif_model), pos, exifData);
+    }
+
+    for(char *c = img->exif_model + sizeof(img->exif_model) - 1; c > img->exif_model; c--)
+      if(*c != ' ' && *c != '\0')
+      {
+        *(c + 1) = '\0';
+        break;
+      }
+
+    // Make sure we copy the exif make and model to the correct place if needed
+    dt_image_refresh_makermodel(img);
+
     /* Read shutter time */
     if(FIND_EXIF_TAG("Exif.Photo.ExposureTime"))
     {
@@ -494,6 +530,7 @@ static bool dt_exif_read_exif_data(dt_image_t *img, Exiv2::ExifData &exifData)
     {
       img->exif_aperture = pos->toFloat();
     }
+
     /* Read ISO speed - Nikon happens to return a pair for Lo and Hi modes */
     if((pos = Exiv2::isoSpeed(exifData)) != exifData.end() && pos->size())
     {
@@ -505,15 +542,25 @@ static bool dt_exif_read_exif_data(dt_image_t *img, Exiv2::ExifData &exifData)
       }
       else
       {
-        std::ostringstream os;
-        pos->write(os, &exifData);
-        std::string os_str = os.str();
-        const char *exifstr = os_str.c_str();
-        img->exif_iso = (float)std::atof(exifstr);
-        // beware the following does not result in the same!:
-        // img->exif_iso = (float) std::atof( pos->toString().c_str() );
+        std::string str = pos->print();
+        img->exif_iso = (float)std::atof(str.c_str());
       }
     }
+    // some newer cameras support iso settings that exceed the 16 bit of exif's ISOSpeedRatings
+    if(img->exif_iso == 65535 || img->exif_iso == 0)
+    {
+      if(FIND_EXIF_TAG("Exif.PentaxDng.ISO") || FIND_EXIF_TAG("Exif.Pentax.ISO"))
+      {
+        std::string str = pos->print();
+        img->exif_iso = (float)std::atof(str.c_str());
+      }
+      else if((!g_strcmp0(img->exif_maker, "SONY") || !g_strcmp0(img->exif_maker, "Canon"))
+        && FIND_EXIF_TAG("Exif.Photo.RecommendedExposureIndex"))
+      {
+        img->exif_iso = pos->toFloat();
+      }
+    }
+
     /* Read focal length  */
     if((pos = Exiv2::focalLength(exifData)) != exifData.end() && pos->size())
     {
@@ -690,41 +737,6 @@ static bool dt_exif_read_exif_data(dt_image_t *img, Exiv2::ExifData &exifData)
     }
 #endif
 
-    if(FIND_EXIF_TAG("Exif.Image.Make"))
-    {
-      dt_strlcpy_to_utf8(img->exif_maker, sizeof(img->exif_maker), pos, exifData);
-    }
-    else if(FIND_EXIF_TAG("Exif.PanasonicRaw.Make"))
-    {
-      dt_strlcpy_to_utf8(img->exif_maker, sizeof(img->exif_maker), pos, exifData);
-    }
-
-    for(char *c = img->exif_maker + sizeof(img->exif_maker) - 1; c > img->exif_maker; c--)
-      if(*c != ' ' && *c != '\0')
-      {
-        *(c + 1) = '\0';
-        break;
-      }
-
-    if(FIND_EXIF_TAG("Exif.Image.Model"))
-    {
-      dt_strlcpy_to_utf8(img->exif_model, sizeof(img->exif_model), pos, exifData);
-    }
-    else if(FIND_EXIF_TAG("Exif.PanasonicRaw.Model"))
-    {
-      dt_strlcpy_to_utf8(img->exif_model, sizeof(img->exif_model), pos, exifData);
-    }
-
-    for(char *c = img->exif_model + sizeof(img->exif_model) - 1; c > img->exif_model; c--)
-      if(*c != ' ' && *c != '\0')
-      {
-        *(c + 1) = '\0';
-        break;
-      }
-
-    // Make sure we copy the exif make and model to the correct place if needed
-    dt_image_refresh_makermodel(img);
-
     if(FIND_EXIF_TAG("Exif.Image.DateTimeOriginal"))
     {
       dt_strlcpy_to_utf8(img->exif_datetime_taken, 20, pos, exifData);
@@ -869,7 +881,7 @@ static bool dt_exif_read_exif_data(dt_image_t *img, Exiv2::ExifData &exifData)
   catch(Exiv2::AnyError &e)
   {
     std::string s(e.what());
-    std::cerr << "[exiv2] " << s << std::endl;
+    std::cerr << "[exiv2] " << img->filename << ": " << s << std::endl;
     return false;
   }
 }
@@ -912,7 +924,7 @@ int dt_exif_read_from_blob(dt_image_t *img, uint8_t *blob, const int size)
   catch(Exiv2::AnyError &e)
   {
     std::string s(e.what());
-    std::cerr << "[exiv2] " << s << std::endl;
+    std::cerr << "[exiv2] " << img->filename << ": " << s << std::endl;
     return 1;
   }
 }
@@ -1045,14 +1057,16 @@ int dt_exif_write_blob(uint8_t *blob, uint32_t size, const char *path, const int
     Exiv2::ExifData blobExifData;
     Exiv2::ExifParser::decode(blobExifData, blob + 6, size);
     Exiv2::ExifData::const_iterator end = blobExifData.end();
+    Exiv2::ExifData::iterator it;
     for(Exiv2::ExifData::const_iterator i = blobExifData.begin(); i != end; ++i)
     {
+      // add() does not override! we need to delete existing key first.
       Exiv2::ExifKey key(i->key());
-      if(imgExifData.findKey(key) == imgExifData.end())
-        imgExifData.add(Exiv2::ExifKey(i->key()), &i->value());
+      if((it = imgExifData.findKey(key)) != imgExifData.end()) imgExifData.erase(it);
+
+      imgExifData.add(Exiv2::ExifKey(i->key()), &i->value());
     }
     // Remove thumbnail
-    Exiv2::ExifData::iterator it;
     if((it = imgExifData.findKey(Exiv2::ExifKey("Exif.Thumbnail.Compression"))) != imgExifData.end())
       imgExifData.erase(it);
     if((it = imgExifData.findKey(Exiv2::ExifKey("Exif.Thumbnail.XResolution"))) != imgExifData.end())
@@ -1082,7 +1096,7 @@ int dt_exif_write_blob(uint8_t *blob, uint32_t size, const char *path, const int
   catch(Exiv2::AnyError &e)
   {
     std::string s(e.what());
-    std::cerr << "[exiv2] " << s << std::endl;
+    std::cerr << "[exiv2] " << path << ": " << s << std::endl;
     return 0;
   }
   return 1;
@@ -1102,8 +1116,6 @@ int dt_exif_read_blob(uint8_t *buf, const char *path, const int imgid, const int
     assert(image.get() != 0);
     image->readMetadata();
     Exiv2::ExifData &exifData = image->exifData();
-    // needs to be reset, even in dng mode, as the buffers are flipped during raw import
-    exifData["Exif.Image.Orientation"] = uint16_t(1);
 
     // get rid of thumbnails
     Exiv2::ExifThumb(exifData).erase();
@@ -1141,6 +1153,8 @@ int dt_exif_read_blob(uint8_t *buf, const char *path, const int imgid, const int
     if(!dng_mode)
     {
       /* Delete various MakerNote fields only applicable to the raw file */
+
+      exifData["Exif.Image.Orientation"] = uint16_t(1);
 
       // Canon color space info
       if((pos = exifData.findKey(Exiv2::ExifKey("Exif.Canon.ColorSpace"))) != exifData.end())
@@ -1361,7 +1375,7 @@ int dt_exif_read_blob(uint8_t *buf, const char *path, const int imgid, const int
   {
     // std::cerr.rdbuf(savecerr);
     std::string s(e.what());
-    std::cerr << "[exiv2] " << s << std::endl;
+    std::cerr << "[exiv2] " << path << ": " << s << std::endl;
     return 0;
   }
 }
@@ -1907,7 +1921,7 @@ int dt_exif_xmp_read(dt_image_t *img, const char *filename, const int history_on
   {
     // actually nobody's interested in that if the file doesn't exist:
     // std::string s(e.what());
-    // std::cerr << "[exiv2] " << s << std::endl;
+    // std::cerr << "[exiv2] " << filename << ": " << s << std::endl;
     return 1;
   }
   return 0;
@@ -2300,7 +2314,7 @@ int dt_exif_xmp_attach(const int imgid, const char *filename)
   }
   catch(Exiv2::AnyError &e)
   {
-    std::cerr << "[xmp_attach] caught exiv2 exception '" << e << "'\n";
+    std::cerr << "[xmp_attach] " << filename << ": caught exiv2 exception '" << e << "'\n";
     return -1;
   }
 }
@@ -2349,7 +2363,7 @@ int dt_exif_xmp_write(const int imgid, const char *filename)
   }
   catch(Exiv2::AnyError &e)
   {
-    std::cerr << "[xmp_write] caught exiv2 exception '" << e << "'\n";
+    std::cerr << "[xmp_write] " << filename << ": caught exiv2 exception '" << e << "'\n";
     return -1;
   }
 }

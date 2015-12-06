@@ -21,6 +21,7 @@
 #include <CoreServices/CoreServices.h>
 #include <AppKit/AppKit.h>
 #include <gtk/gtk.h>
+#include <gdk/gdkquartz.h>
 #include "osx.h"
 
 void dt_osx_autoset_dpi(GtkWidget *widget)
@@ -42,16 +43,13 @@ void dt_osx_autoset_dpi(GtkWidget *widget)
     }
 }
 
-float dt_osx_get_ppd()
+void dt_osx_allow_fullscreen(GtkWidget *widget)
 {
-  NSScreen *nsscreen = [NSScreen mainScreen];
-#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_7
-  if([nsscreen respondsToSelector: NSSelectorFromString(@"backingScaleFactor")]) {
-    return [[nsscreen valueForKey: @"backingScaleFactor"] floatValue];
-  } else {
-    return [[nsscreen valueForKey: @"userSpaceScaleFactor"] floatValue];
+#ifdef GDK_WINDOWING_QUARTZ
+  GdkWindow *window = gtk_widget_get_window(widget);
+  if(window) {
+    NSWindow *native = gdk_quartz_window_get_nswindow(window);
+    [native setCollectionBehavior: [native collectionBehavior] | NSWindowCollectionBehaviorFullScreenPrimary];
   }
-#else
-  return [[nsscreen valueForKey: @"userSpaceScaleFactor"] floatValue];
 #endif
 }
