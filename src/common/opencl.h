@@ -29,6 +29,7 @@
 #define DT_OPENCL_EVENTNAMELENGTH 64
 #define DT_OPENCL_MAX_EVENTS 256
 #define DT_OPENCL_MAX_ERRORS 5
+#define DT_OPENCL_MAX_INCLUDES 5
 
 #ifdef HAVE_OPENCL
 
@@ -90,6 +91,7 @@ typedef struct dt_opencl_device_t
   const char *vendor;
   const char *name;
   const char *cname;
+  const char *options;
   cl_int summary;
   float benchmark;
 } dt_opencl_device_t;
@@ -149,13 +151,16 @@ int dt_opencl_lock_device(const int pipetype);
 /** done with your command queue. */
 void dt_opencl_unlock_device(const int dev);
 
+/** calculates md5sums for a list of CL include files. */
+void dt_opencl_md5sum(const char **files, char **md5sums);
+
 /** loads the given .cl file and returns a reference to an internal program. */
 int dt_opencl_load_program(const int dev, const int prog, const char *filename, const char *binname,
-                           const char *cachedir, char *md5sum, int *loaded_cached);
+                           const char *cachedir, char *md5sum, char **includemd5, int *loaded_cached);
 
 /** builds the given program. */
 int dt_opencl_build_program(const int dev, const int prog, const char *binname, const char *cachedir,
-                            char *md5sum, int loaded_cached, const char *kerneldir);
+                            char *md5sum, int loaded_cached);
 
 /** inits a kernel. returns the index or -1 if fail. */
 int dt_opencl_create_kernel(const int program, const char *name);

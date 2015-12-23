@@ -162,6 +162,7 @@ int position()
 void init_key_accels(dt_lib_module_t *self)
 {
   dt_accel_register_lib(self, NC_("accel", "toggle live view"), GDK_KEY_v, 0);
+  dt_accel_register_lib(self, NC_("accel", "zoom live view"), GDK_KEY_z, 0);
   dt_accel_register_lib(self, NC_("accel", "rotate 90 degrees CCW"), 0, 0);
   dt_accel_register_lib(self, NC_("accel", "rotate 90 degrees CW"), 0, 0);
   dt_accel_register_lib(self, NC_("accel", "flip horizontally"), 0, 0);
@@ -176,6 +177,7 @@ void connect_key_accels(dt_lib_module_t *self)
   dt_lib_live_view_t *lib = (dt_lib_live_view_t *)self->data;
 
   dt_accel_connect_button_lib(self, "toggle live view", GTK_WIDGET(lib->live_view));
+  dt_accel_connect_button_lib(self, "zoom live view", GTK_WIDGET(lib->live_view_zoom));
   dt_accel_connect_button_lib(self, "rotate 90 degrees CCW", GTK_WIDGET(lib->rotate_ccw));
   dt_accel_connect_button_lib(self, "rotate 90 degrees CW", GTK_WIDGET(lib->rotate_cw));
   dt_accel_connect_button_lib(self, "flip horizontally", GTK_WIDGET(lib->flip));
@@ -227,13 +229,10 @@ static void _zoom_live_view_clicked(GtkWidget *widget, gpointer user_data)
   }
 }
 
-static const gchar *focus_array[] = { "Near 3", "Near 2", "Near 1", "Far 1", "Far 2", "Far 3" };
 static void _focus_button_clicked(GtkWidget *widget, gpointer user_data)
 {
   int focus = GPOINTER_TO_INT(user_data);
-  if(focus >= 0 && focus <= 5)
-    dt_camctl_camera_set_property_string(darktable.camctl, NULL, "manualfocusdrive",
-                                         g_dgettext("libgphoto2-2", focus_array[focus]));
+  dt_camctl_camera_set_property_choice(darktable.camctl, NULL, "manualfocusdrive", focus);
 }
 
 static void _toggle_flip_clicked(GtkWidget *widget, gpointer user_data)
@@ -327,15 +326,18 @@ void gui_init(dt_lib_module_t *self)
   g_object_set(G_OBJECT(lib->focus_out_big), "tooltip-text", _("move focus point out (big steps)"),
                (char *)NULL);
 
-  // 1 and 4 would be medium steps, not in ui right now ...
+  // Near 3
   g_signal_connect(G_OBJECT(lib->focus_in_big), "clicked", G_CALLBACK(_focus_button_clicked),
-                   GINT_TO_POINTER(0));
-  g_signal_connect(G_OBJECT(lib->focus_in_small), "clicked", G_CALLBACK(_focus_button_clicked),
                    GINT_TO_POINTER(2));
+  // Near 1
+  g_signal_connect(G_OBJECT(lib->focus_in_small), "clicked", G_CALLBACK(_focus_button_clicked),
+                   GINT_TO_POINTER(0));
+  // Far 1
   g_signal_connect(G_OBJECT(lib->focus_out_small), "clicked", G_CALLBACK(_focus_button_clicked),
-                   GINT_TO_POINTER(3));
+                   GINT_TO_POINTER(4));
+  // Far 3
   g_signal_connect(G_OBJECT(lib->focus_out_big), "clicked", G_CALLBACK(_focus_button_clicked),
-                   GINT_TO_POINTER(5));
+                   GINT_TO_POINTER(6));
 
   // Guides
   lib->guide_selector = dt_bauhaus_combobox_new(NULL);
@@ -471,26 +473,19 @@ void view_enter(struct dt_lib_module_t *self,struct dt_view_t *old_view,struct d
   // disable buttons that won't work with this camera
   // TODO: initialize tethering mode outside of libs/camera.s so we can use darktable.camctl->active_camera
   // here
-  const dt_camera_t *cam = darktable.camctl->active_camera;
   dt_lib_live_view_t *lib = self->data;
+  const dt_camera_t *cam = darktable.camctl->active_camera;
   if(cam == NULL) cam = darktable.camctl->wanted_camera;
-  if(cam != NULL && cam->can_live_view_advanced == FALSE)
-  {
-    gtk_widget_set_sensitive(lib->live_view_zoom, FALSE);
-    gtk_widget_set_sensitive(lib->focus_in_big, FALSE);
-    gtk_widget_set_sensitive(lib->focus_in_small, FALSE);
-    gtk_widget_set_sensitive(lib->focus_out_big, FALSE);
-    gtk_widget_set_sensitive(lib->focus_out_small, FALSE);
-  } 
-  else if(cam != NULL)
-  {
-    gtk_widget_set_sensitive(lib->live_view_zoom, TRUE);
-    gtk_widget_set_sensitive(lib->focus_in_big, TRUE);
-    gtk_widget_set_sensitive(lib->focus_in_small, TRUE);
-    gtk_widget_set_sensitive(lib->focus_out_big, TRUE);
-    gtk_widget_set_sensitive(lib->focus_out_small, TRUE);
-  }
+
+  gboolean sensitive = cam && cam->can_live_view_advanced;
+
+  gtk_widget_set_sensitive(lib->live_view_zoom, sensitive);
+  gtk_widget_set_sensitive(lib->focus_in_big, sensitive);
+  gtk_widget_set_sensitive(lib->focus_in_small, sensitive);
+  gtk_widget_set_sensitive(lib->focus_out_big, sensitive);
+  gtk_widget_set_sensitive(lib->focus_out_small, sensitive);
 }
+
 // TODO: find out where the zoom window is and draw overlay + grid accordingly
 #define MARGIN 20
 #define BAR_HEIGHT 18 /* see libs/camera.c */

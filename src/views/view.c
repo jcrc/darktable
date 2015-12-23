@@ -174,8 +174,6 @@ int dt_view_load_module(dt_view_t *view, const char *module)
     view->key_released = NULL;
   if(!g_module_symbol(view->module, "configure", (gpointer) & (view->configure))) view->configure = NULL;
   if(!g_module_symbol(view->module, "scrolled", (gpointer) & (view->scrolled))) view->scrolled = NULL;
-  if(!g_module_symbol(view->module, "border_scrolled", (gpointer) & (view->border_scrolled)))
-    view->border_scrolled = NULL;
   if(!g_module_symbol(view->module, "init_key_accels", (gpointer) & (view->init_key_accels)))
     view->init_key_accels = NULL;
   if(!g_module_symbol(view->module, "connect_key_accels", (gpointer) & (view->connect_key_accels)))
@@ -678,13 +676,6 @@ void dt_view_manager_scrolled(dt_view_manager_t *vm, double x, double y, int up,
   if(v->scrolled) v->scrolled(v, x, y, up, state);
 }
 
-void dt_view_manager_border_scrolled(dt_view_manager_t *vm, double x, double y, int which, int up)
-{
-  if(vm->current_view < 0) return;
-  dt_view_t *v = vm->view + vm->current_view;
-  if(v->border_scrolled) v->border_scrolled(v, x, y, which, up);
-}
-
 void dt_view_set_scrollbar(dt_view_t *view, float hpos, float hsize, float hwinsize, float vpos, float vsize,
                            float vwinsize)
 {
@@ -819,7 +810,7 @@ int dt_view_image_expose(dt_view_image_over_t *image_over, uint32_t imgid, cairo
 
   cairo_save(cr);
   float bgcol = 0.4, fontcol = 0.425, bordercol = 0.1, outlinecol = 0.2;
-  int selected = 0, altered = 0, is_grouped = 0;
+  int selected = 0, is_grouped = 0;
   // this is a gui thread only thing. no mutex required:
   const int imgsel = dt_control_get_mouse_over_id(); //  darktable.control->global_settings.lib_image_mouse_over_id;
 
@@ -944,7 +935,7 @@ int dt_view_image_expose(dt_view_image_over_t *image_over, uint32_t imgid, cairo
           else if(buf.color_space == DT_COLORSPACE_ADOBERGB &&
                   darktable.color_profiles->transform_adobe_rgb_to_display)
           {
-            transform = darktable.color_profiles->transform_srgb_to_display;
+            transform = darktable.color_profiles->transform_adobe_rgb_to_display;
           }
           else
           {
@@ -1147,7 +1138,7 @@ int dt_view_image_expose(dt_view_image_over_t *image_over, uint32_t imgid, cairo
       else
         x = .04 * fscale;
 
-      if(draw_metadata && image_is_rejected) cairo_set_source_rgb(cr, 1., 0., 0.);
+      if(image_is_rejected) cairo_set_source_rgb(cr, 1., 0., 0.);
 
       // Only draw hovering effects in stars for the hovered image
       if((imgsel == imgid || zoom == 1) && ((px - x) * (px - x) + (py - y) * (py - y) < r1 * r1))
@@ -1158,22 +1149,19 @@ int dt_view_image_expose(dt_view_image_over_t *image_over, uint32_t imgid, cairo
         cairo_stroke(cr);
       }
 
-      if(draw_metadata && image_is_rejected) cairo_set_line_width(cr, 2.5);
+      if(image_is_rejected) cairo_set_line_width(cr, 2.5);
 
-      if(draw_metadata)
-      {
-        // reject cross:
-        cairo_move_to(cr, x - r2, y - r2);
-        cairo_line_to(cr, x + r2, y + r2);
-        cairo_move_to(cr, x + r2, y - r2);
-        cairo_line_to(cr, x - r2, y + r2);
-        cairo_close_path(cr);
-        cairo_stroke(cr);
-        cairo_set_source_rgb(cr, outlinecol, outlinecol, outlinecol);
-        cairo_set_line_width(cr, 1.5);
-      }
+      // reject cross:
+      cairo_move_to(cr, x - r2, y - r2);
+      cairo_line_to(cr, x + r2, y + r2);
+      cairo_move_to(cr, x + r2, y - r2);
+      cairo_line_to(cr, x - r2, y + r2);
+      cairo_close_path(cr);
+      cairo_stroke(cr);
+      cairo_set_source_rgb(cr, outlinecol, outlinecol, outlinecol);
+      cairo_set_line_width(cr, 1.5);
 
-      if (draw_audio)
+      if(draw_audio)
       {
         if(img && (img->flags & DT_IMAGE_HAS_WAV))
         {
@@ -1192,7 +1180,7 @@ int dt_view_image_expose(dt_view_image_over_t *image_over, uint32_t imgid, cairo
         }
       }
 
-      if (draw_grouping)
+      if(draw_grouping)
       {
         DT_DEBUG_SQLITE3_CLEAR_BINDINGS(darktable.view_manager->statements.get_grouped);
         DT_DEBUG_SQLITE3_RESET(darktable.view_manager->statements.get_grouped);
@@ -1207,7 +1195,7 @@ int dt_view_image_expose(dt_view_image_over_t *image_over, uint32_t imgid, cairo
       }
 
       // image part of a group?
-      if(draw_metadata && is_grouped && darktable.gui && darktable.gui->grouping)
+      if(is_grouped && darktable.gui && darktable.gui->grouping)
       {
         // draw grouping icon and border if the current group is expanded
         // align to the right, left of altered
@@ -1232,18 +1220,8 @@ int dt_view_image_expose(dt_view_image_over_t *image_over, uint32_t imgid, cairo
           *image_over = DT_VIEW_GROUP;
       }
 
-      if (draw_history)
-      {
-        DT_DEBUG_SQLITE3_CLEAR_BINDINGS(darktable.view_manager->statements.have_history);
-        DT_DEBUG_SQLITE3_RESET(darktable.view_manager->statements.have_history);
-        DT_DEBUG_SQLITE3_BIND_INT(darktable.view_manager->statements.have_history, 1, imgid);
-
-        /* lets check if imgid has history */
-        if(sqlite3_step(darktable.view_manager->statements.have_history) == SQLITE_ROW) altered = 1;
-      }
-
       // image altered?
-      if(draw_metadata && altered)
+      if(draw_history && dt_image_altered(imgid))
       {
         // align to right
         const float s = (r1 + r2) * .5;

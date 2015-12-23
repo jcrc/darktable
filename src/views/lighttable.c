@@ -569,7 +569,9 @@ static int expose_filemanager(dt_view_t *self, cairo_t *cr, int32_t width, int32
   }
 
   /* update scroll borders */
-  dt_view_set_scrollbar(self, 0, 1, 1, offset, lib->collection_count, max_rows * iir);
+  int shown_rows = ceilf((float)lib->collection_count / iir);
+  if(iir > 1) shown_rows += max_rows - 2;
+  dt_view_set_scrollbar(self, 0, 1, 1, offset, shown_rows * iir, (max_rows - 1) * iir);
 
   /* let's reset and reuse the main_query statement */
   DT_DEBUG_SQLITE3_CLEAR_BINDINGS(lib->statements.main_query);
@@ -1208,7 +1210,6 @@ int expose_full_preview(dt_view_t *self, cairo_t *cr, int32_t width, int32_t hei
 
     /* How many images to preload in advance. */
     int preload_num = dt_conf_get_int("plugins/lighttable/preview/full_size_preload_count");
-    preload_num = 0;
     gboolean preload = preload_num > 0;
     preload_num = CLAMPS(preload_num, 1, 99999);
 
@@ -2180,41 +2181,6 @@ int key_pressed(dt_view_t *self, guint key, guint state)
     return 1;
   }
   return 0;
-}
-
-void border_scrolled(dt_view_t *view, double x, double y, int which, int up)
-{
-  dt_library_t *lib = (dt_library_t *)view->data;
-  int layout = lib->layout;
-  if(layout == 1)
-  {
-    if(which == 0 || which == 1)
-    {
-      if(up)
-        move_view(lib, UP);
-      else
-        move_view(lib, DOWN);
-    }
-  }
-  else
-  {
-    if(which == 0 || which == 1)
-    {
-      if(up)
-        lib->track = -DT_LIBRARY_MAX_ZOOM;
-      else
-        lib->track = DT_LIBRARY_MAX_ZOOM;
-    }
-    else if(which == 2 || which == 3)
-    {
-      if(up)
-        lib->track = -1;
-      else
-        lib->track = 1;
-    }
-  }
-
-  dt_control_queue_redraw();
 }
 
 void init_key_accels(dt_view_t *self)

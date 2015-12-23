@@ -1759,7 +1759,12 @@ void leave(dt_view_t *self)
   }
 
   // clear gui.
+
+  dt_pthread_mutex_lock(&dev->preview_pipe_mutex);
+  dt_pthread_mutex_lock(&dev->pipe_mutex);
+
   dev->gui_leaving = 1;
+
   dt_dev_pixelpipe_cleanup_nodes(dev->pipe);
   dt_dev_pixelpipe_cleanup_nodes(dev->preview_pipe);
 
@@ -1790,6 +1795,9 @@ void leave(dt_view_t *self)
   }
 
   dt_pthread_mutex_unlock(&dev->history_mutex);
+
+  dt_pthread_mutex_unlock(&dev->pipe_mutex);
+  dt_pthread_mutex_unlock(&dev->preview_pipe_mutex);
 
   // cleanup visible masks
   if(dev->form_gui)
@@ -2094,36 +2102,6 @@ void scrolled(dt_view_t *self, double x, double y, int up, int state)
 
   dt_dev_invalidate(dev);
 
-  dt_control_queue_redraw();
-}
-
-
-void border_scrolled(dt_view_t *view, double x, double y, int which, int up)
-{
-  dt_develop_t *dev = (dt_develop_t *)view->data;
-  float zoom_x, zoom_y;
-  const dt_dev_zoom_t zoom = dt_control_get_dev_zoom();
-  const int closeup = dt_control_get_dev_closeup();
-  zoom_x = dt_control_get_dev_zoom_x();
-  zoom_y = dt_control_get_dev_zoom_y();
-  if(which > 1)
-  {
-    if(up)
-      zoom_x -= 0.02;
-    else
-      zoom_x += 0.02;
-  }
-  else
-  {
-    if(up)
-      zoom_y -= 0.02;
-    else
-      zoom_y += 0.02;
-  }
-  dt_dev_check_zoom_bounds(dev, &zoom_x, &zoom_y, zoom, closeup, NULL, NULL);
-  dt_control_set_dev_zoom_x(zoom_x);
-  dt_control_set_dev_zoom_y(zoom_y);
-  dt_dev_invalidate(dev);
   dt_control_queue_redraw();
 }
 
