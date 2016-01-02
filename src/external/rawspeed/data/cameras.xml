@@ -2377,6 +2377,20 @@
 		<Crop x="0" y="0" width="0" height="0"/>
 		<Sensor black="0" white="4095"/>
 	</Camera>
+	<Camera make="NIKON CORPORATION" model="NIKON 1 V3" decoder_version="4">
+		<ID make="Nikon" model="1 V3">Nikon 1 V3</ID>
+		<CFA width="2" height="2">
+			<Color x="0" y="0">RED</Color>
+			<Color x="1" y="0">GREEN</Color>
+			<Color x="0" y="1">GREEN</Color>
+			<Color x="1" y="1">BLUE</Color>
+		</CFA>
+		<Crop x="0" y="0" width="0" height="0"/>
+		<Sensor black="200" white="4000"/>
+		<Hints>
+			<Hint name="nikon_override_auto_black" value=""/>
+		</Hints>
+	</Camera>
 	<Camera make="NIKON CORPORATION" model="NIKON 1 AW1" decoder_version="4">
 		<ID make="Nikon" model="1 AW1">Nikon 1 AW1</ID>
 		<CFA width="2" height="2">
@@ -3200,7 +3214,7 @@
 			<Color x="1" y="1">GREEN</Color>
 		</CFA>
 		<Crop x="0" y="0" width="-128" height="0"/>
-		<Sensor black="15" white="3956"/>
+		<Sensor black="145" white="3956"/>
 	</Camera>
 	<Camera make="Panasonic" model="DMC-FZ150" mode="4:3">
 		<ID make="Panasonic" model="DMC-FZ150">Panasonic DMC-FZ150</ID>
@@ -3223,6 +3237,28 @@
 		</CFA>
 		<Crop x="0" y="0" width="-128" height="0"/>
 		<Sensor black="143" white="3971"/>
+	</Camera>
+	<Camera make="Panasonic" model="DMC-FZ150" mode="1:1">
+		<ID make="Panasonic" model="DMC-FZ150">Panasonic DMC-FZ150</ID>
+		<CFA width="2" height="2">
+			<Color x="0" y="0">GREEN</Color>
+			<Color x="1" y="0">BLUE</Color>
+			<Color x="0" y="1">RED</Color>
+			<Color x="1" y="1">GREEN</Color>
+		</CFA>
+		<Crop x="0" y="0" width="-16" height="0"/>
+		<Sensor black="142" white="3971"/>
+	</Camera>
+	<Camera make="Panasonic" model="DMC-FZ150" mode="16:9">
+		<ID make="Panasonic" model="DMC-FZ150">Panasonic DMC-FZ150</ID>
+		<CFA width="2" height="2">
+			<Color x="0" y="0">GREEN</Color>
+			<Color x="1" y="0">BLUE</Color>
+			<Color x="0" y="1">RED</Color>
+			<Color x="1" y="1">GREEN</Color>
+		</CFA>
+		<Crop x="0" y="0" width="-128" height="0"/>
+		<Sensor black="142" white="3971"/>
 	</Camera>
 	<Camera make="Panasonic" model = "DMC-FZ200">
 		<ID make="Panasonic" model="DMC-FZ200">Panasonic DMC-FZ200</ID>
